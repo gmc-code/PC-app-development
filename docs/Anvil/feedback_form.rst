@@ -6,7 +6,7 @@ Feedback Form
 | The refernces add email capability but email ihas quotas, so we will not create autoamted emails.
 
 .. image:: images/Feedback_Form.png
-    :scale: 50%
+    :scale: 70%
 
 References
 ------------------------------
@@ -95,12 +95,12 @@ Build Data Table
 | On the top right, name the table ``feeedback``.
 
 .. image:: images/Feedback_Form_Data_Table_Name.png
-    :scale: 80%
+    :scale: 100%
 
 | Click on the ``+ New Column`` button.
 
 .. image:: images/Feedback_Form_Data_Table_Add_Column.png
-    :scale: 80%
+    :scale: 100%
 
 | Choose ``Add Text Column``.
 | Change the column name from Column0 to ``name``.
@@ -118,7 +118,7 @@ Build Data Table
 | Change the column name from Column3 to ``created_on``.
 
 .. image:: images/Feedback_Form_Data_Table_columns.png
-    :scale: 80%
+    :scale: 100%
 
 ----
 
@@ -129,7 +129,7 @@ Build the Server Code
 | Under Server Code, click ``Add Server Module``.
 
 .. image:: images/Feedback_Form_Add_Server_Module.png
-    :scale: 80%
+    :scale: 100%
 
 | Enter the code to add a data table row.
 | Import the datetime module so the created_on value can be gotten.
