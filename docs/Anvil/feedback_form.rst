@@ -159,9 +159,7 @@ Build the Submit Code
 ------------------------------
 
 | Click on the Form1 tab.
-| Double click the Submit button. This add default code for it.
+| Double click the Submit button. This adds default code for it.
 
-
-.. code-block:: python
 
     
