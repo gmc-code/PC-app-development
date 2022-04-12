@@ -5,10 +5,6 @@ Introduction
 PC-app-development
 ----------------------------------------
 
-.. admonition:: Tip
-    
-    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
-
 | These docs will help you develop apps with python.
 | Desktop apps will be developed using tkinter.
 | Web apps will be developed using Anvil.
@@ -30,11 +26,8 @@ Key references:
 | https://docs.python.org/3.10/library/tkinter.ttk.html
 | Tkinter 8.5 reference: a GUI for Python https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
 
+----
 
-
-
-git init
-git commit -m "first commit"
-git branch -M master
-git remote add origin https://github.com/gmc-code/PC-app-development.git
-git push -u origin master
+.. admonition:: Tip
+    
+    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
