@@ -1,7 +1,7 @@
-.. PC-tkinter documentation master file, created by sphinx-quickstart on Mon Dec 13 09:50:11 2021.
+.. PC-app-development documentation master file, created by sphinx-quickstart on Mon Dec 13 09:50:11 2021.
 
 ======================================
-PC-tkinter's documentation
+PC-app-development
 ======================================
 
 .. toctree::

@@ -1,7 +1,7 @@
 # -- Project information -----------------------------------------------------
 
-project = 'PC-tkinter'
-copyright = '2021-2, GMC'
+project = 'PC-app-development'
+copyright = '2021-3, GMC'
 author = 'GMC'
 
 
@@ -52,7 +52,7 @@ html_theme = 'sphinx_rtd_theme'
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 #html_title = None
-html_title = "PC-tkinter"
+html_title = "PC-app-development"
 
 # Use custom css
 html_css_files = ["css/custom.css"]
@@ -184,7 +184,7 @@ latex_elements['maketitle'] = r'''
         \centering
 
         \vspace*{40mm} %%% * is used to force space from top since first time is normally ignored
-        \textbf{\color{NavyBlue} \Huge {PC-tkinter}}
+        \textbf{\color{NavyBlue} \Huge {PC-app-development}}
 
         \vspace{10mm}
         \begin{figure}[!h]
@@ -265,6 +265,6 @@ latex_toplevel_sectioning = 'chapter'
 
 # for manual can use report
 latex_documents = [
-    (master_doc, 'PC-tkinter.tex', 'PC-tkinter',
+    (master_doc, 'PC-app-development.tex', 'PC-app-development',
      'GMC', 'manual'),
 ]
