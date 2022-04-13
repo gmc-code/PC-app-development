@@ -18,13 +18,24 @@ Home pages:
 
 ----
 
-Key references:
+Key Anvil references:
 ---------------------
 
-| TkDocs http://www.tkdocs.com/
-| https://docs.python.org/3.10/library/tk.html
-| https://docs.python.org/3.10/library/tkinter.ttk.html
-| Tkinter 8.5 reference: a GUI for Python https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
+| docs: https://anvil.works/beta-docs/overview
+| anvil module: https://anvil.works/beta-docs/api/anvil
+| quick start: https://anvil.works/beta-docs/client/quickstart
+| user interface: https://anvil.works/beta-docs/client/ui
+| client side python: https://anvil.works/beta-docs/client/python
+| anvil components and events: https://anvil.works/beta-docs/client/components
+
+
+Key Tkinter references:
+---------------------
+
+| TkDocs: http://www.tkdocs.com/
+| python: https://docs.python.org/3.10/library/tk.html
+| python: https://docs.python.org/3.10/library/tkinter.ttk.html
+| Tkinter 8.5 reference: https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
 
 ----
 
