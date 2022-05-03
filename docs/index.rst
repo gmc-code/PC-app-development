@@ -21,8 +21,6 @@ PC-app-development
     Anvil/anvil_introduction.rst
     Anvil/first_steps.rst
     Anvil/temperature_converter.rst
-    Anvil/temperature_converter2.rst
-    Anvil/days_calculator.rst
 
 
 .. toctree::
@@ -30,8 +28,7 @@ PC-app-development
     :caption: Anvil apps
     :numbered:
 
-    Anvil/anvil_introduction.rst
-    Anvil/first_steps.rst
+    
     Anvil/temperature_converter.rst
     Anvil/temperature_converter2.rst
     Anvil/days_calculator.rst

@@ -2,8 +2,6 @@
 Days Calculator
 ====================================================
 
-Full docs are coming in a few days, by Apr 10.
-
 This builds a days calculator to find the difference in days between 2 dates.
 
 ----
