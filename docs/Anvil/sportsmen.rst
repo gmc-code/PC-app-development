@@ -77,12 +77,19 @@ Images
 | The images should have heights of about 200 and widths around 130 to 140. These can be set in the properties panel.
 | Hide the images by unchecking the visible checkbox for each image using the properties appearance section.
 
+.. image:: images/sportsmen.png
+    :scale: 60
+
 ----
 
 Code 
 --------------------
 
 | Add content info via a nested dictioary.
+| For basketball: player = Bryant; points = 33643; goals per game= 25.0
+| For cricket: player = Sobers; runs = 8032; average= 57.8
+| For Soccer: player = Pele; goals = 775; goals_per_game = 0.92
+| For AFL: player = Locket; goals = 1360; goals_per_game = 4.84
 
 .. admonition:: Tasks
 
@@ -139,7 +146,7 @@ Code
 
 ----
 
- radio button click handler 
+radio button click handler 
 -------------------------------
 
 | To each of the 4 radio buttons add a clicked event by clicking in the blue icon for the clicked field in the events section of the properties panel. 
@@ -155,6 +162,8 @@ Code
 .. admonition:: Tasks
 
     #. Write code for each radio button click event.   
+    #. Write a **place_info** method that puts text into the 6 label fields and shows the image for the chosen sport.   
+    #. Write a **show_sport_image** method that shows the image for the chosen sport, after first hiding all 4 images.   
 
     .. dropdown::
             :icon: codescan
@@ -172,3 +181,141 @@ Code
                         def basketball_clicked(self, **event_args):
                             choice = 'basketball'
                             self.place_info(choice)
+
+                .. tab-item:: Q2
+
+                    Write a **place_info** method that puts text into the 6 label fields and shows the image for that sport. 
+
+                    .. code-block:: python
+
+                        def place_info(self, choice):
+                            self.player_label.text = 'player'
+                            player = self.sportsmen_dict[choice]['player']
+                            self.player.text = self.sportsmen_dict[choice]['player']
+                            self.score_label.text = self.sportsmen_dict[choice]['score_label']
+                            self.score.text = self.sportsmen_dict[choice]['score']
+                            self.average_label.text = self.sportsmen_dict[choice]['average_label']
+                            self.average.text = self.sportsmen_dict[choice]['average']
+                            player_img = self.sportsmen_dict[choice]['image_filename']
+                            self.show_sport_image(choice)
+
+                .. tab-item:: Q3
+
+                    Write a **show_sport_image** method that shows the image for the chosen sport, after first hiding all 4 images. 
+
+                    .. code-block:: python
+
+                        def show_sport_image(self, choice):
+                            self.img_afl.visible = False
+                            self.img_basketball.visible = False
+                            self.img_soccer.visible = False
+                            self.img_cricket.visible = False
+                            if choice == 'AFL': 
+                                self.img_afl.visible = True
+                            elif choice == 'basketball': 
+                                self.img_basketball.visible = True
+                            elif choice == 'soccer': 
+                                self.img_soccer.visible = True
+                            elif choice == 'cricket': 
+                                self.img_cricket.visible = True
+
+----
+
+Final Code 
+--------------------
+
+| The final code is shown below.
+
+.. code-block:: python
+
+    from ._anvil_designer import Form1Template
+    from anvil import *
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+    import anvil.image
+
+    class Form1(Form1Template):
+
+        def __init__(self, **properties):
+            # Set Form properties and Data Bindings.
+            self.init_components(**properties)
+
+            
+        sportsmen_dict = {
+            "cricket": {
+                "player": "Sobers",
+                "score_label": "runs",
+                "score": "8032",
+                "average_label": "average",
+                "average": "57.8",
+                "image_filename": "Sobers.png",
+            },
+            "AFL": {
+                "player": "Locket",
+                "score_label": "goals",
+                "score": "1360",
+                "average_label": "goals per game",
+                "average": "4.84",
+                "image_filename": "Locket.png",
+            },
+            "soccer": {
+                "player": "Pele",
+                "score_label": "goals",
+                "score": "775",
+                "average_label": "goals per game",
+                "average": "0.92",
+                "image_filename": "Pele.png",
+            },
+            "basketball": {
+                "player": "Bryant",
+                "score_label": "points ",
+                "score": "33643",
+                "average_label": "goals per game",
+                "average": "25.0",
+                "image_filename": "Bryant.png",
+            },
+        
+        }
+        
+        def place_info(self, choice):
+            self.player_label.text = 'player'
+            player = self.sportsmen_dict[choice]['player']
+            self.player.text = self.sportsmen_dict[choice]['player']
+            self.score_label.text = self.sportsmen_dict[choice]['score_label']
+            self.score.text = self.sportsmen_dict[choice]['score']
+            self.average_label.text = self.sportsmen_dict[choice]['average_label']
+            self.average.text = self.sportsmen_dict[choice]['average']
+            player_img = self.sportsmen_dict[choice]['image_filename']
+            self.show_sport_image(choice)
+            
+        def show_sport_image(self, choice):
+            self.img_afl.visible = False
+            self.img_basketball.visible = False
+            self.img_soccer.visible = False
+            self.img_cricket.visible = False
+            if choice == 'AFL': 
+                self.img_afl.visible = True
+            elif choice == 'basketball': 
+                self.img_basketball.visible = True
+            elif choice == 'soccer': 
+                self.img_soccer.visible = True
+            elif choice == 'cricket': 
+                self.img_cricket.visible = True
+        
+        def AFL_clicked(self, **event_args):
+            choice = 'AFL'
+            self.place_info(choice)
+
+        def soccer_clicked(self, **event_args):
+            choice = 'soccer'
+            self.place_info(choice)
+
+        def cricket_clicked(self, **event_args):
+            choice = 'cricket'
+            self.place_info(choice)
+            
+        def basketball_clicked(self, **event_args):
+            choice = 'basketball'
+            self.place_info(choice)
+
