@@ -10,6 +10,7 @@ References
 ------------------------------
 
 #. https://anvil.works/docs/media/image-manipulation
+#. https://www.geeksforgeeks.org/python-nested-dictionary/
 
 ----
 
