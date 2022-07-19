@@ -75,7 +75,7 @@ Images
     :scale: 60
 
 | The images should have heights of about 200 and widths around 130 to 140. These can be set in the properties panel.
-| Hide teh images by unchecking the visible checkbox for each image using the properties appearance section.
+| Hide the images by unchecking the visible checkbox for each image using the properties appearance section.
 
 ----
 
@@ -84,40 +84,55 @@ Code
 
 | Add content info via a nested dictioary.
 
-.. code-block:: python
+.. admonition:: Tasks
 
-    sportsmen_dict = {
-        "cricket": {
-            "player": "Sobers",
-            "score_label": "runs",
-            "score": "8032",
-            "average_label": "average",
-            "average": "57.8",
-            "image_filename": "Sobers.png",
-        },
-        "AFL": {
-            "player": "Locket",
-            "score_label": "goals",
-            "score": "1360",
-            "average_label": "goals per game",
-            "average": "4.84",
-            "image_filename": "Locket.png",
-        },
-        "soccer": {
-            "player": "Pele",
-            "score_label": "goals",
-            "score": "775",
-            "average_label": "goals per game",
-            "average": "0.92",
-            "image_filename": "Pele.png",
-        },
-        "basketball": {
-            "player": "Bryant",
-            "score_label": "points ",
-            "score": "33643",
-            "average_label": "goals per game",
-            "average": "25.0",
-            "image_filename": "Bryant.png",
-        },
-    
-    }
+    #. Write code for the nested dictionary.   
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code for the nested dictionary. 
+
+                    .. code-block:: python
+
+                        sportsmen_dict = {
+                            "cricket": {
+                                "player": "Sobers",
+                                "score_label": "runs",
+                                "score": "8032",
+                                "average_label": "average",
+                                "average": "57.8",
+                                "image_filename": "Sobers.png",
+                            },
+                            "AFL": {
+                                "player": "Locket",
+                                "score_label": "goals",
+                                "score": "1360",
+                                "average_label": "goals per game",
+                                "average": "4.84",
+                                "image_filename": "Locket.png",
+                            },
+                            "soccer": {
+                                "player": "Pele",
+                                "score_label": "goals",
+                                "score": "775",
+                                "average_label": "goals per game",
+                                "average": "0.92",
+                                "image_filename": "Pele.png",
+                            },
+                            "basketball": {
+                                "player": "Bryant",
+                                "score_label": "points ",
+                                "score": "33643",
+                                "average_label": "goals per game",
+                                "average": "25.0",
+                                "image_filename": "Bryant.png",
+                            },
+                        
+                        }
