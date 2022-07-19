@@ -20,7 +20,6 @@ PC-app-development
 
     Anvil/anvil_introduction.rst
     Anvil/first_steps.rst
-    Anvil/temperature_converter.rst
 
 
 .. toctree::
@@ -48,8 +47,8 @@ PC-app-development
     :caption: Contents:
     :numbered:
 
-    tk/start_with_tk.rst
-    widgets/pygubu.rst
+    ..tk/start_with_tk.rst
+    ..widgets/pygubu.rst
 
  
 
