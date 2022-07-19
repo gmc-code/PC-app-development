@@ -136,3 +136,39 @@ Code
                             },
                         
                         }
+
+----
+
+ radio button click handler 
+-------------------------------
+
+| To each of the 4 radio buttons add a clicked event by clicking in the blue icon for the clicked field in the events section of the properties panel. 
+| e.g. "basketball_clicked",  "cricket_clicked",  "soccer_clicked", and "AFL_clicked". 
+
+----
+
+Code 
+--------------------
+
+| Use code to pick out parts of the nested dictioary.
+
+.. admonition:: Tasks
+
+    #. Write code for each radio button click event.   
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code for each radio button click event. 
+
+                    .. code-block:: python
+
+                        def basketball_clicked(self, **event_args):
+                            choice = 'basketball'
+                            self.place_info(choice)
