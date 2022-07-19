@@ -190,13 +190,11 @@ Code
 
                         def place_info(self, choice):
                             self.player_label.text = 'player'
-                            player = self.sportsmen_dict[choice]['player']
                             self.player.text = self.sportsmen_dict[choice]['player']
                             self.score_label.text = self.sportsmen_dict[choice]['score_label']
                             self.score.text = self.sportsmen_dict[choice]['score']
                             self.average_label.text = self.sportsmen_dict[choice]['average_label']
                             self.average.text = self.sportsmen_dict[choice]['average']
-                            player_img = self.sportsmen_dict[choice]['image_filename']
                             self.show_sport_image(choice)
 
                 .. tab-item:: Q3
@@ -279,14 +277,14 @@ Final Code
         }
         
         def place_info(self, choice):
+            # player = self.sportsmen_dict[choice]['player']
+            # player_img = self.sportsmen_dict[choice]['image_filename']
             self.player_label.text = 'player'
-            player = self.sportsmen_dict[choice]['player']
             self.player.text = self.sportsmen_dict[choice]['player']
             self.score_label.text = self.sportsmen_dict[choice]['score_label']
             self.score.text = self.sportsmen_dict[choice]['score']
             self.average_label.text = self.sportsmen_dict[choice]['average_label']
             self.average.text = self.sportsmen_dict[choice]['average']
-            player_img = self.sportsmen_dict[choice]['image_filename']
             self.show_sport_image(choice)
             
         def show_sport_image(self, choice):
