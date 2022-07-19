@@ -78,7 +78,7 @@ Images
 | Hide the images by unchecking the visible checkbox for each image using the properties appearance section.
 
 .. image:: images/sportsmen.png
-    :scale: 60
+    :scale: 100
 
 ----
 
