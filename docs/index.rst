@@ -27,11 +27,10 @@ PC-app-development
     :caption: Anvil apps
     :numbered:
 
-    
     Anvil/temperature_converter.rst
     Anvil/temperature_converter2.rst
     Anvil/days_calculator.rst
-
+    Anvil/sportsmen.rst
 
 .. toctree::
     :maxdepth: 2

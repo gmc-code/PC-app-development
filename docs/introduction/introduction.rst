@@ -6,8 +6,9 @@ PC-app-development
 ----------------------------------------
 
 | These docs will help you develop apps with python.
-| Desktop apps will be developed using tkinter.
 | Web apps will be developed using Anvil.
+| Desktop apps will be developed using tkinter.
+
 
 ----
 
@@ -15,6 +16,8 @@ Home pages:
 ---------------------
 
 | https://pc-app-development.readthedocs.io/en/latest/index.html
+
+| https://pc-microbit-extension.readthedocs.io/en/latest/index.html
 
 ----
 
