@@ -69,7 +69,7 @@ Images
     :scale: 60
 
 .. image:: images/Pele.png
-    :scale: 60
+    :scale: 25
 
 .. image:: images/Locket.png
     :scale: 60
