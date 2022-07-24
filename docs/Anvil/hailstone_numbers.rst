@@ -77,9 +77,11 @@ Info
 | In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to text below.
 
-| Hailstone numbers are a sequence of odd and even positive integers.
-| The values typically rise and fall, like a hailstone inside a cloud.
-| e.g. 6, 3, 10, 5, 16, 8, 4, 2, 1
+.. code-block::
+    
+    Hailstone numbers are a sequence of odd and even positive integers.
+    The values typically rise and fall, like a hailstone inside a cloud.
+    e.g. 6, 3, 10, 5, 16, 8, 4, 2, 1
 
 ----
 
@@ -91,11 +93,13 @@ Rules
 | In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to text below.
 
-| The rules for producing hailstone numbers:
-| * Start with a positive whole number (integer)
-| * If the number is even, divide by 2.
-| * If the number is odd, multiply by 3 and add 1.
-| * Repeat for each new number and continue till 1 is reached.
+.. code-block::
+    
+    The rules for producing hailstone numbers:
+    * Start with a positive whole number (integer)
+    * If the number is even, divide by 2.
+    * If the number is odd, multiply by 3 and add 1.
+    * Repeat for each new number and continue till 1 is reached.
 
 ----
 
@@ -107,7 +111,9 @@ Directions
 | In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to text below.
 
-| Enter the start number (positive integer) and click Generate.
+.. code-block::
+    
+    Enter the start number (positive integer) and click Generate.
 
 ----
 
