@@ -129,6 +129,7 @@ Code
 
     #. Add try except to the button_1_click function so that non numerical entries are handled. See the use of this in the calculator code.
     #. Use placeholder text instead of text values of 212 and 100. Adjust the button_1_click code to check if the text is empty and if it is, use the placeholder value instead (self.text_box_1.placeholder).
+    #.  Give appropriate names to the fields and buttons so that the default names are replaced with meaningful names. e.g. **text_box_1** becomes **fahrenheit**. e.g **button_1** becomes **convert_FtoC**. Make all the necessary replacements in the code to account for these changes.
     #. Add Kelvin as a another temperature to be displayed.
     #. Try making a distance converter such as miles to km or inches to cm.
     #. Try making a mass converter such as lbs to kg.

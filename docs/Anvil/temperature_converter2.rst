@@ -80,8 +80,8 @@ Format to 1 dp
 ------------------------------
 
 | Adjust the code so that only 1 decimal place is given.
-| Use and f-string and use the formatting code ``:.1f`` to cause 1dp.
-| Use ``self.text_box_2.text = f'{celcius:.1f}'``
+| Use an f-string and use the formatting code ``:.1f`` to cause 1dp.
+| Place the celcius value via: ``self.text_box_2.text = f'{celcius:.1f}'``
 
 .. code-block:: python
 
@@ -102,7 +102,7 @@ Add Code for Fahrenheit enter key
     :scale: 100%
 
 | Click the Fahrenheit text box.
-| In the properties panel: events section, click the blue icon for the pressed_enter event.
+| In the properties panel: events section, click the blue icon for the ``pressed_enter`` event.
 | This adds starter code for pressing the enter key after typing in a Fahrenheit temperature.
 
 .. code-block:: python
@@ -116,7 +116,7 @@ Add Code for Fahrenheit enter key
 Refactor code to calculate F to C
 ---------------------------------------
 
-| Since similar code is need for this as well as the convert button, create a new function, ``calculateFtoC``,  to reuse for both click events.
+| Since similar code is need for this as well as the convert button, create a new function, ``calculateFtoC``,  to reuse for both events, clicking the button and pressing enter in the field.
 
 .. code-block:: python       
 
@@ -267,8 +267,9 @@ Final code
 
 .. admonition:: Tasks
 
-    #. Add try except to calculation functions so that non numerical entries are handled. See the use of this in the calculator code.
+    #. Add code to restrict temperature entries so that they can not be below absolute zero.
     #. Replace Fahrenheit with Kelvin and adjust the display and the code to work.
+    #. Give appropriate names to the fields and buttons so that the default names are replaced with meaningful names. e.g. **text_box_1** becomes **fahrenheit**. e.g **button_1** becomes **convert_FtoC**. Make all the necessary replacements in the code to account for these changes.
 
 ----
 
