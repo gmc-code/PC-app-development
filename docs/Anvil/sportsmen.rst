@@ -44,7 +44,7 @@ Information type
 
 | Place 3 label fields in a vertical line at the left below the first radio button.
 | Name the label fields: "player_label", "score_label" and "average_label".
-| Resize them to a width of 108 using the container properties width poerty.
+| Resize them to a width of 108 using the container properties width property.
 
 ----
 
@@ -53,7 +53,7 @@ Information content
 
 | Place 3 label fields in a vertical line at the left below the second radio button.
 | Name the label fields: "player", "score" and "average".
-| Resize them to a width of 295 using the container properties width poerty.
+| Resize them to a width of 295 using the container properties width property.
 
 ----
 
