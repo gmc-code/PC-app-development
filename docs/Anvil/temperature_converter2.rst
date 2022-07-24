@@ -271,14 +271,3 @@ Final code
     #. Replace Fahrenheit with Kelvin and adjust the display and the code to work.
     #. Give appropriate names to the fields and buttons so that the default names are replaced with meaningful names. e.g. **text_box_1** becomes **fahrenheit**. e.g **button_1** becomes **convert_FtoC**. Make all the necessary replacements in the code to account for these changes.
 
-----
-
-Multi Temperature converter
-------------------------------
- 
-| Make an new app that converts between F, C and K all at once.
-| See gif to see it in action.
-
-.. image:: images/temperature/multi_temp_in_action.gif
-    :scale: 100%
-

@@ -31,6 +31,7 @@ PC-app-development
     Anvil/sportsmen.rst
     Anvil/temperature_converter.rst
     Anvil/temperature_converter2.rst
+    Anvil/temperature_converter3.rst
     Anvil/days_calculator.rst
 
 
