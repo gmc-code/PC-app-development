@@ -25,7 +25,7 @@ Design
 | Add a text area to display the hailstone numbers.
 
 .. image:: images/hailstone/Hailstone_numbers.png
-    :scale: 60
+    :scale: 80
 
 ----
 
@@ -41,10 +41,10 @@ Get started
 Settings
 ------------------------------
 
-#. Click on the cog icon to show thie settings tab.
-#. Enter an App name. Hailstone_numbers
-#. Enter an App title. Hailstone_numbers
-#. Enter an App description. Hailstone_numbers are a sequence of odd and even positive integers.
+#. Click on the cog icon to show the settings tab.
+#. Enter an App name. **Hailstone_numbers**
+#. Enter an App title. **Hailstone_numbers**
+#. Enter an App description. **Hailstone_numbers are a sequence of odd and even positive integers.**
 #. Close the settings tab.
 
 ----
@@ -69,7 +69,7 @@ Column panel
 Info
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **info**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -83,7 +83,7 @@ Info
 Rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -99,7 +99,7 @@ Rules
 Directions
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **directions**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -111,7 +111,7 @@ Directions
 rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -121,7 +121,7 @@ rules
 rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -131,7 +131,7 @@ rules
 rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -141,7 +141,7 @@ rules
 rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -151,7 +151,7 @@ rules
 rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
@@ -161,7 +161,7 @@ rules
 rules
 ----------------
 
-| Drag and drop a *label* component onto the form.
+| Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
