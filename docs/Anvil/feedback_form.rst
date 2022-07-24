@@ -175,7 +175,7 @@ Build the Submit Code
         email = self.email_box.text
         feedback = self.feedback_box.text
 
-| Now use ``anvil.server.call`` to call ``add_feedback`` in teh server module, passing the 3 variables above to be added to the table.
+| Now use ``anvil.server.call`` to call ``add_feedback`` in the server module, passing the 3 variables above to be added to the table.
 | i.e, ``anvil.server.call('add_feedback', name, email, feedback)``
 | A notification can be added is desired: ``Notification("Feedback submitted.").show()``
 | See: https://anvil.works/docs/client/python/alerts-and-notifications#notifications
