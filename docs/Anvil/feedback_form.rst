@@ -12,7 +12,7 @@ References
 ------------------------------
 
 #. Youtube guide to create the app: https://www.youtube.com/watch?v=liZThmkIwys
-#. Ofcial Anvil guide with screenshots and animated gifs: https://anvil.works/learn/tutorials/feedback-form
+#. Official Anvil guide with screenshots and animated gifs: https://anvil.works/learn/tutorials/feedback-form
 
 ----
 
@@ -97,6 +97,11 @@ Build Data Table
 .. image:: images/Feedback_Form_Data_Table_Name.png
     :scale: 100%
 
+| The permissions are set to allow search and edit by server modules.
+
+.. image:: images/Feedback_Form_Data_Table_Permissions.png
+    :scale: 100%
+
 | Click on the ``+ New Column`` button.
 
 .. image:: images/Feedback_Form_Data_Table_Add_Column.png
@@ -135,7 +140,7 @@ Build the Server Code
 | Import the datetime module so the created_on value can be gotten.
 | ``@anvil.server.callable`` is a decorator. Placing it before the following definition modifes it so it is callable from the client form.
 | ``add_feedback`` will pass in name, email, and feedback values from the form to add them to the data table.
-| ``datetime.now()`` will get the fate and time. e.g. 2022-04-01 20:30:11.532646
+| ``datetime.now()`` will get the date and time. e.g. 2022-04-01 20:30:11.532646
 
 .. code-block:: python
 
@@ -160,6 +165,87 @@ Build the Submit Code
 
 | Click on the Form1 tab.
 | Double click the Submit button. This adds default code for it.
+| The text from each feedback field needs to be stored in a variable. 
+| The text property is used to get the text. e.g ``name = self.name_box.text``
+
+.. code-block:: python
+
+    def submit_button_click(self, **event_args):
+        name = self.name_box.text
+        email = self.email_box.text
+        feedback = self.feedback_box.text
+
+| Now use ``anvil.server.call`` to call ``add_feedback`` in teh server module, passing the 3 variables above to be added to the table.
+| i.e, ``anvil.server.call('add_feedback', name, email, feedback)``
+| A notification can be added is desired: ``Notification("Feedback submitted.").show()``
+| The feedback form then needs clearing.
+
+.. code-block:: python
+
+    def submit_button_click(self, **event_args):
+        name = self.name_box.text
+        email = self.email_box.text
+        feedback = self.feedback_box.text
+        
+        anvil.server.call('add_feedback', name, email, feedback)
+        Notification("Feedback submitted.").show()
+
+| The feedback form then needs clearing.
+| Create a separate method: ``clear_inputs(self, **event_args)``
+| Set the text property of each field to the empty string.
+| e.g. ``self.name_box.text = ""``
+
+.. code-block:: python
+
+    def submit_button_click(self, **event_args):
+        name = self.name_box.text
+        email = self.email_box.text
+        feedback = self.feedback_box.text
+        
+        anvil.server.call('add_feedback', name, email, feedback)
+        Notification("Feedback submitted.").show()
+        self.clear_inputs()
+        
+    def clear_inputs(self, **event_args):
+        self.name_box.text = ""
+        self.email_box.text = ""
+        self.feedback_box.text = ""
+
+----
+
+Form Code
+------------------------------
+
+| The complete form code is below.
+
+.. code-block:: python
+
+    from ._anvil_designer import Form1Template
+    from anvil import *
+    import anvil.server
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class Form1(Form1Template):
+
+    def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+
+    def submit_button_click(self, **event_args):
+        name = self.name_box.text
+        email = self.email_box.text
+        feedback = self.feedback_box.text
+        
+        anvil.server.call('add_feedback', name, email, feedback)
+        Notification("Feedback submitted.").show()
+        self.clear_inputs()
+        
+    def clear_inputs(self, **event_args):
+        self.name_box.text = ""
+        self.email_box.text = ""
+        self.feedback_box.text = ""
 
 
     
