@@ -49,8 +49,11 @@ Settings
 
 ----
 
-Build interface: title
-------------------------------
+Build interface
+-------------------
+
+Title
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the **Drop title here** container.
 | In the properties panel: name section, set the **name** to **title**.
@@ -60,18 +63,18 @@ Build interface: title
 ----
 
 Column panel
-----------------
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *column panel* component onto the form.
 
 ----
 
 Info
-----------------
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **info**.
-| In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to text below.
 
 | Hailstone numbers are a sequence of odd and even positive integers.
@@ -81,11 +84,11 @@ Info
 ----
 
 Rules
-----------------
+~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
+| Drag and drop a *label* component onto the column panel to the right of the **info** label.
 | In the properties panel: name section, set the **name** to **rules**.
-| In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to text below.
 
 | The rules for producing hailstone numbers:
@@ -97,32 +100,35 @@ Rules
 ----
 
 Directions
-----------------
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **directions**.
-| In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to text below.
 
 | Enter the start number (positive integer) and click Generate.
 
 ----
 
-rules
-----------------
+hailstone_start
+~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
-| In the properties panel: name section, set the **name** to **rules**.
-| In the properties panel: text section, set the **font_size** to 16.
-| In the properties panel: text section, set the **text** to text below.
+| Drag and drop a *TextBox* component onto the column panel.
+| In the properties panel: name section, set the **name** to **hailstone_start**.
+| In the properties panel: properties section, set the **placeholder** to **start number**.
+| In the properties panel: properties section, set the **type** to **number**.
+| In the properties panel: text section, set the **font_size** to 24.
+| In the properties panel: Events section, click on the blue icon to the right of the **pressed_enter** label.
+| This will add a default script, **hailstone_start_pressed_enter**, to the code. This will be coded later with the **Generate** button code.
 
 ----
 
-rules
-----------------
+generate_hailstone
+~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
-| In the properties panel: name section, set the **name** to **rules**.
+| Drag and drop a *Button* component onto the column panel to the right of the hailstone_start textbox.
+| In the properties panel: name section, set the **name** to **rugenerate_hailstoneles**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
 
