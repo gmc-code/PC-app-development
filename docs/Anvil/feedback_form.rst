@@ -3,7 +3,7 @@ Feedback Form
 ====================================================
 
 | This builds a feedback form that uses full stack: client side and server side code in python.
-| The refernces add email capability but email ihas quotas, so we will not create autoamted emails.
+| The references add an email capability but email has account quotas, so it will not be included below.
 
 .. image:: images/Feedback_Form.png
     :scale: 70%
@@ -100,7 +100,7 @@ Build Data Table
 | The permissions are set to allow search and edit by server modules.
 
 .. image:: images/Feedback_Form_Data_Table_Permissions.png
-    :scale: 100%
+    :scale: 80%
 
 | Click on the ``+ New Column`` button.
 
@@ -178,7 +178,7 @@ Build the Submit Code
 | Now use ``anvil.server.call`` to call ``add_feedback`` in teh server module, passing the 3 variables above to be added to the table.
 | i.e, ``anvil.server.call('add_feedback', name, email, feedback)``
 | A notification can be added is desired: ``Notification("Feedback submitted.").show()``
-| The feedback form then needs clearing.
+| See: https://anvil.works/docs/client/python/alerts-and-notifications#notifications
 
 .. code-block:: python
 
