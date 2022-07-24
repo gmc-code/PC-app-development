@@ -21,7 +21,7 @@ Get started
 Settings
 ------------------------------
 
-| Enter the settings for app.
+| Enter the settings for the app.
 
 .. image:: images/Temperature_converter_settings.png
     :scale: 80%
@@ -39,11 +39,11 @@ Settings
 
 ----
 
-Build first part of interface
-------------------------------
+Build first part of the interface
+----------------------------------
 
 | Add a Title at the top in the blue header.
-| Drag and drop the *label* component onto ``Drop titel here``.
+| Drag and drop the *label* component onto ``Drop title here``.
 | In the properties panel: text section, set the text to ``Temperature_convertere``.
 
 
@@ -91,13 +91,13 @@ Code
 | Confirm in the Design tab that the Fahrenheit text box is text_box_1.
 | ``fahrenheit = float(self.text_box_1.text)`` can be used to get the Fahrenheit temperature as a float.
 
-.. admonition:: Tasks
+.. admonition:: Question
 
-    #. Why is float needed insted of int?
+    #. Why is float needed instead of int?
 
 | Find out the simplest formula to use: https://reference.yourdictionary.com/resources/what-s-the-easiest-way-to-convert-fahrenheit-to-celsius.html
 
-.. admonition:: Tasks
+.. admonition:: Question
 
     #. What is the simplest formula to convert F to C?
 
