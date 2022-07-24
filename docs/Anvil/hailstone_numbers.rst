@@ -111,7 +111,7 @@ Directions
 
 ----
 
-hailstone_start
+Hailstone_start 
 ~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *TextBox* component onto the column panel.
@@ -124,53 +124,54 @@ hailstone_start
 
 ----
 
-generate_hailstone
-~~~~~~~~~~~~~~~~~~~
+Generate_hailstone button
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *Button* component onto the column panel to the right of the hailstone_start textbox.
-| In the properties panel: name section, set the **name** to **rugenerate_hailstoneles**.
+| In the properties panel: name section, set the **name** to **generate_hailstoneles**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
 
 ----
 
-rules
-----------------
+Error field
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the column panel.
-| In the properties panel: name section, set the **name** to **rules**.
+| In the properties panel: name section, set the **name** to **error**.
 | In the properties panel: text section, set the **font_size** to 16.
-| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
 ----
 
-rules
-----------------
+Length_label
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the column panel.
-| In the properties panel: name section, set the **name** to **rules**.
-| In the properties panel: text section, set the **font_size** to 16.
-| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: name section, set the **name** to **length_label**.
+| In the properties panel: text section, set the **font_size** to 18.
+| In the properties panel: text section, set the **text** to **Length:**.
 
 ----
 
-rules
-----------------
+Length
+~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
-| In the properties panel: name section, set the **name** to **rules**.
-| In the properties panel: text section, set the **font_size** to 16.
-| In the properties panel: text section, set the **text** to text below.
+| Drag and drop a *label* component onto the column panel to the right of the **length_label** label.
+| Control click and drag the divider on the left of the label to the left to minimize the length_label.
+| In the properties panel: name section, set the **name** to **length**.
+| In the properties panel: text section, set the **font_size** to 18.
+| In the properties panel: text section, set the **text** to ****.
 
 ----
 
-rules
-----------------
+Hailstone_numbers
+~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
-| In the properties panel: name section, set the **name** to **rules**.
-| In the properties panel: text section, set the **font_size** to 16.
-| In the properties panel: text section, set the **text** to text below.
+| Drag and drop a *TextArea* component onto the column panel.
+| In the properties panel: name section, set the **name** to **hailstone_numbers**.
+| In the properties panel: text section, set the **font_size** to 24.
+| In the properties panel: properties section, set the **placeholder** to **Hailstone numbers**.
 
 ----
 
