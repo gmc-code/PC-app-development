@@ -131,6 +131,8 @@ Generate_hailstone button
 | In the properties panel: name section, set the **name** to **generate_hailstoneles**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
+| In the properties panel: Events section, click on the blue icon to the right of the **click** label.
+| This will add a default script, **generate_click**, to the code. This will be coded later to generate the hailstone numbers.
 
 ----
 
@@ -175,26 +177,227 @@ Hailstone_numbers
 
 ----
 
-Code 
+Initial Code 
 --------------------
 
-| 
+| Use the instance variable, **self.hailstone_seed**, for the hailstone start number.
+| Set **self.hailstone_seed** to **1** so it has an intial value.
+| Hide the **error** field by setting its **visible** property to **False**.
+| Hide the length and hailstone list fields. Use a separate function for this with a pararmeter to set the visibility of each of the 3 fields:  **length_label**, **length**, **hailstone_numbers**.
 
-.. admonition:: Tasks
+.. code-block:: python
 
-    #. Write code for the nested dictionary.   
+    class Form1(Form1Template):
 
-    .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        def __init__(self, **properties):
+            # Set Form properties and Data Bindings.
+            self.init_components(**properties)
+            self.hailstone_seed = 1
+            self.error.visible = False
+            self.set_main_field_vis(False)
 
-            .. tab-set::
+        def set_main_field_vis(self, vis_bool):
+            self.length_label.visible = vis_bool
+            self.length.visible = vis_bool
+            self.hailstone_numbers.visible = vis_bool
 
-                .. tab-item:: Q1
+----
 
-                    Write code for the nested dictionary. 
+Event Code 
+--------------------
 
-                    .. code-block:: python
+| Both the button click and pressing enter need to generate the hailstone list.
+| Place **self.generate()** in the body of both functions.
 
-                        
+.. code-block:: python
+
+    def generate_click(self, **event_args):
+        self.generate()
+        
+    def hailstone_start_pressed_enter(self, **event_args):
+        self.generate()
+
+----
+
+Hailstone Code 
+--------------------
+
+| The **hailstone** function takes the **hailstone_seed** as its parameter, **num**.
+| The list is set to this value: **hailstone_list = [num]**.
+| The **while num > 1:** loop runs while **num** is greater than 1. If the **hailstone_seed** value is 1, the hailstone_list, **[1]**, is immediatley returned.
+| In the while loop, the last value is checked, hailstone_list[-1]. If hte last value is 1, then the hailstone_list is returned.
+| **hailstone_list[-1] % 2** is used to check whether the last number is an even number. 
+| If it is even, the new_num to add to the list is halved.
+| If it is odd, the new_num to add to the list is multiplied by three and 1 is added.
+
+.. code-block:: python
+
+    def hailstone(self, num):
+        # return list of numbers
+        hailstone_list = [num]
+        while num > 1:
+            if hailstone_list[-1] == 1:
+                return hailstone_list
+            else:
+                if hailstone_list[-1] % 2 == 0:
+                    new_num = int(hailstone_list[-1] / 2)
+                else:
+                    new_num = (hailstone_list[-1] * 3) + 1
+                hailstone_list.append(new_num)
+        return hailstone_list
+
+----
+
+Checking the input
+--------------------
+
+| The **test_integer** function checks the input, **hailstone_start**, and sets the **hailstone_seed** value if it is a positive integer.
+| If not, a string is returned to display in the error field.
+
+.. code-block:: python
+
+    def test_integer(self):
+        if not self.hailstone_start.text:
+            return "A positive integer is required."
+        try:
+            self.hailstone_seed = int(self.hailstone_start.text)
+        except ValueError as error:
+            return "Enter a whole number above 0."
+        except Exception as error:
+            return "Enter a whole number above 0."
+        if self.hailstone_seed < 1:
+            return "Enter a whole number above 0."
+        return None
+
+----
+
+Generate Code 
+--------------------
+
+| The **generate** function uses the **test_integer** and **hailstone** functions to get the hailstone list.
+| It also takes care of displaying any errors and displaying the hailstone values if they are generated.
+
+.. code-block:: python
+
+    def generate(self):
+        self.error.visible = False
+        self.error.text = " "
+        error = self.test_integer()
+        if error:
+            self.error.text = error
+            self.error.visible = True
+            self.length.text = ""
+            self.hailstone_numbers.text = ""
+            self.set_main_field_vis(False)
+            return
+        hns = self.hailstone(self.hailstone_seed)
+        self.hailstone_numbers.text = hns
+        length = len(hns)
+        self.length.text = length
+        self.set_main_field_vis(True)
+        
+    def test_integer(self):
+        if not self.hailstone_start.text:
+            return "A positive integer is required."
+        try:
+            self.hailstone_seed = int(self.hailstone_start.text)
+        except ValueError as error:
+            return "Enter a whole number above 0."
+        except Exception as error:
+            return "Enter a whole number above 0."
+        if self.hailstone_seed < 1:
+            return "Enter a whole number above 0."
+        return None
+
+    def hailstone(self, num):
+        # return list of numbers
+        hailstone_list = [num]
+        while num > 1:
+            if hailstone_list[-1] == 1:
+                return hailstone_list
+            else:
+                if hailstone_list[-1] % 2 == 0:
+                    new_num = int(hailstone_list[-1] / 2)
+                else:
+                    new_num = (hailstone_list[-1] * 3) + 1
+                hailstone_list.append(new_num)
+        return hailstone_list
+
+----
+
+Final  Code 
+--------------------
+
+| The full code is below.
+
+.. code-block:: python
+
+    from anvil import *
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class Form1(Form1Template):
+
+        def __init__(self, **properties):
+            # Set Form properties and Data Bindings.
+            self.init_components(**properties)
+            self.hailstone_seed = 1
+            self.error.visible = False
+            self.set_main_field_vis(False)
+            
+        def set_main_field_vis(self, vis_bool):
+            self.length_label.visible = vis_bool
+            self.length.visible = vis_bool
+            self.hailstone_numbers.visible = vis_bool
+            
+        def generate_click(self, **event_args):
+            self.generate()
+            
+        def hailstone_start_pressed_enter(self, **event_args):
+            self.generate()
+            
+        def generate(self):
+            self.error.visible = False
+            self.error.text = " "
+            error = self.test_integer()
+            if error:
+                self.error.text = error
+                self.error.visible = True
+                self.length.text = ""
+                self.hailstone_numbers.text = ""
+                self.set_main_field_vis(False)
+                return
+            hns = self.hailstone(self.hailstone_seed)
+            self.hailstone_numbers.text = hns
+            length = len(hns)
+            self.length.text = length
+            self.set_main_field_vis(True)
+            
+        def test_integer(self):
+            if not self.hailstone_start.text:
+                return "A positive integer is required."
+            try:
+                self.hailstone_seed = int(self.hailstone_start.text)
+            except ValueError as error:
+                return "Enter a whole number above 0."
+            except Exception as error:
+                return "Enter a whole number above 0."
+            if self.hailstone_seed < 1:
+                return "Enter a whole number above 0."
+            return None
+
+        def hailstone(self, num):
+            # return list of numbers
+            hailstone_list = [num]
+            while num > 1:
+                if hailstone_list[-1] == 1:
+                    return hailstone_list
+                else:
+                    if hailstone_list[-1] % 2 == 0:
+                        new_num = int(hailstone_list[-1] / 2)
+                    else:
+                        new_num = (hailstone_list[-1] * 3) + 1
+                    hailstone_list.append(new_num)
+            return hailstone_list
+
