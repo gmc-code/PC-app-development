@@ -22,19 +22,19 @@ Design
 | Use the sidebar to navigate to 4 panels for different calculations.
 | Here is the design for the 4 panels.
 
-.. image:: images/DC_duration.PNG
+.. image:: images/dates/DC_duration.PNG
     :scale: 60%
 
 
-.. image:: images/DC_age.PNG
-    :scale: 60%
-
-    
-.. image:: images/DC_birthday.PNG
+.. image:: images/dates/DC_age.PNG
     :scale: 60%
 
     
-.. image:: images/DC_future.PNG
+.. image:: images/dates/DC_birthday.PNG
+    :scale: 60%
+
+    
+.. image:: images/dates/DC_future.PNG
     :scale: 60%
 
 
@@ -60,7 +60,7 @@ Settings
 
 -----
 
-| Click on Client Code ...
+| Click on **Client Code**. Click on the 3 vertical dots symbol **⋮**
 | Add a module.
 | Name it DateCalc.
 | Paste in the code below to be used for the calculations.
@@ -69,16 +69,16 @@ Settings
 DateCalc module code:
 ------------------------------
 
+| Paste in the code below into the DateCalc module.
+| The purpose of the module is to provide a function to calculate the difference in 2 dates in terms of the years, months, days difference. This is not provided by the python datetime module so is included here for convenience.
+| The **calculate_years_months_days** function will take in 2 dates and return a tuple of the years, months, days difference.
+
 .. code-block:: python
         
     import anvil.server
     import anvil.tables as tables
     import anvil.tables.query as q
     from anvil.tables import app_tables
-    # This is a module.
-    # You can define variables and functions here, and use them from any form. For example, in a top-level form:
-    #    from . import Module1
-    #    Module1.say_hello()
 
     from datetime import date
 
@@ -140,6 +140,11 @@ Sidebar
 --------------------
 
 | Place a column panel in the left sidebar.
-| Add 4 links.
+| Add 4 link components.
+| Set teh name of teh first to duration_link and its text to duration.
+
+| Drag and drop a *link* component onto the column panel. 
+| In the properties panel: set the name to ``feedback_box``.
+| In the properties panel: set the placeholder to ``Feedback here``.
 
 ----

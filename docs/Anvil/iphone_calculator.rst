@@ -5,7 +5,7 @@ iPhone Calculator
 This builds a simple calculator using code to add the buttons.
 It is based on, with slight variations to suit, the the iphone calculator with a grid of 5 rows and 4 columns.
 
-.. image:: images/calculator.png
+.. image:: images/calculator/calculator.png
     :scale: 60%
 
 References
@@ -21,7 +21,7 @@ References
 #. Grid panel syntax: https://anvil.works/docs/api/anvil#GridPanel
 #. Button syntax: https://anvil.works/docs/api/anvil#Button
  
-.. image:: images/Calculator-icon.png
+.. image:: images/calculator/Calculator-icon.png
     :scale: 60%
 
 ----
@@ -59,7 +59,7 @@ Build first part of interface
 #. Click below on the form itself.
 #. In the properties panel: appearance section, set the background to grey: ``#eee``.
 
-.. image:: images/Calculator_interface1.png
+.. image:: images/calculator/Calculator_interface1.png
     :scale: 60%
 
 ----

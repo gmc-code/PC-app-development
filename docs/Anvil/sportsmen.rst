@@ -24,7 +24,7 @@ Design
 | Add text information in a nested dictionary.
 | Upload Images to 4 image objects and hide them.
 
-.. image:: images/sportsmen.png
+.. image:: images/sportsmen/sportsmen.png
     :scale: 100
 
 ----
@@ -66,16 +66,16 @@ Images
 
 | Add the 4 images across the screen, overlapping somewhat so they are roughly in line with their radio button.
 
-.. image:: images/Bryant.png
+.. image:: images/sportsmen/Bryant.png
     :scale: 60
     
-.. image:: images/Sobers.png
+.. image:: images/sportsmen/Sobers.png
     :scale: 60
 
-.. image:: images/Pele.png
+.. image:: images/sportsmen/Pele.png
     :scale: 25
 
-.. image:: images/Locket.png
+.. image:: images/sportsmen/Locket.png
     :scale: 60
 
 | The images should have heights of about 200 and widths around 130 to 140. These can be set in the properties panel.

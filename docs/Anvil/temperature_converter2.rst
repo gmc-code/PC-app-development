@@ -4,7 +4,7 @@ Temperature converter2
 
 This enhances the temperature converter.
 
-.. image:: images/Temperature_converter2_layout.png
+.. image:: images/temperature/Temperature_converter2_layout.png
     :scale: 60%
 
 ----
@@ -27,7 +27,7 @@ Add image to left
 | In the properties panel: text section, set the display_mode to ``shrink_to_fit`` and set the height to ``500``.
 
 
-.. image:: images/Temperature_converter_Add_image_to_left.png
+.. image:: images/temperature/Temperature_converter_Add_image_to_left.png
     :scale: 60%
 
 ----
@@ -40,7 +40,7 @@ Centre the temperature fields
 | A vertical blue line will indicate that you are in the right place to drop it.
 | In the properties panel: set the height to ``150``.
 
-.. image:: images/Temperature_converter_Add_spacer_above.png
+.. image:: images/temperature/Temperature_converter_Add_spacer_above.png
     :scale: 60%
 
 ----
@@ -98,7 +98,7 @@ Format to 1 dp
 Add Code for Fahrenheit enter key
 -----------------------------------
 
-.. image:: images/Temperature_converter_enterkey.png
+.. image:: images/temperature/Temperature_converter_enterkey.png
     :scale: 100%
 
 | Click the Fahrenheit text box.
@@ -180,7 +180,7 @@ Change Convert button to an icon button
 | Click on the Convert button.
 | In the properties panel: icon section, click the ``i`` select an icon button. Search for arrow. Scroll and choose a down arrow.
 
-.. image:: images/Temperature_converter_icon_selection.png
+.. image:: images/temperature/Temperature_converter_icon_selection.png
     :scale: 100%
     
 | In the properties panel: text section, set the align to left.
@@ -279,6 +279,6 @@ Multi Temperature converter
 | Make an new app that converts between F, C and K all at once.
 | See gif to see it in action.
 
-.. image:: images/multi_temp_in_action.gif
+.. image:: images/temperature/multi_temp_in_action.gif
     :scale: 100%
 

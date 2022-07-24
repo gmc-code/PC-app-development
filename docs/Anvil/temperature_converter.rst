@@ -4,7 +4,7 @@ Temperature converter
 
 This builds a simple temperature converter.
 
-.. image:: images/Temperature_converter_layout.png
+.. image:: images/temperature/Temperature_converter_layout.png
     :scale: 60%
 
 ----
@@ -23,7 +23,7 @@ Settings
 
 | Enter the settings for the app.
 
-.. image:: images/Temperature_converter_settings.png
+.. image:: images/temperature/Temperature_converter_settings.png
     :scale: 80%
 
 #. Click on the cog icon to show the settings tab.
@@ -34,7 +34,7 @@ Settings
 #. Click Change Image to upload an App logo.
 #. Close the settings tab.
 
-.. image:: images/Fahrenheit_Celsius_scales.png
+.. image:: images/temperature/Fahrenheit_Celsius_scales.png
     :scale: 10%
 
 ----
@@ -49,7 +49,7 @@ Build first part of the interface
 
 | Build the following interface by dragging and dropping components and setting their properties.
 
-.. image:: images/Temperature_converter_layout.png
+.. image:: images/temperature/Temperature_converter_layout.png
     :scale: 60%
 
 | Drag and drop the *card* component from the right toolbox onto Form1.
@@ -61,7 +61,7 @@ Build first part of the interface
 | A vertical blue line will indicate that you are in the right place to drop it.
 | In the properties panel: set the text to ``212`` and the font_size to ``32``.
 
-.. image:: images/Temperature_converter_Add_textbox_to_right.png
+.. image:: images/temperature/Temperature_converter_Add_textbox_to_right.png
     :scale: 60%
 
 
@@ -69,7 +69,7 @@ Build first part of the interface
 | A horizontal blue line will indicate that you are in the right place to drop it.
 | In the properties panel: text section, set the text to ``Celcius`` and the font_size to ``32``.
 
-.. image:: images/Temperature_converter_Add_label_below.png
+.. image:: images/temperature/Temperature_converter_Add_label_below.png
     :scale: 60%
 
 | Drag and drop the *textbox* component onto card_1 to the right of the Celcius label.
@@ -105,7 +105,7 @@ Code
 | Confirm in the Design tab that the Celcius text box is text_box_2.
 | ``self.text_box_2.text = celcius`` can be used to place the calculated value.
 
-.. image:: images/Temperature_converter_button_click.png
+.. image:: images/temperature/Temperature_converter_button_click.png
     :scale: 100%
 
 
