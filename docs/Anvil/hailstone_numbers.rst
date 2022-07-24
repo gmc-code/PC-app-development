@@ -20,12 +20,12 @@ Design
 
 | Use an Column panel.
 | Use 3 label fields to display the information content.
-| Add a text box for teh start number.
+| Add a text box for the start number.
 | Add a button to generate the hailstone numbers.
 | Add a text area to display the hailstone numbers.
 
 .. image:: images/hailstone/Hailstone_numbers.png
-    :scale: 100
+    :scale: 60
 
 ----
 
@@ -103,6 +103,8 @@ Directions
 | In the properties panel: name section, set the **name** to **directions**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to text below.
+
+| Enter the start number (positive integer) and click Generate.
 
 ----
 
