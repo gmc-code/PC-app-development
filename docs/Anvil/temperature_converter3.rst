@@ -20,6 +20,7 @@ Design
 
 .. image:: images/temperature/Temperature_converter3_layout.png
 
+| Search online for a temperature icon to use. Save it. Edit it. Add it to the Assets, via teh 3 vertical dots Add Assets and Upload File button. Add the icon to the convert buttons.
 | Click on **From F**, **From C**, or **From K** to hide the other convert buttons, only showing the associated convert button.
 
 
