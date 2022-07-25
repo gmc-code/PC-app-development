@@ -10,15 +10,15 @@ This app calculates the horizontal and vertical components of a force at a given
 | Use a XY panel for the diagram region, so that the text labels can be placed over the force diagram.
 
 
-See :download: `force_diagram <files/force_diagram.png>`
+See :download: `force_diagram <images/force_diagram.png>`
 
-See :download: `force_diagram <files/force_diagram.png>`
+See :download: `force_diagram <images/force_diagram.png>`
 
-See :download: `<files/force_diagram.png>`
+See :download: `<images/force_diagram.png>`
 
-See :download: `<files/force_diagram.png>`
+See :download: `<images/force_diagram.png>`
 
-See :download: `files/force_diagram.png`
+See :download: `images/force_diagram.png`
 
 ----
 
