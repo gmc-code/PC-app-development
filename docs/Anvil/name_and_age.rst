@@ -111,13 +111,15 @@ Name And Age button
 
 ----
 
-Initial Code 
+Output Code 
 --------------------
 
 | The **get_name_age** function has 2 parameters: **name** and **age**.
 | It will be called using: **self.get_name_age(self.name.text, self.age.text)**.
 | It checks to see that both the name and age have been input and returns "error" if not.
 | It returns an f-string containing the **name** and **age**.
+
+| The **do_output** function places the output text.
 
 .. code-block:: python
 
@@ -127,24 +129,26 @@ Initial Code
         else:
             return f'My name is {name}. I am {age} years old.'
 
+    def do_output(self):
+        self.output.text = self.get_name_age(self.name.text, self.age.text)
+
 ----
 
 Event Code 
 --------------------
 
 | Both the button click and pressing enter in an input textbox attempts to produce the output.
-| **self.name_age_click()** passes the inputs, **self.name.text** and **self.age.text** to the **self.get_name_age** function, by which the output is updated.
 
 .. code-block:: python
 
     def name_age_click(self, **event_args):
-        self.output.text = self.get_name_age(self.name.text, self.age.text)
+        self.do_output()
         
     def name_pressed_enter(self, **event_args):
-        self.name_age_click()
+        self.do_output()
 
     def age_pressed_enter(self, **event_args):
-        self.name_age_click()
+        self.do_output()
 
 ----
 
@@ -167,22 +171,23 @@ Final  Code
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
 
-            # Any code you write here will run when the form opens.
-
-        def name_age_click(self, **event_args):
-            self.output.text = self.get_name_age(self.name.text, self.age.text)
-        
         def get_name_age(self, name, age):
             if name == "" or age == "":
                 return "error"
             else:
                 return f'My name is {name}. I am {age} years old.'
 
+        def do_output(self):
+            self.output.text = self.get_name_age(self.name.text, self.age.text)
+            
+        def name_age_click(self, **event_args):
+            self.do_output()
+            
         def name_pressed_enter(self, **event_args):
-            self.name_age_click()
+            self.do_output()
 
         def age_pressed_enter(self, **event_args):
-            self.name_age_click()
+            self.do_output()
 
 
 
