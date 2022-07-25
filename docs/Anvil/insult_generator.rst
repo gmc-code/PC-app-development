@@ -343,5 +343,43 @@ Final  Code
             ]
             self.output.text = "You are a " + choice(insult1) + " " + choice(insult2) + " " + choice(insult3)
             
+----
 
+.. admonition:: Tasks
 
+    #. Create a random compliment maker. Use the lists below as a starting point.
+
+        .. code-block:: python
+
+            term1 = ['affectionate', 'altruistic', 'amiable', 'amicable',
+                'beneficent', 'benevolent', 'bounteous', 'charitable',
+                'compassionate', 'congenial', 'considerate', 'cordial',
+                'courteous', 'friendly', 'gentle', 'good-hearted', 'gracious',
+                'humane', 'humanitarian', 'kindhearted', 'kindly', 'loving',
+                'neighborly', 'obliging', 'philanthropic', 'softhearted',
+                'sympathetic', 'tenderhearted', 'thoughtful', 'tolerant',
+                'understanding'
+            ]
+            term2 = ['able', 'acute', 'adept', 'agile', 'alert', 'apt', 'astute',
+                'bold', 'brainy', 'bright', 'brilliant', 'brisk', 'canny',
+                'clever', 'consummate', 'cool', 'crafty', 'cultivated',
+                'effective', 'eggheaded', 'expert', 'fresh', 'genius',
+                'gifted', 'good', 'hip', 'ingenious', 'keen', 'knowing',
+                'masterly', 'nimble', 'on the ball', 'polished', 'practiced',
+                'proficient', 'quick', 'quick-witted', 'ready', 'resourceful',
+                'sassy', 'savvy', 'sharp', 'shrewd', 'skillful', 'slick',
+                'talented', 'wise', 'wised up', 'with it'
+            ]
+            term3 = ['academician', 'architect', 'author', 'brain', 'builder',
+                'child genius', 'creator', 'designer', 'egghead', 'Einstein',
+                'experimenter', 'founder', 'freak', 'genius', 'good egg',
+                'good guy', 'good person', 'highbrow', 'innovator',
+                'intellect', 'intellectual', 'maker', 'man of his word',
+                'man of honor', 'marvel', 'mastermind', 'miracle',
+                'moonwalker', 'natural', 'nice guy', 'one in a million',
+                'originator', 'phenomenon', 'pioneer', 'polished man',
+                'prodigy', 'rarity', 'refined man', 'rocket scientist',
+                'sage', 'scholar', 'sensation', 'spectacle', 'star person',
+                'stunner', 'talent', 'whiz', 'whiz kid', 'wizard', 'wonder',
+                'wonder child', 'wunderkind'
+            ]
