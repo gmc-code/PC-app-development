@@ -13,6 +13,8 @@ This app calculates the horizontal and vertical components of a force at a given
 | See :download: force_diagram <..images/forces/force_diagram.png>
 | See :download: '/images/forces/force_diagram.png'
 | See :download: /images/forces/force_diagram.png
+| See :download: `/images/forces/force_diagram.png`
+| See :download: `../images/forces/force_diagram.png`
 
 ----
 
