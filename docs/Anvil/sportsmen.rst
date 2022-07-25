@@ -158,7 +158,7 @@ radio button click handler
 Code 
 --------------------
 
-| Use code to pick out parts of the nested dictioary.
+| Use code to pick out parts of the nested dictionary.
 
 .. admonition:: Tasks
 

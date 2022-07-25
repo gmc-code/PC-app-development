@@ -11,3 +11,219 @@ Multi Temperature converter
 .. image:: images/temperature/multi_temp_in_action.gif
     :scale: 100%
 
+----
+
+Design
+---------
+
+| Layout the components:
+
+.. image:: images/temperature/Temperature_converter3_layout.png
+
+| Click on **From F**, **From C**, or **From K** to hide the other convert buttons, only showing the associated convert button.
+
+
+
+Code
+------------
+
+.. admonition:: Tasks
+
+    #. Write code to control the visibility of the Convert buttons and replace the temperature scale label to indicate which is being used for the conversion.
+    #. Write code to carry out the conversions for each temperature scale.
+    #. Write the full code.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code to control the visibility of the Convert buttons and replace the temperature scale label to indicate which is being used for the conversion.
+
+                    .. code-block:: python
+
+                        from ._anvil_designer import Form1Template
+                        from anvil import *
+                        import anvil.tables as tables
+                        import anvil.tables.query as q
+                        from anvil.tables import app_tables
+
+                        class Form1(Form1Template):
+
+                            def __init__(self, **properties):
+                                # Set Form properties and Data Bindings.
+                                self.init_components(**properties)
+                                self.from_F_click()
+                                
+                            def from_F_click(self, **event_args):
+                                self.TF_label.text = "from Fahrenheit"
+                                self.TC_label.text = "Celcius"
+                                self.TK_label.text = "Kelvin"
+                                self.convertF.visible = True
+                                self.convertC.visible = False
+                                self.convertK.visible = False
+                                self.TF.select()
+                                
+                            def from_C_click(self, **event_args):
+                                self.TF_label.text = "Fahrenheit"
+                                self.TC_label.text = "from Celcius"
+                                self.TK_label.text = "Kelvin"
+                                self.convertF.visible = False
+                                self.convertC.visible = True
+                                self.convertK.visible = False
+                                self.TC.select()
+                                
+                            def from_K_click(self, **event_args):
+                                self.TF_label.text = "Fahrenheit"
+                                self.TC_label.text = "Celcius"
+                                self.TK_label.text = "from Kelvin"
+                                self.convertF.visible = False
+                                self.convertC.visible = False
+                                self.convertK.visible = True
+                                self.TK.select()
+
+                .. tab-item:: Q2
+
+                    Write code to carry out the conversions for each temperature scale.
+
+                    .. code-block:: python
+
+                        from ._anvil_designer import Form1Template
+                        from anvil import *
+                        import anvil.tables as tables
+                        import anvil.tables.query as q
+                        from anvil.tables import app_tables
+
+                        class Form1(Form1Template):
+
+                            def convertF_click(self, **event_args):
+                                self.f_calculate()
+                                
+                            def convertC_click(self, **event_args):
+                                self.c_calculate()
+                                
+                            def convertK_click(self, **event_args):
+                                self.k_calculate()
+
+                            def f_calculate(self):
+                                fahrenheit = self.TF.text
+                                if fahrenheit == '' or fahrenheit == None:
+                                    fahrenheit = self.TF.placeholder
+                                fahrenheit = float(fahrenheit)
+                                celcius = (fahrenheit - 32) / 1.8
+                                self.TC.text = f'{celcius:.1f}'
+                                kelvin = celcius + 273.15
+                                self.TK.text = f'{kelvin:.1f}'
+                                
+                            def c_calculate(self):
+                                celcius = self.TC.text
+                                if celcius == '' or celcius == None:
+                                    celcius = self.TC.placeholder
+                                celcius = float(celcius)
+                                fahrenheit = (celcius * 1.8) + 32
+                                self.TF.text =  f'{fahrenheit:.1f}'
+                                kelvin = celcius + 273.15
+                                self.TK.text = f'{kelvin:.1f}'
+
+                            def k_calculate(self):
+                                kelvin = self.TK.text
+                                if kelvin == '' or kelvin == None:
+                                    kelvin = self.TK.placeholder
+                                kelvin = float(kelvin)
+                                celcius = kelvin - 273.15
+                                self.TC.text = f'{celcius:.1f}'
+                                fahrenheit = (celcius * 1.8) + 32
+                                self.TF.text =  f'{fahrenheit:.1f}'
+      
+
+                .. tab-item:: Q3
+
+                    Write the full code.
+
+                    .. code-block:: python
+
+                        from ._anvil_designer import Form1Template
+                        from anvil import *
+                        import anvil.tables as tables
+                        import anvil.tables.query as q
+                        from anvil.tables import app_tables
+
+                        class Form1(Form1Template):
+
+                            def __init__(self, **properties):
+                                # Set Form properties and Data Bindings.
+                                self.init_components(**properties)
+                                self.from_F_click()
+                                
+                            def from_F_click(self, **event_args):
+                                self.TF_label.text = "from Fahrenheit"
+                                self.TC_label.text = "Celcius"
+                                self.TK_label.text = "Kelvin"
+                                self.convertF.visible = True
+                                self.convertC.visible = False
+                                self.convertK.visible = False
+                                self.TF.select()
+                                
+                            def from_C_click(self, **event_args):
+                                self.TF_label.text = "Fahrenheit"
+                                self.TC_label.text = "from Celcius"
+                                self.TK_label.text = "Kelvin"
+                                self.convertF.visible = False
+                                self.convertC.visible = True
+                                self.convertK.visible = False
+                                self.TC.select()
+                                
+                            def from_K_click(self, **event_args):
+                                self.TF_label.text = "Fahrenheit"
+                                self.TC_label.text = "Celcius"
+                                self.TK_label.text = "from Kelvin"
+                                self.convertF.visible = False
+                                self.convertC.visible = False
+                                self.convertK.visible = True
+                                self.TK.select()
+
+                            def convertF_click(self, **event_args):
+                                self.f_calculate()
+                                
+                            def convertC_click(self, **event_args):
+                                self.c_calculate()
+                                
+                            def convertK_click(self, **event_args):
+                                self.k_calculate()
+
+                            def f_calculate(self):
+                                fahrenheit = self.TF.text
+                                if fahrenheit == '' or fahrenheit == None:
+                                    fahrenheit = self.TF.placeholder
+                                fahrenheit = float(fahrenheit)
+                                celcius = (fahrenheit - 32) / 1.8
+                                self.TC.text = f'{celcius:.1f}'
+                                kelvin = celcius + 273.15
+                                self.TK.text = f'{kelvin:.1f}'
+                                
+                            def c_calculate(self):
+                                celcius = self.TC.text
+                                if celcius == '' or celcius == None:
+                                    celcius = self.TC.placeholder
+                                celcius = float(celcius)
+                                fahrenheit = (celcius * 1.8) + 32
+                                self.TF.text =  f'{fahrenheit:.1f}'
+                                kelvin = celcius + 273.15
+                                self.TK.text = f'{kelvin:.1f}'
+
+                            def k_calculate(self):
+                                kelvin = self.TK.text
+                                if kelvin == '' or kelvin == None:
+                                    kelvin = self.TK.placeholder
+                                kelvin = float(kelvin)
+                                celcius = kelvin - 273.15
+                                self.TC.text = f'{celcius:.1f}'
+                                fahrenheit = (celcius * 1.8) + 32
+                                self.TF.text =  f'{fahrenheit:.1f}'
+        
+
+
