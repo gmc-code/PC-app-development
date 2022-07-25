@@ -27,7 +27,9 @@ PC-app-development
     :caption: Anvil apps
     :numbered:
 
+    Anvil/name_and_age.rst
     Anvil/hailstone_numbers.rst
+    Anvil/insult_generator.rst
     Anvil/sportsmen.rst
     Anvil/temperature_converter.rst
     Anvil/temperature_converter2.rst

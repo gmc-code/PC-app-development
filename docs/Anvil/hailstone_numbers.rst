@@ -18,7 +18,7 @@ References
 Design
 ---------
 
-| Use an Column panel.
+| Use a Column panel.
 | Use 3 label fields to display the information content.
 | Add a text box for the start number.
 | Add a button to generate the hailstone numbers.
@@ -75,7 +75,7 @@ Info
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **info**.
 | In the properties panel: text section, set the **font_size** to 18.
-| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
     
@@ -91,7 +91,7 @@ Rules
 | Drag and drop a *label* component onto the column panel to the right of the **info** label.
 | In the properties panel: name section, set the **name** to **rules**.
 | In the properties panel: text section, set the **font_size** to 18.
-| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
     
@@ -109,7 +109,7 @@ Directions
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **directions**.
 | In the properties panel: text section, set the **font_size** to 18.
-| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
     
@@ -134,9 +134,10 @@ Generate_hailstone button
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *Button* component onto the column panel to the right of the hailstone_start textbox.
-| In the properties panel: name section, set the **name** to **generate_hailstoneles**.
+| In the properties panel: name section, set the **name** to **generate_hailstones**.
 | In the properties panel: text section, set the **font_size** to 16.
-| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: text section, set the **text** to **Generate**.
+| In the properties panel: icon section, set the **icon** to **fa:star-o**.
 | In the properties panel: Events section, click on the blue icon to the right of the **click** label.
 | This will add a default script, **generate_click**, to the code. This will be coded later to generate the hailstone numbers.
 
@@ -169,7 +170,7 @@ Length
 | Control click and drag the divider on the left of the label to the left to minimize the length_label.
 | In the properties panel: name section, set the **name** to **length**.
 | In the properties panel: text section, set the **font_size** to 18.
-| In the properties panel: text section, set the **text** to ****.
+| In the properties panel: text section, set the **text** to **Length:**.
 
 ----
 
