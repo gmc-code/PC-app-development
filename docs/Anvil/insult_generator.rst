@@ -360,7 +360,7 @@ Final  Code
                 'sympathetic', 'tenderhearted', 'thoughtful', 'tolerant',
                 'understanding'
             ]
-            term2 = ['able', 'acute', 'adept', 'agile', 'alert', 'apt', 'astute',
+            term2 = ['able', 'adept', 'agile', 'alert', 'astute',
                 'bold', 'brainy', 'bright', 'brilliant', 'brisk', 'canny',
                 'clever', 'consummate', 'cool', 'crafty', 'cultivated',
                 'effective', 'eggheaded', 'expert', 'fresh', 'genius',

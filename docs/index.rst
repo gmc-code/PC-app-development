@@ -34,6 +34,9 @@ PC-app-development
     Anvil/temperature_converter.rst
     Anvil/temperature_converter2.rst
     Anvil/temperature_converter3.rst
+    Anvil/rectangle_area.rst
+    Anvil/force_components.rst
+    Anvil/displacement_calculator.rst
     Anvil/days_calculator.rst
 
 
