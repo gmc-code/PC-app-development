@@ -138,5 +138,5 @@ Final  Code
 
 .. admonition:: Tasks
 
-    #. Add controls to specify the number of decimal places in the output values.
+    #. Add a dropdown to specify the number of decimal places in the output values.
     #. Create a force calculator that calculates the force and the angle given the the 2 components, Fx and Fy.

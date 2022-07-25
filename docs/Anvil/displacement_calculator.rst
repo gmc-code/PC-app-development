@@ -4,11 +4,11 @@ Displacement calculator
 
 This app calculates the area of a rectangle, given the length and width.
 
-.. image:: images/area/rectangle_area.png
+.. image:: images/kinematics/displacement_calculator.png
 
 | Use a XY panel for the diagram region, so that the text labels can be placed over the diagram.
 
-See :download:`rectangle diagram <..images/area/rectangle.png>`
+See :download:`rectangle diagram <images/kinematics/Speed_time_graph.png>`
 
 ----
 

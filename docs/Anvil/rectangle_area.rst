@@ -8,7 +8,7 @@ This app calculates the area of a rectangle, given the length and width.
 
 | Use a XY panel for the diagram region, so that the text labels can be placed over the diagram.
 
-See :download:`rectangle diagram <..images/area/rectangle.png>`
+| Download the diagram file :download:`rectangle diagram <images/area/rectangle.png>`.
 
 ----
 
@@ -132,10 +132,9 @@ Final  Code
         def width_change(self, **event_args):
             self.diagram_width.text = self.width.text
 
+---
 
+.. admonition:: Tasks
 
-
-
-
-
+    #. Add a dropdown to specify the number of decimal places in the output values.
 
