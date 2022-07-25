@@ -9,16 +9,17 @@ This app calculates the horizontal and vertical components of a force at a given
 | Use the image above to build the interface, using textboxes for the inputs and labels for other text fields.
 | Use a XY panel for the diagram region, so that the text labels can be placed over the force diagram.
 
+| Download the python file :download:`force_diagram <images/force_diagram.png>`.
 
-See :download: `force_diagram <images/force_diagram.png>`
+See :download:`force_diagram <images/force_diagram.png>`
 
-See :download: `force_diagram <images/force_diagram.png>`
+See :download:`force_diagram <images/force_diagram.png>`
 
-See :download: `<images/force_diagram.png>`
+See :download:`<images/force_diagram.png>`
 
-See :download: `<images/force_diagram.png>`
+See :download:`<images/force_diagram.png>`
 
-See :download: `images/force_diagram.png`
+See :download:`images/force_diagram.png`
 
 ----
 
