@@ -4,6 +4,8 @@ Insult generator
 
 This app generates a random insult.
 
+A useful tool for formatting long lists is at: https://www.xhcode.com/pythonformat/
+
 ----
 
 Design

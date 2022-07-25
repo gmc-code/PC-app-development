@@ -33,7 +33,7 @@ Key components
 Event Code 
 --------------------
 
-| Both the clicking the calculate button and pressing enter in the input textboxes attempts to produce the output.
+| Both clicking the calculate button and pressing enter in the input textboxes produces the output.
 
 .. code-block:: python
 
@@ -62,9 +62,8 @@ Calculation
 --------------------
 
 | A try-except block is used to make sure an **error** output is given when the inputs are not valid.
-| Any values of 0 or less are then detected: ``if val <= 0 or self.length.text <= 0 or self.width.text <= 0:``.
-| While the input fields only accept numbers, some python numbers include the use of ``e`` for powers of 10.
-| These can be handed with the float function.
+| Any values of 0 or less are then detected: 
+| ``if val <= 0 or self.length.text <= 0 or self.width.text <= 0:``.
 
 | f-stings allow convenient formatting to 2 decimal places.
 | e.g. ``self.area.text = f'{val:.2f}''``
