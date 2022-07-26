@@ -12,7 +12,7 @@ Design
 | Use a Column panel.
 | Use 3 label fields, 3 textboxes and 1 button.
 
-.. image:: images/name_and_age/name_and_age.png
+.. image:: images/name_and_age/name_and_age1.png
     :scale: 80
 
 ----
