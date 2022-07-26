@@ -4,7 +4,7 @@ Temperature converter
 
 This builds a simple temperature converter.
 
-.. image:: images/temperature/Temperature_converter_layout.png
+.. image:: images/temperature/Temperature_converter1_layout.png
     :scale: 60%
 
 ----
@@ -23,7 +23,7 @@ Settings
 
 | Enter the settings for the app.
 
-.. image:: images/temperature/Temperature_converter_settings.png
+.. image:: images/temperature/Temperature_converter1_settings.png
     :scale: 80%
 
 #. Click on the cog icon to show the settings tab.
@@ -68,7 +68,7 @@ Fahrenheit
 
 | Drag and drop the *textbox* component onto card_1 to the right of the Fahrenheit label. 
 | A vertical blue line will indicate that you are in the right place to drop it.
-| In the properties panel: name section, set the **name** to **Fahrenheit**.
+| In the properties panel: name section, set the **name** to **fahrenheit** (lower case).
 | In the properties panel: text section, set the **font_size** to 32.
 | In the properties panel: properties section, set the **type** to **number**.
 | This restricts user input to numbers.
@@ -90,7 +90,7 @@ Celcius
 
 | Drag and drop the *textbox* component onto card_1 to the right of the Celcius label. 
 | A vertical blue line will indicate that you are in the right place to drop it.
-| In the properties panel: name section, set the **name** to **Celcius**.
+| In the properties panel: name section, set the **name** to **celcius** (lower case). 
 | In the properties panel: text section, set the **font_size** to 32.
 
 .. image:: images/temperature/Temperature_converter_Add_label_below.png
