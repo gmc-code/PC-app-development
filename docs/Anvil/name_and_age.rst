@@ -40,6 +40,9 @@ Settings
 Build interface
 -------------------
 
+| Navigation from one textbox field to the next is automatic. Press TAB or SHIFT-TAB
+| Buttons are also navigated to using TAB. 
+
 Title
 ~~~~~~~~~~~~~~~~~~~
 
@@ -80,6 +83,7 @@ Name
 | Drag and drop a *TextBox* component onto the column panel to the right of the label.
 | Click and drag the divider between the label and textbox to resize them.
 | In the properties panel: name section, set the **name** to **name**.
+| In the properties panel: text section, set the **font_size** to 24.
 | In the properties panel: Events section, click on the blue icon to the right of the **pressed_enter** label.
 | This will add a default script, **name_pressed_enter**, to the code.
 
@@ -95,6 +99,7 @@ Age
 | Drag and drop a *TextBox* component onto the column panel to the right of the label.
 | Click and drag the divider between the label and textbox to resize them.
 | In the properties panel: name section, set the **name** to **age**.
+| In the properties panel: text section, set the **font_size** to 24.
 | In the properties panel: Events section, click on the blue icon to the right of the **pressed_enter** label.
 | This will add a default script, **age_pressed_enter**, to the code.
 
@@ -106,6 +111,8 @@ Name And Age button
 | Drag and drop a *Button* component onto the column panel to the right of the hailstone_start textbox.
 | In the properties panel: name section, set the **name** to **name_age**.
 | In the properties panel: text section, set the **text** to **Name and age**.
+| In the properties panel: text section, set the **font_size** to 24.
+| In the properties panel: appearance section, set the **role** to **primary-color**.
 | In the properties panel: Events section, click on the blue icon to the right of the **click** label.
 | This will add a default script, **name_age_click**, to the code. This will be coded later to generate the output.
 
