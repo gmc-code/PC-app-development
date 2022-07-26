@@ -38,7 +38,7 @@ Decimal Places Dropdown Code
 ------------------------------
 
 | Name the dropdown: **decimal_places**.
-| Set the dropdown items using: ``self.decimal_places.items = ['0', '1', '2', '3', '4'] ``
+| Set the dropdown items using: ``self.decimal_places.items = ['0', '1', '2', '3', '4']``
 | The dropdown items list needs to be of strings. [0, 1, 2, 3, 4] can't be used.
 | Set the initial decimal_places to '2' using: ``self.decimal_places.selected_value = '2'``
 | Create an instance variable, **self.dp**, the number of deciomal places to use for formating the output.
