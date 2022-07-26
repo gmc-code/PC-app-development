@@ -75,7 +75,9 @@ Calculation
 | A negative S is equivalent to more area below the X axis then above it.
 
 | f-stings allow convenient formatting to 2 decimal places.
-| e.g. ``self.area.text = f'{val:.2f}''``
+| e.g. ``self.area.text = f'{val:.2f}'``
+| Instead of using a fixed number, as in **.2f**, the dropdown value, **self.dp**,  can be used.
+| i.e. ``self.s.text = f'{s:.{self.dp}f}'`` 
 
 .. code-block:: python
 
@@ -85,7 +87,7 @@ Calculation
         except TypeError as error:
             self.s.text = 'error'
         except BaseException as error:
-            self.s.text = 'error''
+            self.s.text = 'error'
         else:
             if self.t.text < 0:
                 self.s.text = 'error'
