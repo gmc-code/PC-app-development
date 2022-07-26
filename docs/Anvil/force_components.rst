@@ -4,7 +4,7 @@ Force components
 
 This app calculates the horizontal and vertical components of a force at a given angle.
 
-.. image:: images/forces/force_components.png
+.. image:: images/forces/force_components1.png
 
 | Use the image above to build the interface, using textboxes for the inputs and labels for other text fields.
 | Use a XY panel for the diagram region, so that the text labels can be placed over the force diagram.
