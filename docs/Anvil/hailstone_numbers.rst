@@ -24,7 +24,7 @@ Design
 | Add a button to generate the hailstone numbers.
 | Add a text area to display the hailstone numbers.
 
-.. image:: images/hailstone/Hailstone_numbers1.png
+.. image:: images/hailstone/Hailstone_numbers.png
     :scale: 80
 
 ----
@@ -152,6 +152,9 @@ Error field
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
+.. image:: images/hailstone/Hailstone_error.png
+    :scale: 80
+
 ----
 
 Length_label
@@ -172,6 +175,16 @@ Length
 | In the properties panel: name section, set the **name** to **length**.
 | In the properties panel: text section, set the **font_size** to 18.
 | In the properties panel: text section, set the **text** to **Length:**.
+
+----
+
+Start_label
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop a *label* component onto the column panel.
+| In the properties panel: name section, set the **name** to **start_label**.
+| In the properties panel: text section, set the **font_size** to 24.
+| In the properties panel: text section, set the **text** to **start:**.
 
 ----
 
