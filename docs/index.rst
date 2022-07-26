@@ -37,7 +37,8 @@ PC-app-development
     Anvil/rectangle_area.rst
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
-    Anvil/days_calculator.rst
+    
+    .. Anvil/days_calculator.rst
 
 
 .. toctree::
