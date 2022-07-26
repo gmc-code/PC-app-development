@@ -278,16 +278,19 @@ Checking the input
 .. code-block:: python
 
     def test_integer(self):
+        # str(invalid entries) give the string 'None'
+        if str(self.hailstone_start.text) == 'None':
+            return "Invalid number."
+        # invalid entries give False, so not False is True
         if not self.hailstone_start.text:
-            return "A positive integer is required."
-        try:
-            self.hailstone_seed = int(self.hailstone_start.text)
-        except ValueError as error:
+            return "Not a valid start number."
+        # catch 0, negative ints and floats below 1
+        if self.hailstone_start.text < 1:
             return "Enter a whole number above 0."
-        except Exception as error:
-            return "Enter a whole number above 0."
-        if self.hailstone_seed < 1:
-            return "Enter a whole number above 0."
+        # floats
+        if self.hailstone_start.text != int(self.hailstone_start.text):
+            return "Postitive Integers, not floats are needed."
+        self.hailstone_seed = int(self.hailstone_start.text)
         return None
 
 ----
@@ -318,16 +321,19 @@ Generate Code
         self.set_main_field_vis(True)
         
     def test_integer(self):
+        # str(invalid entries) give the string 'None'
+        if str(self.hailstone_start.text) == 'None':
+            return "Invalid number."
+        # invalid entries give False, so not False is True
         if not self.hailstone_start.text:
-            return "A positive integer is required."
-        try:
-            self.hailstone_seed = int(self.hailstone_start.text)
-        except ValueError as error:
+            return "Not a valid start number."
+        # catch 0, negative ints and floats below 1
+        if self.hailstone_start.text < 1:
             return "Enter a whole number above 0."
-        except Exception as error:
-            return "Enter a whole number above 0."
-        if self.hailstone_seed < 1:
-            return "Enter a whole number above 0."
+        # floats
+        if self.hailstone_start.text != int(self.hailstone_start.text):
+            return "Postitive Integers, not floats are needed."
+        self.hailstone_seed = int(self.hailstone_start.text)
         return None
 
     def hailstone(self, num):
@@ -394,18 +400,21 @@ Final  Code
             length = len(hns)
             self.length.text = length
             self.set_main_field_vis(True)
-            
+ 
         def test_integer(self):
+            # str(invalid entries) give the string 'None'
+            if str(self.hailstone_start.text) == 'None':
+                return "Invalid number."
+            # invalid entries give False, so not False is True
             if not self.hailstone_start.text:
-                return "A positive integer is required."
-            try:
-                self.hailstone_seed = int(self.hailstone_start.text)
-            except ValueError as error:
+                return "Not a valid start number."
+            # catch 0, negative ints and floats below 1
+            if self.hailstone_start.text < 1:
                 return "Enter a whole number above 0."
-            except Exception as error:
-                return "Enter a whole number above 0."
-            if self.hailstone_seed < 1:
-                return "Enter a whole number above 0."
+            # floats
+            if self.hailstone_start.text != int(self.hailstone_start.text):
+                return "Postitive Integers, not floats are needed."
+            self.hailstone_seed = int(self.hailstone_start.text)
             return None
 
         def hailstone(self, num):
