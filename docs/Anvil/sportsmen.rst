@@ -318,3 +318,8 @@ Final Code
             choice = 'basketball'
             self.place_info(choice)
 
+----
+
+.. admonition:: Tasks
+
+    #. Add a fifth sport. e.g. tennis.

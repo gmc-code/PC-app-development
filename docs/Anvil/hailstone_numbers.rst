@@ -409,3 +409,9 @@ Final  Code
                     hailstone_list.append(new_num)
             return hailstone_list
 
+----
+
+.. admonition:: Tasks
+
+    #. Create a random compliment maker.
+
