@@ -20,7 +20,7 @@ Get started
 Design
 ------------------------------
 
-| Use the diagram: :download:`rectangle diagram <images/kinematics/Speed_time_graph.png>`
+| Use the diagram: :download:`Speed_time_graph <images/kinematics/Speed_time_graph.png>`
 | Use a spacer to the right of the dropdown so it is spaced from the right edge.
 | Display the formula: S = ½(v + u)t
 
