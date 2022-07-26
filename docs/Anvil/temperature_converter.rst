@@ -167,7 +167,42 @@ Final  Code
 
 .. admonition:: Tasks
 
-    #. Add Kelvin as another temperature to be displayed.
+    #. Limit the fahrenheit input to a minimum of -459.67 (absolute zero).
+    #. Limit the fahrenheit input to a maximum of 7.2 trillion degrees (Large Hadron Collider).
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Limit the fahrenheit input to a minimum of -459.67 (absolute zero).
+
+                .. code-block:: python
+
+                    def fahrenheit_change(self, **event_args):
+                        if self.fahrenheit.text:
+                            self.fahrenheit.text = max(-459.67, self.fahrenheit.text)
+
+            .. tab-item:: Q2
+
+                Limit the fahrenheit input to a maximum of 7.2 trillion degrees (Large Hadron Collider).
+
+                .. code-block:: python
+
+                    def fahrenheit_change(self, **event_args):
+                        if self.fahrenheit.text:
+                            self.fahrenheit.text = min(7200000000, self.fahrenheit.text)
+
+
+----
+
+.. admonition:: Tasks
+
     #. Try making a distance converter such as miles to km or inches to cm.
     #. Try making a mass converter such as lbs to kg.
     #. Try making a volume converter such as gallons to litres.

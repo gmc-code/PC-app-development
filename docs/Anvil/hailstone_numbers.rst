@@ -24,7 +24,7 @@ Design
 | Add a button to generate the hailstone numbers.
 | Add a text area to display the hailstone numbers.
 
-.. image:: images/hailstone/Hailstone_numbers.png
+.. image:: images/hailstone/Hailstone_numbers1.png
     :scale: 80
 
 ----
@@ -413,5 +413,28 @@ Final  Code
 
 .. admonition:: Tasks
 
-    #. Create a random compliment maker.
+    #. Limit the initial input to under 100000.
+ 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Limit the initial input to under 100000.
+
+                .. code-block:: python
+
+                    def hailstone_start_change(self, **event_args):
+                        if self.hailstone_start.text:
+                            self.hailstone_start.text = min(100000, self.hailstone_start.text)
+
+----
+
+.. admonition:: Tasks
+
+     #. The longest sequence is 351 for hailstone(77031) for numbers <100,000. Find another hailstone number under 100000 with seequence length over 200.
+     #. Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g [3, 5] or [1, 3, 7]
