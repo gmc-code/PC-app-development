@@ -42,41 +42,73 @@ Settings
 Build first part of the interface
 ----------------------------------
 
-| Add a Title at the top in the blue header.
-| Drag and drop the *label* component onto ``Drop title here``.
-| In the properties panel: text section, set the text to ``Temperature_convertere``.
+| Drag and drop a *label* component onto the **Drop title here** container.
+| In the properties panel: name section, set the **name** to **title**.
+| In the properties panel: text section, set the **text** to **Temperature_converter**.
+| In the properties panel: text section, set the **font_size** to 24.
 
 
-| Build the following interface by dragging and dropping components and setting their properties.
+----
 
-.. image:: images/temperature/Temperature_converter_layout.png
-    :scale: 60%
+Card panel
+~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop the *card* component from the right toolbox onto Form1.
+| Drag and drop a *card panel* component onto the form.
 
-| Drag and drop the *label* component onto card_1.
-| In the properties panel: text section, set the text to ``Fahrenheit`` and the font_size to ``32``.
+----
+
+Fahrenheit
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop a *label* component onto card_1.
+| In the properties panel: name section, set the **name** to **label_F**.
+| In the properties panel: text section, set the **text** to **Fahrenheit**.
+| In the properties panel: text section, set the **font_size** to 32.
+| In the properties panel: text section, set the **text_align** to **right**.
 
 | Drag and drop the *textbox* component onto card_1 to the right of the Fahrenheit label. 
 | A vertical blue line will indicate that you are in the right place to drop it.
-| In the properties panel: set the text to ``212`` and the font_size to ``32``.
+| In the properties panel: name section, set the **name** to **Fahrenheit**.
+| In the properties panel: text section, set the **font_size** to 32.
+| In the properties panel: properties section, set the **type** to **number**.
+| This restricts user input to numbers.
 
 .. image:: images/temperature/Temperature_converter_Add_textbox_to_right.png
     :scale: 60%
 
+----
+
+Celcius
+~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop the *label* component onto card_1 below the Fahrenheit label.
 | A horizontal blue line will indicate that you are in the right place to drop it.
-| In the properties panel: text section, set the text to ``Celcius`` and the font_size to ``32``.
+| In the properties panel: name section, set the **name** to **label_C**.
+| In the properties panel: text section, set the **text** to **Celcius**.
+| In the properties panel: text section, set the **font_size** to 32.
+| In the properties panel: text section, set the **text_align** to **right**.
+
+| Drag and drop the *textbox* component onto card_1 to the right of the Celcius label. 
+| A vertical blue line will indicate that you are in the right place to drop it.
+| In the properties panel: name section, set the **name** to **Celcius**.
+| In the properties panel: text section, set the **font_size** to 32.
 
 .. image:: images/temperature/Temperature_converter_Add_label_below.png
     :scale: 60%
 
-| Drag and drop the *textbox* component onto card_1 to the right of the Celcius label.
-| In the properties panel: set the text to ``100`` and the font_size to ``32``.
+----
 
-| Drag and drop the *button* component onto card_1 below the Celcius label.
-| In the properties panel: set the text to ``Convert`` and the font_size to ``32``.
+Convert button
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop the *button* component onto card_1 above the Celcius label.
+| A horizontal blue line will indicate that you are in the right place to drop it.
+| In the properties panel: name section, set the **name** to **convert**.
+| In the properties panel: text section, set the **text** to **Convert**.
+| In the properties panel: text section, set the **font_size** to 32.
+| In the properties panel: appearance section, set the **role** to **primary-color**.
+| In the properties panel: Events section, click on the blue icon to the right of the **click** label.
+| This will add a default script, **convert_click**, to the code.
 
 ----
 
@@ -84,54 +116,58 @@ Code
 ------------------------------
 
 | See: https://reference.yourdictionary.com/resources/what-s-the-easiest-way-to-convert-fahrenheit-to-celsius.html
-| Click on the Convert button.
-| In the properties panel: Events section, click on the blue icon to the right of the ``click`` label.
-| This will add a default script to the code.
-| Edit the code to calculate the temperature in Celcius.
-| Confirm in the Design tab that the Fahrenheit text box is text_box_1.
-| ``fahrenheit = float(self.text_box_1.text)`` can be used to get the Fahrenheit temperature as a float.
 
-.. admonition:: Question
-
-    #. Why is float needed instead of int?
-
-| Find out the simplest formula to use: https://reference.yourdictionary.com/resources/what-s-the-easiest-way-to-convert-fahrenheit-to-celsius.html
-
-.. admonition:: Question
-
-    #. What is the simplest formula to convert F to C?
-
-
-| Confirm in the Design tab that the Celcius text box is text_box_2.
-| ``self.text_box_2.text = celcius`` can be used to place the calculated value.
-
-.. image:: images/temperature/Temperature_converter_button_click.png
-    :scale: 100%
-
+| Edit the code, **convert_click**,  to calculate the temperature in Celcius.
+| The formula to use is: ``celcius = (fahrenheit - 32) / 1.8``
+| ``fahrenheit = self.fahrenheit.text`` can be used to get the Fahrenheit temperature.
+| ``if self.fahrenheit.text:`` evaluates to True if a number has been entered or False if the textbox is empty.  
+| ``self.celcius.text = f'{celcius:.1f}'`` can be used to place the calculated value formatted to 1 decimal place.
+| Use ``self.celcius.text = None`` to clear the Celcius textbox when there is no Fahrenheit number entered. 
 
 .. code-block:: python
 
+    def convert_click(self, **event_args):
+        if self.fahrenheit.text:
+            fahrenheit = self.fahrenheit.text
+            celcius = (fahrenheit - 32) / 1.8
+            self.celcius.text = f'{celcius:.1f}'
+        else:
+            self.celcius.text = None
+
+----
+
+Final  Code 
+--------------------
+
+| The full code is below.
+
+.. code-block:: python
+
+    from ._anvil_designer import Form1Template
+    from anvil import *
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
     class Form1(Form1Template):
+
         def __init__(self, **properties):
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
-
-            # Any code you write here will run when the form opens.
-
-        def button_1_click(self, **event_args):
-            fahrenheit = float(self.text_box_1.text)
-            celcius = (fahrenheit - 32) / 1.8
-            self.text_box_2.text = celcius
+        
+        def convert_click(self, **event_args):
+            if self.fahrenheit.text:
+                fahrenheit = self.fahrenheit.text
+                celcius = (fahrenheit - 32) / 1.8
+                self.celcius.text = f'{celcius:.1f}'
+            else:
+                self.celcius.text = None
 
 ----
 
 .. admonition:: Tasks
 
-    #. Add try except to the button_1_click function so that non numerical entries are handled. See the use of this in the calculator code.
-    #. Use placeholder text instead of text values of 212 and 100. Adjust the button_1_click code to check if the text is empty and if it is, use the placeholder value instead (self.text_box_1.placeholder).
-    #. Use an f-string to format the celcius temeprature to 1 decimal place. e.g ``f'{celcius:.1f}'``.
-    #. Give appropriate names to the fields and buttons so that the default names are replaced with meaningful names. e.g. **text_box_1** becomes **fahrenheit**. e.g **button_1** becomes **convert_FtoC**. Make all the necessary replacements in the code to account for these changes.
-    #. Add Kelvin as a another temperature to be displayed.
+    #. Add Kelvin as another temperature to be displayed.
     #. Try making a distance converter such as miles to km or inches to cm.
     #. Try making a mass converter such as lbs to kg.
     #. Try making a volume converter such as gallons to litres.
