@@ -196,6 +196,10 @@ Final  Code
         def age_pressed_enter(self, **event_args):
             self.do_output()
 
+----
 
+.. admonition:: Tasks
+
+    #. Add a third input textbox field and add its information to the output string. e.g. Favourite sport.
 
 
