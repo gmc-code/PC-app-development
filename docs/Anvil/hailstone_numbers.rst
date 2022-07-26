@@ -137,6 +137,7 @@ Generate_hailstone button
 | In the properties panel: name section, set the **name** to **generate_hailstones**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: text section, set the **text** to **Generate**.
+| In the properties panel: appearance section, set the **role** to **primary-color**.
 | In the properties panel: icon section, set the **icon** to **fa:star-o**.
 | In the properties panel: Events section, click on the blue icon to the right of the **click** label.
 | This will add a default script, **generate_click**, to the code. This will be coded later to generate the hailstone numbers.

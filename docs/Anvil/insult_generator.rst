@@ -14,7 +14,7 @@ Design
 | Use a Column panel.
 | Use a label field, 2 buttons and a textbox.
 
-.. image:: images/insults/insult_generator.png
+.. image:: images/insults/random_insults.png
     :scale: 80
 
 ----
@@ -78,6 +78,7 @@ Buttons
 | In the properties panel: name section, set the **name** to **get_old_insult**.
 | In the properties panel: text section, set the **text** to **Shakespearean Insult**.
 | In the properties panel: text section, set the **font_size** to **28**.
+| In the properties panel: appearance section, set the **role** to **secondary-color**.
 | In the properties panel: Events section, click on the blue icon to the right of the **click** label.
 | This will add a default script, **get_old_insult_click**, to the code. This will be coded later to generate the output.
 
@@ -85,6 +86,7 @@ Buttons
 | In the properties panel: name section, set the **name** to **get_insult**.
 | In the properties panel: text section, set the **text** to **Modern Insult**.
 | In the properties panel: text section, set the **font_size** to **28**.
+| In the properties panel: appearance section, set the **role** to **primary-color**.
 | In the properties panel: Events section, click on the blue icon to the right of the **click** label.
 | This will add a default script, **get_insult_click**, to the code. This will be coded later to generate the output.
 
@@ -187,7 +189,8 @@ Insult maker
             'strumpet', 'toad', 'varlot', 'vassal', 'wagtail',
             'whey-face'
         ]
-        self.output.text = "Thou art a " + choice(insult1) + " " + choice(insult2) + " " + choice(insult3)
+        self.output.text = ("Thou art a " + choice(insult1) + " " +
+            choice(insult2) + " " + choice(insult3) + ".")
 
 
 | **make_insult** places a random insult in the output textbox.
@@ -228,8 +231,8 @@ Insult maker
             'pinhead', 'racketeer', 'simpleton', 'sinner', 'slippery eel',
             'thug', 'tomfool', 'twit', 'wrongdoer', 'yardbird',
         ]
-        self.output.text = "You are a " + choice(insult1) + " " + choice(insult2) + " " + choice(insult3)
-
+        self.output.text = ("You are a " + choice(insult1) + " " +
+            choice(insult2) + " " + choice(insult3)+ ".")
 
 ----
 
@@ -308,7 +311,8 @@ Final  Code
                 'strumpet', 'toad', 'varlot', 'vassal', 'wagtail',
                 'whey-face'
             ]
-            self.output.text = "Thou art a " + choice(insult1) + " " + choice(insult2) + " " + choice(insult3)
+            self.output.text = ("Thou art a " + choice(insult1) + " " +
+                choice(insult2) + " " + choice(insult3) + ".")
             
         def make_insult(self):
             insult1 = ['animalistic', 'appalling', 'awful', 'bad-looking',
@@ -343,7 +347,8 @@ Final  Code
                 'pinhead', 'racketeer', 'simpleton', 'sinner', 'slippery eel',
                 'thug', 'tomfool', 'twit', 'wrongdoer', 'yardbird',
             ]
-            self.output.text = "You are a " + choice(insult1) + " " + choice(insult2) + " " + choice(insult3)
+            self.output.text = ("You are a " + choice(insult1) + " " +
+                choice(insult2) + " " + choice(insult3)+ ".")
             
 ----
 
