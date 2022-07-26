@@ -12,7 +12,7 @@ Design
 | Use a Column panel.
 | Use 3 label fields, 3 textboxes and 1 button.
 
-.. image:: images/name_and_age/name_age.png
+.. image:: images/name_and_age/name_and_age.png
     :scale: 80
 
 ----
@@ -66,6 +66,7 @@ Instructions
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **instructions**.
 | In the properties panel: text section, set the **text** to text below.
+| In the properties panel: text section, set the **font_size** to 18.
 
 .. code-block::
     
@@ -79,9 +80,10 @@ Name
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **name_label**.
 | In the properties panel: text section, set the **text** to **Name:**.
+| In the properties panel: text section, set the **font_size** to 24.
 
 | Drag and drop a *TextBox* component onto the column panel to the right of the label.
-| Click and drag the divider between the label and textbox to resize them.
+| Click and drag the divider between the label and textbox to resize them. Control click and drag for finer control.
 | In the properties panel: name section, set the **name** to **name**.
 | In the properties panel: text section, set the **font_size** to 24.
 | In the properties panel: Events section, click on the blue icon to the right of the **pressed_enter** label.
@@ -95,9 +97,10 @@ Age
 | Drag and drop a *label* component onto the column panel.
 | In the properties panel: name section, set the **name** to **age_label**.
 | In the properties panel: text section, set the **text** to **Age:**.
+| In the properties panel: text section, set the **font_size** to 24.
 
 | Drag and drop a *TextBox* component onto the column panel to the right of the label.
-| Click and drag the divider between the label and textbox to resize them.
+| Click and drag the divider between the label and textbox to resize them. Control click and drag for finer control.
 | In the properties panel: name section, set the **name** to **age**.
 | In the properties panel: text section, set the **font_size** to 24.
 | In the properties panel: Events section, click on the blue icon to the right of the **pressed_enter** label.
