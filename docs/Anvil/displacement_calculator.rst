@@ -2,13 +2,9 @@
 Displacement calculator
 ====================================================
 
-This app calculates the area of a rectangle, given the length and width.
+This app calculates the displacement, S, given u, v, and t.
 
 .. image:: images/kinematics/displacement_calculator.png
-
-| Use a XY panel for the diagram region, so that the text labels can be placed over the diagram.
-
-See :download:`rectangle diagram <images/kinematics/Speed_time_graph.png>`
 
 ----
 
@@ -21,40 +17,52 @@ Get started
 
 ----
 
-Key components
--------------------
+Design
+------------------------------
 
-| Name the input textboxes: **length** and **width**.
-| Set both input textbox property **type** settings to **number**.
-| Name the labels on the diagram: **diagram_length** and **diagram_width**.
+| Use the diagram: :download:`rectangle diagram <images/kinematics/Speed_time_graph.png>`
+| Use a spacer to the right of the dropdown so it is spaced from the right edge.
+| Display the formula: S = ½(v + u)t
 
 ----
 
-Event Code 
---------------------
+Key components
+-------------------
 
-| Both the clicking the calculate button and pressing enter in the input textboxes attempts to produce the output.
+| Name the input textboxes: **u**, **v** and **t**.
+| Set each of the input textbox property **type** settings to **number**.
+
+----
+
+Decimal Places Dropdown Code 
+------------------------------
+
+| Name the dropdown: **decimal_places**.
+| Set the dropdown items using: ``self.decimal_places.items = ['0', '1', '2', '3', '4'] ``
+| The dropdown items list needs to be of strings. [0, 1, 2, 3, 4] can't be used.
+| Set the initial decimal_places to '2' using: ``self.decimal_places.selected_value = '2'``
+| Create an instance variable, **self.dp**, the number of deciomal places to use for formating the output.
+| The int function is needed to turn the string into an integer.
 
 .. code-block:: python
 
-    def calculate_click(self, **event_args):
-        self.do_calculation()
+    class Form1(Form1Template):
 
-    def angle_pressed_enter(self, **event_args):
-        self.do_calculation()
-
-    def force_pressed_enter(self, **event_args):
-        self.do_calculation()
-
-| Changing the length or width inputs triggers the placement of those values on the diagram.
+    def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+        self.decimal_places.items = ['0', '1', '2', '3', '4']   #requires list of strings
+        self.decimal_places.selected_value = '2'
+        self.dp = int(self.decimal_places.selected_value)
+        
+| In the properties panel: Events section, click on the blue icon to the right of the **change** label.
+| This will add a default script, **decimal_places_change**, to the code.
+| Add the code below to update **self.dp** when the dropdown is used.
 
 .. code-block:: python
 
-    def length_change(self, **event_args):
-        self.diagram_length.text = self.length.text
-
-    def width_change(self, **event_args):
-        self.diagram_width.text = self.width.text
+    def decimal_places_change(self, **event_args):
+        self.dp = int(self.decimal_places.selected_value)
 
 ----
 
@@ -62,27 +70,28 @@ Calculation
 --------------------
 
 | A try-except block is used to make sure an **error** output is given when the inputs are not valid.
-| Any values of 0 or less are then detected: ``if val <= 0 or self.length.text <= 0 or self.width.text <= 0:``.
-| While the input fields only accept numbers, some python numbers include the use of ``e`` for powers of 10.
-| These can be handed with the float function.
+| Any time values of 0 or less are then detected: ``self.t.text < 0:``.
+| Negative values for u and v are possible, as well as a negative final value for S.
+| A negative S is equivalent to more area below the X axis then above it.
 
 | f-stings allow convenient formatting to 2 decimal places.
 | e.g. ``self.area.text = f'{val:.2f}''``
 
 .. code-block:: python
 
-    def calculate_area(self):
+    def calculate_click(self, **event_args):
         try:
-            val = self.length.text * self.width.text
+            s = 0.5 * (self.u.text + self.v.text) * self.t.text
         except TypeError as error:
-            self.area.text = 'error'
+            self.s.text = 'error'
         except BaseException as error:
-            self.area.text = 'error''
+            self.s.text = 'error''
         else:
-            if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
-                self.area.text = 'error'
+            if self.t.text < 0:
+                self.s.text = 'error'
             else:
-                self.area.text = f'{val:.2f}'
+                self.s.text = f'{s:.{self.dp}f}'
+
 
 ----
 
@@ -104,34 +113,33 @@ Final  Code
         def __init__(self, **properties):
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
+            self.decimal_places.items = ['0', '1', '2', '3', '4']   #requires list of strings
+            self.decimal_places.selected_value = '2'
+            self.dp = int(self.decimal_places.selected_value)
+            
+        def decimal_places_change(self, **event_args):
+            self.dp = int(self.decimal_places.selected_value)
 
-        def Calculate_click(self, **event_args):
-            self.calculate_area()
-        
-        def calculate_area(self):
+        def calculate_click(self, **event_args):
             try:
-                val = self.length.text * self.width.text
+                S = 0.5 * (self.u.text + self.v.text) * self.t.text
             except TypeError as error:
-                self.area.text = 'error'
+                self.S.text = 'error'
             except BaseException as error:
-                self.area.text = 'error''
+                self.S.text = 'error''
             else:
-                if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
-                    self.area.text = 'error'
+                if self.t.text < 0:
+                    self.S.text = 'error'
                 else:
-                    self.area.text = f'{val:.2f}'
+                    self.S.text = f'{S:.{self.dp}f}'
 
-        def width_pressed_enter(self, **event_args):
-            self.calculate_area()
+----
 
-        def length_pressed_enter(self, **event_args):
-            self.calculate_area()
+.. admonition:: Tasks
 
-        def length_change(self, **event_args):
-            self.diagram_length.text = self.length.text
+    #. Write an app to calculate the acceleration given initial velocity, final velocity, and time.
 
-        def width_change(self, **event_args):
-            self.diagram_width.text = self.width.text
+
 
 
 

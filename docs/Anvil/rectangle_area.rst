@@ -132,9 +132,11 @@ Final  Code
         def width_change(self, **event_args):
             self.diagram_width.text = self.width.text
 
----
+----
 
 .. admonition:: Tasks
 
     #. Add a dropdown to specify the number of decimal places in the output values.
-
+    #. Write an app to calculate the area of a circle.
+    #. Write an app to calculate the area of a triangle.
+    #. Write an app to calculate the area of a trapezium.
