@@ -6,7 +6,7 @@ This enhances the temperature converter.
 
 .. image:: images/temperature/Temperature_converter2_layout.png
     :scale: 60%
-
+    
 ----
 
 References
@@ -24,7 +24,7 @@ Add image to left
 | Get a thermometer icon to upload such as: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Fahrenheit_Celsius_scales.svg/240px-Fahrenheit_Celsius_scales.svg.png 
 | Drag and drop the *image* component onto the left of card_1.
 | A vertical blue line will indicate that you are in the right place to drop it.
-| In the properties panel: text section, set the display_mode to ``shrink_to_fit`` and set the height to ``500``.
+| In the properties panel: text section, set the display_mode to **shrink_to_fit** and set the height to **500**.
 
 ----
 
@@ -34,7 +34,7 @@ Centre the temperature fields
 | Drag and drop the *spacer* component onto card_1 above the Fahrenheit label. 
 | At first, a full length blue line appears. Drag down to move the blue line down as in the image below.
 | A vertical blue line will indicate that you are in the right place to drop it.
-| In the properties panel: set the height to ``150``.
+| In the properties panel: set the height to **150**.
 
 .. image:: images/temperature/Temperature_converter_Add_spacer_above.png
     :scale: 60%
@@ -45,12 +45,12 @@ Use placeholder text and type
 ------------------------------
 
 | Click the Fahrenheit text box. 
-| In the properties panel: text section, set the placeholder text to ``68`` and the text to empty.
-| In the properties panel: text section, set the type to ``number`` so only numbers can be entered.
+| In the properties panel: text section, set the placeholder text to **68** and the text to empty.
+| In the properties panel: text section, set the type to **number** so only numbers can be entered.
 
 | Click the Celcius text box. 
-| In the properties panel: text section, set the placeholder text to ``20`` and the text to empty.
-| In the properties panel: text section, set the type to ``number`` so only numbers can be entered.
+| In the properties panel: text section, set the placeholder text to **20** and the text to empty.
+| In the properties panel: text section, set the type to **number** so only numbers can be entered.
 
 -----
 
@@ -76,7 +76,7 @@ Format to 1 dp
 ------------------------------
 
 | Adjust the code so that only 1 decimal place is given.
-| Use an f-string and use the formatting code ``:.1f`` to cause 1dp.
+| Use an f-string and use the formatting code **:.1f** to cause 1dp.
 | Place the celcius value via: ``self.text_box_2.text = f'{celcius:.1f}'``
 
 .. code-block:: python
@@ -95,7 +95,7 @@ Add Code for Fahrenheit enter key
 -----------------------------------
 
 | Click the Fahrenheit text box.
-| In the properties panel: events section, click the blue icon for the ``pressed_enter`` event.
+| In the properties panel: events section, click the blue icon for the **pressed_enter** event.
 | This adds starter code for pressing the enter key after typing in a Fahrenheit temperature.
 
 .. code-block:: python
@@ -109,7 +109,7 @@ Add Code for Fahrenheit enter key
 Refactor code to calculate F to C
 ---------------------------------------
 
-| Since similar code is need for this as well as the convert button, create a new function, ``calculateFtoC``,  to reuse for both events, clicking the button and pressing enter in the field.
+| Since similar code is need for this as well as the convert button, create a new function, **calculateFtoC**,  to reuse for both events, clicking the button and pressing enter in the field.
 
 .. code-block:: python       
 
@@ -149,9 +149,9 @@ Add Code for Celcius enter key
 Create code to calculate C to F
 ---------------------------------------
 
-| Copy the function, ``calculateFtoC``,  and paste it in again and rename it: ``calculateCtoF``.
-| Swap ``fahrenheit`` and ``celcius``.
-| Swap ``text_box_1`` and ``text_box_2``.
+| Copy the function, **calculateFtoC**,  and paste it in again and rename it: **calculateCtoF**.
+| Swap **fahrenheit** and **celcius**.
+| Swap **text_box_1** and **text_box_2**.
 | Change the formula. F = (C * 1.8) + 32
 
 .. code-block:: python       
@@ -171,7 +171,7 @@ Change Convert button to an icon button
 
 | Use an icon instead of text for the convert button and reposition it.
 | Click on the Convert button.
-| In the properties panel: icon section, click the ``i`` select an icon button. Search for arrow. Scroll and choose a down arrow.
+| In the properties panel: icon section, click the **i** select an icon button. Search for arrow. Scroll and choose a down arrow.
 
 .. image:: images/temperature/Temperature_converter_icon_selection.png
     :scale: 100%
@@ -190,14 +190,14 @@ Copy convert icon button
 | Copy it using Ctrl-C.
 | Click at the bottom of the form and paste a copy using Ctrl-V. 
 
-| In the properties panel: at the top click on pencil icon and rename the button to ``button_2``.
-| In the properties panel: icon section, click the ``i`` select an icon button. Search for arrow. Scroll and choose an up arrow.
+| In the properties panel: at the top click on pencil icon and rename the button to **button_2**.
+| In the properties panel: icon section, click the **i** select an icon button. Search for arrow. Scroll and choose an up arrow.
 
 | Click and drag the button (now an up arrow) to the right of the celcius temperature.
 | Hover over the vertical dividing lines for celcius temperature and the convert button and resize them to fit nicely.
 
 | Click on the Convert button (up arrow icon).
-| In the properties panel: Events section, click on the blue icon to the right of the ``click`` label.
+| In the properties panel: Events section, click on the blue icon to the right of the **click** label.
 | This will add a default script to the code.
 | Edit the code to calculate the temperature in Fahrenheit.
 
