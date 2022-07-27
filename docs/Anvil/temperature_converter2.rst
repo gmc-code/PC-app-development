@@ -19,6 +19,16 @@ References
 
 ----
 
+Key components
+------------------------------
+
+| Name the input textboxes: **fahrenheit** and **celsius**.
+| Name the convert buttons that use arrows: **FtoC** and **CtoF**.
+| Set the icon for **FtoC** to **fa:arrow-down**.
+| Set the icon for **FtoC** to **fa:arrow-up**.
+
+----
+
 Add image to left
 ------------------------------
 
@@ -29,8 +39,8 @@ Add image to left
 
 ----
 
-Centre the temperature fields
-------------------------------
+Veertically Centre the temperature fields with the image
+------------------------------------------------------------
 
 | Drag and drop the *spacer* component onto card_1 above the Fahrenheit label. 
 | At first, a full length blue line appears. Drag down to move the blue line down as in the image below.
@@ -39,22 +49,55 @@ Centre the temperature fields
 
 -----
 
-Format to 1 dp
-------------------------------
+Change Convert button to an icon button
+-----------------------------------------
 
-| Adjust the code so that only 1 decimal place is given.
-| Use an f-string and use the formatting code **:.1f** to cause 1dp.
-| Place the celcius value via: ``self.text_box_2.text = f'{celcius:.1f}'``
+| Use an icon instead of text for the convert button and reposition it.
+| Click on the Convert button.
+| Name the convert buttons to: **FtoC**
+| In the properties panel: icon section, click the **i** select an icon button. 
+| Search for **arrow**. Scroll and choose a down arrow.
+| So the icon for button **FtoC** is now **fa:arrow-down**.
 
-.. code-block:: python
+.. image:: images/temperature/Temperature_converter_icon_selection.png
+    :scale: 100%
+    
+| In the properties panel: icon section, set the icon_align to left_edge.
+| Click and drag this convert button (now a down arrow) to the right of the fahrenheit temperature.
+| Hover over the vertical dividing lines between the fahrenheit temperature and the convert button and resize them to fit nicely. Control click and drag for finer control.
 
-        def button_1_click(self, **event_args):
-            try: 
-                fahrenheit = self.fahrenheit.text
-                celcius = (fahrenheit - 32) / 1.8
-                self.celcius.text = f'{celcius:.1f}'
-            except TypeError as error:
-                self.celcius.text = None
+----
+
+Create CtoF up arrow button
+-----------------------------------------
+
+| Creatw another button to convert C to F.
+| Name the button **CtoF**.
+| Set the icon for **CtoF** to **fa:arrow-up**.
+| Position is below the **FtoC** button.
+
+----
+
+Refactor code to calculate F to C
+---------------------------------------
+
+| Modify the code from Temperature Converter 1 to use **calculateFtoC** to do the conversion.
+| Then call this when the **FtoC** button is clicked.
+
+.. code-block:: python       
+
+    def calculateFtoC(self):
+        try: 
+            fahrenheit = self.fahrenheit.text
+            fahrenheit = float(fahrenheit)
+            celcius = (fahrenheit - 32) / 1.8
+            self.celcius.text = f'{celcius:.1f}'
+        except TypeError as er:
+            self.celcius.text = None
+
+    def FtoC_click(self, **event_args):
+        self.calculateFtoC()
+        
 
 -----
 
@@ -64,36 +107,36 @@ Add Code for Fahrenheit enter key
 | Click the Fahrenheit text box.
 | In the properties panel: events section, click the blue icon for the **pressed_enter** event.
 | This adds starter code for pressing the enter key after typing in a Fahrenheit temperature.
+| Add code to convert F to C.
 
 .. code-block:: python
 
-    def text_box_1_pressed_enter(self, **event_args):
-        """This method is called when the user presses Enter in this text box"""
-        pass
+    def fahrenheit_pressed_enter(self, **event_args):
+        self.calculateFtoC()
 
 -----
 
-Refactor code to calculate F to C
+Create code to calculate C to F
 ---------------------------------------
 
-| Since similar code is need for this as well as the convert button, create a new function, **calculateFtoC**,  to reuse for both events, clicking the button and pressing enter in the field.
+| Copy the function, **calculateFtoC**,  and paste it in again and rename it: **calculateCtoF**.
+| Swap **fahrenheit** and **celcius**.
+| Change the formula based on: F = (C * 1.8) + 32
 
 .. code-block:: python       
 
-    def calculateFtoC(self):
-        fahrenheit = self.text_box_1.text
-        if fahrenheit == '' or fahrenheit == None:
-            fahrenheit = self.text_box_1.placeholder
-        fahrenheit = float(fahrenheit)
-        celcius = (fahrenheit - 32) / 1.8
-        self.text_box_2.text = f'{celcius:.1f}'
+    def calculateCtoF(self):
+        try: 
+            celcius = self.celcius.text
+            celcius = float(celcius)
+            fahrenheit = (celcius * 1.8) + 32
+            self.fahrenheit.text =  f'{fahrenheit:.1f}'
+        except TypeError as er:
+            self.fahrenheit.text = None
 
-    def button_1_click(self, **event_args):
-        self.calculateFtoC()
-
-    def text_box_1_pressed_enter(self, **event_args):
-        self.calculateFtoC()
-
+    def CtoF_click(self, **event_args):
+        self.calculateCtoF()
+        
 -----
 
 Add Code for Celcius enter key
@@ -106,73 +149,9 @@ Add Code for Celcius enter key
 
 .. code-block:: python
 
-    def text_box_2_pressed_enter(self, **event_args):
-        """This method is called when the user presses Enter in this text box"""
-        pass
+  def celcius_pressed_enter(self, **event_args):
+    self.calculateCtoF()
         
-
------
-
-Create code to calculate C to F
----------------------------------------
-
-| Copy the function, **calculateFtoC**,  and paste it in again and rename it: **calculateCtoF**.
-| Swap **fahrenheit** and **celcius**.
-| Swap **text_box_1** and **text_box_2**.
-| Change the formula. F = (C * 1.8) + 32
-
-.. code-block:: python       
-
-    def calculateCtoF(self):
-        celcius = self.text_box_2.text
-        if celcius == '' or celcius == None:
-            celcius = self.text_box_2.placeholder
-        celcius = float(celcius)
-        fahrenheit = (celcius * 1.8) + 32
-        self.text_box_1.text = f'{fahrenheit:.1f}'
-
-----
-
-Change Convert button to an icon button
------------------------------------------
-
-| Use an icon instead of text for the convert button and reposition it.
-| Click on the Convert button.
-| In the properties panel: icon section, click the **i** select an icon button. Search for arrow. Scroll and choose a down arrow.
-
-.. image:: images/temperature/Temperature_converter_icon_selection.png
-    :scale: 100%
-    
-| In the properties panel: text section, set the align to left.
-| In the properties panel: icon section, set the icon_align to left_edge.
-| Click and drag this convert button (now a down arrow) to the right of the fahrenheit temperature.
-| Hover over the vertical dividing lines for fahrenheit temperature and the convert button and resize them to fit nicely.
-
-----
-
-Copy convert icon button
------------------------------------------
-
-| Click on the Convert button (down arrow icon).
-| Copy it using Ctrl-C.
-| Click at the bottom of the form and paste a copy using Ctrl-V. 
-
-| In the properties panel: at the top click on pencil icon and rename the button to **button_2**.
-| In the properties panel: icon section, click the **i** select an icon button. Search for arrow. Scroll and choose an up arrow.
-
-| Click and drag the button (now an up arrow) to the right of the celcius temperature.
-| Hover over the vertical dividing lines for celcius temperature and the convert button and resize them to fit nicely.
-
-| Click on the Convert button (up arrow icon).
-| In the properties panel: Events section, click on the blue icon to the right of the **click** label.
-| This will add a default script to the code.
-| Edit the code to calculate the temperature in Fahrenheit.
-
-.. code-block:: python
-
-    def button_2_click(self, **event_args):
-        self.calculateCtoF()
-
 ----
 
 Final code
@@ -188,40 +167,39 @@ Final code
 
     class Form1(Form1Template):
 
-    def __init__(self, **properties):
-        # Set Form properties and Data Bindings.
-        self.init_components(**properties)
+        def __init__(self, **properties):
+            # Set Form properties and Data Bindings.
+            self.init_components(**properties)
 
-        # Any code you write here will run when the form opens.
+        def calculateFtoC(self):
+            try: 
+                fahrenheit = self.fahrenheit.text
+                fahrenheit = float(fahrenheit)
+                celcius = (fahrenheit - 32) / 1.8
+                self.celcius.text = f'{celcius:.1f}'
+            except TypeError as er:
+                self.celcius.text = None
+                
+        def calculateCtoF(self):
+            try: 
+                celcius = self.celcius.text
+                celcius = float(celcius)
+                fahrenheit = (celcius * 1.8) + 32
+                self.fahrenheit.text =  f'{fahrenheit:.1f}'
+            except TypeError as er:
+                self.fahrenheit.text = None
 
-    def calculateFtoC(self):
-        fahrenheit = self.text_box_1.text
-        if fahrenheit == '' or fahrenheit == None:
-            fahrenheit = self.text_box_1.placeholder
-        fahrenheit = float(fahrenheit)
-        celcius = (fahrenheit - 32) / 1.8
-        self.text_box_2.text = f'{celcius:.1f}'
+        def FtoC_click(self, **event_args):
+            self.calculateFtoC()
+            
+        def fahrenheit_pressed_enter(self, **event_args):
+            self.calculateFtoC()
 
-    def calculateCtoF(self):
-        celcius = self.text_box_2.text
-        if celcius == '' or celcius == None:
-            celcius = self.text_box_2.placeholder
-        celcius = float(celcius)
-        fahrenheit = (celcius * 1.8) + 32
-        self.text_box_1.text =  f'{fahrenheit:.1f}'
-
-    def button_1_click(self, **event_args):
-        self.calculateFtoC()
-
-    def button_2_click(self, **event_args):
-        self.calculateCtoF()
-        
-    def text_box_1_pressed_enter(self, **event_args):
-        self.calculateFtoC()
-
-    def text_box_2_pressed_enter(self, **event_args):
-        self.calculateCtoF()
-
+        def CtoF_click(self, **event_args):
+            self.calculateCtoF()
+                
+        def celcius_pressed_enter(self, **event_args):
+            self.calculateCtoF()
 
 ----
 
