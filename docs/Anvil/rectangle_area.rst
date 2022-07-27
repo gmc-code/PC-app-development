@@ -61,7 +61,8 @@ Event Code
 Calculation
 --------------------
 
-| A try-except block is used to make sure an **error** output is given when the inputs are not valid.
+| A try-except block is used to make sure an **error** output, **use positive lengths**, is given when the inputs are not valid.
+| Testing with invalid inputs shows that **TypeError** is the only error type to put in the try-except block.
 | Any values of 0 or less are then detected: 
 | ``if val <= 0 or self.length.text <= 0 or self.width.text <= 0:``.
 
@@ -74,12 +75,10 @@ Calculation
         try:
             val = self.length.text * self.width.text
         except TypeError as error:
-            self.area.text = 'error'
-        except BaseException as error:
-            self.area.text = 'error''
+            self.area.text = 'use positive lengths'
         else:
             if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
-                self.area.text = 'error'
+                self.area.text = 'use positive lengths'
             else:
                 self.area.text = f'{val:.2f}'
 
@@ -111,12 +110,10 @@ Final  Code
             try:
                 val = self.length.text * self.width.text
             except TypeError as error:
-                self.area.text = 'error'
-            except BaseException as error:
-                self.area.text = 'error''
+                self.area.text = 'use positive lengths'
             else:
                 if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
-                    self.area.text = 'error'
+                    self.area.text = 'use positive lengths'
                 else:
                     self.area.text = f'{val:.2f}'
 
