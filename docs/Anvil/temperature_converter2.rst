@@ -92,7 +92,7 @@ Refactor code to calculate F to C
             fahrenheit = float(fahrenheit)
             celcius = (fahrenheit - 32) / 1.8
             self.celcius.text = f'{celcius:.1f}'
-        except TypeError as er:
+        except TypeError as error:
             self.celcius.text = None
 
     def FtoC_click(self, **event_args):
@@ -131,7 +131,7 @@ Create code to calculate C to F
             celcius = float(celcius)
             fahrenheit = (celcius * 1.8) + 32
             self.fahrenheit.text =  f'{fahrenheit:.1f}'
-        except TypeError as er:
+        except TypeError as error:
             self.fahrenheit.text = None
 
     def CtoF_click(self, **event_args):
@@ -177,7 +177,7 @@ Final code
                 fahrenheit = float(fahrenheit)
                 celcius = (fahrenheit - 32) / 1.8
                 self.celcius.text = f'{celcius:.1f}'
-            except TypeError as er:
+            except TypeError as error:
                 self.celcius.text = None
                 
         def calculateCtoF(self):
@@ -186,7 +186,7 @@ Final code
                 celcius = float(celcius)
                 fahrenheit = (celcius * 1.8) + 32
                 self.fahrenheit.text =  f'{fahrenheit:.1f}'
-            except TypeError as er:
+            except TypeError as error:
                 self.fahrenheit.text = None
 
         def FtoC_click(self, **event_args):

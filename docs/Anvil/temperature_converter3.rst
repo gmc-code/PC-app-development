@@ -19,6 +19,10 @@ Multi Temperature converter
 Design
 ---------
 
+| Name the From buttons: **from_F**, **from_C** and **from_K**.
+| Name the convert buttons: **convertF**, **convertC** and **convertK**.
+| Name the input temperature textboxes: **TF**, **TC** and **TK**.
+
 | Layout the components:
 
 .. image:: images/temperature/Temperature_converter3_layout.png
@@ -61,6 +65,7 @@ Code
                             def __init__(self, **properties):
                                 # Set Form properties and Data Bindings.
                                 self.init_components(**properties)
+                                # start with from F
                                 self.from_F_click()
                                 
                             def from_F_click(self, **event_args):
@@ -114,34 +119,40 @@ Code
                                 self.k_calculate()
 
                             def f_calculate(self):
-                                fahrenheit = self.TF.text
-                                if fahrenheit == '' or fahrenheit == None:
-                                    fahrenheit = self.TF.placeholder
-                                fahrenheit = float(fahrenheit)
-                                celcius = (fahrenheit - 32) / 1.8
-                                self.TC.text = f'{celcius:.1f}'
-                                kelvin = celcius + 273.15
-                                self.TK.text = f'{kelvin:.1f}'
-                                
-                            def c_calculate(self):
-                                celcius = self.TC.text
-                                if celcius == '' or celcius == None:
-                                    celcius = self.TC.placeholder
-                                celcius = float(celcius)
-                                fahrenheit = (celcius * 1.8) + 32
-                                self.TF.text =  f'{fahrenheit:.1f}'
-                                kelvin = celcius + 273.15
-                                self.TK.text = f'{kelvin:.1f}'
+                                try:
+                                    fahrenheit = self.TF.text
+                                    fahrenheit = float(fahrenheit)
+                                    celcius = (fahrenheit - 32) / 1.8
+                                    self.TC.text = f'{celcius:.1f}'
+                                    kelvin = celcius + 273.15
+                                    self.TK.text = f'{kelvin:.1f}'
+                                except TypeError as error:
+                                    self.TC.text = None
+                                    self.TK.text = None
 
+                            def c_calculate(self):
+                                try:
+                                    celcius = self.TC.text
+                                    celcius = float(celcius)
+                                    fahrenheit = (celcius * 1.8) + 32
+                                    self.TF.text =  f'{fahrenheit:.1f}'
+                                    kelvin = celcius + 273.15
+                                    self.TK.text = f'{kelvin:.1f}'
+                                except TypeError as error:
+                                    self.TC.text = None
+                                    self.TK.text = None
+                                
                             def k_calculate(self):
-                                kelvin = self.TK.text
-                                if kelvin == '' or kelvin == None:
-                                    kelvin = self.TK.placeholder
-                                kelvin = float(kelvin)
-                                celcius = kelvin - 273.15
-                                self.TC.text = f'{celcius:.1f}'
-                                fahrenheit = (celcius * 1.8) + 32
-                                self.TF.text =  f'{fahrenheit:.1f}'
+                                try:
+                                    kelvin = self.TK.text
+                                    kelvin = float(kelvin)
+                                    celcius = kelvin - 273.15
+                                    self.TC.text = f'{celcius:.1f}'
+                                    fahrenheit = (celcius * 1.8) + 32
+                                    self.TF.text =  f'{fahrenheit:.1f}'
+                                except TypeError as error:
+                                    self.TC.text = None
+                                    self.TK.text = None  
       
 
                 .. tab-item:: Q3
@@ -161,6 +172,7 @@ Code
                             def __init__(self, **properties):
                                 # Set Form properties and Data Bindings.
                                 self.init_components(**properties)
+                                # start with from F
                                 self.from_F_click()
                                 
                             def from_F_click(self, **event_args):
@@ -200,34 +212,38 @@ Code
                                 self.k_calculate()
 
                             def f_calculate(self):
-                                fahrenheit = self.TF.text
-                                if fahrenheit == '' or fahrenheit == None:
-                                    fahrenheit = self.TF.placeholder
-                                fahrenheit = float(fahrenheit)
-                                celcius = (fahrenheit - 32) / 1.8
-                                self.TC.text = f'{celcius:.1f}'
-                                kelvin = celcius + 273.15
-                                self.TK.text = f'{kelvin:.1f}'
-                                
+                                try:
+                                    fahrenheit = self.TF.text
+                                    fahrenheit = float(fahrenheit)
+                                    celcius = (fahrenheit - 32) / 1.8
+                                    self.TC.text = f'{celcius:.1f}'
+                                    kelvin = celcius + 273.15
+                                    self.TK.text = f'{kelvin:.1f}'
+                                except TypeError as error:
+                                    self.TC.text = None
+                                    self.TK.text = None
+
                             def c_calculate(self):
-                                celcius = self.TC.text
-                                if celcius == '' or celcius == None:
-                                    celcius = self.TC.placeholder
-                                celcius = float(celcius)
-                                fahrenheit = (celcius * 1.8) + 32
-                                self.TF.text =  f'{fahrenheit:.1f}'
-                                kelvin = celcius + 273.15
-                                self.TK.text = f'{kelvin:.1f}'
-
+                                try:
+                                    celcius = self.TC.text
+                                    celcius = float(celcius)
+                                    fahrenheit = (celcius * 1.8) + 32
+                                    self.TF.text =  f'{fahrenheit:.1f}'
+                                    kelvin = celcius + 273.15
+                                    self.TK.text = f'{kelvin:.1f}'
+                                except TypeError as error:
+                                    self.TC.text = None
+                                    self.TK.text = None
+                                
                             def k_calculate(self):
-                                kelvin = self.TK.text
-                                if kelvin == '' or kelvin == None:
-                                    kelvin = self.TK.placeholder
-                                kelvin = float(kelvin)
-                                celcius = kelvin - 273.15
-                                self.TC.text = f'{celcius:.1f}'
-                                fahrenheit = (celcius * 1.8) + 32
-                                self.TF.text =  f'{fahrenheit:.1f}'
-        
-
+                                try:
+                                    kelvin = self.TK.text
+                                    kelvin = float(kelvin)
+                                    celcius = kelvin - 273.15
+                                    self.TC.text = f'{celcius:.1f}'
+                                    fahrenheit = (celcius * 1.8) + 32
+                                    self.TF.text =  f'{fahrenheit:.1f}'
+                                except TypeError as error:
+                                    self.TC.text = None
+                                    self.TK.text = None      
 
