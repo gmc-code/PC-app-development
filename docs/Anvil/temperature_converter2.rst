@@ -26,10 +26,6 @@ Add image to left
 | A vertical blue line will indicate that you are in the right place to drop it.
 | In the properties panel: text section, set the display_mode to ``shrink_to_fit`` and set the height to ``500``.
 
-
-.. image:: images/temperature/Temperature_converter_Add_image_to_left.png
-    :scale: 60%
-
 ----
 
 Centre the temperature fields
@@ -97,9 +93,6 @@ Format to 1 dp
 
 Add Code for Fahrenheit enter key
 -----------------------------------
-
-.. image:: images/temperature/Temperature_converter_enterkey.png
-    :scale: 100%
 
 | Click the Fahrenheit text box.
 | In the properties panel: events section, click the blue icon for the ``pressed_enter`` event.
