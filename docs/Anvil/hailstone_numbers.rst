@@ -4,6 +4,8 @@ Hailstone numbers
 
 A sequence is called a hailstone sequence because the values typically rise and fall, somewhat analogously to a hailstone inside a cloud.
 
+See working app at: https://6dg737xm7hza7fpt.anvil.app/GGJCIXM6E7TKVF6CXCRGH7ZT
+
 ----
 
 References
@@ -465,6 +467,83 @@ Final  Code
 
 .. admonition:: Tasks
 
-     #. The longest sequence is 351 for hailstone(77031) for numbers <100,000. Find another hailstone number under 100000 with seequence length over 200.
-     #. Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g [3, 5] or [1, 3, 7]
+     #. The longest sequence is 351 for hailstone(77031) for numbers <100,000. Find another hailstone number under 100000 with a sequence length over 200.
+     #. Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the hailstone sequence.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                The longest sequence is 351 for hailstone(77031) for numbers <100,000. Find another hailstone number under 100000 with a sequence length over 200.
+
+                Look at the sequence for hailstone(77031) and find the the next number under 100000. It has a sequence length of 206.
+
+            .. tab-item:: Q2
+
+                Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the hailstone sequence.
+
+                .. code-block:: python
+
+                    # code to allow random choice from a list
+
+                    from random import choice
+
+                    # code to insert in def generate(self):
+
+                    def generate(self):
+                        ...
+                        # check for error in multiplier and display it if present
+                        error = self.test_multiplier()
+                        if error:
+                        self.error.text = error
+                        self.error.visible = True
+                        self.length.text = ""
+                        self.hailstone_numbers.text = ""
+                        self.set_output_field_vis(False)
+                        return
+                        ...
+
+                    # code to text multiplier input
+
+                     def test_multiplier(self):
+                        try:
+                        multiplier_list = self.multiplier.text
+                        multiplier_list = multiplier_list.split(",")
+                        multiplier_list = [int(x) for x in multiplier_list if int(x) % 2 == 1 and int(x) < 10 and int(x) > 0]
+                        if len(multiplier_list) == 0: 
+                            multiplier_list = [3]
+                            self.multiplier_list = multiplier_list
+                            self.multiplier.text = str(multiplier_list).strip('[]')
+                            print(self.multiplier.text)
+                            return None
+                        except ValueError as error:
+                            self.multiplier_list = None
+                            return "multiplier requires positive integers separated by commas."
+                        except IndexError as error:
+                            self.multiplier_list = None
+                            return "multiplier requires positive integers separated by commas."
+
+                    # code to generate hailstone using **choice(self.multiplier_list)**
+
+                    def hailstone(self, num):
+                        # return list of numbers
+                        hailstone_list = [num]
+                        while num > 1:
+                            if hailstone_list[-1] == 1:
+                                return hailstone_list
+                            else:
+                                if hailstone_list[-1] % 2 == 0:
+                                    new_num = int(hailstone_list[-1] / 2)
+                                else:
+                                    multiplier = choice(self.multiplier_list)
+                                    new_num = (hailstone_list[-1] * multiplier) + 1
+                                hailstone_list.append(new_num)
+                                if len(hailstone_list) > 1000:
+                                    return hailstone_list
+                        return hailstone_list
+                    
