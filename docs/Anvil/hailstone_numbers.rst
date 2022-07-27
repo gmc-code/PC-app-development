@@ -467,3 +467,4 @@ Final  Code
 
      #. The longest sequence is 351 for hailstone(77031) for numbers <100,000. Find another hailstone number under 100000 with seequence length over 200.
      #. Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g [3, 5] or [1, 3, 7]
+
