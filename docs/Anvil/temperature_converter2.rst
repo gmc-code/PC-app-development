@@ -6,7 +6,7 @@ This enhances the temperature converter.
 
 .. image:: images/temperature/Temperature_converter2_layout.png
     :scale: 60%
-    
+
 ----
 
 References
@@ -35,9 +35,6 @@ Centre the temperature fields
 | At first, a full length blue line appears. Drag down to move the blue line down as in the image below.
 | A vertical blue line will indicate that you are in the right place to drop it.
 | In the properties panel: set the height to **150**.
-
-.. image:: images/temperature/Temperature_converter_Add_spacer_above.png
-    :scale: 60%
 
 ----
 
