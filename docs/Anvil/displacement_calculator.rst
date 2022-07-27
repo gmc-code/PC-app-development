@@ -7,7 +7,8 @@ This app calculates the displacement, S, given u, v, and t.
 | Working app at: https://GMC-Displacement-Calculator.anvil.app
 
 .. image:: images/kinematics/displacement_calc.png
-
+    :scale: 60
+    
 ----
 
 Get started
@@ -79,7 +80,7 @@ Error field
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
 .. image:: images/kinematics/displacement_calc_error.png
-    :scale: 80
+    :scale: 60
 
 | Code to hide or show error field takes the **error** parameter.
 | An error will be shown if **error** is a text string.
