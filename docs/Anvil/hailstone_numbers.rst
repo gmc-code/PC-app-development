@@ -4,7 +4,7 @@ Hailstone numbers
 
 A sequence is called a hailstone sequence because the values typically rise and fall, somewhat analogously to a hailstone inside a cloud.
 
-See working app at: https://6dg737xm7hza7fpt.anvil.app/GGJCIXM6E7TKVF6CXCRGH7ZT
+See working app at: https://GMC-Hailstone-numbers.anvil.app
 
 ----
 
@@ -149,9 +149,10 @@ Generate_hailstone button
 Error field
 ~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
+| Drag and drop a *label* component onto the column panel below the start number textbox.
 | In the properties panel: name section, set the **name** to **error**.
 | In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: appearance section, set the **foreground_color** to **#ff0000**.
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
 .. image:: images/hailstone/Hailstone_error.png
@@ -487,7 +488,7 @@ Final  Code
 
                 Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the hailstone sequence.
 
-                Working app at: https://SKHHFGTQAUHSZ3PP.anvil.app/F4P6ONHKWIGCKVBKY6MUMAGQ
+                Working app at: https://GMC-Hailstone-with-random-multipliers.anvil.app
 
                 .. code-block:: python
 

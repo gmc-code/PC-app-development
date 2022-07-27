@@ -4,6 +4,8 @@ Displacement calculator
 
 This app calculates the displacement, S, given u, v, and t.
 
+| Working app at: https://GMC-Displacement-Calculator.anvil.app
+
 .. image:: images/kinematics/displacement_calc.png
 
 ----
@@ -67,6 +69,38 @@ Decimal Places Dropdown Code
 
 ----
 
+Error field
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop a *label* component to jsut above the Calculate button.
+| In the properties panel: name section, set the **name** to **error**.
+| In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: appearance section, set the **foreground_color** to **#ff0000**.
+| In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
+
+
+.. image:: images/kinematics/displacement_calc_error.png
+    :scale: 80
+
+| Code to hide or show error field takes the **error** parameter.
+| An error will be shown if **error** is a text string.
+| Passing **None** as the **error** parameter hides and clears the error field.
+
+.. code-block:: python
+
+
+        def do_error(self, error):
+            # check for error and display it if present
+            if error:
+                self.error.text = error
+                self.error.visible = True
+            else:
+                # hide error and clear it
+                self.error.text = ""
+                self.error.visible = False
+
+----
+
 Calculation
 --------------------
 
@@ -82,19 +116,19 @@ Calculation
 
 .. code-block:: python
 
-    def calculate_click(self, **event_args):
-        try:
-            S = 0.5 * (self.u.text + self.v.text) * self.t.text
-        except TypeError as error:
-            self.S.text = 'error'
-        except BaseException as error:
-            self.S.text = 'error'
-        else:
-            if self.t.text < 0:
-                self.S.text = 'error'
+        def calculate_click(self, **event_args):
+            try:
+                S = 0.5 * (self.u.text + self.v.text) * self.t.text
+            except TypeError as error:
+                self.S.text = None
+                self.do_error('TypeError: enter numbers for u, v and t')
             else:
-                self.S.text = f'{S:.{self.dp}f}'
-
+                if self.t.text < 0:
+                    self.S.text = None
+                    self.do_error('TimeError: use t > 0')
+                else:
+                    self.S.text = f'{S:.{self.dp}f}'
+                    self.do_error(None)
 
 ----
 
@@ -119,6 +153,8 @@ Final  Code
             self.decimal_places.items = ['0', '1', '2', '3', '4']   #requires list of strings
             self.decimal_places.selected_value = '2'
             self.dp = int(self.decimal_places.selected_value)
+            # hide error field
+            self.error.visible = False
             
         def decimal_places_change(self, **event_args):
             self.dp = int(self.decimal_places.selected_value)
@@ -127,14 +163,27 @@ Final  Code
             try:
                 S = 0.5 * (self.u.text + self.v.text) * self.t.text
             except TypeError as error:
-                self.S.text = 'error'
-            except BaseException as error:
-                self.S.text = 'error''
+                self.S.text = None
+                self.do_error('TypeError: enter numbers for u, v and t')
             else:
                 if self.t.text < 0:
-                    self.S.text = 'error'
+                    self.S.text = None
+                    self.do_error('TimeError: use t > 0')
                 else:
                     self.S.text = f'{S:.{self.dp}f}'
+                    self.do_error(None)
+
+
+        def do_error(self, error):
+            # check for error and display it if present
+            if error:
+                self.error.text = error
+                self.error.visible = True
+            else:
+                # hide error and clear it
+                self.error.text = ""
+                self.error.visible = False
+
 
 ----
 
