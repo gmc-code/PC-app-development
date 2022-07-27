@@ -78,7 +78,6 @@ Error field
 | In the properties panel: appearance section, set the **foreground_color** to **#ff0000**.
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
-
 .. image:: images/kinematics/displacement_calc_error.png
     :scale: 80
 
