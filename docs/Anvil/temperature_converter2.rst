@@ -39,8 +39,8 @@ Add image to left
 
 ----
 
-Vertically Centre the temperature fields with the image
-------------------------------------------------------------
+Vertically Centre the temperature fields 
+--------------------------------------------
 
 | Drag and drop the *spacer* component onto card_1 above the Fahrenheit label. 
 | At first, a full length blue line appears. Drag down to move the blue line down as in the image below.
