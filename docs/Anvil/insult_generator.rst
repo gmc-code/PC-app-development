@@ -6,7 +6,7 @@ This app generates a random insult.
 
 A useful tool for formatting long lists is at: https://www.xhcode.com/pythonformat/
 
-| Working app at: https://GMC-Insult-generator.anvil.app
+| Working app at: https://pc-insult-generator.anvil.app
 
 ----
 

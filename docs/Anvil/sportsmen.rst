@@ -4,7 +4,7 @@ Sportsmen
 
 This uses nested dictionaries to display chosen information from nested dictionaries.
 
-| Working app at: https://GMC-Sportsmen.anvil.app
+| Working app at: https://pc-sportsmen.anvil.app
 
 ----
 
@@ -20,19 +20,34 @@ Design
 ---------
 
 | Use an XY panel for easy resizing and placement of fields.
+| Use a label field to display instructions.
 | Use 4 radio buttons to choose the information to display.
 | Use 3 label fields to display the information type.
 | Use 3 label fields to display the information content.
 | Add text information in a nested dictionary.
 | Upload Images to 4 image objects and hide them.
 
-.. image:: images/sportsmen/sportsmen.png
+.. image:: images/sportsmen/sportsmen1.png
     :scale: 100
 
 ----
 
+Instructions
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop a *label* component onto the column panel.
+| In the properties panel: name section, set the **name** to **instructions**.
+| In the properties panel: text section, set the **text** to text below.
+| In the properties panel: text section, set the **font_size** to 18.
+
+.. code-block::
+    
+    Press a sport option button to show a famous player.
+
+----
+
 Radio buttons
-----------------
+~~~~~~~~~~~~~~~~~~~
 
 | Place the radio buttons together in a horizontal line at the top.
 | Use the properties panel to set their names and their text property to "basketball", "cricket", "soccer", "AFL".
@@ -42,7 +57,7 @@ Radio buttons
 ----
 
 Information type 
-------------------
+~~~~~~~~~~~~~~~~~~~
 
 | Place 3 label fields in a vertical line at the left below the first radio button.
 | Name the label fields: "player_label", "score_label" and "average_label".
@@ -51,7 +66,7 @@ Information type
 ----
 
 Information content 
---------------------
+~~~~~~~~~~~~~~~~~~~
 
 | Place 3 label fields in a vertical line at the left below the second radio button.
 | Name the label fields: "player", "score" and "average".
@@ -60,7 +75,7 @@ Information content
 ----
 
 Images 
---------------------
+~~~~~~~~~~~~~~~~~~~
 
 | Place 4 image objects below the other fields, 1 at a time.
 | Name the images one at a time: "img_basketball", "img_cricket", "img_soccer", "img_AFL".

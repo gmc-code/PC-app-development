@@ -4,7 +4,7 @@ Name and age
 
 This app takes input of the name and age and outputs a string containing that info.
 
-| Working app at: https://GMC-name-and-age.anvil.app
+| Working app at: https://pc-name-and-age.anvil.app
 
 ----
 
@@ -128,7 +128,7 @@ Output Code
 
 | The **get_name_age** function has 2 parameters: **name** and **age**.
 | It will be called using: **self.get_name_age(self.name.text, self.age.text)**.
-| It checks to see that both the name and age have been input and returns "error" if not.
+| It checks to see that both the name and age have been input and returns **None** if not.
 | It returns an f-string containing the **name** and **age**.
 
 | The **do_output** function places the output text.
@@ -137,7 +137,7 @@ Output Code
 
     def get_name_age(self, name, age):
         if name == "" or age == "":
-            return "error"
+            return None
         else:
             return f'My name is {name}. I am {age} years old.'
 
@@ -185,7 +185,7 @@ Final  Code
 
         def get_name_age(self, name, age):
             if name == "" or age == "":
-                return "error"
+                return None
             else:
                 return f'My name is {name}. I am {age} years old.'
 

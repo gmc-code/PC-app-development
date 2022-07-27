@@ -4,7 +4,7 @@ Hailstone numbers
 
 A sequence is called a hailstone sequence because the values typically rise and fall, somewhat analogously to a hailstone inside a cloud.
 
-See working app at: https://GMC-Hailstone-numbers.anvil.app
+See working app at: https://pc-hailstone-numbers.anvil.app
 
 ----
 
@@ -27,7 +27,7 @@ Design
 | Add a text area to display the hailstone numbers.
 
 .. image:: images/hailstone/Hailstone_numbers.png
-    :scale: 80
+    :scale: 60
 
 ----
 
@@ -156,7 +156,7 @@ Error field
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
 .. image:: images/hailstone/Hailstone_error.png
-    :scale: 80
+    :scale: 60
 
 ----
 
