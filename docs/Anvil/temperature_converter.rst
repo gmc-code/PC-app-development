@@ -124,17 +124,18 @@ Code
 | ``fahrenheit = self.fahrenheit.text`` can be used to get the Fahrenheit temperature.
 | ``if self.fahrenheit.text:`` evaluates to True if a number has been entered or False if the textbox is empty.  
 | ``self.celcius.text = f'{celcius:.1f}'`` can be used to place the calculated value formatted to 1 decimal place.
-| Use ``self.celcius.text = None`` to clear the Celcius textbox when there is no Fahrenheit number entered. 
+| Use a **try-except** block to catch any invalid numbers in the fahrenheit entry. 
+| Testing invalid entries results in TypeErrors, so this is used to clear the celcius value via: ``self.celcius.text = None``.
 
 .. code-block:: python
 
-    def convert_click(self, **event_args):
-        if self.fahrenheit.text:
-            fahrenheit = self.fahrenheit.text
-            celcius = (fahrenheit - 32) / 1.8
-            self.celcius.text = f'{celcius:.1f}'
-        else:
-            self.celcius.text = None
+  def convert_click(self, **event_args):
+      try: 
+        fahrenheit = self.fahrenheit.text
+        celcius = (fahrenheit - 32) / 1.8
+        self.celcius.text = f'{celcius:.1f}'
+      except TypeError as er:
+        self.celcius.text = None
 
 ----
 
@@ -158,11 +159,11 @@ Final  Code
             self.init_components(**properties)
         
         def convert_click(self, **event_args):
-            if self.fahrenheit.text:
+            try: 
                 fahrenheit = self.fahrenheit.text
                 celcius = (fahrenheit - 32) / 1.8
                 self.celcius.text = f'{celcius:.1f}'
-            else:
+            except TypeError as er:
                 self.celcius.text = None
 
 ----

@@ -37,38 +37,7 @@ Centre the temperature fields
 | A vertical blue line will indicate that you are in the right place to drop it.
 | In the properties panel: set the height to **150**.
 
-----
-
-Use placeholder text and type
-------------------------------
-
-| Click the Fahrenheit text box. 
-| In the properties panel: text section, set the placeholder text to **68** and the text to empty.
-| In the properties panel: text section, set the type to **number** so only numbers can be entered.
-
-| Click the Celcius text box. 
-| In the properties panel: text section, set the placeholder text to **20** and the text to empty.
-| In the properties panel: text section, set the type to **number** so only numbers can be entered.
-
 -----
-
-Adjust Code for placeholder
-------------------------------
-
-| Adjust the code so that the placeholder text is used if no entry is made.
-| With the text box set to the number type, text property returns None when no numbers have been entered.
-| Test for empty string or None type using: ``if fahrenheit == '' or fahrenheit == None``
-
-.. code-block:: python
-
-        def button_1_click(self, **event_args):
-            fahrenheit = self.text_box_1.text
-            if fahrenheit == '' or fahrenheit == None:
-                fahrenheit = self.text_box_1.placeholder
-            fahrenheit = float(fahrenheit)
-            celcius = (fahrenheit - 32) / 1.8
-            self.text_box_2.text = celcius
-----
 
 Format to 1 dp
 ------------------------------
@@ -258,7 +227,7 @@ Final code
 
 .. admonition:: Tasks
 
-    #. Add code to restrict temperature entries so that they can not be below absolute zero.
+    #. Add code to restrict temperature entries so that they cannot be below absolute zero.
     #. Replace Fahrenheit with Kelvin and adjust the display and the code to work.
-    #. Give appropriate names to the fields and buttons so that the default names are replaced with meaningful names. e.g. **text_box_1** becomes **fahrenheit**. e.g **button_1** becomes **convert_FtoC**. Make all the necessary replacements in the code to account for these changes.
+
 

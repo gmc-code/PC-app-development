@@ -26,7 +26,7 @@ Design
 | Search online for a temperature icon to use. Save it. Edit it. For use as an app logo, add it to the Assets, via the 3 vertical dots Add Assets and Upload File button. Add the icon to the convert buttons using the upload an image button in the properties panel icon section.
 | Click on **From F**, **From C**, or **From K** to hide the other convert buttons, only showing the associated convert button.
 
-
+----
 
 Code
 ------------
