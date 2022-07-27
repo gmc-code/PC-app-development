@@ -49,12 +49,12 @@ Format to 1 dp
 .. code-block:: python
 
         def button_1_click(self, **event_args):
-            fahrenheit = self.text_box_1.text
-            if fahrenheit == '' or fahrenheit == None:
-                fahrenheit = self.text_box_1.placeholder
-            fahrenheit = float(fahrenheit)
-            celcius = (fahrenheit - 32) / 1.8
-            self.text_box_2.text = f'{celcius:.1f}'
+            try: 
+                fahrenheit = self.fahrenheit.text
+                celcius = (fahrenheit - 32) / 1.8
+                self.celcius.text = f'{celcius:.1f}'
+            except TypeError as error:
+                self.celcius.text = None
 
 -----
 

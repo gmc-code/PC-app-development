@@ -125,7 +125,7 @@ Code
 | ``if self.fahrenheit.text:`` evaluates to True if a number has been entered or False if the textbox is empty.  
 | ``self.celcius.text = f'{celcius:.1f}'`` can be used to place the calculated value formatted to 1 decimal place.
 | Use a **try-except** block to catch any invalid numbers in the fahrenheit entry. 
-| Testing invalid entries results in TypeErrors, so this is used to clear the celcius value via: ``self.celcius.text = None``.
+| Form testing invalid entries, TypeErrors are produced, so ``except TypeError as error:`` is used to clear the celcius value via: ``self.celcius.text = None``.
 
 .. code-block:: python
 
@@ -134,7 +134,7 @@ Code
         fahrenheit = self.fahrenheit.text
         celcius = (fahrenheit - 32) / 1.8
         self.celcius.text = f'{celcius:.1f}'
-      except TypeError as er:
+      except TypeError as error:
         self.celcius.text = None
 
 ----
