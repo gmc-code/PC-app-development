@@ -4,7 +4,7 @@ Displacement calculator
 
 This app calculates the displacement, S, given u, v, and t.
 
-| Working app at: https://GMC-Displacement-Calculator.anvil.app
+| Working app at: https://pc-displacement-calculator.anvil.app
 
 .. image:: images/kinematics/displacement_calc.png
     :scale: 60
@@ -31,15 +31,15 @@ Design
 ----
 
 Key components
--------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 | Name the input textboxes: **u**, **v** and **t**.
 | Set each of the input textbox property **type** settings to **number**.
 
 ----
 
-Decimal Places Dropdown Code 
-------------------------------
+Decimal Places Dropdown 
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 | Name the dropdown: **decimal_places**.
 | Set the dropdown items using: ``self.decimal_places.items = ['0', '1', '2', '3', '4']``
@@ -73,7 +73,7 @@ Decimal Places Dropdown Code
 Error field
 ~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component to jsut above the Calculate button.
+| Drag and drop a *label* component to just above the Calculate button.
 | In the properties panel: name section, set the **name** to **error**.
 | In the properties panel: text section, set the **font_size** to 16.
 | In the properties panel: appearance section, set the **foreground_color** to **#ff0000**.
@@ -88,16 +88,15 @@ Error field
 
 .. code-block:: python
 
-
-        def do_error(self, error):
-            # check for error and display it if present
-            if error:
-                self.error.text = error
-                self.error.visible = True
-            else:
-                # hide error and clear it
-                self.error.text = ""
-                self.error.visible = False
+    def do_error(self, error):
+        # check for error and display it if present
+        if error:
+            self.error.text = error
+            self.error.visible = True
+        else:
+            # hide error and clear it
+            self.error.text = ""
+            self.error.visible = False
 
 ----
 

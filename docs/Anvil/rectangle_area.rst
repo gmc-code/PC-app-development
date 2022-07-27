@@ -4,8 +4,11 @@ Rectangle area
 
 This app calculates the area of a rectangle, given the length and width.
 
-.. image:: images/area/rectangle_area.png
+| Working app at: https://pc-rectangle-area.anvil.app
 
+.. image:: images/area/rectangle_area.png
+    :scale: 60
+    
 | Use a XY panel for the diagram region, so that the text labels can be placed over the diagram.
 
 | Download the diagram file :download:`rectangle diagram <images/area/rectangle.png>`.
@@ -27,6 +30,36 @@ Key components
 | Name the input textboxes: **length** and **width**.
 | Set both input textbox property **type** settings to **number**.
 | Name the labels on the diagram: **diagram_length** and **diagram_width**.
+
+----
+
+Error field
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop a *label* component onto the column panel below the width textbox.
+| In the properties panel: name section, set the **name** to **error**.
+| In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: appearance section, set the **foreground_color** to **#ff0000**.
+| In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
+
+.. image:: images/area/rectangle_area_error.png
+    :scale: 60
+
+| Code to hide or show error field takes the **error** parameter.
+| An error will be shown if **error** is a text string.
+| Passing **None** as the **error** parameter hides and clears the error field.
+
+.. code-block:: python
+
+    def do_error(self, error):
+        # check for error and display it if present
+        if error:
+            self.error.text = error
+            self.error.visible = True
+        else:
+            # hide error and clear it
+            self.error.text = ""
+            self.error.visible = False
 
 ----
 
@@ -75,12 +108,15 @@ Calculation
         try:
             val = self.length.text * self.width.text
         except TypeError as error:
-            self.area.text = 'use positive lengths'
+            self.area.text = None
+            self.do_error('use positive lengths')
         else:
             if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
-                self.area.text = 'use positive lengths'
+                self.area.text = None
+                self.do_error('use positive lengths')
             else:
                 self.area.text = f'{val:.2f}'
+                self.do_error(None)
 
 ----
 
@@ -105,17 +141,6 @@ Final  Code
 
         def Calculate_click(self, **event_args):
             self.calculate_area()
-        
-        def calculate_area(self):
-            try:
-                val = self.length.text * self.width.text
-            except TypeError as error:
-                self.area.text = 'use positive lengths'
-            else:
-                if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
-                    self.area.text = 'use positive lengths'
-                else:
-                    self.area.text = f'{val:.2f}'
 
         def width_pressed_enter(self, **event_args):
             self.calculate_area()
@@ -128,6 +153,30 @@ Final  Code
 
         def width_change(self, **event_args):
             self.diagram_width.text = self.width.text
+
+        def calculate_area(self):
+            try:
+                val = self.length.text * self.width.text
+            except TypeError as error:
+                self.area.text = None
+                self.do_error('use positive lengths')
+            else:
+                if val <= 0 or self.length.text <= 0 or self.width.text <= 0:
+                    self.area.text = None
+                    self.do_error('use positive lengths')
+                else:
+                    self.area.text = f'{val:.2f}'
+                    self.do_error(None)
+
+        def do_error(self, error):
+            # check for error and display it if present
+            if error:
+                self.error.text = error
+                self.error.visible = True
+            else:
+                # hide error and clear it
+                self.error.text = ""
+                self.error.visible = False
 
 ----
 

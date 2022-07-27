@@ -4,7 +4,9 @@ Force components
 
 This app calculates the horizontal and vertical components of a force at a given angle.
 
-.. image:: images/forces/force_components1.png
+| Working app at: https://pc-force-components.anvil.app
+
+.. image:: images/forces/force_components.png
 
 | Use the image above to build the interface, using textboxes for the inputs and labels for other text fields.
 | Use a XY panel for the diagram region, so that the text labels can be placed over the force diagram.
@@ -32,6 +34,37 @@ Key components
 | Set the foreground colour of the **diagram_force** label to #0811fc.
 | Set the foreground colour of the **Fy** label to #007200.
 | Set the foreground colour of the **Fx** label to #ff0000.
+| Name the error label : **error**.
+
+----
+
+Error field
+~~~~~~~~~~~~~~~~~~~
+
+| Drag and drop a *label* component onto the column panel below the width textbox.
+| In the properties panel: name section, set the **name** to **error**.
+| In the properties panel: text section, set the **font_size** to 16.
+| In the properties panel: appearance section, set the **foreground_color** to **#ff0000**.
+| In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
+
+.. image:: images/forces/force_components_error.png
+    :scale: 60
+
+| Code to hide or show error field takes the **error** parameter.
+| An error will be shown if **error** is a text string.
+| Passing **None** as the **error** parameter hides and clears the error field.
+
+.. code-block:: python
+
+    def do_error(self, error):
+        # check for error and display it if present
+        if error:
+            self.error.text = error
+            self.error.visible = True
+        else:
+            # hide error and clear it
+            self.error.text = ""
+            self.error.visible = False
 
 ----
 
@@ -79,13 +112,25 @@ Calculation
     from math import cos, sin, pi
 
     def do_calculation(self):
-        # angle in degrees, convert to radians
-        force = self.force.text
-        angle = self.angle.text * (pi / 180)
-        fx = force * cos(angle)
-        fy = force * sin(angle)
-        self.Fx.text = f'{fx:.2f}'
-        self.Fy.text = f'{fy:.2f}'
+        try:
+            # angle in degrees, convert to radians
+            force = self.force.text
+            angle = self.angle.text * (pi / 180)
+            fx = force * cos(angle)
+            fy = force * sin(angle)
+        except TypeError as error:
+            self.Fx.text = None
+            self.Fy.text = None
+            self.do_error('use positive values')
+        else:
+            if fx <= 0 or fy <= 0:
+                self.Fx.text = None
+                self.Fy.text = None
+                self.do_error('use positive values')
+            else:
+                self.Fx.text = f'{fx:.2f}'
+                self.Fy.text = f'{fy:.2f}'
+                self.do_error(None)
 
 ----
 
@@ -109,6 +154,8 @@ Final  Code
         def __init__(self, **properties):
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
+            # hide error field
+            self.error.visible = False
 
         def calculate_click(self, **event_args):
             self.do_calculation()
@@ -126,13 +173,35 @@ Final  Code
             self.diagram_angle.text = self.angle.text
 
         def do_calculation(self):
-            # angle in degrees, convert to radians
-            force = self.force.text
-            angle = self.angle.text * (pi / 180)
-            fx = force * cos(angle)
-            fy = force * sin(angle)
-            self.Fx.text = f'{fx:.2f}'
-            self.Fy.text = f'{fy:.2f}'
+            try:
+                # angle in degrees, convert to radians
+                force = self.force.text
+                angle = self.angle.text * (pi / 180)
+                fx = force * cos(angle)
+                fy = force * sin(angle)
+            except TypeError as error:
+                self.Fx.text = None
+                self.Fy.text = None
+                self.do_error('use positive values')
+            else:
+                if fx <= 0 or fy <= 0:
+                    self.Fx.text = None
+                    self.Fy.text = None
+                    self.do_error('use positive values')
+                else:
+                    self.Fx.text = f'{fx:.2f}'
+                    self.Fy.text = f'{fy:.2f}'
+                    self.do_error(None)
+
+        def do_error(self, error):
+            # check for error and display it if present
+            if error:
+                self.error.text = error
+                self.error.visible = True
+            else:
+                # hide error and clear it
+                self.error.text = ""
+                self.error.visible = False
 
 ----
 
