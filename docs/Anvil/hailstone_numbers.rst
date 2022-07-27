@@ -201,10 +201,8 @@ Hailstone_numbers
 Initial Code 
 --------------------
 
-| Use the instance variable, **self.hailstone_seed**, for the hailstone start number.
-| Set **self.hailstone_seed** to **1** so it has an intial value.
 | Hide the **error** field by setting its **visible** property to **False**.
-| Hide the length and hailstone list fields. Use a separate function for this with a pararmeter to set the visibility of each of the 3 fields:  **length_label**, **length**, **hailstone_numbers**.
+| Hide the length fields the and hailstone list field. Use a separate function for this with a pararmeter to set the visibility of each of the 3 fields:  **length_label**, **length**, **hailstone_numbers**.
 
 .. code-block:: python
 
@@ -213,7 +211,7 @@ Initial Code
         def __init__(self, **properties):
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
-            self.hailstone_seed = 1
+            # hide error field and output fields
             self.error.visible = False
             self.set_main_field_vis(False)
 
@@ -243,13 +241,13 @@ Event Code
 Hailstone Code 
 --------------------
 
-| The **hailstone** function takes the **hailstone_seed** as its parameter, **num**.
+| The **hailstone** function takes the parameter, **num**.
 | The list is set to this value: **hailstone_list = [num]**.
-| The **while num > 1:** loop runs while **num** is greater than 1. If the **hailstone_seed** value is 1, the hailstone_list, **[1]**, is immediatley returned.
-| In the while loop, the last value is checked, hailstone_list[-1]. If hte last value is 1, then the hailstone_list is returned.
-| **hailstone_list[-1] % 2** is used to check whether the last number is an even number. 
-| If it is even, the new_num to add to the list is halved.
-| If it is odd, the new_num to add to the list is multiplied by three and 1 is added.
+| The **while num > 1:** loop runs while **num** is greater than 1. If the **num** value is 1, the hailstone_list, **[1]**, is immediatley returned.
+| In the while loop, the last value is checked, hailstone_list[-1]. If the last value is 1, then the hailstone_list is returned.
+| **hailstone_list[-1] % 2 == 0** is used to check whether the last number is an even number. 
+| If it is even, the last value is halved.
+| If it is odd, the last value is multiplied by three and 1 is added.
 
 .. code-block:: python
 
@@ -290,7 +288,7 @@ Checking the input
         # floats
         if self.hailstone_start.text != int(self.hailstone_start.text):
             return "Postitive Integers, not floats are needed."
-        self.hailstone_seed = int(self.hailstone_start.text)
+        # have an int, no error
         return None
 
 ----
@@ -304,21 +302,23 @@ Generate Code
 .. code-block:: python
 
     def generate(self):
+        # hide error and clear it
         self.error.visible = False
-        self.error.text = " "
+        self.error.text = ""
+        # check for error and display it if present
         error = self.test_integer()
         if error:
             self.error.text = error
             self.error.visible = True
             self.length.text = ""
             self.hailstone_numbers.text = ""
-            self.set_main_field_vis(False)
+            self.set_output_field_vis(False)
             return
-        hns = self.hailstone(self.hailstone_seed)
+        # continue if no error
+        hns = self.hailstone(self.hailstone_start.text)
         self.hailstone_numbers.text = hns
-        length = len(hns)
-        self.length.text = length
-        self.set_main_field_vis(True)
+        self.length.text = len(hns)
+        self.set_output_field_vis(True)
         
     def test_integer(self):
         # str(invalid entries) give the string 'None'
@@ -333,7 +333,7 @@ Generate Code
         # floats
         if self.hailstone_start.text != int(self.hailstone_start.text):
             return "Postitive Integers, not floats are needed."
-        self.hailstone_seed = int(self.hailstone_start.text)
+        # have an int, no error
         return None
 
     def hailstone(self, num):
@@ -369,15 +369,19 @@ Final  Code
         def __init__(self, **properties):
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
-            self.hailstone_seed = 1
+            # hide error field and output fields
             self.error.visible = False
-            self.set_main_field_vis(False)
+            self.set_output_field_vis(False)
             
-        def set_main_field_vis(self, vis_bool):
+        def set_output_field_vis(self, vis_bool):
             self.length_label.visible = vis_bool
             self.length.visible = vis_bool
             self.hailstone_numbers.visible = vis_bool
             
+        def hailstone_start_change(self, **event_args):
+            if self.hailstone_start.text:
+                self.hailstone_start.text = min(100000, self.hailstone_start.text)
+        
         def generate_click(self, **event_args):
             self.generate()
             
@@ -385,22 +389,24 @@ Final  Code
             self.generate()
             
         def generate(self):
+            # hide error and clear it
             self.error.visible = False
-            self.error.text = " "
+            self.error.text = ""
+            # check for error and display it if present
             error = self.test_integer()
             if error:
                 self.error.text = error
                 self.error.visible = True
                 self.length.text = ""
                 self.hailstone_numbers.text = ""
-                self.set_main_field_vis(False)
+                self.set_output_field_vis(False)
                 return
-            hns = self.hailstone(self.hailstone_seed)
+            # continue if no error
+            hns = self.hailstone(self.hailstone_start.text)
             self.hailstone_numbers.text = hns
-            length = len(hns)
-            self.length.text = length
-            self.set_main_field_vis(True)
- 
+            self.length.text = len(hns)
+            self.set_output_field_vis(True)
+            
         def test_integer(self):
             # str(invalid entries) give the string 'None'
             if str(self.hailstone_start.text) == 'None':
@@ -414,7 +420,7 @@ Final  Code
             # floats
             if self.hailstone_start.text != int(self.hailstone_start.text):
                 return "Postitive Integers, not floats are needed."
-            self.hailstone_seed = int(self.hailstone_start.text)
+            # have an int, no error
             return None
 
         def hailstone(self, num):
@@ -430,6 +436,7 @@ Final  Code
                         new_num = (hailstone_list[-1] * 3) + 1
                     hailstone_list.append(new_num)
             return hailstone_list
+
 
 ----
 
