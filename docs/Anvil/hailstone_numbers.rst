@@ -487,6 +487,8 @@ Final  Code
 
                 Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the hailstone sequence.
 
+                Working app at: https://SKHHFGTQAUHSZ3PP.anvil.app/F4P6ONHKWIGCKVBKY6MUMAGQ
+
                 .. code-block:: python
 
                     # code to allow random choice from a list
