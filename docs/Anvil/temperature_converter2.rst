@@ -39,7 +39,7 @@ Add image to left
 
 ----
 
-Veertically Centre the temperature fields with the image
+Vertically Centre the temperature fields with the image
 ------------------------------------------------------------
 
 | Drag and drop the *spacer* component onto card_1 above the Fahrenheit label. 
