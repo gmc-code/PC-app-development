@@ -5,7 +5,7 @@ Feedback Form
 | This builds a feedback form that uses full stack: client side and server side code in python.
 | The references add an email capability but email has account quotas, so it will not be included below.
 
-| Working app at: https://gmc-feedback-form.anvil.app
+| Working app at: https://pc-feedback-form.anvil.app
 
 .. image:: images/feedback/Feedback_Form.png
     :scale: 70%

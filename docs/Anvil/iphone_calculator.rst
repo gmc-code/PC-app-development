@@ -2,11 +2,15 @@
 iPhone Calculator
 ====================================================
 
-This builds a simple calculator using code to add the buttons.
-It is based on, with slight variations to suit, the the iphone calculator with a grid of 5 rows and 4 columns.
+| This builds a simple calculator using code to add the buttons.
+| It is based on, with slight variations to suit, the the iphone calculator with a grid of 5 rows and 4 columns.
+
+| Working app at: https://pc-iphone-calculator.anvil.app
 
 .. image:: images/calculator/calculator.png
     :scale: 60%
+
+----
 
 References
 ------------------------------
@@ -353,3 +357,4 @@ Final code
     #. The keyboard can also be used instead of the buttons. Try it out. 
     #. Try adding some maths function buttons in another row. e.g. x^2 which squares the text box. e.g. sqrt which takes the square root.
     #. Try adding some maths function buttons in another row by importing the maths library. See: https://docs.python.org/3/library/math.html
+
