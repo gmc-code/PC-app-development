@@ -39,7 +39,7 @@ PC-app-development
     Anvil/displacement_calculator.rst
     
     .. Anvil/days_calculator.rst
-
+    .. Anvil/fibonacci_numbers.rst
 
 .. toctree::
     :maxdepth: 2
