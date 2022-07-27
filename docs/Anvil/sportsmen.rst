@@ -27,7 +27,7 @@ Design
 | Add text information in a nested dictionary.
 | Upload Images to 4 image objects and hide them.
 
-.. image:: images/sportsmen/sportsmen1.png
+.. image:: images/sportsmen/sportsmen.png
     :scale: 100
 
 ----
