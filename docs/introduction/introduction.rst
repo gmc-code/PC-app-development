@@ -15,9 +15,16 @@ PC-app-development
 Home pages:
 ---------------------
 
-| https://pc-app-development.readthedocs.io/en/latest/index.html
+| **year 7**
+| microbit: https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
+| bots: https://pc-microbit-extension.readthedocs.io/en/latest/index.html
 
-| https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+| **year 9-10**
+| algorithms: https://pc-algorithms.readthedocs.io/en/latest/index.html
+| app development: https://pc-app-development.readthedocs.io/en/latest/index.html
+
+| **python**
+| python: https://pc-python.readthedocs.io/en/latest/index.html
 
 ----
 
