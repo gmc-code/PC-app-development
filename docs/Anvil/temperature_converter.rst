@@ -41,8 +41,8 @@ Settings
 
 ----
 
-Build first part of the interface
-----------------------------------
+Build the first part of the interface
+----------------------------------------
 
 | Drag and drop a *label* component onto the **Drop title here** container.
 | In the properties panel: name section, set the **name** to **title**.
@@ -206,6 +206,7 @@ Final  Code
 
 .. admonition:: Tasks
 
+    #. Add error checking with feedback. While the input filed has been restricted to numbers, typing a double negative sign is still possible. So make sure that en error message is shown if this is attempted.
     #. Try making a distance converter such as miles to km or inches to cm.
     #. Try making a mass converter such as lbs to kg.
     #. Try making a volume converter such as gallons to litres.
