@@ -2,7 +2,7 @@
 Name and age
 ====================================================
 
-This app takes input of the name and age and outputs a string containing that info.
+This app takes inputs of the name and age and outputs a string containing that info.
 
 | Working app at: https://pc-name-and-age.anvil.app
 
@@ -205,6 +205,8 @@ Final  Code
 
 .. admonition:: Tasks
 
+    #. Add an error textbox field and provide error messages: for missing an age or name, for entering text instead of a number for age, and entering a number instead of text for the name.
     #. Add a third input textbox field and add its information to the output string. e.g. Favourite sport.
+
 
 
