@@ -66,8 +66,7 @@ PC-app-development
     :numbered:
 
 
-    turtle/tkinter_introduction.rst
-    tk/tkinter_install.rst
+    turtle/turtle_introduction.rst
 
  
 
