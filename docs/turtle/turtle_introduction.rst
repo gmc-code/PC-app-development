@@ -5,14 +5,19 @@ Introduction to turtle
 turtle documentation
 ----------------------------------------
 
-| Docs https://docs.python.org/3.11/library/turtle.html#module-turtle
+| Docs: https://docs.python.org/3.11/library/turtle.html#module-turtle
 
+----
 
-Available Turtle and Screen methods
-=================================================
+Tutorial
+--------------
+
+| Tutorial: https://www.geeksforgeeks.org/python-turtle-tutorial/
+
+----
 
 Turtle methods
---------------
+----------------
 
 Turtle motion
    Move and draw
