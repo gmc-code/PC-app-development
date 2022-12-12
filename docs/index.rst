@@ -10,7 +10,6 @@ PC-app-development
     :numbered:
 
     introduction/introduction.rst
-    introduction/install.rst
 
 
 .. toctree::
@@ -52,13 +51,23 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Contents:
+    :caption: Tkinter
     :numbered:
 
-    ..tk/start_with_tk.rst
-    ..widgets/pygubu.rst
 
- 
+    tk/tkinter_introduction.rst
+    tk/tkinter_install.rst
+    tk/start_with_tk.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Turtle
+    :numbered:
+
+
+    turtle/tkinter_introduction.rst
+    tk/tkinter_install.rst
 
  
 

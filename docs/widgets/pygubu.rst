@@ -16,6 +16,6 @@ pygubu-designer is a WYSIWYG program to create the xml for pygubu to use.
 
 
     print(tkinter.Tcl().eval('info patchlevel'))
-    # 8.6.10
+    # 8.6.12
 
 ----

@@ -1,5 +1,5 @@
 ====================================================
-Introduction
+Introduction to tkinter
 ====================================================
 
 PC-tkinter documentation
