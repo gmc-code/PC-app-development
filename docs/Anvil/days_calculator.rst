@@ -147,4 +147,3 @@ Sidebar
 | In the properties panel: set the name to ``feedback_box``.
 | In the properties panel: set the placeholder to ``Feedback here``.
 
-----
