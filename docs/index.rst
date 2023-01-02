@@ -60,14 +60,6 @@ PC-app-development
     tk/start_with_tk.rst
 
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Turtle
-    :numbered:
-
-
-    turtle/turtle_introduction.rst
-
  
 
 
