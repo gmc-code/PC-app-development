@@ -55,9 +55,9 @@ PC-app-development
     :numbered:
 
 
-    tk/tkinter_introduction.rst
-    tk/tkinter_install.rst
-    tk/start_with_tk.rst
+    ..tk/tkinter_introduction.rst
+    ..tk/tkinter_install.rst
+    ..tk/start_with_tk.rst
 
 
  
