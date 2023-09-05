@@ -1,7 +1,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'PC-app-development'
-copyright = '2021-3, GMC'
+copyright = '2021-4, GMC'
 author = 'GMC'
 
 
