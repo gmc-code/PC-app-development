@@ -189,6 +189,7 @@ Update virtual environemnt by reinstalling it
 
 | To update Python in a virtual environment, you can follow these steps:
 | Make sure you have a ``requirements.txt`` file that lists all the packages you need.
+| Replace ``username`` and ``venvname`` below wiht your own values.
 
 1. **Deactivate** the virtual environment if it's currently active. You can do this by typing ``deactivate`` in your terminal and pressing Enter.
 2. **Navigate** ot the directory in the terminal. e.g. ``cd C:/Users/username/`` 
@@ -197,14 +198,16 @@ Update virtual environemnt by reinstalling it
 5. **Activate** the new virtual environment. You can do this by typing ``C:\Users\username\venvname\Scripts\activate.bat`` in your terminal and pressing Enter.
 6. **Install** the required packages. Place a ``requirements.txt`` file that lists all the packages you need. You can do this by typing ``pip install -r requirements.txt`` in your terminal and pressing Enter. 
 
+| In Summary:
+
 .. code-block::
 
     deactivate
-    cd C:\Users\USERNAME
+    cd C:\Users\username
     Remove-Item -Path venv_name -Recurse
     python -m venv venv_name
-    C:\Users\USERNAME\venv_name\Scripts\activate.bat
-    cd C:\Users\USERNAME\venv_name
+    C:\Users\username\venv_name\Scripts\activate.bat
+    cd C:\Users\username\venv_name
     pip install -r requirements.txt
 
 
