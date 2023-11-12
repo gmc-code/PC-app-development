@@ -55,7 +55,7 @@ PC-app-development
     :numbered:
 
     tkinter/tkinter_introduction.rst
-    tkinter/tkinter_version check.rst
+    tkinter/tkinter_button.rst
     tkinter/feet_to_meters.rst
 
 
