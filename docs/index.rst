@@ -40,7 +40,6 @@ PC-app-development
     .. Anvil/days_calculator.rst
     .. Anvil/fibonacci_numbers.rst
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Anvil_youtube
