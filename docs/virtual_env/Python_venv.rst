@@ -190,17 +190,12 @@ Update virtual environemnt by reinstalling it
 | To update Python in a virtual environment, you can follow these steps:
 | Make sure you have a ``requirements.txt`` file that lists all the packages you need.
 
-1. **Deactivate** the virtual environment if it's currently active. 
-You can do this by typing ``deactivate`` in your terminal and pressing Enter.
+1. **Deactivate** the virtual environment if it's currently active. You can do this by typing ``deactivate`` in your terminal and pressing Enter.
 2. **Navigate** ot the directory in the terminal. e.g. ``cd C:/Users/username/`` 
-3. **Delete** the virtual environment. Be careful with this step as it will remove all the packages installed in the virtual environment. 
-You can do this by typing ``Remove-Item -Path venvname -Recurse`` in your powershell terminal and pressing Enter. 
-4. **Create** a new virtual environment with the updated Python version. 
-You can do this by typing ``python -m venv venvname`` in your terminal and pressing Enter. 
-5. **Activate** the new virtual environment. 
-You can do this by typing ``C:\Users\username\venvname\Scripts\activate.bat`` in your terminal and pressing Enter.
-6. **Install** the required packages. Place a ``requirements.txt`` file that lists all the packages you need. 
-You can do this by typing ``pip install -r requirements.txt`` in your terminal and pressing Enter. 
+3. **Delete** the virtual environment. Be careful with this step as it will remove all the packages installed in the virtual environment. You can do this by typing ``Remove-Item -Path venvname -Recurse`` in your powershell terminal and pressing Enter. 
+4. **Create** a new virtual environment with the updated Python version. You can do this by typing ``python -m venv venvname`` in your terminal and pressing Enter. 
+5. **Activate** the new virtual environment. You can do this by typing ``C:\Users\username\venvname\Scripts\activate.bat`` in your terminal and pressing Enter.
+6. **Install** the required packages. Place a ``requirements.txt`` file that lists all the packages you need. You can do this by typing ``pip install -r requirements.txt`` in your terminal and pressing Enter. 
 
 .. code-block::
 
