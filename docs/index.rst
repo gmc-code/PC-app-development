@@ -55,9 +55,16 @@ PC-app-development
     :numbered:
 
 
-    tk/tkinter_introduction.rst
-    tk/tkinter_install.rst
-    tk/start_with_tk.rst
+    tkinter/tkinter_introduction.rst
+    tkinter/tkinter_version check.rst
+    tkinter/feet_to_meters.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Python virtual environment
+    :numbered:
+
+    virtual_env/Python_venv.rst
 
 
  

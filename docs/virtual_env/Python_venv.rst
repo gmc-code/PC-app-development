@@ -1,0 +1,211 @@
+==============================
+Python virtual environment
+==============================
+
+Install Python
+------------------------------
+
+* Check the version of python installed from the command line.
+
+.. code-block::
+
+    python --version
+
+* Download and install Python from https://www.python.org/downloads/.
+* Check the checkbox to update the path variable when installing.
+* Manually update path if it wasn't automatically done during installation.
+* In windows search enter "edit the system environment variables" to edit the environment variables. 
+* Edit the path variable to include the path to the installed python version.
+* Restart is usually needed to update the system path.
+  
+----
+
+Create a python Virtual environment
+---------------------------------------
+
+| See: https://www.youtube.com/watch?v=APOPm01BVrk
+| Rather than installing the python packages in the system wide installation of python, a virtual environment can be created that only has the modules needed for sphinx and read the docs.
+| Virtual environments allow easy maintenance of the libraries needed for the project and avoid issues that can happen when multiple dependencies conflict across multiple projects.
+
+| Create a virtual environment for the packages needed for read the docs.
+| By default, these will be created in the users directory: ``C:\Users\username\``.
+| In examples below, the virtual environment folder will be called: ``venv_name``, but any suitable name can be used.
+
+| Create a virtual environment with the default system python:
+
+.. code-block::
+
+    python -m venv venv_name
+    
+| If there are different versions of python installed, use the full path to the version required to create the virtual environment.
+| <username> used in the paths below will be different for each user.
+| e.g. ``C:\Users\username\AppData\Local\Programs\Python\Python312\python.exe``
+| Create a virtual environment using a specific installed version of python:
+
+.. code-block::
+
+    "C:\Users\username\AppData\Local\Programs\Python\Python312\python.exe" -m venv venv_name
+
+| Activate the virtual environment:
+
+.. code-block::
+    
+    "C:\Users\username\venv_name\Scripts\activate.bat"
+
+----
+
+Using the python Virtual environment in VSCode
+---------------------------------------------
+
+| VSCode allows the use of different python environments.
+| To use the python python Virtual environment in VSCode:
+
+    #. Choose **View: Command Palette**. 
+    #. Into the drop down search field, type: **Python : Select Interpreter**
+    #. Choose the one listed that refers to the newly created **venv_name**.
+
+----
+
+Update pip
+-----------------------------------------------
+
+| To upgrage pip run:
+
+.. code-block::
+
+    python.exe -m pip install --upgrade pip
+
+----
+
+.. _Python requirements:
+
+Install python packages via requirements.txt
+-----------------------------------------------
+
+| Place a file, called ``requirements.txt``, into the virtual environment folder.
+| Into the file, place the text containing the requried python modules for your work.
+
+    
+| Install requirements using the full path to a requirements.txt file placed in the virtual environment:
+
+.. code-block::
+    
+    pip install -r "C:\Users\username\venv_name\requirements.txt"
+
+| If the terminal prompt is already in the path ``"C:\Users\username\"`` then use this:
+
+.. code-block::
+
+    pip install -r "venv_name\requirements.txt"
+
+| If the terminal prompt is already in the path ``"C:\Users\username\venv_name\"`` then use this:
+
+.. code-block::
+
+    pip install -r "requirements.txt"
+
+----
+
+Updating python packages in a requirements file
+------------------------------------------------------------
+
+| After setting up a project, there may be a need to update the packages required that are listed in the ``requirements.txt`` file.
+
+| From the command line change directory, ``cd`` to the folder with the ``requirements.txt`` file and use:
+
+.. code-block::
+    
+    cd venv_name
+    pip install --upgrade -r requirements.txt
+
+* ``-U`` can be used instead of ``--upgrade``
+
+.. code-block::
+
+    pip install -U -r requirements.txt
+
+
+* To check the installed version numbers and other info about a package, check the output from typing in the VSCode terminal, by replacing package_name with a particular package name:
+
+.. code-block::
+
+    pip show package_name
+
+    
+* To get all the installed version numbers, check the output from typing in the VSCode terminal:
+
+.. code-block::
+
+    pip list
+
+* To see if there are updates available, check the output from typing in the VSCode terminal:
+
+.. code-block::
+
+    pip list -o
+
+----
+
+Save package list to requirements file
+------------------------------------------------------------
+
+| After setting up a project, there may be a need to create a new the virtual environment with a new verion of python, but with all the libraries in the the virtual environment 
+
+| A ``requirements.txt`` file can be saved and used to create a new venv:
+
+.. code-block::
+    
+    pip freeze > requirements.txt
+
+----
+
+Updating python packages
+------------------------------
+
+| This is not recommended, but is here for reference purposes. To update all packages in a Windows environment to the latest version available in the Python Package Index (PyPI), use pip in conjunction with Windows PowerShell.
+| Open a command shell by typing ``powershell`` in the Search Box of the Windows Task bar.
+| Enter:
+
+.. code-block::
+    
+    pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+
+----
+
+Uninstalling all python packages
+----------------------------------
+
+| This is not recommended, but is here for reference purposes. 
+| To remove all installed python packages, leaving just the built in modules, from the command line:
+
+.. code-block::
+
+    pip freeze | xargs pip uninstall -y
+
+----
+
+Update virtual environemnt by reinstalling it
+----------------------------------------------------
+
+| To update Python in a virtual environment, you can follow these steps:
+| Make sure you have a `requirements.txt` file that lists all the packages you need.
+
+1. **Deactivate** the virtual environment if it's currently active. You can do this by typing `deactivate` in your terminal and pressing Enter.
+2. **Navigate** ot the directory in the terminal. e.g. `cd C:/Users/username/` 
+3. **Delete** the virtual environment. Be careful with this step as it will remove all the packages installed in the virtual environment. You can do this by typing `Remove-Item -Path venvname -Recurse` in your powershell terminal and pressing Enter. 
+4. **Create** a new virtual environment with the updated Python version. 
+You can do this by typing `python -m venv venvname` in your terminal and pressing Enter. 
+5. **Activate** the new virtual environment. You can do this by typing `C:\Users\username\venvname\Scripts\activate.bat` in your terminal and pressing Enter.
+6. **Install** the required packages. Place a `requirements.txt` file that lists all the packages you need. You can do this by typing `pip install -r requirements.txt` in your terminal and pressing Enter. 
+
+.. code-block::
+
+    deactivate
+    cd C:\Users\USERNAME
+    Remove-Item -Path venv_name -Recurse
+    python -m venv venv_name
+    C:\Users\USERNAME\venv_name\Scripts\activate.bat
+    cd C:\Users\USERNAME\venv_name
+    pip install -r requirements.txt
+
+
