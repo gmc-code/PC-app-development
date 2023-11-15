@@ -2,6 +2,9 @@
 Feet to meters
 ====================================================
 
+.. image:: images/feet_to_meters.png
+    :scale: 100%
+
 | The code below converts feet to meters using a tkinter gui.
 
 .. code-block:: python
