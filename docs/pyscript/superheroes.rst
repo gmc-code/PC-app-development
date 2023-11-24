@@ -174,10 +174,18 @@ Javascript improvements
 .. image:: images/superhero_files.png
     :scale: 100%
 
-index.html
------------------
+----
 
-| Custom css has been added: `<link rel="stylesheet" href="main.css">``
+improved index.html
+---------------------
+
+| Custom css has been added: `<link rel="stylesheet" href="main.css">`
+| `<body onload="setFocus()">` and its inline scirpt were added to cause the insertion to be in hte first input ready for typing so that clicking there by the user is not needed.
+|  In the `input type="text"` tag, `pattern="[A-Z]"` was added to restrict input to capital letters.
+|  In the `input type="text"` tag, `oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)"` was added to remove entered text that is not a capital letter.
+| `tabindex="1"` and `tabindex="2"` were added to elements to control the navigation order via the tab key. 
+| `<button py-click="randomfirstinitial">Random</button>` provides quick placement of a random letter.
+| `<button class="clear-button" py-click="clearfirstinitial">Clear</button>` provides convenient clearing of the input.
 
 .. code-block::
 
@@ -229,23 +237,26 @@ index.html
     </body>
     </html>
 
-| Custom css:
+----
 
-.. code-block:: css+django
+Custom css:
+--------------------
+
+.. code-block::
 
     body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px;
-    background-color: #f8f9fa; /* Bootstrap gray-100 */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        background-color: #f8f9fa; /* Bootstrap gray-100 */
     }
 
     h1, h2 {
-    color: #212529; /* Bootstrap gray-900 */
+        color: #212529; /* Bootstrap gray-900 */
     }
 
     p {
-    margin-bottom: 20px;
-    color: #6c757d; /* Bootstrap gray-600 */
+        margin-bottom: 20px;
+        color: #6c757d; /* Bootstrap gray-600 */
     }
 
     .inline {
@@ -274,47 +285,167 @@ index.html
     }
 
     input[type="text"] {
-    max-width: 30px; /* Increase the width */
-    height: 24px; /* Increase the height */
-    margin-right: 10px;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border: 1px solid #ced4da; /* Bootstrap gray-400 */
-    border-radius: .25rem;
-    font-size: 18px; /* Increase the font size */
+        max-width: 30px; /* Increase the width */
+        height: 24px; /* Increase the height */
+        margin-right: 10px;
+        padding: 10px 20px; /* Adjust padding as needed */
+        border: 1px solid #ced4da; /* Bootstrap gray-400 */
+        border-radius: .25rem;
+        font-size: 18px; /* Increase the font size */
     }
 
     /* Move the ::selection pseudo-element outside the input[type="text"] selector */
     input[type="text"]::selection, ::selection {
-    background-color: #ffff99; /* Light yellow */
-    color: #000000; /* Black */
+        background-color: #ffff99; /* Light yellow */
+        color: #000000; /* Black */
     }
 
 
     button {
-    background-color: #0d6efd; /* Bootstrap primary */
-    border: none;
-    color: white;
-    padding: 10px 20px; /* Adjust padding as needed */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px; /* Adjust font size as needed */
-    margin: .375rem .375rem;
-    cursor: pointer;
-    border-radius: .25rem;
-    transition: background-color 0.15s ease-in-out;
+        background-color: #0d6efd; /* Bootstrap primary */
+        border: none;
+        color: white;
+        padding: 10px 20px; /* Adjust padding as needed */
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px; /* Adjust font size as needed */
+        margin: .375rem .375rem;
+        cursor: pointer;
+        border-radius: .25rem;
+        transition: background-color 0.15s ease-in-out;
     }
 
     button:hover {
-    background-color: #0a58ca; /* Bootstrap primary-dark */
+        background-color: #0a58ca; /* Bootstrap primary-dark */
     }
 
     .clear-button {
-    background-color: #dc3545; /* Bootstrap danger */
-    color: white;
+        background-color: #dc3545; /* Bootstrap danger */
+        color: white;
     }
 
     .clear-button:hover {
-    background-color: #b02a37; /* Bootstrap danger-dark */
+        background-color: #b02a37; /* Bootstrap danger-dark */
     }
 
+----
+
+improved main.py
+------------------
+
+| The python code has neew code for random letters and input clearing.
+
+.. code-block:: python
+
+    from pyscript import document
+    import random
+    import string
+
+    first_names = {
+        "A": "Atomic", "B": "Blazing", "C": "Cosmic",
+        "D": "Daring", "E": "Electric", "F": "Furious",
+        "G": "Galactic", "H": "Hyper", "I": "Invincible",
+        "J": "Justice", "K": "Kinetic", "L": "Legendary",
+        "M": "Mighty", "N": "Noble", "O": "Omega",
+        "P": "Polaris", "Q": "Quantum", "R": "Radiant",
+        "S": "Stealth", "T": "Titan", "U": "Unstoppable",
+        "V": "Vigilant", "W": "Warrior", "X": "Xeno",
+        "Y": "Yieldless", "Z": "Zephyr",
+    }
+
+    last_names = {
+        "A": "Avenger", "B": "Blade", "C": "Crusader",
+        "D": "Defender", "E": "Eagle", "F": "Falcon",
+        "G": "Guardian", "H": "Hawk", "I": "Inferno",
+        "J": "Jaguar", "K": "Knight", "L": "Lion",
+        "M": "Marvel", "N": "Ninja", "O": "Oracle",
+        "P": "Phantom", "Q": "Quicksilver", "R": "Ranger",
+        "S": "Specter", "T": "Thunder", "U": "Ultra",
+        "V": "Viper", "W": "Wolf", "X": "Xiphos",
+        "Y": "Youngstorm", "Z": "Zoom",
+    }
+
+
+    def get_superhero(first_initial, last_initial):
+        superhero_name = first_names[first_initial] + " " + last_names[last_initial]
+        return superhero_name
+
+    def ranAZ():
+        return random.choice(string.ascii_uppercase)
+
+    def randomfirstinitial(event):
+        # get random inititals
+        first_initial = ranAZ()
+        # display random initials
+        firstinitial_element = document.querySelector("#firstinitial")
+        firstinitial_element.value = first_initial
+        # rest focus back to first initial
+        firstinitial_element.focus()
+        firstinitial_element.select()
+
+    def clearfirstinitial(event):
+        # get random inititals
+        first_initial = ""
+        # display random initials
+        firstinitial_element = document.querySelector("#firstinitial")
+        firstinitial_element.value = first_initial
+        # rest focus back to first initial
+        firstinitial_element.focus()
+        firstinitial_element.select()
+
+    def randomlastinitial(event):
+        # get random inititals
+        last_initial = ranAZ()
+        # display random initials
+        lastinitial_element = document.querySelector("#lastinitial")
+        lastinitial_element.value =  last_initial
+        # rest focus back to first initial
+        lastinitial_element.focus()
+        lastinitial_element.select()
+
+    def clearlastinitial(event):
+        # get random inititals
+        last_initial = ""
+        # display random initials
+        lastinitial_element = document.querySelector("#lastinitial")
+        lastinitial_element.value =  last_initial
+        # rest focus back to first initial
+        lastinitial_element.focus()
+        lastinitial_element.select()
+        
+    def namegenerator(event):
+        firstinitial_element = document.querySelector("#firstinitial")
+        lastinitial_element = document.querySelector("#lastinitial")
+        # add validation for letters A to Z (or a to z)
+        validAZ = True
+        first_initial = firstinitial_element.value.upper()
+        last_initial = lastinitial_element.value.upper()
+        if not first_initial.isalpha():
+            validAZ = False
+        if not last_initial.isalpha():
+            validAZ = False
+        output_div_text = document.querySelector("#superhero")
+        if validAZ:
+            output_div_text.innerText = get_superhero(first_initial, last_initial)
+        else:
+            output_div_text.innerText = "Enter initials."
+        # rest focus back to first initial
+        firstinitial_element.focus()
+        firstinitial_element.select()
+
+    def randomname(event):
+        # get random inititals
+        first_initial = ranAZ()
+        last_initial = ranAZ()
+        # display random initials
+        firstinitial_element = document.querySelector("#firstinitial")
+        firstinitial_element.value = first_initial
+        lastinitial_element = document.querySelector("#lastinitial")
+        lastinitial_element.value =  last_initial
+        # place random name
+        output_div_text = document.querySelector("#superhero")
+        output_div_text.innerText = get_superhero(first_initial, last_initial)
+        # rest focus back to first initial
+        firstinitial_element.focus()
+        firstinitial_element.select()
