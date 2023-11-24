@@ -3,9 +3,10 @@ Superheroes
 ====================================================
 
 .. image:: images/superhero1.png
-    :scale: 100%
+    :scale: 50%
 
 | The details below are for a simple superhero name generator using initials as input.
+| Demo app is at: https://gmc_ps.pyscriptapps.com/superhero1/latest/
 
 ----
 
@@ -15,7 +16,7 @@ Superhero Name Generator: simple version
 Making a new project in pyscript starts with 3 files.
 
 .. image:: images/new_project_files.png
-    :scale: 100%
+    :scale: 50%
 
 | The **index.html** file is served to your browser. It has the interface elements and links to python code.
 | The **main.py** is for python code that defines how your application works.
@@ -26,20 +27,21 @@ Making a new project in pyscript starts with 3 files.
 pyscript.toml
 ------------------
 
-| This file will be empty, since htere are no needed modules in this simple version.
+| This file will be empty, since there are no needed modules in this simple version.
 
 ----
 
 index.html
 -----------------
 
+| The body tag has the user interface for the web app.
+| `<div class="form-group">` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
+| `<p id="superhero"></p>` has no text between the tags. It will be filled via python code when the button is clicked.
+| `<py-script src="./main.py"></py-script>` links to the `main.py` file. `main` could be renamed to suit.
 
-| The 
+.. code-block::
 
-
-.. code-block:: html
-
-    <!-- GMC Nov 2023; no css; no js; using 2023.05.1/pyscript.js -->
+    <!-- GMC Nov 2023; no css; no custom js-->
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -70,9 +72,6 @@ index.html
     </body>
     </html>
 
-| `<div class="form-group">` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
-| `<p id="superhero"></p>` has no text between the tags. It will be filled when the button is clicked.
-| `<py-script src="./main.py"></py-script>` links to the `main.py` file. They could be renamed to suit.
 ----
 
 main.py
@@ -155,19 +154,167 @@ main.py
         else:
             output_div_text.innerText = "Enter initials."
 
+----
+
+Notes on getting and setting input and output elements
+--------------------------------------------------------------------
+
+| In general, you should use `.value` to get or set the value of an input element, and `.innerText` to get or set the text content of other types of elements.
+| `.value` is used to get or set the value of an input element, such as a text input or a select element. For example, if you have an input element with an id of myInput, you can get its value using document.getElementById('myInput').value.
+| `.innerText` is used to get or set the text content of an element, such as a <div> or a <p> element. For example, if you have a <div> element with an id of myDiv, you can get its text content using document.getElementById('myDiv').innerText.
 
 ----
 
 Javascript improvements
 ----------------------------
 
+| The appearance can be improved via custom css.
+| The user interactions with the interface can be improved.
+
 .. image:: images/superhero_files.png
     :scale: 100%
 
-.value and .innerText are both properties of HTML elements that can be used to get or set the text content of an element. However, they are used in different contexts.
+index.html
+-----------------
 
-.value is used to get or set the value of an input element, such as a text input or a select element. For example, if you have an input element with an id of myInput, you can get its value using document.getElementById('myInput').value.
+| Custom css has been added: `<link rel="stylesheet" href="main.css">``
 
-.innerText is used to get or set the text content of an element, such as a <div> or a <p> element. For example, if you have a <div> element with an id of myDiv, you can get its text content using document.getElementById('myDiv').innerText.
+.. code-block::
 
-In general, you should use .value to get or set the value of an input element, and .innerText to get or set the text content of other types of elements.
+    <!-- GMC Nov 2023; css, js, 2023.11.1/core.js -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Superhero Name Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/pyscript.css" />
+        <!-- CSS only -->
+        <link rel="stylesheet" href="main.css">
+        <!-- script only -->
+        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+    </head>
+        
+    <body onload="setFocus()">
+        <h1>Superhero Name Generator</h1>
+        <p>Enter capital letters.</p>
+        <div class="form-group">
+            <label for="firstinitial">First name initial:</label>
+            <input type="text" id="firstinitial" name="firstinitial" pattern="[A-Z]" 
+                title="Enter first initial" required 
+                oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)" autocomplete="off" tabindex="1">
+            <button py-click="randomfirstinitial">Random</button>
+            <button class="clear-button" py-click="clearfirstinitial">Clear</button>
+        </div>
+        <div class="form-group">
+            <label for="lastinitial">Last name initial:</label>
+            <input type="text" id="lastinitial" name="lastinitial" pattern="[A-Z]" 
+                title="Enter last initial" required 
+                oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)" autocomplete="off" tabindex="2">
+            <button py-click="randomlastinitial">Random</button>
+            <button class="clear-button" py-click="clearlastinitial">Clear</button>
+        </div>
+        <button py-click="namegenerator">Name Superhero</button><button py-click="randomname">Random Superhero</button><br>
+        <div class="form-group">
+            <label for="superhero">Superhero name:</label> <p id="superhero"></p>
+        </div>
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
+        <script>
+        function setFocus() {
+        var inputField = document.getElementById("firstinitial");
+        inputField.focus();
+        inputField.select();
+        }
+        </script>
+    </body>
+    </html>
+
+| Custom css:
+
+.. code-block:: css+django
+
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa; /* Bootstrap gray-100 */
+    }
+
+    h1, h2 {
+    color: #212529; /* Bootstrap gray-900 */
+    }
+
+    p {
+    margin-bottom: 20px;
+    color: #6c757d; /* Bootstrap gray-600 */
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+    .form-group label {
+        width: 150px; /* adjust as needed */
+    }
+
+    #superhero {
+        min-width: 170px; /* Increase the width */
+        height: 24px; /* Increase the height */
+        margin-right: 10px;
+        padding: 10px 20px; /* Adjust padding as needed */
+        border: 1px solid #ced4da; /* Bootstrap gray-400 */
+        border-radius: .25rem;
+        font-size: 18px; /* Increase the font size */
+        background-color: white;
+        color: #0d6efd; /* Bootstrap primary */
+    }
+
+    input[type="text"] {
+    max-width: 30px; /* Increase the width */
+    height: 24px; /* Increase the height */
+    margin-right: 10px;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 1px solid #ced4da; /* Bootstrap gray-400 */
+    border-radius: .25rem;
+    font-size: 18px; /* Increase the font size */
+    }
+
+    /* Move the ::selection pseudo-element outside the input[type="text"] selector */
+    input[type="text"]::selection, ::selection {
+    background-color: #ffff99; /* Light yellow */
+    color: #000000; /* Black */
+    }
+
+
+    button {
+    background-color: #0d6efd; /* Bootstrap primary */
+    border: none;
+    color: white;
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px; /* Adjust font size as needed */
+    margin: .375rem .375rem;
+    cursor: pointer;
+    border-radius: .25rem;
+    transition: background-color 0.15s ease-in-out;
+    }
+
+    button:hover {
+    background-color: #0a58ca; /* Bootstrap primary-dark */
+    }
+
+    .clear-button {
+    background-color: #dc3545; /* Bootstrap danger */
+    color: white;
+    }
+
+    .clear-button:hover {
+    background-color: #b02a37; /* Bootstrap danger-dark */
+    }
+

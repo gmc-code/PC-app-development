@@ -23,10 +23,12 @@ Sign up
 New project
 -------------
 
+| To start a new project, on the dashboard, click the new project (plus) button.
+
 .. image:: images/new_project.png
     :scale: 50%
 
-| To start a new project, on the dashboard, click the new project (plus) button.
+----
 
 Project files
 --------------
@@ -43,6 +45,10 @@ Project files
 | The **index.html** file starts as a basic template.
 | The latest versions of the <link> and <script> tags have been inserted as shown below (as of Dec 2023).
 
+----
+
+index.html
+-----------------
 
 .. code-block::
 
