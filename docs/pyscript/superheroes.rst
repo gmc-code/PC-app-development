@@ -172,6 +172,13 @@ Javascript improvements
 | The user interactions with the interface can be improved.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
 
+.. image:: images/superhero.png
+    :scale: 50%
+
+----
+
+Add a custom css file. Here it is named ``main.css``.
+
 .. image:: images/superhero_files.png
     :scale: 40%
 
