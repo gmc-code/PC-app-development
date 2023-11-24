@@ -13,18 +13,22 @@ def calculate(feet):
     float: The equivalent number of meters rounded to 2 decimal places.
     """
     try:
-        feet = float(feet)
-        return round(0.3048 * feet, 2)
+        # feet = float(feet)
+        # return round(0.3048 * feet, 2)
+        return 0.3048 * feet
     except ValueError:
         pass
 
 
 def set_meters():
     """
-    Set the meters StringVar with the calculated meters from the feet StringVar.
+    Set the meters DoubleVar with the calculated meters from the feet DoubleVar.
     Then set the focus back to the feet_entry field.
     """
-    meters.set(calculate(feet.get()))
+    meters_value = calculate(feet.get())
+    meters.set(meters_value)
+    meters_formatted = f"{meters_value:.2f}"
+    ttk.Label(mainframe, text=meters_formatted).grid(column=2, row=2, sticky=(W, E))
     feet_entry.focus()
 
 
@@ -38,13 +42,13 @@ mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
-# Create the feet StringVar and entry field
-feet = StringVar()
+# Create the feet DoubleVar and entry field
+feet = DoubleVar()
 feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
 feet_entry.grid(column=2, row=1, sticky=(W, E))
 
-# Create the meters StringVar and label
-meters = StringVar()
+# Create the meters DoubleVar and label
+meters = DoubleVar()
 ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
 
 # Create the calculate button

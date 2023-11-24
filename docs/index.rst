@@ -61,12 +61,17 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Python virtual environment
+    :caption: pygubu
     :numbered:
 
-    virtual_env/Python_venv.rst
+    pygubu/pygubu.rst
 
 
- 
+.. toctree::
+    :maxdepth: 2
+    :caption: pyscript
+    :numbered:
 
+    pyscript/pyscript_introduction.rst
+    pyscript/superheroes.rst
 

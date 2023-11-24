@@ -71,13 +71,13 @@ check_bool = tk.BooleanVar()
 # widgets
 exercise_radio1 = ttk.Radiobutton(
 	window, 
-	text = 'Radio A', 
+	text = 'True', 
 	value = 'A', 
 	command = radio_func, 
 	variable = radio_string)
 exercise_radio2 = ttk.Radiobutton(
 	window, 
-	text = 'Radio B', 
+	text = 'False', 
 	value = 'B', 
 	command = radio_func, 
 	variable = radio_string)

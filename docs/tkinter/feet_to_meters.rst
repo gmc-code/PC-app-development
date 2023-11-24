@@ -143,7 +143,7 @@ This creates the main window (root) of the application and sets its title.
     root.columnconfigure(0, weight=1)
     root.rowconfigure(0, weight=1)
 
-This creates a frame widget, which will hold all other widgets. It is placed in the root window and configured to expand as the window is resized.
+This creates a frame widget, which will hold all other widgets. It is placed in the root window and configured to expand as the window is resized. The sticky parameter specifies how the frame should expand to fill the space allocated to it. In this case, the frame will expand to fill the entire space in the North, West, East, and South directions. The next two lines configure the root window to expand in both the x and y directions by setting the weight of the column and row to 1. This ensures that the mainframe object will fill the entire window.
 
 ----
 
@@ -154,6 +154,9 @@ This creates a frame widget, which will hold all other widgets. It is placed in 
     feet_entry.grid(column=2, row=1, sticky=(W, E))
 
 This creates a `StringVar` to hold the value of feet and an entry widget for the user to input the value. The entry widget is placed in the second column and first row of the grid.
+
+`StringVar()` is a class in the `tkinter` module that holds a string data and provides helper functions for manipulating the values of widgets like `Label` and `Entry`. It works differently from normal Python variables and requires an interpreter that is created when an instance of `Tk` is made. `StringVar` can be created using a constructor that accepts a container widget, a value, and a name as optional arguments. `StringVar` is useful for creating and accessing variables in a graphical user interface ¹². 
+
 
 ----
 
