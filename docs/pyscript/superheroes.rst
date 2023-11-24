@@ -62,24 +62,29 @@ index.html
         </div>
         <button py-click="namegenerator">Generate Superhero</button><br>
         <div class="form-group">
-            <label for="superhero">Superhero name:</label> <p id="superhero"></p>
+            <label for="superhero">Superhero name:</label>
+            <p id="superhero"></p>
         </div>
         <py-config src="./pyscript.toml"></py-config>
         <py-script src="./main.py"></py-script>
     </body>
     </html>
 
+| `<div class="form-group">` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
+| `<p id="superhero"></p>` has no text between the tags. It will be filled when the button is clicked.
+| `<py-script src="./main.py"></py-script>` links to the `main.py` file. They could be renamed to suit.
 ----
 
 main.py
 ------------
 
-| 
+| The code is a program that generates and displays a superhero name based on the user input. It uses two dictionaries to store the possible first and last names for superheroes, and a function that returns a superhero name based on the first and last initials. It also uses another function that handles the user input and displays the superhero name or an error message if the input is not valid. The code uses the pyscript module to interact with the HTML elements of the web page. 
 
 .. code-block:: python
 
     from pyscript import document
 
+    # Define two dictionaries to store the possible first and last names for superheroes
     first_names = {
         "A": "Atomic", "B": "Blazing", "C": "Cosmic",
         "D": "Daring", "E": "Electric", "F": "Furious",
@@ -104,30 +109,51 @@ main.py
         "Y": "Youngstorm", "Z": "Zoom",
     }
 
-
+    # Define a function that takes two initials as parameters and returns a superhero name
     def get_superhero(first_initial, last_initial):
+        """Returns a superhero name based on the first and last initials.
+
+        Args:
+            first_initial (str): The first initial of the superhero name.
+            last_initial (str): The last initial of the superhero name.
+
+        Returns:
+            str: The superhero name composed of the first and last names corresponding to the initials.
+        """
         superhero_name = first_names[first_initial] + " " + last_names[last_initial]
         return superhero_name
 
+        
+    # Define a function that handles the user input and displays the superhero name
     def namegenerator(event):
+        """Generates and displays a superhero name based on the user input.
+
+        Args:
+            event (Event): The event object that triggered the function.
+
+        Returns:
+            None
+        """
+        # Get the input elements for the first and last initials
         firstinitial_element = document.querySelector("#firstinitial")
         lastinitial_element = document.querySelector("#lastinitial")
-        # add validation for letters A to Z; random if empty
+        # Add validation for letters A to Z; random if empty
         validAZ = True
         first_initial = firstinitial_element.value.upper()
         last_initial = lastinitial_element.value.upper()
+        # Check if the inputs are alphabetic characters
         if not first_initial.isalpha():
             validAZ = False
         if not last_initial.isalpha():
             validAZ = False
+        # Get the output element for the superhero name
         output_div_text = document.querySelector("#superhero")
+        # If the inputs are valid, generate and display the superhero name
         if validAZ:
             output_div_text.innerText = get_superhero(first_initial, last_initial)
+        # Otherwise, display an error message
         else:
             output_div_text.innerText = "Enter initials."
-
-
-
 
 
 ----
