@@ -185,8 +185,8 @@ Improved index.html
 | In the `input type="text"` tag, `pattern="[A-Z]"` was added to restrict input to capital letters.
 | In the `input type="text"` tag, `oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)"` was added to remove entered text that is not a capital letter.
 | `tabindex="1"` and `tabindex="2"` were added to elements to control the navigation order via the tab key. 
-| `<button py-click="randomfirstinitial">Random</button>` provides quick placement of a random letter.
-| `<button class="clear-button" py-click="clearfirstinitial">Clear</button>` provides convenient clearing of the input.
+| `<button py-click="random_firstinitial">Random</button>` provides quick placement of a random letter.
+| `<button class="clear-button" py-click="clear_firstinitial">Clear</button>` provides convenient clearing of the input.
 
 .. code-block::
 
@@ -223,7 +223,8 @@ Improved index.html
             <button py-click="random_lastinitial">Random</button>
             <button class="clear-button" py-click="clear_lastinitial">Clear</button>
         </div>
-        <button py-click="name_generator">Name Superhero</button><button py-click="random_name">Random Superhero</button><br>
+        <button py-click="name_generator">Name Superhero</button>
+        <button py-click="random_name">Random Superhero</button><br>
         <div class="form-group">
             <label for="superhero">Superhero name:</label> <p id="superhero"></p>
         </div>
