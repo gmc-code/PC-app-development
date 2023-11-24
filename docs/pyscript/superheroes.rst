@@ -35,9 +35,9 @@ index.html
 -----------------
 
 | The body tag has the user interface for the web app.
-| `<div class="form-group">` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
-| `<p id="superhero"></p>` has no text between the tags. It will be filled via python code when the button is clicked.
-| `<py-script src="./main.py"></py-script>` links to the `main.py` file. `main` could be renamed to suit.
+| ``<div class="form-group">`` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
+| ``<p id="superhero"></p>`` has no text between the tags. It will be filled via python code when the button is clicked.
+| ``<py-script src="./main.py"></py-script>`` links to the ``main.py`` file. ``main`` could be renamed to suit.
 
 .. code-block::
 
@@ -159,9 +159,9 @@ main.py
 Notes on getting and setting input and output elements
 --------------------------------------------------------------------
 
-| In general, you should use `.value` to get or set the value of an input element, and `.innerText` to get or set the text content of other types of elements.
-| `.value` is used to get or set the value of an input element, such as a text input or a select element. For example, if you have an input element with an id of myInput, you can get its value using document.getElementById('myInput').value.
-| `.innerText` is used to get or set the text content of an element, such as a <div> or a <p> element. For example, if you have a <div> element with an id of myDiv, you can get its text content using document.getElementById('myDiv').innerText.
+| In general, you should use ``.value`` to get or set the value of an input element, and ``.innerText`` to get or set the text content of other types of elements.
+| ``.value`` is used to get or set the value of an input element, such as a text input or a select element. For example, if you have an input element with an id of myInput, you can get its value using document.getElementById('myInput').value.
+| ``.innerText`` is used to get or set the text content of an element, such as a <div> or a <p> element. For example, if you have a <div> element with an id of myDiv, you can get its text content using document.getElementById('myDiv').innerText.
 
 ----
 
@@ -180,13 +180,13 @@ Javascript improvements
 Improved index.html
 ---------------------
 
-| Custom css has been added: `<link rel="stylesheet" href="main.css">`
-| `<body onload="setFocus()">` and its inline scirpt were added to cause the insertion to be in hte first input ready for typing so that clicking there by the user is not needed.
-| In the `input type="text"` tag, `pattern="[A-Z]"` was added to restrict input to capital letters.
-| In the `input type="text"` tag, `oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)"` was added to remove entered text that is not a capital letter.
-| `tabindex="1"` and `tabindex="2"` were added to elements to control the navigation order via the tab key. 
-| `<button py-click="random_firstinitial">Random</button>` provides quick placement of a random letter.
-| `<button class="clear-button" py-click="clear_firstinitial">Clear</button>` provides convenient clearing of the input.
+| Custom css has been added: ``<link rel="stylesheet" href="main.css">``
+| ``<body onload="setFocus()">`` and its inline scirpt were added to cause the insertion to be in hte first input ready for typing so that clicking there by the user is not needed.
+| In the ``input type="text"`` tag, ``pattern="[A-Z]"`` was added to restrict input to capital letters.
+| In the ``input type="text"`` tag, ``oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)"`` was added to remove entered text that is not a capital letter.
+| ``tabindex="1"`` and ``tabindex="2"`` were added to elements to control the navigation order via the tab key. 
+| ``<button py-click="random_firstinitial">Random</button>`` provides quick placement of a random letter.
+| ``<button class="clear-button" py-click="clear_firstinitial">Clear</button>`` provides convenient clearing of the input.
 
 .. code-block::
 
