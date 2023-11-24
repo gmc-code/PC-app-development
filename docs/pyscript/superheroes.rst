@@ -170,13 +170,14 @@ Javascript improvements
 
 | The appearance can be improved via custom css.
 | The user interactions with the interface can be improved.
+| Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
 
 .. image:: images/superhero_files.png
-    :scale: 100%
+    :scale: 40%
 
 ----
 
-improved index.html
+Improved index.html
 ---------------------
 
 | Custom css has been added: `<link rel="stylesheet" href="main.css">`
@@ -331,7 +332,7 @@ Custom css:
 
 ----
 
-improved main.py
+Improved main.py
 ------------------
 
 | The python code has neew code for random letters and input clearing.
