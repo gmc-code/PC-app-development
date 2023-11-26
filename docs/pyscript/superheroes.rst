@@ -37,7 +37,7 @@ index.html
 | The body tag has the user interface for the web app.
 | ``<div class="form-group">`` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
 | ``<p id="superhero"></p>`` has no text between the tags. It will be filled via python code when the button is clicked.
-| ``<py-script src="./main.py"></py-script>`` links to the ``main.py`` file. ``main`` could be renamed to suit.
+| ``<script type="py" src="./main.py"></script>`` links to the ``main.py`` file. ``main`` could be renamed to suit.
 
 .. code-block::
 
@@ -45,7 +45,7 @@ index.html
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Superhero Name</title>
+        <title>Superhero</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/pyscript.css" />
@@ -67,8 +67,7 @@ index.html
             <label for="superhero">Superhero name:</label>
             <p id="superhero"></p>
         </div>
-        <py-config src="./pyscript.toml"></py-config>
-        <py-script src="./main.py"></py-script>
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
     </body>
     </html>
 
@@ -81,7 +80,7 @@ main.py
 
 .. code-block:: python
 
-    from pyscript import document
+    from pyscript import document, display
 
     # Define two dictionaries to store the possible first and last names for superheroes
     first_names = {
@@ -145,14 +144,12 @@ main.py
             validAZ = False
         if not last_initial.isalpha():
             validAZ = False
-        # Get the output element for the superhero name
-        output_div_text = document.querySelector("#superhero")
         # If the inputs are valid, generate and display the superhero name
         if validAZ:
-            output_div_text.innerText = get_superhero(first_initial, last_initial)
+            display(get_superhero(first_initial, last_initial), target="#superhero", append=False)
         # Otherwise, display an error message
         else:
-            output_div_text.innerText = "Enter initials."
+            display("Enter initials.", target="#superhero", append=False)
 
 ----
 
@@ -162,6 +159,16 @@ Notes on getting and setting input and output elements
 | In general, you should use ``.value`` to get or set the value of an input element, and ``.innerText`` to get or set the text content of other types of elements.
 | ``.value`` is used to get or set the value of an input element, such as a text input or a select element. For example, if you have an input element with an id of myInput, you can get its value using document.getElementById('myInput').value.
 | ``.innerText`` is used to get or set the text content of an element, such as a <div> or a <p> element. For example, if you have a <div> element with an id of myDiv, you can get its text content using document.getElementById('myDiv').innerText.
+
+| Pyscript recommends using the display function to output to the browser window.
+
+.. py:function:: display(*values, target=None, append=True)
+
+    *values (list) - the list of objects to be displayed. Can be any of the following MIME types:: "text/plain", "text/html", "image/png", "image/jpeg", "image/svg+xml", "application/json" or "application/javascript"
+
+    target (str)- the ID of the html tag to output to. If none, output to the current <py-script> tag.
+
+    append (boolean) if the output is going to be appended or not to the `target`ed element. It creates a <div> tag if True and a <py-script> tag with a random ID if False
 
 ----
 
@@ -188,9 +195,8 @@ Improved index.html
 ---------------------
 
 | Custom css has been added: ``<link rel="stylesheet" href="main.css">``
-| ``<body onload="setFocus()">`` and its inline scirpt were added to cause the insertion to be in hte first input ready for typing so that clicking there by the user is not needed.
-| In the ``input type="text"`` tag, ``pattern="[A-Z]"`` was added to restrict input to capital letters.
-| In the ``input type="text"`` tag, ``oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)"`` was added to remove entered text that is not a capital letter.
+| ``<body onload="setFocus()">`` and its inline script were added to cause the insertion to be in hte first input ready for typing so that clicking there by the user is not needed.
+| In the ``input type="text"`` tag, ``py-input="check_firstinitial"`` was added to restrict input to capital letters.
 | ``tabindex="1"`` and ``tabindex="2"`` were added to elements to control the navigation order via the tab key. 
 | ``<button py-click="random_firstinitial">Random</button>`` provides quick placement of a random letter.
 | ``<button class="clear-button" py-click="clear_firstinitial">Clear</button>`` provides convenient clearing of the input.
@@ -201,32 +207,30 @@ Improved index.html
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Superhero Name Generator</title>
+        <title>Superhero</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/pyscript.css" />
         <!-- CSS only -->
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="superhero.css">
         <!-- script only -->
         <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
     </head>
         
-    <body onload="setFocus()">
+    <body>
         <h1>Superhero Name Generator</h1>
         <p>Enter capital letters.</p>
         <div class="form-group">
             <label for="firstinitial">First name initial:</label>
-            <input type="text" id="firstinitial" name="firstinitial" pattern="[A-Z]" 
-                title="Enter first initial" required 
-                oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)" autocomplete="off" tabindex="1">
+            <input type="text" id="firstinitial" name="firstinitial" title="Enter first initial" 
+                py-input="check_firstinitial" autocomplete="off" tabindex="1">
             <button py-click="random_firstinitial">Random</button>
             <button class="clear-button" py-click="clear_firstinitial">Clear</button>
         </div>
         <div class="form-group">
             <label for="lastinitial">Last name initial:</label>
-            <input type="text" id="lastinitial" name="lastinitial" pattern="[A-Z]" 
-                title="Enter last initial" required 
-                oninput="this.value = this.value.replace(/[^A-Z]/g, '').slice(0, 1)" autocomplete="off" tabindex="2">
+            <input type="text" id="lastinitial" name="lastinitial" title="Enter last initial"
+                py-input="check_lastinitial" autocomplete="off" tabindex="2">
             <button py-click="random_lastinitial">Random</button>
             <button class="clear-button" py-click="clear_lastinitial">Clear</button>
         </div>
@@ -236,13 +240,6 @@ Improved index.html
             <label for="superhero">Superhero name:</label> <p id="superhero"></p>
         </div>
         <script type="py" src="./main.py" config="./pyscript.toml"></script>
-        <script>
-        function setFocus() {
-        var inputField = document.getElementById("firstinitial");
-        inputField.focus();
-        inputField.select();
-        }
-        </script>
     </body>
     </html>
 
@@ -343,13 +340,17 @@ Custom css:
 Improved main.py
 ------------------
 
-| The python code has neew code for random letters and input clearing.
+| The python code has new code for random letters and input clearing.
 
 .. code-block:: python
 
-    from pyscript import document # import the document module from pyscript library
-    import random # import the random module to generate random values
-    import string # import the string module to access string constants
+    # import the document and display modules from pyscript
+    from pyscript import document
+    from pyscript import display 
+    # import the random module to generate random values
+    import random 
+    # import the string module to access string constants
+    import string 
 
     # define a dictionary of possible first names for superheroes based on their initials
     first_names = {
@@ -388,6 +389,7 @@ Improved main.py
         Returns:
             str: The superhero name composed of the first and last names from the dictionaries.
         """
+        # concatenate the first and last names from the dictionaries based on the initials
         superhero_name = first_names[first_initial] + " " + last_names[last_initial]
         return superhero_name
 
@@ -397,6 +399,7 @@ Improved main.py
         Returns:
             str: A random uppercase letter from A to Z.
         """
+        # use the random module to choose a random letter from the string constant of uppercase letters
         return random.choice(string.ascii_uppercase)
 
     def random_firstinitial(event):
@@ -405,14 +408,34 @@ Improved main.py
         Args:
             event (Event): The event object that triggered this function.
         """
-        # get random inititals
+        # get a random first initial by calling the ranAZ function
         first_initial = ranAZ()
-        # display random initials
-        firstinitial_element = document.querySelector("#firstinitial") # select the element with id "firstinitial"
-        firstinitial_element.value = first_initial # assign the value of the element to the random initial
-        # rest focus back to first initial
-        firstinitial_element.focus() # focus on the element
-        firstinitial_element.select() # select the text in the element
+        # set the value of the input element with id "firstinitial" to the random first initial
+        set_firstinitial_input_text(first_initial)
+        # set the focus back to the input element with id "firstinitial"
+        set_firstinitial_focus()
+
+    def check_firstinitial(event):
+        """Checks first initial, convert to uppercase and only keep first character if A to Z
+
+        Args:
+            event (Event): The event object that triggered this function.
+        """
+        # select the input element with id "firstinitial"
+        firstinitial_element = document.querySelector("#firstinitial") 
+        # check if the value of the input element is not empty
+        if firstinitial_element.value:
+            # get the first character of the value and convert it to uppercase
+            first_initial = firstinitial_element.value.upper()[0] 
+            # check if the first character is a letter
+            if first_initial.isalpha(): 
+                # set the value of the input element to the first character
+                set_firstinitial_input_text(first_initial)
+            else:
+                # clear the value of the input element
+                set_firstinitial_input_text("")
+        # set the focus back to the input element with id "firstinitial"
+        set_firstinitial_focus()
 
     def clear_firstinitial(event):
         """Clears and displays an empty first initial for the superhero name.
@@ -420,14 +443,10 @@ Improved main.py
         Args:
             event (Event): The event object that triggered this function.
         """
-        # get random inititals
-        first_initial = ""
-        # display random initials
-        firstinitial_element = document.querySelector("#firstinitial") # select the element with id "firstinitial"
-        firstinitial_element.value = first_initial # assign the value of the element to the empty string
-        # rest focus back to first initial
-        firstinitial_element.focus() # focus on the element
-        firstinitial_element.select() # select the text in the element
+        # clear the value of the input element with id "firstinitial"
+        set_firstinitial_input_text("")
+        # set the focus back to the input element with id "firstinitial"
+        set_firstinitial_focus()
 
     def random_lastinitial(event):
         """Generates and displays a random last initial for the superhero name.
@@ -435,29 +454,45 @@ Improved main.py
         Args:
             event (Event): The event object that triggered this function.
         """
-        # get random inititals
+        # get a random last initial by calling the ranAZ function
         last_initial = ranAZ()
-        # display random initials
-        lastinitial_element = document.querySelector("#lastinitial") # select the element with id "lastinitial"
-        lastinitial_element.value =  last_initial # assign the value of the element to the random initial
-        # rest focus back to first initial
-        lastinitial_element.focus() # focus on the element
-        lastinitial_element.select() # select the text in the element
+        # set the value of the input element with id "lastinitial" to the random last initial
+        set_lastinitial_input_text(last_initial)   
+        # set the focus back to the input element with id "lastinitial"
+        set_lastinitial_focus()
 
+    def check_lastinitial(event):
+        """Checks last initial, convert to uppercase and only keep first character if A to Z
+
+        Args:
+            event (Event): The event object that triggered this function.
+        """
+        # display random initials
+        lastinitial_element = document.querySelector("#lastinitial")
+        # select the element with id "lastinitial"
+        # Check if the value is not empty
+        if lastinitial_element.value:
+            last_initial = lastinitial_element.value.upper()[0]
+            # get the value of the last initial and convert it to uppercase
+            if last_initial.isalpha():
+                # check if the last initial is a letter
+                set_lastinitial_input_text(last_initial)
+            else:
+                set_lastinitial_input_text("")
+        # rest focus back to last initial
+        set_lastinitial_focus()
+
+        
     def clear_lastinitial(event):
         """Clears and displays an empty last initial for the superhero name.
 
         Args:
             event (Event): The event object that triggered this function.
         """
-        # get random inititals
-        last_initial = ""
-        # display random initials
-        lastinitial_element = document.querySelector("#lastinitial") # select the element with id "lastinitial"
-        lastinitial_element.value =  last_initial # assign the value of the element to the empty string
-        # rest focus back to first initial
-        lastinitial_element.focus() # focus on the element
-        lastinitial_element.select() # select the text in the element
+        # get empty lastinitial
+        set_lastinitial_input_text("")
+        # rest focus back to last initial
+        set_lastinitial_focus()
         
     def name_generator(event):
         """Generates and displays a superhero name based on the user input initials.
@@ -475,14 +510,15 @@ Improved main.py
             validAZ = False # set the flag to False
         if not last_initial.isalpha(): # check if the last initial is not a letter
             validAZ = False # set the flag to False
-        output_div_text = document.querySelector("#superhero") # select the element with id "superhero"
+        # output_div_text = document.querySelector("#superhero") # select the element with id "superhero"
         if validAZ: # if the input initials are valid
-            output_div_text.innerText = get_superhero(first_initial, last_initial) # assign the text of the element to the superhero name generated by the function
+            display(get_superhero(first_initial, last_initial), target="#superhero", append=False)
+            # output_div_text.innerText = get_superhero(first_initial, last_initial) # assign the text of the element to the superhero name generated by the function
         else: # if the input initials are not valid
-            output_div_text.innerText = "Enter initials." # assign the text of the element to a message asking the user to enter initials
+            display("Enter initials.", target="#superhero", append=False)
+            # output_div_text.innerText = "Enter initials." # assign the text of the element to a message asking the user to enter initials
         # rest focus back to first initial
-        firstinitial_element.focus() # focus on the first initial element
-        firstinitial_element.select() # select the text in the first initial element
+        set_firstinitial_focus()
 
     def random_name(event):
         """Generates and displays a random superhero name.
@@ -491,16 +527,49 @@ Improved main.py
             event (Event): The event object that triggered this function.
         """
         # get random inititals
-        first_initial = ranAZ() # get a random first initial
-        last_initial = ranAZ() # get a random last initial
+        first_initial = ranAZ() 
+        last_initial = ranAZ()
         # display random initials
-        firstinitial_element = document.querySelector("#firstinitial") # select the element with id "firstinitial"
-        firstinitial_element.value = first_initial # assign the value of the element to the random first initial
-        lastinitial_element = document.querySelector("#lastinitial") # select the element with id "lastinitial"
-        lastinitial_element.value =  last_initial # assign the value of the element to the random last initial
+        set_firstinitial_input_text(first_initial)
+        set_lastinitial_input_text(last_initial)
         # place random name
-        output_div_text = document.querySelector("#superhero") # select the element with id "superhero"
-        output_div_text.innerText = get_superhero(first_initial, last_initial) # assign the text of the element to the superhero name generated by the function
+        display(get_superhero(first_initial, last_initial), target="#superhero", append=False)
         # rest focus back to first initial
-        firstinitial_element.focus() # focus on the first initial element
-        firstinitial_element.select() # select the text in the first initial element
+        set_firstinitial_focus()
+        
+    def set_lastinitial_input_text(value):
+        # display(value, target="#lastinitial", append=False)
+        # select the element with id "lastinitial"
+        element = document.querySelector("#lastinitial")
+        element.value = value
+
+    def set_firstinitial_input_text(value):
+        # display(value, target="#firstinitial", append=False)
+        # select the element with id "lastinitial"
+        element = document.querySelector("#firstinitial")
+        element.value = value
+        
+    def set_focus():
+        set_firstinitial_focus()
+
+    def set_firstinitial_focus():
+        # select the element with id "firstinitial"
+        firstinitial_element = document.querySelector("#firstinitial")
+        # focus on the first initial element
+        firstinitial_element.focus() 
+        # select the text in the first initial element
+        firstinitial_element.select()
+
+    def set_lastinitial_focus():
+        # select the element with id "lastinitial"
+        lastinitial_element = document.querySelector("#lastinitial") 
+        # focus on the element
+        lastinitial_element.focus()
+        # select the text in the element
+        lastinitial_element.select() 
+
+    def main():
+        # code to run when the page is loaded
+        set_focus()
+
+    main()

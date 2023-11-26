@@ -7,6 +7,7 @@ Key references:
 
 | Docs https://docs.pyscript.net/2023.11.1/
 | User guide: https://docs.pyscript.net/2023.11.1/user-guide/
+| Developer blog on latest update changes: https://jeff.glass/tags/pyscript/
 
 | PyScript is designed to allow the running of Python in web browsers.
 | PyScript appapps can be hosted as a static web site. 
