@@ -19,7 +19,7 @@ Become familiar with the docs
 | Read: https://anvil.works/docs/client/ui
 | Read: https://anvil.works/docs/client/components
 
-| For publishing the app: https://anvil.works/beta-docs/deployment-new-ide/quickstart#quickstart-deployment
+| For publishing the app: https://anvil.works/docs/deployment-new-ide/quickstart#quickstart-deployment
 
 ----
 
