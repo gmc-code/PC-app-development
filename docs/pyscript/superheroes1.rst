@@ -46,7 +46,7 @@ index.html
     <html lang="en">
     <head>
         <title>Superhero</title>
-
+        
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -56,6 +56,7 @@ index.html
 
         <!-- This script tag bootstraps PyScript -->
         <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+        
     </head>
     <body>
         <h1>Superhero Name Generator</h1>

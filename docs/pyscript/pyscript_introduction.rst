@@ -70,7 +70,20 @@ index.html
         <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
     </head>
     <body>
-        <script type="py" src="./main.py" config="./pyscript.toml" terminal></script>
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
     </body>
     </html>
 
+
+----
+
+Terminal
+-----------------
+
+To view the terminal as well use this in the body:
+
+.. code-block::
+
+    ...
+    <script type="py" src="./main.py" config="./pyscript.toml" terminal></script>
+    ...

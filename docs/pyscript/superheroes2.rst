@@ -2,28 +2,17 @@
 Superheroes 2
 ====================================================
 
-Superheroes 1 can be improved:
-
-css improvements
-----------------------------
-
-| The appearance can be improved via custom css.
-| The user interactions with the interface can be improved.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
 
 .. image:: images/superhero.png
     :scale: 50%
 
-----
-
-Add a custom css file. Here it is named ``main.css``.
-
-.. image:: images/superhero_files.png
-    :scale: 40%
+| The appearance was improved via custom css.
+| The user interactions with the interface were improved.
 
 ----
 
-Improved index.html
+index.html
 ---------------------
 
 | Custom css has been added: ``<link rel="stylesheet" href="main.css">``
@@ -48,11 +37,11 @@ Improved index.html
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
 
-        <!-- CSS only -->
-        <link rel="stylesheet" href="superhero.css">
-
         <!-- This script tag bootstraps PyScript -->
         <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+
+        <!-- custom CSS only -->
+        <link rel="stylesheet" href="main.css">
     </head>
         
     <body>
@@ -83,7 +72,7 @@ Improved index.html
 
 ----
 
-Custom css:
+main css:
 --------------------
 
 .. code-block::
@@ -175,7 +164,7 @@ Custom css:
 
 ----
 
-Improved main.py
+main.py
 ------------------
 
 | The python code has new code for random letters and input clearing.
@@ -320,7 +309,6 @@ Improved main.py
         # rest focus back to last initial
         set_last_initial_focus()
 
-        
     def clear_last_initial(event):
         """Clears and displays an empty last initial for the superhero name.
 

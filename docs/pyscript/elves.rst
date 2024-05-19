@@ -10,9 +10,26 @@ Elves
 
 ----
 
-
-Improved index.html
+index.html
 ---------------------
+
+The html below incudes javascript to validate the number entry for the number of elves.
+
+.. code-block::
+
+    <script>
+        function validateInput(input) {
+            var max = parseInt(input.max);
+            var min = parseInt(input.min);
+            var value = input.value.replace(/[^0-9]/g, ''); // Remove non-digit characters such as e
+            if (value > max) { value = max; }
+            if (value < min) { value = min; }
+            input.value = value;
+        }
+    </script>
+
+
+The html is below.
 
 .. code-block::
 
@@ -21,6 +38,7 @@ Improved index.html
     <html lang="en">
     <head>
         <title>20_Elves</title>
+        
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -28,14 +46,12 @@ Improved index.html
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
 
-        <!-- CSS only -->
-        <link rel="stylesheet" href="superhero.css">
-
         <!-- This script tag bootstraps PyScript -->
         <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
         
         <!-- CSS only -->
-        <link rel="stylesheet" href="main.css"></head>
+        <link rel="stylesheet" href="main.css">
+    </head>
     <body>
 
         <h1>Elves Name Generator</h1>
@@ -44,29 +60,33 @@ Improved index.html
         <div style="display: flex; align-items: center;">
             <input type="number" min="1" max="20" id="elfnumber" placeholder="1" oninput="validateInput(this)">
             <script>
-            function validateInput(input) {
-            var max = parseInt(input.max);
-            var min = parseInt(input.min);
-            if (input.value > max) { input.value = max; }
-            if (input.value < min) { input.value = min; }
-            }
+                function validateInput(input) {
+                    var max = parseInt(input.max);
+                    var min = parseInt(input.min);
+                    var value = input.value.replace(/[^0-9]/g, ''); // Remove non-digit characters
+                    if (value > max) { value = max; }
+                    if (value < min) { value = min; }
+                    input.value = value;
+                }
             </script>
-            <button py-click="elfgenerator">Name Elves</button>
+            <button py-click="elf_generator">Name Elves</button>
         </div>
         
         <h2>Elf names:</h2>
         <div id="elves">
         </div>
         
-        <script type="py" src="./main.py" config="./pyscript.json"></script>
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
 
     </body>
     </html>
 
 ----
 
-Custom css:
+main css:
 --------------------
+
+The custom css is below.
 
 .. code-block::
 
@@ -110,7 +130,6 @@ Custom css:
     transition: background-color 0.15s ease-in-out;
     }
 
-
     button:hover {
     background-color: #0056b3;
     }
@@ -124,14 +143,12 @@ Custom css:
     }
 
 
-
-
 ----
 
 main.py
 ------------------
 
-| The python code.
+| The python code is below.
 
 .. code-block:: python
 
@@ -177,7 +194,7 @@ main.py
         return elves
 
 
-    def elfgenerator(event):
+    def elf_generator(event):
         input_text_element = document.getElementById("elfnumber")
         try:
             num = int(input_text_element.value)

@@ -71,7 +71,7 @@ PC-app-development
     pyscript/superheroes1.rst
     pyscript/superheroes2.rst
     pyscript/elves.rst
-
+    pyscript/temperature_converter.rst
 
  
 
