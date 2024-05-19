@@ -27,9 +27,9 @@ When working with JavaScript in the browser, the choice between `querySelector` 
 
 .. code-block:: javascript
 
-  const element = document.getElementById("first_initial");
-  const value = element.value;
-  
+	const element = document.getElementById("first_initial");
+	const value = element.value;
+	
 
 2. **`querySelector`:**
    
@@ -40,8 +40,8 @@ When working with JavaScript in the browser, the choice between `querySelector` 
 
 .. code-block:: javascript
 
-  const element = document.querySelector("#first_initial");
-  const value = element.value;
+	const element = document.querySelector("#first_initial");
+	const value = element.value;
 
 
 ----
@@ -59,3 +59,8 @@ Output to the browser window
 
     append (boolean) if the output is going to be appended or not to the `target`ed element. It creates a <div> tag if True and a <py-script> tag with a random ID if False
 
+.. code-block:: python
+
+	from pyscript import document, display
+
+	display("Enter initials.", target="#superhero", append=False)

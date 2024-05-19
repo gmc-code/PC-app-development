@@ -2,46 +2,7 @@
 Superheroes 2
 ====================================================
 
-Notes on getting and setting input and output elements
---------------------------------------------------------------------
-
-| In general, you should use ``.value`` to get or set the value of an input element, and ``.innerText`` to get or set the text content of other types of elements.
-| ``.value`` is used to get or set the value of an input element, such as a text input or a select element. For example, if you have an input element with an id of myInput, you can get its value using document.getElementById('myInput').value.
-| ``.innerText`` is used to get or set the text content of an element, such as a <div> or a <p> element. For example, if you have a <div> element with an id of myDiv, you can get its text content using document.getElementById('myDiv').innerText.
-
-| Pyscript recommends using the display function to output to the browser window.
-
-.. py:function:: display(*values, target=None, append=True)
-
-    *values (list) - the list of objects to be displayed. Can be any of the following MIME types:: "text/plain", "text/html", "image/png", "image/jpeg", "image/svg+xml", "application/json" or "application/javascript"
-
-    target (str)- the ID of the html tag to output to. If none, output to the current <py-script> tag.
-
-    append (boolean) if the output is going to be appended or not to the `target`ed element. It creates a <div> tag if True and a <py-script> tag with a random ID if False
-
-When working with JavaScript in the browser, the choice between `querySelector` and `getElementById` depends on your specific use case. Let's break down the differences:
-
-1. **`getElementById`:**
-   - **Purpose:** Use `getElementById` when you need to select an element based on its unique ID attribute.
-   - **Efficiency:** It is more efficient because IDs must be unique within a page, so it always returns the correct element.
-   - **Context:** You can only use `getElementById` from the document context.
-   - **Example:**
-     ```javascript
-     const element = document.getElementById("first_initial");
-     const value = element.value;
-     ```
-
-2. **`querySelector`:**
-   - **Purpose:** Use `querySelector` when you need flexibility in selecting elements based on various criteria (e.g., CSS selectors).
-   - **Versatility:** It allows you to find elements using more complex rules that can't be expressed with `getElementById`.
-   - **Context:** You can use `querySelector` from any element context (not just the document).
-   - **Example:**
-     ```javascript
-     const element = document.querySelector("#first_initial");
-     const value = element.value;
-     ```
-
-----
+Superheroes 1 can be improved:
 
 Javascript improvements
 ----------------------------
@@ -66,7 +27,7 @@ Improved index.html
 ---------------------
 
 | Custom css has been added: ``<link rel="stylesheet" href="main.css">``
-| ``<body onload="setFocus()">`` and its inline script were added to cause the insertion to be in hte first input ready for typing so that clicking there by the user is not needed.
+| ``<body onload="setFocus()">`` and its inline script were added to cause the insertion to be in the first input ready for typing so that clicking there by the user is not needed.
 | In the ``input type="text"`` tag, ``py-input="check_first_initial"`` was added to restrict input to capital letters.
 | ``tabindex="1"`` and ``tabindex="2"`` were added to elements to control the navigation order via the tab key. 
 | ``<button py-click="random_first_initial">Random</button>`` provides quick placement of a random letter.
@@ -74,18 +35,24 @@ Improved index.html
 
 .. code-block::
 
-    <!-- GMC Nov 2023; css, js, 2023.11.1/core.js -->
+    <!-- GMC Nov 2023; css, js, 2024.5.2/core.js -->
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <title>Superhero</title>
+
+        <!-- Recommended meta tags -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/pyscript.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+
         <!-- CSS only -->
         <link rel="stylesheet" href="superhero.css">
-        <!-- script only -->
-        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
     </head>
         
     <body>
