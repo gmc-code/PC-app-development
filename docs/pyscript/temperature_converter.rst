@@ -8,6 +8,7 @@ Temperature converter
 .. image:: images/temp_conversion.png
     :scale: 50%
 
+
 ----
 
 index.html
