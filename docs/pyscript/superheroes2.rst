@@ -19,6 +19,28 @@ Notes on getting and setting input and output elements
 
     append (boolean) if the output is going to be appended or not to the `target`ed element. It creates a <div> tag if True and a <py-script> tag with a random ID if False
 
+When working with JavaScript in the browser, the choice between `querySelector` and `getElementById` depends on your specific use case. Let's break down the differences:
+
+1. **`getElementById`:**
+   - **Purpose:** Use `getElementById` when you need to select an element based on its unique ID attribute.
+   - **Efficiency:** It is more efficient because IDs must be unique within a page, so it always returns the correct element.
+   - **Context:** You can only use `getElementById` from the document context.
+   - **Example:**
+     ```javascript
+     const element = document.getElementById("first_initial");
+     const value = element.value;
+     ```
+
+2. **`querySelector`:**
+   - **Purpose:** Use `querySelector` when you need flexibility in selecting elements based on various criteria (e.g., CSS selectors).
+   - **Versatility:** It allows you to find elements using more complex rules that can't be expressed with `getElementById`.
+   - **Context:** You can use `querySelector` from any element context (not just the document).
+   - **Example:**
+     ```javascript
+     const element = document.querySelector("#first_initial");
+     const value = element.value;
+     ```
+
 ----
 
 Javascript improvements

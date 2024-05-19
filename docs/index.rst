@@ -67,9 +67,10 @@ PC-app-development
 
 
     pyscript/pyscript_introduction.rst
+    pyscript/browser_elements.rst
     pyscript/superheroes1.rst
     pyscript/superheroes2.rst
-    pyscript/elves.rst
+=
 
  
 
