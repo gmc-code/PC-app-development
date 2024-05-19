@@ -6,7 +6,7 @@ Temperature converter
 | Demo app is at: https://gmc_ps.pyscriptapps.com/temp-converter/latest/
 
 .. image:: images/temp_conversion.png
-    :scale: 50%
+    :scale: 80%
 
 
 ----
