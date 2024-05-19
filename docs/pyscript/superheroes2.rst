@@ -4,7 +4,7 @@ Superheroes 2
 
 Superheroes 1 can be improved:
 
-Javascript improvements
+css improvements
 ----------------------------
 
 | The appearance can be improved via custom css.
