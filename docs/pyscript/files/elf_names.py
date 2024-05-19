@@ -37,6 +37,7 @@ lastNames = {
 #     lastInitial = random.choice(list(lastNames.keys()))
 #     elfName = firstNames[firstInitial] + " " + lastNames[lastInitial]
 #     print(i + 1, elfName)
+
 def get_elves(num):
     elves = ""
     for i in range(int(num)):

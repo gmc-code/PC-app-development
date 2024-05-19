@@ -23,20 +23,22 @@ When working with JavaScript in the browser, the choice between `querySelector` 
    - **Efficiency:** It is more efficient because IDs must be unique within a page, so it always returns the correct element.
    - **Context:** You can only use `getElementById` from the document context.
    - **Example:**
-     ```javascript
+   .. code-block:: javascript
+
      const element = document.getElementById("first_initial");
      const value = element.value;
-     ```
+  
 
 2. **`querySelector`:**
    - **Purpose:** Use `querySelector` when you need flexibility in selecting elements based on various criteria (e.g., CSS selectors).
    - **Versatility:** It allows you to find elements using more complex rules that can't be expressed with `getElementById`.
    - **Context:** You can use `querySelector` from any element context (not just the document).
    - **Example:**
-     ```javascript
+   .. code-block:: javascript
+
      const element = document.querySelector("#first_initial");
      const value = element.value;
-     ```
+
 
 ----
 
