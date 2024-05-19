@@ -14,6 +14,31 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
+    :caption: Tkinter
+    :numbered:
+
+
+    tkinter_basics/start_with_tk.rst
+    tkinter_basics/tkinter_introduction.rst
+    tkinter_basics/tkinter_install.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: pyscript
+    :numbered:
+
+
+    pyscript/pyscript_introduction.rst
+    pyscript/browser_elements.rst
+    pyscript/superheroes1.rst
+    pyscript/superheroes2.rst
+    pyscript/elves.rst
+    pyscript/temperature_converter.rst
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Anvil use
     :numbered:
 
@@ -48,30 +73,6 @@ PC-app-development
     Anvil/feedback_form.rst
     Anvil/iphone_calculator.rst
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Tkinter
-    :numbered:
-
-
-    tkinter_basics/start_with_tk.rst
-    tkinter_basics/tkinter_introduction.rst
-    tkinter_basics/tkinter_install.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: pyscript
-    :numbered:
-
-
-    pyscript/pyscript_introduction.rst
-    pyscript/browser_elements.rst
-    pyscript/superheroes1.rst
-    pyscript/superheroes2.rst
-    pyscript/elves.rst
-    pyscript/temperature_converter.rst
 
  
 

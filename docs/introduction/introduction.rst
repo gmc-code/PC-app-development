@@ -6,9 +6,8 @@ PC-app-development
 ----------------------------------------
 
 | These docs will help you develop apps with python.
-| Web apps will be developed using Anvil.
 | Desktop apps will be developed using tkinter.
-
+| Web apps will be developed using Anvil or Pyscript.
 
 ----
 
@@ -29,8 +28,19 @@ Home pages:
 
 ----
 
+
+Key Tkinter references:
+-------------------------
+
+| TkDocs: http://www.tkdocs.com/
+| python: https://docs.python.org/3.12/library/tk.html
+| python: https://docs.python.org/3.12/library/tkinter.ttk.html
+| Tkinter 8.5 reference: https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
+
+----
+
 Key Anvil references:
----------------------
+-----------------------
 
 | docs: https://anvil.works/beta-docs/overview
 | anvil module: https://anvil.works/beta-docs/api/anvil
@@ -39,14 +49,13 @@ Key Anvil references:
 | client side python: https://anvil.works/beta-docs/client/python
 | anvil components and events: https://anvil.works/beta-docs/client/components
 
+----
 
-Key Tkinter references:
----------------------
+Key Pyscript references:
+--------------------------
 
-| TkDocs: http://www.tkdocs.com/
-| python: https://docs.python.org/3.12/library/tk.html
-| python: https://docs.python.org/3.12/library/tkinter.ttk.html
-| Tkinter 8.5 reference: https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
+| Docs https://docs.pyscript.net/2024.5.2/
+| User guide: https://docs.pyscript.net/2024.5.2/user-guide/
 
 ----
 
