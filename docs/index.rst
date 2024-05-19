@@ -55,10 +55,21 @@ PC-app-development
     :numbered:
 
 
-    tk/tkinter_introduction.rst
-    tk/tkinter_install.rst
-    tk/start_with_tk.rst
+    tkinter_basics/start_with_tk.rst
+    tkinter_basics/tkinter_introduction.rst
+    tkinter_basics/tkinter_install.rst
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: pyscript
+    :numbered:
+
+
+    pyscript/pyscript_introduction.rst
+    pyscript/superheroes1.rst
+    pyscript/superheroes2.rst
+    pyscript/elves.rst
 
  
 

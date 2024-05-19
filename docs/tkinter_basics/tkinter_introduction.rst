@@ -2,12 +2,6 @@
 Introduction to tkinter
 ====================================================
 
-Home pages:
----------------------
-
-| https://pc-tkinter.readthedocs.io/en/latest/index.html
-
-----
 
 Key references:
 ---------------------

@@ -20,6 +20,8 @@ def calculate(feet):
         pass
 
 
+
+
 def set_meters():
     """
     Set the meters DoubleVar with the calculated meters from the feet DoubleVar.

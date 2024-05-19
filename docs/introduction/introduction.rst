@@ -44,8 +44,8 @@ Key Tkinter references:
 ---------------------
 
 | TkDocs: http://www.tkdocs.com/
-| python: https://docs.python.org/3.10/library/tk.html
-| python: https://docs.python.org/3.10/library/tkinter.ttk.html
+| python: https://docs.python.org/3.12/library/tk.html
+| python: https://docs.python.org/3.12/library/tkinter.ttk.html
 | Tkinter 8.5 reference: https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
 
 ----

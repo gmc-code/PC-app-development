@@ -4,7 +4,7 @@ Install tkinter
 
 | See: https://tkdocs.com/tutorial/install.html
 
-| Tcl/Tk version 8.6.12 is installed with python 3.11.
+| Tcl/Tk version 8.6.13 is installed with python 3.12.
 
 .. code-block:: python
 
@@ -12,5 +12,5 @@ Install tkinter
 
 
     print(tkinter.Tcl().eval('info patchlevel'))
-    # 8.6.12
+    # 8.6.13
 

@@ -5,8 +5,8 @@ Introduction to pyscript
 Key references:
 ---------------------
 
-| Docs https://docs.pyscript.net/2023.11.1/
-| User guide: https://docs.pyscript.net/2023.11.1/user-guide/
+| Docs https://docs.pyscript.net/2024.5.2/
+| User guide: https://docs.pyscript.net/2024.5.2/user-guide/
 | Developer blog on latest update changes: https://jeff.glass/tags/pyscript/
 
 | PyScript is designed to allow the running of Python in web browsers.
@@ -44,7 +44,7 @@ Project files
 | The **pyscript.toml** file is used to configure the project. e.g specifying python modules via   ``packages = ["numpy", "pandas"]``. It can be empty. 
 
 | The **index.html** file starts as a basic template.
-| The latest versions of the <link> and <script> tags have been inserted as shown below (as of Dec 2023).
+| The latest versions of the <link> and <script> tags have been inserted as shown below (as of May 2024).
 
 ----
 
@@ -53,19 +53,24 @@ index.html
 
 .. code-block::
 
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <title>New Project</title>
+
+        <!-- Recommended meta tags -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/pyscript.css" />
-        <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
     </head>
     <body>
-        <py-config src="./pyscript.toml"></py-config>
-        <py-script src="./main.py"></py-script>
+        <script type="py" src="./main.py" config="./pyscript.toml" terminal></script>
     </body>
     </html>
-
 
