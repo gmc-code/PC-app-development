@@ -19,27 +19,29 @@ Getting and setting input and output elements
 When working with JavaScript in the browser, the choice between `querySelector` and `getElementById` depends on your specific use case.
 
 1. **`getElementById`:**
-   - **Purpose:** Use `getElementById` when you need to select an element based on its unique ID attribute.
-   - **Efficiency:** It is more efficient because IDs must be unique within a page, so it always returns the correct element.
-   - **Context:** You can only use `getElementById` from the document context.
-   - **Example:**
-  
-   .. code-block:: javascript
+   
+- **Purpose:** Use `getElementById` when you need to select an element based on its unique ID attribute.
+- **Efficiency:** It is more efficient because IDs must be unique within a page, so it always returns the correct element.
+- **Context:** You can only use `getElementById` from the document context.
+- **Example:**
 
-     const element = document.getElementById("first_initial");
-     const value = element.value;
+.. code-block:: javascript
+
+  const element = document.getElementById("first_initial");
+  const value = element.value;
   
 
 2. **`querySelector`:**
-   - **Purpose:** Use `querySelector` when you need flexibility in selecting elements based on various criteria (e.g., CSS selectors).
-   - **Versatility:** It allows you to find elements using more complex rules that can't be expressed with `getElementById`.
-   - **Context:** You can use `querySelector` from any element context (not just the document).
-   - **Example:**
+   
+- **Purpose:** Use `querySelector` when you need flexibility in selecting elements based on various criteria (e.g., CSS selectors).
+- **Versatility:** It allows you to find elements using more complex rules that can't be expressed with `getElementById`.
+- **Context:** You can use `querySelector` from any element context (not just the document).
+- **Example:**
 
-   .. code-block:: javascript
+.. code-block:: javascript
 
-     const element = document.querySelector("#first_initial");
-     const value = element.value;
+  const element = document.querySelector("#first_initial");
+  const value = element.value;
 
 
 ----
