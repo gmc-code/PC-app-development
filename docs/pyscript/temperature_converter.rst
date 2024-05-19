@@ -3,9 +3,9 @@ Temperature converter
 ====================================================
 
 | The details below are for a simple Temperature converter.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/elves/latest/
+| Demo app is at: https://gmc_ps.pyscriptapps.com/temp-converter/latest/
 
-.. image:: images/elves.png
+.. image:: images/temp_conversion.png
     :scale: 50%
 
 ----
