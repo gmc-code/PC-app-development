@@ -20,8 +20,8 @@ tkinter first use
     button = tk.Button(window, text="Quit", command=window.destroy)
 
     # place widgets
-    label.grid(column=0, row=0)
-    button.grid(column=1, row=0)
+    label.grid(row=0, column=0)
+    button.grid(row=0, column=0)
 
     # Start the main event loop
     window.mainloop()
