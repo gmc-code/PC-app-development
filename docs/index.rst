@@ -17,10 +17,20 @@ PC-app-development
     :caption: Tkinter
     :numbered:
 
-
-    tkinter_basics/start_with_tk.rst
     tkinter_basics/tkinter_introduction.rst
-    tkinter_basics/tkinter_install.rst
+    tkinter_basics/tkinter_import.rst
+    tkinter_basics/tkinter_first_use.rst
+    tkinter_basics/tkinter_button.rst
+    tkinter_basics/tkinter_label.rst
+    
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Tkinter apps
+    :numbered:
+
+    tkinter_apps/tk_name_age.rst
+    tkinter_apps/tk_temperature_converter.rst
 
 
 .. toctree::

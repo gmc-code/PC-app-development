@@ -2,6 +2,13 @@
 Introduction to pyscript
 ====================================================
 
+| PyScript is a platform for Python in the browser.
+| It combines html, css, and python in separate files.
+| PyScript is designed to allow the running of Python in web browsers.
+| PyScript apps can be hosted as a static web site. 
+
+----
+
 Key references:
 ---------------------
 
@@ -9,14 +16,12 @@ Key references:
 | User guide: https://docs.pyscript.net/2024.5.2/user-guide/
 | Developer blog on latest update changes: https://jeff.glass/tags/pyscript/
 
-| PyScript is designed to allow the running of Python in web browsers.
-| PyScript apps can be hosted as a static web site. 
-
 ----
 
 Sign up
 ----------
 
+| Sign up is free.
 | Go to https://pyscript.com/ and sign up.
 
 ----
