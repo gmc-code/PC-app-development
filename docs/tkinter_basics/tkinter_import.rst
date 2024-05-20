@@ -24,7 +24,7 @@ tkinter import everything
     from tkinter import *
 
 
-- This removes the need to prefix the objects with `tkinter.` to access them (e.g., `Button` instead of `tkinter.Button`).
+- This removes the need to prefix the objects with ``tkinter.`` to access them (e.g., ``Button`` instead of ``tkinter.Button``).
 - This is poor practice. It makes it hard to tell what methods are from tkinter.
 
 ----
@@ -38,6 +38,6 @@ tkinter import
     import tkinter
 
 
-- You need to prefix the objects with `tkinter.` to access them (e.g., `tkinter.Button`, `tkinter.Label`.).
-- This makes slightly longer code using `tkinter.Button` compared to `tk.Button`
+- You need to prefix the objects with ``tkinter`.` to access them (e.g., ``tkinter.Button``, ``tkinter.Label``.).
+- This makes slightly longer code using ``tkinter.Button`` compared to ``tk.Button``
 

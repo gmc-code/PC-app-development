@@ -22,6 +22,7 @@ PC-app-development
     tkinter_basics/tkinter_first_use.rst
     tkinter_basics/tkinter_button.rst
     tkinter_basics/tkinter_label.rst
+    tkinter_basics/tkinter_entry.rst
     
 
 .. toctree::
