@@ -10,8 +10,22 @@ tk temperature converter
 | It displays a window with Label, Text and Button widgets
 | The `mainloop` function starts the main event loop for the window, allowing it to respond to user interactions.
 
+----
 
-| Full code:
+convert_f_to_c
+---------------
+
+| `convert_f_to_c()` uses a try and except block to catch errors due to non numeric entries.
+
+| The delete method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.delete(1.0, 'end')`
+| The insert method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.insert(1.0, f'{celsius:.1f}')`
+
+| `c_text.insert(1.0, f'{celsius:.1f}')` uses `:.1f` to format the celsius float with 1 decimal place.
+
+----
+
+Full code
+------------
 
 .. code-block:: python
 

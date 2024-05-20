@@ -10,8 +10,38 @@ tk name age
 | It displays a window with Label, Entry, Text and Button widgets
 | The `mainloop` function starts the main event loop for the window, allowing it to respond to user interactions.
 
+----
 
-| Full code:
+grid
+-------
+
+| The grid rows and columns both start at 0.
+
+| The sticky='e' option specifies that the widget should stick to the east (right) side of its grid cell. 
+| This means that if the cell is larger than the widget, the widget will be right-aligned within the cell.
+
+| The padx=10 option adds 10 pixels of padding on the left and right (horizontal) sides of the widget.
+| The pady=10 option adds 10 pixels of padding on the top and bottom (vertical) sides of the widget.
+
+
+----
+
+place_name_age
+---------------
+
+| `name = name_entry.get()` uses the get() method to get the text value of the Entry widget.
+
+| Default values of "John Smith" and "16" are used if no name or age is entered.
+
+| The delete method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `name_age_text.delete(1.0, 'end')`
+| The insert method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `name_age_text.delete(1.0, 'end')`
+
+| `f'My name is {name}. \nI am {age} years old.'` uses `\n` for a line break so the 2 sentences are on two lines.
+
+----
+
+Full code
+------------
 
 .. code-block:: python
 
