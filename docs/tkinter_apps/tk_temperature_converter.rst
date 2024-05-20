@@ -2,7 +2,7 @@
 tk temperature converter
 ====================================================
 
-.. image:: images/feet_to_meters.png
+.. image:: images/tk_temperature_converter.png
     :scale: 100%
     
     
