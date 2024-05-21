@@ -3,7 +3,7 @@ tk name age
 ====================================================
 
 .. image:: images/tk_name_age.png
-    :scale: 100%
+    :scale: 67%
 
 | This code outputs the user name and age in sentence form once the user has input their name and age.    
 | This code creates a simple GUI application using the Tkinter library. 

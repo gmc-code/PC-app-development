@@ -3,7 +3,7 @@ tk inches to cm
 ====================================================
 
 .. image:: images/tk_inches_to_cm_converter.png
-    :scale: 100%
+    :scale: 67%
     
     
 | This code outputs cm by converting the inches value entered by the user.   

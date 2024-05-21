@@ -3,25 +3,25 @@ tk temperature converter
 ====================================================
 
 .. image:: images/tk_temperature_converter.png
-    :scale: 100%
+    :scale: 67%
     
 | This code outputs Celsius temperature by converting the fahrenheit value entered by the user.   
 | This code creates a simple GUI application using the Tkinter library. 
 | It displays a window with Label, Entry, Text and Button widgets
-| The `mainloop` function starts the main event loop for the window, allowing it to respond to user interactions.
+| The ``mainloop`` function starts the main event loop for the window, allowing it to respond to user interactions.
 
 ----
 
 convert_f_to_c
 ---------------
 
-| `convert_f_to_c()` uses a try and except block to catch errors due to non numeric entries.
+| ``convert_f_to_c()`` uses a try and except block to catch errors due to non numeric entries.
 
 | The delete method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.delete(1.0, 'end')`
-| `tk.END` or `'end'` can be used as the second argument to cause the deletion to go to the end of the widget.
+| ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
 | The insert method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.insert(1.0, f'{celsius:.1f}')`
 
-| `c_text.insert(1.0, f'{celsius:.1f}')` uses `:.1f` to format the celsius float with 1 decimal place.
+| ``c_text.insert(1.0, f'{celsius:.1f}')`` uses ``:.1f`` to format the celsius float with 1 decimal place.
 
 ----
 
