@@ -5,10 +5,9 @@ tk name age
 .. image:: images/tk_name_age.png
     :scale: 67%
 
-| This code outputs the user name and age in sentence form once the user has input their name and age.    
+| This code outputs the user name and age in sentence form.    
 | This code creates a simple GUI application using the Tkinter library. 
 | It displays a window with Label, Entry, Text and Button widgets
-| The `mainloop` function starts the main event loop for the window, allowing it to respond to user interactions.
 
 ----
 
@@ -29,15 +28,15 @@ grid
 place_name_age
 ---------------
 
-| `name = name_entry.get()` uses the get() method to get the text value of the Entry widget.
+| ``name = name_entry.get()`` uses the ``get()`` method to get the text value of the Entry widget.
 
 | Default values of "John Smith" and "16" are used if no name or age is entered.
 
-| The delete method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `name_age_text.delete(1.0, 'end')`
-| `tk.END` or `'end'` can be used as the second argument to cause the deletion to go to the end of the widget.
-| The insert method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `name_age_text.insert(1.0, 'new text')`
+| The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``name_age_text.delete(1.0, 'end')``
+| ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
+| The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``name_age_text.insert(1.0, 'new text')``
 
-| `f'My name is {name}. \nI am {age} years old.'` uses `\n` for a line break so the 2 sentences are on two lines.
+| ``f'My name is {name}. \nI am {age} years old.'`` uses ``\n`` for a line break so the 2 sentences are on two lines.
 
 ----
 

@@ -6,23 +6,22 @@ tk inches to cm
     :scale: 67%
     
     
-| This code outputs cm by converting the inches value entered by the user.   
+| This code converts inches to cm.   
 | This code creates a simple GUI application using the Tkinter library. 
 | It displays a window with Label, Entry, Text and Button widgets
-| The `mainloop` function starts the main event loop for the window, allowing it to respond to user interactions.
 
 ----
 
 convert_inches_to_cm
 ---------------
 
-| `convert_inches_to_cm()` uses a try and except block to catch errors due to non numeric entries.
+| ``convert_inches_to_cm()`` uses a try and except block to catch errors due to non numeric entries.
 
-| The delete method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.delete(1.0, 'end')`
-| `tk.END` or `'end'` can be used as the second argument to cause the deletion to go to the end of the widget.
-| The insert method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `cm_text.insert(1.0, f'{cm:.2f}')`
+| The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``c_text.delete(1.0, 'end')``
+| ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
+| The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``cm_text.insert(1.0, f'{cm:.2f}')``
 
-| `cm_text.insert(1.0, f'{cm:.2f}')` uses `:.2f` to format the celsius float to 2 decimal place.
+| ``cm_text.insert(1.0, f'{cm:.2f}')`` uses ``:.2f`` to format the celsius float to 2 decimal place.
 
 ----
 

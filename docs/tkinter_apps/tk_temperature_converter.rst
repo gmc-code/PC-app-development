@@ -5,10 +5,9 @@ tk temperature converter
 .. image:: images/tk_temperature_converter.png
     :scale: 67%
     
-| This code outputs Celsius temperature by converting the fahrenheit value entered by the user.   
+| This code converts Fahrenheit to Celsius.   
 | This code creates a simple GUI application using the Tkinter library. 
 | It displays a window with Label, Entry, Text and Button widgets
-| The ``mainloop`` function starts the main event loop for the window, allowing it to respond to user interactions.
 
 ----
 
@@ -17,9 +16,9 @@ convert_f_to_c
 
 | ``convert_f_to_c()`` uses a try and except block to catch errors due to non numeric entries.
 
-| The delete method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.delete(1.0, 'end')`
+| The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``c_text.delete(1.0, 'end')``
 | ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
-| The insert method of a Text widget requires the line.column as the first argument. e.g. `1.0` in `c_text.insert(1.0, f'{celsius:.1f}')`
+| The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``c_text.insert(1.0, f'{celsius:.1f}')``
 
 | ``c_text.insert(1.0, f'{celsius:.1f}')`` uses ``:.1f`` to format the celsius float with 1 decimal place.
 
@@ -76,9 +75,9 @@ Version 1 code
 Version 2 code
 ----------------
 
-| Move GUI code into its own `def` block to make the code more modular.
+| Move GUI code into its own **def** block to make the code more modular.
 | Add doc strings.
-| Use variables for repeated values used in formatting.
+| Use variables for repeated values used in formatting widgets.
 
 .. code-block:: python
 
