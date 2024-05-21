@@ -18,7 +18,7 @@ Code summary
 | and see the result displayed in a text widget.
 
 1. **Importing tkinter:**
-    - The first line ``import tkinter as tk`` imports the ``tkinter`` library and assigns it an alias ``tk``. ``tkinter`` is a Python library for creating graphical user interfaces (GUIs).
+    - The first line ``import tkinter as tk`` imports the ``tkinter`` library and assigns it an alias ``tk``.
 
 2. **Creating the main window:**
     - ``window = tk.Tk()`` creates the main application window.
