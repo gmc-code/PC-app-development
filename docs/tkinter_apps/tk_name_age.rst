@@ -29,13 +29,12 @@ Code summary
 3. **Defining the place_name_age function:**
     - This function is called when the "Name and Age" button is clicked.
     - It retrieves the values entered in the name and age entry fields.
+    - ``name = name_entry.get()`` uses the ``get()`` method to get the text value of the Entry widget.
     - If no name is entered, it defaults to "John Smith". If no age is entered, it defaults to "16".
     - It clears the existing text in the ``name_age_text`` widget.
-    - It inserts a formatted string into the ``name_age_text`` widget, displaying the name and age.
-    - ``name = name_entry.get()`` uses the ``get()`` method to get the text value of the Entry widget.
-
     - The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``name_age_text.delete(1.0, 'end')``.
     - ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
+    - It inserts a formatted string into the ``name_age_text`` widget, displaying the name and age.
     - The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``name_age_text.insert(1.0, 'new text')``.
     - ``f'My name is {name}. \nI am {age} years old.'`` uses ``\n`` for a line break so the 2 sentences are on two lines.
 
