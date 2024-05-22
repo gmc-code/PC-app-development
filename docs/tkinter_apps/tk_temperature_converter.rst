@@ -1,5 +1,5 @@
 ====================================================
-tk temperature converter
+Fahrenheit to Celsius
 ====================================================
 
 .. image:: images/tk_temperature_converter.png
