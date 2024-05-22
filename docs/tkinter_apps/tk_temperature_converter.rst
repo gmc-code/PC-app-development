@@ -5,7 +5,7 @@ tk temperature converter
 .. image:: images/tk_temperature_converter.png
     :scale: 67%
     
-| This code converts Fahrenheit to Celsius.   
+| This code converts Fahrenheit to Celsius temperatures.   
 | This code creates a simple GUI application using the Tkinter library. 
 | It displays a window with Label, Entry, Text and Button widgets
 
