@@ -2,6 +2,15 @@ import tkinter as tk
 
 
 def convert_inches_to_cm():
+    """
+    Converts inches to cm and displays the result in the GUI.
+
+    Reads the inches value from the input field, performs the conversion to cm,
+    and updates the result in the output text widget.
+
+    Raises:
+        ValueError: If the input is not a valid float.
+    """
     try:
         inches = float(inches_entry.get())
         cm = inches * 2.54
