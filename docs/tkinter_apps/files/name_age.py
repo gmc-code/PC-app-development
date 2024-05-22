@@ -18,10 +18,10 @@ def place_name_age():
         age = "16"
     # clear name_age_text 1.0 represents line.column or line 1 character 0, tk.END or 'end' can be used.
     name_age_text.delete(1.0, 'end')
-    # insert name age using f string, \n is a line break; 
+    # insert name age using f string, \n is a line break;
     name_age_text.insert(1.0, f'My name is {name}. \nI am {age} years old.')
-    
-    
+
+
 #  create widgets
 name_label = tk.Label(window, text="Name",
                             bg='#FFFFFF', fg='#444444', font=("Arial", 30))
