@@ -65,7 +65,8 @@ Code summary
         age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
         name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
                                     fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
-        name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+        name_age_text = tk.Text(window, height=2, width=30, 
+                                bg=BG_TEXT_COLO     R, fg=FG_COLOR, font=FONT_STYLE)
 
 
 5. **Grid Placement of widgets on the window:**
