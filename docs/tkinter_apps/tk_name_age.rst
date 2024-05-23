@@ -24,6 +24,7 @@ Code summary
 
         import tkinter as tk
 
+
 2. **Define Constants:**
     - We define some constants for colors and font style that we'll use in our GUI.
 
@@ -65,6 +66,7 @@ Code summary
         name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
                                     fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
         name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+
 
 5. **Grid Placement of widgets on the window:**
     - Use the `grid` method to place the widgets in rows and columns in the window.
@@ -114,17 +116,16 @@ Code summary
             name_age_text.insert(1.0, f"My name is {name}. \nI am {age} years old.")
 
 
-
 7. **Start the Event Loop:**
     - Finally, start the main event loop using ``window.mainloop()``.
     - This keeps the GUI responsive and allows user interaction.
+    - When you enter a name and age, it will display the sentences in the text widget. 
 
     .. code-block:: python
 
         window.mainloop()
 
 
-When you enter a name and age, it will display the sentences in the text widget. 
 
 
 
