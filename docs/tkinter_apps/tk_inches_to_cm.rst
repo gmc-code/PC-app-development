@@ -13,7 +13,7 @@ Inches to cm
 
 ----
 
-### Step 1: Import Tkinter
+Step 1: Import Tkinter
 -----------------------------------
 
 First, import the `tkinter` module, which provides the necessary functions and classes for creating GUI elements. 
@@ -22,7 +22,7 @@ First, import the `tkinter` module, which provides the necessary functions and c
 
     import tkinter as tk
 
-### Step 2: Define Constants
+Step 2: Define Constants
 ------------------------------------
 
 | Next, define some constants for colors, font style, and other settings. 
@@ -36,7 +36,7 @@ First, import the `tkinter` module, which provides the necessary functions and c
     BUTTON_COLOR = "#FF3399"
     FONT_STYLE = ("Arial", 16)
 
-### Step 3: Create the Main Window
+Step 3: Create the Main Window
 ----------------------------------------
 
 We'll create the main application window using `tk.Tk()`. Set the window title, size, and background color:
@@ -50,7 +50,7 @@ We'll create the main application window using `tk.Tk()`. Set the window title, 
     window.configure(bg=BG_COLOR)
 
 
-### Step 4: Create Widgets
+Step 4: Create Widgets
 --------------------------------
 
 Now create the widgets (GUI elements) that will be displayed in the window:
@@ -64,7 +64,7 @@ Now create the widgets (GUI elements) that will be displayed in the window:
     cm_text = tk.Text(window, height=1, width=10, font=FONT_STYLE)
     convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 
-### Step 5: Place Widgets in the Window
+Step 5: Place Widgets in the Window
 -------------------------------------------------
 
 Position the widgets using the `grid()` method:
@@ -78,7 +78,7 @@ Position the widgets using the `grid()` method:
     cm_text.grid(row=2, column=1, sticky="w", padx=10, pady=10)
     convert_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
-### Step 6: Define the Conversion Function
+Step 6: Define the Conversion Function
 ----------------------------------------------
 
 | Create a function called `convert_inches_to_cm()` that performs the conversion and updates the result in the `cm_text` widget.
@@ -103,7 +103,7 @@ Position the widgets using the `grid()` method:
             cm_text.insert(1.0, "Invalid input.")
 
 
-### Step 7: Start the Event Loop
+Step 7: Start the Event Loop
 ----------------------------------
 
 Finally, start the main event loop to keep the GUI responsive:
