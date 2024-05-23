@@ -59,6 +59,108 @@ Code summary
   
 ----
 
+| Create a simple tkinter application that takes a name and age, 
+| then displays two sentences with that information in a graphical user interface (GUI).
+
+
+1. **Import tkinter:**
+    - We start by importing the `tkinter` module, which provides tools for creating GUI applications.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+2. **Define Constants:**
+    - We define some constants for colors and font style that we'll use in our GUI.
+
+.. code-block:: python
+
+    BG_COLOR = "#FFFFFF"
+    FG_COLOR = "#444444"
+    BG_TEXT_COLOR = "#e5e5e5"
+    FONT_STYLE = ("Arial", 30)
+
+
+3. **Create the Main Window:**
+    - We create the main window using `tk.Tk()`.
+    - Set the window title to "Name and age".
+    - Set the window dimensions to 700x380 pixels.
+    - Configure the background color.
+
+.. code-block:: python
+
+    window = tk.Tk()
+    window.title("Name and age")
+    window.geometry("700x380")
+    window.configure(bg=BG_COLOR)
+
+
+4. **Create Widgets:**
+    - We create several widgets (GUI elements) that will be displayed in the window:
+        - Labels for "Name" and "Age".
+        - Entry fields for the user to input their name and age.
+        - A button labeled "Name and Age".
+        - A text widget to display the sentences with the name and age.
+
+.. code-block:: python
+
+    name_label = tk.Label(window, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
+                                fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
+    name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+
+
+5. **Define the `place_name_age` Function:**
+    - This function is called when the user clicks the "Name and Age" button.
+    - It retrieves the name and age from the entry fields.
+    - If no name or age is provided, default values are used.
+    - The text widget is cleared, and the sentences are inserted using an f-string.
+
+.. code-block:: python
+
+    def place_name_age():
+        name = name_entry.get()
+        if name == "":
+            name = "John Smith"
+        age = age_entry.get()
+        if age == "":
+            age = "16"
+        name_age_text.delete(1.0, "end")
+        name_age_text.insert(1.0, f"My name is {name}. \nI am {age} years old.")
+
+
+6. **Grid Placement:**
+    - We use the `grid` method to place the widgets in the window.
+    - The `row` and `column` parameters determine the position of each widget.
+    - We set padding (`padx` and `pady`) to create spacing between widgets.
+
+.. code-block:: python
+
+    name_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
+    name_entry.grid(row=0, column=1, sticky="w", padx=10, pady=10)
+    age_label.grid(row=1, column=0, sticky="e", padx=10, pady=10)
+    age_entry.grid(row=1, column=1, sticky="w", padx=10, pady=10)
+    name_age_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+    name_age_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+
+
+7. **Start the Event Loop:**
+    - Finally, we start the main event loop using `window.mainloop()`.
+    - This keeps the GUI responsive and allows user interaction.
+
+.. code-block:: python
+
+    window.mainloop()
+
+
+When you enter a name and age, it will display the sentences in the text widget. 
+
+
+
 Full code
 ------------
 
