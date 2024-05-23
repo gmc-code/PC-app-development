@@ -27,12 +27,12 @@ Code summary
 2. **Define Constants:**
     - We define some constants for colors and font style that we'll use in our GUI.
 
-.. code-block:: python
+    .. code-block:: python
 
-    BG_COLOR = "#FFFFFF"
-    FG_COLOR = "#444444"
-    BG_TEXT_COLOR = "#e5e5e5"
-    FONT_STYLE = ("Arial", 30)
+        BG_COLOR = "#FFFFFF"
+        FG_COLOR = "#444444"
+        BG_TEXT_COLOR = "#e5e5e5"
+        FONT_STYLE = ("Arial", 30)
 
 
 3. **Creating the main window:**
@@ -41,12 +41,12 @@ Code summary
     - ``window.geometry('700x380')`` specifies the initial size of the window (700 pixels wide and 380 pixels tall).
     - ``window.configure(bg=BG_COLOR)`` sets the background color of the window to white (``BG_COLOR = #FFFFFF``).
 
-.. code-block:: python
+    .. code-block:: python
 
-    window = tk.Tk()
-    window.title("Name and age")
-    window.geometry("700x380")
-    window.configure(bg=BG_COLOR)
+        window = tk.Tk()
+        window.title("Name and age")
+        window.geometry("700x380")
+        window.configure(bg=BG_COLOR)
 
 
 4. **Creating GUI widgets:**
@@ -56,15 +56,15 @@ Code summary
     - The "Name and Age" button ``name_age_button`` triggers the ``place_name_age`` function.
     - A text widget ``name_age_text`` displays the resulting sentences with the name and age.
 
-.. code-block:: python
+    .. code-block:: python
 
-    name_label = tk.Label(window, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
-                                fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
-    name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+        name_label = tk.Label(window, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+        age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+        name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+        age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+        name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
+                                    fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
+        name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 
 5. **Grid Placement of widgets on the window:**
     - Use the `grid` method to place the widgets in rows and columns in the window.
@@ -77,14 +77,14 @@ Code summary
     - The padx=10 option adds 10 pixels of padding on the left and right (horizontal) sides of the widget.
     - The pady=10 option adds 10 pixels of padding on the top and bottom (vertical) sides of the widget.
 
-.. code-block:: python
+    .. code-block:: python
 
-    name_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
-    name_entry.grid(row=0, column=1, sticky="w", padx=10, pady=10)
-    age_label.grid(row=1, column=0, sticky="e", padx=10, pady=10)
-    age_entry.grid(row=1, column=1, sticky="w", padx=10, pady=10)
-    name_age_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
-    name_age_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+        name_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
+        name_entry.grid(row=0, column=1, sticky="w", padx=10, pady=10)
+        age_label.grid(row=1, column=0, sticky="e", padx=10, pady=10)
+        age_entry.grid(row=1, column=1, sticky="w", padx=10, pady=10)
+        name_age_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+        name_age_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 
 6. **Defining the place_name_age function:**
@@ -101,17 +101,17 @@ Code summary
     - e.g. ``1.0`` in ``name_age_text.insert(1.0, 'new text')``.
     - ``f'My name is {name}. \nI am {age} years old.'`` uses ``\n`` for a line break so the 2 sentences are on two lines.
 
-.. code-block:: python
+    .. code-block:: python
 
-    def place_name_age():
-        name = name_entry.get()
-        if name == "":
-            name = "John Smith"
-        age = age_entry.get()
-        if age == "":
-            age = "16"
-        name_age_text.delete(1.0, "end")
-        name_age_text.insert(1.0, f"My name is {name}. \nI am {age} years old.")
+        def place_name_age():
+            name = name_entry.get()
+            if name == "":
+                name = "John Smith"
+            age = age_entry.get()
+            if age == "":
+                age = "16"
+            name_age_text.delete(1.0, "end")
+            name_age_text.insert(1.0, f"My name is {name}. \nI am {age} years old.")
 
 
 
@@ -119,9 +119,9 @@ Code summary
     - Finally, start the main event loop using ``window.mainloop()``.
     - This keeps the GUI responsive and allows user interaction.
 
-.. code-block:: python
+    .. code-block:: python
 
-    window.mainloop()
+        window.mainloop()
 
 
 When you enter a name and age, it will display the sentences in the text widget. 
