@@ -8,8 +8,8 @@ BG_COLOR = "#333333"
 FG_COLOR = "#FFFFFF"
 BUTTON_COLOR = "#FF3399"
 FONT_STYLE = ("Arial", 24)
-USERNAME = "johnsmith"
-PASSWORD = "12345"
+USERNAME = "johns"
+PASSWORD = "123"
 
 
 def login():

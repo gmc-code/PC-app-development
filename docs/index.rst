@@ -30,6 +30,7 @@ PC-app-development
     :caption: Tkinter apps
     :numbered:
 
+    tkinter_apps/tk_login.rst
     tkinter_apps/tk_name_age.rst
     tkinter_apps/tk_temperature_converter.rst
     tkinter_apps/tk_inches_to_cm.rst
