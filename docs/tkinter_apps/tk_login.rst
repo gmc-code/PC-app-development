@@ -1,13 +1,13 @@
 ====================================================
-tk login
+Login form
 ====================================================
 
-.. image:: images/tk_name_age.png
+.. image:: images/tk_login.png
     :scale: 67%
 
-| This code outputs the user name and age in sentence form.    
+| This code outputs a message box is response to attempts to login.    
 | This code creates a simple GUI application using the Tkinter library. 
-| It displays a window with Label, Entry, Text and Button widgets
+| It displays a window with Label, Entry and Button widgets
 
 ----
 
