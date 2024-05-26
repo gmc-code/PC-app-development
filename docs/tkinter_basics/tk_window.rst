@@ -47,11 +47,13 @@ Window properties
 Certainly! Let's explore additional properties and attributes of the `Tk()` object in Tkinter, including geometry settings, default values, descriptions, and use case examples:
 
 1. **Resizable (resizable()):**
+   
    - **Default Value**: Both horizontally and vertically resizable.
    - **Description**: Determines whether the window can be resized by the user. You can set it using the `resizable()` method.
    - **Use Case Example**: If you want to create a fixed-size window, disable resizing by calling `window.resizable(False, False)`.
 
 2. **Transparency (attributes('-alpha', 0.5)):**
+   
    - **Description**: Sets the transparency level for the window. The value ranges from 0 (completely transparent) to 1 (fully opaque).
    - **Use Case Example**: Create a semi-transparent overlay window for visual effects or notifications.
 
@@ -81,11 +83,11 @@ Certainly! Let's explore additional properties and attributes of the `Tk()` obje
    - **Description**: Restores a minimized window to its normal state.
    - **Use Case Example**: Restore a minimized window when needed.
 
-9. **Window Maximize (state('zoomed')):**
+9.  **Window Maximize (state('zoomed')):**
    - **Description**: Maximizes the window to fill the screen.
    - **Use Case Example**: Provide a "Maximize" button for users to expand the window.
 
-10. **Window Withdraw (withdraw()):**
+11. **Window Withdraw (withdraw()):**
     - **Description**: Temporarily hides the window (similar to minimizing but without the taskbar icon).
     - **Use Case Example**: Hide the window during specific application states.
 

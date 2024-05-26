@@ -1,5 +1,5 @@
 ====================================================
-tk button
+tk label
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-tkinter-label/?ref=lbp
@@ -45,4 +45,3 @@ tk button
     window.mainloop()
 
 
-window.mainloop()

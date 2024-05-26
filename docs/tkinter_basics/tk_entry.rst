@@ -30,4 +30,4 @@ tk entry
     window.mainloop()
 
 
-window.mainloop()
+
