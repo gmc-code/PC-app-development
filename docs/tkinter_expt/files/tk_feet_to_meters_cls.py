@@ -6,11 +6,11 @@ class FeetToMeters:
     A class to convert feet to meters using a simple GUI.
     """
 
-    def __init__(self, root):
+    def __init__(self, window):
         """
-        Initialize the class with a root window.
+        Initialize the class with a window window.
         """
-        self.root = root
+        self.window = window
         self.setup_ui()
 
     def setup_ui(self):
@@ -18,13 +18,13 @@ class FeetToMeters:
         Set up the user interface for the application.
         """
         # Set the title of the window
-        self.root.title("Feet to Meters")
+        self.window.title("Feet to Meters")
 
         # Create a frame within the window
-        mainframe = ttk.Frame(self.root, padding="3 3 12 12")
+        mainframe = ttk.Frame(self.window, padding="3 3 12 12")
         mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-        self.root.columnconfigure(0, weight=1)
-        self.root.rowconfigure(0, weight=1)
+        self.window.columnconfigure(0, weight=1)
+        self.window.rowconfigure(0, weight=1)
 
         # Create a StringVar for feet input
         self.feet = StringVar()
@@ -55,7 +55,7 @@ class FeetToMeters:
 
         # Set focus to the feet entry field
         self.feet_entry.focus()
-        self.root.bind("<Return>", self.set_meters)
+        self.window.bind("<Return>", self.set_meters)
 
     def calculate(self, feet):
         """
@@ -83,11 +83,11 @@ class FeetToMeters:
         self.feet_entry.focus()
 
 
-# Create a Tk root widget
-root = Tk()
+# Create a Tk window widget
+window = Tk()
 
 # Create an instance of the FeetToMeters class
-FeetToMeters(root)
+FeetToMeters(window)
 
 # Start the Tk event loop
-root.mainloop()
+window.mainloop()

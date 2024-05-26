@@ -19,11 +19,13 @@ PC-app-development
 
     tkinter_basics/tkinter_introduction.rst
     tkinter_basics/tkinter_import.rst
-    tkinter_basics/tkinter_first_use.rst
-    tkinter_basics/tkinter_button.rst
-    tkinter_basics/tkinter_label.rst
-    tkinter_basics/tkinter_entry.rst
-    
+    tkinter_basics/tk_window.rst
+    tkinter_basics/tkinter_hello_world.rst
+    tkinter_basics/tk_button.rst
+    tkinter_basics/tk_label.rst
+    tkinter_basics/tk_entry.rst
+    tkinter_basics/tk_text.rst    
+
 
 .. toctree::
     :maxdepth: 2

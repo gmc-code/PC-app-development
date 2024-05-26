@@ -10,16 +10,16 @@ tk button
     import tkinter as tk
 
     # Create the main window
-    root = tk.Tk()
-    root.geometry("400x250")  # Set window size
-    root.title("Welcome to My App")  # Set window title
+    window = tk.Tk()
+    window.geometry("400x250")  # Set window size
+    window.title("Welcome to My App")  # Set window title
 
     # Create a StringVar to associate with the label
     text_var = tk.StringVar()
     text_var.set("Hello, World!")
 
     # Create the label widget with all options
-    label = tk.Label(root, 
+    label = tk.Label(window, 
                     textvariable=text_var, 
                     anchor=tk.CENTER,       
                     bg="lightblue",      
@@ -42,7 +42,7 @@ tk button
 
 
     # Run the main event loop
-    root.mainloop()
+    window.mainloop()
 
 
-root.mainloop()
+window.mainloop()

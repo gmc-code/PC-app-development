@@ -40,14 +40,14 @@ Feet to meters
 
 
     # Create the main window
-    root = Tk()
-    root.title("Feet to Meters")
+    window = Tk()
+    window.title("Feet to Meters")
 
     # Create the main frame
-    mainframe = ttk.Frame(root, padding="3 3 12 12")
+    mainframe = ttk.Frame(window, padding="3 3 12 12")
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-    root.columnconfigure(0, weight=1)
-    root.rowconfigure(0, weight=1)
+    window.columnconfigure(0, weight=1)
+    window.rowconfigure(0, weight=1)
 
     # Create the feet StringVar and entry field
     feet = StringVar()
@@ -76,10 +76,10 @@ Feet to meters
     feet_entry.focus()
 
     # Bind the return key to the set_meters function
-    root.bind("<Return>", lambda _: set_meters())
+    window.bind("<Return>", lambda _: set_meters())
 
     # Start the main event loop
-    root.mainloop()
+    window.mainloop()
 
 
 ----
@@ -129,21 +129,21 @@ This function is used to convert feet to meters. It tries to get the value from 
 
 .. code-block:: python
 
-    root = Tk()
-    root.title("Feet to Meters")
+    window = Tk()
+    window.title("Feet to Meters")
 
-This creates the main window (root) of the application and sets its title.
+This creates the main window (window) of the application and sets its title.
 
 ----
 
 .. code-block:: python
 
-    mainframe = ttk.Frame(root, padding="3 3 12 12")
+    mainframe = ttk.Frame(window, padding="3 3 12 12")
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-    root.columnconfigure(0, weight=1)
-    root.rowconfigure(0, weight=1)
+    window.columnconfigure(0, weight=1)
+    window.rowconfigure(0, weight=1)
 
-This creates a frame widget, which will hold all other widgets. It is placed in the root window and configured to expand as the window is resized. The sticky parameter specifies how the frame should expand to fill the space allocated to it. In this case, the frame will expand to fill the entire space in the North, West, East, and South directions. The next two lines configure the root window to expand in both the x and y directions by setting the weight of the column and row to 1. This ensures that the mainframe object will fill the entire window.
+This creates a frame widget, which will hold all other widgets. It is placed in the window window and configured to expand as the window is resized. The sticky parameter specifies how the frame should expand to fill the space allocated to it. In this case, the frame will expand to fill the entire space in the North, West, East, and South directions. The next two lines configure the window window to expand in both the x and y directions by setting the weight of the column and row to 1. This ensures that the mainframe object will fill the entire window.
 
 ----
 
@@ -199,7 +199,7 @@ This loop adds padding to all widgets in the mainframe.
 .. code-block:: python
 
     feet_entry.focus()
-    root.bind("<Return>", calculate)
+    window.bind("<Return>", calculate)
 
 This sets the focus to the `feet_entry` widget (so the user can start typing immediately) and binds the Return key to the `calculate` function.
 
@@ -207,6 +207,6 @@ This sets the focus to the `feet_entry` widget (so the user can start typing imm
 
 .. code-block:: python
 
-    root.mainloop()
+    window.mainloop()
 
 Finally, this starts the event loop for the application, which waits for user actions.

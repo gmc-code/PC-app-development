@@ -1,6 +1,5 @@
 ====================================================
-tk geometry
+tk messagebox
 ====================================================
 
-| The grid geometry manager allows you to arrange widgets within a window.
-
+| See: https://docs.python.org/3/library/tkinter.messagebox.html

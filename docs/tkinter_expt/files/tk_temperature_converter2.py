@@ -2,11 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter.messagebox import showerror
 
-# root window
-root = tk.Tk()
-root.title('Temperature Converter')
-root.geometry('300x70')
-root.resizable(False, False)
+# window window
+window = tk.Tk()
+window.title('Temperature Converter')
+window.geometry('300x70')
+window.resizable(False, False)
 
 
 def fahrenheit_to_celsius(f):
@@ -16,7 +16,7 @@ def fahrenheit_to_celsius(f):
 
 
 # frame
-frame = ttk.Frame(root)
+frame = ttk.Frame(window)
 
 
 # field options
@@ -60,4 +60,4 @@ frame.grid(padx=10, pady=10)
 
 
 # start the app
-root.mainloop()
+window.mainloop()

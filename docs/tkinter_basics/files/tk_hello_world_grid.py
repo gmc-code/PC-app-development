@@ -10,9 +10,9 @@ window.geometry('600x400')
 label = tk.Label(window, text="Hello World!")
 button = tk.Button(window, text="Quit", command=window.destroy)
 
-# place widgets
-label.grid(column=0, row=0)
-button.grid(column=1, row=0)
+# place widgets in grid layout
+label.grid(row=0,column=0)
+button.grid(row=1,column=0)
 
 # Start the main event loop
 window.mainloop()

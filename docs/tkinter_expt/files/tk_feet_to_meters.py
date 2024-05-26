@@ -35,14 +35,14 @@ def set_meters():
 
 
 # Create the main window
-root = Tk()
-root.title("Feet to Meters")
+window = Tk()
+window.title("Feet to Meters")
 
 # Create the main frame
-mainframe = ttk.Frame(root, padding="3 3 12 12")
+mainframe = ttk.Frame(window, padding="3 3 12 12")
 mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-root.columnconfigure(0, weight=1)
-root.rowconfigure(0, weight=1)
+window.columnconfigure(0, weight=1)
+window.rowconfigure(0, weight=1)
 
 # Create the feet DoubleVar and entry field
 feet = DoubleVar()
@@ -71,7 +71,7 @@ for child in mainframe.winfo_children():
 feet_entry.focus()
 
 # Bind the return key to the set_meters function
-root.bind("<Return>", lambda _: set_meters())
+window.bind("<Return>", lambda _: set_meters())
 
 # Start the main event loop
-root.mainloop()
+window.mainloop()

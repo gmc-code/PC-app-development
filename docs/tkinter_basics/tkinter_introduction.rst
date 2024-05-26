@@ -9,7 +9,9 @@ Introduction to tkinter
 Key references:
 ---------------------
 
-| TkDocs http://www.tkdocs.com/
+| tk widgets: https://www.geeksforgeeks.org/python-gui-tkinter/
+| Tk Docs http://www.tkdocs.com/
+| Tk Refs https://tkdocs.com/pyref/index.html
 | https://docs.python.org/3.12/library/tk.html
 | https://docs.python.org/3.12/library/tkinter.ttk.html
 | https://tkdocs.com/tutorial/index.html

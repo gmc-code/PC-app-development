@@ -12,10 +12,10 @@ tk button
     def button_clicked():
         print("Button clicked!")
 
-    root = tk.Tk()
+    window = tk.Tk()
 
     # Creating a button with specified options
-    button = tk.Button(root, 
+    button = tk.Button(window, 
                     text="Click Me", 
                     command=button_clicked,
                     activebackground="blue", 
@@ -40,4 +40,4 @@ tk button
 
     button.pack(padx=20, pady=20)
 
-    root.mainloop()
+    window.mainloop()
