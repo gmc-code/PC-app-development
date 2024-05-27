@@ -16,7 +16,7 @@ Hello World pack
 
     # Create the main application window
     window = tk.Tk()
-    window.title("Tkinter hello world")
+    window.title("Tkinter hello world - pack")
     window.geometry('600x400')
 
     # define widgets
@@ -42,7 +42,7 @@ Code details
 | ``window = tk.Tk()``: Here, the ``Tk()`` constructor initializes the main application window. 
 | You can customize this window by setting properties such as its title, size, and other attributes.
 
-| ``window.title("Tkinter hello world")``: sets the title of the application window to "Tkinter hello world". 
+| ``window.title("Tkinter hello world - pack")``: sets the title of the application window to "Tkinter hello world - pack". 
 | You can replace this string with any other title you'd like for your application.
 
 | ``window.geometry('600x400')``: The ``geometry()`` method defines the initial size of the window. 
@@ -79,7 +79,7 @@ Hello World grid
 
     # Create the main application window
     window = tk.Tk()
-    window.title("Tkinter hello world")
+    window.title("Tkinter hello world - grid")
     window.geometry('600x400')
 
     # define widgets
@@ -103,9 +103,51 @@ Code details
 
 | ``label.grid(row=0, column=0)``: The ``grid()`` method is used to place the ``label`` widget
 |  in the first row (row 0) and first column (column 0) of the window's grid layout. 
-| You can adjust the row and column indices to position widgets as needed.
 
 | ``button.grid(row=1, column=0)``: Similarly, the ``button`` widget is placed 
 | in the second row (row 1) and first column (column 0) of the grid layout.
+
+
+----
+
+Hello World place
+-----------------
+
+| Below is a sample Hello World using place method to position widgets. 
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    # Create the main application window
+    window = tk.Tk()
+    window.title("Tkinter hello world - place")
+    window.geometry("600x400")
+
+    # Define widgets
+    label = tk.Label(window, text="Hello World!")
+    button = tk.Button(window, text="Quit", command=window.destroy)
+
+    # Place widgets using x and y coordinates
+    label.place(x=250, y=0)
+    button.place(x=270, y=22)
+
+    # Start the main event loop
+    window.mainloop()
+
+----
+
+Code details
+---------------
+
+| Overall, this code creates a simple **Tkinter** application with a window,
+| a label displaying "Hello World!", and a button that allows the user to quit the application.
+
+| ``label.place(x=250, y=0)``: The ``place()`` method is used to place the ``label`` widget
+|  at (x, y) = (250, 0) in the window. 
+
+| ``button.place(x=270, y=22)``: The ``place()`` method is used to place the ``label`` widget
+|  at (x, y) = (270, 22) in the window.
 
 
