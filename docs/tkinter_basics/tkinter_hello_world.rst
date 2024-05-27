@@ -1,38 +1,7 @@
 
 ====================================================
-tkinter first use
+tkinter Hello World
 ====================================================
-
-
-Simple window
------------------
-
-
-| Below is the code to create a simple empty window. 
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    # Create the main application window
-    window = tk.Tk()
-
-    # Start the main event loop
-    window.mainloop()
-
-----
-
-Window properties
------------------------
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    # Create the main application window
-    window = tk.Tk()
-    window.title("Tkinter hello world")
-    window.geometry('600x400')
 
 
 Hello World pack
@@ -98,7 +67,7 @@ Code details
 
 ----
 
-Hello World pack
+Hello World grid
 -----------------
 
 | Below is a sample Hello World using grid layout. 
@@ -118,8 +87,8 @@ Hello World pack
     button = tk.Button(window, text="Quit", command=window.destroy)
 
     # place widgets
-    label.grid(row=0, column=0)
-    button.grid(row=0, column=0)
+    label.grid(row=0,column=0)
+    button.grid(row=1,column=0)
 
     # Start the main event loop
     window.mainloop()
@@ -132,11 +101,11 @@ Code details
 | Overall, this code creates a simple **Tkinter** application with a window,
 | a label displaying "Hello World!", and a button that allows the user to quit the application.
 
-| ``label.grid(column=0, row=0)``: The ``grid()`` method is used to place the ``label`` widget
+| ``label.grid(row=0, column=0)``: The ``grid()`` method is used to place the ``label`` widget
 |  in the first row (row 0) and first column (column 0) of the window's grid layout. 
 | You can adjust the row and column indices to position widgets as needed.
 
-| ``button.grid(column=1, row=0)``: Similarly, the ``button`` widget is placed 
-| in the first row (row 0) and second column (column 1) of the grid layout.
+| ``button.grid(row=1, column=0)``: Similarly, the ``button`` widget is placed 
+| in the second row (row 1) and first column (column 0) of the grid layout.
 
 
