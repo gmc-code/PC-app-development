@@ -12,5 +12,7 @@ top_y = 50
 window.geometry(f'{window_width}x{window_height}+{left_x}+{top_y}')
 # set window to stay topmost
 window.attributes('-topmost', True)
+# set window size to be static or un resizable
+window.resizable(False, False)
 
 window.mainloop()

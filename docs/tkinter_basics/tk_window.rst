@@ -72,6 +72,14 @@ Window size and position
 
     | Use the window.attributes('-topmost', True) to make the window always stay on top.
 
+.. py:function:: resizable(width_boolean,height_boolean)
+
+    | Determines whether the window can be resized by the user.
+    | If you want to create a fixed-size window, disable resizing by calling `window.resizable(False, False)`
+    | `window.resizable(True, True)` by default, both horizontally and vertically resizable.
+
+| The code below sets the window size and position, sets the window to stay on top of others and prevents resizing.
+
 .. code-block:: python
 
 	import tkinter as tk
@@ -87,9 +95,10 @@ Window size and position
 	window.geometry(f'{window_width}x{window_height}+{left_x}+{top_y}')
     # set window to stay topmost
     window.attributes('-topmost', True)
+    # set window size to be static or un resizable
+    window.resizable(False, False)
 
-
-	window.mainloop()
+    window.mainloop()
 
 ----
 
