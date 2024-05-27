@@ -243,7 +243,9 @@ Min Max window size
 Background color
 --------------------
 
-| ONline color picker see: https://imagecolorpicker.com/color-code/ffffff
+| Online color picker see: https://www.w3schools.com/colors/colors_picker.asp
+| See: https://pickcoloronline.com/
+| See https://htmlcolorcodes.com/color-chart/
 
 .. py:function:: .configure(bg=color)
 
