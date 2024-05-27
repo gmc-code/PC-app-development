@@ -10,6 +10,7 @@ left_x = 200
 top_y = 50
 # set the size and position of the window
 window.geometry(f'{window_width}x{window_height}+{left_x}+{top_y}')
-
+# set window to stay topmost
+window.attributes('-topmost', True)
 
 window.mainloop()

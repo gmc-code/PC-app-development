@@ -68,6 +68,9 @@ Window size and position
     | x: The horizontal position (+ for distance from the left edge of the screen; - from right) in pixels.
     | y: The vertical position (+ for distance from the top edge of the screen; - from bottom) in pixels.
 
+.. py:function:: attributes('-topmost', True)
+
+    | Use the window.attributes('-topmost', True) to make the window always stay on top.
 
 .. code-block:: python
 
@@ -82,6 +85,8 @@ Window size and position
 	top_y = 50
 	# set the size and position of the window
 	window.geometry(f'{window_width}x{window_height}+{left_x}+{top_y}')
+    # set window to stay topmost
+    window.attributes('-topmost', True)
 
 
 	window.mainloop()
@@ -103,7 +108,7 @@ Window centered
 .. py:function:: geometry(widthxheight±x±y)
 
     | set the size and top left of a window
-	| width: The desired width of the window in pixels.
+    | width: The desired width of the window in pixels.
     | height: The desired height of the window in pixels.
     | x: The horizontal position (+ for distance from the left edge of the screen; - from right) in pixels.
     | y: The vertical position (+ for distance from the top edge of the screen; - from bottom) in pixels.
@@ -111,28 +116,28 @@ Window centered
 
 .. code-block:: python
 
-   import tkinter as tk
+    import tkinter as tk
 
 
-   window = tk.Tk()
-   window.title('Tkinter Window - Center')
+    window = tk.Tk()
+    window.title('Tkinter Window - Center')
 
-   window_width = 600
-   window_height = 400
+    window_width = 600
+    window_height = 400
 
-   # get the screen dimension
-   screen_width = window.winfo_screenwidth()
-   screen_height = window.winfo_screenheight()
-               
-   # find the center point
-   center_x = int(screen_width/2 - window_width/2)
-   center_y = int(screen_height/2 - window_height/2)
+    # get the screen dimension
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
+                
+    # find the center point
+    center_x = int(screen_width/2 - window_width/2)
+    center_y = int(screen_height/2 - window_height/2)
 
-   # set the position of the window to the center of the screen, using top left position
-   window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
+    # set the position of the window to the center of the screen, using top left position
+    window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
 
-   window.mainloop()
+    window.mainloop()
 
 ----
 
@@ -186,7 +191,7 @@ Window width and height
 
 ----
 
-Main  properties
+Main properties
 --------------------
 
 | Main  properties and attributes of the `Tk()` object in Tkinter:
