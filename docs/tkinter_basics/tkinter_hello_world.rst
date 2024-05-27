@@ -3,11 +3,13 @@
 tkinter Hello World
 ====================================================
 
+| The grid geometry manager allows you to arrange widgets within a window.
+| The three methods, pack, grid and place and shown below.
 
 Hello World pack
 -----------------
 
-| Below is a sample Hello World using pack layout. 
+| Below is a sample Hello World using the pack layout. 
 
 .. code-block:: python
 
