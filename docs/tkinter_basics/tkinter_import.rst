@@ -38,6 +38,6 @@ tkinter import
     import tkinter
 
 
-- You need to prefix the objects with ``tkinter`.` to access them (e.g., ``tkinter.Button``, ``tkinter.Label``.).
+- You need to prefix the objects with ``tkinter.`` to access them.
 - This makes slightly longer code using ``tkinter.Button`` compared to ``tk.Button``
 
