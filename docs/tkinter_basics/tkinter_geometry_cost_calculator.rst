@@ -1,5 +1,5 @@
 ====================================================
-tk geometry cost calculator
+tkinter geometry Cost Calculator
 ====================================================
 
 | The cost calculator below has 3 versions which use the geometry manager pack, grid and place methods.
@@ -22,7 +22,7 @@ Cost Calculator - pack
 | If any exceptions occur (e.g., invalid input), the except block catches them and does nothing (using pass).
 | Updating the GUI: the total_price_entry widget is used to display the calculated total.
 | It first clears any existing content using .delete(0, "end").
-| Then inserts the new total value (converted to a string) using .insert(0, string=str(total)).
+| Then, it inserts the new total value (converted to a string) using .insert(0, string=str(total)).
 
 .. code-block:: python
 
