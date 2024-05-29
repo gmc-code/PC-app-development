@@ -110,8 +110,6 @@ Hello World - grid
     # Start the main event loop
     window.mainloop()
 
-----
-
 Code details
 ~~~~~~~~~~~~~~~~~~
 
@@ -158,8 +156,6 @@ Hello World - place
 
     # Start the main event loop
     window.mainloop()
-
-----
 
 Code details
 ~~~~~~~~~~~~~~~~~
