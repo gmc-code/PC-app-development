@@ -1,6 +1,6 @@
 
 ====================================================
-tkinter Hello World
+tkinter geometry Hello World 
 ====================================================
 
 | The geometry managers allows you to arrange widgets within a window.
