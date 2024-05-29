@@ -42,7 +42,7 @@ Hello World - pack
     window.mainloop()
 
 Code details
----------------
+~~~~~~~~~~~~~~~~
 
 | Overall, this code creates a simple **Tkinter** application with a window,
 | a label displaying "Hello World!", and a button that allows the user to quit the application.
@@ -113,7 +113,7 @@ Hello World - grid
 ----
 
 Code details
----------------
+~~~~~~~~~~~~~~~~~~
 
 | Overall, this code creates a simple **Tkinter** application with a window,
 | a label displaying "Hello World!", and a button that allows the user to quit the application.
@@ -162,7 +162,7 @@ Hello World - place
 ----
 
 Code details
----------------
+~~~~~~~~~~~~~~~~~
 
 | Overall, this code creates a simple **Tkinter** application with a window,
 | a label displaying "Hello World!", and a button that allows the user to quit the application.
