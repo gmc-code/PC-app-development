@@ -22,11 +22,19 @@ PC-app-development
     tkinter_basics/tk_window.rst
     tkinter_basics/tkinter_geometry_hello_world.rst
     tkinter_basics/tkinter_geometry_cost_calculator.rst
-    tkinter_basics/tk_button.rst
-    tkinter_basics/tk_label.rst
-    tkinter_basics/tk_entry.rst
-    tkinter_basics/tk_text.rst    
-    tkinter_basics/tk_messagebox.rst
+
+    .. tkinter_basics/tk_button.rst
+    .. tkinter_basics/tk_label.rst
+    .. tkinter_basics/tk_entry.rst
+    .. tkinter_basics/tk_text.rst    
+    .. tkinter_basics/tk_messagebox.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Themed widgets
+    :numbered:
+
+    tkinter_basics/ttk_import.rst
 
 
 .. toctree::
