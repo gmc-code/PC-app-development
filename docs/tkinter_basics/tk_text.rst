@@ -4,14 +4,42 @@ tk text
 
 | See: https://www.geeksforgeeks.org/python-tkinter-label/?ref=lbp
 
-The `tkinter.Text` widget provides a versatile multi-line text area that you can use for various purposes.
+----
+
+Usage
+---------------
+
+| The `tkinter.Text` widget provides a versatile multi-line text area that you can use for various purposes.
 | To create a multi-line text widget the general syntax is:
 
 .. py:function:: text_widget  = tk.Text(parent, option=value)
 
-    | There are number of options which are used to change the format of the text. 
-    | Number of options can be passed as parameters separated by commas. Some of them are listed below.
+    | parent is the window or frame object. 
+    | Options can be passed as parameters separated by commas.
 
+STANDARD OPTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+    background, borderwidth, cursor,
+    exportselection, font, foreground,
+    highlightbackground, highlightcolor,
+    highlightthickness, insertbackground,
+    insertborderwidth, insertofftime,
+    insertontime, insertwidth, padx, pady,
+    relief, selectbackground,
+    selectborderwidth, selectforeground,
+    setgrid, takefocus,
+    xscrollcommand, yscrollcommand,
+
+WIDGET-SPECIFIC OPTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+    autoseparators, height, maxundo,
+    spacing1, spacing2, spacing3,
+    state, tabs, undo, width, wrap,
+
+Code example
+---------------
 
 .. code-block:: python
 

@@ -5,6 +5,44 @@ tk button
 | See: https://www.geeksforgeeks.org/python-creating-a-button-in-tkinter/?ref=lbp
 | See: https://www.youtube.com/watch?v=8VoTtF-CxrM&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=3
 
+----
+
+Usage
+---------------
+
+| The `tkinter.Button` widget provides a button.
+| To create a button widget the general syntax is:
+
+.. py:function:: button_widget  = tk.Button(parent, option=value)
+
+    | parent is the window or frame object. 
+    | Options can be passed as parameters separated by commas.
+
+
+STANDARD OPTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    activebackground, activeforeground, anchor,
+    background, bitmap, borderwidth, cursor,
+    disabledforeground, font, foreground
+    highlightbackground, highlightcolor,
+    highlightthickness, image, justify,
+    padx, pady, relief, repeatdelay,
+    repeatinterval, takefocus, text,
+    textvariable, underline, wraplength
+
+WIDGET-SPECIFIC OPTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    command, compound, default, height,
+    overrelief, state, width
+
+
+----
+
+Code example
+---------------
+
 .. code-block:: python
 
     import tkinter as tk

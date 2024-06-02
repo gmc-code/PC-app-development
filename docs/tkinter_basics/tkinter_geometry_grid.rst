@@ -1,37 +1,30 @@
 ====================================================
-tk geometry
+tk geometry grid
 ====================================================
 
 | The grid geometry manager allows you to arrange widgets within a window.
 | See: https://tkdocs.com/tutorial/grid.html
-| See: https://www.geeksforgeeks.org/python-pack-method-in-tkinter/?ref=lbp
-
-| Pack: see https://www.youtube.com/watch?v=rbW1iJO1psk
-| Pack with frames: https://www.youtube.com/watch?v=SsjEAWT-SMc
-| place: see https://www.youtube.com/watch?v=bx0YmWFfsEI
-
 | grid: see https://www.youtube.com/watch?v=IJ-iVnN09-8
 | grid: see https://www.pythontutorial.net/tkinter/tkinter-grid/
-
-----
-
-geometry notes
---------------------
-
-| pack is responsive to window size changes.
-
-| place is not responsive to window size changes.
-| Place uses absolute positioning. 
+| Layouts: https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa
 
 ----
 
 grid
 ----------
 
+| Each row and column in the grid is identified by an index. By default, the indices start at zero.
+| The row and column indexes can have gaps. This is useful when you plan to add more widgets in the middle of the grid later.
+| The intersection of a row and a column is called a cell. One widget can be placed in a cell.
+| To place multiple widgets in a cell, use a Frame or LabelFrame to wrap the widgets and place the Frame or LabelFrame on the cell.
+| The width of a column depends on the width of the widget it contains. 
+| The height of a row depends on the height of the widgets contained within the row.
+
+
 .. py:function:: widget.grid(row=index_r, column=index_c)
 
     | Use **grid()** method to position a widget on a grid at row index_r and column index_c.
-    e.g grid(row=0, column=0)
+    | e.g. widget.grid(row=0, column=0)
 
 
 Options
@@ -110,5 +103,50 @@ columnconfigure and rowconfigure
     | Configure the row properties of a widget container, typically a `Frame` or `Grid`. 
     | Specify options such as minimum size, weight, and stretching behavior for the row within the container.
 
+----
+
+grid related methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. py:function:: widget.grid_bbox(column=None, row=None, col2=None, row2=None)
+
+    | Returns a 4-tuple describing the bounding box of the widget area. 
+    | The first two numbers returned are the x and y coordinates of the upper left corner of the area, and the second two numbers are the width and height.
+    | If column and row arguments are passed in, the returned bounding box describes the area of the cell at that column and row. 
+    | If col2 and row2 arguments are passed in, the returned bounding box describes the area of the grid from columns column to col2 inclusive, and from rows row to row2 inclusive.
+    | For example, widget.grid_bbox(0, 0, 1, 1) returns the bounding box of four cells, not one.
+
+.. py:function:: widget.grid_forget()
+
+    | This makes the widget disappear from the screen. It still exists but isn't visible. 
+    | Use .grid() it to make it appear again, but without its grid options.
+
+.. py:function:: widget.grid_info()
+    
+    | Returns a dictionary whose keys are the widgets's option names, with the corresponding values of those options.
+
+.. py:function:: widget.grid_location(x, y)
+
+    | Given a coordinates (x, y) relative to the containing widget, this method returns a tuple (col, row) describing what cell of the grid system contains that screen coordinate.
+
+.. py:function:: widget.grid_propagate()
+
+    | Normally, all widgets propagate their dimensions, meaning that they adjust to fit the contents. 
+    | However, sometimes you want to force a widget to be a certain size, regardless of the size of its contents. 
+    | To do this, call widget.grid_propagate(0) where w is the widget whose size you want to force.
+
+.. py:function:: widget.grid_remove()
+
+    | This method is like .grid_forget(), but its grid options are remembered, so if you .grid() it again, it will use the same grid configuration options.
+
+.. py:function:: widget.grid_size()
+
+    | Returns a 2-tuple containing the number of columns and the number of rows, respectively, in the grid system.
+
+.. py:function:: widget.grid_slaves(row=None, column=None)
+
+    | Returns a list of the widgets managed by the given widget. 
+    | If no arguments are provided, you will get a list of all the managed widgets. 
+    | Use the row= argument to select only the widgets in one row, or the column= argument to select only the widgets in one column.
 
 

@@ -5,6 +5,41 @@ tk label
 | See: https://www.geeksforgeeks.org/python-tkinter-label/?ref=lbp
 | See: https://www.youtube.com/watch?v=8VoTtF-CxrM&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=3
 
+----
+
+Usage
+---------------
+
+| The `tkinter.Label` widget provides a text label.
+| To create a label widget the general syntax is:
+
+.. py:function:: label_widget  = tk.Label(parent, option=value)
+
+    | parent is the window or frame object. 
+    | Options can be passed as parameters separated by commas.
+
+
+STANDARD OPTIONS
+------------------
+
+    activebackground, activeforeground, anchor,
+    background, bitmap, borderwidth, cursor,
+    disabledforeground, font, foreground,
+    highlightbackground, highlightcolor,
+    highlightthickness, image, justify,
+    padx, pady, relief, takefocus, text,
+    textvariable, underline, wraplength
+
+WIDGET-SPECIFIC OPTIONS
+-------------------------
+
+    height, state, width
+
+
+----
+
+Code example
+---------------
 
 .. code-block:: python
 
