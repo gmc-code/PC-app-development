@@ -22,6 +22,7 @@ PC-app-development
     tkinter_basics/tk_window.rst
     tkinter_basics/tkinter_geometry_hello_world.rst
     tkinter_basics/tkinter_geometry_cost_calculator.rst
+    tkinter_basics/tkinter_geometry.rst
 
     .. tkinter_basics/tk_button.rst
     .. tkinter_basics/tk_label.rst
