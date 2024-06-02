@@ -23,38 +23,82 @@ geometry notes
 | place is not responsive to window size changes.
 | Place uses absolute positioning. 
 
-| grid is not responsive to window size changes.
-| For grid, empty rows or columns are not allocated screen space.
-
 ----
 
 grid
 ----------
 
-| grid is not responsive to window size changes.
+.. py:function:: widget.grid(row=index_r, column=index_c)
+
+    | Use **grid()** method to position a widget on a grid at row index_r and column index_c.
+    e.g grid(row=0, column=0)
+
+
+Options
+----------
+
+
+| Place widgets in a row and column.
+| Specify multiple rows and columns for widget.
+| Specify cell alignment. Use the **sticky** option to align the position of the widget on a cell and define how the widget will be stretched.
+| Specify padding. Use **ipadx**, **ipady** and **padx**, **pady** to add internal and external paddings.
+
+.. py:function:: rowspan=number of rows
+
+    | Specify number of rows for a widget to span across
+    | e.g. rowspan=2 to span the widget across 2 rows.
+
+.. py:function:: columnspan=number of columns
+
+    | Specify number of columns for a widget to span across
+    | e.g. columnspan=2 to span the widget across 2 columns.
+
+.. py:function:: sticky='directions'
+
+    | Align the position of the widget on a grid cell and define how the widget will be stretched.
+    | directions can be n for north, s for south, w for west, e for east, and combinations such as nw, ns, news.
+    | By default, centre aligned.
+    | e.g. sticky='we' to stretch the widget horizontally to fill the grid cell from left to right.
+    | e.g. sticky='ns' to stretch the widget vertically to fill the grid cell from top to bottom.
+    | e.g. sticky='nw' to place the widget in the top left of the grid cell.
+
+
+----
+
+notes
+------
+
 | For grid, empty rows or columns are not allocated screen space.
 | Grid determines how much space a widget can occupy, not how much it does occupy.
 | By default, widgets are placed in the middle of a grid cell.
 
-Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
-Use grid() method to position a widget on a grid.
-Use sticky option to align the position of the widget on a cell and define how the widget will be stretched.
-Use ipadx, ipady and padx, pady to add internal and external paddings.
+----
+
+columnconfigure and rowconfigure
+----------------------------------------
+
+| Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
+| The allows widgets to stretch in size when the window is resized.
+| Set the number of rows and columns.
+| Set width and height of each row and column.
 
 .. py:function:: widget.columnconfigure(column, option=value, ...)
 
     | configure the column properties of a widget container, typically a `Frame` or `Grid`. 
     | specify options such as minimum size, weight, and stretching behavior for the column within the container.
 
-
-    - `widget`: The widget container (e.g., `Frame`, `Grid`) for which you want to configure the columns.
-    - `column`: The index of the column you want to configure. Columns are indexed starting from 0.
+    - `widget`: The widget container (e.g., `Frame`, `Grid`) for which to configure the columns.
+    - `column`: The index of the column to configure, starting from 0. Use a tuple such as (0, 1, 2) for several columns.
     - `option=value`: Options you can specify for configuring the column. These options can include:
     - `minsize`: Specifies the minimum size of the column.
-    - `weight`: Determines how much any extra space is distributed among columns. Columns with higher weights will get more space.
+    - `weight`: Resizes column on window resizing. Determines how much any extra space is distributed among columns. Columns with higher weights will get more space.
     - `uniform`: If set to a string value, columns with the same value will be of the same size.
     - `pad`: Specifies padding to add around the column.
 
+.. py:function:: widget.rowconfigure(row, option=value, ...)
+
+    | configure the row properties of a widget container, typically a `Frame` or `Grid`. 
+    | specify options such as minimum size, weight, and stretching behavior for the row within the container.
 
 
 
