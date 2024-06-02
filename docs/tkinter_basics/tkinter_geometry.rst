@@ -53,14 +53,26 @@ Options
     | Specify number of columns for a widget to span across
     | e.g. columnspan=2 to span the widget across 2 columns.
 
-.. py:function:: sticky='directions'
+.. py:function:: padx=pixels
 
-    | Align the position of the widget on a grid cell and define how the widget will be stretched.
-    | directions can be n for north, s for south, w for west, e for east, and combinations such as nw, ns, news.
-    | By default, centre aligned.
-    | e.g. sticky='we' to stretch the widget horizontally to fill the grid cell from left to right.
-    | e.g. sticky='ns' to stretch the widget vertically to fill the grid cell from top to bottom.
-    | e.g. sticky='nw' to place the widget in the top left of the grid cell.
+    | Add horizontal padding on both sides of the widget.
+    | e.g. padx=10 to add 10 pixels of space on the left and on the right of the widget.
+
+.. py:function:: pady=pixels
+
+    | Add vertical padding above and below the widget.
+    | e.g. pady=10 to add 10 pixels of space above and below the widget.
+
+
+.. py:function:: ipadx=pixels
+
+    | Add horizontal internal padding on both sides of the widget.
+    | e.g. ipadx=10 to grow the widget to the left and right, by 10 pixels each.
+
+.. py:function:: ipady=pixels
+
+    | Add vertical internal padding  above and below the widget.
+    | e.g. ipady=10 to grow the widget by 10 pixels above and below the widget.
 
 
 ----
