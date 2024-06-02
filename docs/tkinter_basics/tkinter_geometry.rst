@@ -46,33 +46,33 @@ Options
 .. py:function:: widget.grid(row=index_r, column=index_c, rowspan=n)
 
     | Specify number of rows, **n**, for a widget to span across
-    | e.g. rowspan=2 to span the widget across 2 rows.
+    | e.g. grid(row=0, column=0, rowspan=2) to span the widget across 2 rows.
 
 .. py:function:: widget.grid(row=index_r, column=index_c, columnspan=n)
 
     | Specify number of columns, **n**, for a widget to span across
-    | e.g. columnspan=2 to span the widget across 2 columns.
+    | e.g. grid(row=0, column=0, columnspan=2) to span the widget across 2 columns.
 
-.. py:function:: padx=pixels
+.. py:function:: widget.grid(row=index_r, column=index_c, padx=n)
 
-    | Add horizontal padding on both sides of the widget.
-    | e.g. padx=10 to add 10 pixels of space on the left and on the right of the widget.
+    | Add horizontal padding, **n** pixels, on both sides of the widget.
+    | e.g. widget.grid(row=0, column=0, padx=10) to add 10 pixels of space on the left and on the right of the widget.
 
-.. py:function:: pady=pixels
+.. py:function:: widget.grid(row=index_r, column=index_c, pady=n)
 
-    | Add vertical padding above and below the widget.
-    | e.g. pady=10 to add 10 pixels of space above and below the widget.
+    | Add vertical padding, **n** pixels, above and below the widget.
+    | e.g. widget.grid(row=0, column=0, pady=10) to add 10 pixels of space above and below the widget.
 
 
-.. py:function:: ipadx=pixels
+.. py:function:: widget.grid(row=index_r, column=index_c, ipadx=n)
 
-    | Add horizontal internal padding on both sides of the widget.
-    | e.g. ipadx=10 to grow the widget to the left and right, by 10 pixels each.
+    | Add horizontal internal padding, **n** pixels, on both sides of the widget.
+    | e.g. widget.grid(row=0, column=0, ipadx=10) to grow the widget to the left and right, by 10 pixels each.
 
-.. py:function:: ipady=pixels
+.. py:function:: widget.grid(row=index_r, column=index_c, ipady=n)
 
-    | Add vertical internal padding  above and below the widget.
-    | e.g. ipady=10 to grow the widget by 10 pixels above and below the widget.
+    | Add vertical internal padding, **n** pixels, above and below the widget.
+    | e.g. widget.grid(row=0, column=0, ipady=10) to grow the widget by 10 pixels above and below the widget.
 
 
 ----
