@@ -13,14 +13,14 @@ Simple window
 
 .. py:function:: tkinter.Tk()
 
-   	| Create the main application window.
+    | Create the main application window.
     | Common usage is **window = tk.Tk()**.
 
 .. py:function:: window.mainloop()
 
     | Runs an infinite loop that continuously processes events (such as button clicks, keypresses, and mouse movements) and updates the GUI accordingly.
     | While the main loop is active, any code after the mainloop() call will not execute until the window is closed.
-	| Essentially, it keeps the GUI alive and responsive.
+    | Essentially, it keeps the GUI alive and responsive.
 
 | Below is the code to create a simple empty window. 
 
