@@ -1,5 +1,5 @@
 ====================================================
-tk geometry cost calculator
+tk geometry
 ====================================================
 
 | The grid geometry manager allows you to arrange widgets within a window.
@@ -43,14 +43,14 @@ Options
 | Specify cell alignment. Use the **sticky** option to align the position of the widget on a cell and define how the widget will be stretched.
 | Specify padding. Use **ipadx**, **ipady** and **padx**, **pady** to add internal and external paddings.
 
-.. py:function:: rowspan=number of rows
+.. py:function:: widget.grid(row=index_r, column=index_c, rowspan=n)
 
-    | Specify number of rows for a widget to span across
+    | Specify number of rows, **n**, for a widget to span across
     | e.g. rowspan=2 to span the widget across 2 rows.
 
-.. py:function:: columnspan=number of columns
+.. py:function:: widget.grid(row=index_r, column=index_c, columnspan=n)
 
-    | Specify number of columns for a widget to span across
+    | Specify number of columns, **n**, for a widget to span across
     | e.g. columnspan=2 to span the widget across 2 columns.
 
 .. py:function:: padx=pixels
