@@ -87,28 +87,28 @@ notes
 columnconfigure and rowconfigure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
+| This is not recommended, except for special use cases, such as when designing GUIs that need to adapt to different screen sizes.
 | The allows widgets to stretch in size when the window is resized.
-| Set the number of rows and columns.
-| Set width and height of each row and column.
+| Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
 
 .. py:function:: widget.columnconfigure(column, option=value, ...)
 
-    | configure the column properties of a widget container, typically a `Frame` or `Grid`. 
-    | specify options such as minimum size, weight, and stretching behavior for the column within the container.
-
-    - `widget`: The widget container (e.g., `Frame`, `Grid`) for which to configure the columns.
-    - `column`: The index of the column to configure, starting from 0. Use a tuple such as (0, 1, 2) for several columns.
-    - `option=value`: Options you can specify for configuring the column. These options can include:
+    | Configure the column properties of a widget container, typically a `Frame` or `Grid`. 
+    | `widget`: The widget container (e.g., `Frame`, `Grid`) for which to configure the columns.
+    | `column`: The index of the column to configure, starting from 0. Use a tuple such as (0, 1, 2) for several columns.
+    | Specify options such as minimum size, weight, and stretching behavior for the column within the container.
+  
+    - `option=value`: Options for configuring the column include:
     - `minsize`: Specifies the minimum size of the column.
     - `weight`: Resizes column on window resizing. Determines how much any extra space is distributed among columns. Columns with higher weights will get more space.
     - `uniform`: If set to a string value, columns with the same value will be of the same size.
     - `pad`: Specifies padding to add around the column.
+    -  e.g. `window.columnconfigure(1, weight=2, pad=10)`
 
 .. py:function:: widget.rowconfigure(row, option=value, ...)
 
-    | configure the row properties of a widget container, typically a `Frame` or `Grid`. 
-    | specify options such as minimum size, weight, and stretching behavior for the row within the container.
+    | Configure the row properties of a widget container, typically a `Frame` or `Grid`. 
+    | Specify options such as minimum size, weight, and stretching behavior for the row within the container.
 
 
 
