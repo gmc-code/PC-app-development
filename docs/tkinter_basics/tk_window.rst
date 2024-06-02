@@ -248,7 +248,7 @@ Background color
 | See: https://pickcoloronline.com/
 | See https://htmlcolorcodes.com/color-chart/
 
-.. py:function:: .configure(bg=color)
+.. py:function:: window.configure(bg=color)
 
     | Sets the background color of the window. 
     | `color` is a color name (e.g. "white"), hexadecimal value (e.g. "#FFFFFF").
