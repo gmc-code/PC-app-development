@@ -35,11 +35,9 @@ grid
 
 
 Options
-----------
+~~~~~~~~~~~~
 
-
-| Place widgets in a row and column.
-| Specify multiple rows and columns for widget.
+| Specify multiple rows and columns for widget uisng **rowspan** or **columnspan**.
 | Specify cell alignment. Use the **sticky** option to align the position of the widget on a cell and define how the widget will be stretched.
 | Specify padding. Use **ipadx**, **ipady** and **padx**, **pady** to add internal and external paddings.
 
