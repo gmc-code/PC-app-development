@@ -76,7 +76,7 @@ Options
 ----
 
 notes
-------
+~~~~~~~~~~~~~~
 
 | For grid, empty rows or columns are not allocated screen space.
 | Grid determines how much space a widget can occupy, not how much it does occupy.
@@ -85,7 +85,7 @@ notes
 ----
 
 columnconfigure and rowconfigure
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
 | The allows widgets to stretch in size when the window is resized.
