@@ -42,21 +42,21 @@ Window title
 .. py:function:: title('window_title')
 
     | The method window.title() sets the title of the window.
-	| The argument 'window_title' specifies the text that will appear in the title bar of the window.
+    | The argument 'window_title' specifies the text that will appear in the title bar of the window.
 
 
 .. code-block:: python
 
-	import tkinter as tk
+    import tkinter as tk
 
 
-	# Create the main application window
-	window = tk.Tk()
-	# set the window title
-	window.title('Tkinter Window title')
+    # Create the main application window
+    window = tk.Tk()
+    # set the window title
+    window.title('Tkinter Window title')
 
-	# Start the main event loop
-	window.mainloop()
+    # Start the main event loop
+    window.mainloop()
 
 ----
 
@@ -66,7 +66,7 @@ Window size and position
 .. py:function:: geometry(widthxheight±x±y)
 
     | set the size and top left of a window
-	| width: The desired width of the window in pixels.
+    | width: The desired width of the window in pixels.
     | height: The desired height of the window in pixels.
     | x: The horizontal position (+ for distance from the left edge of the screen; - from right) in pixels.
     | y: The vertical position (+ for distance from the top edge of the screen; - from bottom) in pixels.
@@ -85,17 +85,17 @@ Window size and position
 
 .. code-block:: python
 
-	import tkinter as tk
+    import tkinter as tk
 
 
-	window = tk.Tk()
-	window.title('Tkinter Window - size and position')
-	window_width = 400
-	window_height = 300
-	left_x = 200
-	top_y = 50
-	# set the size and position of the window
-	window.geometry(f'{window_width}x{window_height}+{left_x}+{top_y}')
+    window = tk.Tk()
+    window.title('Tkinter Window - size and position')
+    window_width = 400
+    window_height = 300
+    left_x = 200
+    top_y = 50
+    # set the size and position of the window
+    window.geometry(f'{window_width}x{window_height}+{left_x}+{top_y}')
     # set window to stay topmost
     window.attributes('-topmost', True)
     # set window size to be static or un resizable
@@ -114,7 +114,7 @@ Window centered
 
 .. py:function:: window.winfo_screenheight()
 
-	| returns the height of the screen (or monitor) where the specified widget (usually a Tkinter window) is located.
+    | returns the height of the screen (or monitor) where the specified widget (usually a Tkinter window) is located.
 
 
 .. py:function:: geometry(widthxheight±x±y)
@@ -162,13 +162,13 @@ Window width and height
 
 .. py:function:: window.winfo_height()
 
-	| returns the height of the Tkinter window.
+    | returns the height of the Tkinter window.
 
 .. py:function:: update_idletasks()
 
-	| The update_idletasks() method is used to process pending idle tasks in a Tkinter window without handling other events.
-	| update_idletasks() focuses solely on idle tasks which typically involve geometry management and widget redrawing.
-	| It's particularly useful when you want to refresh the window's appearance without triggering additional event processing.
+    | The update_idletasks() method is used to process pending idle tasks in a Tkinter window without handling other events.
+    | update_idletasks() focuses solely on idle tasks which typically involve geometry management and widget redrawing.
+    | It's particularly useful when you want to refresh the window's appearance without triggering additional event processing.
 
 
 | The code below has definitions to set the width or height of the window.
@@ -190,15 +190,15 @@ Window width and height
         window.geometry(f"{width}x{window.winfo_height()}")
 
 
-	window = tk.Tk()
-	window.title("Tkinter Window - set width or height")
+    window = tk.Tk()
+    window.title("Tkinter Window - set width or height")
 
-	# set the top left position to 250,50
-	window.geometry(f"+{250}+{50}")
-	window_set_width(window, 1000)
-	window_set_height(window, 250)
+    # set the top left position to 250,50
+    window.geometry(f"+{250}+{50}")
+    window_set_width(window, 1000)
+    window_set_height(window, 250)
 
-	window.mainloop()
+    window.mainloop()
 
 ----
 
@@ -211,13 +211,13 @@ Min Max window size
 
 .. py:function:: window.winfo_height()
 
-	| returns the height of the Tkinter window.
+    | returns the height of the Tkinter window.
 
 .. py:function:: update_idletasks()
 
-	| The update_idletasks() method is used to process pending idle tasks in a Tkinter window without handling other events.
-	| update_idletasks() focuses solely on idle tasks which typically involve geometry management and widget redrawing.
-	| It's particularly useful when you want to refresh the window's appearance without triggering additional event processing.
+    | The update_idletasks() method is used to process pending idle tasks in a Tkinter window without handling other events.
+    | update_idletasks() focuses solely on idle tasks which typically involve geometry management and widget redrawing.
+    | It's particularly useful when you want to refresh the window's appearance without triggering additional event processing.
 
 
 | The code below has definitions to set the width or height of the window.
@@ -250,7 +250,7 @@ Background color
 
 .. py:function:: .configure(bg=color)
 
-	| Sets the background color of the window. 
+    | Sets the background color of the window. 
     | `color` is a color name (e.g. "white"), hexadecimal value (e.g. "#FFFFFF").
 
 
