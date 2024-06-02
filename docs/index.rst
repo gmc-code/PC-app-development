@@ -20,14 +20,16 @@ PC-app-development
     tkinter_basics/tkinter_introduction.rst
     tkinter_basics/tkinter_import.rst
     tkinter_basics/tk_window.rst
+    tkinter_basics/tkinter_geometry_pack.rst
+    tkinter_basics/tkinter_geometry_grid.rst
+    tkinter_basics/tkinter_geometry_place.rst
     tkinter_basics/tkinter_geometry_hello_world.rst
     tkinter_basics/tkinter_geometry_cost_calculator.rst
-    tkinter_basics/tkinter_geometry.rst
+    tkinter_basics/tk_label.rst
+    tkinter_basics/tk_entry.rst
+    tkinter_basics/tk_text.rst    
+    tkinter_basics/tk_button.rst
 
-    .. tkinter_basics/tk_button.rst
-    .. tkinter_basics/tk_label.rst
-    .. tkinter_basics/tk_entry.rst
-    .. tkinter_basics/tk_text.rst    
     .. tkinter_basics/tk_messagebox.rst
 
 .. toctree::
@@ -48,11 +50,11 @@ PC-app-development
     tkinter_apps/tk_temperature_converter.rst
     tkinter_apps/tk_inches_to_cm.rst
 
+
 .. toctree::
     :maxdepth: 2
     :caption: pyscript
     :numbered:
-
 
     pyscript/pyscript_introduction.rst
     pyscript/browser_elements.rst
