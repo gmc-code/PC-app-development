@@ -11,9 +11,10 @@ See: https://www.pythontutorial.net/tkinter/tkinter-window/
 Simple window
 -----------------
 
-.. py:function:: tk.Tk()
+.. py:function:: tkinter.Tk()
 
    	| Create the main application window.
+    | Common usage is **window = tk.Tk()**.
 
 .. py:function:: window.mainloop()
 
