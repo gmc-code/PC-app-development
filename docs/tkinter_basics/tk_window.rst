@@ -246,7 +246,8 @@ Background color
 
 | Online color picker see: https://www.w3schools.com/colors/colors_picker.asp
 | See: https://pickcoloronline.com/
-| See https://htmlcolorcodes.com/color-chart/
+| See: https://htmlcolorcodes.com/color-chart/
+| See: https://www.w3schools.com/colors/colors_names.asp
 
 .. py:function:: window.configure(bg=color)
 
