@@ -9,10 +9,10 @@ label2 = tk.Label(master=window,text='Pack Layout',bg='green', fg='white')
 label3 = tk.Label(master=window, text='Fill',bg='blue', fg='white')
 label4 = tk.Label(master=window, text='Demo',bg='purple', fg='white')
 
-label1.pack(side=tk.TOP, expand=True, fill=tk.X)
-label2.pack(side=tk.TOP, expand=True, fill=tk.Y)
-label3.pack(side=tk.TOP, expand=True, fill=tk.NONE)
-label4.pack(side=tk.TOP, expand=True, fill=tk.BOTH)
+label1.pack(side='top', expand=True, fill=tk.X)
+label2.pack(side='top', expand=True, fill=tk.Y)
+label3.pack(side='top', expand=True, fill=tk.NONE)
+label4.pack(side='top', expand=True, fill=tk.BOTH)
 
 
 window.mainloop()
