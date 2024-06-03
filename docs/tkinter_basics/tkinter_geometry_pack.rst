@@ -24,97 +24,134 @@ pack
 
 ----
 
-Certainly! Let's dive into the various options for the `pack()` geometry manager in Tkinter, along with examples for each one:
+Options for the `pack()` geometry manager
+-----------------------------------------------
 
-1. **Side**:
-   - The `side` option determines the position of the widget within its parent container. It can take values like `LEFT`, `RIGHT`, `TOP`, or `BOTTOM`.
-   - Example: To create four buttons positioned on different sides of a frame:
-     ```python
-     from tkinter import *
+**Side**
+~~~~~~~~~~~
 
-     root = Tk()
-     root.geometry('250x150')
+- The `side` option determines the position of the widget within its parent container. It can take values like `LEFT`, `RIGHT`, `TOP`, or `BOTTOM`.
+- Example: To create four buttons positioned on different sides of a frame:
 
-     button1 = Button(text="Left")
-     button1.pack(side=LEFT)
+.. code-block:: python
 
-     button2 = Button(text="Top")
-     button2.pack(side=TOP)
+    import tkinter as tk
 
-     button3 = Button(text="Right")
-     button3.pack(side=RIGHT)
+    window = tk.Tk()
+    window.geometry('250x150')
 
-     button4 = Button(text="Bottom")
-     button4.pack(side=BOTTOM)
+    button1 = tk.Button(text="Left")
+    button1.pack(side="left")
 
-     root.mainloop()
-     ```
+    button2 = tk.Button(text="Top")
+    button2.pack(side="top")
 
-2. **Expand**:
-   - The `expand` option allows a widget to expand if the user resizes the frame.
-   - Example: To make a widget expand when the frame is resized:
-     ```python
-     from tkinter import *
+    button3 = tk.Button(text="Right")
+    button3.pack(side="right")
 
-     root = Tk()
-     root.geometry('200x150')
+    button4 = tk.Button(text="Bottom")
+    button4.pack(side="bottom")
 
-     label = Label(root, text="Expanding Label", bg="lightblue")
-     label.pack(expand=True, fill=BOTH)
+    window.mainloop()
 
-     root.mainloop()
-     ```
 
-3. **Fill**:
-   - The `fill` option specifies how the widget should fill the available space. It can take values like `NONE`, `X`, `Y`, or `BOTH`.
-   - Example: To create two labels with different fill options:
-     ```python
-     import tkinter as tk
+**Expand**
+~~~~~~~~~~~~~~~~
 
-     root = tk.Tk()
+- The `expand` option allows a widget to expand if the user resizes the frame.
+- Example: To make a widget expand when the frame is resized:
+  
+.. code-block:: python
 
-     label1 = tk.Label(root, text="Red", bg="red", fg="white")
-     label1.pack(ipadx=30, ipady=6)
+    import tkinter as tk
 
-     label2 = tk.Label(root, text="Purple", bg="purple", fg="white")
-     label2.pack(ipadx=8, ipady=12)
+    window = tk.Tk()
+    window.geometry('200x150')
 
-     root.mainloop()
-     ```
+    label = tk.Label(window, text="Expanding Label", bg="lightblue")
+    label.pack(expand=True)
+    # label.pack(expand=True, fill='y')
+    # label.pack(expand=True, fill='x')
+    # label.pack(expand=True, fill='both')
 
-4. **ipadx** and **ipady**:
-   - These options control the internal padding (in pixels) along the x and y axes, respectively.
-   - Example: The labels in the previous example demonstrate the use of `ipadx` and `ipady`.
+    window.mainloop()
 
-5. **padx** and **pady**:
-   - These options provide external padding (in pixels) along the x and y axes, respectively.
-   - Example: You can add external padding to widgets using `padx` and `pady`.
 
-6. **Anchor**:
-   - The `anchor` option specifies the position of the widget within its allocated space. It can take values like `'nw'` (top-left), `'center'`, or `'se'` (bottom-right).
-   - Example: To create labels anchored at different positions:
-     ```python
-     label1 = Label(root, text="Top-Left", bg="lightblue")
-     label1.pack(anchor='nw')
+**Fill**
+~~~~~~~~~~~~~~~
 
-     label2 = Label(root, text="Center", bg="lightgreen")
-     label2.pack(anchor='center')
+- The `fill` option specifies how the widget should fill the available space. It can take values like `None`, `x`, `y`, or `both`.
+- Example: To create two labels with different fill options:
 
-     label3 = Label(root, text="Bottom-Right", bg="lightpink")
-     label3.pack(anchor='se')
-     ```
+.. code-block:: python
 
-Remember that the `pack()` method organizes widgets within a container based on these options. Feel free to adapt these examples to your specific needs! 😊
+    import tkinter as tk
 
-References:
-1. [Learn how to use Pack in Tkinter - ActiveState](https://www.activestate.com/resources/quick-reads/how-to-use-pack-in-tkinter/)
-2. [Difference between \"fill\" and \"expand\" options for tkinter pack method - Stack Overflow](https://stackoverflow.com/questions/28089942/difference-between-fill-and-expand-options-for-tkinter-pack-method)
-3. [Simplified Tkinter Pack Manager Tutorial - UltraPythonic](https://ultrapythonic.com/tkinter-pack/)
-4. [Tkinter Pack Geometry Manager - Python Tutorial](https://www.pythontutorial.net/tkinter/tkinter-pack/)
+    window = tk.Tk()
+    window.geometry('200x150')
 
-Source: Conversation with Copilot, 02/06/2024
-(1) Learn how to use Pack in Tkinter - three examples - ActiveState. https://www.activestate.com/resources/quick-reads/how-to-use-pack-in-tkinter/.
-(2) Difference between "fill" and "expand" options for tkinter pack method. https://stackoverflow.com/questions/28089942/difference-between-fill-and-expand-options-for-tkinter-pack-method.
-(3) Simplified Tkinter Pack Manager Tutorial. https://ultrapythonic.com/tkinter-pack/.
-(4) Tkinter Pack Geometry Manager - Python Tutorial. https://www.pythontutorial.net/tkinter/tkinter-pack/.
-(5) github.com. https://github.com/Ninja-of-Physics/PhysicsOne/tree/d3c9171233bc262251452f7afd645d46c8716c27/tk_testing.py.
+    label = tk.Label(window, text="Expanding Label", bg="lightblue")
+    # label.pack(expand=True)
+    label.pack(expand=True, fill='y')
+    # label.pack(expand=True, fill='x')
+    # label.pack(expand=True, fill='both')
+
+    window.mainloop()
+
+~~~~~~~~~~~~~
+padding
+~~~~~~~~~~~~~
+
+**ipadx** and **ipady**
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - These options control the internal padding (in pixels) along the x and y axes, respectively.
+ - Example: The labels in the example demonstrate the use of `ipadx` and `ipady`.
+
+**padx** and **pady**
+~~~~~~~~~~~~~~~~~~~~~~~
+
+ - These options provide external padding (in pixels) along the x and y axes, respectively.
+ - Example: You can add external padding to widgets using `padx` and `pady`.
+
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    window = tk.Tk()
+
+    label1 = tk.Label(window, text="Red", bg="red", fg="white")
+    label1.pack(ipadx=30, ipady=6)
+
+    label2 = tk.Label(window, text="Purple", bg="purple", fg="white")
+    label2.pack(pady=20, ipadx=8, ipady=12)
+
+    window.mainloop()
+
+
+
+**Anchor**
+~~~~~~~~~~~~~~~~~~
+
+ - The `anchor` option specifies the position of the widget within its allocated space. It can take values like `'nw'` (top-left), `'center'`, or `'se'` (bottom-right).
+ - Example: To create labels anchored at different positions:
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    window = tk.Tk()
+    window.geometry('200x150')
+
+    label1 = tk.Label(window, text="Top-Left", bg="lightblue")
+    label1.pack(anchor='nw')
+
+    label2 = tk.Label(window, text="Center", bg="lightgreen")
+    label2.pack(anchor='center')
+
+    label3 = tk.Label(window, text="Bottom-Right", bg="lightpink")
+    label3.pack(anchor='se')
+
+    window.mainloop()
