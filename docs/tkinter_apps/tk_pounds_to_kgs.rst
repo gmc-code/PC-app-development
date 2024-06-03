@@ -57,7 +57,8 @@ We'll create the main application window using `tk.Tk()`. Set the window title, 
 Step 4: Create Widgets
 --------------------------------
 
-Now create the widgets (GUI elements) that will be displayed in the window:
+| Now create the widgets (GUI elements) that will be displayed in the window:
+| **highlightcolor**, **highlightbackground** and **highlightthickness** are used to colour the entry and text widget borders the same colour as their text colour.
 
 .. code-block:: python
 
@@ -130,7 +131,6 @@ Full code
 
 
     # Constants
-
     WINDOW_BG_COLOR = "#ffffff"
     INPUT_BG_COLOR = "#ffffff"
     INPUT_FG_COLOR = "#0d6efd"
