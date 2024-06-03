@@ -13,7 +13,7 @@ Usage
 | The `tkinter.Button` widget provides a button.
 | To create a button widget the general syntax is:
 
-.. py:function:: button_widget  = tk.Button(parent, option=value)
+.. py:function:: button_widget = tk.Button(parent, option=value)
 
     | parent is the window or frame object. 
     | Options can be passed as parameters separated by commas.
