@@ -9,7 +9,7 @@ Pounds to kgs
 | This code converts pounds to kgs.   
 | This code creates a simple GUI application using the Tkinter library. 
 | It displays a window with Label, Entry, Text and Button widgets
-| Users can input pounds, click the "Convert" button, and see the corresponding centimeters displayed. 
+| Users can input pounds, click the "Convert" button, and see the corresponding kilograms displayed. 
 
 ----
 
