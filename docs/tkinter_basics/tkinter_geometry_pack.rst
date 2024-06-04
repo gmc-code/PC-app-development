@@ -30,8 +30,13 @@ Options for the `pack()` geometry manager
 **Side**
 ~~~~~~~~~~~
 
-- The `side` option determines the position of the widget within its parent container. It can take values like `LEFT`, `RIGHT`, `TOP`, or `BOTTOM`.
-- Example: To create four buttons positioned on different sides of a frame:
+.. py:function:: widget.pack(side=side)
+
+    | The `side` option determines the position of the widget within its parent container.
+    | It can take values like `left`, `right`, `top`, or `bottom`.
+    | e.g. widget.pack(side="left")
+
+| Example: To create four buttons positioned on different sides of a frame:
 
 .. code-block:: python
 

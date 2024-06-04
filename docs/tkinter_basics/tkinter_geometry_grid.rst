@@ -42,7 +42,7 @@ rowspan
     | Specify number of rows, **n**, for a widget to span across
     | e.g. grid(row=0, column=0, rowspan=2) to span the widget across 2 rows.
 
-columnspan
+columnspanw
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, columnspan=n)
