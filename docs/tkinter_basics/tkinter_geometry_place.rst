@@ -47,6 +47,9 @@ widget anchor
 Sample code
 --------------
 
+.. image:: images/tk_place.png
+    :scale: 100%
+
 .. code-block:: python
 
     import tkinter as tk

@@ -34,31 +34,48 @@ Options
 | Specify cell alignment. Use the **sticky** option to align the position of the widget on a cell and define how the widget will be stretched.
 | Specify padding. Use **ipadx**, **ipady** and **padx**, **pady** to add internal and external paddings.
 
+rowspan
+~~~~~~~~~~~~~
+
 .. py:function:: widget.grid(row=index_r, column=index_c, rowspan=n)
 
     | Specify number of rows, **n**, for a widget to span across
     | e.g. grid(row=0, column=0, rowspan=2) to span the widget across 2 rows.
+
+columnspan
+~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, columnspan=n)
 
     | Specify number of columns, **n**, for a widget to span across
     | e.g. grid(row=0, column=0, columnspan=2) to span the widget across 2 columns.
 
-.. py:function:: widget.grid(row=index_r, column=index_c, padx=n)
+padx
+~~~~~~~~~~~~~
+
+.. py:function:: widget.grid(row=index_r, column=index_padxc, padx=n)
 
     | Add horizontal padding, **n** pixels, on both sides of the widget.
     | e.g. widget.grid(row=0, column=0, padx=10) to add 10 pixels of space on the left and on the right of the widget.
+
+pady
+~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, pady=n)
 
     | Add vertical padding, **n** pixels, above and below the widget.
     | e.g. widget.grid(row=0, column=0, pady=10) to add 10 pixels of space above and below the widget.
 
+ipadx
+~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, ipadx=n)
 
     | Add horizontal internal padding, **n** pixels, on both sides of the widget.
     | e.g. widget.grid(row=0, column=0, ipadx=10) to grow the widget to the left and right, by 10 pixels each.
+
+ipady
+~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, ipady=n)
 

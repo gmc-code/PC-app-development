@@ -3,7 +3,7 @@ import tkinter as tk
 # window
 window = tk.Tk()
 window.title('Layout intro')
-window.geometry('600x400')
+window.geometry('200x300')
 
 # widgets
 label1 = tk.Label(window, text = 'Label 1', background = 'red')
