@@ -48,7 +48,7 @@ Sample code
 --------------
 
 .. image:: images/tk_place.png
-    :scale: 100%
+    :scale: 60%
 
 .. code-block:: python
 
