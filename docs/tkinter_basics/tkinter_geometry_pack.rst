@@ -3,6 +3,7 @@ tk geometry pack
 ====================================================
 
 | The pack geometry manager allows you to arrange widgets within a window.
+| See: https://www.pythontutorial.net/tkinter/tkinter-pack/
 | See: https://www.geeksforgeeks.org/python-pack-method-in-tkinter/?ref=lbp
 
 | Layouts: https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa
@@ -30,9 +31,9 @@ Options for the `pack()` geometry manager
 **Side**
 ~~~~~~~~~~~
 
-.. py:function:: widget.pack(side=side)
+.. py:function:: widget.pack(side=side_var)
 
-    | The `side` option determines the position of the widget within its parent container.
+    | The `side_var` option determines the position of the widget within its parent container.
     | It can take values like `left`, `right`, `top`, or `bottom`.
     | e.g. widget.pack(side="left")
 
@@ -63,8 +64,11 @@ Options for the `pack()` geometry manager
 **Expand**
 ~~~~~~~~~~~~~~~~
 
-- The `expand` option allows a widget to expand if the user resizes the frame.
-- Example: To make a widget expand when the frame is resized:
+.. py:function:: widget.pack(expand=boolean)
+
+    | The `boolean` value is `True` or `False`.
+    | e.g. `widget.pack(expand=True)` to make a widget expand when the frame is resized
+    | The `expand` option allows a widget to expand if the user resizes the frame.
   
 .. code-block:: python
 
@@ -75,18 +79,18 @@ Options for the `pack()` geometry manager
 
     label = tk.Label(window, text="Expanding Label", bg="lightblue")
     label.pack(expand=True)
-    # label.pack(expand=True, fill='y')
-    # label.pack(expand=True, fill='x')
-    # label.pack(expand=True, fill='both')
-
     window.mainloop()
 
 
 **Fill**
 ~~~~~~~~~~~~~~~
 
-- The `fill` option specifies how the widget should fill the available space. It can take values like `None`, `x`, `y`, or `both`.
-- Example: To create two labels with different fill options:
+.. py:function:: widget.pack(fill=fill_var)
+
+    | The `fill_var` value is `None`, `x`, `y`, or `both`.
+    | The `fill` option specifies how the widget should fill the available space. 
+
+Example: To create two labels with different fill options:
 
 .. code-block:: python
 
@@ -110,14 +114,20 @@ padding
 **ipadx** and **ipady**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - These options control the internal padding (in pixels) along the x and y axes, respectively.
- - Example: The labels in the example demonstrate the use of `ipadx` and `ipady`.
+.. py:function:: widget.pack(ipadx=x, ipady=y)
+
+    | The `ipadx` value is an integer, x. The `ipady` value is an integer, y.
+    | These options control the internal padding (in pixels) along the x and y axes, respectively.
+    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
 
 **padx** and **pady**
 ~~~~~~~~~~~~~~~~~~~~~~~
 
- - These options provide external padding (in pixels) along the x and y axes, respectively.
- - Example: You can add external padding to widgets using `padx` and `pady`.
+.. py:function:: widget.pack(padx=x, pady=y)
+
+    | The `padx` value is an integer, x. The `pady` value is an integer, y.
+    | These options control the external padding (in pixels) along the x and y axes, respectively.
+    | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
 
 
 .. code-block:: python
@@ -139,8 +149,14 @@ padding
 **Anchor**
 ~~~~~~~~~~~~~~~~~~
 
- - The `anchor` option specifies the position of the widget within its allocated space. It can take values like `'nw'` (top-left), `'center'`, or `'se'` (bottom-right).
- - Example: To create labels anchored at different positions:
+.. py:function:: widget.pack(anchor=anchor_var)
+
+    | `anchor_var` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
+    | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
+    | The `anchor` option specifies the position of the widget within its allocated space. 
+    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
+
+Example: To create labels anchored at different positions:
 
 .. code-block:: python
 
