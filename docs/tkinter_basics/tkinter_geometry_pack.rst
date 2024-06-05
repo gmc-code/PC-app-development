@@ -31,9 +31,9 @@ Options for the `pack()` geometry manager
 **Side**
 ~~~~~~~~~~~
 
-.. py:function:: widget.pack(side=side_var)
+.. py:function:: widget.pack(side=side_string)
 
-    | The `side_var` option determines the position of the widget within its parent container.
+    | The `side_string` option determines the position of the widget within its parent container.
     | It can take values like `left`, `right`, `top`, or `bottom`.
     | e.g. widget.pack(side="left")
 
@@ -85,9 +85,9 @@ Options for the `pack()` geometry manager
 **Fill**
 ~~~~~~~~~~~~~~~
 
-.. py:function:: widget.pack(fill=fill_var)
+.. py:function:: widget.pack(fill=fill_string)
 
-    | The `fill_var` value is `None`, `x`, `y`, or `both`.
+    | The `fill_string` value is `None`, `x`, `y`, or `both`.
     | The `fill` option specifies how the widget should fill the available space. 
 
 Example: To create two labels with different fill options:
@@ -149,9 +149,9 @@ padding
 **Anchor**
 ~~~~~~~~~~~~~~~~~~
 
-.. py:function:: widget.pack(anchor=anchor_var)
+.. py:function:: widget.pack(anchor=anchor_string)
 
-    | `anchor_var` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
+    | `anchor_string` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
     | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
     | The `anchor` option specifies the position of the widget within its allocated space. 
     | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
