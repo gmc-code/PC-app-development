@@ -2,6 +2,9 @@
 Login form
 ====================================================
 
+| See: https://www.youtube.com/watch?v=MeMCBdnhvQs&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=5
+
+
 .. image:: images/tk_login.png
     :scale: 67%
 
