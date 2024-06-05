@@ -17,8 +17,6 @@ Login form
 Code summary
 -------------------
 
-| Build this login form using **Tkinter**.  
-| In this tutorial, we'll create a simple login form with a username and password input.
 | Enter the correct username and password to see the success message.
 
 Step 1: Import Tkinter
@@ -107,7 +105,9 @@ Step 6: Arrange Widgets
 | The value `"news"` means that the widget should expand to fill the entire cell both horizontally and vertically.
 
 
-So, the `login_label` widget is positioned in the first row and spans two columns. It expands to fill the available space within its cell. The vertical padding ensures some spacing around the label. 😊👍
+| So, the `login_label` widget is positioned in the first row and spans two columns. 
+| It expands to fill the available space within its cell. 
+| The vertical padding ensures some spacing around the label.
 
 
 .. code-block:: python
