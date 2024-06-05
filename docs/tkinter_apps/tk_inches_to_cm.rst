@@ -128,11 +128,6 @@ Full code
     import tkinter as tk
 
     # Constants
-    BG_COLOR = "#fd7e14"
-    FG_COLOR = "#FFFFFF"
-    BUTTON_COLOR = "#FF3399"
-
-
     WINDOW_BG_COLOR = "#ffffff"
     INPUT_BG_COLOR = "#ffffff"
     INPUT_FG_COLOR = "#0d6efd"
