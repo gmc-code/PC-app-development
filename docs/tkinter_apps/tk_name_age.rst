@@ -26,7 +26,7 @@ Code summary
 
 
 2. **Define Constants:**
-    - We define some constants for colors and font style that we'll use in our GUI.
+    - Define some constants for colors and font style for the GUI.
 
     .. code-block:: python
 
