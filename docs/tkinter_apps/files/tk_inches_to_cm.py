@@ -1,11 +1,19 @@
 import tkinter as tk
 
 # Constants
-BG_COLOR = "#333333"
+BG_COLOR = "#fd7e14"
 FG_COLOR = "#FFFFFF"
 BUTTON_COLOR = "#FF3399"
-FONT_STYLE = ("Arial", 16)
 
+
+WINDOW_BG_COLOR = "#ffffff"
+INPUT_BG_COLOR = "#ffffff"
+INPUT_FG_COLOR = "#0d6efd"
+BUTTON_BG_COLOR = "#fd7e14"
+BUTTON_FG_COLOR = "#ffffff"
+OUTPUT_BG_COLOR = "#ffffff"
+OUTPUT_FG_COLOR = "#dc3545"
+FONT_STYLE = ("Arial", 32)
 
 def convert_inches_to_cm():
     """
@@ -30,16 +38,16 @@ def convert_inches_to_cm():
 # Create the main window
 window = tk.Tk()
 window.title("Inches to cm Converter")
-window.geometry("300x200")
-window.configure(bg=BG_COLOR)
+window.geometry("550x300")
+window.configure(bg=WINDOW_BG_COLOR)
 
 # Create widgets
-inches_label = tk.Label(window, text="inches", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-inches_entry = tk.Entry(window, width=10, font=FONT_STYLE)
-cm_label = tk.Label(window, text="cm", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+inches_label = tk.Label(window, text="inches", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+inches_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+cm_label = tk.Label(window, text="cm", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
 # height of 1 is one text row
-cm_text = tk.Text(window, height=1, width=10, font=FONT_STYLE)
-convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
+cm_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
 
 # Place widgets in the window
 inches_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
