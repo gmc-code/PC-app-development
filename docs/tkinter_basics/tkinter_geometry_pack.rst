@@ -16,11 +16,11 @@ pack
 --------------------
 
 | Pack is responsive to window size changes.
-| By default, the pack geometry manager places widgets in one direction vertically from top to bottom.
+| By default, the pack geometry manager places widgets vertically from top to bottom.
 
 .. py:function:: widget.pack()
 
-    | Use **pack()** method to pack a widget in one direction vertically from top to bottom.
+    | Use **pack()** method to pack a widgets vertically from top to bottom.
     | e.g. widget.pack()
 
 ----
@@ -90,7 +90,7 @@ Options for the `pack()` geometry manager
     | The `fill_string` value is `None`, `x`, `y`, or `both`.
     | The `fill` option specifies how the widget should fill the available space. 
 
-Example: To create two labels with different fill options:
+Example: To create a labels with different fill options which can be uncommented:
 
 .. code-block:: python
 
