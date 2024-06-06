@@ -11,7 +11,7 @@ tk geometry place
 place
 --------------------
 
-| place is not responsive to window size changes.
+| Place is not responsive to window size changes.
 | Place can use absolute positioning or relative positioning. Only absolute is considered below.
 | Absolute positioning uses coordinates of (0, 0) in the top left and increases to the right and down.
 
@@ -40,7 +40,7 @@ widget anchor
 
     | The anchor parameter determines which part of the widget is positioned at the given coordinates.
     | The default value of the anchor is 'nw' for the top left of the widget at the specified coordinates.
-    | parameter accepts values such as: 'n', 'ne', 'e', 'se', 'sw', 'w', 'nw'
+    | parameter accepts values such as: 'n', 'ne', 'e', 'se', "s", 'sw', 'w', 'nw'
     | These constants represent north, northeast, east, southeast, south, southwest, west, northwest.
     | 'center': This value instructs the place() method to position the center of the widget at the coordinates (x, y).                                 
 
