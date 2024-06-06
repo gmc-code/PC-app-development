@@ -79,7 +79,7 @@ Window size and position
 
     | Determines whether the window can be resized by the user.
     | To create a fixed-size window, disable resizing by calling `window.resizable(False, False)`
-    | THe default, `window.resizable(True, True)`, makes the window both horizontally and vertically resizable.
+    | The default, `window.resizable(True, True)`, makes the window both horizontally and vertically resizable.
 
 | The code below sets the window size and position, sets the window to stay on top of others and prevents resizing.
 
