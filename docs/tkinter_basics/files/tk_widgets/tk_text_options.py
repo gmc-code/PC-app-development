@@ -12,7 +12,7 @@ options = text_widget.config()
 
 # Print the options
 for option, value in options.items():
-    # print(f"{option}: {value}")
+    print(f"{option}: {value}")
     print(f"{option}")
 
 window.mainloop()

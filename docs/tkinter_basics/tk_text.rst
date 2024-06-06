@@ -108,142 +108,171 @@ Options for the `Text` widget in Tkinter, including their default values and exa
    - **Description**: Defines the font used for the text.
    - **Use Case Example**: Create a rich text editor with a specific font family and size: `font=("Arial", 12)`.
 
-11. **height**:
+10. **height**:
+    
     - **Default Value**: 24 (number of lines)
     - **Description**: Specifies the number of visible lines in the widget.
     - **Use Case Example**: In a log viewer, set `height=10` to display a limited number of log entries at once.
 
-12. **highlightbackground**:
+
+11. **highlightbackground**:
+    
     - **Default Value**: System-dependent (usually gray)
     - **Description**: Sets the color of the focus highlight when the widget is not focused.
     - **Use Case Example**: Customize the focus highlight color to match your app's theme.
 
-13. **highlightcolor**:
+12. **highlightcolor**:
+    
     - **Default Value**: System-dependent (usually black)
     - **Description**: Determines the color of the focus highlight when the widget is focused.
     - **Use Case Example**: Set `highlightcolor="blue"` for a noticeable focus highlight.
 
-14. **highlightthickness**:
+13. **highlightthickness**:
+    
     - **Default Value**: 1 (pixel width)
     - **Description**: Sets the thickness of the focus highlight (border).
     - **Use Case Example**: Increase `highlightthickness` for a more prominent focus border.
 
-15. **inactiveselectbackground**:
+14. **inactiveselectbackground**:
+    
     - **Default Value**: System-dependent (usually gray)
     - **Description**: Color of the selected text when the widget is not active (not in focus).
     - **Use Case Example**: Customize the appearance of selected text when the widget is not in focus.
 
-16. **insertbackground**:
+15. **insertbackground**:
+    
     - **Default Value**: System-dependent (usually black)
     - **Description**: Color of the insertion cursor (caret).
     - **Use Case Example**: Set `insertbackground="green"` to make the cursor stand out.
 
-17. **insertborderwidth**:
+16. **insertborderwidth**:
+    
     - **Default Value**: 1
     - **Description**: Width of the insertion cursor's border.
     - **Use Case Example**: Increase `insertborderwidth
 
-18. **insertofftime**:
+17. **insertofftime**:
+    
     - **Default Value**: 300 (milliseconds)
     - **Description**: Specifies the time (in milliseconds) before the insertion cursor disappears when the widget loses focus.
     - **Use Case Example**: You're building a chat application, and you want the insertion cursor to remain visible for a longer duration after the user clicks outside the text box. Set `insertofftime=1000` (1 second).
 
-19. **insertontime**:
+18. **insertontime**:
+    
     - **Default Value**: 600 (milliseconds)
     - **Description**: Specifies the time (in milliseconds) before the insertion cursor appears when the widget gains focus.
     - **Use Case Example**: In a search input field, set `insertontime=200` to make the cursor appear quickly when the user clicks inside the field.
 
-20. **insertunfocussed**:
+19. **insertunfocussed**:
+    
     - **Default Value**: `True`
     - **Description**: Determines whether the insertion cursor is visible when the widget is not focused.
     - **Use Case Example**: If you're creating a read-only display area, set `insertunfocussed=False` to hide the insertion cursor.
 
-21. **insertwidth**:
+20. **insertwidth**:
+    
     - **Default Value**: 2 (pixels)
     - **Description**: Width of the insertion cursor.
     - **Use Case Example**: For a code editor, set `insertwidth=3` to make the cursor wider and more noticeable.
 
-22. **maxundo**:
+21. **maxundo**:
+    
     - **Default Value**: `-1` (unlimited)
     - **Description**: Maximum number of undo steps allowed.
     - **Use Case Example**: In a collaborative document editor, set `maxundo=50` to limit the number of undo steps per session.
 
-23. **padx** and **pady**:
+22. **padx** and **pady**:
+    
     - **Default Value**: 0
     - **Description**: Padding (horizontal and vertical) inside the widget.
     - **Use Case Example**: Add some space around the text content by setting `padx=5` and `pady=5`.
 
-24. **relief**:
+23. **relief**:
+    
     - **Default Value**: `"flat"`
     - **Description**: Border style (e.g., `"flat"`, `"raised"`, `"sunken"`).
     - **Use Case Example**: Customize the appearance of the text widget border. For a raised effect, set `relief="raised"`.
 
-25. **selectbackground**:
+24. **selectbackground**:
+    
     - **Default Value**: System-dependent (usually blue)
     - **Description**: Background color of selected text.
     - **Use Case Example**: Set `selectbackground="yellow"` to highlight selected text with a yellow background.
 
-26. **selectborderwidth**:
+25. **selectborderwidth**:
+    
     - **Default Value**: 1
     - **Description**: Width of the selection border.
     - **Use Case Example**: Increase `selectborderwidth` to make the selection border more prominent.
 
-27. **selectforeground**:
+26. **selectforeground**:
+    
     - **Default Value**: System-dependent (usually white)
     - **Description**: Text color of selected text.
     - **Use Case Example**: Set `selectforeground="black"` to ensure good contrast for selected text.
 
-28. **setgrid**:
+27. **setgrid**:
+    
     - **Default Value**: `False`
     - **Description**: Enables or disables grid alignment.
     - **Use Case Example**: If you're creating a crossword puzzle app, set `setgrid=True` to align text within grid cells.
 
-29. **spacing1**, **spacing2**, **spacing3**:
+28. **spacing1**, **spacing2**, **spacing3**:
+    
     - **Default Value**: 0
     - **Description**: Line spacing parameters.
     - **Use Case Example**: Adjust line spacing for better readability. For example, set `spacing1=2` to add extra space between lines.
 
-30. **startline**:
+29. **startline**:
+    
     - **Default Value**: 1
     - **Description**: Determines the first visible line.
     - **Use Case Example**: If you're displaying a long document, set `startline=10` to start showing content from the 10th line.
 
-31. **state**:
+30. **state**:
+    
     - **Default Value**: `"normal"` (editable)
     - **Description**: Sets the state of the widget (e.g., `"normal"`, `"disabled"`).
     - **Use Case Example**: Disable editing by setting `state="disabled"` for a read-only display.
 
-32. **tabs**:
+31. **tabs**:
+    
     - **Default Value**: System-dependent (usually 8 spaces)
     - **Description**: Defines tab stops.
     - **Use Case Example**: Customize tab behavior by setting specific tab stops (e.g., `tabs=(20, 40, 60)`).
 
-33. **tabstyle**:
+32. **tabstyle**:
+    
     - **Default Value**: `"wordprocessor"`
     - **Description**: Specifies the tab style (e.g., `"wordprocessor"`).
     - **Use Case Example**: Set `tabstyle="tabular"` for a more structured tab behavior.
   
-34. **takefocus**:
+33. **takefocus**:
+    
     - **Default Value**: `True`
     - **Description**: Determines whether the widget can receive focus.
     - **Use Case Example**: If you have a search box, set `takefocus=False` to prevent it from receiving focus when navigating with the keyboard.
 
-35. **undo**:
+34. **undo**:
+    
     - **Default Value**: `False`
     - **Description**: Enables or disables undo functionality.
     - **Use Case Example**: In a text editor, set `undo=True` to allow users to undo their changes.
 
-36. **width**:
+35. **width**:
+    
     - **Default Value**: System-dependent (usually 20 characters wide)
     - **Description**: Specifies the width of the widget in characters.
     - **Use Case Example**: Create a narrow input field by setting `width=10`.
 
-37. **wrap**:
+36. **wrap**:
+    
     - **Default Value**: `"none"`
     - **Description**: Controls text wrapping within the widget ("none," "char," or "word").
     - **Use Case Example**: For a chat message box, set `wrap="word"` to wrap text at word boundaries.
 
-38. **xscrollcommand** and **yscrollcommand**:
+37. **xscrollcommand** and **yscrollcommand**:
+    
     - **Default Value**: `None`
     - **Description**: Scrollbar commands for horizontal and vertical scrolling.
     - **Use Case Example**: Connect the text widget to horizontal and vertical scrollbars using these options.
