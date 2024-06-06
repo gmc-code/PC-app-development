@@ -78,8 +78,8 @@ Window size and position
 .. py:function:: resizable(width_boolean,height_boolean)
 
     | Determines whether the window can be resized by the user.
-    | If you want to create a fixed-size window, disable resizing by calling `window.resizable(False, False)`
-    | `window.resizable(True, True)` by default, both horizontally and vertically resizable.
+    | To create a fixed-size window, disable resizing by calling `window.resizable(False, False)`
+    | THe default, `window.resizable(True, True)`, makes the window both horizontally and vertically resizable.
 
 | The code below sets the window size and position, sets the window to stay on top of others and prevents resizing.
 
