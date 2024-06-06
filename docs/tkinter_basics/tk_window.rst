@@ -63,13 +63,11 @@ Window title
 Window size and position
 -----------------------------
 
-.. py:function:: geometry(widthxheight±x±y)
+.. py:function:: geometry(widthxheight)
 
     | set the size and top left of a window
     | width: The desired width of the window in pixels.
     | height: The desired height of the window in pixels.
-    | x: The horizontal position (+ for distance from the left edge of the screen; - from right) in pixels.
-    | y: The vertical position (+ for distance from the top edge of the screen; - from bottom) in pixels.
 
 .. py:function:: attributes('-topmost', True)
 
@@ -148,7 +146,6 @@ Window centered
     # set the position of the window to the center of the screen, using top left position
     window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
-
     window.mainloop()
 
 ----
@@ -166,8 +163,8 @@ Window width and height
 
 .. py:function:: update_idletasks()
 
-    | The update_idletasks() method is used to process pending idle tasks in a Tkinter window without handling other events.
-    | update_idletasks() focuses solely on idle tasks which typically involve geometry management and widget redrawing.
+    | The `update_idletasks()` method is used to process pending idle tasks in a Tkinter window without handling other events.
+    | `update_idletasks()` focuses solely on idle tasks which typically involve geometry management and widget redrawing.
     | It's particularly useful when you want to refresh the window's appearance without triggering additional event processing.
 
 
@@ -205,19 +202,13 @@ Window width and height
 Min Max window size
 --------------------------
 
-.. py:function:: window.winfo_width()
+.. py:function:: window.minsize(width, height)
 
-    | returns the width of the Tkinter window.
+    | Set the minimum size `(width, height)`.
 
-.. py:function:: window.winfo_height()
+.. py:function:: window.maxsize()
 
-    | returns the height of the Tkinter window.
-
-.. py:function:: update_idletasks()
-
-    | The update_idletasks() method is used to process pending idle tasks in a Tkinter window without handling other events.
-    | update_idletasks() focuses solely on idle tasks which typically involve geometry management and widget redrawing.
-    | It's particularly useful when you want to refresh the window's appearance without triggering additional event processing.
+    | Set the maximum size `(width, height)`.
 
 
 | The code below has definitions to set the width or height of the window.
