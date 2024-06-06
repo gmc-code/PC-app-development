@@ -1,5 +1,5 @@
-import tkinter
+import tkinter as tk
 
 
-print(tkinter.Tcl().eval('info patchlevel'))
+print(tk.Tcl().eval('info patchlevel'))
 # 8.6.13

@@ -9,6 +9,7 @@ Introduction to tkinter
 Key references:
 ---------------------
 
+| Latest python versions: https://www.python.org/downloads/
 
 | Tk Docs http://www.tkdocs.com/
 | Tk Refs https://tkdocs.com/pyref/index.html
@@ -42,9 +43,9 @@ Version checks
 
 .. code-block:: python
 
-    import tkinter
+    import tkinter as tk
 
-    print(tkinter.Tcl().eval('info patchlevel'))
+    print(tk.Tcl().eval('info patchlevel'))
 
 
 

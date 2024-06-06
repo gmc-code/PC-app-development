@@ -34,14 +34,6 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Themed widgets
-    :numbered:
-
-    tkinter_basics/ttk_import.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Tkinter apps
     :numbered:
 
@@ -103,5 +95,13 @@ PC-app-development
 
 
  
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Themed widgets
+    :numbered:
+
+    tkinter_basics/ttk_import.rst
+
 
 
