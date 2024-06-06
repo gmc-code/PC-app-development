@@ -211,7 +211,7 @@ Min Max window size
     | Set the maximum size `(width, height)`.
 
 
-| The code below has definitions to set the width or height of the window.
+| The code below sets the minimum and maximum size of the window.
 
 .. code-block:: python
 
