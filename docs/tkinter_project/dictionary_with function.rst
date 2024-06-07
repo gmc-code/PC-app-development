@@ -5,8 +5,9 @@ Dictionary with functions
 Dictionaries
 -------------------
 
-| A dictionary is a collection of ``key : value`` pairs. 
-| All keys are unique and have no duplicates. 
+| A dictionary is a collection of ``key: value`` pairs. 
+| All keys are unique; duplicate keys are not possible. 
+| Keys can be an integer, float, string, Boolean (True or False) and even a tuple.
 | To retrieve a value from a dictionary, use the key as an index.
 | See: https://v2.scrimba.com/learn-python-c03/~014
 
