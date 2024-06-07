@@ -112,6 +112,9 @@ Copy the code below and check the printed output to confirm what each piece of c
 Definition to get a dictionary value
 -----------------------------------------
 
+Create a dictionary
+~~~~~~~~~~~~~~~~~~~~~~
+
 | Below are hex values for colours in the rainbow:
 
 | red is #FF0000
@@ -150,6 +153,8 @@ Definition to get a dictionary value
                         "violet": "#EE82EE"
                     }
 
+User input
+~~~~~~~~~~~~~~~~
 
 | For user input see: https://www.w3schools.com/python/ref_func_input.asp
 
@@ -172,6 +177,9 @@ Definition to get a dictionary value
 
                     user_color = input("Enter a color from the rainbow (red, orange, yellow, green, blue, indigo, violet): ")
 
+
+Hex colour function
+~~~~~~~~~~~~~~~~~~~~~~
 
 A scaffold of a simple function to return the hex value of a colour is below.
 
@@ -215,6 +223,8 @@ A scaffold of a simple function to return the hex value of a colour is below.
                         else:
                             return "not a valid colour of the rainbow"
 
+Final code
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Exercise
 
