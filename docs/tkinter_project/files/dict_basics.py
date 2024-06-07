@@ -3,6 +3,10 @@ game_register = { 'googolplex': 100,
                 'ace': 150,
                 'teapot418' : 0 }
 
+# print items as tuples in a list like format.
+items = game_register.items()
+print("items", items)
+
 # print keys
 keys = game_register.keys()
 print("keys", keys)
