@@ -17,7 +17,7 @@ Example dictionary
 
 | The dictionary uses {} brackets.
 | Each key value pair is separated by a comma.
-| Each key is followed by a colon, :.
+| Each key is followed by a colon :.
 
 | Below is a dictionary of gamers and their game score.
 
