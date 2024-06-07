@@ -212,4 +212,8 @@ A scaffold of a simple function to return the hex value of a colour is below.
                             return "not a valid colour of the rainbow"
 
 
+.. admonition:: Exercise
+
+    #. Create a python file that gets user input and prints the hex colour for the color name the user inputs.
+    
 
