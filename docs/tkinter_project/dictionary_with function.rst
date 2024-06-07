@@ -15,7 +15,7 @@ Dictionaries
 Example dictionary
 -------------------------
 
-| The game_register dictionary uses {} brackets.
+| The dictionary uses {} brackets.
 | Each key value pair is separated by a comma.
 | Each key is followed by a colon, :.
 
