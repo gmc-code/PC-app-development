@@ -18,7 +18,7 @@ Example dictionary
 | The game_register dictionary uses {} brackets.
 | Each key value pair is separated by a comma.
 | Each key is followed by a colon, :.
-| THe first key value pair is 'googolplex': 100.
+| The first key value pair is 'googolplex': 100.
 | There are 4 keys: 'googolplex', 'terminat0r', 'ace', 'teapot418'
 | There are 4 values: 100, 27, 150, 0
 
