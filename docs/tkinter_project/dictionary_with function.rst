@@ -228,7 +228,7 @@ Final code
 
 .. admonition:: Exercise
 
-    #. Create a python file that gets user input and prints the hex colour for the color name the user inputs.
+    Create a python file that gets user input and prints the hex colour for the color name the user inputs.
     Example output: ``The hexadecimal value for green is #008000.``
     
 
