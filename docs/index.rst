@@ -11,6 +11,13 @@ PC-app-development
 
     introduction/introduction.rst
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Tkinter project
+    :numbered:
+
+    tkinter_project/dictionary_with function.rst
+
 
 .. toctree::
     :maxdepth: 2
