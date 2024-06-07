@@ -8,6 +8,7 @@ Dictionaries
 | A dictionary is a set of ``key : value`` pairs. 
 | All keys are unique and have no duplicates. 
 | To retrieve a value from a dictionary, use the key as an index.
+| See: https://v2.scrimba.com/learn-python-c03/~014
 
 
 Example dictionary
