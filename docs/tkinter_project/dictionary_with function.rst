@@ -169,8 +169,6 @@ Definition to get a dictionary value
                     user_color = input("Enter a color from the rainbow (red, orange, yellow, green, blue, indigo, violet): ")
 
 
-----
-
 A scaffold of a simple function to return the hex value of a colour is below.
 
 .. code-block:: python
