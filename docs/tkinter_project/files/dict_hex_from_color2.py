@@ -1,8 +1,10 @@
 # Dictionary with rainbow colors
-rainbow_colors = {"red": "#FF0000", "orange": "#FFA500", "yellow": "#FFFF00", "green": "#008000", "blue": "#0000FF", "indigo": "#4B0082", "violet": "#EE82EE"}
+rainbow_colors = {"red": "#FF0000", "orange": "#FFA500", "yellow": "#FFFF00",
+                  "green": "#008000", "blue": "#0000FF", "indigo": "#4B0082", "violet": "#EE82EE"}
 
 # Ask the user for input (color name)
-user_color = input("Enter a color from the rainbow (red, orange, yellow, green, blue, indigo, violet): ")
+user_color = input(
+    "Enter a color from the rainbow (red, orange, yellow, green, blue, indigo, violet): ")
 
 
 def return_hex_color(user_color):

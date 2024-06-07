@@ -1,7 +1,8 @@
-game_register = { 'googolplex': 100,
-                'terminat0r': 27,
-                'ace': 150,
-                'teapot418' : 0 }
+game_register = {"googolplex": 100,
+                 "terminat0r": 27, 
+                 "ace": 150, 
+                 "teapot418": 0
+                 }
 
 # print items as tuples in a list like format.
 items = game_register.items()
@@ -16,24 +17,24 @@ values = game_register.values()
 print("values", values)
 
 # Access elements
-value = game_register['ace']
-print('ace', value)
-value = game_register.get('ace')
-print('ace', value)
+value = game_register["ace"]
+print("ace", value)
+value = game_register.get("ace")
+print("ace", value)
 
 # Retrieve a value for the key or default if not in dictionary
-value = game_register.get('aced', 0)
-print('aced', value)
+value = game_register.get("aced", 0)
+print("aced", value)
 
 # Add or update and existing entry
-game_register['ace'] = 50
-value = game_register['ace']
-print('ace', value)
+game_register["ace"] = 50
+value = game_register["ace"]
+print("ace", value)
 
 # Delete an entry
-del game_register['ace']
-value = game_register.get('ace', "no entry")
-print('ace', value)
+del game_register["ace"]
+value = game_register.get("ace", "no entry")
+print("ace", value)
 
 # check if key exists
 key_exists = "googolplex" in game_register

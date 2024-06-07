@@ -26,11 +26,14 @@ Example dictionary
     game_register = {'googolplex': 100,
                     'terminat0r': 27,
                     'ace': 150,
-                    'teapot418' : 0 } 
+                    'teapot418' : 0
+                    } 
 
 | The first key value pair is 'googolplex': 100.
 | There are 4 keys: 'googolplex', 'terminat0r', 'ace', 'teapot418'
 | There are 4 values: 100, 27, 150, 0
+
+----
 
 Example dictionary methods
 ----------------------------
