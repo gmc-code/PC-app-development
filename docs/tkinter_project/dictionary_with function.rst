@@ -35,6 +35,7 @@ Example dictionary
 Example dictionary methods
 ----------------------------
 
+Copy the code below and check the printed output to confirm what each piece of code does.
 .. code-block:: python
 
     game_register = {'googolplex': 100,
