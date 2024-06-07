@@ -151,6 +151,7 @@ Definition to get a dictionary value
                     }
 
 
+| For user input see: https://www.w3schools.com/python/ref_func_input.asp
 
 .. admonition:: Tasks
 
