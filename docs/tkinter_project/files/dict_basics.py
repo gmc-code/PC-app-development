@@ -3,6 +3,14 @@ game_register = { 'googolplex': 100,
                 'ace': 150,
                 'teapot418' : 0 }
 
+# print keys
+keys = game_register.keys()
+print("keys", keys)
+
+# print values
+values = game_register.values()
+print("values", values)
+
 # Access elements
 value = game_register['ace']
 print('ace', value)

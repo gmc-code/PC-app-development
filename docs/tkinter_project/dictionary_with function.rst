@@ -14,9 +14,13 @@ Dictionaries
 Example dictionary
 -------------------------
 
+| The game_register dictionary  uses {} brackets.
+| There are 4 keys: 'googolplex', 'terminat0r', 'ace', 'teapot418'
+| There are 4 values: 100, 27, 150, 0
+
 .. code-block:: python
 
-    game_register = { 'googolplex': 100,
+    game_register = {'googolplex': 100,
                     'terminat0r': 27,
                     'ace': 150,
                     'teapot418' : 0 } 
@@ -27,10 +31,18 @@ Example dictionary methods
 
 .. code-block:: python
 
-    game_register = { 'googolplex': 100,
+    game_register = {'googolplex': 100,
                     'terminat0r': 27,
                     'ace': 150,
                     'teapot418' : 0 }
+
+    # print keys
+    keys = game_register.keys()
+    print("keys", keys)
+
+    # print values
+    values = game_register.values()
+    print("values", values)
 
     # Access elements
     value = game_register['ace']
