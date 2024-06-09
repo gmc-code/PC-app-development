@@ -1,4 +1,3 @@
-# Dictionary with rainbow colors
 rainbow_colors = {
     "red": "#FF0000",
     "orange": "#FFA500",
@@ -9,16 +8,13 @@ rainbow_colors = {
     "violet": "#EE82EE"
 }
 
-# Ask the user for input (color name)
-user_input = input("Enter a color from the rainbow (red, orange, yellow, green, blue, indigo, violet): ")
+user_color = input('Enter a rainbow color (red, orange, yellow, green, blue, indigo, violet): ')
 
-# Convert the input to lowercase for case-insensitivity
-user_input = user_input.lower()
+def hex_color(user_color, rainbow_colors):
+    # Convert the input to lowercase for case-insensitivity
+    user_color = user_color.lower()
+    return rainbow_colors.get(user_color, "not listed in the dictionary")
 
-# Check if the input color exists in the rainbow_colors dictionary
-if user_input in rainbow_colors:
-    print(
-        f"The hexadecimal value for {user_input} is {rainbow_colors[user_input]}."
-    )
-else:
-    print(f"{user_input} is not a valid color from the rainbow.")
+hex_val = hex_color(user_color, rainbow_colors)
+print(f"The hexadecimal value for {user_color} is {hex_val}")
+
