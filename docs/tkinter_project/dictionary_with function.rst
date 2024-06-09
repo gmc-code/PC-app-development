@@ -12,7 +12,7 @@ Dictionaries
 | See: https://v2.scrimba.com/learn-python-c03/~014
 
 
-Example dictionary
+Dictionary structure
 -------------------------
 
 | The dictionary uses {} brackets.
@@ -142,7 +142,7 @@ Create a dictionary
 
                 .. code-block:: python
 
-                     # Dictionary with rainbow colors
+                    # Dictionary for rainbow colors
                     rainbow_colors = {
                         "red": "#FF0000",
                         "orange": "#FFA500",
@@ -199,15 +199,10 @@ A scaffold of a simple function to return the hex value of a colour is below.
 
 .. code-block:: python
 
-    def return_hex_color(user_color):
+     def return_hex_color(user_color, ________________):
         # Convert the input to lowercase for case-insensitivity
-        user_color = ______________________.lower()
-
-        # Check if the input color exists in the rainbow_colors dictionary
-        if user_color in ______________________:
-            return rainbow_colors[______________________]
-        else:
-            return "not a valid colour of the rainbow"
+        user_color = ______________.lower()
+        return ________________.get(_________________, "not listed in the dictionary")
 
 
 .. admonition:: Tasks
@@ -227,15 +222,11 @@ A scaffold of a simple function to return the hex value of a colour is below.
 
                 .. code-block:: python
 
-                    def return_hex_color(user_color):
+                    def return_hex_color(user_color, rainbow_colors):
                         # Convert the input to lowercase for case-insensitivity
                         user_color = user_color.lower()
+                        return rainbow_colors.get(user_color, "not listed in the dictionary")
 
-                        # Check if the input color exists in the rainbow_colors dictionary
-                        if user_color in rainbow_colors:
-                            return rainbow_colors[user_color]
-                        else:
-                            return "not a valid colour of the rainbow"
 
 Final code
 ~~~~~~~~~~~~~~~~~~~~~~
