@@ -86,8 +86,8 @@ Example:
 
 ----
 
-Check if key is in dictionary
--------------------------------
+Check if the key is in the dictionary
+---------------------------------------
 
 .. py:function:: key in dictionary
 
