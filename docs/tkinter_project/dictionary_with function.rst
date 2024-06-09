@@ -37,7 +37,7 @@ Looking up dictionary values by key
 .. py:function:: value = dictionary[key]
 
     | Get the value of a specific key in a dictionary.
-    | Raises an error if the key doesn't exist, so a try-except block is needed.
+    | Raises an **error** if the key doesn't exist, so a **try-except** block is needed.
 
 Example:
 
@@ -64,7 +64,7 @@ Looking up dictionary values by the get method
 .. py:function:: value = dictionary.get(key)
 
     | Get the value of a specific key in a dictionary.
-    | Returns None if the key does not exist.
+    | Returns **None** if the key does not exist.
 
 Example:
 
@@ -91,7 +91,7 @@ Check if the key is in the dictionary
 
 .. py:function:: key in dictionary
 
-    | Returns True if the key is among the keys of the dictionary; False if not.
+    | Returns **True** if the key is among the keys of the dictionary; **False** if not.
 
 Example:
 
@@ -157,6 +157,20 @@ User input
 ~~~~~~~~~~~~~~~~
 
 | For user input see: https://www.w3schools.com/python/ref_func_input.asp
+| The input() function allows user input.
+
+.. py:function:: input(prompt)
+
+    | prompt is a string, representing a default message before the input.
+    | Returns a string.
+
+Example:
+
+.. code-block:: python
+
+    colour = input("Enter a colour: ")
+    print(colour)
+
 
 .. admonition:: Tasks
 
