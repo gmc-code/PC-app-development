@@ -19,93 +19,94 @@ Example dictionary
 | Each key value pair is separated by a comma.
 | Each key is followed by a colon :.
 
-| Below is a dictionary of gamers and their game score.
+| Below is a dictionary of car details.
 
 .. code-block:: python
 
-    game_register = {'googolplex': 100,
-                    'terminat0r': 27,
-                    'ace': 150,
-                    'teapot418' : 0
-                    } 
+    car_dictionary = {"brand": "Ford", "model": "Mustang", "year": 1965}
 
-| The first key value pair is 'googolplex': 100.
-| There are 4 keys: 'googolplex', 'terminat0r', 'ace', 'teapot418'
-| There are 4 values: 100, 27, 150, 0
+| The first key value pair is "brand": "Ford".
+| There are 3 keys: "brand", "model", "year"
+| There are 3 corresponding values: "Ford", "Mustang", 1965.
 
 ----
 
-Example dictionary methods
-----------------------------
+Looking up dictionary values by key
+--------------------------------------
 
-Copy the code below and check the printed output to confirm what each piece of code does.
+.. py:function:: value = dictionary[key]
+
+    | Get the value of a specific key in a dictionary by referring to it inside square brackets
+    | This raises an error if the key doesn't exist, so a try-except block is needed.
+
+Example:
 
 .. code-block:: python
 
-    game_register = {'googolplex': 100,
-                    'terminat0r': 27,
-                    'ace': 150,
-                    'teapot418' : 0 }
+    car_dictionary = {"brand": "Ford", "model": "Mustang", "year": 1965}
 
-    # print items as tuples in a list like format.
-    items = game_register.items()
-    print("items", items)
-    
-    # print keys
-    keys = game_register.keys()
-    print("keys", keys)
+    # key exists
+    value = car_dictionary["brand"]
+    print(value)
 
-    # print values
-    values = game_register.values()
-    print("values", values)
-
-    # Access elements
-    value = game_register['ace']
-    print('ace', value)
-    value = game_register.get('ace')
-    print('ace', value)
-
-    # Retrieve a value for the key or default if not in dictionary
-    value = game_register.get('aced', 0)
-    print('aced', value)
-
-    # Add or update and existing entry
-    game_register['ace'] = 50
-    value = game_register['ace']
-    print('ace', value)
-
-    # Delete an entry
-    del game_register['ace']
-    value = game_register.get('ace', "no entry")
-    print('ace', value)
-
-    # check if key exists
-    key_exists = "googolplex" in game_register
-    print("googolplex", key_exists)
-    key_exists = "ace" in game_register
-    print("ace", key_exists)
-
-    # Delete all entries
-    game_register.clear()
-    dict_len = len(game_register)
-    print("dict length", dict_len)
-
-
-    # check if dictionary exists in local variables
+    # key doesn't exist
     try:
-        game_register
-        print("The game_register dictionary still exists.")
-    except NameError:
-        print("The game_register dictionary has been deleted.")
-    # Delete the dictionary
-    del game_register
-    # check if dictionary exists in local variables
-    try:
-        game_register
-        print("The game_register dictionary still exists.")
-    except NameError:
-        print("The game_register dictionary has been deleted.")
+        value = car_dictionary["brands"]
+        print(value)
+    except KeyError:
+        print("not a valid key")
 
+
+----
+
+Looking up dictionary values by the get method
+----------------------------------------------------
+
+.. py:function:: value = dictionary.get(key)
+
+    | Get the value of a specific key in a dictionary.
+    | This returns None if the key does not exist.
+
+Example:
+
+.. code-block:: python
+
+    car_dictionary = {"brand": "Ford", "model": "Mustang", "year": 1965}
+
+    # without default
+    value = car_dictionary.get("brand")
+    print(value)
+
+    # without default; returns None
+    value = car_dictionary.get("brands")
+    print(value)
+
+    # with default
+    value = car_dictionary.get("brands", "not a valid key")
+    print(value)
+
+----
+
+Check if key is in dictionary
+-------------------------------
+
+.. py:function:: key in dictionary
+
+    | Returns True if the key is among the keys of the dictionary; False if not.
+
+Example:
+
+.. code-block:: python
+
+    car_dictionary = {"brand": "Ford", "model": "Mustang", "year": 1965}
+
+    # key exists
+    key_exists = "model" in car_dictionary
+    print(key_exists)
+
+    # key doesn't exists
+    key_exists = "models" in car_dictionary
+    print(key_exists)
 
 ----
 
