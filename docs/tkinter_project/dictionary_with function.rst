@@ -8,7 +8,7 @@ Dictionaries
 | A dictionary is a collection of ``key: value`` pairs. 
 | All keys are unique; duplicate keys are not possible. 
 | Keys can be an integer, float, string, Boolean (True or False) and even a tuple.
-| To retrieve a value from a dictionary, use the key as an index.
+| A key can be used to retrieve a value from a dictionary.
 | See: https://v2.scrimba.com/learn-python-c03/~014
 
 
@@ -17,7 +17,7 @@ Example dictionary
 
 | The dictionary uses {} brackets.
 | Each key value pair is separated by a comma.
-| Each key is followed by a colon :.
+| Each key is followed by a colon :
 
 | Below is a dictionary of car details.
 
@@ -26,7 +26,7 @@ Example dictionary
     car_dictionary = {"brand": "Ford", "model": "Mustang", "year": 1965}
 
 | The first key value pair is "brand": "Ford".
-| There are 3 keys: "brand", "model", "year"
+| There are 3 keys: "brand", "model", "year".
 | There are 3 corresponding values: "Ford", "Mustang", 1965.
 
 ----
@@ -36,8 +36,8 @@ Looking up dictionary values by key
 
 .. py:function:: value = dictionary[key]
 
-    | Get the value of a specific key in a dictionary by referring to it inside square brackets
-    | This raises an error if the key doesn't exist, so a try-except block is needed.
+    | Get the value of a specific key in a dictionary.
+    | Raises an error if the key doesn't exist, so a try-except block is needed.
 
 Example:
 
@@ -56,7 +56,6 @@ Example:
     except KeyError:
         print("not a valid key")
 
-
 ----
 
 Looking up dictionary values by the get method
@@ -65,7 +64,7 @@ Looking up dictionary values by the get method
 .. py:function:: value = dictionary.get(key)
 
     | Get the value of a specific key in a dictionary.
-    | This returns None if the key does not exist.
+    | Returns None if the key does not exist.
 
 Example:
 
