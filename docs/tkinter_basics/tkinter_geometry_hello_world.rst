@@ -20,15 +20,17 @@ Hello World - pack
 
 | Below is a sample Hello World using the pack layout. 
 
+.. image:: images/hello_world_pack.png
+    :scale: 100%
+
 .. code-block:: python
 
     import tkinter as tk
 
-
     # Create the main application window
     window = tk.Tk()
-    window.title("Tkinter hello world - pack")
-    window.geometry('600x400')
+    window.title("hello world - pack")
+    window.geometry('300x200')
 
     # define widgets
     label = tk.Label(window, text="Hello World!")
@@ -53,10 +55,10 @@ Code details
 | ``window = tk.Tk()``: Here, the ``Tk()`` constructor initializes the main application window. 
 | You can customize this window by setting properties such as its title, size, and other attributes.
 
-| ``window.title("Tkinter hello world - pack")``: sets the title of the application window to "Tkinter hello world - pack". 
+| ``window.title("hello world - pack")``: sets the title of the application window to "hello world - pack". 
 | You can replace this string with any other title you'd like for your application.
 
-| ``window.geometry('600x400')``: The ``geometry()`` method defines the initial size of the window. 
+| ``window.geometry('300x200')``: The ``geometry()`` method defines the initial size of the window. 
 | In this case, the window will be 600 pixels wide and 400 pixels tall.
 
 | ``label = tk.Label(window, text="Hello World!")``: A label widget is created with the text "Hello World!". 
@@ -89,15 +91,18 @@ Hello World - grid
 
 | Below is a sample Hello World using grid layout. 
 
+.. image:: images/hello_world_grid.png
+    :scale: 100%
+
 .. code-block:: python
 
-    import tkinter as tk
+    import as tk
 
 
     # Create the main application window
     window = tk.Tk()
-    window.title("Tkinter hello world - grid")
-    window.geometry('600x400')
+    window.title("hello world - grid")
+    window.geometry('300x200')
 
     # define widgets
     label = tk.Label(window, text="Hello World!")
@@ -133,8 +138,11 @@ Hello World - place
     | The `place()` method is used to precisely position widgets within a container using the (x, y) coordinate system. Here's how it works:
     | In absolute positioning, specify the exact x and y coordinates of the widget using the `x` and `y` parameters.
 
-
 | Below is a sample Hello World using place method to position widgets. 
+
+
+.. image:: images/hello_world_place.png
+    :scale: 100%
 
 .. code-block:: python
 
@@ -143,16 +151,16 @@ Hello World - place
 
     # Create the main application window
     window = tk.Tk()
-    window.title("Tkinter hello world - place")
-    window.geometry("600x400")
+    window.title("hello world - place")
+    window.geometry("300x200")
 
     # Define widgets
     label = tk.Label(window, text="Hello World!")
     button = tk.Button(window, text="Quit", command=window.destroy)
 
     # Place widgets using x and y coordinates
-    label.place(x=250, y=0)
-    button.place(x=270, y=22)
+    label.place(x=50, y=20)
+    button.place(x=70, y=42)
 
     # Start the main event loop
     window.mainloop()

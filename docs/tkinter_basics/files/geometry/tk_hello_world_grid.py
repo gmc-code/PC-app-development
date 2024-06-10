@@ -3,8 +3,8 @@ import tkinter as tk
 
 # Create the main application window
 window = tk.Tk()
-window.title("Tkinter hello world - grid")
-window.geometry('600x400')
+window.title("hello world - grid")
+window.geometry("300x200")
 
 # define widgets
 label = tk.Label(window, text="Hello World!")
