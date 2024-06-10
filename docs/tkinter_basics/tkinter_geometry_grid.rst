@@ -26,8 +26,7 @@ grid
     | Use **grid()** method to position a widget on a grid at row index_r and column index_c.
     | e.g. widget.grid(row=0, column=0)
 
-.. image:: images/grid.png
-    :scale: 60%
+
 
 Options
 ~~~~~~~~~~~~
@@ -84,6 +83,40 @@ ipady
     | Add vertical internal padding, **n** pixels, above and below the widget.
     | e.g. widget.grid(row=0, column=0, ipady=10) to grow the widget by 10 pixels above and below the widget.
 
+----
+
+Example ode
+-----------
+
+.. image:: images/grid.png
+    :scale: 100%
+    
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    # Create the main application window
+    window = tk.Tk()
+    window.title("grid")
+    window.geometry("200x150")
+
+    # define widgets
+    label1 = tk.Label(window, text="label 1", bg="light blue")
+    label2 = tk.Label(window, text="label 2", bg="light blue")
+    label3 = tk.Label(window, text="label 3", bg="light blue")
+    label4 = tk.Label(window, text="label 4", bg="light green")
+
+    # place widgets in grid layout
+    label1.grid(row=0,column=0)
+    label2.grid(row=1,column=1)
+    label3.grid(row=2,column=2) 
+    label4.grid(row=3,column=0, columnspan=3, ipadx=60)
+
+    # Start the main event loop
+    window.mainloop()
+
+
 
 ----
 
@@ -99,7 +132,7 @@ notes
 columnconfigure and rowconfigure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| This is not recommended, except for special use cases, such as when designing GUIs that need to adapt to different screen sizes.
+| This may be useful when designing GUIs that need to adapt to different screen sizes.
 | The allows widgets to stretch in size when the window is resized.
 | Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
 

@@ -49,7 +49,7 @@ Sample code
 --------------
 
 .. image:: images/place.png
-    :scale: 60%
+    :scale: 100%
 
 .. code-block:: python
 

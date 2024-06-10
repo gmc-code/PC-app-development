@@ -28,6 +28,7 @@ Cost Calculator - pack
 | Then, it inserts the new total value (converted to a string) using .insert(0, string=str(total)).
 
 | ``calculate_button.pack(fill="x", padx=10)`` stretches out the button and adds a small padding to the left and right.
+
 .. code-block:: python
 
     import tkinter as tk
