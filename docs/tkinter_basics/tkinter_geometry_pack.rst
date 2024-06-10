@@ -40,7 +40,7 @@ Options for the `pack()` geometry manager
 | Example: To create four buttons positioned on different sides of a frame:
 
 .. image:: images/pack_side.png
-    :scale: 60%
+    :scale: 100%
 
 .. code-block:: python
 
@@ -84,10 +84,10 @@ Options for the `pack()` geometry manager
 Example: Use `expand=True` so fill options are shown.
 
 .. image:: images/pack_fill_x.png
-    :scale: 60%
+    :scale: 100%
 
 .. image:: images/pack_fill_y.png
-    :scale: 60%
+    :scale: 100%
 
 
 .. code-block:: python
@@ -127,7 +127,7 @@ padding
 
 
 .. image:: images/pack_padding.png
-    :scale: 60%
+    :scale: 100%
 
 .. code-block:: python
 
@@ -156,7 +156,7 @@ padding
 Example: To create labels anchored at different positions:
 
 .. image:: images/pack_anchor.png
-    :scale: 60%
+    :scale: 100%
 
 .. code-block:: python
 
