@@ -259,49 +259,32 @@ border example
 Options
 --------------
 
-STANDARD OPTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-    activebackground, activeforeground, anchor,
-    background, bitmap, borderwidth, cursor,
-    disabledforeground, font, foreground,
-    highlightbackground, highlightcolor,
-    highlightthickness, image, justify,
-    padx, pady, relief, takefocus, text,
-    textvariable, underline, wraplength
-
-WIDGET-SPECIFIC OPTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-    height, state, width
+| Options for the ``tkinter.Label`` widget:
 
 
-| Options for the `tkinter.Label` widget:
-
-
-1.  **`activebackground`**: Sets the background color when the label is active (e.g., when the mouse hovers over it).
-2.  **`activeforeground`**: Sets the text color when the label is active.
-3.  **`anchor`**: Determines the alignment of text or image within the label. (e.g., 'center', 'nw', 'se', etc.) Options include `tk.W` (left), `tk.CENTER` (center), and `tk.E` (right).
-4.  **`background` (or `bg`)**: Sets the background color of the label.
-5.  **`bd` (or `borderwidth`)**: Specifies the border width (thickness) around the label.
-6.  **`bitmap`**: Displays a bitmap (small image) instead of text.
-7.  **`compound`**: Combines text and image display. Options include `tk.LEFT`, `tk.RIGHT`, `tk.TOP`, and `tk.BOTTOM`.
-8.  **`cursor`**: Determines the mouse cursor appearance when hovering over the label.
-9.  **`disabledforeground`**: Sets the text color when the label is disabled.
-10. **`fg` (or `foreground`)**: Sets the text color.
-11. **`font`**: Specifies the font style for the label's text.
-12. **`height`**: Sets the height (number of lines) of the label.
-13. **`highlightbackground`**: Color of the focus highlight when the label is not focused.
-14. **`highlightcolor`**: Color of the focus highlight when the label is focused.
-15. **`highlightthickness`**: Thickness of the focus highlight.
-16. **`image`**: Displays an image instead of text.
-17. **`justify`**: Controls text alignment within the label when it contains multiple lines ('left', 'center', or 'right').
-18. **`padx`** and **`pady`**: Add padding (extra space) around the label's content.
-19. **`relief`**: Specifies the border style (e.g., flat, raised, sunken).
-20. **`state`**: Determines whether the label is active, disabled, or normal.
-21. **`takefocus`**: Specifies whether the label can receive focus during keyboard navigation.
-22. **`text`**: Sets the text content of the label.
-23. **`textvariable`**: Binds a `StringVar` to the label, allowing dynamic text updates.
-24. **`underline`**: Specifies which character in the label's text should be underlined.
-25. **`width`**: Sets the width (number of characters) of the label.
-26. **`wraplength`**: Limits the line length by wrapping text within the specified width.
+1.  **``activebackground``**: Sets the background color when the label is active (e.g., when the mouse hovers over it).
+2.  **``activeforeground``**: Sets the text color when the label is active.
+3.  **``anchor``**: Determines the alignment of text or image within the label. (e.g., 'center', 'nw', 'se', etc.) Options include `tk.W` (left), `tk.CENTER` (center), and `tk.E` (right).
+4.  **``background` (or `bg`)**: Sets the background color of the label.
+5.  **``bd` (or `borderwidth`)**: Specifies the border width (thickness) around the label.
+6.  **``bitmap``**: Displays a bitmap (small image) instead of text.
+7.  **``compound``**: Combines text and image display. Options include `tk.LEFT`, `tk.RIGHT`, `tk.TOP`, and `tk.BOTTOM`.
+8.  **``cursor``**: Determines the mouse cursor appearance when hovering over the label.
+9.  **``disabledforeground``**: Sets the text color when the label is disabled.
+10. **``fg` (or `foreground`)**: Sets the text color.
+11. **``font``**: Specifies the font style for the label's text.
+12. **``height``**: Sets the height (number of lines) of the label.
+13. **``highlightbackground``**: Color of the focus highlight when the label is not focused.
+14. **``highlightcolor``**: Color of the focus highlight when the label is focused.
+15. **``highlightthickness``**: Thickness of the focus highlight.
+16. **``image``**: Displays an image instead of text.
+17. **``justify``**: Controls text alignment within the label when it contains multiple lines ('left', 'center', or 'right').
+18. **``padx``** and **``pady``**: Add padding (extra space) around the label's content.
+19. **``relief``**: Specifies the border style (e.g., flat, raised, sunken).
+20. **``state``**: Determines whether the label is active, disabled, or normal.
+21. **``takefocus``**: Specifies whether the label can receive focus during keyboard navigation.
+22. **``text``**: Sets the text content of the label.
+23. **``textvariable``**: Binds a `StringVar` to the label, allowing dynamic text updates.
+24. **``underline``**: Specifies which character in the label's text should be underlined.
+25. **``width``**: Sets the width (number of characters) of the label.
+26. **``wraplength``**: Limits the line length by wrapping text within the specified width.
