@@ -1,8 +1,8 @@
 import tkinter as tk
 
-
 window = tk.Tk()
-window.geometry('200x150')
+window.title("pack anchor")
+window.geometry('250x150')
 
 label1 = tk.Label(window, text="Top-Left", bg="lightblue")
 label1.pack(anchor='nw')

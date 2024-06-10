@@ -3,8 +3,9 @@ tk geometry place
 ====================================================
 
 | The place geometry manager allows you to arrange widgets within a window using absolute positions.
-| place: see https://www.youtube.com/watch?v=bx0YmWFfsEI
-| Layouts: https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa
+| place: https://www.youtube.com/watch?v=bx0YmWFfsEI
+| layouts: https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa
+| options: https://www.pythontutorial.net/tkinter/tkinter-place/
 
 ----
 
@@ -47,7 +48,7 @@ widget anchor
 Sample code
 --------------
 
-.. image:: images/tk_place.png
+.. image:: images/place.png
     :scale: 60%
 
 .. code-block:: python
@@ -73,7 +74,3 @@ Sample code
     window.mainloop()
 
 
-options
---------------
-
-See: https://www.pythontutorial.net/tkinter/tkinter-place/

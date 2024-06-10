@@ -39,12 +39,16 @@ Options for the `pack()` geometry manager
 
 | Example: To create four buttons positioned on different sides of a frame:
 
+.. image:: images/pack_side.png
+    :scale: 60%
+
 .. code-block:: python
 
     import tkinter as tk
 
     window = tk.Tk()
-    window.geometry('250x150')
+    window.title("pack side")
+    window.geometry("250x150")
 
     button1 = tk.Button(text="Left")
     button1.pack(side="left")
@@ -60,7 +64,6 @@ Options for the `pack()` geometry manager
 
     window.mainloop()
 
-
 **Expand**
 ~~~~~~~~~~~~~~~~
 
@@ -69,13 +72,28 @@ Options for the `pack()` geometry manager
     | The `boolean` value is `True` or `False`.
     | e.g. `widget.pack(expand=True)` to make a widget expand when the frame is resized
     | The `expand` option allows a widget to expand if the user resizes the frame.
-  
+
+.. image:: images/pack_expand_x.png
+    :scale: 60%
+
+.. image:: images/pack_expand_y.png
+    :scale: 60%
+
+.. rst-class:: image-table
+
++-------------------+-------------------+
+| .. image:: images/pack_expand_x.png | .. image:: images/pack_expand_y.png |
+|                   |                   |
++-------------------+-------------------+
+
+
 .. code-block:: python
 
     import tkinter as tk
 
     window = tk.Tk()
-    window.geometry('200x150')
+    window.title("pack expand")
+    window.geometry("250x150")
 
     label = tk.Label(window, text="Expanding Label", bg="lightblue")
     label.pack(expand=True)
@@ -90,7 +108,10 @@ Options for the `pack()` geometry manager
     | The `fill_string` value is `None`, `x`, `y`, or `both`.
     | The `fill` option specifies how the widget should fill the available space. 
 
-Example: To create a labels with different fill options which can be uncommented:
+Example: To create labels with different fill options which can be uncommented:
+
+.. image:: images/place.png
+    :scale: 60%
 
 .. code-block:: python
 
@@ -129,6 +150,8 @@ padding
     | These options control the external padding (in pixels) along the x and y axes, respectively.
     | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
 
+.. image:: images/place.png
+    :scale: 60%
 
 .. code-block:: python
 
@@ -144,8 +167,6 @@ padding
 
     window.mainloop()
 
-
-
 **Anchor**
 ~~~~~~~~~~~~~~~~~~
 
@@ -158,13 +179,16 @@ padding
 
 Example: To create labels anchored at different positions:
 
+.. image:: images/pack_anchor.png
+    :scale: 60%
+
 .. code-block:: python
 
     import tkinter as tk
 
-
     window = tk.Tk()
-    window.geometry('200x150')
+    window.title("pack anchor")
+    window.geometry('250x150')
 
     label1 = tk.Label(window, text="Top-Left", bg="lightblue")
     label1.pack(anchor='nw')

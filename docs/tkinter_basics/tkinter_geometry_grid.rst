@@ -26,6 +26,8 @@ grid
     | Use **grid()** method to position a widget on a grid at row index_r and column index_c.
     | e.g. widget.grid(row=0, column=0)
 
+.. image:: images/grid.png
+    :scale: 60%
 
 Options
 ~~~~~~~~~~~~
