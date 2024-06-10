@@ -9,7 +9,7 @@ window.title("Label Testing")  # Set window title
 label = tk.Label(window, text="label text")
 
 # Get all the options and their values
-options = widget.config()
+options = label.config()
 
 # Print the options
 for option, value in options.items():

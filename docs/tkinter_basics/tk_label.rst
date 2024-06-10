@@ -208,18 +208,7 @@ padding example
 .. image:: images/label_padding.png
     :scale: 100%
 
- ----
-
-Text alignment
-----------------------
-
-.. py:function:: label_widget  = tk.Label(parent, justify=alignment)
-   
-   - alignment is "left", "center", "right" 
-   - Default Value: "center"
-   - Description: Determines how the label text is aligned within the widget.
-   - Example: To left-align the text, use `justify="left"`.
-
+----
 
 Border
 ---------------
@@ -236,11 +225,11 @@ Border
    - border_style is one of "flat", "raised", "sunken", "solid", "ridge", "groove"
    - Default Value: "flat" (no border)
    - Description: Specifies the border style and width for the label.
-   - Example: To create a sunken border with a width of 2 pixels, use `relief="sunken"` and `borderwidth=2`.
+   - Example: To create a solid border with a width of 1 pixels, use `relief="solid"` and `borderwidth=1`.
 
 
-Code example
----------------
+border example
+~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -248,28 +237,21 @@ Code example
 
     # Create the main window
     window = tk.Tk()
-    window.geometry("400x400")  # Set window size
-    window.title("Label Testing")  # Set window title
+    window.geometry("300x200")  # Set window size
+    window.title("Label border")  # Set window title
 
     # Create the label widget with options
-    label = tk.Label(window,
-                    text="label text",
-                    fg="blue",
-                    bg="lightyellow",
-                    font=("Arial", 24, "bold"),
-                    justify="center",
-                    padx=100,
-                    pady=20,
-                    relief="solid",
-                    borderwidth=1)
+    label = tk.Label(text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
+                    padx=60, pady=20,
+                    relief="solid", borderwidth=1)
 
     # Pack the label into the window
-    label.pack(padx=20, pady=20)  # Add some padding to the top and side
+    label.pack()
 
     # Run the main event loop
     window.mainloop()
 
-.. image:: images/label.png
+.. image:: images/label_border.png
     :scale: 67%
     
 ----
@@ -296,25 +278,30 @@ WIDGET-SPECIFIC OPTIONS
 
 | Options for the `tkinter.Label` widget:
 
-1. **`activebackground`**: Specifies the background color when the label is active (e.g., when the mouse hovers over it).
-2. **`activeforeground`**: Sets the text color when the label is active.
-3. **`anchor`**: Determines the position of the label's text or image within the available space (e.g., 'center', 'nw', 'se', etc.).
-4. **`background`**: Sets the background color of the label.
-5. **`bitmap`**: Displays a bitmap (monochrome image) on the label.
-6. **`borderwidth`**: Defines the width of the label's border.
-7. **`cursor`**: Specifies the mouse cursor shape when hovering over the label.
-8. **`disabledforeground`**: Sets the text color when the label is disabled.
-9. **`font`**: Determines the font style for the label's text.
-10. **`foreground`**: Sets the color of the label's text.
-11. **`highlightbackground`**: Specifies the color of the focus highlight when the label is not focused.
-12. **`highlightcolor`**: Sets the color of the focus highlight when the label is focused.
-13. **`highlightthickness`**: Determines the thickness of the focus highlight.
-14. **`image`**: Displays an image (e.g., a PhotoImage) on the label instead of text.
-15. **`justify`**: Controls the horizontal alignment of the label's text ('left', 'center', or 'right').
-16. **`padx`** and **`pady`**: Add padding (extra space) around the label's content.
-17. **`relief`**: Specifies the border style (e.g., 'flat', 'raised', 'sunken', etc.).
-18. **`takefocus`**: Determines whether the label can receive focus.
-19. **`text`**: Sets the text content of the label.
-20. **`textvariable`**: Associates a `StringVar` with the label (useful for dynamic text updates).
-21. **`underline`**: Indicates which character in the label's text should be underlined.
-22. **`wraplength`**: Breaks the text into multiple lines if it exceeds the specified width.
+
+1.  **`activebackground`**: Sets the background color when the label is active (e.g., when the mouse hovers over it).
+2.  **`activeforeground`**: Sets the text color when the label is active.
+3.  **`anchor`**: Determines the alignment of text or image within the label. (e.g., 'center', 'nw', 'se', etc.) Options include `tk.W` (left), `tk.CENTER` (center), and `tk.E` (right).
+4.  **`background` (or `bg`)**: Sets the background color of the label.
+5.  **`bd` (or `borderwidth`)**: Specifies the border width (thickness) around the label.
+6.  **`bitmap`**: Displays a bitmap (small image) instead of text.
+7.  **`compound`**: Combines text and image display. Options include `tk.LEFT`, `tk.RIGHT`, `tk.TOP`, and `tk.BOTTOM`.
+8.  **`cursor`**: Determines the mouse cursor appearance when hovering over the label.
+9.  **`disabledforeground`**: Sets the text color when the label is disabled.
+10. **`fg` (or `foreground`)**: Sets the text color.
+11. **`font`**: Specifies the font style for the label's text.
+12. **`height`**: Sets the height (number of lines) of the label.
+13. **`highlightbackground`**: Color of the focus highlight when the label is not focused.
+14. **`highlightcolor`**: Color of the focus highlight when the label is focused.
+15. **`highlightthickness`**: Thickness of the focus highlight.
+16. **`image`**: Displays an image instead of text.
+17. **`justify`**: Controls text alignment within the label when it contains multiple lines ('left', 'center', or 'right').
+18. **`padx`** and **`pady`**: Add padding (extra space) around the label's content.
+19. **`relief`**: Specifies the border style (e.g., flat, raised, sunken).
+20. **`state`**: Determines whether the label is active, disabled, or normal.
+21. **`takefocus`**: Specifies whether the label can receive focus during keyboard navigation.
+22. **`text`**: Sets the text content of the label.
+23. **`textvariable`**: Binds a `StringVar` to the label, allowing dynamic text updates.
+24. **`underline`**: Specifies which character in the label's text should be underlined.
+25. **`width`**: Sets the width (number of characters) of the label.
+26. **`wraplength`**: Limits the line length by wrapping text within the specified width.
