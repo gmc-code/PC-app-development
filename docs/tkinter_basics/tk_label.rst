@@ -19,17 +19,18 @@ Usage
     | `parent` is the window or frame object. 
     | Options can be passed as parameters separated by commas.
 
+----
+
+Text
+--------------
 
 .. py:function:: label_widget  = tk.Label(parent, text=text_string)
 
     | `text_string` is text to display in the label widget. 
     | e.g. label = tk.Label(window, text="label text")
 
-
-----
-
-Code example
----------------
+Text example
+~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -37,8 +38,8 @@ Code example
 
     # Create the main window
     window = tk.Tk()
-    window.geometry("400x400")  # Set window size
-    window.title("Label Testing")  # Set window title
+    window.geometry("300x200")  # Set window size
+    window.title("Label text")  # Set window title
 
     # Create the label widget
     label = tk.Label(window, text="label text")
@@ -49,29 +50,10 @@ Code example
     # Run the main event loop
     window.mainloop()
 
-
+.. image:: images/label_text.png
+    :scale: 100%
+    
 ----
-
-Text color
----------------
-
-.. py:function:: label_widget  = tk.Label(parent, fg=color)
-   
-   - color can be a color name, e.g blue, or a hex colour, e.g. #0000FF.
-   - Default Value: System-dependent (usually black)
-   - Description: Sets the foreground (text) color of the label.
-   - Example: To set the text color to blue, use `fg="blue"` or `fg="#0000FF"`.
-
-Background color
---------------------------
-
-.. py:function:: label_widget  = tk.Label(parent, bg=color)
-   
-   - color can be a color name or a hex colour.
-   - Default Value: System-dependent (usually white)
-   - Description: Sets the background color of the label.
-   - Example: To set the background color to light yellow, use `bg="lightyellow"`.
-
 
 Font
 ----------
@@ -88,6 +70,146 @@ Font
    - Example: To use a bold underlines 12-point Arial font, use `font=("Arial", 12, "bold underline")`.
 
 
+font example
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    # Create the main window
+    window = tk.Tk()
+    window.geometry("300x200")  # Set window size
+    window.title("Label font")  # Set window title
+
+    # Create the label widget with options
+    label = tk.Label(window, text="label text", font=("Arial", 24))
+
+    # Pack the label into the window
+    label.pack()
+
+    # Run the main event loop
+    window.mainloop()
+
+
+.. image:: images/label_font.png
+    :scale: 100%
+
+----
+
+Text color
+---------------
+
+.. py:function:: label_widget  = tk.Label(parent, fg=color)
+   
+   - color can be a color name, e.g blue, or a hex colour, e.g. #0000FF.
+   - Default Value: System-dependent (usually black)
+   - Description: Sets the foreground (text) color of the label.
+   - Example: To set the text color to blue, use `fg="blue"` or `fg="#0000FF"`.
+
+
+fg example
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    # Create the main window
+    window = tk.Tk()
+    window.geometry("300x200")  # Set window size
+    window.title("Label fg")  # Set window title
+
+    # Create the label widget with options
+    label = tk.Label(window, text="label text", font=("Arial", 24), fg="blue")
+
+    # Pack the label into the window
+    label.pack()
+
+    # Run the main event loop
+    window.mainloop()
+
+.. image:: images/label_fg.png
+    :scale: 100%
+
+----
+
+Background color
+--------------------------
+
+.. py:function:: label_widget  = tk.Label(parent, bg=color)
+   
+   - color can be a color name or a hex colour.
+   - Default Value: System-dependent (usually white)
+   - Description: Sets the background color of the label.
+   - Example: To set the background color to light yellow, use `bg="lightyellow"`.
+
+
+bg example
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    # Create the main window
+    window = tk.Tk()
+    window.geometry("300x200")  # Set window size
+    window.title("Label bg")  # Set window title
+
+    # Create the label widget with options
+    label = tk.Label(window, text="label text", font=("Arial", 24), fg="blue", bg="lightyellow")
+
+    # Pack the label into the window
+    label.pack()
+
+    # Run the main event loop
+    window.mainloop()
+
+.. image:: images/label_bg.png
+    :scale: 100%
+
+----
+
+Padding
+-------------------
+
+.. py:function:: label_widget  = tk.Label(parent, padx=x_integer, pady=y_integer)
+   
+   - x_integer and y_integer are integers
+   - Default Value: 0
+   - Description: Adds extra space (in pixels) around the label text.
+   - Example: To add 12 pixels of padding on the left and right sides, use `padx=12`.
+   - Example: To add 5 pixels of padding on the top and bottom, use `pady=5`.
+
+
+padding example
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    # Create the main window
+    window = tk.Tk()
+    window.geometry("300x200")  # Set window size
+    window.title("Label padding]")  # Set window title
+
+    # Create the label widget with options
+    label = tk.Label(text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
+                    padx=60, pady=20)
+
+    # Pack the label into the window
+    label.pack()
+
+    # Run the main event loop
+    window.mainloop()
+
+.. image:: images/label_padding.png
+    :scale: 100%
+
+ ----
+
 Text alignment
 ----------------------
 
@@ -98,15 +220,6 @@ Text alignment
    - Description: Determines how the label text is aligned within the widget.
    - Example: To left-align the text, use `justify="left"`.
 
-Padding
--------------------
-
-.. py:function:: label_widget  = tk.Label(parent, padx=x_integer, pady=y_integer)
-   
-   - x_integer and y_integer are integers
-   - Default Value: 0
-   - Description: Adds extra space (in pixels) around the label text.
-   - Example: To add 5 pixels of padding on the left and right sides, use `padx=5`.
 
 Border
 ---------------

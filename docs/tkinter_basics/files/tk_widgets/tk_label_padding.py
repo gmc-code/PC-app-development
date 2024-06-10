@@ -3,17 +3,14 @@ import tkinter as tk
 # Create the main window
 window = tk.Tk()
 window.geometry("300x200")  # Set window size
-window.title("Label options")  # Set window title
+window.title("Label padding]")  # Set window title
 
 # Create the label widget with options
 label = tk.Label(text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
-                 padx=60, pady=20,
-                 justify="center",
-                 relief="solid", borderwidth=1)
-
+                 padx=60, pady=20)
 
 # Pack the label into the window
-label.pack(padx=20, pady=20)  # Add some padding to the top and side
+label.pack()
 
 # Run the main event loop
 window.mainloop()
