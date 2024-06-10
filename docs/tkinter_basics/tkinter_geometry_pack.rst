@@ -40,7 +40,7 @@ Options for the `pack()` geometry manager
 | Example: To create four buttons positioned on different sides of a frame:
 
 .. image:: images/pack_side.png
-    :scale: 60%
+    :scale: 80%
 
 .. code-block:: python
 
@@ -74,10 +74,10 @@ Options for the `pack()` geometry manager
     | The `expand` option allows a widget to expand if the user resizes the frame.
 
 .. image:: images/pack_expand_x.png
-    :scale: 60%
+    :scale: 80%
 
 .. image:: images/pack_expand_y.png
-    :scale: 60%
+    :scale: 80%
 
 .. rst-class:: image-table
 
@@ -111,7 +111,7 @@ Options for the `pack()` geometry manager
 Example: To create labels with different fill options which can be uncommented:
 
 .. image:: images/place.png
-    :scale: 60%
+    :scale: 80%
 
 .. code-block:: python
 
@@ -151,7 +151,7 @@ padding
     | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
 
 .. image:: images/place.png
-    :scale: 60%
+    :scale: 80%
 
 .. code-block:: python
 
@@ -180,7 +180,7 @@ padding
 Example: To create labels anchored at different positions:
 
 .. image:: images/pack_anchor.png
-    :scale: 60%
+    :scale: 80%
 
 .. code-block:: python
 
