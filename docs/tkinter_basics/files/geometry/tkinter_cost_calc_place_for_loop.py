@@ -41,5 +41,5 @@ for widget in widgets:
     widget.place(x=0, y=y)
     y += 25  # Increment y by 25 for each widget
 
-
+# Start the main event loop
 window.mainloop()

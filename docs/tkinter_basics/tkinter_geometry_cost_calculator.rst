@@ -15,6 +15,9 @@ Cost Calculator - pack
     | pack() positions widgets relative to each other.
     | By default, widgets are stacked vertically from the top of the container.
 
+.. image:: images/calc_pack.png
+    :scale: 100%
+
 | Below is a sample cost calculator using the pack layout. 
 | The calculate_price() function computes the total price based on the user input for price per item and number of items.
 | Inside the try block: it retrieves the user input from the price_per_item_entry and number_of_items_entry widgets using the .get() method.
@@ -24,9 +27,11 @@ Cost Calculator - pack
 | It first clears any existing content using .delete(0, "end").
 | Then, it inserts the new total value (converted to a string) using .insert(0, string=str(total)).
 
+| ``calculate_button.pack(fill="x", padx=10)`` stretches out the button and adds a small padding to the left and right.
 .. code-block:: python
 
     import tkinter as tk
+
 
     def calculate_price():
         try:
@@ -36,10 +41,11 @@ Cost Calculator - pack
         except:
             pass
 
+
     # Create the main window
     window = tk.Tk()
-    window.title("Cost calculator - pack")
-    window.geometry("300x300")
+    window.title("pack calc")
+    window.geometry("250x150")
 
     #  create widgets in frame
     price_per_item_label = tk.Label(window, text="Price per item")
@@ -51,7 +57,7 @@ Cost Calculator - pack
     total_price_label = tk.Label(window, text="Total price")
     total_price_entry = tk.Entry(window)
 
-    calculate_button = tk.Button(window, text = "Calculate total",  bg="light blue", command=calculate_price)
+    calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
 
     # # place widgets
     price_per_item_label.pack()
@@ -59,11 +65,11 @@ Cost Calculator - pack
     number_of_items_label.pack()
     number_of_items_entry.pack()
     # fill the horizontal space; x axis
-    calculate_button.pack(fill="x")
+    calculate_button.pack(fill="x", padx=10)
     total_price_label.pack()
     total_price_entry.pack()
 
-
+    # Start the main event loop
     window.mainloop()
 
 ----
@@ -78,6 +84,10 @@ Cost Calculator - grid
     | Specify the row and column indices where the widget should appear.
 
 | Below is a sample Cost Calculator using grid layout. 
+| ``calculate_button.grid(row=2, column=0, columnspan=2, ipadx=70)`` uses ipadx to stretch the button.
+
+.. image:: images/calc_grid.png
+    :scale: 100%
 
 .. code-block:: python
 
@@ -92,10 +102,11 @@ Cost Calculator - grid
         except:
             pass
 
+
     # Create the main window
     window = tk.Tk()
-    window.title("Cost calculator - pack")
-    window.geometry("300x300")
+    window.title("grid calc")
+    window.geometry("250x150")
 
     #  create widgets in frame
     price_per_item_label = tk.Label(window, text="Price per item")
@@ -107,7 +118,7 @@ Cost Calculator - grid
     total_price_label = tk.Label(window, text="Total price")
     total_price_entry = tk.Entry(window)
 
-    calculate_button = tk.Button(window, text = "Calculate total",  bg="light blue", command=calculate_price)
+    calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
 
     # # place widgets
     price_per_item_label.grid(row=0, column=0)
@@ -115,13 +126,12 @@ Cost Calculator - grid
     number_of_items_label.grid(row=1, column=0)
     number_of_items_entry.grid(row=1, column=1)
     # fill the horizontal space; x axis
-    calculate_button.grid(row=2, column=0, columnspan=2)
+    calculate_button.grid(row=2, column=0, columnspan=2, ipadx=70)
     total_price_label.grid(row=3, column=0)
     total_price_entry.grid(row=3, column=1)
 
-
+    # Start the main event loop
     window.mainloop()
-
 
 ----
 
@@ -133,8 +143,11 @@ Cost Calculator - place
     | The `place()` method is used to precisely position widgets within a container using the (x, y) coordinate system. Here's how it works:
     | In absolute positioning, specify the exact x and y coordinates of the widget using the `x` and `y` parameters.
 
-
 | Below is a sample Cost Calculator using place method to position widgets. 
+| ``calculate_button.place(x=0, y=60, width=230)`` uses a width of 230 to stretch out the button.
+
+.. image:: images/calc_place.png
+    :scale: 100%
 
 .. code-block:: python
 
@@ -152,8 +165,8 @@ Cost Calculator - place
 
     # Create the main window
     window = tk.Tk()
-    window.title("Cost calculator - place")
-    window.geometry("300x300")
+    window.title("place calc")
+    window.geometry("250x150")
 
     #  create widgets in frame
     price_per_item_label = tk.Label(window, text="Price per item")
@@ -168,13 +181,13 @@ Cost Calculator - place
     calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
 
     # place widgets
-    price_per_item_label.place(x=0,y=0)
-    price_per_item_entry.place(x=100,y=0)
-    number_of_items_label.place(x=0,y=30)
-    number_of_items_entry.place(x=100,y=30)
-    calculate_button.place(x=0,y=60)
-    total_price_label.place(x=0,y=90)
-    total_price_entry.place(x=100,y=90)
+    price_per_item_label.place(x=0, y=0)
+    price_per_item_entry.place(x=100, y=0)
+    number_of_items_label.place(x=0, y=30)
+    number_of_items_entry.place(x=100, y=30)
+    calculate_button.place(x=0, y=60, width=230)
+    total_price_label.place(x=0, y=90)
+    total_price_entry.place(x=100, y=90)
 
-
+    # Start the main event loop
     window.mainloop()
