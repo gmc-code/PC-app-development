@@ -11,12 +11,14 @@ PC-app-development
 
     introduction/introduction.rst
 
+
 .. toctree::
     :maxdepth: 2
     :caption: Tkinter project
     :numbered:
 
     tkinter_project/dictionary_with function.rst
+    tkinter_project/project_starters.rst
 
 
 .. toctree::
@@ -38,6 +40,7 @@ PC-app-development
     tkinter_basics/tk_button.rst
 
     .. tkinter_basics/tk_messagebox.rst
+
 
 .. toctree::
     :maxdepth: 2
