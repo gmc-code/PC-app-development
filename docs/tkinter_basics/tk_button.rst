@@ -3,7 +3,8 @@ tk button
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-creating-a-button-in-tkinter/?ref=lbp
-| See: https://www.youtube.com/watch?v=8VoTtF-CxrM&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=3
+| See: https://www.youtube.com/watch?v=8VoTtF-CxrM
+| See: https://www.youtube.com/watch?v=mPQdJDVtev0
 
 ----
 

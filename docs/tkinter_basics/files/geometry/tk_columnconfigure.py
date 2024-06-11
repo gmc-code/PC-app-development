@@ -1,6 +1,8 @@
 import tkinter as tk
 
 window = tk.Tk()
+window.title('columnconfigure')
+window.geometry('300x200')
 # frame = tk.Frame(window)
 
 # Configuring the first column

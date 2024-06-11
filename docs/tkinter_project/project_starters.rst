@@ -2,6 +2,8 @@
 Project starters
 ====================================================
 
+As of Jun 11, only 1 and 9 are available for absent students.
+
 | 1 :download:`lookup_GUI_1_datatypes.py <files/lookup_GUI_1_datatypes.py>`
 
 | 2 :download:`lookup_GUI_2_apps.py <files/lookup_GUI_2_apps.py>`
@@ -17,4 +19,6 @@ Project starters
 | 7 :download:`lookup_GUI_7_animals.py <files/lookup_GUI_7_animals.py>`
 
 | 8 :download:`lookup_GUI_8_achievements.py <files/lookup_GUI_8_achievements.py>`
+
+| 9 :download:`lookup_GUI_9_planets.py <files/lookup_GUI_9_planets.py>`
 

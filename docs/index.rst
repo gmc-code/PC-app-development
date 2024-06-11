@@ -28,12 +28,28 @@ PC-app-development
 
     tkinter_basics/tkinter_introduction.rst
     tkinter_basics/tkinter_import.rst
+    tkinter_basics/tkinter_options.rst
+    tkinter_basics/tkinter_constants.rst
     tkinter_basics/tk_window.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Tkinter geometry
+    :numbered:
+
     tkinter_basics/tkinter_geometry_pack.rst
     tkinter_basics/tkinter_geometry_grid.rst
     tkinter_basics/tkinter_geometry_place.rst
     tkinter_basics/tkinter_geometry_hello_world.rst
     tkinter_basics/tkinter_geometry_cost_calculator.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: tk widgets
+    :numbered:
+    
     tkinter_basics/tk_label.rst
     tkinter_basics/tk_entry.rst
     tkinter_basics/tk_text.rst    

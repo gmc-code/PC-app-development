@@ -31,7 +31,7 @@ Code example
     # Create the main window
     window = tk.Tk()
     window.geometry("400x250")  # Set window size
-    window.title("Entry ")  # Set window title
+    window.title("Entry")  # Set window title
 
     # Create a StringVar to associate with the entry
     name_var = tk.StringVar()

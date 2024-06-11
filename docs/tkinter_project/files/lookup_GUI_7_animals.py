@@ -2,7 +2,7 @@
 # A GUI app using a dictionary data type
 '''
 # instructions
-# remove each of these comments as they are completed
+# remove each of these comments as they are completed then put your name here instead
 
 # find the error in the tkinter code that stops the file from running and fix it
 # find the spelling error and fix it.

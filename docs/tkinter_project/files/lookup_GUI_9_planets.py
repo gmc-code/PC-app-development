@@ -7,17 +7,18 @@
 # find the error in the tkinter code that stops the file from running and fix it
 # find the spelling error and fix it.
 
-# change the dictionary to look up these continental landmarks:
+# change the dictionary to look up these planets:
 
-Asia: The Great Wall of China ia as ancient defensive structure stretches over 13,000 miles and is visible from space.
-Australia: Uluru (Ayers Rock) is a massive sandstone monolith in Australia's Red Centre.
-Africa: Serengeti National Park is known for the Great Migration, where millions of wildebeests and zebras move across vast grasslands.
-Europe: Eiffel Tower is the iconic iron lattice tower in Paris, France, offering breathtaking views of the city.
-North America: Grand Canyon is a colossal, awe-inspiring canyon carved by the Colorado River in Arizona.
-South America: Machu Picchu is the ancient Incan citadel perched high in the Andes mountains of Peru.
-Antarctica: Mount Vinson is the highest peak on the continent, rising from the icy wilderness.
+Mercury: The closest planet to the Sun, Mercury is a small, rocky world with an iron core and a rocky crust.
+Venus: Earth's sister planet; Venus is similar in size but radically different—its thick atmosphere is mostly carbon dioxide, and surface temperatures can exceed 454°C.
+Earth: Our home planet; Earth is the only known place where life exists, with a breathable atmosphere and abundant water.
+Mars: Known as the Red Planet, Mars has a thin atmosphere and is home to the largest volcano and deepest canyon in the solar system.
+Jupiter: The largest planet, Jupiter is a gas giant composed mainly of hydrogen and helium, with a powerful magnetic field.
+Saturn: Famous for its stunning rings, Saturn is another gas giant with a similar composition to Jupiter.
+Uranus: An ice giant, Uranus has a tilted axis that causes extreme seasons and a unique ring system.
+Neptune: The farthest planet from the Sun, Neptune is also an ice giant, with a deep blue color and strong winds.
 
-# change bg colours from yellow to misty rose
+# change bg colours from yellow to cornsilk
 # change window title to match the topic
 # change labels and button text to better indicate the topic
 # change the first label text so it has a list of possible user inputs
