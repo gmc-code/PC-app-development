@@ -9,6 +9,7 @@ tkinter constants
 
 | The common tkinter constants and their lowercase string equivalents are below.
 | The lowercase versions are simpler to use.
+| The constants require a reference to the tkinter module. e.g. tk.CENTER
 
 Booleans
 --------
