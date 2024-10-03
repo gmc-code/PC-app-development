@@ -14,14 +14,6 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Tkinter project
-    :numbered:
-
-    tkinter_project/project_starters.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Tkinter
     :numbered:
 
@@ -86,6 +78,13 @@ PC-app-development
     pizza_orders_tutorial/Lesson09.rst
     pizza_orders_tutorial/Lesson10.rst
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Tkinter project
+    :numbered:
+
+    tkinter_project/project_starters.rst
 
 
 .. toctree::
