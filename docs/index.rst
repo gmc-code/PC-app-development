@@ -17,7 +17,6 @@ PC-app-development
     :caption: Tkinter project
     :numbered:
 
-    tkinter_project/dictionary_with function.rst
     tkinter_project/project_starters.rst
 
 
@@ -49,10 +48,10 @@ PC-app-development
     :maxdepth: 2
     :caption: tk widgets
     :numbered:
-    
+
     tkinter_basics/tk_label.rst
     tkinter_basics/tk_entry.rst
-    tkinter_basics/tk_text.rst    
+    tkinter_basics/tk_text.rst
     tkinter_basics/tk_button.rst
 
     .. tkinter_basics/tk_messagebox.rst
@@ -68,6 +67,25 @@ PC-app-development
     tkinter_apps/tk_inches_to_cm.rst
     tkinter_apps/tk_pounds_to_kgs.rst
     tkinter_apps/tk_login.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Pizza_Orders_Tutorial
+    :numbered:
+
+    pizza_orders_tutorial/pizza_orders.rst
+    pizza_orders_tutorial/Lesson01.rst
+    pizza_orders_tutorial/Lesson02.rst
+    pizza_orders_tutorial/Lesson03.rst
+    pizza_orders_tutorial/Lesson04.rst
+    pizza_orders_tutorial/Lesson05.rst
+    pizza_orders_tutorial/Lesson06.rst
+    pizza_orders_tutorial/Lesson07rst
+    pizza_orders_tutorial/Lesson08.rst
+    pizza_orders_tutorial/Lesson09.rst
+    pizza_orders_tutorial/Lesson10.rst
+
 
 
 .. toctree::
@@ -107,7 +125,7 @@ PC-app-development
     Anvil/rectangle_area.rst
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
-    
+
     .. Anvil/days_calculator.rst
     .. Anvil/fibonacci_numbers.rst
 
@@ -120,7 +138,7 @@ PC-app-development
     Anvil/iphone_calculator.rst
 
 
- 
+
 
 .. toctree::
     :maxdepth: 2
