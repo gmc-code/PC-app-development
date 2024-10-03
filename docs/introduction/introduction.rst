@@ -54,13 +54,13 @@ Key Anvil references:
 Key Pyscript references:
 --------------------------
 
-| Docs https://docs.pyscript.net/2024.5.2/
-| User guide: https://docs.pyscript.net/2024.5.2/user-guide/
+| Docs https://docs.pyscript.net/2024.9.2/
+| User guide: https://docs.pyscript.net/2024.9.2/user-guide/
 
 ----
 
 .. admonition:: Tip
-    
+
     If you are using a track-pad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
 
 
