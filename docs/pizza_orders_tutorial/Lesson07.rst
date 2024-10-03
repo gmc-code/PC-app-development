@@ -38,12 +38,12 @@ Formatting the Orders Display
             customer, pizza, size, quantity = order
             cost = prices[pizza][size] * quantity
             total_cost += cost
-            order_list.insert(tk.END, f"{customer} ordered {quantity} {size} {pizza}(s) - ${cost}")
+            order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")
         if orders:
             order_list.insert(tk.END, f"Total cost: ${total_cost}")
 
 - ``order_list.delete(1.0, tk.END)``: Clears the Text widget.
-- ``order_list.insert(tk.END, f"{customer} ordered {quantity} {size} {pizza}(s) - ${cost}")``: Inserts the formatted order details into the Listbox widget.
+- ``order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")``: Inserts the formatted order details into the Listbox widget.
 - ``order_list.insert(tk.END, f"Total cost: ${total_cost}")``: Inserts the total cost at the end of the Listbox.
 
 

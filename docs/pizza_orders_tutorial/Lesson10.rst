@@ -2,7 +2,7 @@
 Pizza orders Lesson 10: Extensions
 ==================================================
 
-- **Objective**: Add final touches and improve the GUI styling.
+- **Objective**: Extend the pizza ordering system.
 - **Content**:
 
   - Extend the pizza ordering system.
@@ -15,9 +15,6 @@ Add customer address
     tk.Label(root, text="Address:").grid(row=1, column=0, padx=10, pady=5)
     address_entry = tk.Entry(root)
     address_entry.grid(row=1, column=1, padx=10, pady=5)
-
-
-
 
 
 Add descriptions

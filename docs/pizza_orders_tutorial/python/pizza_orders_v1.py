@@ -17,6 +17,7 @@ prices = {
 # Style configurations
 label_font = ("Helvetica", 12)
 entry_font = ("Helvetica", 14)
+order_font = ("Helvetica", 12)
 entry_bg = "#ffffff"  # white
 text_bg = "#f0f0f0"  # Very light gray
 text_fg = "#000000"  # black
@@ -112,7 +113,7 @@ def update_order_list():
         customer, pizza, size, quantity = order
         cost = prices[pizza][size] * quantity
         total_cost += cost
-        order_list.insert(tk.END, f"{customer} ordered {quantity} {size} {pizza}(s) - ${cost}")
+        order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")
     if orders:
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
         # add color to last line of order list for total
@@ -127,8 +128,8 @@ root.geometry("900x600")
 
 # Customer name
 tk.Label(root, text="Customer Name:", font=label_font, bg=text_bg).grid(row=0, column=0, padx=10, pady=5, sticky="e")
-customer_entry = tk.Entry(root, bg=entry_bg, font=entry_font, width=20)
-customer_entry.grid(row=0, column=1, padx=10, pady=5)
+customer_entry = tk.Entry(root, font=entry_font, bg=entry_bg, width=20)
+customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=5)
 
 # Pizza type
 tk.Label(root, text="Pizza Type:", font=label_font, bg=text_bg).grid(row=1, column=0, padx=10, pady=5, sticky="e")
@@ -192,7 +193,7 @@ add_button.bind("<Leave>", on_leave_add)
 
 # Orders list
 tk.Label(root, text="Orders:", font=label_font, bg=text_bg).grid(row=0, column=2, padx=10, pady=5, sticky="w")
-order_list = tk.Listbox(root, width=50, bg=entry_bg)
+order_list = tk.Listbox(root, font=order_font, width=50, bg=entry_bg)
 order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
 # add for reselectings chosen options:
 order_list.bind("<<ListboxSelect>>", select_order)
@@ -232,6 +233,7 @@ cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, s
 # Bind the hover events
 cancel_order_button.bind("<Enter>", on_enter_cancel)
 cancel_order_button.bind("<Leave>", on_leave_cancel)
+
 
 # Run the application
 root.mainloop()

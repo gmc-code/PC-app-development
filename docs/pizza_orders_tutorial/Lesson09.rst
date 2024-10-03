@@ -5,11 +5,12 @@ Pizza orders Lesson 9: Final Touches and Styling
 - **Objective**: Add final touches and improve the GUI styling.
 - **Content**:
 
-  - Adding styles to widgets.
-  - Improving the layout and appearance.
+  - Adding Font and colour variables
+  - Adding font and colour settings to tkinter widgets
+  - Updating Pizza type to use prices dictionary
   - Final review and testing.
 
-Adding Styles to Widgets
+Adding Font and colour variables
 --------------------------------
 
 | Add this code at the top of the file under the prices dictionary.
@@ -20,6 +21,7 @@ Adding Styles to Widgets
     # Style configurations
     label_font = ("Helvetica", 12)
     entry_font = ("Helvetica", 14)
+    order_font = ("Helvetica", 12)
     entry_bg = "#ffffff"  # white
     text_bg = "#f0f0f0"  # Very light gray
     text_fg = "#000000"  # black
@@ -41,7 +43,7 @@ Adding Styles to Widgets
 Adding font and colour settings to tkinter widgets
 ----------------------------------------------------
 
-| Add or adjust the code belwo for font and colour settings in each section for each widget.
+| Add or adjust the code below for font and colour settings in each section for each widget.
 
 .. code-block:: python
 
@@ -50,6 +52,7 @@ Adding font and colour settings to tkinter widgets
 
     # Customer name
     tk.Label(root, text="Customer Name:", font=label_font, bg=text_bg).grid(row=0, column=0, padx=10, pady=5, sticky="e")
+    customer_entry = tk.Entry(root, font=entry_font, bg=entry_bg)
 
     # Pizza type
     tk.Label(root, text="Pizza Type:", font=label_font, bg=text_bg).grid(row=1, column=0, padx=10, pady=5, sticky="e")
@@ -78,7 +81,7 @@ Adding font and colour settings to tkinter widgets
     tk.Label(root, textvariable=cost_display_var, font=label_font, bg=text_bg).grid(row=4, column=1, padx=10, pady=5, sticky="w")
 
     # Order cost display
-    tk.Label(root, textvariable=order_cost_var, font=label_font, bg=text_bg).grid(row=5, column=1, padx=10, pady=5, sticky="w")
+    tk.Label(root, textvariable=order_cost_var, font=order_font, bg=text_bg).grid(row=5, column=1, padx=10, pady=5, sticky="w")
 
     # Add order button
     add_button = tk.Button(root, text="Add Order", command=add_order, bg=add_button_bg, fg=add_button_fg, activebackground=add_button_hover_bg)
@@ -109,11 +112,12 @@ Adding color to the Orders list total
             customer, pizza, size, quantity = order
             cost = prices[pizza][size] * quantity
             total_cost += cost
-            order_list.insert(tk.END, f"{customer} ordered {quantity} {size} {pizza}(s) - ${cost}")
+            order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")
         if orders:
             order_list.insert(tk.END, f"Total cost: ${total_cost}")
             # add color to last line of order list for total
             order_list.itemconfig(order_list.size() - 1, {"bg": order_list_total_bg, "selectbackground": order_list_total_selected_bg})
+
 
 Adding hover color to buttons
 ---------------------------------------
@@ -180,25 +184,22 @@ Adding hover color to buttons
     cancel_order_button.bind("<Leave>", on_leave_cancel)
 
 
-Improving the Layout and Appearance
+Improving the customer_entry width
 -----------------------------------------------------
 
-- Adjust the padding, alignment, and size of widgets to create a more polished look.
+- Adjust the width to set a wider customer entry field.
+- Add internal vertical padding using `ipady`.
 
 .. code-block:: python
 
-    tk.Label(root, text="Customer Name:", font=label_font, bg="#f0f0f0").grid(row=0, column=0, padx=10, pady=5, sticky="e")
-    customer_entry = tk.Entry(root, bg=entry_bg, font=entry_font, width=30)
-    customer_entry.grid(row=0, column=1, padx=10, pady=5)
-
-- ``sticky="e"``: Aligns the label to the right (east).
-- ``width=30``: Sets the width of the entry widget.
+    customer_entry = tk.Entry(root, font=entry_font, bg=entry_bg, width=20)
+    customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=5)
 
 
-Update Pizza type code to use prices dictionary
+Updating Pizza type to use prices dictionary
 ------------------------------------------------------
 
-| Adjust # Pizza type code section to use keys from the prices dictionary instead of manual entries.
+| Adjust "# Pizza type" code section to use keys from the prices dictionary instead of manual entries.
 | This allows updating the pizza dictionary to flow through to the pizza options.
 
 | Replace ``["Margherita", "Pepperoni", "Hawaiian", "Veggie", "BBQ Chicken"]`` with ``prices.keys()``.

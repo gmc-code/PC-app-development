@@ -44,6 +44,40 @@ def add_order():
     update_order_list()
 
 
+# Select order
+def select_order(event):
+    order_selection = order_list.curselection()
+    if order_selection:
+        order_index = order_selection[0]
+        if order_index < len(orders):
+            customer, pizza, size, quantity = orders[order_index]
+            customer_entry.delete(0, tk.END)
+            customer_entry.insert(0, customer)
+            pizza_var.set(pizza)
+            size_var.set(size)
+            quantity_var.set(str(quantity))
+
+
+# Delete selected pizza
+def delete_selected_pizza():
+    order_selection = order_list.curselection()
+    if not order_selection:
+        messagebox.showerror("Input Error", "Please select a pizza to delete.")
+        return
+    order_index = order_selection[0]
+    if order_index == order_list.size() - 1:
+        messagebox.showerror("Input Error", "Cannot delete the total cost line.")
+        return
+    del orders[order_index]
+    update_order_list()
+
+
+# Cancel whole order
+def cancel_order():
+    orders.clear()
+    update_order_list()
+
+
 # Display orders
 def update_order_list():
     order_list.delete(0, tk.END)
@@ -52,7 +86,7 @@ def update_order_list():
         customer, pizza, size, quantity = order
         cost = prices[pizza][size] * quantity
         total_cost += cost
-        order_list.insert(tk.END, f"{customer} ordered {quantity} {size} {pizza}(s) - ${cost}")
+        order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")
     if orders:
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
 
@@ -113,6 +147,16 @@ add_button.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w
 tk.Label(root, text="Orders:").grid(row=0, column=2, padx=10, pady=5, sticky="w")
 order_list = tk.Listbox(root, width=50)
 order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
+# add for reselectings chosen options:
+order_list.bind('<<ListboxSelect>>', select_order)
+
+# Delete selected pizza button
+delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza)
+delete_pizza_button.grid(row=6, column=2, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+
+# Cancel whole order button
+cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order)
+cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
 
 # Run the application
 root.mainloop()
