@@ -99,4 +99,3 @@ Part9: Final Touches and Styling
   - Improving the layout and appearance.
   - Final review and testing.
 
-----------------------------------------------------------------------

@@ -18,6 +18,9 @@ Introduction to Radio Buttons
 Creating and Positioning Radio Buttons for Pizza Type
 ----------------------------------------------------------------
 
+
+| This code creates a label and a set of radio buttons for selecting a pizza type. The selected pizza type is stored in a `StringVar` named `pizza_var`, which is initialized to "Margherita". The radio buttons are placed vertically inside a frame and aligned to the left.
+
 .. code-block:: python
 
     # Pizza type
@@ -29,7 +32,6 @@ Creating and Positioning Radio Buttons for Pizza Type
     for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie", "BBQ Chicken"]:
         tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza).pack(anchor="w")
 
-- This code sets up a GUI for selecting a pizza type using radio buttons. The selected pizza type is stored in the `pizza_var` variable.
 
 1. **Label Creation**:
 
