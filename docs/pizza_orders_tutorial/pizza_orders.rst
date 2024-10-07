@@ -98,3 +98,5 @@ Part9: Final Touches and Styling
   - Adding styles to widgets.
   - Improving the layout and appearance.
   - Final review and testing.
+
+----------------------------------------------------------------------
