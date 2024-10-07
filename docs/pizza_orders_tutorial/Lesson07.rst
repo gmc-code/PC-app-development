@@ -1,5 +1,5 @@
 ================================================
-Pizza orders Lesson 7: Displaying Orders
+Pizza 7: Displaying Orders
 ================================================
 
 - **Objective**: Display the list of orders.

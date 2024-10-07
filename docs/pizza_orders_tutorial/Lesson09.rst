@@ -1,5 +1,5 @@
 ==================================================
-Pizza orders Lesson 9: Final Touches and Styling
+Pizza 9: Final Touches and Styling
 ==================================================
 
 - **Objective**: Add final touches and improve the GUI styling.

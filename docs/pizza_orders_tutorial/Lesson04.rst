@@ -1,5 +1,5 @@
 ==============================================================
-Pizza orders Lesson 4: Adding Radio Buttons and OptionMenu
+Pizza 4: Adding Radio Buttons and OptionMenu
 ==============================================================
 
 - **Objective**: Add radio buttons for selecting pizza sizes and the OptionMenu for quantity.

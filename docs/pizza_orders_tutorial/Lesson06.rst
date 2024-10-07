@@ -1,5 +1,5 @@
 ================================================
-Pizza orders Lesson 6: Adding Orders
+Pizza 6: Adding Orders
 ================================================
 
 - **Objective**: Add functionality to add orders.

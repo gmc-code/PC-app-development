@@ -1,5 +1,5 @@
 =========================================================
-Pizza orders Lesson 5: Adding Costs
+Pizza 5: Adding Costs
 =========================================================
 
 - **Objective**: Add costs.

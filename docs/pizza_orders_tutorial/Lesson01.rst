@@ -1,5 +1,5 @@
 ================================================
-Pizza orders Lesson 1: Introduction to Tkinter
+Pizza 1: Introduction to Tkinter
 ================================================
 
 - **Objective**: Set up the basic Tkinter window.

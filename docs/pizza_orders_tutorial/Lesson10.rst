@@ -1,5 +1,5 @@
 ==================================================
-Pizza orders Lesson 10: Extensions
+Pizza 10: Extensions
 ==================================================
 
 - **Objective**: Extend the pizza ordering system.

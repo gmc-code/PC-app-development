@@ -1,5 +1,5 @@
 =============================================================
-Pizza orders Lesson 3: Adding Radio Buttons for Pizza Types
+Pizza 3: Adding Radio Buttons for Pizza Types
 =============================================================
 
 - **Objective**: Add radio buttons for selecting pizza types.

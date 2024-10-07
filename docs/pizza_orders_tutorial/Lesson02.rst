@@ -1,5 +1,5 @@
 =========================================================
-Pizza orders Lesson 2: Adding Labels and Entry Widgets
+Pizza 2: Adding Labels and Entry Widgets
 =========================================================
 
 - **Objective**: Add labels and entry widgets for customer name input.

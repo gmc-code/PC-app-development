@@ -1,5 +1,5 @@
 ================================================
-Pizza orders Lesson 8: Deleting Orders
+Pizza 8: Deleting Orders
 ================================================
 
 - **Objective**: Add functionality to delete orders.
