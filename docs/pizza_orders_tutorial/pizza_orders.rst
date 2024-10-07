@@ -5,7 +5,7 @@ Pizza orders
 Tutorial Outline
 ================
 
-Lesson 1: Introduction to Tkinter
+Part1: Introduction to Tkinter
 ---------------------------------
 
 - **Objective**: Set up the basic Tkinter window.
@@ -15,7 +15,7 @@ Lesson 1: Introduction to Tkinter
   - Creating a basic window.
   - Adding a title and configuring the window size.
 
-Lesson 2: Adding Labels and Entry Widgets
+Part2: Adding Labels and Entry Widgets
 -----------------------------------------
 
 - **Objective**: Add labels and entry widgets for customer name input.
@@ -25,7 +25,7 @@ Lesson 2: Adding Labels and Entry Widgets
   - Adding entry widgets.
   - Positioning widgets using grid layout.
 
-Lesson 3: Adding Radio Buttons for Pizza Types
+Part3: Adding Radio Buttons for Pizza Types
 ----------------------------------------------
 
 - **Objective**: Add radio buttons for selecting pizza types.
@@ -35,7 +35,7 @@ Lesson 3: Adding Radio Buttons for Pizza Types
   - Creating and positioning radio buttons.
   - Using StringVar to manage radio button values.
 
-Lesson 4: Adding Radio Buttons for Pizza Sizes
+Part4: Adding Radio Buttons for Pizza Sizes
 ----------------------------------------------
 
 - **Objective**: Add radio buttons for selecting pizza sizes and quantity.
@@ -45,7 +45,7 @@ Lesson 4: Adding Radio Buttons for Pizza Sizes
   - Introduction to OptionMenu.
   - Creating and positioning the OptionMenu for selecting the quantity of pizzas.
 
-Lesson 5: Adding Costs
+Part5: Adding Costs
 ----------------------------------------
 
 - **Objective**: Add costs.
@@ -57,7 +57,7 @@ Lesson 5: Adding Costs
   - Updating costs dynamically based on selections.
 
 
-Lesson 6: Adding Orders
+Part6: Adding Orders
 -----------------------
 
 - **Objective**: Add functionality to add orders.
@@ -67,7 +67,7 @@ Lesson 6: Adding Orders
   - Writing the `add_order` function.
   - Validating input and updating the order list.
 
-Lesson 7: Displaying Orders
+Part7: Displaying Orders
 ---------------------------
 
 - **Objective**: Display the list of orders.
@@ -77,7 +77,7 @@ Lesson 7: Displaying Orders
   - Formatting the orders display.
   - Updating the orders list dynamically.
 
-Lesson 8: Deleting Orders
+Part8: Deleting Orders
 -------------------------
 
 - **Objective**: Add functionality to delete orders.
@@ -89,7 +89,7 @@ Lesson 8: Deleting Orders
   - Binding the `select_order` Function to the listbox
   - Writing the `cancel_order` Function
 
-Lesson 9: Final Touches and Styling
+Part9: Final Touches and Styling
 ------------------------------------
 
 - **Objective**: Add final touches and improve the GUI styling.
