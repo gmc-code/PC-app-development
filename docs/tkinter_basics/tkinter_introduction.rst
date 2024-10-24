@@ -14,8 +14,8 @@ Key references:
 | Tk Docs http://www.tkdocs.com/
 | Tk Refs https://tkdocs.com/pyref/index.html
 | Tutorial https://tkdocs.com/tutorial/index.html
-| https://docs.python.org/3.12/library/tk.html
-| https://docs.python.org/3.12/library/tkinter.ttk.html
+| https://docs.python.org/3.13/library/tk.html
+| https://docs.python.org/3.13/library/tkinter.ttk.html
 
 
 | Python Tutorial https://www.pythontutorial.net/tkinter/
@@ -39,7 +39,7 @@ Version checks
 ----
 
 | Check the Tk version:
-| Tcl/Tk version 8.6.13 is installed with python 3.12.
+| Tcl/Tk version 8.6.14 with python 3.13.
 
 .. code-block:: python
 

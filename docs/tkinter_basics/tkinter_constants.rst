@@ -14,101 +14,101 @@ tkinter constants
 Booleans
 --------
 
-- NO=FALSE=OFF=0
-- YES=TRUE=ON=1
+- tk.NO=tk.FALSE=tk.OFF=0
+- tk.YES=tk.TRUE=tk.ON=1
 
 -anchor and -sticky
 -------------------
 
-- N='n'
-- S='s'
-- W='w'
-- E='e'
-- NW='nw'
-- SW='sw'
-- NE='ne'
-- SE='se'
-- NS='ns'
-- EW='ew'
-- NSEW='nsew'
-- CENTER='center'
+- tk.N='n'
+- tk.S='s'
+- tk.W='w'
+- tk.E='e'
+- tk.NW='nw'
+- tk.SW='sw'
+- tk.NE='ne'
+- tk.SE='se'
+- tk.NS='ns'
+- tk.EW='ew'
+- tk.NSEW='nsew'
+- tk.CENTER='center'
 
 -fill
 -----
 
-- NONE='none'
-- X='x'
-- Y='y'
-- BOTH='both'
+- tk.NONE='none'
+- tk.X='x'
+- tk.Y='y'
+- tk.BOTH='both'
 
 -side
 -----
 
-- LEFT='left'
-- TOP='top'
-- RIGHT='right'
-- BOTTOM='bottom'
+- tk.LEFT='left'
+- tk.TOP='top'
+- tk.RIGHT='right'
+- tk.BOTTOM='bottom'
 
 -relief
 -------
 
-- RAISED='raised'
-- SUNKEN='sunken'
-- FLAT='flat'
-- RIDGE='ridge'
-- GROOVE='groove'
-- SOLID='solid'
+- tk.RAISED='raised'
+- tk.SUNKEN='sunken'
+- tk.FLAT='flat'
+- tk.RIDGE='ridge'
+- tk.GROOVE='groove'
+- tk.SOLID='solid'
 
 -orient
 -------
 
-- HORIZONTAL='horizontal'
-- VERTICAL='vertical'
+- tk.HORIZONTAL='horizontal'
+- tk.VERTICAL='vertical'
 
 -tabs
 ----
 
-- NUMERIC='numeric'
+- tk.NUMERIC='numeric'
 
 -wrap
 ----
 
-- CHAR='char'
-- WORD='word'
+- tk.CHAR='char'
+- tk.WORD='word'
 
 -align
 ------
 
-- BASELINE='baseline'
+- tk.BASELINE='baseline'
 
 -bordermode
 -----------
 
-- INSIDE='inside'
-- OUTSIDE='outside'
+- tk.INSIDE='inside'
+- tk.OUTSIDE='outside'
 
 Special tags, marks, and insert positions
 -----------------------------------------
 
-- SEL='sel'
-- SEL_FIRST='sel.first'
-- SEL_LAST='sel.last'
-- END='end'
-- INSERT='insert'
-- CURRENT='current'
-- ANCHOR='anchor'
-- ALL='all' (e.g., Canvas.delete(ALL))
+- tk.SEL='sel'
+- tk.SEL_FIRST='sel.first'
+- tk.SEL_LAST='sel.last'
+- tk.END='end'
+- tk.INSERT='insert'
+- tk.CURRENT='current'
+- tk.ANCHOR='anchor'
+- tk.ALL='all' (e.g., Canvas.delete(ALL))
 
 Text widget and button states
 -----------------------------
 
-- NORMAL='normal'
-- DISABLED='disabled'
-- ACTIVE='active'
+- tk.NORMAL='normal'
+- tk.DISABLED='disabled'
+- tk.ACTIVE='active'
 
 Canvas state
 ------------
 
-- HIDDEN='hidden'
+- tk.HIDDEN='hidden'
 
 
