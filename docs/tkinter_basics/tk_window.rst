@@ -2,9 +2,9 @@
 tk window
 ====================================================
 
-See: https://tkdocs.com/tutorial/windows.html
-See: https://tcl.tk/man/tcl8.6/TkCmd/wm.htm
-See: https://www.pythontutorial.net/tkinter/tkinter-window/
+| See: https://tkdocs.com/tutorial/windows.html
+| See: https://tcl.tk/man/tcl8.6/TkCmd/wm.htm
+| See: https://www.pythontutorial.net/tkinter/tkinter-window/
 
 ----
 
@@ -22,7 +22,7 @@ Simple window
     | While the main loop is active, any code after the mainloop() call will not execute until the window is closed.
     | Essentially, it keeps the GUI alive and responsive.
 
-| Below is the code to create a simple empty window. 
+| Below is the code to create a simple empty window.
 
 .. code-block:: python
 
@@ -138,7 +138,7 @@ Window centered
     # get the screen dimension
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
-                
+
     # find the center point
     center_x = int(screen_width/2 - window_width/2)
     center_y = int(screen_height/2 - window_height/2)
@@ -242,7 +242,7 @@ Background color
 
 .. py:function:: window.configure(bg=color)
 
-    | Sets the background color of the window. 
+    | Sets the background color of the window.
     | `color` is a color name (e.g. "white"), hexadecimal value (e.g. "#FFFFFF").
 
 

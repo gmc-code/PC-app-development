@@ -30,7 +30,7 @@ After object creation
 
 .. code-block:: python
 
-    button_1.config(fg="green", bg="yellow")
+    button_1.config(fg="green", bg="yellow", font=("Arial", 24))
 
 ----
 
@@ -54,7 +54,7 @@ Example code
 
     # Function to change the button's appearance
     def change_button():
-        button_2.config(fg="green", bg="yellow")
+        button_2.config(fg="green", bg="yellow", font=("Arial", 24))
 
     # Schedule the change_button function to run after 3000 milliseconds (3 seconds)
     window.after(3000, change_button)

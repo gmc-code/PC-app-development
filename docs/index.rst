@@ -19,9 +19,9 @@ PC-app-development
 
     tkinter_basics/tkinter_introduction.rst
     tkinter_basics/tkinter_import.rst
+    tkinter_basics/tk_window.rst
     tkinter_basics/tkinter_options.rst
     tkinter_basics/tkinter_constants.rst
-    tkinter_basics/tk_window.rst
 
 
 .. toctree::
@@ -135,8 +135,6 @@ PC-app-development
 
     Anvil/feedback_form.rst
     Anvil/iphone_calculator.rst
-
-
 
 
 .. toctree::
