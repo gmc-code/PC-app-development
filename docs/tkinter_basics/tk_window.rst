@@ -172,7 +172,7 @@ Window width and height
 
 .. code-block:: python
 
-   import tkinter as tk
+    import tkinter as tk
 
 
     def window_set_height(window, height):
