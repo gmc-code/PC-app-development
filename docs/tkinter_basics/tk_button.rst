@@ -198,3 +198,79 @@ Parameter syntax
 
         | Syntax: ``button_widget = tk.Button(parent, wraplength=length_in_pixels)``
         | Description: Sets the wrap length for the button text in pixels.
+
+
+Additional parameters
+--------------------------
+
+.. py:function:: button_widget = tk.Button(parent, option=value)
+
+    | parent is the window or frame object.
+    | Options can be passed as parameters separated by commas.
+
+    **Parameters:**
+
+    .. py:attribute:: background
+
+        | Syntax: ``button_widget = tk.Button(parent, background="color")``
+        | Description: Sets the background color of the button. Alias: ``bg``.
+
+    .. py:attribute:: bitmap
+
+        | Syntax: ``button_widget = tk.Button(parent, bitmap="bitmap_name")``
+        | Description: Sets a bitmap to be displayed on the button.
+
+    .. py:attribute:: borderwidth
+
+        | Syntax: ``button_widget = tk.Button(parent, borderwidth=width)``
+        | Description: Sets the width of the button's border. Alias: ``bd``.
+
+    .. py:attribute:: image
+
+        | Syntax: ``button_widget = tk.Button(parent, image=image_object)``
+        | Description: Sets an image to be displayed on the button.
+
+    .. py:attribute:: relief
+
+        | Syntax: ``button_widget = tk.Button(parent, relief="relief_type")``
+        | Description: Sets the type of border relief. Common values are "flat", "raised", "sunken", "groove", "ridge".
+
+    .. py:attribute:: repeatdelay
+
+        | Syntax: ``button_widget = tk.Button(parent, repeatdelay=milliseconds)``
+        | Description: Sets the delay in milliseconds before the button starts repeating the command when held down.
+
+    .. py:attribute:: repeatinterval
+
+        | Syntax: ``button_widget = tk.Button(parent, repeatinterval=milliseconds)``
+        | Description: Sets the interval in milliseconds between repeats of the command when the button is held down.
+
+    .. py:attribute:: takefocus
+
+        | Syntax: ``button_widget = tk.Button(parent, takefocus=boolean)``
+        | Description: Determines whether the button can receive focus via keyboard navigation.
+
+    .. py:attribute:: textvariable
+
+        | Syntax: ``button_widget = tk.Button(parent, textvariable=variable)``
+        | Description: Associates a Tkinter variable (usually a StringVar) with the button text.
+
+    .. py:attribute:: underline
+
+        | Syntax: ``button_widget = tk.Button(parent, underline=index)``
+        | Description: Underlines the character at the specified index in the button text.
+
+    .. py:attribute:: compound
+
+        | Syntax: ``button_widget = tk.Button(parent, compound="position")``
+        | Description: Specifies the relative position of the image and text on the button. Common values are "top", "bottom", "left", "right", "center".
+
+    .. py:attribute:: default
+
+        | Syntax: ``button_widget = tk.Button(parent, default="state")``
+        | Description: Sets the default button state. Common values are "normal", "active", "disabled".
+
+    .. py:attribute:: state
+
+        | Syntax: ``button_widget = tk.Button(parent, state="state")``
+        | Description: Sets the state of the button. Common values are "normal", "active", "disabled".
