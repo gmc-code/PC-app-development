@@ -54,11 +54,14 @@ PC-app-development
     :caption: Tkinter apps
     :numbered:
 
-    tkinter_apps/tk_temperature_converter.rst
-    tkinter_apps/tk_name_age.rst
     tkinter_apps/tk_inches_to_cm.rst
-    tkinter_apps/tk_pounds_to_kgs.rst
-    tkinter_apps/tk_login.rst
+    tkinter_apps/tk_temperature_converter.rst
+    tkinter_apps/tk_pounds_to_kgs_task.rst
+
+
+    .. tkinter_apps/tk_name_age.rst
+    .. tkinter_apps/tk_pounds_to_kgs.rst
+    .. tkinter_apps/tk_login.rst
 
 
 .. toctree::
