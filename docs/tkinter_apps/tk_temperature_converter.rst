@@ -77,7 +77,7 @@ Now, let's place the widgets on the window using the grid layout.
 
 ----
 
-Step 4: Adding Widgets colours
+Step 4: Adding Widgets formatting
 ------------------------------------
 
 Next, we'll add formatting to the widgets, storing colours in constants for reuse.
@@ -140,7 +140,7 @@ Next, we'll add the function to convert Fahrenheit to Celsius.
 
 ----
 
-Step 5: Connecting the Button to the Function
+Step 6: Connecting the Button to the Function
 ---------------------------------------------
 
 Finally, we'll connect the convert button to the `convert_f_to_c` function.

@@ -4,28 +4,72 @@ Inches to cm
 
 .. image:: images/tk_inches_to_cm_converter.png
     :scale: 67%
-    
-    
-| This code converts inches to cm.   
-| This code creates a simple GUI application using the Tkinter library. 
+
+
+| This code converts inches to cm.
+| This code creates a simple GUI application using the Tkinter library.
 | It displays a window with Label, Entry, Text and Button widgets
-| Users can input inches, click the "Convert" button, and see the corresponding centimeters displayed. 
+| Users can input inches, click the "Convert" button, and see the corresponding centimeters displayed.
 
 ----
 
-Step 1: Import Tkinter
+Step 1: Create the Main Window
 -----------------------------------
 
-First, import the `tkinter` module, which provides the necessary functions and classes for creating GUI elements. 
+ First, import the `tkinter` moduleand create the main application window using `tk.Tk()`. Set the window title, size, and background color:
 
 .. code-block:: python
 
     import tkinter as tk
 
-Step 2: Define Constants
-------------------------------------
+    # Create the main window
+    window = tk.Tk()
+    window.title("Inches to cm Converter")
+    window.geometry("550x300")
+    window.configure(bg="#ffffff")
 
-| Next, define some constants for colors, font style, and other settings. 
+    window.mainloop()
+
+----
+
+Step 2: Create Widgets
+--------------------------------
+
+Now create the widgets (GUI elements) that will be displayed in the window:
+
+.. code-block:: python
+
+    # Create widgets
+    inches_label = tk.Label(window, text="inches")
+    inches_entry = tk.Entry(window, width=10)
+    cm_label = tk.Label(window, text="cm")
+    # height of 1 is one text row
+    cm_text = tk.Text(window, height=1, width=10)
+    convert_button = tk.Button(window, text="Convert", width=20)
+
+----
+
+Step 3: Place Widgets in the Window
+-------------------------------------------------
+
+Position the widgets using the `grid()` method:
+
+.. code-block:: python
+
+    # Place widgets in the window
+    inches_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
+    inches_entry.grid(row=0, column=1, sticky="w", padx=10, pady=10)
+    cm_label.grid(row=2, column=0, sticky="e", padx=10, pady=10)
+    cm_text.grid(row=2, column=1, sticky="w", padx=10, pady=10)
+    convert_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
+
+
+----
+
+Step 4: Define Constants for formatting
+------------------------------------------
+
+| Next, define some constants for colors, font style, and other settings.
 | You can customize these values as needed:
 
 .. code-block:: python
@@ -40,24 +84,12 @@ Step 2: Define Constants
     OUTPUT_FG_COLOR = "#dc3545"
     FONT_STYLE = ("Arial", 32)
 
-Step 3: Create the Main Window
-----------------------------------------
+----
 
-We'll create the main application window using `tk.Tk()`. Set the window title, size, and background color:
-
-.. code-block:: python
-
-    # Create the main window
-    window = tk.Tk()
-    window.title("Inches to cm Converter")
-    window.geometry("550x300")
-    window.configure(bg=WINDOW_BG_COLOR)
-
-
-Step 4: Create Widgets
+Step 5: Format Widgets
 --------------------------------
 
-Now create the widgets (GUI elements) that will be displayed in the window:
+Now format the widgets (GUI elements) that will be displayed in the window:
 
 .. code-block:: python
 
@@ -67,21 +99,9 @@ Now create the widgets (GUI elements) that will be displayed in the window:
     cm_label = tk.Label(window, text="cm", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     # height of 1 is one text row
     cm_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE)
 
-Step 5: Place Widgets in the Window
--------------------------------------------------
-
-Position the widgets using the `grid()` method:
-
-.. code-block:: python
-
-    # Place widgets in the window
-    inches_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
-    inches_entry.grid(row=0, column=1, sticky="w", padx=10, pady=10)
-    cm_label.grid(row=2, column=0, sticky="e", padx=10, pady=10)
-    cm_text.grid(row=2, column=1, sticky="w", padx=10, pady=10)
-    convert_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
+----
 
 Step 6: Define the Conversion Function
 ----------------------------------------------
@@ -107,16 +127,14 @@ Step 6: Define the Conversion Function
             cm_text.delete(1.0, "end")
             cm_text.insert(1.0, "Invalid input.")
 
+----
 
-Step 7: Start the Event Loop
-----------------------------------
-
-Finally, start the main event loop to keep the GUI responsive:
+Step 7: Connecting the Button to the Function
+---------------------------------------------
 
 .. code-block:: python
-        
-    # Start the main event loop
-    window.mainloop()
+
+    cconvert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
 
 ----
 
