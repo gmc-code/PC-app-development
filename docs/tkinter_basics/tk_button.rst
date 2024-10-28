@@ -81,12 +81,8 @@ Code example
 
     window.mainloop()
 
-
 ----
 
-Here's the reStructuredText (reST) with a one-line example of code for each parameter:
-
-```rst
 Parameter syntax
 ----------------------
 
@@ -244,43 +240,6 @@ Parameter syntax
         | Default: ``None``
         | Example: ``button_widget = tk.Button(parent, wraplength=100)``
 
-Example
--------
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    def on_click():
-        print("Button clicked!")
-
-    root = tk.Tk()
-    button_widget = tk.Button(
-        root,
-        text="Click Me",
-        command=on_click,
-        activebackground="lightblue",
-        activeforeground="white",
-        anchor="center",
-        bd=2,
-        bg="blue",
-        cursor="hand2",
-        disabledforeground="grey",
-        fg="white",
-        font=("Arial", 12),
-        height=2,
-        highlightbackground="black",
-        highlightcolor="red",
-        highlightthickness=1,
-        justify="center",
-        overrelief="raised",
-        padx=10,
-        pady=5,
-        width=20,
-        wraplength=100
-    )
-    button_widget.pack()
-    root.mainloop()
 
 Additional parameters
 --------------------------
