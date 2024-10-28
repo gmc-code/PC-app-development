@@ -33,12 +33,27 @@ def reset_defaults():
                   bg="lightgray",
                   highlightcolor="red")
 
+def set_normal():
+    button.config(state=tk.NORMAL,
+                  fg="black",
+                  bg="lightgray")
+
+def set_disabled():
+    button.config(state=tk.DISABLED,
+                  disabledforeground="gray",
+                  bg="darkgray")
+
+def set_active():
+    button.config(state=tk.ACTIVE,
+                  activeforeground="blue",
+                  activebackground="lightblue")
+
 # Creating the main button with specified options
 button = tk.Button(window,
                 text="Click Me",
                 command=button_clicked,
-                activebackground="blue",
-                activeforeground="white",
+                activebackground="lightblue",
+                activeforeground="blue",
                 anchor="center",
                 bd=3,
                 cursor="hand2",
@@ -68,5 +83,15 @@ change_color_button.pack(pady=5)
 
 reset_button = tk.Button(window, text="Reset", command=reset_defaults)
 reset_button.pack(pady=5)
+
+# Creating state buttons to set the main button state
+set_normal_button = tk.Button(window, text="Set Normal", command=set_normal)
+set_normal_button.pack(pady=5)
+
+set_disabled_button = tk.Button(window, text="Set Disabled", command=set_disabled)
+set_disabled_button.pack(pady=5)
+
+set_active_button = tk.Button(window, text="Set Active", command=set_active)
+set_active_button.pack(pady=5)
 
 window.mainloop()
