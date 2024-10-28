@@ -141,7 +141,7 @@ Next, we'll add the function to convert Fahrenheit to Celsius.
 ----
 
 Step 6: Connecting the Button to the Function
----------------------------------------------
+-----------------------------------------------
 
 Finally, we'll connect the convert button to the `convert_f_to_c` function.
 
