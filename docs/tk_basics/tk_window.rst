@@ -58,6 +58,9 @@ Window title
     # Start the main event loop
     window.mainloop()
 
+.. image:: images/window_title.png
+    :scale: 100%
+
 ----
 
 Window size and position
@@ -130,7 +133,7 @@ Window centered
 
 
     window = tk.Tk()
-    window.title('Tkinter Window - Center')
+    window.title('Tkinter Window - Centered')
 
     window_width = 600
     window_height = 400
@@ -261,4 +264,7 @@ Background color
 
     # Start the main event loop
     window.mainloop()
+
+.. image:: images/window_bg_color.png
+    :scale: 100%
 

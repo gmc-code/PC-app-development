@@ -2,7 +2,7 @@ import tkinter as tk
 
 
 window = tk.Tk()
-window.title('Tkinter Window - Center')
+window.title('Tkinter Window - Centered')
 
 window_width = 600
 window_height = 400
