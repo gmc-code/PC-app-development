@@ -10,6 +10,7 @@ OUTPUT_BG_COLOR = "#ffffff"
 OUTPUT_FG_COLOR = "#dc3545"
 FONT_STYLE = ("Arial", 32)
 
+
 def convert_inches_to_cm():
     """
     Converts inches to cm and displays the result in the GUI.
