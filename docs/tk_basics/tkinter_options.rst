@@ -37,6 +37,27 @@ After object creation
 Example code
 ---------------
 
+.. grid:: 2
+   :gutter: 0
+   :margin: 0
+   :padding: 0
+
+   .. grid-item-card::
+
+      initial
+      ^^^
+      .. image:: images/button_config_initial.png
+        :scale: 100%
+
+   .. grid-item-card::
+
+      changed by config
+      ^^^
+      .. image:: images/button_config.png
+        :scale: 100%
+
+| The code below uses the config method to change the appearance of the button.
+
 .. code-block:: python
 
     import tkinter as tk
