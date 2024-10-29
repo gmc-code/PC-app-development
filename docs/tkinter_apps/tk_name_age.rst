@@ -5,8 +5,8 @@ Name and age
 .. image:: images/tk_name_age.png
     :scale: 67%
 
-| This code outputs the user name and age in sentence form.    
-| This code creates a simple GUI application using the Tkinter library. 
+| This code outputs the user name and age in sentence form.
+| This code creates a simple GUI application using the Tkinter library.
 | It displays a window with Label, Entry, Text and Button widgets
 
 ----
@@ -14,7 +14,7 @@ Name and age
 Code summary
 -------------------
 
-| Overall, this code sets up a simple GUI where users can input their name and age, click a button, 
+| Overall, this code sets up a simple GUI where users can input their name and age, click a button,
 | and see the result displayed in a text widget.
 
 1. **Importing tkinter:**
@@ -65,7 +65,7 @@ Code summary
         age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
         name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
                                     fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
-        name_age_text = tk.Text(window, height=2, width=30, 
+        name_age_text = tk.Text(window, height=2, width=30,
                                 bg=BG_TEXT_COLO     R, fg=FG_COLOR, font=FONT_STYLE)
 
 
@@ -74,7 +74,7 @@ Code summary
     - The `row` and `column` parameters determine the position of each widget.
     - The labels and entry fields are placed in rows 0 and 1.
     - The button and text widget are placed in row 2 and 3.
-    - The sticky='e' option specifies that the widget should stick to the east (right) side of its grid cell. 
+    - The sticky='e' option specifies that the widget should stick to the east (right) side of its grid cell.
     - This means that if the cell is larger than the widget, the widget will be right-aligned within the cell.
     - Set padding (`padx` and `pady`) to create spacing between widgets.
     - The padx=10 option adds 10 pixels of padding on the left and right (horizontal) sides of the widget.
@@ -96,11 +96,11 @@ Code summary
     - ``name = name_entry.get()`` uses the ``get()`` method to get the text value of the Entry widget.
     - If no name is entered, it defaults to "John". If no age is entered, it defaults to "16".
     - It clears the existing text in the ``name_age_text`` widget.
-    - The delete method of a Text widget requires the line.column as the first argument. 
+    - The delete method of a Text widget requires the line.column as the first argument.
     - e.g. line 1, character 0 using ``1.0`` in ``name_age_text.delete(1.0, 'end')``.
     - ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
     - It inserts a formatted string (f-string) into the ``name_age_text`` widget, displaying the name and age.
-    - The insert method of a Text widget requires the line.column as the first argument. 
+    - The insert method of a Text widget requires the line.column as the first argument.
     - e.g. ``1.0`` in ``name_age_text.insert(1.0, 'new text')``.
     - ``f'My name is {name}. \nI am {age} years old.'`` uses ``\n`` for a line break so the 2 sentences are on two lines.
 
@@ -120,7 +120,7 @@ Code summary
 7. **Start the Event Loop:**
     - Finally, start the main event loop using ``window.mainloop()``.
     - This keeps the GUI responsive and allows user interaction.
-    - When you enter a name and age, it will display the sentences in the text widget. 
+    - When you enter a name and age, it will display the sentences in the text widget.
 
     .. code-block:: python
 
