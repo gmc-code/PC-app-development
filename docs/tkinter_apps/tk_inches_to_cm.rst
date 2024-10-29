@@ -84,6 +84,12 @@ Step 4: Define Constants for formatting
     OUTPUT_FG_COLOR = "#dc3545"
     FONT_STYLE = ("Arial", 32)
 
+Update the window colour:
+
+.. code-block:: python
+
+    window.configure(bg=WINDOW_BG_COLOR)
+
 ----
 
 Step 5: Format Widgets
@@ -129,12 +135,12 @@ Step 6: Define the Conversion Function
 
 ----
 
-Step 7: Connecting the Button to the Function
+Step 7: Connect the Button to the Function
 ---------------------------------------------
 
 .. code-block:: python
 
-    cconvert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
 
 ----
 

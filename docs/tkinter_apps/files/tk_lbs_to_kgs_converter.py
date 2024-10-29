@@ -26,7 +26,7 @@ def convert():
         pounds = float(input_entry.get())
         kilograms = pounds * 0.45359237
         output_text.delete(1.0, "end")  # Clear any previous result
-        output_text.insert(1.0, f"{kilograms:.2f} kg")
+        output_text.insert(1.0, f"{kilograms:.2f}")
     except ValueError:
         output_text.delete(1.0, "end")
         output_text.insert(1.0, "Invalid input.")
@@ -39,8 +39,8 @@ window.configure(bg=WINDOW_BG_COLOR)
 
 # Create widgets
 input_label = tk.Label(window, text="Pounds", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-input_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, 
-highlightcolor=INPUT_FG_COLOR, highlightbackground=INPUT_FG_COLOR, highlightthickness=1, font=FONT_STYLE)
+input_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR,
+highlightcolor=INPUT_FG_COLOR, highlightbackground=INPUT_FG_COLOR, highlightthickness=2, font=FONT_STYLE)
 output_label = tk.Label(window, text="Kgs", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
 output_text = tk.Text(window, height=1, width=10, fg=OUTPUT_FG_COLOR, highlightcolor=OUTPUT_FG_COLOR, highlightbackground=OUTPUT_FG_COLOR, highlightthickness=1, font=FONT_STYLE)
 convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,

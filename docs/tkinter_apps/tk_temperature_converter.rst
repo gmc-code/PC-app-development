@@ -9,25 +9,14 @@ Fahrenheit to Celsius
 | This code creates a simple GUI application using the Tkinter library.
 | It displays a window with Label, Entry, Text and Button widgets
 
-----
-
-
-steps
-------------
-
-.. _tutorial:
-
-Fahrenheit to Celsius Converter Tutorial
-========================================
-
 This tutorial will guide you through developing a Fahrenheit to Celsius converter using Tkinter in Python. We'll start with a basic setup and gradually add components to build the final application.
 
 ----
 
-Step 1: Basic Setup
+Basic window setup
 -------------------
 
-First, let's start with the basic setup of the Tkinter window and start the main event loop.
+Start with the basic setup of the Tkinter window and start the main event loop.
 
 .. code-block:: python
 
@@ -45,10 +34,10 @@ First, let's start with the basic setup of the Tkinter window and start the main
 
 ----
 
-Step 2: Adding Widgets
+Create Widgets
 ----------------------
 
-Next, we'll add the widgets for the input and output fields, and the convert button.
+Add the widgets for the input and output fields, and the convert button.
 
 .. code-block:: python
 
@@ -61,7 +50,7 @@ Next, we'll add the widgets for the input and output fields, and the convert but
 
 ----
 
-Step 3: Placing Widgets
+Position the Widgets
 -----------------------
 
 Now, let's place the widgets on the window using the grid layout.
@@ -77,10 +66,10 @@ Now, let's place the widgets on the window using the grid layout.
 
 ----
 
-Step 4: Adding Widgets formatting
+Add Widget formatting
 ------------------------------------
 
-Next, we'll add formatting to the widgets, storing colours in constants for reuse.
+Next, add formatting to the widgets, storing colours and font settings in constants for reuse.
 
 .. code-block:: python
 
@@ -101,9 +90,16 @@ Next, we'll add formatting to the widgets, storing colours in constants for reus
     c_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE)
 
+
+Update the window colour:
+
+.. code-block:: python
+
+    window.configure(bg=WINDOW_BG_COLOR)
+
 ----
 
-Step 5: Adding the Conversion Function
+Define the Conversion Function
 --------------------------------------
 
 Next, we'll add the function to convert Fahrenheit to Celsius.
@@ -140,7 +136,7 @@ Next, we'll add the function to convert Fahrenheit to Celsius.
 
 ----
 
-Step 6: Connecting the Button to the Function
+Connect the Button to the Function
 -----------------------------------------------
 
 Finally, we'll connect the convert button to the `convert_f_to_c` function.
@@ -151,7 +147,7 @@ Finally, we'll connect the convert button to the `convert_f_to_c` function.
 
 ----
 
-Code
+Full Code
 ----------------
 
 .. code-block:: python
