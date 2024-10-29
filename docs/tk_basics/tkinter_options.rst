@@ -56,6 +56,8 @@ Example code
       .. image:: images/button_config.png
         :scale: 100%
 
+
+|
 | The code below uses the config method to change the appearance of the button.
 
 .. code-block:: python
