@@ -37,7 +37,17 @@ for widget in widgets:
         widget["xy"][0] + widget["width"] / 2,
         widget["xy"][1] + widget["height"] / 2,
         widget["name"], ha='center', va='center'
-    )
+    ).
+# widget["xy"][0] + widget["width"] / 2:
+# This centers the x-coordinate of the text within the rectangle.
+
+# widget["xy"][0] gives the x-coordinate of the bottom-left corner.
+# Adding widget["width"] / 2 shifts the text to the horizontal center of the rectangle.
+# widget["xy"][1] + widget["height"] / 2:
+# Similarly, this centers the y-coordinate of the text within the rectangle.
+
+# widget["xy"][1] gives the y-coordinate of the bottom-left corner.
+# Adding widget["height"] / 2 shifts the text to the vertical center of the rectangle.
 
 
 # Move the xlabel to the top

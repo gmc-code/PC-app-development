@@ -2,31 +2,39 @@
 Importing tkinter themed widgets
 ====================================================
 
-| In **Tkinter**, themed widgets play a crucial role in determining the "look and feel" of all the widgets. 
+| In **Tkinter**, themed widgets play a crucial role in determining the "look and feel" of all the widgets.
 | See: Tkinter ttk Themed Widgets - Python Tutorial. https://www.pythontutorial.net/tkinter/tkinter-ttk/.
 | See: TkDocs Tutorial - Styles and Themes. https://tkdocs.com/tutorial/styles.html.
 | See: Tkinter Themes - python tutorials. https://python-tutorials.in/tkinter-themes/.
 | See: How to Change Tkinter Theme from One to Another - Python Tutorial. https://www.pythontutorial.net/tkinter/tkinter-theme/.
 
 
-1. **Classic Tk Widgets**:
+**Classic Tk Widgets**:
+----------------------------
+
    - These widgets were introduced in 1991 and are part of the original Tkinter library.
    - They have a consistent appearance across platforms but lack the native look and feel.
    - Examples include buttons, labels, entry fields, and scrollbars.
 
-2. **Themed Tk Widgets (ttk)**:
+**Themed Tk Widgets (ttk)**:
+-----------------------------------
+
    - Added in 2007 with Tk 8.5, these widgets are an improved version of the classic ones.
    - They aim to separate widget behavior from appearance through a styling system.
    - Themed widgets adapt to the native look and feel of the platform where the program runs.
    - They are imported from the `tkinter.ttk` module.
    - Examples of themed widgets include buttons, checkbuttons, entry fields, and more.
 
-3. **Advantages of Using Themed Widgets**:
+**Advantages of Using Themed Widgets**:
+-------------------------------------------------
+
    - **Behavior-Appearance Separation**: Themed widgets separate code that implements behavior from appearance.
    - **Native Look & Feel**: They provide a native look on different platforms.
    - **Simplified State-Specific Behavior**: ttk widgets simplify state-specific widget behavior.
 
-4. **Common Themed Widgets**:
+**Common Themed Widgets**:
+----------------------------------
+
    - Button
    - Checkbutton
    - Entry
@@ -40,7 +48,9 @@ Importing tkinter themed widgets
    - Scrollbar
    - Spinbox
 
-5. **New ttk Widgets**:
+1. **New ttk Widgets**:
+------------------------------
+
    - Combobox
    - Notebook
    - Progressbar
@@ -54,12 +64,12 @@ Importing tkinter themed widgets
 Import themed widgets module
 ----------------------------------------
 
-.. py:function:: from tkinter import ttk 
-    
+.. py:function:: from tkinter import ttk
+
     | This imports the themed module.
     | Refer to themed widgets like this: ttk.Label
 
-| The code below used a standard tk widget and the themed widget. 
+| The code below used a standard tk widget and the themed widget.
 
 .. code-block:: python
 

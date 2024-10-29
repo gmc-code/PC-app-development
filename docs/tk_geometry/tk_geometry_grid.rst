@@ -17,7 +17,7 @@ grid
 | The row and column indexes can have gaps. This is useful when you plan to add more widgets in the middle of the grid later.
 | The intersection of a row and a column is called a cell. One widget can be placed in a cell.
 | To place multiple widgets in a cell, use a Frame or LabelFrame to wrap the widgets and place the Frame or LabelFrame on the cell.
-| The width of a column depends on the width of the widget it contains. 
+| The width of a column depends on the width of the widget it contains.
 | The height of a row depends on the height of the widgets contained within the row.
 
 
@@ -85,12 +85,12 @@ ipady
 
 ----
 
-Example ode
------------
+Example code
+-------------
 
 .. image:: images/grid.png
     :scale: 100%
-    
+
 .. code-block:: python
 
     import tkinter as tk
@@ -110,7 +110,7 @@ Example ode
     # place widgets in grid layout
     label1.grid(row=0,column=0)
     label2.grid(row=1,column=1)
-    label3.grid(row=2,column=2) 
+    label3.grid(row=2,column=2)
     label4.grid(row=3,column=0, columnspan=3, ipadx=60)
 
     # Start the main event loop
@@ -138,11 +138,11 @@ columnconfigure and rowconfigure
 
 .. py:function:: widget.columnconfigure(column, option=value, ...)
 
-    | Configure the column properties of a widget container, typically a `Frame` or `Grid`. 
+    | Configure the column properties of a widget container, typically a `Frame` or `Grid`.
     | `widget`: The widget container (e.g., `Frame`, `Grid`) for which to configure the columns.
     | `column`: The index of the column to configure, starting from 0. Use a tuple such as (0, 1, 2) for several columns.
     | Specify options such as minimum size, weight, and stretching behavior for the column within the container.
-  
+
     - `option=value`: Options for configuring the column include:
     - `minsize`: Specifies the minimum size of the column.
     - `weight`: Resizes column on window resizing. Determines how much any extra space is distributed among columns. Columns with higher weights will get more space.
@@ -152,7 +152,7 @@ columnconfigure and rowconfigure
 
 .. py:function:: widget.rowconfigure(row, option=value, ...)
 
-    | Configure the row properties of a widget container, typically a `Frame` or `Grid`. 
+    | Configure the row properties of a widget container, typically a `Frame` or `Grid`.
     | Specify options such as minimum size, weight, and stretching behavior for the row within the container.
 
 ----
@@ -162,19 +162,19 @@ grid related methods
 
 .. py:function:: widget.grid_bbox(column=None, row=None, col2=None, row2=None)
 
-    | Returns a 4-tuple describing the bounding box of the widget area. 
+    | Returns a 4-tuple describing the bounding box of the widget area.
     | The first two numbers returned are the x and y coordinates of the upper left corner of the area, and the second two numbers are the width and height.
-    | If column and row arguments are passed in, the returned bounding box describes the area of the cell at that column and row. 
+    | If column and row arguments are passed in, the returned bounding box describes the area of the cell at that column and row.
     | If col2 and row2 arguments are passed in, the returned bounding box describes the area of the grid from columns column to col2 inclusive, and from rows row to row2 inclusive.
     | For example, widget.grid_bbox(0, 0, 1, 1) returns the bounding box of four cells, not one.
 
 .. py:function:: widget.grid_forget()
 
-    | This makes the widget disappear from the screen. It still exists but isn't visible. 
+    | This makes the widget disappear from the screen. It still exists but isn't visible.
     | Use .grid() it to make it appear again, but without its grid options.
 
 .. py:function:: widget.grid_info()
-    
+
     | Returns a dictionary whose keys are the widgets's option names, with the corresponding values of those options.
 
 .. py:function:: widget.grid_location(x, y)
@@ -183,8 +183,8 @@ grid related methods
 
 .. py:function:: widget.grid_propagate()
 
-    | Normally, all widgets propagate their dimensions, meaning that they adjust to fit the contents. 
-    | However, sometimes you want to force a widget to be a certain size, regardless of the size of its contents. 
+    | Normally, all widgets propagate their dimensions, meaning that they adjust to fit the contents.
+    | However, sometimes you want to force a widget to be a certain size, regardless of the size of its contents.
     | To do this, call widget.grid_propagate(0) where w is the widget whose size you want to force.
 
 .. py:function:: widget.grid_remove()
@@ -197,8 +197,8 @@ grid related methods
 
 .. py:function:: widget.grid_slaves(row=None, column=None)
 
-    | Returns a list of the widgets managed by the given widget. 
-    | If no arguments are provided, you will get a list of all the managed widgets. 
+    | Returns a list of the widgets managed by the given widget.
+    | If no arguments are provided, you will get a list of all the managed widgets.
     | Use the row= argument to select only the widgets in one row, or the column= argument to select only the widgets in one column.
 
 

@@ -13,7 +13,7 @@ Inches to cm
 
 ----
 
-Step 1: Create the Main Window
+Create the Main Window
 -----------------------------------
 
  First, import the `tkinter` module and create the main application window using `tk.Tk()`. Set the window title, size, and background color:
@@ -32,7 +32,7 @@ Step 1: Create the Main Window
 
 ----
 
-Step 2: Create Widgets
+Create Widgets
 --------------------------------
 
 Now create the widgets (GUI elements) that will be displayed in the window:
@@ -49,12 +49,12 @@ Now create the widgets (GUI elements) that will be displayed in the window:
 
 ----
 
-Step 3: Place Widgets in the Window
+Place Widgets in the Window
 -------------------------------------------------
 
 Design the grid positions:
 
-.. image:: images/inches_to_cm.png
+.. image:: images/inches_to_cm_grid.png
     :scale: 67%
 
 
@@ -72,7 +72,7 @@ Position the widgets using the `grid()` method:
 
 ----
 
-Step 4: Define Constants for formatting
+Define Constants for formatting
 ------------------------------------------
 
 | Next, define some constants for colors and font settings.
@@ -98,7 +98,7 @@ Update the window colour using the constant:
 
 ----
 
-Step 5: Format Widgets
+Format Widgets
 --------------------------------
 
 Now format the widgets (GUI elements) that will be displayed in the window:
@@ -115,7 +115,7 @@ Now format the widgets (GUI elements) that will be displayed in the window:
 
 ----
 
-Step 6: Define the Conversion Function
+Define the Conversion Function
 ----------------------------------------------
 
 | Create a function called `convert_inches_to_cm()` that performs the conversion and updates the result in the `cm_text` widget.
@@ -143,7 +143,7 @@ Step 6: Define the Conversion Function
 
 ----
 
-Step 7: Connect the Button to the Function
+Connect the Button to the Function
 ---------------------------------------------
 
 .. code-block:: python

@@ -14,26 +14,26 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Tkinter
+    :caption: Tkinter basics
     :numbered:
 
-    tkinter_basics/tkinter_introduction.rst
-    tkinter_basics/tkinter_import.rst
-    tkinter_basics/tk_window.rst
-    tkinter_basics/tkinter_options.rst
-    tkinter_basics/tkinter_constants.rst
+    tk_basics/tkinter_introduction.rst
+    tk_basics/tkinter_import.rst
+    tk_basics/tk_window.rst
+    tk_basics/tkinter_options.rst
+    tk_basics/tkinter_constants.rst
 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Tkinter geometry
+    :caption: tk geometry
     :numbered:
 
-    tkinter_basics/tkinter_geometry_pack.rst
-    tkinter_basics/tkinter_geometry_grid.rst
-    tkinter_basics/tkinter_geometry_place.rst
-    tkinter_basics/tkinter_geometry_hello_world.rst
-    tkinter_basics/tkinter_geometry_cost_calculator.rst
+    tk_geometry/tk_geometry_pack.rst
+    tk_geometry/tk_geometry_grid.rst
+    tk_geometry/tk_geometry_place.rst
+    tk_geometry/tk_geometry_hello_world.rst
+    tk_geometry/tk_geometry_cost_calculator.rst
 
 
 .. toctree::
@@ -41,46 +41,46 @@ PC-app-development
     :caption: tk widgets
     :numbered:
 
-    tkinter_basics/tk_label.rst
-    tkinter_basics/tk_entry.rst
-    tkinter_basics/tk_text.rst
-    tkinter_basics/tk_button.rst
+    tk_basics/tk_label.rst
+    tk_basics/tk_entry.rst
+    tk_basics/tk_text.rst
+    tk_basics/tk_button.rst
 
-    .. tkinter_basics/tk_messagebox.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Tkinter apps
-    :numbered:
-
-    tkinter_apps/tk_inches_to_cm.rst
-    tkinter_apps/tk_temperature_converter.rst
-    tkinter_apps/tk_pounds_to_kgs_task.rst
-    tkinter_apps/tk_pounds_to_kgs.rst
-    tkinter_apps/tk_name_age_task.rst
-
-    .. tkinter_apps/tk_name_age.rst
-    .. tkinter_apps/tk_pounds_to_kgs.rst
-    .. tkinter_apps/tk_login.rst
+    .. tk_basics/tk_messagebox.rst
 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Pizza_Orders_Tutorial
+    :caption: tk apps
     :numbered:
 
-    pizza_orders_tutorial/pizza_orders.rst
-    pizza_orders_tutorial/Lesson01.rst
-    pizza_orders_tutorial/Lesson02.rst
-    pizza_orders_tutorial/Lesson03.rst
-    pizza_orders_tutorial/Lesson04.rst
-    pizza_orders_tutorial/Lesson05.rst
-    pizza_orders_tutorial/Lesson06.rst
-    pizza_orders_tutorial/Lesson07rst
-    pizza_orders_tutorial/Lesson08.rst
-    pizza_orders_tutorial/Lesson09.rst
-    pizza_orders_tutorial/Lesson10.rst
+    tk_apps/tk_inches_to_cm.rst
+    tk_apps/tk_temperature_converter.rst
+    tk_apps/tk_pounds_to_kgs_task.rst
+    tk_apps/tk_pounds_to_kgs.rst
+    tk_apps/tk_name_age_task.rst
+
+    .. tk_apps/tk_name_age.rst
+    .. tk_apps/tk_pounds_to_kgs.rst
+    .. tk_apps/tk_login.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: tk pizza orders tutorial
+    :numbered:
+
+    tk_pizza_orders_tutorial/pizza_orders.rst
+    tk_pizza_orders_tutorial/Lesson01.rst
+    tk_pizza_orders_tutorial/Lesson02.rst
+    tk_pizza_orders_tutorial/Lesson03.rst
+    tk_pizza_orders_tutorial/Lesson04.rst
+    tk_pizza_orders_tutorial/Lesson05.rst
+    tk_pizza_orders_tutorial/Lesson06.rst
+    tk_pizza_orders_tutorial/Lesson07rst
+    tk_pizza_orders_tutorial/Lesson08.rst
+    tk_pizza_orders_tutorial/Lesson09.rst
+    tk_pizza_orders_tutorial/Lesson10.rst
 
 
 .. toctree::
@@ -88,7 +88,7 @@ PC-app-development
     :caption: Tkinter project
     :numbered:
 
-    tkinter_project/project_starters.rst
+    .. tkinter_project/project_starters.rst
 
 
 .. toctree::
@@ -146,7 +146,7 @@ PC-app-development
     :caption: Themed widgets
     :numbered:
 
-    tkinter_basics/ttk_import.rst
+    tk_basics/ttk_import.rst
 
 
 
