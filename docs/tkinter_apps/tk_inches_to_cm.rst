@@ -69,7 +69,7 @@ Position the widgets using the `grid()` method:
 Step 4: Define Constants for formatting
 ------------------------------------------
 
-| Next, define some constants for colors, font style, and other settings.
+| Next, define some constants for colors and font settings.
 | You can customize these values as needed:
 
 .. code-block:: python
@@ -84,7 +84,7 @@ Step 4: Define Constants for formatting
     OUTPUT_FG_COLOR = "#dc3545"
     FONT_STYLE = ("Arial", 32)
 
-Update the window colour:
+Update the window colour using the constant:
 
 .. code-block:: python
 
@@ -115,10 +115,12 @@ Step 6: Define the Conversion Function
 | Create a function called `convert_inches_to_cm()` that performs the conversion and updates the result in the `cm_text` widget.
 | ``convert_inches_to_cm()`` uses a try and except block to catch errors due to non numeric entries.
 | See: https://www.w3schools.com/python/python_try_except.asp
-| The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``c_text.delete(1.0, 'end')``
+
+| The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` is the line.column in ``c_text.delete(1.0, 'end')``
 | ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
-| The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``cm_text.insert(1.0, f'{cm:.2f}')``
-| ``cm_text.insert(1.0, f'{cm:.2f}')`` uses ``:.2f`` to format the celsius float to 2 decimal places.
+| The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` is the line.column in ``cm_text.insert(1.0, f'{cm:.2f}')``
+
+ ``cm_text.insert(1.0, f'{cm:.2f}')`` uses ``:.2f`` to format the celsius float to 2 decimal places.
 | For string formatting see: https://www.w3schools.com/python/ref_string_format.asp
 
 .. code-block:: python
@@ -140,7 +142,8 @@ Step 7: Connect the Button to the Function
 
 .. code-block:: python
 
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+                                fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
 
 ----
 
