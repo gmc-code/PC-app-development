@@ -71,7 +71,8 @@ Update the window colour using the constant:
     age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
     name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
     age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
+    name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR, fg=FG_COLOR,
+                                font=FONT_STYLE, command=place_name_age)
     name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 
 
@@ -206,5 +207,14 @@ Full code
 
     # Start the main event loop
     window.mainloop()
+
+----
+
+Test Table
+------------------------------------
+
+| What user inputs should be tested?
+| What user inputs would be regarded as invalid, yet still result in text being displayed?
+| Where in the code would it be best to make changes in order to indicate to the user that that have not made a valid entry.
 
 
