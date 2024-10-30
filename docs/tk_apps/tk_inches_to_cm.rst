@@ -55,7 +55,7 @@ Place Widgets in the Window
 Design the grid positions:
 
 .. image:: images/inches_to_cm_grid.png
-    :scale: 67%
+    :scale: 100%
 
 
 Position the widgets using the `grid()` method:
