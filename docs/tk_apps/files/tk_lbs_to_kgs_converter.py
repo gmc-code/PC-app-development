@@ -42,9 +42,10 @@ input_label = tk.Label(window, text="Pounds", bg=INPUT_BG_COLOR, fg=INPUT_FG_COL
 input_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR,
 highlightcolor=INPUT_FG_COLOR, highlightbackground=INPUT_FG_COLOR, highlightthickness=2, font=FONT_STYLE)
 output_label = tk.Label(window, text="Kgs", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-output_text = tk.Text(window, height=1, width=10, fg=OUTPUT_FG_COLOR, highlightcolor=OUTPUT_FG_COLOR, highlightbackground=OUTPUT_FG_COLOR, highlightthickness=1, font=FONT_STYLE)
+output_text = tk.Text(window, height=1, width=10, fg=OUTPUT_FG_COLOR, highlightcolor=OUTPUT_FG_COLOR,
+                     highlightbackground=OUTPUT_FG_COLOR, highlightthickness=1, font=FONT_STYLE)
 convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
-                           fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert)
+                            fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert)
 
 
 # Place widgets on window

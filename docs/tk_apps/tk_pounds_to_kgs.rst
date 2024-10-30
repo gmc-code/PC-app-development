@@ -13,7 +13,7 @@ Pounds to kgs
 
 ----
 
-Step 1: Create the Main Window
+Create the Main Window
 ----------------------------------------
 
 Create the main application window using `tk.Tk()`. Set the window title, size, and background color:
@@ -32,7 +32,7 @@ Create the main application window using `tk.Tk()`. Set the window title, size, 
 
 ----
 
-Step 2: Define Formatting Constants
+Define Formatting Constants
 ------------------------------------
 
 | Next, define some constants for colors, and font style.
@@ -60,7 +60,7 @@ Update the window colour:
 
 ----
 
-Step 3: Create Widgets
+Create Widgets
 --------------------------------
 
 | Now create the widgets (GUI elements) that will be displayed in the window:
@@ -83,7 +83,7 @@ Step 3: Create Widgets
 
 ----
 
-Step 4: Place Widgets in the Window
+Place Widgets in the Window
 -------------------------------------------------
 
 Position the widgets using the `grid()` method:
@@ -99,7 +99,7 @@ Position the widgets using the `grid()` method:
 
 ----
 
-Step 5: Define the Conversion Function
+Define the Conversion Function
 ----------------------------------------------
 
 | Create a function called `convert_pounds_to_kgs()` that performs the conversion and updates the result in the `output_text` widget.
@@ -125,7 +125,7 @@ Step 5: Define the Conversion Function
 
 ----
 
-Step 5: Connect the Button to the Function
+Connect the Button to the Function
 ---------------------------------------------
 
 .. code-block:: python
