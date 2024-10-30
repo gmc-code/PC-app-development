@@ -2,14 +2,17 @@
 tkinter constants
 ====================================================
 
-tkinter constants
+Useful constants
 ----------------------------------------
-
-| A full list of tkinter constants can be found at https://github.com/python/cpython/blob/main/Lib/tkinter/constants.py
 
 | The common tkinter constants and their lowercase string equivalents are below.
 | The lowercase versions are simpler to use.
 | The constants require a reference to the tkinter module. e.g. tk.CENTER
+| A full list of tkinter constants can be found at https://github.com/python/cpython/blob/main/Lib/tkinter/constants.py
+
+| The main ones used in this resource are end and the sticky constants: n, s, e, w, center and the sides: left, right, top, bottom.
+
+----
 
 Booleans
 --------
