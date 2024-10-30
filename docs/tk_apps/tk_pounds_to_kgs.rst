@@ -197,3 +197,23 @@ Full code
 
     # Start the main event loop
     window.mainloop()
+
+----
+
+Lbs-to-Kg Test Table
+---------------------------------------
+
+.. list-table:: Test Cases for Lbs-to-Kg Converter
+   :header-rows: 1
+   :widths: 20 25
+
+   * - **Weight (lbs)**
+     - **Expected Output (kg)**
+   * - 0
+     - 0
+   * - 1
+     - 0.4536
+   * - 2.2
+     - 1.00
+   * - "one"
+     - Invalid input
