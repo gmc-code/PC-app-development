@@ -41,12 +41,13 @@ PC-app-development
     :caption: tk widgets
     :numbered:
 
-    tk_basics/tk_label.rst
-    tk_basics/tk_entry.rst
-    tk_basics/tk_text.rst
-    tk_basics/tk_button.rst
+    tk_widgets/tk_label.rst
+    tk_widgets/tk_entry.rst
+    tk_widgets/tk_text.rst
+    tk_widgets/tk_button.rst
 
-    .. tk_basics/tk_messagebox.rst
+    .. tk_widgets/tk_radio_button.rst
+    .. tk_widgets/tk_messagebox.rst
 
 
 .. toctree::
@@ -64,7 +65,7 @@ PC-app-development
 
     .. tk_apps/tk_login.rst
 
-    tk_apps/tk_login_custom_messagebox.rst
+    .. tk_apps/tk_login_custom_messagebox.rst
 
 .. toctree::
     :maxdepth: 2
