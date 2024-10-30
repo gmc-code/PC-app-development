@@ -2,10 +2,7 @@
 Pizza 9: Final Touches and Styling
 ==================================================
 
-.. image:: tk_pizza_orders_tutorial/images/pizza_9.png
-    :scale: 67%
-
-.. image:: tk_pizza_orders_tutorial/images/pizza_v1.png
+.. image:: images/pizza_9.png
     :scale: 67%
 
 - **Objective**: Add final touches and improve the GUI styling.

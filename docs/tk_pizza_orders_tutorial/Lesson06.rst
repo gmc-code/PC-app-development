@@ -2,7 +2,7 @@
 Pizza 6: Adding Orders
 ================================================
 
-.. image:: tk_pizza_orders_tutorial/images/pizza_6.png
+.. image:: images/pizza_6.png
     :scale: 67%
 
 - **Objective**: Add functionality to add orders.

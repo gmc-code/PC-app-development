@@ -2,7 +2,7 @@
 Pizza 7: Displaying Orders
 ================================================
 
-.. image:: tk_pizza_orders_tutorial/images/pizza_7.png
+.. image:: images/pizza_7.png
     :scale: 67%
 
 - **Objective**: Display the list of orders.

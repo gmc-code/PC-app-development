@@ -2,7 +2,7 @@
 Pizza 3: Adding Radio Buttons for Pizza Types
 =============================================================
 
-.. image:: tk_pizza_orders_tutorial/images/pizza_3.png
+.. image:: images/pizza_3.png
     :scale: 50%
 
 - **Objective**: Add radio buttons for selecting pizza types.
