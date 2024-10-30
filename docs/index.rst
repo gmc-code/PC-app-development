@@ -79,7 +79,7 @@ PC-app-development
     tk_pizza_orders_tutorial/Lesson04.rst
     tk_pizza_orders_tutorial/Lesson05.rst
     tk_pizza_orders_tutorial/Lesson06.rst
-    tk_pizza_orders_tutorial/Lesson07rst
+    tk_pizza_orders_tutorial/Lesson07.rst
     tk_pizza_orders_tutorial/Lesson08.rst
     tk_pizza_orders_tutorial/Lesson09.rst
     tk_pizza_orders_tutorial/Lesson10.rst
