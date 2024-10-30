@@ -2,6 +2,9 @@
 Pizza 4: Adding Radio Buttons and OptionMenu
 ==============================================================
 
+.. image:: tk_pizza_orders_tutorial/images/pizza_4.png
+    :scale: 67%
+
 - **Objective**: Add radio buttons for selecting pizza sizes and the OptionMenu for quantity.
 - **Content**:
 

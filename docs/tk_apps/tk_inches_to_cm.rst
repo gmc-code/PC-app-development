@@ -5,7 +5,6 @@ Inches to cm
 .. image:: images/tk_inches_to_cm_converter.png
     :scale: 67%
 
-
 | This code converts inches to cm.
 | This code creates a simple GUI application using the Tkinter library.
 | It displays a window with Label, Entry, Text and Button widgets

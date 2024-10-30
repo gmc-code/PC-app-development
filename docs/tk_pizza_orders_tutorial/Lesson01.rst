@@ -2,6 +2,10 @@
 Pizza 1: Introduction to Tkinter
 ================================================
 
+
+.. image:: tk_pizza_orders_tutorial/images/pizza_1.png
+    :scale: 50%
+
 - **Objective**: Set up the basic Tkinter window.
 - **Content**:
 

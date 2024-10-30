@@ -2,6 +2,9 @@
 Pizza 5: Adding Costs
 =========================================================
 
+.. image:: tk_pizza_orders_tutorial/images/pizza_5.png
+    :scale: 67%
+
 - **Objective**: Add costs.
 - **Content**:
 

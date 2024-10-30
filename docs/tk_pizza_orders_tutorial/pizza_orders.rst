@@ -2,6 +2,9 @@
 Pizza orders
 ==========================
 
+.. image:: tk_pizza_orders_tutorial/images/pizza_v1.png
+    :scale: 67%
+
 Tutorial Outline
 ================
 

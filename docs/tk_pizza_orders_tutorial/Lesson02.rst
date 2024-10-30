@@ -2,6 +2,9 @@
 Pizza 2: Adding Labels and Entry Widgets
 =========================================================
 
+.. image:: tk_pizza_orders_tutorial/images/pizza_2.png
+    :scale: 50%
+
 - **Objective**: Add labels and entry widgets for customer name input.
 - **Content**:
 

@@ -2,6 +2,9 @@
 Pizza 8: Deleting Orders
 ================================================
 
+.. image:: tk_pizza_orders_tutorial/images/pizza_8.png
+    :scale: 67%
+
 - **Objective**: Add functionality to delete orders.
 - **Content**:
 
