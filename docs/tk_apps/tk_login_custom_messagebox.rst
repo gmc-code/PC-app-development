@@ -4,7 +4,7 @@ Login form: custom message box
 
 | This uses the same login form code as displayed on previous pages, but adds a customized messagebox that is centred over the window instead of the screen.
 
-.. image:: images/tk_login.png
+.. image:: images/tk_login_custom_msg.png
     :scale: 67%
 
 ----
