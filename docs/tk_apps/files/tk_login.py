@@ -1,12 +1,10 @@
-# https://www.youtube.com/watch?v=MeMCBdnhvQs&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=5
-
 import tkinter as tk
 from tkinter import messagebox
 
 # Constants
-BG_COLOR = "#333333"
-FG_COLOR = "#FFFFFF"
-BUTTON_COLOR = "#FF3399"
+BG_COLOR = "#333333"  # dark grey
+FG_COLOR = "#FFFFFF"   # white
+FG_BUTTON_COLOR = "#FF3399"  # bright pink
 FONT_STYLE = ("Arial", 24)
 USERNAME = "johns"
 PASSWORD = "123"
@@ -28,15 +26,16 @@ window.geometry("540x440")
 window.configure(bg=BG_COLOR)
 
 #  create frame widget for other widgets
-frame = tk.Frame(bg=BG_COLOR)
+frame = tk.Frame(window, bg=BG_COLOR)
+frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
 
 #  create widgets in frame
-login_label = tk.Label(frame, text="Login", bg=BG_COLOR, fg=BUTTON_COLOR, font=FONT_STYLE)
+login_label = tk.Label(frame, text="Login", bg=BG_COLOR, fg=FG_BUTTON_COLOR, font=FONT_STYLE)
 username_label = tk.Label(frame, text="Username", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 password_label = tk.Label(frame, text="Password", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 username_entry = tk.Entry(frame, font=FONT_STYLE)
 password_entry = tk.Entry(frame, show="*", font=FONT_STYLE)
-login_button = tk.Button(frame, text="Login", bg=BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=login)
+login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=login)
 
 
 # place widgets in frame
@@ -46,9 +45,6 @@ password_label.grid(row=2, column=0)
 username_entry.grid(row=1, column=1, pady=20)
 password_entry.grid(row=2, column=1, pady=20)
 login_button.grid(row=3, column=0, columnspan=2, pady=20)
-
-# place frame
-frame.pack()
 
 
 window.mainloop()
