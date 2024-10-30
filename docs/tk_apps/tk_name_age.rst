@@ -81,7 +81,7 @@ Grid Placement of widgets on the window:
 
 Design the grid positions:
 
-.. image:: images/inches_to_cm_grid.png
+.. image:: images/name_age_grid.png
     :scale: 100%
 
 - Use the `grid` method to place the widgets in rows and columns in the window.

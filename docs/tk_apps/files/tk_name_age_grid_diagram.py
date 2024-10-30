@@ -27,7 +27,7 @@ widgets = [
     {"name": "name_entry", "xy": (1, 0), "width": 1, "height": 1, "color": "lightgreen"},
     {"name": "age_label", "xy": (0, 1), "width": 1, "height": 1, "color": "lightblue"},
     {"name": "age_entry", "xy": (1, 1), "width": 1, "height": 1, "color": "lightgreen"},
-    {"name": "name_age_button", "xy": (1, 2), "width": 1, "height": 1, "color": "lightcoral"},
+    {"name": "name_age_button", "xy": (0, 2), "width": 2, "height": 1, "color": "lightcoral"},
     {"name": "name_age_text", "xy": (0, 3), "width": 2, "height": 1, "color": "lightyellow"},
 ]
 
