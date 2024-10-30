@@ -58,7 +58,7 @@ Design the grid positions:
 .. image:: images/f_to_c_grid.png
     :scale: 100%
 
-Now, let's place the widgets on the window using the grid layout.
+Now, place the widgets on the window using the grid layout.
 
 .. code-block:: python
 

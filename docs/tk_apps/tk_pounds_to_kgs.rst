@@ -86,6 +86,11 @@ Create Widgets
 Place Widgets in the Window
 -------------------------------------------------
 
+Design the grid positions:
+
+.. image:: images/lbs_to_kgs_grid.png
+    :scale: 100%
+
 Position the widgets using the `grid()` method:
 
 .. code-block:: python
