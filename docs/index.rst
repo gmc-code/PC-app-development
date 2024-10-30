@@ -59,9 +59,8 @@ PC-app-development
     tk_apps/tk_pounds_to_kgs_task.rst
     tk_apps/tk_pounds_to_kgs.rst
     tk_apps/tk_name_age_task.rst
+    tk_apps/tk_name_age.rst
 
-    .. tk_apps/tk_name_age.rst
-    .. tk_apps/tk_pounds_to_kgs.rst
     .. tk_apps/tk_login.rst
 
 
