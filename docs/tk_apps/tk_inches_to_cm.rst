@@ -111,7 +111,8 @@ Now format the widgets (GUI elements) that will be displayed in the window:
     cm_label = tk.Label(window, text="cm", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     # height of 1 is one text row
     cm_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+                                fg=BUTTON_FG_COLOR, font=FONT_STYLE)
 
 ----
 
@@ -203,7 +204,8 @@ Full code
     cm_label = tk.Label(window, text="cm", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     # height of 1 is one text row
     cm_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+                                fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
 
     # Place widgets in the window
     inches_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
@@ -214,3 +216,31 @@ Full code
 
     # Start the main event loop
     window.mainloop()
+
+----
+
+Inches to Centimeters Test Table
+------------------------------------
+
+.. list-table:: Test Cases for Inch-to-Centimeter Converter
+   :header-rows: 1
+   :widths: 15 25
+
+   * - **Inches**
+     - **Expected Output (cm)**
+   * - 0
+     - 0
+   * - 1
+     - 2.54
+   * - 12
+     - 30.48
+   * - 100
+     - 254
+   * - -1
+     - -2.54
+   * - one
+     - Invalid input
+
+| The code rounds to 2 decimal places so it doesn't handle numbers smaller than 0.01.
+| The text fields have limited width so can't handle numbers with more that 9 digits.
+

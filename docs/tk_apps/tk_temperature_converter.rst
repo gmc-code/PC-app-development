@@ -53,6 +53,11 @@ Add the widgets for the input and output fields, and the convert button.
 Position the Widgets
 -----------------------
 
+Design the grid positions:
+
+.. image:: images/f_to_c_grid.png
+    :scale: 100%
+
 Now, let's place the widgets on the window using the grid layout.
 
 .. code-block:: python
@@ -88,7 +93,8 @@ Next, add formatting to the widgets, storing colours and font settings in consta
     f_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
     c_label = tk.Label(window, text="Celsius", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     c_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+                                fg=BUTTON_FG_COLOR, font=FONT_STYLE)
 
 
 Update the window colour:
@@ -143,7 +149,8 @@ Finally, we'll connect the convert button to the `convert_f_to_c` function.
 
 .. code-block:: python
 
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_f_to_c)
+    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+                                fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_f_to_c)
 
 ----
 
@@ -196,7 +203,7 @@ Full Code
     c_label = tk.Label(window, text="Celsius", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     c_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
     convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
-                            fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_f_to_c)
+                                fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_f_to_c)
 
     # Place widgets on window
     f_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
@@ -207,3 +214,35 @@ Full Code
 
     # Start the main event loop
     window.mainloop()
+
+----
+
+Fahrenheit to Celsius Test Table
+---------------------------------------
+
+.. list-table:: Test Cases for Fahrenheit-to-Celsius Converter
+   :header-rows: 1
+   :widths: 20 25
+
+   * - **Fahrenheit (°F)**
+     - **Expected Output (°C)**
+   * - 32
+     - 0
+   * - 212
+     - 100
+   * - 98.6
+     - 37
+   * - 0
+     - -17.78
+   * - -40
+     - -40
+   * - 451
+     - 232.78
+   * - -459.67 (absolute zero)
+     - -273.15
+   * - one
+     - Invalid input
+
+| The code rounds to 1 decimal place so its accuracy is limited by that.
+| The text fields have limited width so can't handle numbers with more that 9 digits.
+
