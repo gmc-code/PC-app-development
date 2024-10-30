@@ -65,38 +65,38 @@ Creating a Toplevel Window
 Making the Window Modal
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - `top.transient(parent)`: Ensures the messagebox stays on top of the parent window.
- - `top.grab_set()`: Activates a "grab" on the messagebox, preventing the user from interacting with the main window until the messagebox is closed.
+- `top.transient(parent)`: Ensures the messagebox stays on top of the parent window.
+- `top.grab_set()`: Activates a "grab" on the messagebox, preventing the user from interacting with the main window until the messagebox is closed.
 
 Positioning the Messagebox over the Parent Window
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - We use the following Tkinter methods to determine the position and size of the parent widget:
-   - `winfo_rootx()` and `winfo_rooty()`: Get the top-left coordinates of the parent window on the screen.
-   - `winfo_width()` and `winfo_height()`: Get the width and height of the parent widget.
+- We use the following Tkinter methods to determine the position and size of the parent widget:
+ - `winfo_rootx()` and `winfo_rooty()`: Get the top-left coordinates of the parent window on the screen.
+ - `winfo_width()` and `winfo_height()`: Get the width and height of the parent widget.
 
 Calculating the Centered Position
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - We compute the `x` and `y` coordinates to align the messagebox in the center of the parent:
-   - `x = parent_x + (parent_width // 2) - (top_width // 2)`
-   - `y = parent_y + (parent_height // 2) - (top_height // 2)`
- - The messagebox is then positioned using:
-   - `top.geometry(f"{top_width}x{top_height}+{x}+{y}")`
+- We compute the `x` and `y` coordinates to align the messagebox in the center of the parent:
+ - `x = parent_x + (parent_width // 2) - (top_width // 2)`
+ - `y = parent_y + (parent_height // 2) - (top_height // 2)`
+- The messagebox is then positioned using:
+ - `top.geometry(f"{top_width}x{top_height}+{x}+{y}")`
 
 Creating the Messagebox Content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - A `Label` widget is used to display the message:
-   - `message_label = tk.Label(top, text=message, bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)`
- - A `Button` widget is used to close the messagebox:
-   - `ok_button = tk.Button(top, text="OK", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=top.destroy)`
+- A `Label` widget is used to display the message:
+ - `message_label = tk.Label(top, text=message, bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)`
+- A `Button` widget is used to close the messagebox:
+ - `ok_button = tk.Button(top, text="OK", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=top.destroy)`
 
 Packing the Widgets
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - `message_label.pack(expand=True, pady=20)`: Expands the label to fill available space and adds vertical padding.
- - `ok_button.pack(pady=10)`: Adds the OK button with some vertical padding.
+- `message_label.pack(expand=True, pady=20)`: Expands the label to fill available space and adds vertical padding.
+- `ok_button.pack(pady=10)`: Adds the OK button with some vertical padding.
 
 Usage
 ~~~~~~~~~~~~~~
