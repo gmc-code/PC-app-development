@@ -230,14 +230,8 @@ Fahrenheit to Celsius Test Table
      - 0
    * - 212
      - 100
-   * - 98.6
-     - 37
    * - 0
      - -17.78
-   * - -40
-     - -40
-   * - 451
-     - 232.78
    * - -459.67 (absolute zero)
      - -273.15
    * - one

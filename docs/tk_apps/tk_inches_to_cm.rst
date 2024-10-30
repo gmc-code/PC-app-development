@@ -232,12 +232,6 @@ Inches to Centimeters Test Table
      - 0
    * - 1
      - 2.54
-   * - 12
-     - 30.48
-   * - 100
-     - 254
-   * - -1
-     - -2.54
    * - one
      - Invalid input
 
