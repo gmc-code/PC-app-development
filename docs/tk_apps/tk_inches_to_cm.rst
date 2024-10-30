@@ -57,7 +57,6 @@ Design the grid positions:
 .. image:: images/inches_to_cm_grid.png
     :scale: 100%
 
-
 Position the widgets using the `grid()` method:
 
 .. code-block:: python
@@ -68,7 +67,6 @@ Position the widgets using the `grid()` method:
     cm_label.grid(row=2, column=0, sticky="e", padx=10, pady=10)
     cm_text.grid(row=2, column=1, sticky="w", padx=10, pady=10)
     convert_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
-
 
 ----
 

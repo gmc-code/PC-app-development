@@ -25,7 +25,7 @@ Create the main window:
     - ``window = tk.Tk()`` creates the main application window.
     - ``window.title("Name and age")`` sets the title of the window to "Name and age".
     - ``window.geometry('700x380')`` specifies the initial size of the window (700 pixels wide and 380 pixels tall).
-    - ``window.configure(bg=BG_COLOR)`` sets the background color of the window to white (``BG_COLOR = #FFFFFF``).
+    - ``window.configure(bg="#ffffff")`` sets the background color of the window to white.
 
     .. code-block:: python
 
@@ -52,6 +52,13 @@ Create the widgets
     BG_TEXT_COLOR = "#e5e5e5"
     FONT_STYLE = ("Arial", 30)
 
+Update the window colour using the constant:
+
+.. code-block:: python
+
+    window.configure(bg=BG_COLOR)
+
+
 - Create several widgets (GUI elements) that will be displayed in the window:
 - The Labels ``name_label`` and ``age_label`` display the text "Name" and "Age".
 - The Entry fields ``name_entry`` and ``age_entry`` allow users to input their name and age.
@@ -71,15 +78,17 @@ Create the widgets
 Grid Placement of widgets on the window:
 ---------------------------------------------------
 
+Design the grid positions:
+
+.. image:: images/inches_to_cm_grid.png
+    :scale: 100%
+
 - Use the `grid` method to place the widgets in rows and columns in the window.
 - The `row` and `column` parameters determine the position of each widget.
 - The labels and entry fields are placed in rows 0 and 1.
 - The button and text widget are placed in row 2 and 3.
 - The sticky='e' option specifies that the widget should stick to the east (right) side of its grid cell.
 - This means that if the cell is larger than the widget, the widget will be right-aligned within the cell.
-- Set padding (`padx` and `pady`) to create spacing between widgets.
-- The padx=10 option adds 10 pixels of padding on the left and right (horizontal) sides of the widget.
-- The pady=10 option adds 10 pixels of padding on the top and bottom (vertical) sides of the widget.
 
 .. code-block:: python
 
@@ -123,7 +132,6 @@ Define the place_name_age function:
         name_age_text.delete(1.0, "end")
         name_age_text.insert(1.0, f"My name is {name}. \nI am {age} years old.")
 
-
 ----
 
 Full code
@@ -142,7 +150,19 @@ Full code
 
     def place_name_age():
         """
-        Takes the name and age and displays 2 sentences with them in it, in the GUI.
+        Retrieves the name and age from the respective entry widgets and displays them
+        in a formatted message within the text widget. If no name or age is provided,
+        default values are used.
+
+        The function performs the following steps:
+        1. Retrieves the name from the name_entry widget. If empty, defaults to "John Smith".
+        2. Retrieves the age from the age_entry widget. If empty, defaults to "16".
+        3. Clears the content of the name_age_text widget.
+        4. Inserts a formatted message into the name_age_text widget, displaying the name and age.
+
+        Example output:
+        "My name is John Smith.
+        I am 16 years old."
         """
         # get name
         name = name_entry.get()
@@ -186,3 +206,5 @@ Full code
 
     # Start the main event loop
     window.mainloop()
+
+
