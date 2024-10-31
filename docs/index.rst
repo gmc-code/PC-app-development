@@ -47,6 +47,7 @@ PC-app-development
     tk_widgets/tk_button.rst
     tk_widgets/tk_radiobutton.rst
     tk_widgets/tk_checkbutton.rst
+    tk_widgets/tk_optionmenu.rst
     tk_widgets/tk_messagebox.rst
 
 
