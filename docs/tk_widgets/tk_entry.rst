@@ -1,5 +1,5 @@
 ====================================================
-tk entry
+tk Entry
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-tkinter-entry-widget/?ref=lbp
@@ -15,14 +15,22 @@ Usage
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
 
-    | parent is the window or frame object. 
+    | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
 
 ----
 
-Code example
----------------
+Using an entry widget
+----------------------------
+
+This code creates a simple Tkinter GUI application that allows a user to enter their name into an entry field and display the entered name in a label when a button is clicked. Here's a breakdown of its functionality:
+
+1. **Main Window Setup**: Initializes the main window with a specified size and title.
+2. **Entry Widget**: Provides a text entry field where the user can input their name.
+3. **StringVar**: Associates the entry field with a `StringVar` to manage the input text.
+4. **Button**: Adds a button that, when clicked, triggers a function to retrieve the text from the entry field.
+5. **Label**: Displays the retrieved text in a label, formatted to show on two lines.
 
 .. code-block:: python
 
@@ -30,20 +38,28 @@ Code example
 
     # Create the main window
     window = tk.Tk()
-    window.geometry("400x250")  # Set window size
-    window.title("Entry")  # Set window title
+    window.geometry("500x300")  # Set window size
+    window.title("Entry Example")  # Set window title
 
     # Create a StringVar to associate with the entry
     name_var = tk.StringVar()
 
-    # Create the label widget with all options
-    # creating a entry for input
-    # name using widget Entry
-    name_entry = tk.Entry(window, textvariable = name_var, font=('calibre',24,'normal'))
+    # Function to get the value from the entry field and display it in the label
+    def get_name():
+        name = name_var.get()
+        output_label.config(text=f"Name entered:\n{name}")
 
-    # Pack the label into the window
-    label.pack(pady=20)  # Add some padding to the top
+    # Create the entry widget for input
+    name_entry = tk.Entry(window, textvariable=name_var, font=('calibre', 24, 'normal'), width=20)
+    name_entry.pack(pady=20)  # Add some padding to the top
 
+    # Create a button to trigger the get_name function
+    submit_button = tk.Button(window, text="Submit", command=get_name)
+    submit_button.pack(pady=10)
+
+    # Create a label to display the output
+    output_label = tk.Label(window, text="", font=('calibre', 24, 'normal'), width=30, height=2)
+    output_label.pack(pady=20)
 
     # Run the main event loop
     window.mainloop()
@@ -53,39 +69,214 @@ Code example
 Option details
 --------------------
 
-| Options for a **Tkinter Entry widget** and what they do:
+.. py:function:: entry_widget = tk.Entry(parent, option=value)
 
-1. ``background`` (or ``bg``): Sets the normal background color displayed behind the text in the entry widget.
-2. ``bd`` (or ``borderwidth``): Specifies the size of the border around the entry widget (default is 2 pixels).
-3. ``cursor``: Determines the mouse cursor appearance when hovering over the entry widget.
-4. ``disabledbackground``: Sets the background color when the entry widget is disabled.
-5. ``disabledforeground``: Sets the text color when the entry widget is disabled.
-6. ``exportselection``: Controls whether the selected text in the entry widget is automatically copied to the clipboard.
-7. ``fg`` (or ``foreground``): Sets the text color.
-8. ``font``: Specifies the font style for the text in the entry widget.
-9. ``highlightbackground``: Color of the focus highlight when the entry widget is not focused.
-10. ``highlightcolor``: Color of the focus highlight when the entry widget is focused.
-11. ``highlightthickness``: Thickness of the focus highlight.
-12. ``insertbackground``: Color of the insertion cursor (caret) when editing the entry widget.
-13. ``insertborderwidth``: Border width around the insertion cursor.
-14. ``insertofftime``: Specifies the time (in milliseconds) the insertion cursor remains off during blinking.
-15. ``insertontime``: Specifies the time (in milliseconds) the insertion cursor remains on during blinking.
-16. ``insertwidth``: Width of the insertion cursor.
-17. ``invalidcommand``: Specifies a callback function to be called when the user enters invalid data.
-18. ``invcmd``: An alias for `invalidcommand`.
-19. ``justify``: Controls text alignment within the entry widget (e.g., `tk.LEFT`, `tk.CENTER`, `tk.RIGHT`).
-20. ``readonlybackground``: Background color when the entry widget is read-only.
-21. ``relief``: Specifies the border style (e.g., flat, raised, sunken).
-22. ``selectbackground``: Background color of the selected text.
-23. ``selectborderwidth``: Border width around the selected text.
-24. ``selectforeground``: Text color of the selected text.
-25. ``show``: Used for password entry; hides the actual characters and displays a specified character (e.g., asterisks).
-26. ``state``: Determines whether the entry widget is active, disabled, or read-only (options: NORMAL, DISABLED, or READONLY).
-27. ``takefocus``: Specifies whether the entry widget can receive focus during keyboard navigation.
-28. ``textvariable``: Associates a `StringVar` instance to retrieve the current text from the entry widget.
-29. ``validate``: Specifies when validation should occur (options: NONE, FOCUSIN, FOCUSOUT, or KEY).
-30. ``validatecommand``: Associates a callback function to validate the input data.
-31. ``vcmd``: An alias for `validatecommand`.
-32. ``width``: Sets the width (number of characters) of the entry widget.
-33. ``xscrollcommand``: Associates a horizontal scrollbar with the entry widget.
+    | parent is the window or frame object.
+    | Options can be passed as parameters separated by commas.
 
+    **Parameters:**
+
+    .. py:attribute:: background
+    .. py:attribute:: bg
+
+        | Syntax: ``entry_widget = tk.Entry(parent, bg="color")``
+        | Description: Sets the background color of the entry field.
+        | Default: SystemWindow RGB: (255, 255, 255)
+        | Example: ``entry_widget = tk.Entry(window, bg="lightgrey")``
+
+    .. py:attribute:: bd
+    .. py:attribute:: borderwidth
+
+        | Syntax: ``entry_widget = tk.Entry(parent, bd=width)``
+        | Description: Sets the width of the border around the entry field.
+        | Default: ``2``
+        | Example: ``entry_widget = tk.Entry(window, bd=5)``
+
+    .. py:attribute:: cursor
+
+        | Syntax: ``entry_widget = tk.Entry(parent, cursor="cursor_type")``
+        | Description: Changes the cursor when hovering over the entry field.
+        | Default: ``None``
+        | Example: ``entry_widget = tk.Entry(window, cursor="xterm")``
+        | Possible values include:
+            - **"arrow"**: Standard arrow cursor.
+            - **"xterm"**: I-beam cursor for text selection.
+            - **"hand2"**: Hand cursor.
+            - **"cross"**: Crosshair cursor.
+            - **"plus"**: Plus sign cursor.
+            - **"wait"**: Hourglass cursor.
+
+    .. py:attribute:: disabledbackground
+
+        | Syntax: ``entry_widget = tk.Entry(parent, disabledbackground="color")``
+        | Description: Sets the background color when the entry is disabled.
+        | Default: SystemDisabled RGB: (240, 240, 240)
+        | Example: ``entry_widget = tk.Entry(window, disabledbackground="lightgrey")``
+
+    .. py:attribute:: disabledforeground
+
+        | Syntax: ``entry_widget = tk.Entry(parent, disabledforeground="color")``
+        | Description: Sets the text color when the entry is disabled.
+        | Default: SystemDisabledText RGB: (109, 109, 109)
+        | Example: ``entry_widget = tk.Entry(window, disabledforeground="darkgrey")``
+
+    .. py:attribute:: exportselection
+
+        | Syntax: ``entry_widget = tk.Entry(parent, exportselection=boolean)``
+        | Description: Determines if the text selection is exported to the clipboard.
+        | Default: ``1``
+        | Example: ``entry_widget = tk.Entry(window, exportselection=False)``
+
+    .. py:attribute:: font
+
+        | Syntax: ``entry_widget = tk.Entry(parent, font=("font_name", size))``
+        | Description: Sets the font type and size of the entry text.
+        | Default: System font and size
+        | Example: ``entry_widget = tk.Entry(window, font=("Arial", 12))``
+
+    .. py:attribute:: foreground
+    .. py:attribute:: fg
+
+        | Syntax: ``entry_widget = tk.Entry(parent, fg="color")``
+        | Description: Sets the text color of the entry field.
+        | Default: SystemWindowText RGB: (0, 0, 0)
+        | Example: ``entry_widget = tk.Entry(window, fg="blue")``
+
+    .. py:attribute:: highlightbackground
+
+        | Syntax: ``entry_widget = tk.Entry(parent, highlightbackground="color")``
+        | Description: Sets the color of the highlight when the entry does not have focus.
+        | Default: SystemButtonFace RGB: (240, 240, 240)
+        | Example: ``entry_widget = tk.Entry(window, highlightbackground="grey")``
+
+    .. py:attribute:: highlightcolor
+
+        | Syntax: ``entry_widget = tk.Entry(parent, highlightcolor="color")``
+        | Description: Sets the color of the highlight when the entry has focus.
+        | Default: SystemHighlight RGB: (100, 100, 100)
+        | Example: ``entry_widget = tk.Entry(window, highlightcolor="blue")``
+
+    .. py:attribute:: highlightthickness
+
+        | Syntax: ``entry_widget = tk.Entry(parent, highlightthickness=thickness)``
+        | Description: Sets the thickness of the focus highlight border.
+        | Default: ``1``
+        | Example: ``entry_widget = tk.Entry(window, highlightthickness=2)``
+
+    .. py:attribute:: insertbackground
+
+        | Syntax: ``entry_widget = tk.Entry(parent, insertbackground="color")``
+        | Description: Sets the color of the insertion cursor (caret).
+        | Default: SystemWindowText RGB: (0, 0, 0)
+        | Example: ``entry_widget = tk.Entry(window, insertbackground="red")``
+
+    .. py:attribute:: insertborderwidth
+
+        | Syntax: ``entry_widget = tk.Entry(parent, insertborderwidth=width)``
+        | Description: Sets the width of the insertion cursor's border.
+        | Default: ``0``
+        | Example: ``entry_widget = tk.Entry(window, insertborderwidth=1)``
+
+    .. py:attribute:: insertofftime
+
+        | Syntax: ``entry_widget = tk.Entry(parent, insertofftime=milliseconds)``
+        | Description: Sets the time the insertion cursor is off per blink in milliseconds.
+        | Default: ``300``
+        | Example: ``entry_widget = tk.Entry(window, insertofftime=500)``
+
+    .. py:attribute:: insertontime
+
+        | Syntax: ``entry_widget = tk.Entry(parent, insertontime=milliseconds)``
+        | Description: Sets the time the insertion cursor is on per blink in milliseconds.
+        | Default: ``600``
+        | Example: ``entry_widget = tk.Entry(window, insertontime=500)``
+
+    .. py:attribute:: insertwidth
+
+        | Syntax: ``entry_widget = tk.Entry(parent, insertwidth=width)``
+        | Description: Sets the width of the insertion cursor.
+        | Default: ``2``
+        | Example: ``entry_widget = tk.Entry(window, insertwidth=3)``
+
+    .. py:attribute:: justify
+
+        | Syntax: ``entry_widget = tk.Entry(parent, justify="alignment")``
+        | Description: Specifies how the text is aligned within the entry field.
+        | Default: ``left``
+        | Example: ``entry_widget = tk.Entry(window, justify="center")``
+        | Possible values include:
+            - **"left"**: Aligns text to the left.
+            - **"center"**: Centers text within the field.
+            - **"right"**: Aligns text to the right.
+
+    .. py:attribute:: relief
+
+        | Syntax: ``entry_widget = tk.Entry(parent, relief="relief_type")``
+        | Description: Sets the border style of the entry field.
+        | Default: ``flat``
+        | Example: ``entry_widget = tk.Entry(window, relief="sunken")``
+        | Possible values include:
+            - **"flat"**
+            - **"raised"**
+            - **"sunken"**
+            - **"groove"**
+            - **"ridge"**
+
+    .. py:attribute:: show
+
+        | Syntax: ``entry_widget = tk.Entry(parent, show="character")``
+        | Description: Masks characters, often used for passwords.
+        | Default: ``None``
+        | Example: ``entry_widget = tk.Entry(window, show="*")``
+
+    .. py:attribute:: state
+
+        | Syntax: ``entry_widget = tk.Entry(parent, state="state")``
+        | Description: Sets the state of the entry field.
+        | Default: ``normal``
+        | Example: ``entry_widget = tk.Entry(window, state="disabled")``
+        | Possible values include:
+            - **"normal"**
+            - **"disabled"**
+            - **"readonly"**
+
+    .. py:attribute:: takefocus
+
+        | Syntax: ``entry_widget = tk.Entry(parent, takefocus=boolean)``
+        | Description: Determines if the entry field can receive focus via keyboard navigation.
+        | Default: ``1``
+        | Example: ``entry_widget = tk.Entry(window, takefocus=False)``
+
+    .. py:attribute:: textvariable
+
+        | Syntax: ``entry_widget = tk.Entry(parent, textvariable=variable)``
+        | Description: Associates a Tkinter variable (usually a StringVar) with the entry text.
+        | Default: ``None``
+        | Example: ``entry_widget = tk.Entry(window, textvariable=my_var)``
+
+    .. py:attribute:: validate
+
+        | Syntax: ``entry_widget = tk.Entry(parent, validate="validation_type")``
+        | Description: Sets the type of validation to apply to the entry field.
+        | Default: ``none``
+        | Example: ``entry_widget = tk.Entry(window, validate="focusout")``
+        | Possible values include:
+            - **"none"**: No validation.
+            - **"focus"**: Validation occurs when the entry loses focus.
+            - **"focusin"**: Validation occurs when the entry gains focus.
+            - **"focusout"**: Validation occurs when the entry loses focus.
+            - **"key"**: Validation occurs on every keystroke.
+
+    .. py:attribute:: width
+
+        | Syntax: ``entry_widget = tk.Entry(parent, width=characters)``
+        | Description: Sets the width of the entry field in characters.
+        | Default: ``20``
+        | Example: ``entry_widget = tk.Entry(window, width=30)``
+
+    .. py:attribute:: xscrollcommand
+
+        | Syntax: ``entry_widget = tk.Entry(parent, xscrollcommand=scroll_function)``
+        | Description: Specifies a function for horizontal scrolling.
+        | Default: ``None``
+        | Example: ``entry_widget = tk.Entry(window, xscrollcommand=my_scroll_function)``

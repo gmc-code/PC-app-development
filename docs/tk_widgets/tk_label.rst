@@ -1,5 +1,5 @@
 ====================================================
-tk label
+tk Label
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-tkinter-label/?ref=lbp
@@ -16,7 +16,7 @@ Usage
 
 .. py:function:: label_widget  = tk.Label(parent, option=value)
 
-    | `parent` is the window or frame object. 
+    | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
 ----
@@ -26,7 +26,7 @@ Text
 
 .. py:function:: label_widget  = tk.Label(parent, text=text_string)
 
-    | `text_string` is text to display in the label widget. 
+    | `text_string` is text to display in the label widget.
     | e.g. label = tk.Label(window, text="label text")
 
 Text example
@@ -52,14 +52,14 @@ Text example
 
 .. image:: images/label_text.png
     :scale: 100%
-    
+
 ----
 
 Font
 ----------
 
 .. py:function:: label_widget  = tk.Label(parent, font=(font_type, font_size, font_style))
-   
+
    - font_type is a font name. e.g "Arial"
    - font_size is the size of the font.  eg. 12
    - font_style can be bold, italic, underline or a space separated combination
@@ -101,7 +101,7 @@ Text color
 ---------------
 
 .. py:function:: label_widget  = tk.Label(parent, fg=color)
-   
+
    - color can be a color name, e.g blue, or a hex colour, e.g. #0000FF.
    - Default Value: System-dependent (usually black)
    - Description: Sets the foreground (text) color of the label.
@@ -138,7 +138,7 @@ Background color
 --------------------------
 
 .. py:function:: label_widget  = tk.Label(parent, bg=color)
-   
+
    - color can be a color name or a hex colour.
    - Default Value: System-dependent (usually white)
    - Description: Sets the background color of the label.
@@ -175,7 +175,7 @@ Padding
 -------------------
 
 .. py:function:: label_widget  = tk.Label(parent, padx=x_integer, pady=y_integer)
-   
+
    - x_integer and y_integer are integers
    - Default Value: 0
    - Description: Adds extra space (in pixels) around the label text.
@@ -214,14 +214,14 @@ Border
 ---------------
 
 .. py:function:: label_widget  = tk.Label(parent, borderwidth=width)
-   
+
    - width is an integer
    - Default Value: 0
    - Description: Specifies the border width for the label.
    - Example: To create a width of 2 pixels, use `borderwidth=2`.
 
 .. py:function:: label_widget  = tk.Label(parent, relief=border_style)
-   
+
    - border_style is one of "flat", "raised", "sunken", "solid", "ridge", "groove"
    - Default Value: "flat" (no border)
    - Description: Specifies the border style and width for the label.
@@ -253,37 +253,185 @@ border example
 
 .. image:: images/label_border.png
     :scale: 67%
-    
+
 ----
 
 Options
 --------------
 
-| Options for the ``tkinter.Label`` widget:
+.. py:function:: label_widget = tk.Label(parent, option=value)
 
-1.  ``activebackground``: Sets the background color when the label is active (e.g., when the mouse hovers over it).
-2.  ``activeforeground``: Sets the text color when the label is active.
-3.  ``anchor``: Determines the alignment of text or image within the label. (e.g., 'center', 'nw', 'se', etc.) Options include `tk.W` (left), `tk.CENTER` (center), and `tk.E` (right).
-4.  ``background`` (or ``bg``): Sets the background color of the label.
-5.  ``bd`` (or ``borderwidth``): Specifies the border width (thickness) around the label.
-6.  ``bitmap``: Displays a bitmap (small image) instead of text.
-7.  ``compound``: Combines text and image display. Options include `tk.LEFT`, `tk.RIGHT`, `tk.TOP`, and `tk.BOTTOM`.
-8.  ``cursor``: Determines the mouse cursor appearance when hovering over the label.
-9.  ``disabledforeground``: Sets the text color when the label is disabled.
-10. ``fg`` (or ``foreground``): Sets the text color.
-11. ``font``: Specifies the font style for the label's text.
-12. ``height``: Sets the height (number of lines) of the label.
-13. ``highlightbackground``: Color of the focus highlight when the label is not focused.
-14. ``highlightcolor``: Color of the focus highlight when the label is focused.
-15. ``highlightthickness``: Thickness of the focus highlight.
-16. ``image``: Displays an image instead of text.
-17. ``justify``: Controls text alignment within the label when it contains multiple lines ('left', 'center', or 'right').
-18. ``padx`` and ``pady``: Add padding (extra space) around the label's content.
-19. ``relief``: Specifies the border style (e.g., flat, raised, sunken).
-20. ``state``: Determines whether the label is active, disabled, or normal.
-21. ``takefocus``: Specifies whether the label can receive focus during keyboard navigation.
-22. ``text``: Sets the text content of the label.
-23. ``textvariable``: Binds a `StringVar` to the label, allowing dynamic text updates.
-24. ``underline``: Specifies which character in the label's text should be underlined.
-25. ``width``: Sets the width (number of characters) of the label.
-26. ``wraplength``: Limits the line length by wrapping text within the specified width.
+    | parent is the window or frame object.
+    | Options can be passed as parameters separated by commas.
+
+    **Parameters:**
+
+    .. py:attribute:: anchor
+
+        | Syntax: ``label_widget = tk.Label(parent, anchor="position")``
+        | Description: Sets the position of the text within the label widget. Common values are "n", "s", "e", "w", "ne", "nw", "se", "sw", and "center".
+        | Default: ``"center"``
+        | Example: ``label_widget = tk.Label(window, anchor="center")``
+
+    .. py:attribute:: background
+    .. py:attribute:: bg
+
+        | Syntax: ``label_widget = tk.Label(parent, bg="color")``
+        | Description: Sets the background color of the label.
+        | Default: SystemButtonFace RGB: (240, 240, 240)
+        | Example: ``label_widget = tk.Label(window, bg="blue")``
+
+    .. py:attribute:: bitmap
+
+        | Syntax: ``label_widget = tk.Label(parent, bitmap="bitmap_name")``
+        | Description: Displays a bitmap on the label.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, bitmap="error")``
+
+    .. py:attribute:: borderwidth
+    .. py:attribute:: bd
+
+        | Syntax: ``label_widget = tk.Label(parent, bd=width)``
+        | Description: Sets the width of the label's border in pixels.
+        | Default: ``2``
+        | Example: ``label_widget = tk.Label(window, bd=2)``
+
+    .. py:attribute:: compound
+
+        | Syntax: ``label_widget = tk.Label(parent, compound="position")``
+        | Description: Specifies the position of text relative to the image on the label. Common values are "top", "bottom", "left", "right", "center".
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, compound="left")``
+
+    .. py:attribute:: cursor
+
+        | Syntax: ``label_widget = tk.Label(parent, cursor="cursor_type")``
+        | Description: Changes the cursor appearance when hovering over the label.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, cursor="hand2")``
+
+        | Possible values include:
+            - **"arrow"**: Standard arrow cursor.
+            - **"circle"**: Small circle cursor.
+            - **"clock"**: Clock or watch cursor.
+            - **"cross"**: Crosshair cursor.
+            - **"dotbox"**: Dotted box cursor.
+            - **"exchange"**: Two arrows pointing in opposite directions.
+            - **"fleur"**: Four-way arrow for moving.
+            - **"hand2"**: Hand cursor, commonly used for clickable items.
+            - **"heart"**: Heart-shaped cursor.
+            - **"man"**: Small icon of a person.
+            - **"mouse"**: Cursor shaped like a mouse.
+            - **"pirate"**: Skull-and-crossbones cursor.
+            - **"plus"**: Plus sign cursor.
+            - **"shuttle"**: Shuttle or spaceship cursor.
+            - **"sizing"**: Cursor for resizing.
+            - **"spider"**: Spider cursor.
+            - **"spraycan"**: Spray can cursor.
+            - **"star"**: Star-shaped cursor.
+            - **"target"**: Target or bullseye cursor.
+            - **"tcross"**: T-shaped crosshair cursor.
+            - **"umbrella"**: Umbrella cursor.
+            - **"wait"**: Hourglass or watch cursor, typically used to indicate loading.
+            - **"xterm"**: I-beam cursor, commonly used for text selection.
+
+    .. py:attribute:: font
+
+        | Syntax: ``label_widget = tk.Label(parent, font=("font_name", size))``
+        | Description: Sets the font type and size of the label text.
+        | Default: ``None``; Default Font Family: Segoe UI; Default Font Size: 9
+        | Example: ``label_widget = tk.Label(window, font=("Arial", 12))``
+
+    .. py:attribute:: foreground
+    .. py:attribute:: fg
+
+        | Syntax: ``label_widget = tk.Label(parent, fg="color")``
+        | Description: Sets the foreground (text) color of the label.
+        | Default: SystemButtonText RGB: (0, 0, 0)
+        | Example: ``label_widget = tk.Label(window, fg="white")``
+
+    .. py:attribute:: height
+
+        | Syntax: ``label_widget = tk.Label(parent, height=height_in_lines)``
+        | Description: Sets the height of the label in lines of text.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, height=2)``
+
+    .. py:attribute:: image
+
+        | Syntax: ``label_widget = tk.Label(parent, image=image_object)``
+        | Description: Displays an image on the label.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, image=my_image)``
+
+    .. py:attribute:: justify
+
+        | Syntax: ``label_widget = tk.Label(parent, justify="alignment")``
+        | Description: Specifies the alignment for multiple lines of text. Common values are "left", "center", and "right".
+        | Default: ``"center"``
+        | Example: ``label_widget = tk.Label(window, justify="left")``
+
+    .. py:attribute:: padx
+
+        | Syntax: ``label_widget = tk.Label(parent, padx=padding)``
+        | Description: Sets horizontal padding inside the label.
+        | Default: ``1``
+        | Example: ``label_widget = tk.Label(window, padx=10)``
+
+    .. py:attribute:: pady
+
+        | Syntax: ``label_widget = tk.Label(parent, pady=padding)``
+        | Description: Sets vertical padding inside the label.
+        | Default: ``1``
+        | Example: ``label_widget = tk.Label(window, pady=5)``
+
+    .. py:attribute:: relief
+
+        | Syntax: ``label_widget = tk.Label(parent, relief="relief_type")``
+        | Description: Sets the border style of the label. Common values are "flat", "raised", "sunken", "ridge", "solid", and "groove".
+        | Default: ``"flat"``
+        | Example: ``label_widget = tk.Label(window, relief="solid")``
+
+    .. py:attribute:: takefocus
+
+        | Syntax: ``label_widget = tk.Label(parent, takefocus=boolean)``
+        | Description: Determines if the label can receive focus via the Tab key.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, takefocus=True)``
+
+    .. py:attribute:: text
+
+        | Syntax: ``label_widget = tk.Label(parent, text="text")``
+        | Description: Sets the text displayed on the label.
+        | Default: ``""``
+        | Example: ``label_widget = tk.Label(window, text="Hello, World!")``
+
+    .. py:attribute:: textvariable
+
+        | Syntax: ``label_widget = tk.Label(parent, textvariable=stringvar)``
+        | Description: Binds a StringVar variable to the label's text, enabling dynamic updates.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, textvariable=my_var)``
+
+    .. py:attribute:: underline
+
+        | Syntax: ``label_widget = tk.Label(parent, underline=index)``
+        | Description: Specifies the index of the character in the text to underline.
+        | Default: ``-1`` (No underline)
+        | Example: ``label_widget = tk.Label(window, text="Save", underline=1)``
+
+    .. py:attribute:: width
+
+        | Syntax: ``label_widget = tk.Label(parent, width=width_in_chars)``
+        | Description: Sets the width of the label in characters.
+        | Default: ``None``
+        | Example: ``label_widget = tk.Label(window, width=10)``
+
+    .. py:attribute:: wraplength
+
+        | Syntax: ``label_widget = tk.Label(parent, wraplength=width_in_pixels)``
+        | Description: Specifies the width in pixels at which the text should wrap to the next line.
+        | Default: ``0`` (No wrapping)
+        | Example: ``label_widget = tk.Label(window, wraplength=100)``
+
+
