@@ -41,41 +41,53 @@ WIDGET-SPECIFIC OPTIONS
 
 ----
 
-Code example
+Sample button
 ---------------
+
+.. grid:: 2
+   :gutter: 0
+   :margin: 0
+   :padding: 0
+
+   .. grid-item-card::
+
+      initial
+      ^^^
+      .. image:: images/button_simple.png
+        :scale: 100%
+
+   .. grid-item-card::
+
+      pressed
+      ^^^
+      .. image:: images/button_simple.png
+        :scale: 100%
 
 .. code-block:: python
 
     import tkinter as tk
 
+
     def button_clicked():
         print("Button clicked!")
+
 
     window = tk.Tk()
 
     # Creating a button with specified options
-    button = tk.Button(window,
-                    text="Click Me",
-                    command=button_clicked,
-                    activebackground="blue",
-                    activeforeground="white",
-                    anchor="center",
-                    bd=3,
-                    bg="lightgray",
-                    cursor="hand2",
-                    disabledforeground="gray",
-                    fg="black",
-                    font=("Arial", 12),
-                    height=2,
-                    highlightbackground="black",
-                    highlightcolor="green",
-                    highlightthickness=2,
-                    justify="center",
-                    overrelief="raised",
-                    padx=10,
-                    pady=5,
-                    width=15,
-                    wraplength=100)
+    button = tk.Button(
+        window,
+        text="Click Me",
+        command=button_clicked,
+        fg="black",  # Text color
+        bg="lightblue",  # Background color
+        activebackground="blue",  # Background color when clicked
+        activeforeground="white",  # Text color when clicked
+        font=("Arial", 12),
+        padx=10,
+        pady=5,
+        width=15,
+    )
 
     button.pack(padx=20, pady=20)
 
@@ -111,20 +123,20 @@ Parameter syntax
 
         | Syntax: ``button_widget = tk.Button(parent, activebackground="color")``
         | Description: Sets the background color of the button when it is active or pressed.
-        | Default: ``None``
+        | Default: SystemButtonFace RGB: (240, 240, 240)
         | Example: ``button_widget = tk.Button(window, activebackground="lightblue")``
 
     .. py:attribute:: activeforeground
 
         | Syntax: ``button_widget = tk.Button(parent, activeforeground="color")``
         | Description: Sets the foreground (text) color of the button when it is active or pressed.
-        | Default: ``None``
+        | Default: SystemButtonText RGB: (0, 0, 0)
         | Example: ``button_widget = tk.Button(window, activeforeground="white")``
 
     .. py:attribute:: anchor
 
         | Syntax: ``button_widget = tk.Button(parent, anchor="position")``
-        | Description: Determines where the text is positioned within the button. Common values are "center", "n", "s", "e", "w", etc.
+        | Description: Determines where the text is positioned within the button. Position values are "center", "n", "s", "e", "w", "ne", "nw", "se", "sw".
         | Default: ``"center"``
         | Example: ``button_widget = tk.Button(window, anchor="center")``
 
@@ -141,7 +153,7 @@ Parameter syntax
 
         | Syntax: ``button_widget = tk.Button(parent, bg="color")``
         | Description: Sets the background color of the button.
-        | Default: ``None``
+        | Default: SystemButtonFace RGB: (240, 240, 240)
         | Example: ``button_widget = tk.Button(window, bg="blue")``
 
     .. py:attribute:: cursor
@@ -151,25 +163,51 @@ Parameter syntax
         | Default: ``None``
         | Example: ``button_widget = tk.Button(window, cursor="hand2")``
 
+        |Possible values include:
+            - **"arrow"**: Standard arrow cursor.
+            - **"circle"**: Small circle cursor.
+            - **"clock"**: Clock or watch cursor.
+            - **"cross"**: Crosshair cursor.
+            - **"dotbox"**: Dotted box cursor.
+            - **"exchange"**: Arrows pointing in opposite directions.
+            - **"fleur"**: Four-way arrow for moving.
+            - **"hand2"**: Hand cursor, commonly used to indicate a clickable item.
+            - **"heart"**: Heart-shaped cursor.
+            - **"man"**: Icon of a person.
+            - **"mouse"**: Cursor shaped like a mouse.
+            - **"pirate"**: Skull-and-crossbones cursor.
+            - **"plus"**: Plus sign cursor.
+            - **"shuttle"**: Shuttle or spaceship.
+            - **"sizing"**: Cursor for resizing.
+            - **"spider"**: Spider cursor.
+            - **"spraycan"**: Spray can cursor.
+            - **"star"**: Star-shaped cursor.
+            - **"target"**: Target or bullseye cursor.
+            - **"tcross"**: T-shaped crosshair cursor.
+            - **"umbrella"**: Umbrella cursor.
+            - **"wait"**: Hourglass or watch cursor.
+            - **"xterm"**: I-beam cursor, commonly used for text selection.
+
     .. py:attribute:: disabledforeground
 
         | Syntax: ``button_widget = tk.Button(parent, disabledforeground="color")``
         | Description: Sets the foreground (text) color of the button when it is disabled.
-        | Default: ``None``
+        | Default: SystemDisabledText RGB: (109, 109, 109)
         | Example: ``button_widget = tk.Button(window, disabledforeground="grey")``
 
+    .. py:attribute:: foreground
     .. py:attribute:: fg
 
         | Syntax: ``button_widget = tk.Button(parent, fg="color")``
         | Description: Sets the foreground (text) color of the button.
-        | Default: ``None``
+        | Default: SystemButtonText RGB: (0, 0, 0)
         | Example: ``button_widget = tk.Button(window, fg="white")``
 
     .. py:attribute:: font
 
         | Syntax: ``button_widget = tk.Button(parent, font=("font_name", size))``
         | Description: Sets the font type and size of the button text.
-        | Default: ``None``
+        | Default: ``None``; Default Font Family: Segoe UI; Default Font Size: 9
         | Example: ``button_widget = tk.Button(window, font=("Arial", 12))``
 
     .. py:attribute:: height
@@ -183,29 +221,36 @@ Parameter syntax
 
         | Syntax: ``button_widget = tk.Button(parent, highlightbackground="color")``
         | Description: Sets the color of the focus highlight when the button does not have focus.
-        | Default: ``None``
+        | Default: SystemButtonFace RGB: (240, 240, 240)
         | Example: ``button_widget = tk.Button(window, highlightbackground="black")``
 
     .. py:attribute:: highlightcolor
 
         | Syntax: ``button_widget = tk.Button(parent, highlightcolor="color")``
         | Description: Sets the color of the focus highlight when the button has focus.
-        | Default: ``None``
+        | Default: SystemWindowFrame RGB: (100, 100, 100)
         | Example: ``button_widget = tk.Button(window, highlightcolor="red")``
 
     .. py:attribute:: highlightthickness
 
         | Syntax: ``button_widget = tk.Button(parent, highlightthickness=thickness)``
         | Description: Sets the thickness of the focus highlight.
-        | Default: ``None``
+        | Default: ``1``
         | Example: ``button_widget = tk.Button(window, highlightthickness=1)``
 
     .. py:attribute:: justify
 
         | Syntax: ``button_widget = tk.Button(parent, justify="alignment")``
-        | Description: Specifies how multiple lines of text are aligned. Common values are "left", "center", "right".
+        | Description: Specifies how multiple lines of text are aligned. Alignment values are "left", "center", "right".
         | Default: ``"center"``
         | Example: ``button_widget = tk.Button(window, justify="center")``
+
+    .. py:attribute:: relief
+
+        | Syntax: ``button_widget = tk.Button(parent, relief="relief_type")``
+        | Description: Sets the type of border relief. Common values are "flat", "raised", "sunken", "ridge", "solid", "groove".
+        | Default: ``"raised"``
+        | Example: ``button_widget = tk.Button(window, relief="raised")``
 
     .. py:attribute:: overrelief
 
@@ -218,14 +263,14 @@ Parameter syntax
 
         | Syntax: ``button_widget = tk.Button(parent, padx=padding)``
         | Description: Sets the horizontal padding inside the button.
-        | Default: ``None``
+        | Default: ``1``
         | Example: ``button_widget = tk.Button(window, padx=10)``
 
     .. py:attribute:: pady
 
         | Syntax: ``button_widget = tk.Button(parent, pady=padding)``
         | Description: Sets the vertical padding inside the button.
-        | Default: ``None``
+        | Default: ``1``
         | Example: ``button_widget = tk.Button(window, pady=5)``
 
     .. py:attribute:: width
@@ -238,7 +283,7 @@ Parameter syntax
     .. py:attribute:: wraplength
 
         | Syntax: ``button_widget = tk.Button(parent, wraplength=length_in_pixels)``
-        | Description: Sets the wrap length for the button text in pixels.
+        | Description: Sets the maximum line length for the text within the button, measured in pixels. When text reaches this length, it automatically wraps onto the next line, ensuring the button doesn't become too wide. This attribute is particularly useful for displaying multi-line text in a constrained space or keeping button widths consistent.
         | Default: ``None``
         | Example: ``button_widget = tk.Button(window, wraplength=100)``
 
@@ -264,13 +309,6 @@ Additional parameters
         | Description: Sets an image to be displayed on the button.
         | Default: ``None``
         | Example: ``button_widget = tk.Button(window, image=my_image)``
-
-    .. py:attribute:: relief
-
-        | Syntax: ``button_widget = tk.Button(parent, relief="relief_type")``
-        | Description: Sets the type of border relief. Common values are "flat", "raised", "sunken", "groove", "ridge".
-        | Default: ``"flat"``
-        | Example: ``button_widget = tk.Button(window, relief="raised")``
 
     .. py:attribute:: repeatdelay
 
@@ -317,11 +355,13 @@ Additional parameters
     .. py:attribute:: default
 
         | Syntax: ``button_widget = tk.Button(parent, default="state")``
-        | Description: Sets the default button state. Common values are "normal", "active", "disabled".
+        | Description: Sets the default button state. State values are "normal", "active", "disabled".
+        | Default: ``"disabled"``
         | Example: ``button_widget = tk.Button(window, default="active")``
 
     .. py:attribute:: state
 
         | Syntax: ``button_widget = tk.Button(parent, state="state")``
-        | Description: Sets the state of the button. Common values are "normal", "active", "disabled".
+        | Description: Sets the state of the button. State values are "normal", "active", "disabled".
+        | Default: ``"normal"``
         | Example: ``button_widget = tk.Button(window, state="disabled")``
