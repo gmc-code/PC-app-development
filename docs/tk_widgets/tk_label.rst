@@ -2,9 +2,7 @@
 tk Label
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-label/?ref=lbp
-| See: https://www.youtube.com/watch?v=8VoTtF-CxrM
-| See: https://www.youtube.com/watch?v=Yn5sT2k4X3g
+| See: https://www.geeksforgeeks.org/python-tkinter-label/
 
 ----
 

@@ -2,8 +2,7 @@
 tk Entry
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-entry-widget/?ref=lbp
-| See: https://www.youtube.com/watch?v=8VoTtF-CxrM
+| See: https://www.geeksforgeeks.org/python-tkinter-entry-widget/
 
 ----
 

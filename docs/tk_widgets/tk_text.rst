@@ -2,7 +2,7 @@
 tk text
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-label/?ref=lbp
+| See: https://www.geeksforgeeks.org/python-tkinter-text-widget/
 
 ----
 

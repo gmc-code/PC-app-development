@@ -2,8 +2,9 @@
 tk messagebox
 ====================================================
 
-| See: https://docs.python.org/3.13/library/tkinter.messagebox.html
+| See: https://www.geeksforgeeks.org/python-tkinter-messagebox-widget/
 
+----
 
 | The messagebox module is used to display different types of message boxes.
 | Each function (showinfo, showwarning, showerror, askquestion, askokcancel, askyesno, askretrycancel) displays a different type of message box.
