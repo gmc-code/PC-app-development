@@ -95,8 +95,9 @@ These loops help create and manage the checkbuttons and their states, as well as
    .. code-block:: python
 
        for i in range(len(options)):
-           button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i], command=display_options,
-                                   bg="white", fg="black", font=fontStyle, padx=10, pady=5)
+           button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i],
+                                    command=display_options, bg="white", fg="black",
+                                    font=fontStyle, padx=10, pady=5)
            button.pack(side="left", padx=5, pady=5)
 
    - This loop iterates over the indices of the `options` list using `range(len(options))`.
