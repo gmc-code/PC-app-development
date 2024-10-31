@@ -62,10 +62,9 @@ PC-app-development
     tk_apps/tk_name_age_task.rst
     tk_apps/tk_name_age.rst
     tk_apps/tk_login_task.rst
+    tk_apps/tk_login.rst
+    tk_apps/tk_login_custom_messagebox.rst
 
-    .. tk_apps/tk_login.rst
-
-    .. tk_apps/tk_login_custom_messagebox.rst
 
 .. toctree::
     :maxdepth: 2
