@@ -14,265 +14,375 @@ Usage
 
 .. py:function:: text_widget  = tk.Text(parent, option=value)
 
-    | parent is the window or frame object. 
+    | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
-STANDARD OPTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~
+----
 
-    background, borderwidth, cursor,
-    exportselection, font, foreground,
-    highlightbackground, highlightcolor,
-    highlightthickness, insertbackground,
-    insertborderwidth, insertofftime,
-    insertontime, insertwidth, padx, pady,
-    relief, selectbackground,
-    selectborderwidth, selectforeground,
-    setgrid, takefocus,
-    xscrollcommand, yscrollcommand,
+Text widget with Scrollbar
+--------------------------------
 
-WIDGET-SPECIFIC OPTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-    autoseparators, height, maxundo,
-    spacing1, spacing2, spacing3,
-    state, tabs, undo, width, wrap,
-
-Code example
----------------
+.. image:: images/text.png
+        :scale: 100%
 
 .. code-block:: python
 
     import tkinter as tk
+    from tkinter import scrolledtext
 
     # Create the main window
-    window = tk.Tk()
-    window.geometry("400x250")  # Set window size
+    root = tk.Tk()
+    root.title("Text Widget Example")
 
+    # Create a Text widget with a scrollbar
+    text_frame = tk.Frame(root)
+    text_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
- 
-Options for the `Text` widget in Tkinter, including their default values and examples of use:
+    scrollbar = tk.Scrollbar(text_frame)
+    scrollbar.pack(side="right", fill="y")
 
-1. **autoseparators**:
-   
-   - **Default Value**: `False`
-   - **Description**: Determines whether separators (such as line breaks) are automatically added to the undo stack after each insertion or deletion.
-   - **Use Case Example**: In a collaborative document editor, enabling `autoseparators=True` ensures that undo actions group changes logically (e.g., undoing a whole paragraph instead of individual characters).
+    text = tk.Text(text_frame, height=10, width=40, wrap="word", font=("Helvetica", 12), yscrollcommand=scrollbar.set)
+    text.pack(padx=10, pady=10, fill="both", expand=True)
 
-2. **background (bg)**:
-   
-   -
-    **Default Value**: System-dependent (usually white)
-   - **Description**: Sets the background color of the text widget.
-   - **Use Case Example**: You're creating a notes app, and you want the background to be light yellow. Set `bg="lightyellow"`.
+    scrollbar.config(command=text.yview)
 
-3. **bd (borderwidth)**:
-   
-   - **Default Value**: 2
-   - **Description**: Specifies the width of the border around the widget.
-   - **Use Case Example**: You're designing a chat input box, and you want a thin border. Set `bd=1`.
+    # Insert initial content
+    initial_content = "\n".join([f"Line {i+1}" for i in range(15)])
+    text.insert("1.0", initial_content)
 
-4. **blockcursor**:
-   
-   - **Default Value**: `False`
-   - **Description**: Controls the cursor style when it's over the text. If set to `True`, the cursor is a block; if `False`, it's a line.
-   - **Use Case Example**: In a code editor, set `blockcursor=True` to make the cursor more visible.
+    # Customize options
+    text.config(
+        bg="lightyellow",  # Background color
+        fg="blue",  # Text color
+        bd=2,  # Border width
+        relief="solid",  # Border style
+        insertbackground="blue",  # Insertion cursor color
+        state="normal",  # Enable editing (use "disabled" to disable)
+        highlightthickness=5,
+        highlightcolor="red",
+        padx=10,
+        pady=10
+    )
 
-5. **cursor**:
-   
-   - **Default Value**: System-dependent (usually an arrow)
-   - **Description**: Sets the cursor type (e.g., arrow, cross, etc.) when hovering over the widget.
-   - **Use Case Example**: In a drawing app, set `cursor="cross"` to indicate that users can draw freehand shapes.
+    # Run the main event loop
+    root.mainloop()
 
-6. **endline**:
-   
-   - **Default Value**: ""
-   - **Description**: Specifies the character(s) to be displayed at the end of each line.
-   - **Use Case Example**: You're building a chat interface, and you want to add a smiley face (`":)"`) at the end of each message line.
+----
 
-7. **exportselection**:
-   
-   - **Default Value**: `True`
-   - **Description**: Determines whether the selected text is automatically copied to the clipboard.
-   - **Use Case Example**: Set `exportselection=False` for a password input field to prevent the password from being copied.
+Parameter syntax
+----------------------
 
-8. **fg (foreground)**:
-   
-   - **Default Value**: System-dependent (usually black)
-   - **Description**: Sets the text color.
-   - **Use Case Example**: For warning messages, set `fg="red"` to make them stand out.
+ .. py:function:: text_widget = tk.Text(parent, option=value)
 
-9.  **font**:
-   
-   - **Default Value**: System-dependent (usually a default font)
-   - **Description**: Defines the font used for the text.
-   - **Use Case Example**: Create a rich text editor with a specific font family and size: `font=("Arial", 12)`.
+    | parent is the window or frame object.
+    | Options can be passed as parameters separated by commas.
 
-10. **height**:
-    
-    - **Default Value**: 24 (number of lines)
-    - **Description**: Specifies the number of visible lines in the widget.
-    - **Use Case Example**: In a log viewer, set `height=10` to display a limited number of log entries at once.
+    **Parameters:**
 
+    .. py:attribute:: autoseparators
 
-11. **highlightbackground**:
-    
-    - **Default Value**: System-dependent (usually gray)
-    - **Description**: Sets the color of the focus highlight when the widget is not focused.
-    - **Use Case Example**: Customize the focus highlight color to match your app's theme.
+        | Syntax: ``text_widget = tk.Text(parent, autoseparators=1)``
+        | Description: Enables automatic separator insertion when typing.
+        | Default: 1
+        | Example: ``text_widget = tk.Text(window, autoseparators=1)``
 
-12. **highlightcolor**:
-    
-    - **Default Value**: System-dependent (usually black)
-    - **Description**: Determines the color of the focus highlight when the widget is focused.
-    - **Use Case Example**: Set `highlightcolor="blue"` for a noticeable focus highlight.
+    .. py:attribute:: background
 
-13. **highlightthickness**:
-    
-    - **Default Value**: 1 (pixel width)
-    - **Description**: Sets the thickness of the focus highlight (border).
-    - **Use Case Example**: Increase `highlightthickness` for a more prominent focus border.
+        | Syntax: ``text_widget = tk.Text(parent, background="color")``
+        | Description: Sets the background color of the text widget.
+        | Default: SystemWindow
+        | Example: ``text_widget = tk.Text(window, background="lightyellow")``
 
-14. **inactiveselectbackground**:
-    
-    - **Default Value**: System-dependent (usually gray)
-    - **Description**: Color of the selected text when the widget is not active (not in focus).
-    - **Use Case Example**: Customize the appearance of selected text when the widget is not in focus.
+    .. py:attribute:: bd
 
-15. **insertbackground**:
-    
-    - **Default Value**: System-dependent (usually black)
-    - **Description**: Color of the insertion cursor (caret).
-    - **Use Case Example**: Set `insertbackground="green"` to make the cursor stand out.
+        | Syntax: ``text_widget = tk.Text(parent, bd=border_width)``
+        | Description: Sets the border width of the text widget.
+        | Default: 1
+        | Example: ``text_widget = tk.Text(window, bd=2)``
 
-16. **insertborderwidth**:
-    
-    - **Default Value**: 1
-    - **Description**: Width of the insertion cursor's border.
-    - **Use Case Example**: Increase `insertborderwidth
+    .. py:attribute:: bg
 
-17. **insertofftime**:
-    
-    - **Default Value**: 300 (milliseconds)
-    - **Description**: Specifies the time (in milliseconds) before the insertion cursor disappears when the widget loses focus.
-    - **Use Case Example**: You're building a chat application, and you want the insertion cursor to remain visible for a longer duration after the user clicks outside the text box. Set `insertofftime=1000` (1 second).
+        | Syntax: ``text_widget = tk.Text(parent, bg="color")``
+        | Description: Sets the background color of the text widget.
+        | Default: SystemWindow
+        | Example: ``text_widget = tk.Text(window, bg="lightyellow")``
 
-18. **insertontime**:
-    
-    - **Default Value**: 600 (milliseconds)
-    - **Description**: Specifies the time (in milliseconds) before the insertion cursor appears when the widget gains focus.
-    - **Use Case Example**: In a search input field, set `insertontime=200` to make the cursor appear quickly when the user clicks inside the field.
+    .. py:attribute:: blockcursor
 
-19. **insertunfocussed**:
-    
-    - **Default Value**: `True`
-    - **Description**: Determines whether the insertion cursor is visible when the widget is not focused.
-    - **Use Case Example**: If you're creating a read-only display area, set `insertunfocussed=False` to hide the insertion cursor.
+        | Syntax: ``text_widget = tk.Text(parent, blockcursor=0)``
+        | Description: Sets the cursor style; a block or normal cursor.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, blockcursor=1)``
 
-20. **insertwidth**:
-    
-    - **Default Value**: 2 (pixels)
-    - **Description**: Width of the insertion cursor.
-    - **Use Case Example**: For a code editor, set `insertwidth=3` to make the cursor wider and more noticeable.
+    .. py:attribute:: borderwidth
 
-21. **maxundo**:
-    
-    - **Default Value**: `-1` (unlimited)
-    - **Description**: Maximum number of undo steps allowed.
-    - **Use Case Example**: In a collaborative document editor, set `maxundo=50` to limit the number of undo steps per session.
+        | Syntax: ``text_widget = tk.Text(parent, borderwidth=width)``
+        | Description: Sets the width of the border around the text widget.
+        | Default: 1
+        | Example: ``text_widget = tk.Text(window, borderwidth=2)``
 
-22. **padx** and **pady**:
-    
-    - **Default Value**: 0
-    - **Description**: Padding (horizontal and vertical) inside the widget.
-    - **Use Case Example**: Add some space around the text content by setting `padx=5` and `pady=5`.
+    .. py:attribute:: cursor
 
-23. **relief**:
-    
-    - **Default Value**: `"flat"`
-    - **Description**: Border style (e.g., `"flat"`, `"raised"`, `"sunken"`).
-    - **Use Case Example**: Customize the appearance of the text widget border. For a raised effect, set `relief="raised"`.
+        | Syntax: ``text_widget = tk.Text(parent, cursor="cursor_type")``
+        | Description: Sets the mouse cursor when hovering over the text widget.
+        | Default: xterm
+        | Example: ``text_widget = tk.Text(window, cursor="hand2")``
 
-24. **selectbackground**:
-    
-    - **Default Value**: System-dependent (usually blue)
-    - **Description**: Background color of selected text.
-    - **Use Case Example**: Set `selectbackground="yellow"` to highlight selected text with a yellow background.
+    .. py:attribute:: endline
 
-25. **selectborderwidth**:
-    
-    - **Default Value**: 1
-    - **Description**: Width of the selection border.
-    - **Use Case Example**: Increase `selectborderwidth` to make the selection border more prominent.
+        | Syntax: ``text_widget = tk.Text(parent, endline="")``
+        | Description: Sets the endline character for new lines.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, endline="\n")``
 
-26. **selectforeground**:
-    
-    - **Default Value**: System-dependent (usually white)
-    - **Description**: Text color of selected text.
-    - **Use Case Example**: Set `selectforeground="black"` to ensure good contrast for selected text.
+    .. py:attribute:: exportselection
 
-27. **setgrid**:
-    
-    - **Default Value**: `False`
-    - **Description**: Enables or disables grid alignment.
-    - **Use Case Example**: If you're creating a crossword puzzle app, set `setgrid=True` to align text within grid cells.
+        | Syntax: ``text_widget = tk.Text(parent, exportselection=1)``
+        | Description: Allows the text selection to be copied to the clipboard.
+        | Default: 1
+        | Example: ``text_widget = tk.Text(window, exportselection=1)``
 
-28. **spacing1**, **spacing2**, **spacing3**:
-    
-    - **Default Value**: 0
-    - **Description**: Line spacing parameters.
-    - **Use Case Example**: Adjust line spacing for better readability. For example, set `spacing1=2` to add extra space between lines.
+    .. py:attribute:: fg
 
-29. **startline**:
-    
-    - **Default Value**: 1
-    - **Description**: Determines the first visible line.
-    - **Use Case Example**: If you're displaying a long document, set `startline=10` to start showing content from the 10th line.
+        | Syntax: ``text_widget = tk.Text(parent, fg="color")``
+        | Description: Sets the foreground color (text color) of the text widget.
+        | Default: SystemWindowText
+        | Example: ``text_widget = tk.Text(window, fg="black")``
 
-30. **state**:
-    
-    - **Default Value**: `"normal"` (editable)
-    - **Description**: Sets the state of the widget (e.g., `"normal"`, `"disabled"`).
-    - **Use Case Example**: Disable editing by setting `state="disabled"` for a read-only display.
+    .. py:attribute:: font
 
-31. **tabs**:
-    
-    - **Default Value**: System-dependent (usually 8 spaces)
-    - **Description**: Defines tab stops.
-    - **Use Case Example**: Customize tab behavior by setting specific tab stops (e.g., `tabs=(20, 40, 60)`).
+        | Syntax: ``text_widget = tk.Text(parent, font=("font_name", size, "style"))``
+        | Description: Specifies the font type, size, and style for the text.
+        | Default: TkFixedFont
+        | Example: ``text_widget = tk.Text(window, font=("Arial", 12, "italic"))``
 
-32. **tabstyle**:
-    
-    - **Default Value**: `"wordprocessor"`
-    - **Description**: Specifies the tab style (e.g., `"wordprocessor"`).
-    - **Use Case Example**: Set `tabstyle="tabular"` for a more structured tab behavior.
-  
-33. **takefocus**:
-    
-    - **Default Value**: `True`
-    - **Description**: Determines whether the widget can receive focus.
-    - **Use Case Example**: If you have a search box, set `takefocus=False` to prevent it from receiving focus when navigating with the keyboard.
+    .. py:attribute:: foreground
 
-34. **undo**:
-    
-    - **Default Value**: `False`
-    - **Description**: Enables or disables undo functionality.
-    - **Use Case Example**: In a text editor, set `undo=True` to allow users to undo their changes.
+        | Syntax: ``text_widget = tk.Text(parent, foreground="color")``
+        | Description: Sets the foreground color (text color) of the text widget.
+        | Default: SystemWindowText
+        | Example: ``text_widget = tk.Text(window, foreground="black")``
 
-35. **width**:
-    
-    - **Default Value**: System-dependent (usually 20 characters wide)
-    - **Description**: Specifies the width of the widget in characters.
-    - **Use Case Example**: Create a narrow input field by setting `width=10`.
+    .. py:attribute:: height
 
-36. **wrap**:
-    
-    - **Default Value**: `"none"`
-    - **Description**: Controls text wrapping within the widget ("none," "char," or "word").
-    - **Use Case Example**: For a chat message box, set `wrap="word"` to wrap text at word boundaries.
+        | Syntax: ``text_widget = tk.Text(parent, height=height_value)``
+        | Description: Sets the height of the text widget in lines.
+        | Default: 24
+        | Example: ``text_widget = tk.Text(window, height=10)``
 
-37. **xscrollcommand** and **yscrollcommand**:
-    
-    - **Default Value**: `None`
-    - **Description**: Scrollbar commands for horizontal and vertical scrolling.
-    - **Use Case Example**: Connect the text widget to horizontal and vertical scrollbars using these options.
+    .. py:attribute:: highlightbackground
+
+        | Syntax: ``text_widget = tk.Text(parent, highlightbackground="color")``
+        | Description: Sets the background color when the text widget does not have focus.
+        | Default: SystemButtonFace
+        | Example: ``text_widget = tk.Text(window, highlightbackground="gray")``
+
+    .. py:attribute:: highlightcolor
+
+        | Syntax: ``text_widget = tk.Text(parent, highlightcolor="color")``
+        | Description: Sets the color of the highlight when the text widget has focus.
+        | Default: SystemWindowFrame
+        | Example: ``text_widget = tk.Text(window, highlightcolor="blue")``
+
+    .. py:attribute:: highlightthickness
+
+        | Syntax: ``text_widget = tk.Text(parent, highlightthickness=thickness)``
+        | Description: Sets the thickness of the highlight border.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, highlightthickness=2)``
+
+    .. py:attribute:: inactiveselectbackground
+
+        | Syntax: ``text_widget = tk.Text(parent, inactiveselectbackground="color")``
+        | Description: Sets the background color for selected text when the widget is inactive.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, inactiveselectbackground="lightgray")``
+
+    .. py:attribute:: insertbackground
+
+        | Syntax: ``text_widget = tk.Text(parent, insertbackground="color")``
+        | Description: Sets the color of the insertion cursor (caret).
+        | Default: SystemWindowText
+        | Example: ``text_widget = tk.Text(window, insertbackground="red")``
+
+    .. py:attribute:: insertborderwidth
+
+        | Syntax: ``text_widget = tk.Text(parent, insertborderwidth=width)``
+        | Description: Sets the width of the border around the insertion cursor.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, insertborderwidth=2)``
+
+    .. py:attribute:: insertofftime
+
+        | Syntax: ``text_widget = tk.Text(parent, insertofftime=milliseconds)``
+        | Description: Sets the time the cursor stays off (in milliseconds).
+        | Default: 300
+        | Example: ``text_widget = tk.Text(window, insertofftime=500)``
+
+    .. py:attribute:: insertontime
+
+        | Syntax: ``text_widget = tk.Text(parent, insertontime=milliseconds)``
+        | Description: Sets the time the cursor stays on (in milliseconds).
+        | Default: 600
+        | Example: ``text_widget = tk.Text(window, insertontime=800)``
+
+    .. py:attribute:: insertunfocussed
+
+        | Syntax: ``text_widget = tk.Text(parent, insertunfocussed="style")``
+        | Description: Sets the style of the cursor when the widget is unfocused.
+        | Default: none
+        | Example: ``text_widget = tk.Text(window, insertunfocussed="underline")``
+
+    .. py:attribute:: insertwidth
+
+        | Syntax: ``text_widget = tk.Text(parent, insertwidth=width)``
+        | Description: Sets the width of the insertion cursor.
+        | Default: 2
+        | Example: ``text_widget = tk.Text(window, insertwidth=5)``
+
+    .. py:attribute:: maxundo
+
+        | Syntax: ``text_widget = tk.Text(parent, maxundo=number)``
+        | Description: Sets the maximum number of undo operations.
+        | Default: 0 (unlimited)
+        | Example: ``text_widget = tk.Text(window, maxundo=100)``
+
+    .. py:attribute:: padx
+
+        | Syntax: ``text_widget = tk.Text(parent, padx=padding_value)``
+        | Description: Sets the horizontal padding within the text widget.
+        | Default: 1
+        | Example: ``text_widget = tk.Text(window, padx=10)``
+
+    .. py:attribute:: pady
+
+        | Syntax: ``text_widget = tk.Text(parent, pady=padding_value)``
+        | Description: Sets the vertical padding within the text widget.
+        | Default: 1
+        | Example: ``text_widget = tk.Text(window, pady=10)``
+
+    .. py:attribute:: relief
+
+        | Syntax: ``text_widget = tk.Text(parent, relief="style")``
+        | Description: Sets the border style of the text widget. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
+        | Default: sunken
+        | Example: ``text_widget = tk.Text(window, relief="flat")``
+
+    .. py:attribute:: selectbackground
+
+        | Syntax: ``text_widget = tk.Text(parent, selectbackground="color")``
+        | Description: Sets the background color of the selected text.
+        | Default: SystemHighlight
+        | Example: ``text_widget = tk.Text(window, selectbackground="lightblue")``
+
+    .. py:attribute:: selectborderwidth
+
+        | Syntax: ``text_widget = tk.Text(parent, selectborderwidth=width)``
+        | Description: Sets the border width of the selection.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, selectborderwidth=1)``
+
+    .. py:attribute:: selectforeground
+
+        | Syntax: ``text_widget = tk.Text(parent, selectforeground="color")``
+        | Description: Sets the text color of the selected text.
+        | Default: SystemHighlightText
+        | Example: ``text_widget = tk.Text(window, selectforeground="white")``
+
+    .. py:attribute:: setgrid
+
+        | Syntax: ``text_widget = tk.Text(parent, setgrid=0)``
+        | Description: Enables or disables grid lines in the text widget.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, setgrid=1)``
+
+    .. py:attribute:: spacing1
+
+        | Syntax: ``text_widget = tk.Text(parent, spacing1=spacing_value)``
+        | Description: Sets the spacing before paragraphs.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, spacing1=5)``
+
+    .. py:attribute:: spacing2
+
+        | Syntax: ``text_widget = tk.Text(parent, spacing2=spacing_value)``
+        | Description: Sets the spacing between lines.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, spacing2=3)``
+
+    .. py:attribute:: spacing3
+
+        | Syntax: ``text_widget = tk.Text(parent, spacing3=spacing_value)``
+        | Description: Sets the spacing after paragraphs.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, spacing3=5)``
+
+    .. py:attribute:: startline
+
+        | Syntax: ``text_widget = tk.Text(parent, startline="")``
+        | Description: Sets the starting line number for text.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, startline=1)``
+
+    .. py:attribute:: state
+
+        | Syntax: ``text_widget = tk.Text(parent, state="state_type")``
+        | Description: Sets the state of the text widget. Options include `normal`, `disabled`, or `hidden`.
+        | Default: normal
+        | Example: ``text_widget = tk.Text(window, state="disabled")``
+
+    .. py:attribute:: tabs
+
+        | Syntax: ``text_widget = tk.Text(parent, tabs=tab_stops)``
+        | Description: Sets tab stops for the text widget.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, tabs=4)``
+
+    .. py:attribute:: tabstyle
+
+        | Syntax: ``text_widget = tk.Text(parent, tabstyle="style")``
+        | Description: Specifies the style for tab stops. Options include `tabular`.
+        | Default: tabular
+        | Example: ``text_widget = tk.Text(window, tabstyle="tabular")``
+
+    .. py:attribute:: takefocus
+
+        | Syntax: ``text_widget = tk.Text(parent, takefocus=1)``
+        | Description: Allows the text widget to take focus on click.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, takefocus=1)``
+
+    .. py:attribute:: undo
+
+        | Syntax: ``text_widget = tk.Text(parent, undo=0)``
+        | Description: Enables the undo feature for the text widget.
+        | Default: 0
+        | Example: ``text_widget = tk.Text(window, undo=1)``
+
+    .. py:attribute:: width
+
+        | Syntax: ``text_widget = tk.Text(parent, width=width_value)``
+        | Description: Sets the width of the text widget in characters.
+        | Default: 80
+        | Example: ``text_widget = tk.Text(window, width=50)``
+
+    .. py:attribute:: wrap
+
+        | Syntax: ``text_widget = tk.Text(parent, wrap="mode")``
+        | Description: Sets the text wrapping mode. Options are `none`, `char`, or `word`.
+        | Default: char
+        | Example: ``text_widget = tk.Text(window, wrap="word")``
+
+    .. py:attribute:: xscrollcommand
+
+        | Syntax: ``text_widget = tk.Text(parent, xscrollcommand=command)``
+        | Description: Configures the command for horizontal scrolling.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, xscrollcommand=my_xscroll_command)``
+
+    .. py:attribute:: yscrollcommand
+
+        | Syntax: ``text_widget = tk.Text(parent, yscrollcommand=command)``
+        | Description: Configures the command for vertical scrolling.
+        | Default: None
+        | Example: ``text_widget = tk.Text(window, yscrollcommand=my_yscroll_command)``
