@@ -24,6 +24,9 @@ Usage
 Using an entry widget
 ----------------------------
 
+.. image:: images/entry_get.png
+    :scale: 100%
+
 This code creates a simple Tkinter GUI application that allows a user to enter their name into an entry field and display the entered name in a label when a button is clicked. Here's a breakdown of its functionality:
 
 1. **Main Window Setup**: Initializes the main window with a specified size and title.

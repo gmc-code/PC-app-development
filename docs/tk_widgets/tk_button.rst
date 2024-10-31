@@ -20,25 +20,6 @@ Usage
     | Options can be passed as parameters separated by commas.
 
 
-STANDARD OPTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    activebackground, activeforeground, anchor,
-    background, bitmap, borderwidth, cursor,
-    disabledforeground, font, foreground
-    highlightbackground, highlightcolor,
-    highlightthickness, image, justify,
-    padx, pady, relief, repeatdelay,
-    repeatinterval, takefocus, text,
-    textvariable, underline, wraplength
-
-WIDGET-SPECIFIC OPTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    command, compound, default, height,
-    overrelief, state, width
-
-
 ----
 
 Sample button
