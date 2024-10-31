@@ -1,5 +1,5 @@
 ====================================================
-tk text
+tk Text
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-tkinter-text-widget/

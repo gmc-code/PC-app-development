@@ -1,5 +1,5 @@
 ====================================================
-tk check button
+tk Checkbutton
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/

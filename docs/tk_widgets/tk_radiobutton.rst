@@ -1,5 +1,5 @@
 ====================================================
-tk radio button
+tk Radiobutton
 ====================================================
 
 | See: https://www.geeksforgeeks.org/radiobutton-in-tkinter-python/
@@ -9,10 +9,10 @@ tk radio button
 Usage
 ---------------
 
-| The `tkinter.Button` widget provides a button.
-| To create a button widget the general syntax is:
+| The `tkinter.Radiobutton` widget provides a Radio button.
+| To create a Radio button widget the general syntax is:
 
-.. py:function:: button_widget = tk.Button(parent, option=value)
+.. py:function:: button_widget = tk.Radiobutton(parent, option=value)
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
