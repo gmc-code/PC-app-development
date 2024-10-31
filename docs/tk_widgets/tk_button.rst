@@ -41,7 +41,7 @@ Sample button
 
       pressed
       ^^^
-      .. image:: images/button_simple.png
+      .. image:: images/button_simple_pressed.png
         :scale: 100%
 
 .. code-block:: python

@@ -45,9 +45,9 @@ PC-app-development
     tk_widgets/tk_entry.rst
     tk_widgets/tk_text.rst
     tk_widgets/tk_button.rst
+    tk_widgets/tk_messagebox.rst
 
     .. tk_widgets/tk_radio_button.rst
-    .. tk_widgets/tk_messagebox.rst
 
 
 .. toctree::
