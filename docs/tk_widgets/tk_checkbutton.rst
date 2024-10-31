@@ -26,7 +26,7 @@ Using check buttons
     :scale: 100%
 
 This code demonstrates the use of check boxes (check buttons) and a text widget to display the selected options.
-=
+
 
 .. code-block:: python
 
@@ -34,7 +34,10 @@ This code demonstrates the use of check boxes (check buttons) and a text widget 
     from tkinter import font
 
     def display_options():
-        selected_options = [option for option, var in zip(options, option_vars) if var.get()]
+        selected_options = []
+        for i in range(len(options)):
+            if option_vars[i].get():
+                selected_options.append(options[i])
         text_widget.delete(1.0, 'end')
         text_widget.insert(tk.END, f"You selected: {', '.join(selected_options)}")
 
@@ -53,11 +56,13 @@ This code demonstrates the use of check boxes (check buttons) and a text widget 
     options = ["Option 1", "Option 2", "Option 3"]
 
     # Create a list to hold the IntVar for each checkbutton
-    option_vars = [tk.IntVar() for _ in options]
+    option_vars = []
+    for _ in options:
+        option_vars.append(tk.IntVar())
 
     # Create and pack the checkbuttons
-    for option, var in zip(options, option_vars):
-        button = tk.Checkbutton(frame, text=option, variable=var, command=display_options,
+    for i in range(len(options)):
+        button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i], command=display_options,
                                 bg="white", fg="black", font=fontStyle, padx=10, pady=5)
         button.pack(side="left", padx=5, pady=5)
 
@@ -67,6 +72,53 @@ This code demonstrates the use of check boxes (check buttons) and a text widget 
 
     # Run the main event loop
     root.mainloop()
+
+For loops
+~~~~~~~~~~~~~~~
+
+These loops help create and manage the checkbuttons and their states, as well as display the selected options in the text widget.
+
+1. **Creating `IntVar` List**:
+
+   .. code-block:: python
+
+       option_vars = []
+       for _ in options:
+           option_vars.append(tk.IntVar())
+
+   - This loop iterates over the `options` list.
+   - For each option, it creates a new `IntVar` instance and appends it to the `option_vars` list.
+   - The underscore `_` is used as a placeholder since the loop variable is not needed.
+
+2. **Creating and Packing Checkbuttons**:
+
+   .. code-block:: python
+
+       for i in range(len(options)):
+           button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i], command=display_options,
+                                   bg="white", fg="black", font=fontStyle, padx=10, pady=5)
+           button.pack(side="left", padx=5, pady=5)
+
+   - This loop iterates over the indices of the `options` list using `range(len(options))`.
+   - For each index `i`, it creates a `Checkbutton` with the corresponding text from `options[i]` and variable from `option_vars[i]`.
+   - The `Checkbutton` is then packed into the frame with specified padding and alignment.
+
+3. **Displaying Selected Options**:
+
+   .. code-block:: python
+
+       def display_options():
+           selected_options = []
+           for i in range(len(options)):
+               if option_vars[i].get():
+                   selected_options.append(options[i])
+           text_widget.delete(1.0, 'end')
+           text_widget.insert(tk.END, f"You selected: {', '.join(selected_options)}")
+
+   - This loop iterates over the indices of the `options` list.
+   - For each index `i`, it checks if the corresponding `IntVar` in `option_vars[i]` is set (i.e., the checkbutton is selected).
+   - If selected, the option from `options[i]` is appended to the `selected_options` list.
+   - The text widget is then updated to display the selected options.
 
 
 ----

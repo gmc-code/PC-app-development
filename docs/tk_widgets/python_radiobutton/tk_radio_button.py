@@ -25,12 +25,14 @@ options = ["Option 1", "Option 2", "Option 3"]
 
 # Create and pack the radio buttons
 for option in options:
-    button = tk.Radiobutton(frame, text=option, variable=option_var, value=option, command=display_option,
-                            bg="white", fg="black", font=fontStyle, indicatoron=0, padx=10, pady=5)
+    button = tk.Radiobutton(frame, text=option, variable=option_var, value=option,
+                            command=display_option, bg="white", fg="black",
+                            font=fontStyle, indicatoron=0, padx=10, pady=5)
     button.pack(side="left", padx=5, pady=5)
 
 # Create a text widget to display the selected option
-text_widget = tk.Text(root, height=2, width=30, bg="white", fg="black", font=fontStyle, bd=2, relief="solid")
+text_widget = tk.Text(root, height=2, width=30, bg="white", fg="black",
+                        font=fontStyle, bd=2, relief="solid")
 text_widget.pack(padx=10, pady=10)
 
 # Run the main event loop
