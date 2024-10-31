@@ -62,12 +62,13 @@ This code demonstrates the use of check boxes (check buttons) and a text widget 
 
     # Create and pack the checkbuttons
     for i in range(len(options)):
-        button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i], command=display_options,
-                                bg="white", fg="black", font=fontStyle, padx=10, pady=5)
+        button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i],
+                                 command=display_options, bg="white", fg="black", font=fontStyle, padx=10, pady=5)
         button.pack(side="left", padx=5, pady=5)
 
     # Create a text widget to display the selected options
-    text_widget = tk.Text(root, height=2, width=40, bg="white", fg="black", font=fontStyle, bd=2, relief="solid")
+    text_widget = tk.Text(root, height=2, width=40, bg="white", fg="black",
+                            font=fontStyle, bd=2, relief="solid")
     text_widget.pack(padx=10, pady=10)
 
     # Run the main event loop
