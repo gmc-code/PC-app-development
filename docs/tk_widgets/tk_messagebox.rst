@@ -38,7 +38,7 @@ tk messagebox
 
 
 
-.. grid:: 4
+.. grid:: 2
    :gutter: 0
    :margin: 0
    :padding: 0
@@ -47,7 +47,7 @@ tk messagebox
 
       askquestion
       ^^^
-      .. image:: images/button_simple.png
+      .. image:: images/messagebox_askquestion.png
         :scale: 100%
 
    .. grid-item-card::
@@ -56,6 +56,11 @@ tk messagebox
       ^^^
       .. image:: images/messagebox_askokcancel.png
         :scale: 100%
+
+.. grid:: 2
+   :gutter: 0
+   :margin: 0
+   :padding: 0
 
    .. grid-item-card::
 
