@@ -101,7 +101,8 @@ Adding font and colour settings to tkinter widgets
 .. code-block:: python
 
     # Add order button
-    add_button = tk.Button(root, text="Add Order", command=add_order, bg=ADD_BUTTON_BG, fg=ADD_BUTTON_FG, activebackground=ADD_BUTTON_HOVER_BG)
+    add_button = tk.Button(root, text="Add Order", command=add_order, bg=ADD_BUTTON_BG,
+                             fg=ADD_BUTTON_FG, activebackground=ADD_BUTTON_HOVER_BG)
 
 .. code-block:: python
 
@@ -112,12 +113,14 @@ Adding font and colour settings to tkinter widgets
 .. code-block:: python
 
     # Delete selected pizza button
-    delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
+    delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=DELETE_BUTTON_BG,
+                                     fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 
 .. code-block:: python
 
     # Cancel whole order button
-    cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
+    cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG,
+                                     fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 
 
 Adding color to the Orders list total
