@@ -18,8 +18,6 @@ Usage
     | variable is a `tk.StringVar` that holds the selected value.
     | *values are the options to be displayed in the dropdown menu, passed as separate arguments.
 
-
-
 ----
 
 Sample OptionMenu
@@ -67,7 +65,9 @@ Sample OptionMenu
     window.mainloop()
 
 
-**`*fruits`**:
+``*fruits``
+---------------
+
    The asterisk (`*`) is used to unpack the list `fruits` into individual arguments. This means that each item in the `fruits` list is passed as a separate argument to the `OptionMenu`.
    For example, if `fruits = ["Apple", "Banana", "Cherry"]`, the `*fruits` will be equivalent to passing `"Apple", "Banana", "Cherry"` as separate arguments.
 
