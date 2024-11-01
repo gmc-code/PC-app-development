@@ -59,6 +59,78 @@ Example:
 
         button.bind("<Button-3>", on_right_click)  # Binds right-click to the callback function
 
+
+Tkinter Button Events
+-----------------------
+
+Mouse Events
+~~~~~~~~~~~~~~~~~~~
+
+- **``<Button-1>``**: Left mouse button click.
+- **``<Button-2>``**: Middle mouse button click.
+- **``<Button-3>``**: Right mouse button click.
+- **``<Double-Button-1>``**: Double-click with the left mouse button.
+- **``<ButtonRelease-1>``**: Release of the left mouse button.
+- **``<Enter>``**: Mouse pointer enters the widget.
+- **``<Leave>``**: Mouse pointer leaves the widget.
+- **``<Motion>``**: Mouse pointer moves within the widget.
+- **``<MouseWheel>``**: Mouse wheel is scrolled.
+
+Keyboard Events
+~~~~~~~~~~~~~~~~~~~
+
+- **``<KeyPress>``**: Any key is pressed.
+- **``<KeyRelease>``**: Any key is released.
+- **``<Return>``**: Enter key is pressed.
+- **``<Escape>``**: Escape key is pressed.
+- **``<Control-Key>``**: Control key is pressed along with another key (e.g., ``<Control-c>`` for Ctrl+C).
+
+Focus Events
+~~~~~~~~~~~~~~~~~~~
+
+- **``<FocusIn>``**: Widget gains focus.
+- **``<FocusOut>``**: Widget loses focus.
+
+Window Events
+~~~~~~~~~~~~~~~~~~~
+
+- **``<Configure>``**: Widget is resized or moved.
+- **``<Destroy>``**: Widget is destroyed.
+- **``<Expose>``**: Part of the widget becomes visible after being covered.
+
+Example Usage
+~~~~~~~~~~~~~~~~~~~
+
+Here's an example of how to bind some of these events to a button:
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    def on_click(event):
+        print("Button clicked!")
+
+    def on_double_click(event):
+        print("Button double-clicked!")
+
+    def on_enter(event):
+        print("Mouse entered button area!")
+
+    def on_leave(event):
+        print("Mouse left button area!")
+
+    root = tk.Tk()
+    button = tk.Button(root, text="Click Me")
+    button.bind("<Button-1>", on_click)
+    button.bind("<Double-Button-1>", on_double_click)
+    button.bind("<Enter>", on_enter)
+    button.bind("<Leave>", on_leave)
+    button.pack()
+
+    root.mainloop()
+
+----
+
 flash
 -----
 
@@ -73,6 +145,8 @@ Example:
     .. code-block:: python
 
         button.flash()  # Causes the button to flash briefly
+
+----
 
 cget
 ----
@@ -90,6 +164,8 @@ Example:
         text = button.cget("text")  # Retrieves the text displayed on the button
 
 - **option**: Name of the option to retrieve (e.g., `"text"`, `"state"`).
+
+----
 
 grid, pack, place
 ------------------
@@ -112,6 +188,8 @@ Example:
 
         button.pack(pady=10)  # Packs the button with padding around it
 
+----
+
 focus_set
 ---------
 
@@ -126,6 +204,8 @@ Example:
     .. code-block:: python
 
         button.focus_set()  # Sets focus to the button
+
+----
 
 unbind
 ------
@@ -143,6 +223,8 @@ Example:
     .. code-block:: python
 
         button.unbind("<Button-1>")  # Removes left-click binding from the button
+
+----
 
 destroy
 -------
