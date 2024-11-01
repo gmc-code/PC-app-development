@@ -240,3 +240,179 @@ Example:
     .. code-block:: python
 
         button.destroy()  # Removes the button from the interface
+
+----
+
+Tkinter Button Widget: Grouped Methods by Function
+--------------------------------------------------------
+
+Event Handling and Scheduling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **after**: Schedules a function to run after a specified delay in milliseconds.
+- **after_cancel**: Cancels a function scheduled with ``after``.
+- **after_idle**: Runs a function as soon as the Tkinter event loop is idle.
+- **after_info**: Retrieves information about scheduled ``after`` events.
+- **bind**: Binds an event to a widget-specific callback function.
+- **bind_all**: Binds an event to all widgets.
+- **bind_class**: Binds an event to all widgets of a specific class.
+- **bindtags**: Manages event binding tags for the widget.
+- **event_add**: Adds virtual events to the event bindings.
+- **event_delete**: Deletes virtual events from the event bindings.
+- **event_generate**: Simulates an event for the widget.
+- **event_info**: Provides information on virtual events.
+- **flash**: Temporarily flashes the widget for visual feedback.
+
+Focus and Selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **focus**: Sets the input focus to the widget.
+- **focus_displayof**: Returns the widget that has focus in the display.
+- **focus_force**: Forces focus onto the widget.
+- **focus_get**: Retrieves the widget that currently has focus.
+- **focus_lastfor**: Returns the last widget that held the focus.
+- **focus_set**: Sets focus explicitly on the widget.
+- **selection_clear**: Clears the selection in the widget.
+- **selection_get**: Gets the selection content.
+- **selection_handle**: Defines a function to handle selections.
+- **selection_own**: Takes ownership of the selection.
+- **selection_own_get**: Returns the current owner of the selection.
+
+Clipboard Operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **clipboard_append**: Appends text to the system clipboard.
+- **clipboard_clear**: Clears the system clipboard.
+- **clipboard_get**: Retrieves text from the system clipboard.
+
+Geometry Management (Grid, Pack, Place)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **columnconfigure**: Configures grid column properties.
+- **config**: Sets one or more widget options.
+- **configure**: Alias for ``config``.
+- **grid**: Places the widget in a grid.
+- **grid_anchor**: Sets the anchor for the grid layout.
+- **grid_bbox**: Returns the bounding box for the widget's grid area.
+- **grid_columnconfigure**: Configures a column in the grid.
+- **grid_configure**: Configures the grid options for the widget.
+- **grid_forget**: Removes the widget from the grid without deleting it.
+- **grid_info**: Returns information about the grid layout.
+- **grid_location**: Returns grid coordinates of a point.
+- **grid_propagate**: Controls whether the grid can resize the widget.
+- **grid_remove**: Temporarily removes the widget from the grid.
+- **grid_rowconfigure**: Configures a row in the grid.
+- **grid_size**: Returns the size of the grid.
+- **grid_slaves**: Returns the widgets managed by the grid manager.
+- **pack**: Packs the widget into its parent.
+- **pack_configure**: Configures options for the ``pack`` geometry manager.
+- **pack_forget**: Unpacks the widget from the layout.
+- **pack_info**: Returns information on the ``pack`` layout.
+- **pack_propagate**: Controls whether ``pack`` can resize the widget.
+- **pack_slaves**: Returns children managed by the ``pack`` geometry manager.
+- **place**: Places the widget at an absolute position.
+- **place_configure**: Configures options for the ``place`` geometry manager.
+- **place_forget**: Unplaces the widget from the layout.
+- **place_info**: Returns information on the ``place`` layout.
+- **place_slaves**: Returns children managed by the ``place`` geometry manager.
+- **propagate**: Controls geometry propagation of the widget.
+- **forget**: Removes the widget from the screen but doesn't destroy it.
+
+Display and Layer Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **anchor**: Sets the position of text or images within the widget.
+- **bbox**: Returns bounding box coordinates of a specified item.
+- **lift**: Raises the widget above sibling widgets.
+- **location**: Returns the screen coordinates of the widget.
+- **lower**: Lowers the widget below sibling widgets.
+- **tkraise**: Raises the widget in the stacking order.
+
+Widget Information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **cget**: Retrieves the current value of a widget configuration option.
+- **info**: Retrieves information about the widget's options.
+- **info_patchlevel**: Returns the Tkinter patch level.
+- **keys**: Returns a list of all configuration options for the widget.
+- **winfo_atom**: Converts a string to a Tkinter atom.
+- **winfo_atomname**: Converts an atom to a string.
+- **winfo_cells**: Returns the number of cells in the widget's colormap.
+- **winfo_children**: Returns a list of the widget's children.
+- **winfo_class**: Returns the widget class name.
+- **winfo_colormapfull**: Checks if the colormap is full.
+- **winfo_containing**: Returns the widget at a specific screen location.
+- **winfo_depth**: Returns the color depth of the widget.
+- **winfo_exists**: Checks if the widget exists.
+- **winfo_fpixels**: Converts a distance to floating-point pixels.
+- **winfo_geometry**: Returns the widget's geometry string.
+- **winfo_height**: Returns the widget's height in pixels.
+- **winfo_id**: Returns the widget's unique identifier.
+- **winfo_interps**: Returns a list of Tcl interpreters.
+- **winfo_ismapped**: Checks if the widget is mapped.
+- **winfo_manager**: Returns the widget's geometry manager.
+- **winfo_name**: Returns the widget's name.
+- **winfo_parent**: Returns the widget's parent name.
+- **winfo_pathname**: Returns the widget's full path.
+- **winfo_pixels**: Converts a distance to integer pixels.
+- **winfo_pointerx**: Returns the x-coordinate of the pointer.
+- **winfo_pointerxy**: Returns the pointer coordinates.
+- **winfo_pointery**: Returns the y-coordinate of the pointer.
+- **winfo_reqheight**: Returns the widget's requested height.
+- **winfo_reqwidth**: Returns the widget's requested width.
+- **winfo_rgb**: Returns the RGB color value.
+- **winfo_rootx**: Returns the widget's x-coordinate relative to root.
+- **winfo_rooty**: Returns the widget's y-coordinate relative to root.
+- **winfo_screen**: Returns the screen's name.
+- **winfo_screencells**: Returns the number of cells in the screen colormap.
+- **winfo_screendepth**: Returns the screen color depth.
+- **winfo_screenheight**: Returns the screen height in pixels.
+- **winfo_screenmmheight**: Returns the screen height in mm.
+- **winfo_screenmmwidth**: Returns the screen width in mm.
+- **winfo_screenvisual**: Returns the screen visual class.
+- **winfo_screenwidth**: Returns the screen width in pixels.
+- **winfo_server**: Returns the server information.
+- **winfo_toplevel**: Returns the top-level widget.
+- **winfo_viewable**: Checks if the widget is visible.
+- **winfo_visual**: Returns the visual class for the widget.
+- **winfo_visualid**: Returns the widget's visual ID.
+- **winfo_visualsavailable**: Returns available visuals.
+- **winfo_vrootheight**: Returns the virtual root window height.
+- **winfo_vrootwidth**: Returns the virtual root window width.
+- **winfo_vrootx**: Returns the x-offset for the virtual root.
+- **winfo_vrooty**: Returns the y-offset for the virtual root.
+- **winfo_width**: Returns the widget's width in pixels.
+- **winfo_x**: Returns the widget's x-coordinate.
+- **winfo_y**: Returns the widget's y-coordinate.
+
+Control and State Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **invoke**: Simulates a button click programmatically.
+- **deletecommand**: Deletes a Tcl command.
+- **destroy**: Removes the widget from the GUI.
+- **quit**: Exits the Tkinter application.
+- **send**: Sends a command to another application.
+- **setvar**: Sets a Tcl variable to a specific value.
+- **getvar**: Returns the value of a Tcl variable.
+- **busy**: Simulates a busy cursor on the widget.
+- **busy_cget**: Gets a configuration option for the busy state.
+- **busy_config**: Configures busy state options.
+- **busy_configure**: Sets configuration for the busy state.
+- **busy_current**: Checks if the current widget is busy.
+- **busy_forget**: Resets the widget from a busy state.
+- **busy_hold**: Temporarily applies the busy state to a widget.
+- **busy_status**: Checks the busy status of the widget.
+
+Tk and System Interaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **mainloop**: Starts the Tkinter event loop.
+- **register**: Registers a Python function as a Tcl command.
+- **tk_bisque**: Applies the Bisque color scheme to the app.
+- **tk_busy**: Sets the entire application to a busy state.
+- **tk_focusFollowsMouse**: Sets focus to follow the mouse.
+- **tk_focusNext**: Moves focus to the next widget.
+- **tk_focusPrev**: Moves focus to the previous widget.
+- **tk_setPalette**: Changes the application's color palette.
+- **tk_strictMotif**: Toggles strict Motif compliance.
+
+Waiting and Updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **update**: Updates the widget immediately.
+- **update_idletasks**: Updates idle tasks without processing events.
+- **wait_variable**: Waits until a variable is modified.
+- **wait_visibility**: Waits until the widget is visible.
+- **wait_window**: Waits until a window is destroyed.
