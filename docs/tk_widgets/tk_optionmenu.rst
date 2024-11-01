@@ -65,11 +65,9 @@ Sample OptionMenu
     window.mainloop()
 
 
-``*fruits``
----------------
-
-   The asterisk (`*`) is used to unpack the list `fruits` into individual arguments. This means that each item in the `fruits` list is passed as a separate argument to the `OptionMenu`.
-   For example, if `fruits = ["Apple", "Banana", "Cherry"]`, the `*fruits` will be equivalent to passing `"Apple", "Banana", "Cherry"` as separate arguments.
+| ``*fruits``: The asterisk (`*`) is used to unpack the list `fruits` into individual arguments.
+| This means that each item in the `fruits` list is passed as a separate argument to the `OptionMenu`.
+| For example, if `fruits = ["Apple", "Banana", "Cherry"]`, the `*fruits` will be equivalent to passing `"Apple", "Banana", "Cherry"` as separate arguments.
 
 ----
 
