@@ -22,26 +22,26 @@ Adding Font and colour variables
 .. code-block:: python
 
     # Style configurations
-    label_font = ("Helvetica", 12)
-    entry_font = ("Helvetica", 14)
-    order_font = ("Helvetica", 12)
-    entry_bg = "#ffffff"  # white
-    text_bg = "#f0f0f0"  # Very light gray
-    text_fg = "#000000"  # black
+    LABEL_FONT = ("Helvetica", 12)
+    ENTRY_FONT = ("Helvetica", 14)
+    ORDER_FONT = ("Helvetica", 12)
+    ENTRY_BG = "#ffffff"  # white
+    TEXT_BG = "#f0f0f0"  # Very light gray
+    TEXT_FG = "#000000"  # black
 
-    quantity_bg = "#93ccea"  # Very soft blue
-    quantity_hover_bg = "#53aede"  # soft blue
+    QUANTITY_BG = "#93ccea"  # Very soft blue
+    QUANTITY_HOVER_BG = "#53aede"  # soft blue
 
-    order_list_total_bg = "#c0f0c0"  # Very soft lime green
-    order_list_total_selected_bg = "#5bd85b"  # moderate lime green
+    ORDER_LIST_TOTAL_BG = "#c0f0c0"  # Very soft lime green
+    ORDER_LIST_TOTAL_SELECTED_BG = "#5bd85b"  # moderate lime green
 
-    add_button_bg = "#c0f0c0"  # Very soft lime green
-    add_button_fg = "#000000"  # black
-    add_button_hover_bg = "#5bd85b"  # moderate lime green
+    ADD_BUTTON_BG = "#c0f0c0"  # Very soft lime green
+    ADD_BUTTON_FG = "#000000"  # black
+    ADD_BUTTON_HOVER_BG = "#5bd85b"  # moderate lime green
 
-    delete_button_bg = "#ffdae0"  # very pale red
-    delete_button_fg = "#000000"  # black
-    delete_button_hover_bg = "#ffc1cb"  # very pale red
+    DELETE_BUTTON_BG = "#ffdae0"  # very pale red
+    DELETE_BUTTON_FG= "#000000"  # black
+    DELETE_BUTTON_HOVER_BG = "#ffc1cb"  # very pale red
 
 Adding font and colour settings to tkinter widgets
 ----------------------------------------------------
@@ -51,53 +51,53 @@ Adding font and colour settings to tkinter widgets
 .. code-block:: python
 
     # Create the main window
-    root.configure(bg=text_bg)
+    root.configure(bg=TEXT_BG)
 
     # Customer name
-    tk.Label(root, text="Customer Name:", font=label_font, bg=text_bg).grid(row=0, column=0, padx=10, pady=5, sticky="e")
-    customer_entry = tk.Entry(root, font=entry_font, bg=entry_bg)
+    tk.Label(root, text="Customer Name:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=0, padx=10, pady=5, sticky="e")
+    customer_entry = tk.Entry(root, font=ENTRY_FONT, bg=ENTRY_BG)
 
     # Pizza type
-    tk.Label(root, text="Pizza Type:", font=label_font, bg=text_bg).grid(row=1, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(root, text="Pizza Type:", font=LABEL_FONT, bg=TEXT_BG).grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
-    pizza_frame = tk.Frame(root, bg=text_bg)
+    pizza_frame = tk.Frame(root, bg=TEXT_BG)
 
     for pizza in prices.keys():
-        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=text_bg).pack(anchor="w")
+        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
 
     # Pizza size
-    tk.Label(root, text="Pizza Size:", font=label_font, bg=text_bg).grid(row=2, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(root, text="Pizza Size:", font=LABEL_FONT, bg=TEXT_BG).grid(row=2, column=0, padx=10, pady=5, sticky="e")
 
-    size_frame = tk.Frame(root, bg=text_bg)
+    size_frame = tk.Frame(root, bg=TEXT_BG)
 
     for pizza in prices.keys():
-        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=text_bg).pack(anchor="w")
+        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
 
     # Quantity
-    tk.Label(root, text="Quantity:", font=label_font, bg=text_bg).grid(row=3, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(root, text="Quantity:", font=LABEL_FONT, bg=TEXT_BG).grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
-    quantity_menu.config(bg=quantity_bg, fg=text_fg, activebackground=quantity_hover_bg, activeforeground=text_fg)  # for menu button
+    quantity_menu.config(bg=QUANTITY_BG, fg=TEXT_FG, activebackground=QUANTITY_HOVER_BG, activeforeground=TEXT_FG)  # for menu button
 
-    quantity_menu["menu"].config(bg=quantity_bg, fg=text_fg)  # for menu items
+    quantity_menu["menu"].config(bg=QUANTITY_BG, fg=TEXT_FG)  # for menu items
 
     # Cost per pizza display
-    tk.Label(root, textvariable=cost_display_var, font=label_font, bg=text_bg).grid(row=4, column=1, padx=10, pady=5, sticky="w")
+    tk.Label(root, textvariable=cost_display_var, font=LABEL_FONT, bg=TEXT_BG).grid(row=4, column=1, padx=10, pady=5, sticky="w")
 
     # Order cost display
-    tk.Label(root, textvariable=order_cost_var, font=order_font, bg=text_bg).grid(row=5, column=1, padx=10, pady=5, sticky="w")
+    tk.Label(root, textvariable=order_cost_var, font=ORDER_FONT, bg=TEXT_BG).grid(row=5, column=1, padx=10, pady=5, sticky="w")
 
     # Add order button
-    add_button = tk.Button(root, text="Add Order", command=add_order, bg=add_button_bg, fg=add_button_fg, activebackground=add_button_hover_bg)
+    add_button = tk.Button(root, text="Add Order", command=add_order, bg=ADD_BUTTON_BG, fg=ADD_BUTTON_FG, activebackground=ADD_BUTTON_HOVER_BG)
 
     # Orders list
-    tk.Label(root, text="Orders:", font=label_font, bg=text_bg).grid(row=0, column=2, padx=10, pady=5, sticky="w")
-    order_list = tk.Listbox(root, width=50, bg=entry_bg)
+    tk.Label(root, text="Orders:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=2, padx=10, pady=5, sticky="w")
+    order_list = tk.Listbox(root, width=50, bg=ENTRY_BG)
 
     # Delete selected pizza button
-    delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=delete_button_bg, fg=delete_button_fg, activebackground=delete_button_hover_bg)
+    delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 
     # Cancel whole order button
-    cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=delete_button_bg, fg=delete_button_fg, activebackground=delete_button_hover_bg)
+    cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 
 
 Adding color to the Orders list total
@@ -119,7 +119,7 @@ Adding color to the Orders list total
         if orders:
             order_list.insert(tk.END, f"Total cost: ${total_cost}")
             # add color to last line of order list for total
-            order_list.itemconfig(order_list.size() - 1, {"bg": order_list_total_bg, "selectbackground": order_list_total_selected_bg})
+            order_list.itemconfig(order_list.size() - 1, {"bg": ORDER_LIST_TOTAL_BG, "selectbackground": ORDER_LIST_TOTAL_SELECTED_BG})
 
 
 Adding hover color to buttons
@@ -134,11 +134,11 @@ Adding hover color to buttons
 
     # Function to change color on hover
     def on_enter_add(e):
-        add_button.config(bg=add_button_hover_bg)
+        add_button.config(bg=ADD_BUTTON_HOVER_BG)
 
 
     def on_leave_add(e):
-        add_button.config(bg=add_button_bg)
+        add_button.config(bg=ADD_BUTTON_BG)
 
     # Add order button
     # for hover color change:
@@ -153,11 +153,11 @@ Adding hover color to buttons
 
     # Function to change color on hover
     def on_enter_delete(e):
-        delete_pizza_button.config(bg=delete_button_hover_bg)
+        delete_pizza_button.config(bg=DELETE_BUTTON_HOVER_BG)
 
 
     def on_leave_delete(e):
-        delete_pizza_button.config(bg=delete_button_bg)
+        delete_pizza_button.config(bg=DELETE_BUTTON_BG)
 
 
     # Delete selected pizza button
@@ -173,11 +173,11 @@ Adding hover color to buttons
 
     # Function to change color on hover
     def on_enter_cancel(e):
-        cancel_order_button.config(bg=delete_button_hover_bg)
+        cancel_order_button.config(bg=DELETE_BUTTON_HOVER_BG)
 
 
     def on_leave_cancel(e):
-        cancel_order_button.config(bg=delete_button_bg)
+        cancel_order_button.config(bg=DELETE_BUTTON_BG)
 
 
     # Cancel whole order button
@@ -195,7 +195,7 @@ Improving the customer_entry width
 
 .. code-block:: python
 
-    customer_entry = tk.Entry(root, font=entry_font, bg=entry_bg, width=20)
+    customer_entry = tk.Entry(root, font=ENTRY_FONT, bg=ENTRY_BG, width=20)
     customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=5)
 
 
@@ -211,7 +211,7 @@ Updating Pizza type to use prices dictionary
 .. code-block:: python
 
     for pizza in prices.keys():
-        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=text_bg).pack(anchor="w")
+        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
 
 | Test these code changes by adding ot the prices dictionary.
 

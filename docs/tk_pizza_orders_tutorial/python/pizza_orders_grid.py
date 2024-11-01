@@ -40,23 +40,23 @@ widgets = [
     {"name":"Cancel Orders","xy" :(3 ,6),"width" : 1,"height" : 1,"color":"#ffdae0"}
 ]
 
-# entry_bg = "#ffffff"  # white
-# text_bg = "#f0f0f0"  # Very light gray
-# text_fg = "#000000"  # black
+# ENTRY_BG = "#ffffff"  # white
+# TEXT_BG = "#f0f0f0"  # Very light gray
+# TEXT_FG = "#000000"  # black
 
-# quantity_bg = "#93ccea"  # Very soft blue
-# quantity_hover_bg = "#53aede"  # soft blue
+# QUANTITY_BG = "#93ccea"  # Very soft blue
+# QUANTITY_HOVER_BG = "#53aede"  # soft blue
 
-# order_list_total_bg = "#c0f0c0"  # Very soft lime green
-# order_list_total_selected_bg = "#5bd85b"  # moderate lime green
+# ORDER_LIST_TOTAL_BG = "#c0f0c0"  # Very soft lime green
+# ORDER_LIST_TOTAL_SELECTED_BG = "#5bd85b"  # moderate lime green
 
-# add_button_bg = "#c0f0c0"  # Very soft lime green
-# add_button_fg = "#000000"  # black
-# add_button_hover_bg = "#5bd85b"  # moderate lime green
+# ADD_BUTTON_BG = "#c0f0c0"  # Very soft lime green
+# ADD_BUTTON_FG = "#000000"  # black
+# ADD_BUTTON_HOVER_BG = "#5bd85b"  # moderate lime green
 
-# delete_button_bg = "#ffdae0"  # very pale red
-# delete_button_fg = "#000000"  # black
-# delete_button_hover_bg = "#ffc1cb"  # very pale red
+# DELETE_BUTTON_BG = "#ffdae0"  # very pale red
+# DELETE_BUTTON_FG= "#000000"  # black
+# DELETE_BUTTON_HOVER_BG = "#ffc1cb"  # very pale red
 
 # Add rectangles and labels to the plot for each widget
 for widget in widgets:

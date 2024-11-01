@@ -90,7 +90,7 @@ font example
     window.mainloop()
 
 
-.. image:: images/label_font.png
+.. image:: images/LABEL_FONT.png
     :scale: 100%
 
 ----

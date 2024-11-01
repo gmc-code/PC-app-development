@@ -18,7 +18,7 @@ def create_login_form():
 
     # UI options
     paddings = {'padx': 5, 'pady': 5}
-    entry_font = {'font': ('Helvetica', 11)}
+    ENTRY_FONT = {'font': ('Helvetica', 11)}
 
     username = tk.StringVar()
 
@@ -27,7 +27,7 @@ def create_login_form():
     username_label.grid(column=0, row=0, sticky=tk.W, **paddings)
 
     # Username entry
-    username_entry = ttk.Entry(window, textvariable=username, **entry_font)
+    username_entry = ttk.Entry(window, textvariable=username, **ENTRY_FONT)
     username_entry.grid(column=1, row=0, sticky=tk.E, **paddings)
 
     login_button = ttk.Button(window, text="Login", command=login_action)
