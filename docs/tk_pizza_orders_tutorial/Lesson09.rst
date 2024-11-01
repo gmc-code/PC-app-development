@@ -53,9 +53,13 @@ Adding font and colour settings to tkinter widgets
     # Create the main window
     root.configure(bg=TEXT_BG)
 
+.. code-block:: python
+
     # Customer name
     tk.Label(root, text="Customer Name:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=0, padx=10, pady=5, sticky="e")
     customer_entry = tk.Entry(root, font=ENTRY_FONT, bg=ENTRY_BG)
+
+.. code-block:: python
 
     # Pizza type
     tk.Label(root, text="Pizza Type:", font=LABEL_FONT, bg=TEXT_BG).grid(row=1, column=0, padx=10, pady=5, sticky="e")
@@ -65,6 +69,8 @@ Adding font and colour settings to tkinter widgets
     for pizza in prices.keys():
         tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
 
+.. code-block:: python
+
     # Pizza size
     tk.Label(root, text="Pizza Size:", font=LABEL_FONT, bg=TEXT_BG).grid(row=2, column=0, padx=10, pady=5, sticky="e")
 
@@ -73,6 +79,8 @@ Adding font and colour settings to tkinter widgets
     for pizza in prices.keys():
         tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
 
+.. code-block:: python
+
     # Quantity
     tk.Label(root, text="Quantity:", font=LABEL_FONT, bg=TEXT_BG).grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
@@ -80,21 +88,33 @@ Adding font and colour settings to tkinter widgets
 
     quantity_menu["menu"].config(bg=QUANTITY_BG, fg=TEXT_FG)  # for menu items
 
+.. code-block:: python
+
     # Cost per pizza display
     tk.Label(root, textvariable=cost_display_var, font=LABEL_FONT, bg=TEXT_BG).grid(row=4, column=1, padx=10, pady=5, sticky="w")
+
+.. code-block:: python
 
     # Order cost display
     tk.Label(root, textvariable=order_cost_var, font=ORDER_FONT, bg=TEXT_BG).grid(row=5, column=1, padx=10, pady=5, sticky="w")
 
+.. code-block:: python
+
     # Add order button
     add_button = tk.Button(root, text="Add Order", command=add_order, bg=ADD_BUTTON_BG, fg=ADD_BUTTON_FG, activebackground=ADD_BUTTON_HOVER_BG)
+
+.. code-block:: python
 
     # Orders list
     tk.Label(root, text="Orders:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=2, padx=10, pady=5, sticky="w")
     order_list = tk.Listbox(root, width=50, bg=ENTRY_BG)
 
+.. code-block:: python
+
     # Delete selected pizza button
     delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
+
+.. code-block:: python
 
     # Cancel whole order button
     cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
@@ -127,7 +147,7 @@ Adding hover color to buttons
 
 | The **Add Order**, **Delete Selected Pizza** and **Cancel Orders** buttons require special code to change colour on hovering.
 
-| **Add Order** button changes
+**Add Order** button changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
@@ -146,7 +166,7 @@ Adding hover color to buttons
     add_button.bind("<Enter>", on_enter_add)
     add_button.bind("<Leave>", on_leave_add)
 
-| **Delete Selected Pizza** button changes
+**Delete Selected Pizza** button changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
@@ -166,7 +186,7 @@ Adding hover color to buttons
     delete_pizza_button.bind("<Enter>", on_enter_delete)
     delete_pizza_button.bind("<Leave>", on_leave_delete)
 
-| **Cancel Orders** button changes
+**Cancel Orders** button changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
@@ -213,7 +233,7 @@ Updating Pizza type to use prices dictionary
     for pizza in prices.keys():
         tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
 
-| Test these code changes by adding ot the prices dictionary.
+| Test these code changes by adding to the prices dictionary.
 
 .. code-block:: python
 
