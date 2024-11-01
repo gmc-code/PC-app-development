@@ -23,6 +23,8 @@ Example:
 - **command**: Function to execute when the button is clicked.
 - **state**: Sets the button state, e.g., `"normal"`, `"disabled"`.
 
+----
+
 invoke
 ------
 
@@ -37,6 +39,8 @@ Example:
     .. code-block:: python
 
         button.invoke()  # Calls the command function as if the button was clicked
+
+----
 
 bind
 ----
@@ -59,6 +63,7 @@ Example:
 
         button.bind("<Button-3>", on_right_click)  # Binds right-click to the callback function
 
+----
 
 Tkinter Button Events
 -----------------------
