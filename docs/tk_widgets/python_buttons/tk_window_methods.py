@@ -1,19 +1,50 @@
 import tkinter as tk
 
-# Function to list all methods of a Tkinter button
-def list_button_methods():
-    root = tk.Tk()
-    button = tk.Button(root, text="Click Me")
-    methods = [method for method in dir(button) if callable(getattr(button, method))]
-    root.destroy()
-    return methods
+# Function to list all methods of a Tkinter widget
+def list_methods(widget):
+    return [method for method in dir(widget) if callable(getattr(widget, method))]
 
-# Get the list of methods
-button_methods = list_button_methods()
+# Initialize Tkinter root
+root = tk.Tk()
 
-# Print the list of methods
-for method in button_methods:
-    print(method)
+# Get methods of Tk window and Button widget
+tk_methods = list_methods(root)
+button_methods = list_methods(tk.Button(root))
+
+# Compare methods to find common and unique methods
+common_methods = set(tk_methods).intersection(button_methods)
+unique_to_tk = set(tk_methods) - common_methods
+unique_to_button = set(button_methods) - common_methods
+
+# Close the Tkinter root
+root.destroy()
+
+# Format output as reStructuredText
+output_rst = f"""
+Methods in Tk (root):
+=====================
+{', '.join(sorted(tk_methods))}
+
+Methods in Button:
+==================
+{', '.join(sorted(button_methods))}
+
+Common Methods:
+===============
+{', '.join(sorted(common_methods))}
+
+Unique to Tk (root):
+====================
+{', '.join(sorted(unique_to_tk))}
+
+Unique to Button:
+=================
+{', '.join(sorted(unique_to_button))}
+"""
+
+# Print the result
+print(output_rst)
+
 
 
 '''
@@ -22,6 +53,8 @@ after_cancel
 after_idle
 after_info
 anchor
+aspect
+attributes
 bbox
 bell
 bind
@@ -37,26 +70,32 @@ busy_forget
 busy_hold
 busy_status
 cget
+client
 clipboard_append
 clipboard_clear
 clipboard_get
+colormapwindows
 columnconfigure
+command
 config
 configure
+deiconify
 deletecommand
 destroy
 event_add
 event_delete
 event_generate
 event_info
-flash
 focus
 focus_displayof
 focus_force
 focus_get
 focus_lastfor
 focus_set
+focusmodel
 forget
+frame
+geometry
 getboolean
 getdouble
 getint
@@ -70,44 +109,47 @@ grid
 grid_anchor
 grid_bbox
 grid_columnconfigure
-grid_configure
-grid_forget
-grid_info
 grid_location
 grid_propagate
-grid_remove
 grid_rowconfigure
 grid_size
 grid_slaves
+group
+iconbitmap
+iconify
+iconmask
+iconname
+iconphoto
+iconposition
+iconwindow
 image_names
 image_types
-info
 info_patchlevel
-invoke
 keys
 lift
-location
+loadtk
 lower
 mainloop
+manage
+maxsize
+minsize
 nametowidget
 option_add
 option_clear
 option_get
 option_readfile
-pack
-pack_configure
-pack_forget
-pack_info
+overrideredirect
 pack_propagate
 pack_slaves
-place
-place_configure
-place_forget
-place_info
 place_slaves
+positionfrom
 propagate
+protocol
 quit
+readprofile
 register
+report_callback_exception
+resizable
 rowconfigure
 selection_clear
 selection_get
@@ -117,7 +159,10 @@ selection_own_get
 send
 setvar
 size
+sizefrom
 slaves
+state
+title
 tk_bisque
 tk_busy
 tk_busy_cget
@@ -133,6 +178,7 @@ tk_focusPrev
 tk_setPalette
 tk_strictMotif
 tkraise
+transient
 unbind
 unbind_all
 unbind_class
@@ -191,28 +237,36 @@ winfo_vrooty
 winfo_width
 winfo_x
 winfo_y
-'''
-
-
-'''
-Unique to Button:
-=================
-
-flash
-grid_configure
-grid_forget
-grid_info
-grid_remove
-info
-invoke
-location
-pack
-pack_configure
-pack_forget
-pack_info
-place
-place_configure
-place_forget
-place_info
-
+withdraw
+wm_aspect
+wm_attributes
+wm_client
+wm_colormapwindows
+wm_command
+wm_deiconify
+wm_focusmodel
+wm_forget
+wm_frame
+wm_geometry
+wm_grid
+wm_group
+wm_iconbitmap
+wm_iconify
+wm_iconmask
+wm_iconname
+wm_iconphoto
+wm_iconposition
+wm_iconwindow
+wm_manage
+wm_maxsize
+wm_minsize
+wm_overrideredirect
+wm_positionfrom
+wm_protocol
+wm_resizable
+wm_sizefrom
+wm_state
+wm_title
+wm_transient
+wm_withdraw
 '''

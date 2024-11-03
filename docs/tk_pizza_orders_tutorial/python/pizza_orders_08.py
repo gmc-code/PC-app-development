@@ -86,7 +86,7 @@ def update_order_list():
         customer, pizza, size, quantity = order
         cost = prices[pizza][size] * quantity
         total_cost += cost
-        order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")
+        order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza} - ${cost}")
     if orders:
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
 

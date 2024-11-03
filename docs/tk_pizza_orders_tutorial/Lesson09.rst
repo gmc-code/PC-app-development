@@ -138,7 +138,7 @@ Adding color to the Orders list total
             customer, pizza, size, quantity = order
             cost = prices[pizza][size] * quantity
             total_cost += cost
-            order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza}(s) - ${cost}")
+            order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza} - ${cost}")
         if orders:
             order_list.insert(tk.END, f"Total cost: ${total_cost}")
             # add color to last line of order list for total
@@ -163,8 +163,8 @@ Adding hover color to buttons
     def on_leave_add(e):
         add_button.config(bg=ADD_BUTTON_BG)
 
-    # Add order button
-    # for hover color change:
+.. code-block:: python
+
     # Bind the hover events
     add_button.bind("<Enter>", on_enter_add)
     add_button.bind("<Leave>", on_leave_add)
@@ -182,9 +182,8 @@ Adding hover color to buttons
     def on_leave_delete(e):
         delete_pizza_button.config(bg=DELETE_BUTTON_BG)
 
+.. code-block:: python
 
-    # Delete selected pizza button
-    # for hover color change:
     # Bind the hover events
     delete_pizza_button.bind("<Enter>", on_enter_delete)
     delete_pizza_button.bind("<Leave>", on_leave_delete)
@@ -203,8 +202,8 @@ Adding hover color to buttons
         cancel_order_button.config(bg=DELETE_BUTTON_BG)
 
 
-    # Cancel whole order button
-    # for hover color change:
+.. code-block:: python
+
     # Bind the hover events
     cancel_order_button.bind("<Enter>", on_enter_cancel)
     cancel_order_button.bind("<Leave>", on_leave_cancel)

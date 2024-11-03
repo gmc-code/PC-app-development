@@ -3,7 +3,7 @@ import tkinter as tk
 # Function to list all methods of a Tkinter button
 def list_button_methods():
     root = tk.Tk()
-    button = tk.Button(root, text="Click Me")
+    button = tk.Radiobutton(root, text="Click Me")
     methods = [method for method in dir(button) if callable(getattr(button, method))]
     root.destroy()
     return methods
@@ -44,6 +44,7 @@ columnconfigure
 config
 configure
 deletecommand
+deselect
 destroy
 event_add
 event_delete
@@ -109,6 +110,7 @@ propagate
 quit
 register
 rowconfigure
+select
 selection_clear
 selection_get
 selection_handle
@@ -191,28 +193,5 @@ winfo_vrooty
 winfo_width
 winfo_x
 winfo_y
-'''
-
-
-'''
-Unique to Button:
-=================
-
-flash
-grid_configure
-grid_forget
-grid_info
-grid_remove
-info
-invoke
-location
-pack
-pack_configure
-pack_forget
-pack_info
-place
-place_configure
-place_forget
-place_info
 
 '''

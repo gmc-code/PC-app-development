@@ -71,37 +71,37 @@ Tkinter Button Events
 Mouse Events
 ~~~~~~~~~~~~~~~~~~~
 
-- **``<Button-1>``**: Left mouse button click.
-- **``<Button-2>``**: Middle mouse button click.
-- **``<Button-3>``**: Right mouse button click.
-- **``<Double-Button-1>``**: Double-click with the left mouse button.
-- **``<ButtonRelease-1>``**: Release of the left mouse button.
-- **``<Enter>``**: Mouse pointer enters the widget.
-- **``<Leave>``**: Mouse pointer leaves the widget.
-- **``<Motion>``**: Mouse pointer moves within the widget.
-- **``<MouseWheel>``**: Mouse wheel is scrolled.
+- ``<Button-1>``: Left mouse button click.
+- ``<Button-2>``: Middle mouse button click.
+- ``<Button-3>``: Right mouse button click.
+- ``<Double-Button-1>``: Double-click with the left mouse button.
+- ``<ButtonRelease-1>``: Release of the left mouse button.
+- ``<Enter>``: Mouse pointer enters the widget.
+- ``<Leave>``: Mouse pointer leaves the widget.
+- ``<Motion>``: Mouse pointer moves within the widget.
+- ``<MouseWheel>``: Mouse wheel is scrolled.
 
 Keyboard Events
 ~~~~~~~~~~~~~~~~~~~
 
-- **``<KeyPress>``**: Any key is pressed.
-- **``<KeyRelease>``**: Any key is released.
-- **``<Return>``**: Enter key is pressed.
-- **``<Escape>``**: Escape key is pressed.
-- **``<Control-Key>``**: Control key is pressed along with another key (e.g., ``<Control-c>`` for Ctrl+C).
+- ``<KeyPress>``: Any key is pressed.
+- ``<KeyRelease>``: Any key is released.
+- ``<Return>``: Enter key is pressed.
+- ``<Escape>``: Escape key is pressed.
+- ``<Control-Key>``: Control key is pressed along with another key (e.g., ``<Control-c>`` for Ctrl+C).
 
 Focus Events
 ~~~~~~~~~~~~~~~~~~~
 
-- **``<FocusIn>``**: Widget gains focus.
-- **``<FocusOut>``**: Widget loses focus.
+- ``<FocusIn>``: Widget gains focus.
+- ``<FocusOut>``: Widget loses focus.
 
 Window Events
 ~~~~~~~~~~~~~~~~~~~
 
-- **``<Configure>``**: Widget is resized or moved.
-- **``<Destroy>``**: Widget is destroyed.
-- **``<Expose>``**: Part of the widget becomes visible after being covered.
+- ``<Configure>``: Widget is resized or moved.
+- ``<Destroy>``: Widget is destroyed.
+- ``<Expose>``: Part of the widget becomes visible after being covered.
 
 Example Usage
 ~~~~~~~~~~~~~~~~~~~

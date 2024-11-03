@@ -8,6 +8,13 @@ widget_options = widget.keys()
 for option in widget_options:
     print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
 
+# widget2 = tk.Frame(window)
+# in1 = set(widget.configure().keys()) - set(widget2.configure().keys())
+# for option in in1:
+#     print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
+# print(set(dir(widget)) - set(dir(widget2)))
+# {'flash', 'invoke'}
 
 ''''
 activebackground: SystemButtonFace

@@ -1,5 +1,5 @@
 ================================================
-Pizza 1: Introduction to Tkinter
+Pizza 1: Create a window
 ================================================
 
 
@@ -18,6 +18,8 @@ Introduction to Tkinter
 
 - Tkinter is a standard GUI (Graphical User Interface) library for Python.
 - It provides tools to create desktop applications with windows, buttons, text fields, and more.
+
+----
 
 Creating a Basic Window
 --------------------------------
