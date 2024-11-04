@@ -106,7 +106,7 @@ Calculating the cost based on selection.
         def update_costs(*args):
 
     - This line defines a function named `update_costs` that takes any number of arguments (`*args`).
-    - The `*args` parameter in a function definition allows the function to accept an arbitrary number of positional arguments. This means you can pass any number of arguments to the function, and they will be accessible as a tuple within the function.
+    - The `*args` parameter in a function definition allows the function to accept an arbitrary number of positional arguments. This means you can pass any number of arguments to the function, and they will be accessible within the function.
     - In the context of Tkinter and event-driven programming, `*args` is particularly useful for binding functions to multiple events. When an event occurs (like a button click or a change in a widget's value), Tkinter automatically passes event-specific information to the callback function. By using `*args`, the function can handle these additional arguments without explicitly defining them.
 
 2. **Retrieve Selected Values**:
@@ -119,7 +119,7 @@ Calculating the cost based on selection.
 
     - `pizza = pizza_var.get()` retrieves the selected pizza type from the `pizza_var` variable.
     - `size = size_var.get()` retrieves the selected pizza size from the `size_var` variable.
-    - `quantity = quantity_var.get()` retrieves the selected quantity from the `quantity_var` variable as an integer.
+    - `quantity = quantity_var.get()` retrieves the selected quantity from the `quantity_var` variable which is an integer.
 
 3. **Calculate Costs**:
 
