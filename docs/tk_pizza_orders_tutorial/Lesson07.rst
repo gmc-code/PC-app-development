@@ -30,7 +30,7 @@ Adding a Listbox Widget to Display Orders
 
 ----
 
-Orders Display
+Display the orders as a list
 ----------------------------------
 
 .. code-block:: python
