@@ -45,7 +45,7 @@ orders = []
 def update_costs(*args):
     pizza = pizza_var.get()
     size = size_var.get()
-    quantity = quantity_var.get()  # int using IntVAr
+    quantity = quantity_var.get()  # int using IntVar
     if pizza and size:
         cost = prices[pizza][size]
         cost_display_var.set(f"Cost per pizza: ${cost}")

@@ -143,13 +143,23 @@ Updating Costs Dynamically Based on Selections
 ------------------------------------------------------
 
 | These lines of code ensure that any changes to the `pizza_var`, `size_var`, or `quantity_var` variables will automatically trigger the `update_costs` function. This allows the GUI to dynamically update the displayed costs based on the user's selections.
-| ``trace_add`` is a method of ``StringVar`` that allows updating of the costs whenever the pizza type, size, or quantity changes.
+ | ``trace_add`` is a method of ``StringVar`` that allows updating of the costs whenever the pizza type or size changes.
+| ``trace_add`` is a method of ``IntVar`` that allows updating of the costs whenever the pizza quantity changes.
 
 .. code-block:: python
 
-   pizza_var.trace_add("write", update_costs)
-   size_var.trace_add("write", update_costs)
-   quantity_var.trace_add("write", update_costs)
+    # place after pizza_var.set method
+    pizza_var.trace_add("write", update_costs)
+
+.. code-block:: python
+
+    # place after size_var.set method
+    size_var.trace_add("write", update_costs)
+
+.. code-block:: python
+
+    # place after quantity_var.set method
+    quantity_var.trace_add("write", update_costs)
 
 
 - **pizza_var.trace_add("write", update_costs)**:
