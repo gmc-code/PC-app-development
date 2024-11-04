@@ -152,11 +152,11 @@ order_list.bind('<<ListboxSelect>>', select_order)
 
 # Delete selected pizza button
 delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza)
-delete_pizza_button.grid(row=6, column=2, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+delete_pizza_button.grid(row=6, column=2, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 
 # Cancel whole order button
 cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order)
-cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+cancel_order_button.grid(row=6, column=3, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 
 # Run the application
 root.mainloop()

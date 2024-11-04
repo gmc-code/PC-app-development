@@ -23,19 +23,19 @@ Creating a Delete Order Section
 
     # Delete selected pizza button
     delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza)
-    delete_pizza_button.grid(row=6, column=2, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+    delete_pizza_button.grid(row=6, column=2, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 
 - ``delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza)``: Creates a button labeled "Delete Selected Pizza" and sets the command to `delete_selected_pizza`, which will be executed when the button is clicked.
-- ``delete_pizza_button.grid(row=6, column=2, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds padding around the button: 10 pixels on the x-axis (`padx`), 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and 5 pixels on the y-axis (`pady`) and aligns the button to the west (left) side of the cell (`sticky="w"`).
+- ``delete_pizza_button.grid(row=6, column=2, padx=10,  pady=5, ipadx=20, ipady=10,sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds external padding around the button: 10 pixels on the x-axis (`padx`),and 5 pixels on the y-axis (`pady`), and 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and aligns the button to the west (left) side of the cell (`sticky="w"`).
 
 .. code-block:: python
 
     # Cancel whole order button
     cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order)
-    cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+    cancel_order_button.grid(row=6, column=3, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 
 - ``cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order)``: creates a button labeled "Cancel Orders", and sets the command to `cancel_order`, which will be executed when the button is clicked.
-- ``cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds padding around the button: 10 pixels on the x-axis (`padx`), 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and 5 pixels on the y-axis (`pady`)and aligns the button to the west (left) side of the cell (`sticky="w"`).
+- ``cancel_order_button.grid(row=6, column=3, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds padding around the button: 10 pixels on the x-axis (`padx`), 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and 5 pixels on the y-axis (`pady`)and aligns the button to the west (left) side of the cell (`sticky="w"`).
 
 ----
 

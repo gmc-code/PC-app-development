@@ -230,13 +230,13 @@ order_list.bind("<<ListboxSelect>>", select_order)
 
 # Delete selected ice cream button
 delete_ice_cream_button = tk.Button(root, text="Delete Selected Ice Cream", command=delete_selected_ice_cream, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
-delete_ice_cream_button.grid(row=6, column=2, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+delete_ice_cream_button.grid(row=6, column=2, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 delete_ice_cream_button.bind("<Enter>", on_enter_delete)
 delete_ice_cream_button.bind("<Leave>", on_leave_delete)
 
 # Cancel whole order button
 cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
-cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
+cancel_order_button.grid(row=6, column=3, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 cancel_order_button.bind("<Enter>", on_enter_cancel)
 cancel_order_button.bind("<Leave>", on_leave_cancel)
 
