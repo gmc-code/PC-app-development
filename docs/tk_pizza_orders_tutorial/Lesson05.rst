@@ -82,7 +82,7 @@ Calculating the cost based on selection.
 
 | Use ``update_costs`` to calculate the cost of a pizza and the order cost.
 | This function updates the displayed cost per pizza and the total order cost based on the selected pizza type, size, and quantity.
-| It retrieves the necessary values from the corresponding pizza type and size `StringVar` variables and quantity `IntVar` variable, calculates the costs using the `prices` dictionary, and updates the display variables accordingly.
+| It retrieves the necessary values from the corresponding pizza type `StringVar` variable and size `StringVar` variable and quantity `IntVar` variable, calculates the costs using the `prices` dictionary, and updates the display variables accordingly.
 
 .. code-block:: python
 
