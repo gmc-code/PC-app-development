@@ -12,6 +12,8 @@ Pizza 6: Adding Orders
   - Writing the `add_order` function.
   - Validating input and updating the order list.
 
+----
+
 Creating an Add Order Button
 ------------------------------------
 
@@ -23,6 +25,8 @@ Creating an Add Order Button
 
 - ``tk.Button(root, text="Add Order", command=add_order, bg=button_bg, fg=button_fg)``: Creates a button with the text "Add Order" and assigns the ``add_order`` function to be called when the button is clicked.
 - ``.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w")``: Positions the button in the grid layout.
+
+----
 
 Writing the ``add_order`` Function
 ---------------------------------------

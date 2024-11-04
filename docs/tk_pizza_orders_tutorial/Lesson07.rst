@@ -12,6 +12,7 @@ Pizza 7: Displaying Orders
   - Formatting the orders display.
   - Updating the orders list dynamically.
 
+----
 
 Adding a Listbox Widget to Display Orders
 ------------------------------------------
@@ -27,6 +28,7 @@ Adding a Listbox Widget to Display Orders
 - ``order_list = tk.Listbox(root, width=50)``: Creates a Text widget to display the list of orders.
 - ``order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew"``: Positions the Text widget in the grid layout.
 
+----
 
 Formatting the Orders Display
 ----------------------------------
@@ -49,6 +51,7 @@ Formatting the Orders Display
 - ``order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza} - ${cost}")``: Inserts the formatted order details into the Listbox widget.
 - ``order_list.insert(tk.END, f"Total cost: ${total_cost}")``: Inserts the total cost at the end of the Listbox.
 
+----
 
 Updating the Orders List Dynamically
 --------------------------------------------

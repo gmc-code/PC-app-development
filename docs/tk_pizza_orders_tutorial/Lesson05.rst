@@ -13,6 +13,7 @@ Pizza 5: Adding Costs
   - Calculating the cost based on selection.
   - Updating costs dynamically based on selections.
 
+----
 
 Define prices for pizzas
 ------------------------------
@@ -32,6 +33,7 @@ Define prices for pizzas
 
 | The cost of a particular pizza, pizza_type, of size, pizza_size, is retrieved by accessing ``prices[pizza_type][pizza_size]``.
 
+----
 
 Adding Cost Display Fields
 ------------------------------
@@ -55,6 +57,7 @@ Cost per pizza display
 - `padx` and `pady` add padding around the label for better spacing.
 - `sticky="w"` aligns the label to the west (left side) of its grid cell.
 
+----
 
 Order cost display
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,6 +79,7 @@ Order cost display
 - `padx` and `pady` add padding around the label for better spacing.
 - `sticky="w"` aligns the label to the west (left side) of its grid cell.
 
+----
 
 Calculating the cost based on selection.
 -------------------------------------------------
@@ -132,13 +136,15 @@ Calculating the cost based on selection.
                 order_cost = cost * quantity
                 order_cost_var.set(f"Order cost: ${order_cost}")
 
-    - The `if pizza and size:` condition checks if both a pizza type and size have been selected.
+    - See: https://www.w3schools.com/python/python_booleans.asp
+    - The `if pizza and size:` condition checks if both a pizza type and size have been selected. Both are True if their variables have been set.
     - `cost = prices[pizza][size]` retrieves the cost of the selected pizza type and size from the `prices` dictionary.
     - `cost_display_var.set(f"Cost per pizza: ${cost}")` updates the `cost_display_var` with the cost of a single pizza.
-    - The nested `if quantity:` condition checks if a quantity has been selected.
+    - The nested `if quantity:` condition checks if a quantity has been selected. It evaluates to True if has been selected.
     - `order_cost = cost * quantity` calculates the total order cost by multiplying the cost of a single pizza by the quantity.
     - `order_cost_var.set(f"Order cost: ${order_cost}")` updates the `order_cost_var` with the total order cost.
 
+----
 
 Updating Costs Dynamically Based on Selections
 ------------------------------------------------------

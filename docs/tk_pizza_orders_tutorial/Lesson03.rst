@@ -12,15 +12,17 @@ Pizza 3: Adding Radio Buttons for Pizza Types
   - Creating and positioning radio buttons for Pizza Type.
   - Using StringVar to manage radio button values.
 
+----
 
 Introduction to Radio Buttons
 --------------------------------
 
 - Radio buttons allow users to select one option from a set of mutually exclusive options.
 
+----
+
 Creating and Positioning Radio Buttons for Pizza Type
 ----------------------------------------------------------------
-
 
 | This code creates a label and a set of radio buttons for selecting a pizza type. The selected pizza type is stored in a `StringVar` named `pizza_var`, which is initialized to "Margherita". The radio buttons are placed vertically inside a frame and aligned to the left.
 
@@ -85,7 +87,7 @@ Creating and Positioning Radio Buttons for Pizza Type
    - `value=pizza` sets the value of `pizza_var` when the radio button is selected.
    - `pack(anchor="w")` arranges the radio buttons vertically, aligned to the left.
 
-
+----
 
 Using StringVar to Manage Radio Button Values
 ----------------------------------------------------------------

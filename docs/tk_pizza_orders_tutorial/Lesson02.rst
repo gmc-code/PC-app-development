@@ -12,6 +12,7 @@ Pizza 2: Adding Customer Label and Entry Widget
   - Adding entry widget.
   - Positioning widgets using grid layout.
 
+----
 
 Adding Labels
 --------------------------------
@@ -24,6 +25,8 @@ Adding Labels
 - ``tk.Label(root, text="Customer Name:")``: Creates a label widget with the text "Customer Name:".
 - ``.grid(row=0, column=0, padx=10, pady=5)``: Positions the label in the grid layout at row 0, column 0, with padding of 10 pixels horizontally and 5 pixels vertically.
 
+----
+
 Adding Entry Widgets
 --------------------------------
 
@@ -34,6 +37,8 @@ Adding Entry Widgets
 
 - ``customer_entry = tk.Entry(root)``: Creates an entry widget for text input.
 - ``.grid(row=0, column=1, padx=10, pady=5)``: Positions the entry widget in the grid layout at row 0, column 1, with padding.
+
+----
 
 Positioning Widgets Using Grid Layout
 ----------------------------------------------------------------

@@ -12,6 +12,8 @@ Pizza 4: Adding Radio Buttons and OptionMenu
   - Introduction to OptionMenu.
   - Creating and positioning the OptionMenu for selecting the quantity of pizzas.
 
+----
+
 Creating and Positioning Radio Buttons for Pizza Sizes
 -------------------------------------------------------
 
@@ -75,7 +77,7 @@ Creating and Positioning Radio Buttons for Pizza Sizes
     - `value=size` sets the value of `size_var` when the radio button is selected.
     - `pack(anchor="w")` arranges the radio buttons vertically, aligned to the left.
 
-
+----
 
 Creating and Positioning the OptionMenu
 --------------------------------------------

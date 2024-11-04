@@ -7,15 +7,18 @@ Pizza 10: Extensions
 
   - Extend the pizza ordering system.
 
-Add customer address
+----
+
+Add customer mobile
 --------------------------------
 
 .. code-block:: python
 
-    tk.Label(root, text="Address:").grid(row=1, column=0, padx=10, pady=5)
+    tk.Label(root, text="Mobile:").grid(row=1, column=0, padx=10, pady=5)
     address_entry = tk.Entry(root)
     address_entry.grid(row=1, column=1, padx=10, pady=5)
 
+----
 
 Add descriptions
 --------------------------------
@@ -33,6 +36,7 @@ Add descriptions
 9.  **Mexican**: Salami, roasted peppers, Spanish onion, olives, oregano, garlic, chilli
 10. **Four Cheese**: A blend of four different cheeses, often including mozzarella, cheddar, parmesan, and gorgonzola.
 
+----
 
 Add crust type
 -------------------------------------------------------

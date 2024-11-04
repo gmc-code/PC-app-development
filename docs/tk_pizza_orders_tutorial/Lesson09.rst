@@ -13,6 +13,8 @@ Pizza 9: Final Touches and Styling
   - Updating Pizza type to use prices dictionary
   - Final review and testing.
 
+----
+
 Adding Font and colour variables
 --------------------------------
 
@@ -42,6 +44,8 @@ Adding Font and colour variables
     DELETE_BUTTON_BG = "#ffdae0"  # very pale red
     DELETE_BUTTON_FG= "#000000"  # black
     DELETE_BUTTON_HOVER_BG = "#ffc1cb"  # very pale red
+
+----
 
 Adding font and colour settings to tkinter widgets
 ----------------------------------------------------
@@ -122,6 +126,7 @@ Adding font and colour settings to tkinter widgets
     cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG,
                                      fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 
+----
 
 Adding color to the Orders list total
 ---------------------------------------
@@ -144,6 +149,7 @@ Adding color to the Orders list total
             # add color to last line of order list for total
             order_list.itemconfig(order_list.size() - 1, {"bg": ORDER_LIST_TOTAL_BG, "selectbackground": ORDER_LIST_TOTAL_SELECTED_BG})
 
+----
 
 Adding hover color to buttons
 ---------------------------------------
@@ -208,6 +214,7 @@ Adding hover color to buttons
     cancel_order_button.bind("<Enter>", on_enter_cancel)
     cancel_order_button.bind("<Leave>", on_leave_cancel)
 
+----
 
 Improving the customer_entry width
 -----------------------------------------------------
@@ -220,6 +227,7 @@ Improving the customer_entry width
     customer_entry = tk.Entry(root, font=ENTRY_FONT, bg=ENTRY_BG, width=20)
     customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=5)
 
+----
 
 Updating Pizza type to use prices dictionary
 ------------------------------------------------------
@@ -250,6 +258,8 @@ Updating Pizza type to use prices dictionary
         "Capriciossa": {"Small": 6, "Medium": 8, "Large": 11},
         "Mexican": {"Small": 6, "Medium": 8, "Large": 11},
     }
+
+----
 
 Final Review and Testing
 -----------------------------------------

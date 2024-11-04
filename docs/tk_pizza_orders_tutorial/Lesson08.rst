@@ -14,6 +14,7 @@ Pizza 8: Deleting Orders
   - Binding the `select_order` Function to the listbox
   - Writing the `cancel_order` Function
 
+----
 
 Creating a Delete Order Section
 ------------------------------------
@@ -36,6 +37,7 @@ Creating a Delete Order Section
 - ``cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order)``: creates a button labeled "Cancel Orders", and sets the command to `cancel_order`, which will be executed when the button is clicked.
 - ``cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds padding around the button: 10 pixels on the x-axis (`padx`), 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and 5 pixels on the y-axis (`pady`)and aligns the button to the west (left) side of the cell (`sticky="w"`).
 
+----
 
 Writing the **delete_selected_pizza** Function
 ------------------------------------------------
@@ -64,6 +66,7 @@ Writing the **delete_selected_pizza** Function
 - ``if order_index == order_list.size() - 1: messagebox.showerror("Input Error", "Cannot delete the total cost line.")``: Shows an error message if the selected item is the total cost line.
 - ``del orders[order_index]``: Deletes the selected order from the orders list.
 
+----
 
 Writing the **select_order** Function
 ------------------------------------------------
@@ -96,6 +99,7 @@ Writing the **select_order** Function
 - ``size_var.set(size)``: Sets the size variable to the selected pizza size.
 - ``quantity_var.set(str(quantity))``: Sets the quantity variable to the selected quantity, converting it to a string.
 
+----
 
 Binding the **select_order** Function to the listbox
 ------------------------------------------------------
@@ -110,6 +114,7 @@ Binding the **select_order** Function to the listbox
     # add for reselectings chosen options:
     order_list.bind('<<ListboxSelect>>', select_order)
 
+----
 
 Writing the **cancel_order** Function
 ------------------------------------------------
