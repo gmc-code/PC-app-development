@@ -162,11 +162,11 @@ Adding hover color to buttons
 .. code-block:: python
 
     # Function to change color on hover
-    def on_enter_add(e):
+    def on_enter_add(event):
         add_button.config(bg=ADD_BUTTON_HOVER_BG)
 
 
-    def on_leave_add(e):
+    def on_leave_add(event):
         add_button.config(bg=ADD_BUTTON_BG)
 
 .. code-block:: python
@@ -181,11 +181,11 @@ Adding hover color to buttons
 .. code-block:: python
 
     # Function to change color on hover
-    def on_enter_delete(e):
+    def on_enter_delete(event):
         delete_pizza_button.config(bg=DELETE_BUTTON_HOVER_BG)
 
 
-    def on_leave_delete(e):
+    def on_leave_delete(event):
         delete_pizza_button.config(bg=DELETE_BUTTON_BG)
 
 .. code-block:: python
@@ -200,11 +200,11 @@ Adding hover color to buttons
 .. code-block:: python
 
     # Function to change color on hover
-    def on_enter_cancel(e):
+    def on_enter_cancel(event):
         cancel_order_button.config(bg=DELETE_BUTTON_HOVER_BG)
 
 
-    def on_leave_cancel(e):
+    def on_leave_cancel(event):
         cancel_order_button.config(bg=DELETE_BUTTON_BG)
 
 

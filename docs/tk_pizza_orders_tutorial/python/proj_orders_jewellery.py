@@ -107,22 +107,22 @@ def update_order_list():
         order_list.itemconfig(order_list.size() - 1, {"bg": ORDER_LIST_TOTAL_BG, "selectbackground": ORDER_LIST_TOTAL_SELECTED_BG})
 
 # Hover color functions
-def on_enter_add(e):
+def on_enter_add(event):
     add_button.config(bg=ADD_BUTTON_HOVER_BG)
 
-def on_leave_add(e):
+def on_leave_add(event):
     add_button.config(bg=ADD_BUTTON_BG)
 
-def on_enter_delete(e):
+def on_enter_delete(event):
     delete_jewellery_button.config(bg=DELETE_BUTTON_HOVER_BG)
 
-def on_leave_delete(e):
+def on_leave_delete(event):
     delete_jewellery_button.config(bg=DELETE_BUTTON_BG)
 
-def on_enter_cancel(e):
+def on_enter_cancel(event):
     cancel_order_button.config(bg=DELETE_BUTTON_HOVER_BG)
 
-def on_leave_cancel(e):
+def on_leave_cancel(event):
     cancel_order_button.config(bg=DELETE_BUTTON_BG)
 
 # Create the main window

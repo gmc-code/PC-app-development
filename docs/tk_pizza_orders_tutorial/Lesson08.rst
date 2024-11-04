@@ -88,6 +88,7 @@ Writing the **select_order** Function
                 size_var.set(size)
                 quantity_var.set(str(quantity))
 
+- ``event`` argument is required for the function to correctly respond to the listbox selection event.
 - ``order_selection = order_list.curselection()``: Retrieves a tuple of indices of all selected items in the Listbox.
 - ``if order_selection:``: Checks if there is at least one selected item.
 - ``order_index = order_selection[0]``: Gets the index of the first selected item.
