@@ -31,7 +31,7 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 
 1. **Label Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         tk.Label(root, text="Pizza Size:").grid(row=2, column=0, padx=10, pady=5, sticky="e")
 
@@ -42,7 +42,7 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 
 2. **StringVar Initialization**:
 
-    .. code-block:: python
+    .. code-block::
 
         size_var = tk.StringVar(root)
         size_var.set("Small")
@@ -52,7 +52,7 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 
 3. **Frame Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         size_frame = tk.Frame(root)
         size_frame.grid(row=3, column=1, padx=10, pady=5, sticky="w")
@@ -63,7 +63,7 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 
 4. **Radio Buttons Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         for size in ["Small", "Medium", "Large"]:
             tk.Radiobutton(size_frame, text=size, variable=size_var, value=size).pack(anchor="w")
