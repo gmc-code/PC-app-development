@@ -1,5 +1,5 @@
 ==============================================================
-Pizza 4: Adding Radio Buttons and OptionMenu
+Add Radio Buttons and OptionMenu
 ==============================================================
 
 .. image:: images/pizza_4.png

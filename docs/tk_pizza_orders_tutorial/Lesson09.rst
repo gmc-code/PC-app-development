@@ -1,5 +1,5 @@
 ==================================================
-Pizza 9: Final Touches and Styling
+Final Touches and Styling
 ==================================================
 
 .. image:: images/pizza_9.png

@@ -1,5 +1,5 @@
 ==================================================
-Pizza 10: Extensions
+Extensions
 ==================================================
 
 - **Objective**: Extend the pizza ordering system.

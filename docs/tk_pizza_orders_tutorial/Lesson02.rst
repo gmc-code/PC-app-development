@@ -1,5 +1,5 @@
 =========================================================
-Pizza 2: Adding Customer Label and Entry Widget
+Add Customer Label and Entry Widget
 =========================================================
 
 .. image:: images/pizza_2.png

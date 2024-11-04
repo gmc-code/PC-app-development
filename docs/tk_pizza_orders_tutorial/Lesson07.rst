@@ -1,5 +1,5 @@
 ================================================
-Pizza 7: Displaying Orders
+Display Orders
 ================================================
 
 .. image:: images/pizza_7.png

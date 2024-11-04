@@ -12,16 +12,18 @@ Grid planning:
 .. image:: images/pizza_grid.png
     :scale: 67%
 
+----
+
 Tutorial Outline
-================
+----------------------
 
 | Part1: Create a window.
-| Part2: Adding Customer Label and Entry Widget
-| Part3: Adding Radio Buttons for Pizza Types
-| Part4: Adding Radio Buttons for Pizza Sizes
-| Part5: Adding Costs
-| Part6: Adding Orders
-| Part7: Displaying Orders
+| Part2: Add Customer Label and Entry Widget
+| Part3: Add Radio Buttons for Pizza Types
+| Part4: Add Radio Buttons for Pizza Sizes
+| Part5: Add Costs
+| Part6: Add Orders
+| Part7: Display Orders
 | Part8: Deleting Orders
 | Part9: Final Touches and Styling
 

@@ -1,5 +1,5 @@
 ================================================
-Pizza 8: Deleting Orders
+Deleting Orders
 ================================================
 
 .. image:: images/pizza_8.png

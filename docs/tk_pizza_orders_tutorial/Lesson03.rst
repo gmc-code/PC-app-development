@@ -1,5 +1,5 @@
 =============================================================
-Pizza 3: Adding Radio Buttons for Pizza Types
+Add Radio Buttons for Pizza Types
 =============================================================
 
 .. image:: images/pizza_3.png
