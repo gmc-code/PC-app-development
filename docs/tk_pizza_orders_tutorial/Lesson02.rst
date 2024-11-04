@@ -1,15 +1,15 @@
 =========================================================
-Pizza 2: Adding Labels and Entry Widgets
+Pizza 2: Adding Customer Label and Entry Widget
 =========================================================
 
 .. image:: images/pizza_2.png
     :scale: 50%
 
-- **Objective**: Add labels and entry widgets for customer name input.
+- **Objective**: Add label and entry widget for customer name input.
 - **Content**:
 
-  - Adding labels.
-  - Adding entry widgets.
+  - Adding label.
+  - Adding entry widget.
   - Positioning widgets using grid layout.
 
 

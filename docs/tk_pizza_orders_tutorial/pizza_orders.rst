@@ -16,7 +16,7 @@ Tutorial Outline
 ================
 
 | Part1: Create a window.
-| Part2: Adding Labels and Entry Widgets
+| Part2: Adding Customer Label and Entry Widget
 | Part3: Adding Radio Buttons for Pizza Types
 | Part4: Adding Radio Buttons for Pizza Sizes
 | Part5: Adding Costs
