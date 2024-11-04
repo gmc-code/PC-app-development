@@ -25,12 +25,12 @@ Adding a Listbox Widget to Display Orders
     order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
 
 - ``tk.Label(root, text="Orders:").grid(row=0, column=2, padx=10, pady=5, sticky="w")``: Creates a label widget with the text "Orders:".
-- ``order_list = tk.Listbox(root, width=50)``: Creates a Text widget to display the list of orders.
-- ``order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew"``: Positions the Text widget in the grid layout.
+- ``order_list = tk.Listbox(root, width=50)``: Creates a Listbox widget to display the list of orders.
+- ``order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew"``: Positions the Listbox widget in the grid layout.
 
 ----
 
-Formatting the Orders Display
+Orders Display
 ----------------------------------
 
 .. code-block:: python

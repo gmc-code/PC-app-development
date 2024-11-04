@@ -37,9 +37,9 @@ Writing the ``add_order`` Function
 
     from tkinter import messagebox
 
-| Add a list variable to keep track of orders.
+| Add a list variable, orders, to keep track of orders.
 | Orders will be added as tuples of (customer, pizza, size, quantity).
-| Place this near the top of the code under the prices.
+| Place this near the top of the code under the constants, before the definitions.
 
 .. code-block:: python
 
@@ -47,7 +47,7 @@ Writing the ``add_order`` Function
     orders = []
 
 
-| Add an import line for the messsagebox that is needed if no customer name is entered.
+| Add the add_order function to add an order to the orders list.
 
 .. code-block:: python
 
