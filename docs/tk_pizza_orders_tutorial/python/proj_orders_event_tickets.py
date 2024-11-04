@@ -38,7 +38,7 @@ orders = []
 def update_costs(*args):
     event = event_var.get()
     ticket_type = ticket_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if event and ticket_type:
         cost = prices[event][ticket_type]
         cost_display_var.set(f"Cost per ticket: ${cost}")
@@ -51,7 +51,7 @@ def add_order():
     customer = customer_entry.get()
     event = event_var.get()
     ticket_type = ticket_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")
         customer_entry.config(bg="pink")

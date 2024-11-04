@@ -18,7 +18,7 @@ orders = []
 def update_costs(*args):
     pizza = pizza_var.get()
     size = size_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if pizza and size:
         cost = prices[pizza][size]
         cost_display_var.set(f"Cost per pizza: ${cost}")
@@ -32,7 +32,7 @@ def add_order():
     customer = customer_entry.get()
     pizza = pizza_var.get()
     size = size_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")
         customer_entry.config(bg="pink")

@@ -38,7 +38,7 @@ orders = []
 def update_costs(*args):
     jewellery = jewellery_var.get()
     material = material_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if jewellery and material:
         cost = prices[jewellery][material]
         cost_display_var.set(f"Cost per item: ${cost}")
@@ -51,7 +51,7 @@ def add_order():
     customer = customer_entry.get()
     jewellery = jewellery_var.get()
     material = material_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")
         customer_entry.config(bg="pink")

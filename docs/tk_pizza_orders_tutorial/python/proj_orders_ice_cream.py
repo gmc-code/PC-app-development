@@ -46,7 +46,7 @@ orders = []
 # Costs
 def update_costs(*args):
     ice_cream = ice_cream_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if ice_cream:
         cost = prices[ice_cream]
         cost_display_var.set(f"Cost per item: ${cost}")
@@ -60,7 +60,7 @@ def update_costs(*args):
 
 def update_costs(*args):
     ice_cream = ice_cream_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if ice_cream:
         # Base cost of the selected ice cream flavor
         base_cost = prices[ice_cream]
@@ -81,7 +81,7 @@ def update_costs(*args):
 def add_order():
     customer = customer_entry.get()
     ice_cream = ice_cream_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     selected_toppings = [topping for topping, var in toppings_vars.items() if var.get()]
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")

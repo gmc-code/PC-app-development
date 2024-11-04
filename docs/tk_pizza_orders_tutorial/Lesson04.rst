@@ -86,7 +86,7 @@ Creating and Positioning the OptionMenu
 
     # Quantity
     tk.Label(root, text="Quantity:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
-    quantity_var = tk.StringVar(root)
+    quantity_var = tk.IntVar(root)
     quantity_var.set("1")
     quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
     quantity_menu.grid(row=4, column=1, padx=10, pady=5, sticky="w")
@@ -102,14 +102,16 @@ Creating and Positioning the OptionMenu
     - `padx` and `pady` add padding around the label for better spacing.
     - `sticky="e"` aligns the label to the east (right side) of its grid cell.
 
-2. **StringVar Initialization**:
+2. **IntVar Initialization**:
+
+    See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
 
     .. code-block:: python
 
-        quantity_var = tk.StringVar(root)
+        quantity_var = tk.IntVar(root)
         quantity_var.set("1")
 
-    - `quantity_var` is a `StringVar` object that holds the value of the selected quantity.
+    - `quantity_var` is a `IntVar` object that holds the value of the selected quantity.
     - `quantity_var.set("1")` sets the default value to "1".
 
 3. **OptionMenu Creation**:

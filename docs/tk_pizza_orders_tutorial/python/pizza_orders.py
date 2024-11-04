@@ -33,7 +33,7 @@ ADD_BUTTON_FG = "#000000"  # black
 ADD_BUTTON_HOVER_BG = "#5bd85b"  # moderate lime green
 
 DELETE_BUTTON_BG = "#ffdae0"  # very pale red
-DELETE_BUTTON_FG= "#000000"  # black
+DELETE_BUTTON_FG = "#000000"  # black
 DELETE_BUTTON_HOVER_BG = "#ffc1cb"  # very pale red
 
 
@@ -45,7 +45,7 @@ orders = []
 def update_costs(*args):
     pizza = pizza_var.get()
     size = size_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()  # int using IntVAr
     if pizza and size:
         cost = prices[pizza][size]
         cost_display_var.set(f"Cost per pizza: ${cost}")
@@ -59,7 +59,7 @@ def add_order():
     customer = customer_entry.get()
     pizza = pizza_var.get()
     size = size_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")
         customer_entry.config(bg="pink")
@@ -120,6 +120,36 @@ def update_order_list():
         order_list.itemconfig(order_list.size() - 1, {"bg": ORDER_LIST_TOTAL_BG, "selectbackground": ORDER_LIST_TOTAL_SELECTED_BG})
 
 
+# for hover color change:
+# Function to change color on hover
+def on_enter_add(e):
+    add_button.config(bg=ADD_BUTTON_HOVER_BG)
+
+
+def on_leave_add(e):
+    add_button.config(bg=ADD_BUTTON_BG)
+
+
+# for hover color change:
+# Function to change color on hover
+def on_enter_delete(e):
+    delete_pizza_button.config(bg=DELETE_BUTTON_HOVER_BG)
+
+
+def on_leave_delete(e):
+    delete_pizza_button.config(bg=DELETE_BUTTON_BG)
+
+
+# for hover color change:
+# Function to change color on hover
+def on_enter_cancel(e):
+    cancel_order_button.config(bg=DELETE_BUTTON_HOVER_BG)
+
+
+def on_leave_cancel(e):
+    cancel_order_button.config(bg=DELETE_BUTTON_BG)
+
+
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")
@@ -153,7 +183,7 @@ for size in ["Small", "Medium", "Large"]:
 
 # Quantity
 tk.Label(root, text="Quantity:", font=LABEL_FONT, bg=TEXT_BG).grid(row=3, column=0, padx=10, pady=5, sticky="e")
-quantity_var = tk.StringVar(root)
+quantity_var = tk.IntVar(root)
 quantity_var.set("1")
 quantity_var.trace_add("write", update_costs)
 quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
@@ -173,23 +203,13 @@ order_cost_var.set("Order cost: $0")
 tk.Label(root, textvariable=order_cost_var, font=LABEL_FONT, bg=TEXT_BG).grid(row=5, column=1, padx=10, pady=5, sticky="w")
 
 
-# Function to change color on hover
-def on_enter_add(e):
-    add_button.config(bg=ADD_BUTTON_HOVER_BG)
-
-
-def on_leave_add(e):
-    add_button.config(bg=ADD_BUTTON_BG)
-
-
 # Add order button
 add_button = tk.Button(root, text="Add Order", command=add_order, bg=ADD_BUTTON_BG, fg=ADD_BUTTON_FG, activebackground=ADD_BUTTON_HOVER_BG)
 add_button.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w")
-# for hover color change:
+
 # Bind the hover events
 add_button.bind("<Enter>", on_enter_add)
 add_button.bind("<Leave>", on_leave_add)
-
 
 # Orders list
 tk.Label(root, text="Orders:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=2, padx=10, pady=5, sticky="w")
@@ -198,38 +218,18 @@ order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, stick
 # add for reselectings chosen options:
 order_list.bind("<<ListboxSelect>>", select_order)
 
-
-# Function to change color on hover
-def on_enter_delete(e):
-    delete_pizza_button.config(bg=DELETE_BUTTON_HOVER_BG)
-
-
-def on_leave_delete(e):
-    delete_pizza_button.config(bg=DELETE_BUTTON_BG)
-
-
 # Delete selected pizza button
 delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 delete_pizza_button.grid(row=6, column=2, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
-# for hover color change:
+
 # Bind the hover events
 delete_pizza_button.bind("<Enter>", on_enter_delete)
 delete_pizza_button.bind("<Leave>", on_leave_delete)
 
-
-# Function to change color on hover
-def on_enter_cancel(e):
-    cancel_order_button.config(bg=DELETE_BUTTON_HOVER_BG)
-
-
-def on_leave_cancel(e):
-    cancel_order_button.config(bg=DELETE_BUTTON_BG)
-
-
 # Cancel whole order button
 cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG, fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
 cancel_order_button.grid(row=6, column=3, padx=10, ipadx=20, ipady=10, pady=5, sticky="w")
-# for hover color change:
+
 # Bind the hover events
 cancel_order_button.bind("<Enter>", on_enter_cancel)
 cancel_order_button.bind("<Leave>", on_leave_cancel)

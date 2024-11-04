@@ -39,7 +39,7 @@ orders = []
 def update_costs(*args):
     tshirt_type = tshirt_var.get()
     size = size_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if tshirt_type and size:
         cost = prices[tshirt_type][size]
         cost_display_var.set(f"Cost per T-shirt: ${cost}")
@@ -52,7 +52,7 @@ def add_order():
     customer = customer_entry.get()
     tshirt_type = tshirt_var.get()
     size = size_var.get()
-    quantity = int(quantity_var.get())
+    quantity = quantity_var.get()
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")
         customer_entry.config(bg="pink")

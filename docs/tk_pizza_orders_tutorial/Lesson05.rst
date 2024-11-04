@@ -89,7 +89,7 @@ Calculating the cost based on selection.
     def update_costs(*args):
         pizza = pizza_var.get()
         size = size_var.get()
-        quantity = int(quantity_var.get())
+        quantity = quantity_var.get()
         if pizza and size:
             cost = prices[pizza][size]
             cost_display_var.set(f"Cost per pizza: ${cost}")
@@ -114,11 +114,11 @@ Calculating the cost based on selection.
 
         pizza = pizza_var.get()
         size = size_var.get()
-        quantity = int(quantity_var.get())
+        quantity = quantity_var.get()
 
     - `pizza = pizza_var.get()` retrieves the selected pizza type from the `pizza_var` variable.
     - `size = size_var.get()` retrieves the selected pizza size from the `size_var` variable.
-    - `quantity = int(quantity_var.get())` retrieves the selected quantity from the `quantity_var` variable and converts it to an integer.
+    - `quantity = quantity_var.get()` retrieves the selected quantity from the `quantity_var` variable as an integer.
 
 3. **Calculate Costs**:
 

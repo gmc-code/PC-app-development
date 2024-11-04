@@ -51,7 +51,7 @@ Writing the ``add_order`` Function
         customer = customer_entry.get()
         pizza = pizza_var.get()
         size = size_var.get()
-        quantity = int(quantity_var.get())
+        quantity = quantity_var.get()
 
         if not customer:
             messagebox.showerror("Input Error", "Please enter the customer name.")
@@ -68,7 +68,7 @@ Writing the ``add_order`` Function
 - ``customer = customer_entry.get()``: Retrieves the customer name from the entry widget.
 - ``pizza = pizza_var.get()``: Retrieves the selected pizza type.
 - ``size = size_var.get()``: Retrieves the selected pizza size.
-- ``quantity = int(quantity_var.get())``: Retrieves the selected quantity string and converts it to an integer.
+- ``quantity = quantity_var.get()``: Retrieves the selected quantity string as an integer.
 - ``messagebox.showerror("Input Error", "Please enter the customer name.")``: Displays an error message if the customer name is not entered.
 - ``orders.append((customer, pizza, size, quantity))``: Adds the order to the list of orders.
 - ``quantity_var.set("1")``: Resets the quantity to 1.

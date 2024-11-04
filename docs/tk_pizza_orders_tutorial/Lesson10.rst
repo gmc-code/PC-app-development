@@ -67,7 +67,7 @@ Add drinks
 
 .. code-block:: python
 
-    drink_quantity_var = tk.StringVar(root)
+    drink_quantity_var = tk.IntVar(root)
     drink_quantity_var.set("1")
     drink_quantity_menu = tk.OptionMenu(root, drink_quantity_var, *[str(i) for i in range(1, 11)])
     drink_quantity_menu.grid(row=6, column=1, padx=10, pady=5, sticky="w")
