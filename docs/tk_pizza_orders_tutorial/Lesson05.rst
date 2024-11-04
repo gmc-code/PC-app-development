@@ -41,7 +41,7 @@ Adding Cost Display Fields
 Cost per pizza display
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-| This code sets up a label to display the cost per pizza. The displayed text is managed by a `StringVar` named `cost_display_var`, which is initialized to "Cost per pizza: $0". The label is placed in the grid layout and aligned to the left, ensuring it updates dynamically based on the value of `cost_display_var`.
+| This code sets up a label to display the cost per pizza. The displayed text is managed by a `StringVar` named `cost_display_var`, which is initialized to "Cost per pizza: $0". The label is placed in the grid layout and aligned to the left, and it updates dynamically based on the value of `cost_display_var`.
 
 .. code-block:: python
 
