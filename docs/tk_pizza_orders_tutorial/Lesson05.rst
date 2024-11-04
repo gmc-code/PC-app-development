@@ -17,7 +17,7 @@ Pizza 5: Adding Costs
 Define prices for pizzas
 ------------------------------
 
-| ``prices`` is a nested dictionary that stores the prices of different pizza types based on their sizes. The outer dictionary keys are the names of the pizzas (e.g., "Margherita", "Pepperoni"), and each key maps to another dictionary. The inner dictionaries have keys representing the sizes of the pizzas ("Small", "Medium", "Large") and values representing the corresponding prices. For example, a small Margherita pizza costs 5 units, while a large BBQ Chicken pizza costs 12 units.
+| ``prices`` is a nested dictionary that stores the prices of different pizza types based on their sizes. The outer dictionary keys are the names of the pizzas (e.g., "Margherita", "Pepperoni"), and each key maps to another dictionary. The inner dictionaries have keys representing the sizes of the pizzas ("Small", "Medium", "Large") and values representing the corresponding prices. For example, a small Margherita pizza costs 5 dollars, while a large BBQ Chicken pizza costs 12 dollars.
 
 .. code-block:: python
 
