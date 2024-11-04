@@ -100,7 +100,7 @@ Calculating the cost based on selection.
 
 1. **Function Definition**:
 
-    .. code-block:: python
+    .. code-block::
 
         def update_costs(*args):
 
@@ -110,7 +110,7 @@ Calculating the cost based on selection.
 
 2. **Retrieve Selected Values**:
 
-    .. code-block:: python
+    .. code-block::
 
         pizza = pizza_var.get()
         size = size_var.get()
@@ -122,7 +122,7 @@ Calculating the cost based on selection.
 
 3. **Calculate Costs**:
 
-    .. code-block:: python
+    .. code-block::
 
         if pizza and size:
             cost = prices[pizza][size]

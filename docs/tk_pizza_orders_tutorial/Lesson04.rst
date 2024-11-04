@@ -93,7 +93,7 @@ Creating and Positioning the OptionMenu
 
 1. **Label Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         tk.Label(root, text="Quantity:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
@@ -106,17 +106,17 @@ Creating and Positioning the OptionMenu
 
     See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
 
-    .. code-block:: python
+    .. code-block::
 
         quantity_var = tk.IntVar(root)
         quantity_var.set("1")
 
-    - `quantity_var` is a `IntVar` object that holds the value of the selected quantity.
+    - `quantity_var` is a `IntVar` object that holds the value of the selected quantity, as an integer.
     - `quantity_var.set("1")` sets the default value to "1".
 
 3. **OptionMenu Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
         quantity_menu.grid(row=4, column=1, padx=10, pady=5, sticky="w")
