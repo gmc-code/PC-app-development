@@ -112,7 +112,12 @@ Calculating the cost based on selection.
     - This line defines a function named `update_costs` that takes any number of arguments (`*args`).
     - The `*args` parameter in a function definition allows the function to accept an arbitrary number of positional arguments. This means you can pass any number of arguments to the function, and they will be accessible within the function.
     - In the context of Tkinter and event-driven programming, `*args` is particularly useful for binding functions to multiple events. When an event occurs (like a button click or a change in a widget's value), Tkinter automatically passes event-specific information to the callback function. By using `*args`, the function can handle these additional arguments without explicitly defining them.
-    - `*args` is required to make this function compatible with .trace_add() calls.
+
+    | `*args` is required to make this function compatible with .trace_add() calls.
+    | When you use trace_add to monitor changes to Tkinter variables, the callback function (update_costs in this case) automatically receives three arguments:
+    | The name of the variable,
+    | The index, and
+    | The mode of the variable change
 
 2. **Retrieve Selected Values**:
 
