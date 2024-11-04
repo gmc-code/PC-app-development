@@ -38,7 +38,7 @@ Creating and Positioning Radio Buttons for Pizza Type
 
 1. **Label Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
       tk.Label(root, text="Pizza Type:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
@@ -50,7 +50,7 @@ Creating and Positioning Radio Buttons for Pizza Type
 
 2. **StringVar Initialization**:
 
-    .. code-block:: python
+    .. code-block::
 
         pizza_var = tk.StringVar(root)
         pizza_var.set("Margherita")
@@ -61,7 +61,7 @@ Creating and Positioning Radio Buttons for Pizza Type
 
 3. **Frame Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         pizza_frame = tk.Frame(root)
         pizza_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
@@ -73,7 +73,7 @@ Creating and Positioning Radio Buttons for Pizza Type
 
 4. **Radio Buttons Creation**:
 
-    .. code-block:: python
+    .. code-block::
 
         for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie", "BBQ Chicken"]:
             tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza).pack(anchor="w")
@@ -94,7 +94,7 @@ See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
 
 1. **StringVar Initialization**:
 
-    .. code-block:: python
+    .. code-block::
 
         pizza_var = tk.StringVar(root)
 
@@ -105,7 +105,7 @@ See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
 
 2. **Setting the Default Value**:
 
-    .. code-block:: python
+    .. code-block::
 
         pizza_var.set("Margherita")
 
@@ -119,7 +119,7 @@ See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
    - **Data Binding**: Widgets like ``Radiobutton`` can be bound to ``StringVar``, enabling them to share and update the same value.
    - **Ease of Access**: You can easily retrieve the current value of ``pizza_var`` using the ``get`` method, which is helpful for processing user input.
 
-    .. code-block:: python
+    .. code-block::
 
         selected_pizza = pizza_var.get()
 
