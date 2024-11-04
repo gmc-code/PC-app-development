@@ -163,16 +163,19 @@ Updating Costs Dynamically Based on Selections
 
 
 - **pizza_var.trace_add("write", update_costs)**:
+
   - The `trace_add` method is used to monitor changes to the `StringVar` variables. When a change is detected, it triggers the `update_costs` function.
   - The `"write"` mode indicates that the trace should trigger when the variable's value is written or updated.
   - The `update_costs` function is called whenever `pizza_var` changes.
   - Each time `pizza_var` changes, Tkinter passes event-specific arguments to `update_costs`. The `*args` parameter in `update_costs` ensures that `update_costs` can accept these arguments without any issues.
 
 - **size_var.trace_add("write", update_costs)**:
+
   - This line sets up a trace on the `size_var` variable.
   - The `update_costs` function is called whenever `size_var` changes.
 
 - **quantity_var.trace_add("write", update_costs)**:
+
   - This line sets up a trace on the `quantity_var` variable.
   - The `update_costs` function is called whenever `quantity_var` changes.
 
