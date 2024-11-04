@@ -11,7 +11,7 @@ Final Touches and Styling
   - Adding Font and colour variables
   - Adding font and colour settings to tkinter widgets
   - Updating Pizza type to use prices dictionary
-  - Final review and testing.
+  - Final testing.
 
 ----
 
@@ -261,8 +261,8 @@ Updating Pizza type to use prices dictionary
 
 ----
 
-Final Review and Testing
+Final Testing
 -----------------------------------------
 
 - Test the application to ensure all features work as expected.
-- Make any necessary adjustments to improve functionality and user experience.
+
