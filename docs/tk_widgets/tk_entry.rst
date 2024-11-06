@@ -9,14 +9,13 @@ tk Entry
 Usage
 ---------------
 
-| The `tkinter.Entry` widget provides a input field.
+| The `tkinter.Entry` widget provides an input field.
 | To create an entry widget the general syntax is:
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
 
-    | parent is the window or frame object.
+    | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
-
 
 ----
 

@@ -14,8 +14,98 @@ Usage
 
 .. py:function:: text_widget  = tk.Text(parent, option=value)
 
-    | parent is the window or frame object.
+    | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
+
+----
+
+Text widget with Scrollbar
+--------------------------------
+
+.. image:: images/text_and_buttons.png
+        :scale: 100%
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    Create the main window
+    root = tk.Tk()
+    root.title("Interactive Text Widget Example")
+
+    Create a StringVar to hold the text content
+    text_var = tk.StringVar()
+    text_var.set("This is a simple text widget example.")
+
+    Create a Text widget
+    text = tk.Text(root, height=10, width=40, wrap="word", font=("Helvetica", 12))
+    text.pack(padx=10, pady=10, fill="both", expand=True)
+
+    Insert initial content from StringVar
+    text.insert("1.0", text_var.get())
+
+    Function to add text
+    def add_text():
+        text.insert("end", "\nAdditional text added.")
+
+    Function to remove text
+    def remove_text():
+        text.delete("2.0", "end")
+
+    Create buttons to add and remove text
+    button_frame = tk.Frame(root)
+    button_frame.pack(pady=10)
+
+    add_button = tk.Button(button_frame, text="Add Text", command=add_text)
+    add_button.pack(side="left", padx=5)
+
+    remove_button = tk.Button(button_frame, text="Remove Text", command=remove_text)
+    remove_button.pack(side="left", padx=5)
+
+    Run the main event loop
+    root.mainloop()
+
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    Create the main window
+    root = tk.Tk()
+    root.title("Interactive Text Widget Example")
+
+    Create a StringVar to hold the text content
+    text_var = tk.StringVar()
+    text_var.set("This is a simple text widget example.")
+
+    Create a Text widget
+    text = tk.Text(root, height=10, width=40, wrap="word", font=("Helvetica", 12))
+    text.pack(padx=10, pady=10, fill="both", expand=True)
+
+    Insert initial content from StringVar
+    text.insert("1.0", text_var.get())
+
+    Function to add text
+    def add_text():
+        text.insert("end", "\nAdditional text added.")
+
+    Function to remove text
+    def remove_text():
+        text.delete("1.0", "end")
+
+    Create buttons to add and remove text
+    button_frame = tk.Frame(root)
+    button_frame.pack(pady=10)
+
+    add_button = tk.Button(button_frame, text="Add Text", command=add_text)
+    add_button.pack(side="left", padx=5)
+
+    remove_button = tk.Button(button_frame, text="Remove Text", command=remove_text)
+    remove_button.pack(side="left", padx=5)
+
+    Run the main event loop
+    root.mainloop()
+
 
 ----
 
@@ -30,11 +120,11 @@ Text widget with Scrollbar
     import tkinter as tk
     from tkinter import scrolledtext
 
-    # Create the main window
+    Create the main window
     root = tk.Tk()
     root.title("Text Widget Example")
 
-    # Create a Text widget with a scrollbar
+    Create a Text widget with a scrollbar
     text_frame = tk.Frame(root)
     text_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
@@ -46,25 +136,25 @@ Text widget with Scrollbar
 
     scrollbar.config(command=text.yview)
 
-    # Insert initial content
+    Insert initial content
     initial_content = "\n".join([f"Line {i+1}" for i in range(15)])
     text.insert("1.0", initial_content)
 
-    # Customize options
+    Customize options
     text.config(
-        bg="lightyellow",  # Background color
-        fg="blue",  # Text color
-        bd=2,  # Border width
-        relief="solid",  # Border style
-        insertbackground="blue",  # Insertion cursor color
-        state="normal",  # Enable editing (use "disabled" to disable)
+        bg="lightyellow",  Background color
+        fg="blue",  Text color
+        bd=2,  Border width
+        relief="solid",  Border style
+        insertbackground="blue",  Insertion cursor color
+        state="normal",  Enable editing (use "disabled" to disable)
         highlightthickness=5,
         highlightcolor="red",
         padx=10,
         pady=10
     )
 
-    # Run the main event loop
+    Run the main event loop
     root.mainloop()
 
 ----
