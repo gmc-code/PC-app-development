@@ -309,6 +309,7 @@ Options
         | Example: ``label_widget = tk.Label(window, cursor="hand2")``
 
         | Possible values include:
+
             - **"arrow"**: Standard arrow cursor.
             - **"circle"**: Small circle cursor.
             - **"clock"**: Clock or watch cursor.
