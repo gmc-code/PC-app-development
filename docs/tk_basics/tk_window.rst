@@ -323,12 +323,12 @@ Here are the descriptions for each option in Tkinter's window options.
     | Default: None
     | Example: ``window.configure(colormap="new_map")``
 
-.. py:attribute:: cursor
+.. py:attribute:: container
 
-    | Syntax: ``window.configure(cursor="cursor_type")``
-    | Description: Changes the appearance of the mouse cursor when it is over the window.
-    | Default: None
-    | Example: ``window.configure(cursor="arrow")``
+    | Syntax: ``window.configure(container=boolean)``
+    | Description: Specifies whether the window is a container. Containers can be used to embed other applications.
+    | Default: False
+    | Example: ``window.configure(container=True)``
 
 .. py:attribute:: cursor
 
@@ -535,6 +535,13 @@ Here are the descriptions for each option in Tkinter's window options.
     | Default: Both width and height are resizable (True, True).
     | Example: ``window.resizable(width=False, height=True)``
 
+.. py:attribute:: screen
+
+    | Syntax: ``window.configure(screen="screen_name")``
+    | Description: Specifies the screen on which the window should be displayed. This is useful in multi-monitor setups where you want to control which screen the window appears on.
+    | Default: The default screen of the display.
+    | Example: ``window.configure(screen=":0.1")``
+
 .. py:attribute:: state
 
     | Syntax: ``window.state("state")``
@@ -555,6 +562,13 @@ Here are the descriptions for each option in Tkinter's window options.
     | Description: Sets the title of the window displayed in the title bar.
     | Default: Usually empty or "tk" for `Tk` root windows.
     | Example: ``window.title("My Application")``
+
+.. py:attribute:: use
+
+    | Syntax: ``window.configure(use="window_id")``
+    | Description: Embeds the Tkinter window inside another window specified by the window ID. This is useful for embedding Tkinter applications within other applications.
+    | Default: None
+    | Example: ``window.configure(use="0x12345")``
 
 .. py:attribute:: width
 
