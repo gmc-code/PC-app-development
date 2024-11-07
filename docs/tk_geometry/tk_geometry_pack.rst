@@ -28,6 +28,76 @@ pack
 Options for the `pack()` geometry manager
 -----------------------------------------------
 
+**padding**
+~~~~~~~~~~~~~
+
+.. py:function:: widget.pack(ipadx=x, ipady=y)
+
+    | The `ipadx` value is an integer, x. The `ipady` value is an integer, y.
+    | These options control the **internal** padding (in pixels) along the x and y axes, respectively.
+    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
+
+
+.. py:function:: widget.pack(padx=x, pady=y)
+
+    | The `padx` value is an integer, x. The `pady` value is an integer, y.
+    | These options control the **external** padding (in pixels) along the x and y axes, respectively.
+    | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
+
+
+.. image:: images/pack_padding.png
+    :scale: 100%
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    window = tk.Tk()
+
+    label1 = tk.Label(window, text="Red", bg="red", fg="white")
+    label1.pack(ipadx=30, ipady=6)
+
+    label2 = tk.Label(window, text="Purple", bg="purple", fg="white")
+    label2.pack(pady=20, ipadx=8, ipady=12)
+
+    window.mainloop()
+
+
+**Anchor**
+~~~~~~~~~~~~~~~~~~
+
+.. py:function:: widget.pack(anchor=anchor_string)
+
+    | `anchor_string` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
+    | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
+    | The `anchor` option specifies the position of the widget within its allocated space.
+    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
+
+Example: To create labels anchored at different positions:
+
+.. image:: images/pack_anchor.png
+    :scale: 100%
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    window = tk.Tk()
+    window.title("pack anchor")
+    window.geometry('250x150')
+
+    label1 = tk.Label(window, text="Top-Left", bg="lightblue")
+    label1.pack(anchor='nw')
+
+    label2 = tk.Label(window, text="Center", bg="lightgreen")
+    label2.pack(anchor='center')
+
+    label3 = tk.Label(window, text="Bottom-Right", bg="lightpink")
+    label3.pack(anchor='se')
+
+    window.mainloop()
+
+
 **Side**
 ~~~~~~~~~~~
 
@@ -79,7 +149,7 @@ Options for the `pack()` geometry manager
 .. py:function:: widget.pack(fill=fill_string)
 
     | The `fill_string` value is `None`, `x`, `y`, or `both`.
-    | The `fill` option specifies how the widget should fill the available space. 
+    | The `fill` option specifies how the widget should fill the available space.
 
 Example: Use `expand=True` so fill options are shown.
 
@@ -103,76 +173,3 @@ Example: Use `expand=True` so fill options are shown.
 
     window.mainloop()
 
-~~~~~~~~~~~~~
-padding
-~~~~~~~~~~~~~
-
-**ipadx** and **ipady**
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. py:function:: widget.pack(ipadx=x, ipady=y)
-
-    | The `ipadx` value is an integer, x. The `ipady` value is an integer, y.
-    | These options control the internal padding (in pixels) along the x and y axes, respectively.
-    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
-
-**padx** and **pady**
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. py:function:: widget.pack(padx=x, pady=y)
-
-    | The `padx` value is an integer, x. The `pady` value is an integer, y.
-    | These options control the external padding (in pixels) along the x and y axes, respectively.
-    | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
-
-
-.. image:: images/pack_padding.png
-    :scale: 100%
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    window = tk.Tk()
-
-    label1 = tk.Label(window, text="Red", bg="red", fg="white")
-    label1.pack(ipadx=30, ipady=6)
-
-    label2 = tk.Label(window, text="Purple", bg="purple", fg="white")
-    label2.pack(pady=20, ipadx=8, ipady=12)
-
-    window.mainloop()
-
-**Anchor**
-~~~~~~~~~~~~~~~~~~
-
-.. py:function:: widget.pack(anchor=anchor_string)
-
-    | `anchor_string` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
-    | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
-    | The `anchor` option specifies the position of the widget within its allocated space. 
-    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
-
-Example: To create labels anchored at different positions:
-
-.. image:: images/pack_anchor.png
-    :scale: 100%
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    window = tk.Tk()
-    window.title("pack anchor")
-    window.geometry('250x150')
-
-    label1 = tk.Label(window, text="Top-Left", bg="lightblue")
-    label1.pack(anchor='nw')
-
-    label2 = tk.Label(window, text="Center", bg="lightgreen")
-    label2.pack(anchor='center')
-
-    label3 = tk.Label(window, text="Bottom-Right", bg="lightpink")
-    label3.pack(anchor='se')
-
-    window.mainloop()
