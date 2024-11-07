@@ -330,6 +330,117 @@ Here are the descriptions for each option in Tkinter's window options.
     | Default: None
     | Example: ``window.configure(cursor="arrow")``
 
+.. py:attribute:: cursor
+
+    | Syntax: ``window.configure(cursor="cursor_type")``
+    | Description: Changes the appearance of the mouse cursor when it is over the window.
+    | Default: None
+    | Example: ``window.configure(cursor="arrow")``
+
+    **Available Cursors:**
+
+    - ``"arrow"`` - Standard arrow cursor.
+    - ``"circle"`` - Small circle cursor.
+    - ``"clock"`` - Clock or watch icon.
+    - ``"cross"`` - Crosshair cursor.
+    - ``"dotbox"`` - Small dot inside a box.
+    - ``"exchange"`` - Cursor with arrows pointing in four directions.
+    - ``"fleur"`` - Four-directional arrows, typically for moving objects.
+    - ``"heart"`` - Heart-shaped cursor.
+    - ``"man"`` - Small icon representing a person.
+    - ``"mouse"`` - Icon resembling a computer mouse.
+    - ``"pirate"`` - Skull and crossbones.
+    - ``"plus"`` - Plus sign.
+    - ``"shuttle"`` - Small shuttle icon (rarely used).
+    - ``"sizing"`` - Double arrow for resizing.
+    - ``"spider"`` - Small spider icon.
+    - ``"spraycan"`` - Spray can icon.
+    - ``"star"`` - Star-shaped cursor.
+    - ``"target"`` - Target symbol.
+    - ``"tcross"`` - Thin crosshair cursor.
+    - ``"trek"`` - Star Trek "badge" symbol.
+    - ``"watch"`` - Watch or waiting icon.
+
+    **Standard OS Cursors:**
+
+    - ``"X_cursor"`` - Standard "X" cursor.
+    - ``"arrow"`` - Standard arrow cursor.
+    - ``"based_arrow_down"`` - Downward arrow.
+    - ``"based_arrow_up"`` - Upward arrow.
+    - ``"boat"`` - Boat icon.
+    - ``"bogosity"`` - Square with an "X" (often used as an error indicator).
+    - ``"bottom_left_corner"`` - Corner-resizing cursor for bottom-left.
+    - ``"bottom_right_corner"`` - Corner-resizing cursor for bottom-right.
+    - ``"bottom_side"`` - Vertical resize for bottom edge.
+    - ``"bottom_tee"`` - Tee (T) pointing down.
+    - ``"box_spiral"`` - Spiral in a box.
+    - ``"center_ptr"`` - Cursor at the center pointer.
+    - ``"circle"`` - Circle cursor.
+    - ``"clock"`` - Clock or watch icon.
+    - ``"coffee_mug"`` - Coffee mug icon.
+    - ``"cross"`` - Crosshair cursor.
+    - ``"cross_reverse"`` - Reversed crosshair.
+    - ``"crosshair"`` - Thin crosshair.
+    - ``"diamond_cross"`` - Diamond with a cross inside.
+    - ``"dot"`` - Small dot cursor.
+    - ``"dotbox"`` - Dot inside a box.
+    - ``"double_arrow"`` - Double-ended arrow.
+    - ``"draft_large"`` - Drafting icon (large).
+    - ``"draft_small"`` - Drafting icon (small).
+    - ``"draped_box"`` - Draped box.
+    - ``"exchange"`` - Cursor with arrows in four directions.
+    - ``"fleur"`` - Four-directional arrow, usually for moving items.
+    - ``"gobbler"`` - Gobbler icon.
+    - ``"gumby"`` - Gumby icon.
+    - ``"hand1"`` - Left-pointing hand.
+    - ``"hand2"`` - Right-pointing hand.
+    - ``"heart"`` - Heart icon.
+    - ``"icon"`` - Standard icon.
+    - ``"iron_cross"`` - Cross icon, similar to "crosshair".
+    - ``"left_ptr"`` - Standard left pointer.
+    - ``"left_side"`` - Resize cursor for left edge.
+    - ``"left_tee"`` - Tee (T) pointing left.
+    - ``"leftbutton"`` - Icon representing the left mouse button.
+    - ``"ll_angle"`` - Lower-left angle.
+    - ``"lr_angle"`` - Lower-right angle.
+    - ``"man"`` - Icon of a person.
+    - ``"middlebutton"`` - Icon representing the middle mouse button.
+    - ``"mouse"`` - Icon resembling a computer mouse.
+    - ``"pencil"`` - Pencil icon.
+    - ``"pirate"`` - Skull and crossbones icon.
+    - ``"plus"`` - Plus sign.
+    - ``"question_arrow"`` - Arrow with a question mark.
+    - ``"right_ptr"`` - Right pointer.
+    - ``"right_side"`` - Resize cursor for right edge.
+    - ``"right_tee"`` - Tee (T) pointing right.
+    - ``"rightbutton"`` - Icon representing the right mouse button.
+    - ``"rtl_logo"`` - RTL (radio telegraph logo).
+    - ``"sailboat"`` - Sailboat icon.
+    - ``"sb_down_arrow"`` - Scroll bar down arrow.
+    - ``"sb_h_double_arrow"`` - Horizontal resize for scroll bar.
+    - ``"sb_left_arrow"`` - Scroll bar left arrow.
+    - ``"sb_right_arrow"`` - Scroll bar right arrow.
+    - ``"sb_up_arrow"`` - Scroll bar up arrow.
+    - ``"sb_v_double_arrow"`` - Vertical resize for scroll bar.
+    - ``"shuttle"`` - Shuttle icon.
+    - ``"sizing"`` - Resize cursor for resizing windows.
+    - ``"spider"`` - Spider icon.
+    - ``"spraycan"`` - Spray can icon.
+    - ``"star"`` - Star icon.
+    - ``"target"`` - Target icon.
+    - ``"tcross"`` - Thin cross cursor.
+    - ``"top_left_arrow"`` - Arrow pointing to the top-left.
+    - ``"top_left_corner"`` - Resize cursor for top-left corner.
+    - ``"top_right_corner"`` - Resize cursor for top-right corner.
+    - ``"top_side"`` - Resize cursor for top edge.
+    - ``"top_tee"`` - Tee (T) pointing up.
+    - ``"trek"`` - Star Trek badge icon.
+    - ``"ul_angle"`` - Upper-left angle.
+    - ``"umbrella"`` - Umbrella icon.
+    - ``"ur_angle"`` - Upper-right angle.
+    - ``"watch"`` - Watch or waiting icon.
+    - ``"xterm"`` - Text cursor, often used for text input.
+
 .. py:attribute:: geometry
 
     | Syntax: ``window.geometry("widthxheight+X+Y")``
@@ -372,6 +483,9 @@ Here are the descriptions for each option in Tkinter's window options.
     | Default: Default Tkinter icon.
     | Example: ``window.iconbitmap("my_icon.ico")``
 
+.. image:: images/window_icon.png
+    :scale: 100%
+
 .. py:attribute:: maxsize
 
     | Syntax: ``window.maxsize(width, height)``
@@ -410,7 +524,7 @@ Here are the descriptions for each option in Tkinter's window options.
 .. py:attribute:: relief
 
     | Syntax: ``window.configure(relief="style")``
-    | Description: Defines the border style of the window (e.g., flat, raised, sunken).
+    | Description: Defines the border style of the window (e.g., flat, raised, sunken, groove, ridge).
     | Default: flat
     | Example: ``window.configure(relief="sunken")``
 
@@ -441,13 +555,6 @@ Here are the descriptions for each option in Tkinter's window options.
     | Description: Sets the title of the window displayed in the title bar.
     | Default: Usually empty or "tk" for `Tk` root windows.
     | Example: ``window.title("My Application")``
-
-.. py:attribute:: visual
-
-    | Syntax: ``window.configure(visual="visual_type")``
-    | Description: Specifies the visual type, typically for advanced graphics.
-    | Default: None
-    | Example: ``window.configure(visual="truecolor")``
 
 .. py:attribute:: width
 
@@ -521,3 +628,6 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Description: Opens the window in a maximized (zoomed) state if set to True (Windows only).
     | Default: False
     | Example: ``window.attributes("-zoomed", True)``
+
+
+

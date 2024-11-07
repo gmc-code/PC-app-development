@@ -10,7 +10,7 @@ Useful constants
 | The constants require a reference to the tkinter module. e.g. tk.CENTER
 | A full list of tkinter constants can be found at https://github.com/python/cpython/blob/main/Lib/tkinter/constants.py
 
-| The main ones used in this resource are end and the sticky constants: n, s, e, w, center and the sides: left, right, top, bottom.
+| The main ones used in this resource are `end` and the sticky constants: `n`, `s`, `e`, `w`, `center` and the sides: `left`, `right`, `top`, `bottom`.
 
 ----
 
