@@ -10,7 +10,7 @@ ax.set_ylim(0, 5)  # Number of rows
 
 # Set ticks at the edges (for grid lines)
 ax.set_xticks(range(5))  # At 0, 1, 2, 3, 4 (edges)
-ax.set_yticks(range(5))  # At 0, 1, 2, 3, 4, (edges)
+ax.set_yticks(range(5))  # At 0, 1, 2, 3, 4 (edges)
 
 # Set the tick labels (offset manually)
 for i in range(4):

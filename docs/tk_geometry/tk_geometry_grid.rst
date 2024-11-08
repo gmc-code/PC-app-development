@@ -88,6 +88,9 @@ ipady
 Example code
 -------------
 
+.. image:: images/grid_grid.png
+    :scale: 100%
+
 .. image:: images/grid.png
     :scale: 100%
 
