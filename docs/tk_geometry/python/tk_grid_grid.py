@@ -6,16 +6,16 @@ fig, ax = plt.subplots()
 
 # Set the limits and grid size
 ax.set_xlim(0, 4)  # Number of columns
-ax.set_ylim(0, 5)  # Number of rows
+ax.set_ylim(0, 4)  # Number of rows
 
 # Set ticks at the edges (for grid lines)
-ax.set_xticks(range(5))  # At 0, 1, 2, 3, 4 (edges)
-ax.set_yticks(range(5))  # At 0, 1, 2, 3, 4 (edges)
+ax.set_xticks(range(4))  # At 0, 1, 2, 3, 4 (edges)
+ax.set_yticks(range(4))  # At 0, 1, 2, 3, 4 (edges)
 
 # Set the tick labels (offset manually)
 for i in range(4):
     ax.text(i + 0.5, -0.1, str(i), ha='center', va='center', transform=ax.transData)  # X labels
-for j in range(7):
+for j in range(4):
     ax.text(-0.1, j + 0.5, str(j), ha='center', va='center', transform=ax.transData, rotation=90)  # Y labels
 
 # Add grid lines
