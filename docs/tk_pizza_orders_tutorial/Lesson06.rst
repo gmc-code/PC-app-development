@@ -39,7 +39,7 @@ Writing the ``add_order`` Function
 
 | Add a list variable, orders, to keep track of orders.
 | Orders will be added as tuples of (customer, pizza, size, quantity).
-| Place this near the top of the code under the constants, before the definitions.
+| Place this near the top of the code under the dictionaries or constants, before the definitions.
 
 .. code-block:: python
 
