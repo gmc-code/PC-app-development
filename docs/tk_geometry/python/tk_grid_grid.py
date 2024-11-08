@@ -24,7 +24,7 @@ ax.grid(True)
 # Define updated widget placements and properties
 widgets = [
     {"name": "label1", "xy": (0, 0), "width": 1, "height": 1, "color": "lightblue"},
-    {"name": "label2", "xy": (1, 1), "width": 1, "height": 1, "color": "lightgreen"},
+    {"name": "label2", "xy": (1, 1), "width": 1, "height": 1, "color": "lightblue"},
     {"name": "label3", "xy": (2, 2), "width": 1, "height": 1, "color": "lightblue"},
     {"name": "label4", "xy": (0, 3), "width": 3, "height": 1, "color": "lightgreen"}
 ]
