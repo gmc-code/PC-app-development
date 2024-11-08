@@ -17,13 +17,13 @@ window.title("Grid Options Examples")
 
 # Rowspan example
 frame1 = create_frame(window, "Rowspan Example", 0, 0)
-add_label(frame1, "Rowspan 2", 0, 0, "lightblue", rowspan=2)
+add_label(frame1, "Rowspan 2", 0, 0, "lightblue", rowspan=2, sticky="ns")
 add_label(frame1, "Label 1", 0, 1, "lightgreen")
 add_label(frame1, "Label 2", 1, 1, "lightcoral")
 
 # Columnspan example
 frame2 = create_frame(window, "Columnspan Example", 0, 1)
-add_label(frame2, "Columnspan 2", 0, 0, "lightblue", columnspan=2)
+add_label(frame2, "Columnspan 2", 0, 0, "lightblue", columnspan=2, sticky="ew")
 add_label(frame2, "Label 1", 1, 0, "lightgreen")
 add_label(frame2, "Label 2", 1, 1, "lightcoral")
 
@@ -37,14 +37,14 @@ frame4 = create_frame(window, "Pady Example", 1, 1)
 add_label(frame4, "Pady 10", 0, 0, "lightblue", pady=10)
 add_label(frame4, "Label 1", 1, 0, "lightgreen")
 
-# Ipadx example
-frame5 = create_frame(window, "Ipadx Example", 2, 0)
-add_label(frame5, "Ipadx 10", 0, 0, "lightblue", ipadx=10)
+# ipadx example
+frame5 = create_frame(window, "ipadx Example", 2, 0)
+add_label(frame5, "ipadx 10", 0, 0, "lightblue", ipadx=10)
 add_label(frame5, "Label 1", 0, 1, "lightgreen")
 
-# Ipady example
-frame6 = create_frame(window, "Ipady Example", 2, 1)
-add_label(frame6, "Ipady 10", 0, 0, "lightblue", ipady=10)
+# ipady example
+frame6 = create_frame(window, "ipady Example", 2, 1)
+add_label(frame6, "ipady 10", 0, 0, "lightblue", ipady=10)
 add_label(frame6, "Label 1", 1, 0, "lightgreen")
 
 # Start the main event loop

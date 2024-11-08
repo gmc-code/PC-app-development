@@ -51,6 +51,14 @@ columnspan
     | Specify number of columns, **n**, for a widget to span across
     | e.g. grid(row=0, column=0, columnspan=2) to span the widget across 2 columns.
 
+sticky
+~~~~~~~~~~~
+
+.. py:function:: widget.grid(row=index_r, column=index_c, sticky=direction)
+
+    | Make the widget stick to the specified sides of the cell.
+    | e.g. widget.grid(row=0, column=0, sticky="ew") to make it expand horizontally.
+
 padx
 ~~~~~~~~~~~~~
 
@@ -111,10 +119,10 @@ Example code
     label4 = tk.Label(window, text="label 4", bg="light green")
 
     # place widgets in grid layout
-    label1.grid(row=0,column=0)
-    label2.grid(row=1,column=1)
-    label3.grid(row=2,column=2)
-    label4.grid(row=3,column=0, columnspan=3, ipadx=60)
+    label1.grid(row=0, column=0)
+    label2.grid(row=1, column=1)
+    label3.grid(row=2, column=2)
+    label4.grid(row=3, column=0, columnspan=3, sticky="ew")
 
     # Start the main event loop
     window.mainloop()
