@@ -89,7 +89,7 @@ Example code
 -------------
 
 .. image:: images/grid_grid.png
-    :scale: 100%
+    :scale: 40%
 
 .. image:: images/grid.png
     :scale: 100%
