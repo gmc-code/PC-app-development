@@ -3,7 +3,7 @@ import tkinter as tk
 # Create the main window
 root = tk.Tk()
 root.geometry("300x200")
-root.title("TextVariable Example")
+root.title("Toggle Text")
 
 # Create a StringVar to hold the text
 text_var = tk.StringVar()
