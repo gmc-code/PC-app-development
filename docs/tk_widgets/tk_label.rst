@@ -339,17 +339,21 @@ Textvariable example
 This code creates a basic GUI with a button that toggles the text of a label..
 
 1. **Using StringVar**:
+
    - `text_var = tk.StringVar()`: Creates a `StringVar` instance, `text_var`, which is a special tkinter variable for holding string data.
    - `text_var.set("Initial Text")`: Sets the initial value of `text_var`.
 
 2. **Creating the Label Widget**:
+
    - `label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `text_var`, so the label text displays `text_var`'s value.
    - `label.pack(pady=20)`: Adds the label to the window with 20 pixels of vertical padding.
 
 3. **Defining the Update Function**:
+
    - `def update_text()`: Defines a function, `update_text`, that checks `text_var`'s current value and toggles it between "Initial Text" and "Updated Text" by using `text_var.set()`.
 
 4. **Creating the Button Widget**:
+
    - `button = tk.Button(root, text="Toggle Text", command=update_text)`: Creates a button with the label "Toggle Text" and sets `update_text` as the function that runs when clicked.
    - `button.pack(pady=20)`: Adds the button to the window with 20 pixels of vertical padding.
 
