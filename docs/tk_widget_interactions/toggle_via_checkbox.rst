@@ -66,6 +66,7 @@ The checkbox toggles the label color between blue and black.
    - `label.config(fg="black")`: Sets the label color to black if `bool_var` is `False`.
 
 3. **Creating the Checkbutton**:
+
    - `toggle_checkbutton = tk.Checkbutton(root, text="Blue Label", variable=bool_var, command=toggle_label_color)`: Creates a checkbox to toggle the label color between blue and black.
    - The `BooleanVar` instance (`bool_var`) holds the state of the checkbox (checked or unchecked). This is called State Management.
    - When the checkbox is checked or unchecked, the value of `bool_var` is automatically updated to `True` or `False`, respectively.
