@@ -1,5 +1,5 @@
 ====================================================
-Toggle via checkbox
+Modify via checkbox
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
@@ -85,12 +85,14 @@ The checkbox toggles the label color between blue and black.
     bool_var = tk.BooleanVar()
     bool_var.set(False)  # Initial value
 
+
     # Function to toggle the label color
     def toggle_label_color():
         if bool_var.get():
             label.config(fg="blue")  # Set label color to blue
         else:
             label.config(fg="black")  # Set label color to black
+
 
     # Create a Checkbutton to toggle the label color
     toggle_checkbutton = tk.Checkbutton(root, text="Blue Label", variable=bool_var, command=toggle_label_color)
@@ -103,3 +105,101 @@ The checkbox toggles the label color between blue and black.
     # Run the application
     root.mainloop()
 
+----
+
+cget method for text
+------------------------
+
+.. py:attribute:: text
+
+    | Syntax: ``text=label.cget("text")``
+    | Description: Retrieves the current text of the label widget. The `cget` method is used to get the value of the specified configuration option, in this case, the text.
+    | Default: The default value is the initial text set for the label.
+    | Example: ``current_text = label.cget("text")``
+
+
+.. admonition:: Tasks
+
+    #. Modify the code to toggle the case as well as colour using ``text=label.cget("text").upper()``.
+    #. Modify the code to toggle the number 9 with its binary version (as well as colour).
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to toggle the case as well as colour.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.geometry("400x100")
+                    root.title("Toggle via Checkbox Example")
+
+                    # Create a BooleanVar to hold the boolean value
+                    bool_var = tk.BooleanVar()
+                    bool_var.set(False)  # Initial value
+
+
+                    # Function to toggle the label color and case
+                    def toggle_label():
+                        if bool_var.get():
+                            label.config(fg="blue", text=label.cget("text").upper())  # Set label color to blue and text to uppercase
+                        else:
+                            label.config(fg="black", text=label.cget("text").lower())  # Set label color to black and text to lowercase
+
+
+                    # Create a Checkbutton to toggle the label color and case
+                    toggle_checkbutton = tk.Checkbutton(root, text="Toggle Case and Color", variable=bool_var, command=toggle_label)
+                    toggle_checkbutton.grid(row=0, column=0, padx=10, pady=20)
+
+                    # Create a Label widget
+                    label = tk.Label(root, text="Case and Colour", font=("Helvetica", 16), fg="black")
+                    label.grid(row=0, column=1, pady=20)
+
+                    # Run the application
+                    root.mainloop()
+
+            .. tab-item:: Q2
+
+                Modify the code to toggle the number 9 with its binary version (as well as colour).
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.geometry("400x100")
+                    root.title("Toggle Binary via Checkbox Example")
+
+                    # Create a BooleanVar to hold the boolean value
+                    bool_var = tk.BooleanVar()
+                    bool_var.set(False)  # Initial value
+
+
+                    # Function to toggle the label between decimal and binary
+                    def toggle_label():
+                        if bool_var.get():
+                            label.config(fg="blue", text=bin(9)[2:])  # omit leading "0b"
+                        else:
+                            label.config(fg="black", text="9")  # Set label color to black and text to decimal
+
+
+                    # Create a Checkbutton to toggle the label between decimal and binary
+                    toggle_checkbutton = tk.Checkbutton(root, text="Toggle Binary", variable=bool_var, command=toggle_label)
+                    toggle_checkbutton.grid(row=0, column=0, padx=10, pady=20)
+
+                    # Create a Label widget
+                    label = tk.Label(root, text="9", font=("Helvetica", 16), fg="black")
+                    label.grid(row=0, column=1, pady=20)
+
+                    # Run the application
+                    root.mainloop()
