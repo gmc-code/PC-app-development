@@ -7,6 +7,9 @@ Extensions
 
   - Extend the pizza ordering system.
 
+| These are some starting suggestions for extending the pizza ordering system.
+| Careful planning for how these who fit into the system is needed as well as the creation of new code to integrate them.
+
 ----
 
 Add customer mobile
