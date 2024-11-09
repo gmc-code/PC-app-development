@@ -78,6 +78,15 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
     import tkinter as tk
 
+
+    # Function to update the text
+    def update_text():
+        if text_var.get() == "Initial Text":
+            text_var.set("Updated Text")
+        else:
+            text_var.set("Initial Text")
+
+
     # Create the main window
     root = tk.Tk()
     root.geometry("300x100")
@@ -91,13 +100,6 @@ This code creates a basic GUI with a button that toggles the text of a label.
     label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))
     label.pack(pady=10)
 
-    # Function to update the text
-    def update_text():
-        if text_var.get() == "Initial Text":
-            text_var.set("Updated Text")
-        else:
-            text_var.set("Initial Text")
-
     # Create a Button to trigger the text update
     button = tk.Button(root, text="Toggle Text", command=update_text)
     button.pack(pady=10)
@@ -109,7 +111,11 @@ This code creates a basic GUI with a button that toggles the text of a label.
 .. admonition:: Tasks
 
     #. Write code to reverse a string entered by a user into an entry field, using ans input_var and and an output_var.
+        .. image:: images/reverse_string.png
+            :scale: 67%
     #. Modify the previous answer to insert a random palindrome if the entry string is blank.
+        .. image:: images/reverse_string_palindromes.png
+            :scale: 67%
 
     .. dropdown::
         :icon: codescan
@@ -126,31 +132,6 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
                     import tkinter as tk
 
-                    # Create the main window
-                    root = tk.Tk()
-                    root.geometry("400x300")
-                    root.title("String Reverser")
-
-                    # Create a StringVar to hold the user input
-                    input_var = tk.StringVar()
-
-                    # Create a Label and Entry for user input
-                    input_label = tk.Label(root, text="Enter a string:", font=("Helvetica", 12))
-                    input_label.pack(pady=10)
-                    input_entry = tk.Entry(root, textvariable=input_var, font=("Helvetica", 12))
-                    input_entry.pack(pady=10)
-
-                    output_label = tk.Label(root, text="Reversed string:", font=("Helvetica", 12))
-                    output_label.pack(pady=10)
-
-                    # Create a StringVar to hold the transformed text
-                    output_var = tk.StringVar()
-                    output_var.set("")
-
-                    # Create a Label widget with textvariable for the output
-                    output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
-                    output_result.pack(pady=10)
-
 
                     # Function to transform the text
                     def transform_text():
@@ -163,9 +144,31 @@ This code creates a basic GUI with a button that toggles the text of a label.
                             output_var.set("Please enter a string.")
 
 
+                    # Create the main window
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("String Reverser")
+
+                    # Create a StringVar to hold the user input
+                    input_var = tk.StringVar()
+
+                    # Create a Label and Entry for user input
+                    input_label = tk.Label(root, text="Enter a string:", font=("Helvetica", 12))
+                    input_label.pack(pady=5)
+                    input_entry = tk.Entry(root, textvariable=input_var, font=("Helvetica", 12))
+                    input_entry.pack(pady=5)
+
                     # Create a Button to trigger the text Reversal
                     button = tk.Button(root, text="Reversed Text", command=transform_text)
-                    button.pack(pady=20)
+                    button.pack(pady=5)
+
+                    # Create a StringVar to hold the transformed text
+                    output_var = tk.StringVar()
+                    output_var.set("")
+
+                    # Create a Label widget with textvariable for the output
+                    output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
+                    output_result.pack(pady=5)
 
                     # Run the application
                     root.mainloop()
@@ -179,31 +182,6 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
                     import tkinter as tk
                     import random
-
-                    # Create the main window
-                    root = tk.Tk()
-                    root.geometry("400x300")
-                    root.title("String Reverser")
-
-                    # Create a StringVar to hold the user input
-                    input_var = tk.StringVar()
-
-                    # Create a Label and Entry for user input
-                    input_label = tk.Label(root, text="Enter a string:", font=("Helvetica", 12))
-                    input_label.pack(pady=10)
-                    input_entry = tk.Entry(root, textvariable=input_var, font=("Helvetica", 12))
-                    input_entry.pack(pady=10)
-
-                    output_label = tk.Label(root, text="Reversed string:", font=("Helvetica", 12))
-                    output_label.pack(pady=10)
-
-                    # Create a StringVar to hold the transformed text
-                    output_var = tk.StringVar()
-                    output_var.set("")
-
-                    # Create a Label widget with textvariable for the output
-                    output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
-                    output_result.pack(pady=10)
 
                     # List of palindromes
                     palindromes = [
@@ -226,9 +204,32 @@ This code creates a basic GUI with a button that toggles the text of a label.
                             output_var.set(random_palindrome)
 
 
+                    # Create the main window
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("String Reverser")
+
+                    # Create a StringVar to hold the user input
+                    input_var = tk.StringVar()
+
+                    # Create a Label and Entry for user input
+                    input_label = tk.Label(root, text="Enter a string:", font=("Helvetica", 12))
+                    input_label.pack(pady=5)
+                    input_entry = tk.Entry(root, textvariable=input_var, font=("Helvetica", 12))
+                    input_entry.pack(pady=5)
+
                     # Create a Button to trigger the text reversal
                     button = tk.Button(root, text="Reverse Text", command=transform_text)
                     button.pack(pady=20)
+
+                    # Create a StringVar to hold the transformed text
+                    output_var = tk.StringVar()
+                    output_var.set("")
+
+                    # Create a Label widget with textvariable for the output
+                    output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
+                    output_result.pack(pady=5)
+
 
                     # Run the application
                     root.mainloop()
