@@ -62,6 +62,7 @@ PC-app-development
     tk_widget_interactions/increment_integer.rst
     tk_widget_interactions/increment_float.rst
     tk_widget_interactions/counter_integers.rst
+    tk_widget_interactions/counter_floats.rst
     tk_widget_interactions/toggle_via_checkbox.rst
 
 
