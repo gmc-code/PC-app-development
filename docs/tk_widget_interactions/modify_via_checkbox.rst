@@ -121,7 +121,13 @@ cget method for text
 .. admonition:: Tasks
 
     #. Modify the code to toggle the case as well as colour using ``text=label.cget("text").upper()``.
+
+        .. image:: images/toggle_via_checkbox.png
+            :scale: 100%
+
     #. Modify the code to toggle the number 9 with its binary version (as well as colour).
+        .. image:: images/toggle_via_checkbox.png
+            :scale: 100%
 
     .. dropdown::
         :icon: codescan
