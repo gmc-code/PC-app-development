@@ -58,7 +58,7 @@ PC-app-development
     :caption: tk widgets interactions
     :numbered:
 
-    tk_widget_interactions/toggle_text.rst
+    tk_widget_interactions/update_text.rst
     tk_widget_interactions/increment_integer.rst
     tk_widget_interactions/increment_float.rst
     tk_widget_interactions/counter_integers.rst
