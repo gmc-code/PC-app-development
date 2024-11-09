@@ -16,6 +16,20 @@ Required Syntax
     | Default: None
     | Example: ``int_var = tk.IntVar()``
 
+.. py:method:: get
+
+    | Syntax: ``current_value = int_var.get()``
+    | Description: Retrieves the current value of the `IntVar`.
+    | Default: None
+    | Example: ``current_value = int_var.get()``
+
+.. py:method:: set
+
+    | Syntax: ``int_var.set(new_value)``
+    | Description: Sets the value of the `IntVar` to the specified integer.
+    | Default: None
+    | Example: ``int_var.set(42)``
+
 .. py:attribute:: textvariable
 
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
@@ -33,7 +47,6 @@ Required Syntax
 
 Code example
 ~~~~~~~~~~~~~~~~~~
-
 
 .. image:: images/increment_number.png
     :scale: 100%
