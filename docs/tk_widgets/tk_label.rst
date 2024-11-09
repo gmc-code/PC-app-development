@@ -248,7 +248,7 @@ Anchor example
 
 
 .. image:: images/label_anchor.png
-    :scale: 67%
+    :scale: 50%
 
 .. image:: images/label_anchors.png
     :scale: 67%
