@@ -61,6 +61,8 @@ PC-app-development
     tk_widget_interactions/toggle_text.rst
     tk_widget_interactions/increment_number.rst
     tk_widget_interactions/counter_app.rst
+    tk_widget_interactions/toggle_via_checkbox.rst
+
 
     .. tk_widgets/tk_widget_interactions.rst
 
