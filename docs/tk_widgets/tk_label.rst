@@ -247,10 +247,10 @@ Anchor example
     window.mainloop()
 
 
-.. image:: images/label_border.png
+.. image:: images/label_anchor.png
     :scale: 67%
 
-.. image:: images/label_reliefs.png
+.. image:: images/label_anchors.png
     :scale: 67%
 
 ----
@@ -298,7 +298,7 @@ border example
 .. image:: images/label_border.png
     :scale: 67%
 
-.. image:: images/label_reliefs.png
+.. image:: images/label_borders.png
     :scale: 67%
 
 ----
