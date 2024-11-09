@@ -1,5 +1,5 @@
 ====================================================
-Increment number
+Increment float
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
@@ -9,26 +9,26 @@ Increment number
 Required Syntax
 -----------------------------------
 
-.. py:class:: IntVar
+.. py:class:: DoubleVar
 
-    | Syntax: ``int_var = tk.IntVar()``
-    | Description: Creates a Tkinter variable for holding an integer.
+    | Syntax: ``double_var = tk.DoubleVar()``
+    | Description: Creates a Tkinter variable for holding an float.
     | Default: None
-    | Example: ``int_var = tk.IntVar()``
+    | Example: ``double_var = tk.DoubleVar()``
 
 .. py:method:: get
 
-    | Syntax: ``current_value = int_var.get()``
-    | Description: Retrieves the current value of the `IntVar`.
+    | Syntax: ``current_value = double_var.get()``
+    | Description: Retrieves the current value of the `DoubleVar`.
     | Default: None
-    | Example: ``current_value = int_var.get()``
+    | Example: ``current_value = double_var.get()``
 
 .. py:method:: set
 
-    | Syntax: ``int_var.set(new_value)``
-    | Description: Sets the value of the `IntVar` to the specified integer.
+    | Syntax: ``double_var.set(new_value)``
+    | Description: Sets the value of the `DoubleVar` to the specified float.
     | Default: None
-    | Example: ``int_var.set(42)``
+    | Example: ``double_var.set(0.0)``
 
 .. py:attribute:: textvariable
 
@@ -51,23 +51,23 @@ Code example
 .. image:: images/increment_number.png
     :scale: 100%
 
-This code creates a basic GUI with buttons to increment, decrement, and reset an integer value displayed in a label.
+This code creates a basic GUI with buttons to increment, decrement, and reset a float value displayed in a label.
 
-1. **Using IntVar**:
+1. **Using DoubleVar**:
 
-   - `int_var = tk.IntVar()`: Creates an `IntVar` instance, `int_var`, which is a special Tkinter variable for holding integer data.
-   - `int_var.set(0)`: Sets the initial value of `int_var` to 0.
+   - `double_var = tk.DoubleVar()`: Creates an `DoubleVar` instance, `double_var`, which is a special Tkinter variable for holding float data.
+   - `double_var.set(0.0)`: Sets the initial value of `double_var` to 0.0.
 
 2. **Creating the Label Widget**:
 
-   - `label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `int_var`, so the label text displays `int_var`'s value.
+   - `label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `double_var`, so the label text displays `double_var`'s value.
    - `label.grid(row=0, column=0, columnspan=3, pady=5)`: Positions the label in the grid layout.
 
 3. **Defining the Update Functions**:
 
-   - `def increment_value()`: Defines a function to increment `int_var`'s value by 1.
-   - `def decrement_value()`: Defines a function to decrement `int_var`'s value by 1.
-   - `def reset_value()`: Defines a function to reset `int_var`'s value to 0.
+   - `def increment_value()`: Defines a function to increment `double_var`'s value by 0.1.
+   - `def decrement_value()`: Defines a function to decrement `double_var`'s value by 0.1.
+   - `def reset_value()`: Defines a function to reset `double_var`'s value to 0.0.
 
 4. **Creating the Button Widgets**:
 
@@ -84,32 +84,32 @@ This code creates a basic GUI with buttons to increment, decrement, and reset an
     # Create the main window
     root = tk.Tk()
     root.geometry("300x200")
-    root.title("IntVar Example")
+    root.title("DoubleVar Example")
 
-    # Create an IntVar to hold the integer value
-    int_var = tk.IntVar()
-    int_var.set(0)  # Initial value
+    # Create a DoubleVar to hold the float value
+    double_var = tk.DoubleVar()
+    double_var.set(0.0)  # Initial value
 
     # Create a Label widget with textvariable
-    label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))
+    label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))
     label.grid(row=0, column=0, columnspan=3, pady=5)
 
 
-    # Function to increment the integer value
+    # Function to increment the float value
     def increment_value():
-        current_value = int_var.get()
-        int_var.set(current_value + 1)  # Increment the value by 1
+        current_value = double_var.get()
+        double_var.set(round(current_value + 0.1, 1))  # Increment the value by 0.1
 
 
-    # Function to decrement the integer value
+    # Function to decrement the float value
     def decrement_value():
-        current_value = int_var.get()
-        int_var.set(current_value - 1)  # Decrement the value by 1
+        current_value = double_var.get()
+        double_var.set(round(current_value - 0.1, 1))  # Decrement the value by 0.1
 
 
-    # Function to reset the integer value to zero
+    # Function to reset the float value to zero
     def reset_value():
-        int_var.set(0)  # Reset the value to 0
+        double_var.set(0.0)  # Reset the value to 0.0
 
 
     # Create Buttons to trigger the value update
@@ -124,5 +124,3 @@ This code creates a basic GUI with buttons to increment, decrement, and reset an
 
     # Run the application
     root.mainloop()
-
-

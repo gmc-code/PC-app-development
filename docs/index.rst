@@ -59,8 +59,9 @@ PC-app-development
     :numbered:
 
     tk_widget_interactions/toggle_text.rst
-    tk_widget_interactions/increment_number.rst
-    tk_widget_interactions/counter_app.rst
+    tk_widget_interactions/increment_integer.rst
+    tk_widget_interactions/increment_float.rst
+    tk_widget_interactions/counter_integers.rst
     tk_widget_interactions/toggle_via_checkbox.rst
 
 

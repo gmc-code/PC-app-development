@@ -1,5 +1,5 @@
 ====================================================
-Counter app
+Counter: integers
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
@@ -48,10 +48,9 @@ Required Syntax
 .. py:attribute:: bind
 
     | Syntax: ``widget.bind("<Event>", handler_function)``
-    | Lambda Syntax: ``widget.bind("<Event>", lambda event: callback_function())``
     | Description: Binds an event, such as a mouse click or key press, to a specific function. Using `lambda` allows passing event data or wrapping the callback with additional parameters.
     | Default: ``None``
-    | Example: ``button_widget.bind("<ButtonPress-1>", lambda event: on_press(event))``
+    | Example: ``button_increment.bind("<ButtonPress-1>", start_increment)``
 
 .. py:method:: after
 
@@ -77,9 +76,8 @@ Code example
 .. image:: images/increment_number.png
     :scale: 100%
 
-| This code demonstrates how to use event binding and `lambda` functions in Tkinter to handle repeating actions for button presses.
-| This setup enables the button to continuously increment or decrement the value while the button is held down, and stop when released.
-| Here's a breakdown of the code for binding and using `lambda` in this context:
+
+| Here's a breakdown of the code:
 
 1. **Event Binding**:
 
@@ -88,11 +86,12 @@ Code example
    - In this code: ``button_increment.bind("<ButtonRelease-1>", stop_action)``, `<ButtonRelease-1>` refers to releasing the left mouse button.
    - `start_increment` is triggered when the button is pressed, while `stop_action` is called when the button is released, stopping the continuous action.
 
-2. **Using Lambda with `after()`**:
+2. **Using ``after()`` to Schedule Repeated Calls**:
 
-   - **Purpose**: `lambda` functions are used here to delay and repeatedly execute functions, allowing the increment or decrement function to repeat every 100 milliseconds as long as the button is held down.
-   - **Syntax**: `widget.after(milliseconds, lambda: function(event))`
-   - `root.after(100, lambda: start_increment(event))` calls `start_increment` after 100 milliseconds. The `lambda` function allows passing `event` to `start_increment` and ensures the function is wrapped for delayed, repeated calls.
+   - **Purpose**: The ``after()`` method in Tkinter is used to schedule the repeated execution of the increment or decrement function every 100 milliseconds, allowing for continuous adjustment while the button is held down.
+   - **Syntax**: `widget.after(milliseconds, function_name)`
+   - `root.after(100, start_increment)` schedules the ``start_increment`` function to run again after a delay of 100 milliseconds, creating a loop that continues to increment the value while the button is pressed.
+   - The ``after()`` method calls ``start_increment`` after each delay, creating a cycle that continues until stopped (e.g., by releasing the button).
 
 3. **Stopping the Repeating Action**:
 
@@ -137,26 +136,43 @@ Code example
         int_var.set(0)  # Reset the value to 0
 
 
-    # Function to start repeating increment
+    # Function to start repeating increment after a delay
     def start_increment(event):
+        global increment_job
+        # Start the repeating increment after 500 ms
+        increment_job = root.after(500, repeat_increment)
+
+
+    def repeat_increment():
         increment_value()
         global increment_job
-        increment_job = root.after(100, lambda: start_increment(event))
+        # Continue repeating every 100 ms
+        increment_job = root.after(100, repeat_increment)
 
 
-    # Function to start repeating decrement
+    # Function to start repeating decrement after a delay
     def start_decrement(event):
+        global decrement_job
+        # Start the repeating decrement after 500 ms
+        decrement_job = root.after(500, repeat_decrement)
+
+
+    def repeat_decrement():
         decrement_value()
         global decrement_job
-        decrement_job = root.after(100, lambda: start_decrement(event))
+        # Continue repeating every 100 ms
+        decrement_job = root.after(100, repeat_decrement)
 
 
     # Function to stop repeating action
     def stop_action(event):
+        global increment_job, decrement_job
         if "increment_job" in globals():
             root.after_cancel(increment_job)
+            del increment_job
         if "decrement_job" in globals():
             root.after_cancel(decrement_job)
+            del decrement_job
 
 
     # Create Buttons to trigger the value update
@@ -175,9 +191,9 @@ Code example
     button_reset.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
-
     # Run the application
     root.mainloop()
+
 
 ----
 

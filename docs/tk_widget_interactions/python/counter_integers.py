@@ -31,26 +31,43 @@ def reset_value():
     int_var.set(0)  # Reset the value to 0
 
 
-# Function to start repeating increment
+# Function to start repeating increment after a delay
 def start_increment(event):
+    global increment_job
+    # Start the repeating increment after 500 ms
+    increment_job = root.after(500, repeat_increment)
+
+
+def repeat_increment():
     increment_value()
     global increment_job
-    increment_job = root.after(100, lambda: start_increment(event))
+    # Continue repeating every 100 ms
+    increment_job = root.after(100, repeat_increment)
 
 
-# Function to start repeating decrement
+# Function to start repeating decrement after a delay
 def start_decrement(event):
+    global decrement_job
+    # Start the repeating decrement after 500 ms
+    decrement_job = root.after(500, repeat_decrement)
+
+
+def repeat_decrement():
     decrement_value()
     global decrement_job
-    decrement_job = root.after(100, lambda: start_decrement(event))
+    # Continue repeating every 100 ms
+    decrement_job = root.after(100, repeat_decrement)
 
 
 # Function to stop repeating action
 def stop_action(event):
+    global increment_job, decrement_job
     if "increment_job" in globals():
         root.after_cancel(increment_job)
+        del increment_job
     if "decrement_job" in globals():
         root.after_cancel(decrement_job)
+        del decrement_job
 
 
 # Create Buttons to trigger the value update
@@ -68,7 +85,6 @@ button_decrement.bind("<ButtonRelease-1>", stop_action)
 button_decrement.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
 button_reset.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
 button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
-
 
 # Run the application
 root.mainloop()
