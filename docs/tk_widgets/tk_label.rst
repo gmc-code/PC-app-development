@@ -217,8 +217,25 @@ Anchor
     | Default: center
     | Example: ``label_widget = tk.Label(window, anchor="center")``
 
+.. py:attribute:: height
+
+    | Syntax: ``label_widget = tk.Label(parent, height=value)``
+    | Description: Sets the height of the label in number of lines.
+    | Default: 0
+    | Example: ``label_widget = tk.Label(window, height=2)``
+
+    .. py:attribute:: width
+
+        | Syntax: ``label_widget = tk.Label(parent, width=value)``
+        | Description: Sets the width of the label in number of characters.
+        | Default: 0
+        | Example: ``label_widget = tk.Label(window, width=20)``
+
+
 Anchor example
 ~~~~~~~~~~~~~~~~~~~~~
+
+| The label height and width need to be set larger than needed for the text to fit so that the anchor setting can move the text.
 
 .. code-block:: python
 
