@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Create the main window
 root = tk.Tk()
-root.geometry("300x200")
+root.geometry("400x100")
 root.title("Toggle via checkbox Example")
 
 # Create a BooleanVar to hold the boolean value

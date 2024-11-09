@@ -48,8 +48,11 @@ Required Syntax
 Code example
 ~~~~~~~~~~~~~~~~~~
 
-.. image:: images/toggle_text.png
-    :scale: 100%
+.. image:: images/toggle_text_1.png
+    :scale: 67%
+
+.. image:: images/toggle_text_2.png
+    :scale: 67%
 
 This code creates a basic GUI with a button that toggles the text of a label.
 
@@ -61,7 +64,7 @@ This code creates a basic GUI with a button that toggles the text of a label.
 2. **Creating the Label Widget**:
 
    - `label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `text_var`, so the label text displays `text_var`'s value.
-   - `label.pack(pady=20)`: Adds the label to the window with 20 pixels of vertical padding.
+   - `label.pack(pady=10)`: Adds the label to the window with 10 pixels of vertical padding.
 
 3. **Defining the Update Function**:
 
@@ -77,8 +80,8 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
     # Create the main window
     root = tk.Tk()
-    root.geometry("300x200")
-    root.title("TextVariable Example")
+    root.geometry("300x100")
+    root.title("Toggle Text")
 
     # Create a StringVar to hold the text
     text_var = tk.StringVar()
@@ -86,7 +89,7 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
     # Create a Label widget with textvariable
     label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))
-    label.pack(pady=20)
+    label.pack(pady=10)
 
     # Function to update the text
     def update_text():
@@ -97,7 +100,7 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
     # Create a Button to trigger the text update
     button = tk.Button(root, text="Toggle Text", command=update_text)
-    button.pack(pady=20)
+    button.pack(pady=10)
 
     # Run the application
     root.mainloop()
