@@ -180,7 +180,6 @@ Padding
    - Example: To add 12 pixels of padding on the left and right sides, use `padx=12`.
    - Example: To add 5 pixels of padding on the top and bottom, use `pady=5`.
 
-
 padding example
 ~~~~~~~~~~~~~~~~~~
 
@@ -205,6 +204,54 @@ padding example
 
 .. image:: images/label_padding.png
     :scale: 100%
+
+----
+
+Anchor
+-------------------
+
+.. py:attribute:: anchor
+
+    | Syntax: ``label_widget = tk.Label(parent, anchor="position")``
+    | Description: Sets the position of the text within the label. Options are "nw", "n", "ne", "w", "center", "e", "sw", "s", "se".
+    | Default: center
+    | Example: ``label_widget = tk.Label(window, anchor="center")``
+
+Anchor example
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    # Create the main window
+    window = tk.Tk()
+    window.geometry("500x200")  # Set window size
+    window.title("Label anchor")  # Set window title
+
+    # Create the label widget with options
+    label = tk.Label(text="anchor nw", font=("Arial", 24), fg="blue", bg="lightyellow",
+                    width=20, height=2, anchor="nw")
+
+    # Pack the label into the window
+    label.pack(pady=5)
+
+    # Create the label widget with options
+    label_2 = tk.Label(text="anchor nw padded", font=("Arial", 24), fg="purple", bg="lightgreen",
+                    width=20, height=2, anchor="nw", padx=20, pady=10)
+
+    # Pack the label into the window
+    label_2.pack()
+
+    # Run the main event loop
+    window.mainloop()
+
+
+.. image:: images/label_border.png
+    :scale: 67%
+
+.. image:: images/label_reliefs.png
+    :scale: 67%
 
 ----
 
@@ -240,8 +287,7 @@ border example
 
     # Create the label widget with options
     label = tk.Label(text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
-                    padx=60, pady=20,
-                    relief="solid", borderwidth=1)
+                    padx=60, pady=20, relief="solid", borderwidth=1)
 
     # Pack the label into the window
     label.pack()
@@ -250,6 +296,9 @@ border example
     window.mainloop()
 
 .. image:: images/label_border.png
+    :scale: 67%
+
+.. image:: images/label_reliefs.png
     :scale: 67%
 
 ----
