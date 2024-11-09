@@ -53,6 +53,16 @@ PC-app-development
     tk_widgets/tk_messagebox.rst
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: tk widgets interactions
+    :numbered:
+
+    tk_widget_interactions/toggle_text.rst
+    tk_widget_interactions/increment_number.rst
+
+    .. tk_widgets/tk_widget_interactions.rst
+
 
 .. toctree::
     :maxdepth: 2
