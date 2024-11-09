@@ -122,11 +122,7 @@ cget method for text
 
     #. Modify the code to toggle the case as well as colour using ``text=label.cget("text").upper()``.
 
-        .. image:: images/toggle_via_checkbox.png
-            :scale: 100%
-
-    #. Modify the code to toggle the number 9 with its binary version (as well as colour).
-        .. image:: images/toggle_via_checkbox.png
+        .. image:: images/toggle_text_via_checkbox.png
             :scale: 100%
 
     .. dropdown::
@@ -173,7 +169,35 @@ cget method for text
                     # Run the application
                     root.mainloop()
 
-            .. tab-item:: Q2
+
+----
+
+Binary
+-------------
+
+.. py:function:: bin
+
+    | Syntax: ``bin(x)``
+    | Description: Converts an integer number to a binary string prefixed with "0b". The result is a string representing the binary value of the given integer.
+    | Default: There is no default value; the function requires an integer argument.
+    | Example: ``binary_representation = bin(127)`` results in ``binary_representation`` being ``'0b1111111'``.
+
+
+.. admonition:: Tasks
+
+    #. Modify the code to toggle the number 9 with its binary version (as well as colour).
+
+        .. image:: images/toggle_binary_via_checkbox.png
+            :scale: 100%
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
 
                 Modify the code to toggle the number 9 with its binary version (as well as colour).
 
