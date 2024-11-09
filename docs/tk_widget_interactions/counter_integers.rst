@@ -73,7 +73,7 @@ Code example
 ~~~~~~~~~~~~~~~~~~
 
 
-.. image:: images/increment_number.png
+.. image:: images/increment_integer.png
     :scale: 100%
 
 
@@ -86,7 +86,7 @@ Code example
    - In this code: ``button_increment.bind("<ButtonRelease-1>", stop_action)``, `<ButtonRelease-1>` refers to releasing the left mouse button.
    - `start_increment` is triggered when the button is pressed, while `stop_action` is called when the button is released, stopping the continuous action.
 
-2. **Using ``after()`` to Schedule Repeated Calls**:
+2. **Using `after()` to Schedule Repeated Calls**:
 
    - **Purpose**: The ``after()`` method in Tkinter is used to schedule the repeated execution of the increment or decrement function every 100 milliseconds, allowing for continuous adjustment while the button is held down.
    - **Syntax**: `widget.after(milliseconds, function_name)`

@@ -61,7 +61,7 @@ The checkbox toggles the label color between blue and black.
 2. **Defining the Toggle Function**:
 
    - `def toggle_label_color()`: Defines a function to toggle the color of the label.
-   - `if bool_var.get()`: Checks the current value of `bool_var`. Since it is True or False there is no need for a test with `==`.
+   - `if bool_var.get()`: Checks the current value of `bool_var`. For BooleanVar variables, the returned value is 0 for False, and 1 for Ttrue. Since it is True or False there is no need for a test with `==`.
    - `label.config(fg="blue")`: Sets the label color to blue if `bool_var` is `True`.
    - `label.config(fg="black")`: Sets the label color to black if `bool_var` is `False`.
 
