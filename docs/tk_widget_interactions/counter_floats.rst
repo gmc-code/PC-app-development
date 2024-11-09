@@ -1,5 +1,5 @@
 ====================================================
-Counter: integers
+Counter: floats
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
@@ -10,26 +10,26 @@ Counter: integers
 Required Syntax
 -----------------------------------
 
-.. py:class:: IntVar
+.. py:class:: DoubleVar
 
-    | Syntax: ``int_var = tk.IntVar()``
+    | Syntax: ``float_var = tk.DoubleVar()``
     | Description: Creates a Tkinter variable for holding an integer.
     | Default: None
-    | Example: ``int_var = tk.IntVar()``
+    | Example: ``float_var = tk.DoubleVar()``
 
 .. py:method:: get
 
-    | Syntax: ``current_value = int_var.get()``
-    | Description: Retrieves the current value of the `IntVar`.
+    | Syntax: ``current_value = float_var.get()``
+    | Description: Retrieves the current value of the `DoubleVar`.
     | Default: None
-    | Example: ``current_value = int_var.get()``
+    | Example: ``current_value = float_var.get()``
 
 .. py:method:: set
 
-    | Syntax: ``int_var.set(new_value)``
-    | Description: Sets the value of the `IntVar` to the specified integer.
+    | Syntax: ``float_var.set(new_value)``
+    | Description: Sets the value of the `DoubleVar` to the specified integer.
     | Default: None
-    | Example: ``int_var.set(42)``
+    | Example: ``float_var.set(42)``
 
 .. py:attribute:: textvariable
 
@@ -103,9 +103,10 @@ Code example
 
    - When you click the `+` button, the `increment_value` function is called.
    - Inside `increment_value`:
-     - It retrieves the current value from `int_var`.
-     - It increments this value by `1`.
-     - The `int_var` is updated with the new value, which immediately updates the displayed label text.
+     - It retrieves the current value from `float_var`.
+     - It increments this value by `0.1`.
+     - The result is rounded to one decimal place to avoid floating-point precision issues.
+     - The `float_var` is updated with the new value, which immediately updates the displayed label text.
 
 5. **Hold-to-Increment**
 
@@ -122,32 +123,32 @@ Code example
     # Create the main window
     root = tk.Tk()
     root.geometry("300x200")
-    root.title("IntVar Example")
+    root.title("DoubleVar Example")
 
-    # Create an IntVar to hold the integer value
-    int_var = tk.IntVar()
-    int_var.set(0)  # Initial value
+    # Create a DoubleVar to hold the float value
+    float_var = tk.DoubleVar()
+    float_var.set(0.0)  # Initial value
 
-    # Create a Label widget with textvariable
-    label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))
+    # Create a Label widget with textvariable, formatted to show one decimal place
+    label = tk.Label(root, textvariable=float_var, font=("Helvetica", 16))
     label.grid(row=0, column=0, columnspan=3, pady=5)
 
 
-    # Function to increment the integer value
+    # Function to increment the float value by 0.1
     def increment_value():
-        current_value = int_var.get()
-        int_var.set(current_value + 1)  # Increment the value by 1
+        current_value = float_var.get()
+        float_var.set(round(current_value + 0.1, 1))  # Increment the value by 0.1
 
 
-    # Function to decrement the integer value
+    # Function to decrement the float value by 0.1
     def decrement_value():
-        current_value = int_var.get()
-        int_var.set(current_value - 1)  # Decrement the value by 1
+        current_value = float_var.get()
+        float_var.set(round(current_value - 0.1, 1))  # Decrement the value by 0.1
 
 
-    # Function to reset the integer value to zero
+    # Function to reset the float value to zero
     def reset_value():
-        int_var.set(0)  # Reset the value to 0
+        float_var.set(0.0)  # Reset the value to 0.0
 
 
     # Function to start repeating increment after a delay
@@ -207,49 +208,3 @@ Code example
 
     # Run the application
     root.mainloop()
-
-
-----
-
-
-Mouse events
-~~~~~~~~~~~~~~~~~~~~
-
-| Here is a list of common mouse events in Tkinter.
-| These events can be used with `.bind()` to trigger functions in response to mouse actions on widgets.
-
-1. **Button Press Events**:
-
-   - `<ButtonPress>` or `<Button>`: Any mouse button is pressed.
-   - `<ButtonPress-1>` or `<Button-1>`: Left mouse button is pressed.
-   - `<ButtonPress-2>` or `<Button-2>`: Middle mouse button is pressed (usually the scroll wheel).
-   - `<ButtonPress-3>` or `<Button-3>`: Right mouse button is pressed.
-
-2. **Button Release Events**:
-
-   - `<ButtonRelease>`: Any mouse button is released.
-   - `<ButtonRelease-1>`: Left mouse button is released.
-   - `<ButtonRelease-2>`: Middle mouse button is released.
-   - `<ButtonRelease-3>`: Right mouse button is released.
-
-3. **Double-Click Events**:
-
-   - `<Double-Button-1>`: Double-click of the left mouse button.
-   - `<Double-Button-2>`: Double-click of the middle mouse button.
-   - `<Double-Button-3>`: Double-click of the right mouse button.
-
-4. **Mouse Motion Events**:
-
-   - `<Motion>`: Mouse is moved while inside a widget.
-
-5. **Mouse Enter/Leave Events**:
-
-   - `<Enter>`: Mouse pointer enters the widget area.
-   - `<Leave>`: Mouse pointer leaves the widget area.
-
-6. **Mouse Wheel Event**:
-
-   - `<MouseWheel>`: Mouse wheel is scrolled (Windows and macOS).
-   - `<Button-4>`: Mouse wheel scroll up (Linux).
-   - `<Button-5>`: Mouse wheel scroll down (Linux).
-
