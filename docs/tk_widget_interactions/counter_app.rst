@@ -6,7 +6,7 @@ Counter app
 
 ----
 
-Syntax
+Required Syntax
 -----------------------------------
 
 .. py:class:: IntVar

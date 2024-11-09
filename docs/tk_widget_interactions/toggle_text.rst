@@ -6,7 +6,7 @@ Toggle text
 
 ----
 
-Syntax
+Required Syntax
 -----------------------------------
 
 .. py:class:: StringVar

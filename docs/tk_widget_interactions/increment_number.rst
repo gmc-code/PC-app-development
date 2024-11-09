@@ -6,7 +6,7 @@ Increment number
 
 ----
 
-Syntax
+Required Syntax
 -----------------------------------
 
 .. py:class:: IntVar
