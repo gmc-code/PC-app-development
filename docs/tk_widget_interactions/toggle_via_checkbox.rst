@@ -1,5 +1,5 @@
 ====================================================
-Toggle text
+Toggle via checkbox
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
@@ -9,12 +9,12 @@ Toggle text
 Required Syntax
 -----------------------------------
 
-.. py:class:: StringVar
+.. py:class:: BooleanVar
 
-    | Syntax: ``text_var = tk.StringVar()``
-    | Description: Creates a Tkinter variable for holding string data.
+    | Syntax: ``bool_var = tk.BooleanVar()``
+    | Description: Creates a Tkinter variable for holding boolean data.
     | Default: None
-    | Example: ``text_var = tk.StringVar()``
+    | Example: ``bool_var = tk.BooleanVar()``
 
 .. py:method:: get
 
