@@ -1,5 +1,14 @@
 import tkinter as tk
 
+
+# Function to toggle the label color
+def toggle_label_color():
+    if bool_var.get():
+        label.config(fg="blue")  # Set label color to blue
+    else:
+        label.config(fg="black")  # Set label color to black
+
+
 # Create the main window
 root = tk.Tk()
 root.geometry("400x100")
@@ -9,15 +18,8 @@ root.title("Toggle via checkbox Example")
 bool_var = tk.BooleanVar()
 bool_var.set(False)  # Initial value
 
-# Function to toggle the label color
-def toggle_label_color():
-    if bool_var.get():
-        label.config(fg="blue")  # Set label color to blue
-    else:
-        label.config(fg="black")  # Set label color to black
-
 # Create a Checkbutton to toggle the label color
-toggle_checkbutton = tk.Checkbutton(root, text="Blue Label",  variable=bool_var, command=toggle_label_color)
+toggle_checkbutton = tk.Checkbutton(root, text="Blue Label", variable=bool_var, command=toggle_label_color)
 toggle_checkbutton.grid(row=0, column=0, padx=10, pady=20)
 
 # Create a Label widget

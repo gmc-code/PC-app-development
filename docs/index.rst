@@ -60,6 +60,7 @@ PC-app-development
 
     tk_widget_interactions/update_text.rst
     tk_widget_interactions/increment_integer.rst
+    tk_widget_interactions/increment_integer_with_modifiers.rst
     tk_widget_interactions/increment_float.rst
     tk_widget_interactions/counter_integers.rst
     tk_widget_interactions/counter_floats.rst

@@ -1,16 +1,31 @@
 import tkinter as tk
 
 
+# Function to determine increment/decrement amount based on modifier keys
+def get_increment(event):
+    if event.state == 131081:  # AltShift key
+        increment = 1000
+    elif event.state == 9:  # Shift key
+        increment = 100
+    elif event.state == 131080:  # Alt key
+        increment = 10
+    else:
+        increment = 1
+    return increment
+
+
 # Function to increment the integer value
-def increment_value():
+def increment_value(event):
+    increment = get_increment(event)
     current_value = int_var.get()
-    int_var.set(current_value + 1)  # Increment the value by 1
+    int_var.set(current_value + increment)
 
 
 # Function to decrement the integer value
-def decrement_value():
+def decrement_value(event):
+    decrement = get_increment(event)
     current_value = int_var.get()
-    int_var.set(current_value - 1)  # Decrement the value by 1
+    int_var.set(current_value - decrement)
 
 
 # Function to reset the integer value to zero
@@ -21,29 +36,27 @@ def reset_value():
 # Function to start repeating increment after a delay
 def start_increment(event):
     global increment_job
-    # Start the repeating increment after 500 ms
-    increment_job = root.after(500, repeat_increment)
+    increment_value(event)  # Initial increment
+    increment_job = root.after(500, lambda: repeat_increment(event))
 
 
-def repeat_increment():
-    increment_value()
+def repeat_increment(event):
+    increment_value(event)
     global increment_job
-    # Continue repeating every 100 ms
-    increment_job = root.after(100, repeat_increment)
+    increment_job = root.after(100, lambda: repeat_increment(event))
 
 
 # Function to start repeating decrement after a delay
 def start_decrement(event):
     global decrement_job
-    # Start the repeating decrement after 500 ms
-    decrement_job = root.after(500, repeat_decrement)
+    decrement_value(event)  # Initial decrement
+    decrement_job = root.after(500, lambda: repeat_decrement(event))
 
 
-def repeat_decrement():
-    decrement_value()
+def repeat_decrement(event):
+    decrement_value(event)
     global decrement_job
-    # Continue repeating every 100 ms
-    decrement_job = root.after(100, repeat_decrement)
+    decrement_job = root.after(100, lambda: repeat_decrement(event))
 
 
 # Function to stop repeating action
@@ -70,13 +83,12 @@ int_var.set(0)  # Initial value
 label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))
 label.grid(row=0, column=0, columnspan=3, pady=5)
 
-
 # Create Buttons to trigger the value update
-button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")  # Light red
+button_decrement = tk.Button(root, text="-", width=4, font=("Helvetica", 24), bg="#FF6666")  # Light red
 button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")  # Light yellow
-button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")  # Light green
+button_increment = tk.Button(root, text="+", width=4, font=("Helvetica", 24), bg="#99FF99")  # Light green
 
-# Bind mouse events to buttons for repeating action
+# Bind mouse events to buttons for single and repeating action
 button_increment.bind("<ButtonPress-1>", start_increment)
 button_increment.bind("<ButtonRelease-1>", stop_action)
 button_decrement.bind("<ButtonPress-1>", start_decrement)

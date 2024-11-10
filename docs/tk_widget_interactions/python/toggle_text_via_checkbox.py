@@ -1,14 +1,5 @@
 import tkinter as tk
 
-# Create the main window
-root = tk.Tk()
-root.geometry("400x100")
-root.title("Toggle via Checkbox Example")
-
-# Create a BooleanVar to hold the boolean value
-bool_var = tk.BooleanVar()
-bool_var.set(False)  # Initial value
-
 
 # Function to toggle the label color and case
 def toggle_label():
@@ -17,6 +8,15 @@ def toggle_label():
     else:
         label.config(fg="black", text=label.cget("text").lower())  # Set label color to black and text to lowercase
 
+
+# Create the main window
+root = tk.Tk()
+root.geometry("400x100")
+root.title("Toggle via Checkbox Example")
+
+# Create a BooleanVar to hold the boolean value
+bool_var = tk.BooleanVar()
+bool_var.set(False)  # Initial value
 
 # Create a Checkbutton to toggle the label color and case
 toggle_checkbutton = tk.Checkbutton(root, text="Toggle Case and Color", variable=bool_var, command=toggle_label)

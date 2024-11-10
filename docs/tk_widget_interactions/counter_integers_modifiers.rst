@@ -1,5 +1,5 @@
 ====================================================
-Counter: integers
+Counter: integers with modifiers
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
@@ -48,7 +48,7 @@ Required Syntax
 .. py:attribute:: bind
 
     | Syntax: ``widget.bind("<Event>", handler_function)``
-    | Description: Binds an event, such as a mouse click or key press, to a specific function.
+    | Description: Binds an event, such as a mouse click or key press, to a specific function. Using `lambda` allows passing event data or wrapping the callback with additional parameters.
     | Default: ``None``
     | Example: ``button_increment.bind("<ButtonPress-1>", start_increment)``
 
