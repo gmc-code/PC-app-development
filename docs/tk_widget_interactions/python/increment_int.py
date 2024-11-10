@@ -1,18 +1,5 @@
 import tkinter as tk
 
-# Create the main window
-root = tk.Tk()
-root.geometry("300x200")
-root.title("IntVar Example")
-
-# Create an IntVar to hold the integer value
-int_var = tk.IntVar()
-int_var.set(0)  # Initial value
-
-# Create a Label widget with textvariable
-label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))
-label.grid(row=0, column=0, columnspan=3, pady=5)
-
 
 # Function to increment the integer value
 def increment_value():
@@ -30,6 +17,19 @@ def decrement_value():
 def reset_value():
     int_var.set(0)  # Reset the value to 0
 
+
+# Create the main window
+root = tk.Tk()
+root.geometry("300x200")
+root.title("IntVar Example")
+
+# Create an IntVar to hold the integer value
+int_var = tk.IntVar()
+int_var.set(0)  # Initial value
+
+# Create a Label widget with textvariable
+label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))
+label.grid(row=0, column=0, columnspan=3, pady=5)
 
 # Create Buttons to trigger the value update
 button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")  # Light red

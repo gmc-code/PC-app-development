@@ -110,7 +110,7 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
 .. admonition:: Tasks
 
-    #. Write code to reverse a string entered by a user into an entry field, using ans input_var and and an output_var.
+    #. Write code to reverse a string entered by a user into an entry field, using an input_var and an output_var.
         .. image:: images/reverse_string.png
             :scale: 67%
     #. Modify the previous answer to insert a random palindrome if the entry string is blank.
@@ -126,7 +126,7 @@ This code creates a basic GUI with a button that toggles the text of a label.
 
             .. tab-item:: Q1
 
-                Write code to reverse a string entered by a user into an entry field, using ans input_var and and an output_var.
+                Write code to reverse a string entered by a user into an entry field, using an input_var and an output_var.
 
                 .. code-block:: python
 
