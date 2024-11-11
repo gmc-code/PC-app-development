@@ -57,10 +57,10 @@ Creating and Positioning Radio Buttons for Pizza Sizes
     .. code-block::
 
         size_frame = tk.Frame(root)
-        size_frame.grid(row=3, column=1, padx=10, pady=5, sticky="w")
+        size_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
 
     - This creates a frame widget to contain the radio buttons.
-    - The `grid` method places the frame in the fourth row (`row=3`), second column (`column=1`) of the grid layout.
+    - The `grid` method places the frame in the third row (`row=2`), second column (`column=1`) of the grid layout.
     - `sticky="w"` aligns the frame to the west (left side) of its grid cell.
 
 4. **Radio Buttons Creation**:
@@ -121,12 +121,12 @@ Creating and Positioning the OptionMenu
     .. code-block::
 
         quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
-        quantity_menu.grid(row=4, column=1, padx=10, pady=5, sticky="w")
+        quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
     - This creates an `OptionMenu` widget for selecting a quantity.
     - The `OptionMenu` is associated with the `root` window and linked to the `quantity_var` variable.
     - The options available in the menu are "1", "2", "3", "4", and "5".
-    - The `grid` method places the `OptionMenu` in the fifth row (`row=4`), second column (`column=1`) of the grid layout.
+    - The `grid` method places the `OptionMenu` in the fourth row (`row=3`), second column (`column=1`) of the grid layout.
     - `padx` and `pady` add padding around the menu for better spacing.
     - `sticky="w"` aligns the menu to the west (left side) of its grid cell.
 

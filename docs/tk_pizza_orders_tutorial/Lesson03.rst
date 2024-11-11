@@ -66,10 +66,10 @@ Creating and Positioning Radio Buttons for Pizza Type
     .. code-block::
 
         pizza_frame = tk.Frame(root)
-        pizza_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
+        pizza_frame.grid(row=1, column=1, padx=10, pady=5, sticky="w")
 
    - This creates a frame widget to contain the radio buttons.
-   - The `grid` method places the frame in the third row (`row=2`), second column (`column=1`) of the grid layout.
+   - The `grid` method places the frame in the second row (`row=1`), second column (`column=1`) of the grid layout.
    - `sticky="w"` aligns the frame to the west (left side) of its grid cell.
 
 
