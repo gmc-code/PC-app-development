@@ -1,5 +1,5 @@
 ====================================================
-Increment float
+Increment floats
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/

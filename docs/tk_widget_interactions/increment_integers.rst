@@ -1,5 +1,5 @@
 ====================================================
-Increment integer
+Increment integers
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
