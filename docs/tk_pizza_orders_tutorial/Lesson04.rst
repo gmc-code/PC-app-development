@@ -26,7 +26,7 @@ Creating and Positioning Radio Buttons for Pizza Sizes
     size_var = tk.StringVar(root)
     size_var.set("Small")
     size_frame = tk.Frame(root)
-    size_frame.grid(row=3, column=1, padx=10, pady=5, sticky="w")
+    size_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
     for size in ["Small", "Medium", "Large"]:
         tk.Radiobutton(size_frame, text=size, variable=size_var, value=size).pack(anchor="w")
 
@@ -91,7 +91,7 @@ Creating and Positioning the OptionMenu
     quantity_var = tk.IntVar(root)
     quantity_var.set("1")
     quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
-    quantity_menu.grid(row=4, column=1, padx=10, pady=5, sticky="w")
+    quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
 1. **Label Creation**:
 
