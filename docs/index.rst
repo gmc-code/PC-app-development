@@ -68,7 +68,7 @@ PC-app-development
     tk_widget_interactions/counter_integers_modifiers.rst
 
     tk_widget_interactions/modify_via_checkbox.rst
-
+    tk_widget_interactions/modify_via_radiobutton.rst
 
     .. tk_widgets/tk_widget_interactions.rst
 
