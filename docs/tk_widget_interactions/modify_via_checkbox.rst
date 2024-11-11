@@ -141,15 +141,6 @@ cget method for text
 
                     import tkinter as tk
 
-                    # Create the main window
-                    root = tk.Tk()
-                    root.geometry("400x100")
-                    root.title("Toggle via Checkbox Example")
-
-                    # Create a BooleanVar to hold the boolean value
-                    bool_var = tk.BooleanVar()
-                    bool_var.set(False)  # Initial value
-
 
                     # Function to toggle the label color and case
                     def toggle_label():
@@ -158,6 +149,15 @@ cget method for text
                         else:
                             label.config(fg="black", text=label.cget("text").lower())  # Set label color to black and text to lowercase
 
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.geometry("400x100")
+                    root.title("Toggle via Checkbox Example")
+
+                    # Create a BooleanVar to hold the boolean value
+                    bool_var = tk.BooleanVar()
+                    bool_var.set(False)  # Initial value
 
                     # Create a Checkbutton to toggle the label color and case
                     toggle_checkbutton = tk.Checkbutton(root, text="Toggle Case and Color", variable=bool_var, command=toggle_label)
@@ -206,15 +206,6 @@ Binary
 
                     import tkinter as tk
 
-                    # Create the main window
-                    root = tk.Tk()
-                    root.geometry("400x100")
-                    root.title("Toggle Binary via Checkbox Example")
-
-                    # Create a BooleanVar to hold the boolean value
-                    bool_var = tk.BooleanVar()
-                    bool_var.set(False)  # Initial value
-
 
                     # Function to toggle the label between decimal and binary
                     def toggle_label():
@@ -223,6 +214,15 @@ Binary
                         else:
                             label.config(fg="black", text="9")  # Set label color to black and text to decimal
 
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.geometry("400x100")
+                    root.title("Toggle Binary via Checkbox Example")
+
+                    # Create a BooleanVar to hold the boolean value
+                    bool_var = tk.BooleanVar()
+                    bool_var.set(False)  # Initial value
 
                     # Create a Checkbutton to toggle the label between decimal and binary
                     toggle_checkbutton = tk.Checkbutton(root, text="Toggle Binary", variable=bool_var, command=toggle_label)

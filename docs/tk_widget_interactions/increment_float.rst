@@ -81,19 +81,6 @@ This code creates a basic GUI with buttons to increment, decrement, and reset a 
 
     import tkinter as tk
 
-    # Create the main window
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("DoubleVar Example")
-
-    # Create a DoubleVar to hold the float value
-    double_var = tk.DoubleVar()
-    double_var.set(0.0)  # Initial value
-
-    # Create a Label widget with textvariable
-    label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))
-    label.grid(row=0, column=0, columnspan=3, pady=5)
-
 
     # Function to increment the float value
     def increment_value():
@@ -111,6 +98,19 @@ This code creates a basic GUI with buttons to increment, decrement, and reset a 
     def reset_value():
         double_var.set(0.0)  # Reset the value to 0.0
 
+
+    # Create the main window
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("DoubleVar Example")
+
+    # Create a DoubleVar to hold the float value
+    double_var = tk.DoubleVar()
+    double_var.set(0.0)  # Initial value
+
+    # Create a Label widget with textvariable
+    label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))
+    label.grid(row=0, column=0, columnspan=3, pady=5)
 
     # Create Buttons to trigger the value update
     button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")  # Light red

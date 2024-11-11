@@ -81,15 +81,6 @@ This code creates a basic GUI with buttons to increment, decrement, and reset an
 
     import tkinter as tk
 
-    # Create the main window
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("IntVar Example")
-
-    # Create an IntVar to hold the integer value
-    int_var = tk.IntVar()
-    int_var.set(0)  # Initial value
-
 
     # Function to increment the integer value
     def increment_value():
@@ -107,6 +98,15 @@ This code creates a basic GUI with buttons to increment, decrement, and reset an
     def reset_value():
         int_var.set(0)  # Reset the value to 0
 
+
+    # Create the main window
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("IntVar Example")
+
+    # Create an IntVar to hold the integer value
+    int_var = tk.IntVar()
+    int_var.set(0)  # Initial value
 
     # Create a Label widget with textvariable
     label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))

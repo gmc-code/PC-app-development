@@ -230,6 +230,5 @@ This code creates a basic GUI with a button that toggles the text of a label.
                     output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
                     output_result.pack(pady=5)
 
-
                     # Run the application
                     root.mainloop()
