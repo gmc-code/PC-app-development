@@ -117,6 +117,9 @@ Code:
 Python tk game
 -------------------------
 
+.. image:: images/tk_AFL_premiers.png
+    :scale: 67%
+
 This Python script creates a graphical quiz game using the `tkinter` library. Below is a summary of its key components:
 
 - **Imports**:

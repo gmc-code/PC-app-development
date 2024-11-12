@@ -139,8 +139,7 @@ This program simulates a shop game where the player can visit different stores, 
    - **`deselect_others`**: Ensures only one item is selected from a store by deselecting other checkboxes in the same store.
    - **`create_deselect_command`**: Creates a function that ensures only one item can be selected per store by deselecting other checkboxes when one is selected.
    - **`update_store`**: Updates the store display to reflect current available items and their selection states.
-   - **`buy_item`**: Handles the purchasing of selected items, updates the player's gold, and removes purchased items from the store's inventory.
-   - **`end_game`**: Displays a summary of the items purchased, total cost, and remaining gold when the game ends.
+   - **`buy_items`**: Handles the purchasing of selected items, updates the player's gold, and removes purchased items from the store's inventory and displays a summary of the items purchased, total cost, and remaining gold.
 
 5. **Tkinter Widgets**:
 
@@ -152,7 +151,6 @@ This program simulates a shop game where the player can visit different stores, 
 .. code-block:: python
 
     import tkinter as tk
-    from tkinter import messagebox
 
     # Define the shops with more diverse items
     blacksmith = {"name": "Blacksmith", "items": {"sword": 150,
@@ -170,26 +168,22 @@ This program simulates a shop game where the player can visit different stores, 
     cart = {}
     purse = 1000
 
-
     def deselect_others(store_name, selected_index):
         """Ensure only one item can be selected per store."""
         for i, var in enumerate(selected_items[store_name]):
             if i != selected_index:
                 var.set(False)
 
-
     def create_deselect_command(store_name, index):
         """Creates a command to deselect other checkboxes in the same store."""
-
         def deselect_others():
             for i, var in enumerate(selected_items[store_name]):
                 if i != index:
                     var.set(False)
-
         return deselect_others
 
-
     def update_store():
+        # Refresh the store frames
         for i in range(len(stores)):
             store = stores[i]
             frame = store_frames[i]
@@ -220,8 +214,19 @@ This program simulates a shop game where the player can visit different stores, 
                 )
                 item_check.pack(anchor="w", pady=5)
 
+    def update_inventory_display():
+        """Update the inventory display to show the current cart and remaining gold."""
+        inventory_text.delete(1.0, tk.END)  # Clear the existing content
 
-    def buy_item():
+        # Display purchased items
+        inventory_text.insert(tk.END, "Purchased Items:\n")
+        for item, price in cart.items():
+            inventory_text.insert(tk.END, f"{item}: {price} gold\n")
+
+        # Display remaining gold
+        inventory_text.insert(tk.END, f"\nRemaining Gold: {purse} gold")
+
+    def buy_items():
         global purse
         for store in stores:
             store_name = store["name"]
@@ -234,67 +239,57 @@ This program simulates a shop game where the player can visit different stores, 
                         # Mark item for removal from the store
                         items_to_remove.append(item)
                         purse_label.config(text=f"Gold: {purse}")
-                        messagebox.showinfo("Purchase Successful", f"You bought {
-                                            item} for {price} gold.")
                     else:
-                        messagebox.showwarning("Insufficient Gold", f"You don't have enough gold for {
-                                            item} from {store_name}.")
-                        return
+                        # Insufficient gold, just skip this item
+                        continue
 
             # Remove bought items from the store's inventory
             for item in items_to_remove:
                 store["items"].pop(item)
 
         update_store()  # Refresh the store display to remove purchased items
-
-
-    def end_game():
-        items_purchased = ""
-        for item, price in cart.items():
-            items_purchased += f"{item}: {price} gold\n"
-
-        total_cost = sum(cart.values())
-        gold_left = purse
-
-        messagebox.showinfo("Game Over", f"Items Purchased:\n{
-                            items_purchased}\n\nTotal cost: {total_cost} gold\nGold left: {gold_left} gold")
-
+        update_inventory_display()  # Update the inventory display with purchased items
 
     # Initialize the Tkinter root window
     root = tk.Tk()
     root.title("Shop Game")
 
     # Define colors for each store
-    # Light gray for Blacksmith  # Lavender for Alchemy Shop  # Lemon chiffon for General Store
     store_colors = {"Blacksmith": "#D3D3D3",
                     "Alchemy Shop": "#E6E6FA", "General Store": "#FFFACD"}
 
-    # Modify store_frames creation to include colors
+    # Create frames for each store (left side)
     store_frames = []
     for store in stores:
-        # Set background color
         frame = tk.Frame(root, bg=store_colors[store["name"]])
         frame.pack(side=tk.LEFT, padx=10, pady=10)
         store_frames.append(frame)
 
-
-    # Create a dictionary of BooleanVars for each store without dictionary comprehensions
+    # Create a dictionary of BooleanVars for each store
     selected_items = {}
     for store in stores:
         selected_items[store["name"]] = []
         for _ in store["items"]:
             selected_items[store["name"]].append(tk.BooleanVar(value=False))
 
-    purse_label = tk.Label(root, text=f"Gold: {purse}", font=("Helvetica", 14))
+    # Create a right side frame for displaying inventory and remaining gold
+    right_frame = tk.Frame(root)
+    right_frame.pack(side=tk.LEFT, padx=10, pady=10)
+
+    # Label to display current gold
+    purse_label = tk.Label(right_frame, text=f"Gold: {purse}", font=("Helvetica", 14))
     purse_label.pack(pady=10)
 
-    buy_button = tk.Button(root, text="Buy Item",
-                        command=buy_item, font=("Helvetica", 14))
-    buy_button.pack(pady=10)
+    # Label to display the shopping cart and purchased items
+    inventory_label = tk.Label(right_frame, text="Inventory:", font=("Helvetica", 14))
+    inventory_label.pack(pady=10)
 
-    end_button = tk.Button(root, text="End Game",
-                        command=end_game, font=("Helvetica", 14))
-    end_button.pack(pady=10)
+    inventory_text = tk.Text(right_frame, height=15, width=30, wrap=tk.WORD)
+    inventory_text.pack(pady=10)
+
+    # Button to buy item
+    buy_button = tk.Button(right_frame, text="Buy Items", command=buy_items, font=("Helvetica", 14))
+    buy_button.pack(pady=10)
 
     update_store()
 
