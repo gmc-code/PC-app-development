@@ -88,7 +88,6 @@ PC-app-development
     tk_apps/tk_login.rst
     tk_apps/tk_login_custom_messagebox.rst
 
-    tk_apps/tk_afl_premiers_task.rst
     tk_apps/tk_afl_premiers.rst
     tk_apps/tk_RPG_inventory.rst
 
