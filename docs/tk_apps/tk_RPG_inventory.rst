@@ -109,11 +109,11 @@ Code:
 
 .. admonition:: Task
 
-    #. Convert the terminal game above to a tkinter quiz game.
+    #. Convert the terminal version to a tkinter version.
 
 ----
 
-Python terminal game
+Python tkinter version
 -------------------------
 
 This program simulates a shop game where the player can visit different stores, view items for sale, and buy items using their available gold.
@@ -294,3 +294,46 @@ This program simulates a shop game where the player can visit different stores, 
     update_store()
 
     root.mainloop()
+
+----
+
+Functions in more detail
+---------------------------
+
+These functions work together to create an interactive shopping experience where users can select items from different stores, purchase them, and see their remaining gold and purchased items.
+
+1. **`deselect_others(store_name, selected_index)`**:
+
+    - This function ensures that only one item can be selected per store.
+    - It iterates through all the items in the specified store (`store_name`).
+    - If the current item's index (`i`) is not the same as the `selected_index`, it sets the corresponding BooleanVar to `False`, effectively deselecting it.
+
+2. **`create_deselect_command(store_name, index)`**:
+
+    - This function creates a command to deselect other checkboxes in the same store.
+    - It returns a function (`deselect_others`) that, when called, will deselect all other items in the specified store except the one at the given `index`.
+    - `deselect_command = create_deselect_command(store["name"], index)` avoids the use of parameters in `command=deselect_command` for the Checkbox creation.
+
+1. **`update_store()`**:
+
+    - This function refreshes the store frames and creates checkboxes for each item.
+    - It iterates through each store and its corresponding frame.
+    - It destroys all existing widgets in the frame to ensure a fresh start.
+    - It creates a label for the store with a background color matching the frame.
+    - For each item in the store, it creates a checkbox with a command to deselect other checkboxes in the same store.
+
+2. **`update_inventory_display()`**:
+
+    - This function updates the inventory display to show the current cart and remaining gold.
+    - It clears the existing content in the `inventory_text` widget.
+    - It inserts the purchased items and their prices into the `inventory_text`.
+    - It also displays the remaining gold.
+
+3. **`buy_items()`**:
+
+    - This function handles the purchase of selected items and updates the store and inventory.
+    - It iterates through each store and checks if an item has been selected.
+    - If the item is selected and there is enough gold (`purse`), it deducts the item's price from the purse, adds the item to the cart, and marks the item for removal from the store.
+    - After processing all items, it removes the bought items from the store's inventory.
+    - It then calls `update_store()` to refresh the store display and `update_inventory_display()` to update the inventory display with the purchased items.
+
