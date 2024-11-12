@@ -6,6 +6,11 @@ Modify via checkbox
 
 ----
 
+.. image:: images/toggle_via_checkbox.png
+    :scale: 100%
+
+----
+
 Required Syntax
 -----------------------------------
 
@@ -47,9 +52,6 @@ Required Syntax
 
 Code example
 ~~~~~~~~~~~~~~~~~~
-
-.. image:: images/toggle_via_checkbox.png
-    :scale: 100%
 
 The checkbox toggles the label color between blue and black.
 

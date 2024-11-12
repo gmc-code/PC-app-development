@@ -6,6 +6,11 @@ Modify via radiobutton
 
 ----
 
+.. image:: images/modify_via_radiobutton.png
+    :scale: 100%
+
+----
+
 Required Syntax
 -----------------------------------
 
@@ -47,10 +52,6 @@ Required Syntax
 
 Code example
 ~~~~~~~~~~~~~~~~~~
-
-.. image:: images/modify_via_radiobutton.png
-    :scale: 100%
-
 
 .. code-block:: python
 

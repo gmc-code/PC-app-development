@@ -6,6 +6,11 @@ Increment integers
 
 ----
 
+.. image:: images/increment_integer.png
+    :scale: 100%
+
+----
+
 Required Syntax
 -----------------------------------
 
@@ -47,9 +52,6 @@ Required Syntax
 
 Code example
 ~~~~~~~~~~~~~~~~~~
-
-.. image:: images/increment_integer.png
-    :scale: 100%
 
 This code creates a basic GUI with buttons to increment, decrement, and reset an integer value displayed in a label.
 

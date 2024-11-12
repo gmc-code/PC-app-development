@@ -22,7 +22,7 @@ def login():
 # Create the main window
 window = tk.Tk()
 window.title("Login form")
-window.geometry("540x440")
+window.geometry("600x440")
 window.configure(bg=BG_COLOR)
 
 #  create frame widget for other widgets

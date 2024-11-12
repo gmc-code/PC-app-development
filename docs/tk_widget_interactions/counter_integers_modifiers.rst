@@ -7,6 +7,11 @@ Counter: integers with modifiers
 
 ----
 
+.. image:: images/increment_integer.png
+    :scale: 100%
+
+----
+
 Required Syntax
 -----------------------------------
 
@@ -48,7 +53,7 @@ Required Syntax
 .. py:attribute:: bind
 
     | Syntax: ``widget.bind("<Event>", handler_function)``
-    | Description: Binds an event, such as a mouse click or key press, to a specific function. Using `lambda` allows passing event data or wrapping the callback with additional parameters.
+    | Description: Binds an event, such as a mouse click or key press, to a specific function.
     | Default: ``None``
     | Example: ``button_increment.bind("<ButtonPress-1>", start_increment)``
 
@@ -71,11 +76,6 @@ Required Syntax
 
 Code example
 ~~~~~~~~~~~~~~~~~~
-
-
-.. image:: images/increment_integer.png
-    :scale: 100%
-
 
 | Here's a breakdown of the code:
 
