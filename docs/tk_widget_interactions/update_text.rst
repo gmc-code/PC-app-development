@@ -6,6 +6,14 @@ Update text
 
 ----
 
+.. image:: images/toggle_text_1.png
+    :scale: 67%
+
+.. image:: images/toggle_text_2.png
+    :scale: 67%
+
+----
+
 Required Syntax
 -----------------------------------
 
@@ -47,12 +55,6 @@ Required Syntax
 
 Code example
 ~~~~~~~~~~~~~~~~~~
-
-.. image:: images/toggle_text_1.png
-    :scale: 67%
-
-.. image:: images/toggle_text_2.png
-    :scale: 67%
 
 This code creates a basic GUI with a button that toggles the text of a label.
 
