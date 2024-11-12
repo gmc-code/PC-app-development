@@ -88,6 +88,8 @@ PC-app-development
     tk_apps/tk_login.rst
     tk_apps/tk_login_custom_messagebox.rst
 
+    tk_apps/tk_afl_premiers.rst
+
 
 .. toctree::
     :maxdepth: 2
