@@ -116,6 +116,9 @@ Code:
 Python tkinter version
 -------------------------
 
+.. image:: images/tk_inventory.png
+    :scale: 67%
+
 This program simulates a shop game where the player can visit different stores, view items for sale, and buy items using their available gold.
 
 1. **Shops Definition**:
@@ -136,10 +139,10 @@ This program simulates a shop game where the player can visit different stores, 
 
 4. **Functions**:
 
-   - **`deselect_others`**: Ensures only one item is selected from a store by deselecting other checkboxes in the same store.
-   - **`create_deselect_command`**: Creates a function that ensures only one item can be selected per store by deselecting other checkboxes when one is selected.
-   - **`update_store`**: Updates the store display to reflect current available items and their selection states.
-   - **`buy_items`**: Handles the purchasing of selected items, updates the player's gold, and removes purchased items from the store's inventory and displays a summary of the items purchased, total cost, and remaining gold.
+   - **deselect_others**: Ensures only one item is selected from a store by deselecting other checkboxes in the same store.
+   - **create_deselect_command**: Creates a function that ensures only one item can be selected per store by deselecting other checkboxes when one is selected.
+   - **update_store**: Updates the store display to reflect current available items and their selection states.
+   - **buy_items**: Handles the purchasing of selected items, updates the player's gold, and removes purchased items from the store's inventory and displays a summary of the items purchased, total cost, and remaining gold.
 
 5. **Tkinter Widgets**:
 
@@ -302,19 +305,19 @@ Functions in more detail
 
 These functions work together to create an interactive shopping experience where users can select items from different stores, purchase them, and see their remaining gold and purchased items.
 
-1. **`deselect_others(store_name, selected_index)`**:
+1. **deselect_others(store_name, selected_index)**:
 
     - This function ensures that only one item can be selected per store.
     - It iterates through all the items in the specified store (`store_name`).
     - If the current item's index (`i`) is not the same as the `selected_index`, it sets the corresponding BooleanVar to `False`, effectively deselecting it.
 
-2. **`create_deselect_command(store_name, index)`**:
+2. **create_deselect_command(store_name, index)**:
 
     - This function creates a command to deselect other checkboxes in the same store.
     - It returns a function (`deselect_others`) that, when called, will deselect all other items in the specified store except the one at the given `index`.
     - `deselect_command = create_deselect_command(store["name"], index)` avoids the use of parameters in `command=deselect_command` for the Checkbox creation.
 
-1. **`update_store()`**:
+3. **update_store()**:
 
     - This function refreshes the store frames and creates checkboxes for each item.
     - It iterates through each store and its corresponding frame.
@@ -322,14 +325,14 @@ These functions work together to create an interactive shopping experience where
     - It creates a label for the store with a background color matching the frame.
     - For each item in the store, it creates a checkbox with a command to deselect other checkboxes in the same store.
 
-2. **`update_inventory_display()`**:
+4. **update_inventory_display()**:
 
     - This function updates the inventory display to show the current cart and remaining gold.
     - It clears the existing content in the `inventory_text` widget.
     - It inserts the purchased items and their prices into the `inventory_text`.
     - It also displays the remaining gold.
 
-3. **`buy_items()`**:
+5. **buy_items()**:
 
     - This function handles the purchase of selected items and updates the store and inventory.
     - It iterates through each store and checks if an item has been selected.
