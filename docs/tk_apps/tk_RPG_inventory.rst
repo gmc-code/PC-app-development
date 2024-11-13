@@ -170,6 +170,7 @@ Key Syntax to use
 .. py:function:: outer_function(parameter1, parameter2, ...)
 
     | Syntax:
+
         .. code-block::
 
             def outer_function(parameter1, parameter2, ...):
@@ -183,14 +184,15 @@ Key Syntax to use
         - ``parameter1, parameter2, ...``: Parameters needed by ``inner_function`` but provided only once to ``outer_function``.
     | Usage: Call ``outer_function`` with the desired parameters to get the ``inner_function`` ready for later use. This allows ``inner_function`` to run with the necessary context when called, but without requiring additional arguments.
     | Example:
-        .. code-block::
 
-            def create_print_command(message):
-                def print_message():
-                    print(message)
-                return print_message
+    .. code-block::
 
-            cp_command = create_print_command("Hello")
+        def create_print_command(message):
+            def print_message():
+                print(message)
+            return print_message
+
+        cp_command = create_print_command("Hello")
 
 ----
 
