@@ -160,7 +160,7 @@ Key Syntax to use
     | Default: ``start=0``, so if ofter omitted.
     | Example: ``for index, value in enumerate(['a', 'b', 'c']): print(index, value) # Outputs: 0 a, 1 b, 2 c``
 
-.. py:function:: !=
+.. py:function:: value1 != value2
 
     | Syntax: ``value1 != value2``
     | Description: Checks if two values are not equal. Returns ``True`` if ``value1`` and ``value2`` are not equal, otherwise returns ``False``.
