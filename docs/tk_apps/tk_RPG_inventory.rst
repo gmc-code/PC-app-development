@@ -150,6 +150,52 @@ This program simulates a shop game where the player can visit different stores, 
    - **Buttons**: "Buy Item" to purchase the selected items and "End Game" to display a summary of purchases.
    - **Labels**: Display the current store name, item prices, and player's gold.
 
+Key Syntax to use
+~~~~~~~~~~~~~~~~~~~~~
+
+.. py:function:: enumerate(iterable, start=0)
+
+    | Syntax: ``enumerate(iterable, start=0)``
+    | Description: Adds a counter to an iterable, returning it as an enumerate object, which can be used to iterate with both the index and the element.
+    | Default: ``start=0``, so if ofter omitted.
+    | Example: ``for index, value in enumerate(['a', 'b', 'c']): print(index, value) # Outputs: 0 a, 1 b, 2 c``
+
+.. py:operator:: !=
+
+    | Syntax: ``value1 != value2``
+    | Description: Checks if two values are not equal. Returns ``True`` if ``value1`` and ``value2`` are not equal, otherwise returns ``False``.
+    | Example: ``5 != 3  # Outputs: True``; ``5 != 5  # Outputs: False``
+
+.. py:function:: outer_function(parameter1, parameter2, ...)
+
+    | Syntax::
+
+        def outer_function(parameter1, parameter2, ...):
+            def inner_function():
+                # Uses parameter1, parameter2, ...
+                # Perform actions without needing extra parameters
+            return inner_function
+
+
+    | Description: Defines an ``outer_function`` that creates and returns an ``inner_function``. The ``inner_function`` can access parameters from ``outer_function`` without explicitly taking them as arguments.
+
+    | Parameters:
+        - ``parameter1, parameter2, ...``: Parameters needed by ``inner_function`` but provided only once to ``outer_function``.
+
+    | Usage: Call ``outer_function`` with the desired parameters to get the ``inner_function`` ready for later use. This allows ``inner_function`` to run with the necessary context when called, but without requiring additional arguments.
+
+    | Example::
+
+        def create_print_command(message):
+            def print_message():
+                print(message)
+            return print_message
+
+        cp_command = create_print_command("Hello")
+
+----
+
+Code:
 
 .. code-block:: python
 

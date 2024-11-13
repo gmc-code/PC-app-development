@@ -1,6 +1,6 @@
 import tkinter as tk
 
-# Define the shops with more diverse items
+# Define the shops with items
 blacksmith = {
     "name": "Blacksmith",
     "items": {
