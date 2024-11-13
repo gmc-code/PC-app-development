@@ -160,11 +160,12 @@ Key Syntax to use
     | Default: ``start=0``, so if ofter omitted.
     | Example: ``for index, value in enumerate(['a', 'b', 'c']): print(index, value) # Outputs: 0 a, 1 b, 2 c``
 
-.. py:operator:: !=
+.. py:function:: !=
 
     | Syntax: ``value1 != value2``
     | Description: Checks if two values are not equal. Returns ``True`` if ``value1`` and ``value2`` are not equal, otherwise returns ``False``.
     | Example: ``5 != 3  # Outputs: True``; ``5 != 5  # Outputs: False``
+
 
 .. py:function:: outer_function(parameter1, parameter2, ...)
 
@@ -172,18 +173,14 @@ Key Syntax to use
 
         def outer_function(parameter1, parameter2, ...):
             def inner_function():
-                # Uses parameter1, parameter2, ...
-                # Perform actions without needing extra parameters
+                # Use parameter1, parameter2
             return inner_function
 
 
     | Description: Defines an ``outer_function`` that creates and returns an ``inner_function``. The ``inner_function`` can access parameters from ``outer_function`` without explicitly taking them as arguments.
-
     | Parameters:
         - ``parameter1, parameter2, ...``: Parameters needed by ``inner_function`` but provided only once to ``outer_function``.
-
     | Usage: Call ``outer_function`` with the desired parameters to get the ``inner_function`` ready for later use. This allows ``inner_function`` to run with the necessary context when called, but without requiring additional arguments.
-
     | Example::
 
         def create_print_command(message):
