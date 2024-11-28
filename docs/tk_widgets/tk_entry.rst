@@ -80,31 +80,27 @@ Validation
 The `validate` option in Tkinter is used to control when validation should occur for an entry widget. It works in conjunction with the `validatecommand` option, which specifies the function to call for validation.
 
 The `validate` option determines the conditions under which the validation function is called. It can take the following values:
-- **`'focus'`**: Validation occurs when the entry widget gains or loses focus.
-- **`'focusin'`**: Validation occurs when the entry widget gains focus.
-- **`'focusout'`**: Validation occurs when the entry widget loses focus.
-- **`'key'`**: Validation occurs whenever the user types something in the entry widget.
-- **`'all'`**: Validation occurs under all the above conditions.
-- **`'none'`**: No validation occurs (default).
+
+- **'focus'**: Validation occurs when the entry widget gains or loses focus.
+- **'focusin'**: Validation occurs when the entry widget gains focus.
+- **'focusout'**: Validation occurs when the entry widget loses focus.
+- **'key'**: Validation occurs whenever the user types something in the entry widget.
+- **'all'**: Validation occurs under all the above conditions.
+- **'none'**: No validation occurs (default).
 
 The `validatecommand` option specifies the function to call for validation. This function should return `True` if the input is valid and `False` otherwise. The function can take various substitution codes as arguments, such as:
-- **`'%P'`**: The value of the entry if the edit is allowed.
-- **`'%s'`**: The current value of the entry before the edit.
-- **`'%d'`**: The type of action (1 for insert, 0 for delete, -1 for others).
-- **`'%S'`**: The text string being inserted or deleted.
-- **`'%v'`**: The current value of the `validate` option.
-- **`'%V'`**: The current value of the `validatecommand` option.
-- **`'%W'`**: The name of the entry widget.
 
-| In the code below
-| The validate_input function checks if the new value (new_value) is a digit or an empty string.
-| The window.register(validate_input) registers the validation function with Tkinter.
-| The validate='key' option specifies that validation should occur whenever the user types something.
-| The validatecommand=vcmd option sets the validation command to the registered function.
+- **'%P'**: The value of the entry if the edit is allowed.
+- **'%s'**: The current value of the entry before the edit.
+- **'%d'**: The type of action (1 for insert, 0 for delete, -1 for others).
+- **'%S'**: The text string being inserted or deleted.
+- **'%v'**: The current value of the `validate` option.
+- **'%V'**: The current value of the `validatecommand` option.
+- **'%W'**: The name of the entry widget.
 
 
 Numeric validation
-----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 | In the code below, the validate_input function checks if the new value (new_value) is a digit or an empty string.
 | The window.register(validate_input) registers the validation function with Tkinter.
@@ -131,7 +127,49 @@ Numeric validation
 
     window.mainloop()
 
------
+----
+
+
+.. admonition:: Tasks
+
+    #. Create a
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Create a Tkinter window with a label.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    def validate_age(new_value):
+                        # Check if the new value is numeric and within the valid age range
+                        if new_value.isdigit():
+                            age = int(new_value)
+                            return 0 <= age <= 120
+                        return new_value == ""  # Allow empty string for clearing the entry
+
+                    window = tk.Tk()
+                    window.title("Age Validation Example")
+                    window.geometry("500x300")  # Set window size
+
+                    # Register the validation function
+                    vcmd = (window.register(validate_age), '%P')
+
+                    entry = tk.Entry(window, font=("Arial",24), validate='key', validatecommand=vcmd)
+                    entry.pack(pady=10)
+
+                    window.mainloop()
+
+----
 
 EMail validation
 
@@ -156,31 +194,6 @@ EMail validation
 
     window.mainloop()
 
-
-Age validation
-
-.. code-block:: python
-
-
-    import tkinter as tk
-
-    def validate_age(new_value):
-        # Check if the new value is numeric and within the valid age range
-        if new_value.isdigit():
-            age = int(new_value)
-            return 0 <= age <= 120
-        return new_value == ""  # Allow empty string for clearing the entry
-
-    window = tk.Tk()
-    window.title("Age Validation Example")
-
-    # Register the validation function
-    vcmd = (window.register(validate_age), '%P')
-
-    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
-    entry.pack(pady=10)
-
-    window.mainloop()
 
 
 Phone number validation
@@ -242,6 +255,8 @@ MObile with spaces
     entry.pack(pady=10)
 
     window.mainloop()
+
+----
 
 Option details
 --------------------

@@ -365,8 +365,6 @@ border example
 
 ----
 
-
-
 .. admonition:: Tasks
 
     #. Create a Tkinter window with a label using the following specifications:
