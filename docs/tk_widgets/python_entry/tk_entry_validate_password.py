@@ -11,12 +11,12 @@ def validate_password():
     if not re.search("[a-z]", password):
         messagebox.showwarning("Validation Result", "Password must contain at least one lowercase letter.")
         return False
-    if not re.search("[A-Z]", password):
-        messagebox.showwarning("Validation Result", "Password must contain at least one uppercase letter.")
-        return False
-    if not re.search("[0-9]", password):
-        messagebox.showwarning("Validation Result", "Password must contain at least one digit.")
-        return False
+    # if not re.search("[A-Z]", password):
+    #     messagebox.showwarning("Validation Result", "Password must contain at least one uppercase letter.")
+    #     return False
+    # if not re.search("[0-9]", password):
+    #     messagebox.showwarning("Validation Result", "Password must contain at least one digit.")
+    #     return False
     if not re.search('[!@#$%^&*(),.?":{}|<>]', password):
         messagebox.showwarning("Validation Result", "Password must contain at least one special character.")
         return False
@@ -35,7 +35,7 @@ window.title("Password Validator")
 window.geometry("300x200")
 
 password_var = tk.StringVar()
-password_entry = tk.Entry(window, textvariable=password_var, show="*", validate="key", validatecommand=(window.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
+password_entry = tk.Entry(window, font=("Arial", 24), textvariable=password_var, show="*", validate="focusout", validatecommand=(window.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
 password_entry.pack(pady=10)
 
 validate_button = tk.Button(window, font=("Arial", 24), text="Validate Password", command=validate_password)

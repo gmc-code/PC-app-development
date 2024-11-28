@@ -90,14 +90,55 @@ The `validate` option determines the conditions under which the validation funct
 
 The `validatecommand` option specifies the function to call for validation. This function should return `True` if the input is valid and `False` otherwise. The function can take various substitution codes as arguments, such as:
 
-- **'%P'**: The value of the entry if the edit is allowed.
-- **'%s'**: The current value of the entry before the edit.
-- **'%d'**: The type of action (1 for insert, 0 for delete, -1 for others).
-- **'%S'**: The text string being inserted or deleted.
-- **'%v'**: The current value of the `validate` option.
-- **'%V'**: The current value of the `validatecommand` option.
-- **'%W'**: The name of the entry widget.
+- `%d`: Action code. It indicates the type of action that triggered the validation. Possible values are: 1 for an insertion; 0 for a deletion; -1 for any other action.
+- `%i`: Index of the character string to be inserted/deleted, or -1 if not applicable.
+- `%P`: The value of the entry if the edit is allowed. This is the new value of the widget's text.
+- `%s`: The current value of the entry before the edit.
+- `%S`: The text string being inserted or deleted, if any.
+- `%v`: The type of validation currently set; the current value of the `validate` option. This can be: none, focus, focusin, focusout, key
+- `%V`: The type of event that triggered the validation; the current value of the `validatecommand` option. This can be: key, focusin, focusout, forced
+- `%W`: The name of the widget triggering the callback.
 
+.. image:: images/validation_substitutions.png
+    :scale: 100%
+
+| Run the code below and type in "abcD". THis shows what each validation substitution code does.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def on_validate(action, index, value_if_allowed, prior_value, text, validation_type, trigger_type, widget_name):
+        output_text.set(
+            f"Action: {action}\n"
+            f"Index: {index}\n"
+            f"Value if allowed: {value_if_allowed}\n"
+            f"Prior value: {prior_value}\n"
+            f"Text: {text}\n"
+            f"Validation type: {validation_type}\n"
+            f"Trigger type: {trigger_type}\n"
+            f"Widget name: {widget_name}"
+        )
+        return True
+
+
+    window = tk.Tk()
+    window.title("Validation Example")
+    window.geometry("500x350")
+
+    output_text = tk.StringVar()
+    output_label = tk.Label(window, font=("Arial",16), textvariable=output_text, justify="left")
+    output_label.pack(pady=10)
+
+    entry_var = tk.StringVar()
+    entry_field = tk.Entry(window, font=("Arial",24), textvariable=entry_var, validate="key", validatecommand=(window.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
+    entry_field.pack(pady=10)
+
+
+    window.mainloop()
+
+----
 
 Numeric validation
 ~~~~~~~~~~~~~~~~~~~~~
