@@ -33,6 +33,14 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
 4. **Button**: When clicked, triggers a function to retrieve the text from `name_var` and sets the ``text`` value of the label widget.
 5. **Label**: Displays the retrieved text in a label, formatted to show on two lines.
 
+| Using tk.StringVar():
+| **name_var = tk.StringVar()**
+| **tk.StringVar()** creates a Tkinter variable of type StringVar. This variable is used to store and manage the value of a string, and it can be associated with widgets like Entry to dynamically update and retrieve values.
+| **get_name()** is a function that retrieves the current value of name_var using **name_var.get()**
+| tk.Entry(window, **textvariable=name_var**, font=('calibre', 24, 'normal'), width=20) creates an entry widget for text input.
+| **textvariable=name_var** links the entry widget to the name_var StringVar, so any text entered in the widget updates name_var and vice versa.
+| tk.Button(window, text="Submit", **command=get_name**) creates a button that, when clicked, calls the get_name function.
+
 .. code-block:: python
 
     import tkinter as tk
