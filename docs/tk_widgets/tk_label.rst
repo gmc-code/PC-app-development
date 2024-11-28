@@ -121,7 +121,7 @@ This code below uses a font object to style text in a Tkinter Label.
 
     # Create the main window
     window = tk.Tk()
-    window.title("Formatted Label Example")
+    window.title("Label Custom Font")
 
     # Define the custom font
     custom_font = font.Font(family="Comic Sans MS", size=20, weight="bold", slant="italic")
@@ -133,6 +133,8 @@ This code below uses a font object to style text in a Tkinter Label.
     # Run the Tkinter event loop
     window.mainloop()
 
+.. image:: images/label_font_custom.png
+    :scale: 100%
 
 ----
 
