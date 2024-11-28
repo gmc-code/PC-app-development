@@ -74,8 +74,8 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
 
 ----
 
-Validation
--------------------
+Validation via the validate option
+--------------------------------------
 
 The `validate` option in Tkinter is used to control when validation should occur for an entry widget. It works in conjunction with the `validatecommand` option, which specifies the function to call for validation.
 
@@ -104,8 +104,10 @@ Numeric validation
 
 | In the code below, the validate_input function checks if the new value (new_value) is a digit or an empty string.
 | The window.register(validate_input) registers the validation function with Tkinter.
+| %P is used to pass the new value of the entry to the validate_age function, allowing it to check if the entire new value is a valid age
 | The validate='key' option specifies that validation should occur whenever the user types something.
 | The validatecommand=vcmd option sets the validation command to the registered function.
+
 
 .. code-block:: python
 
@@ -122,18 +124,16 @@ Numeric validation
     # Register the validation function
     vcmd = (window.register(validate_input), '%P')
 
-    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
+    entry = tk.Entry(window, font=("Arial", 24), validate='key', validatecommand=vcmd)
     entry.pack(pady=10)
 
     window.mainloop()
 
 ----
 
-
 .. admonition:: Tasks
 
-    #. Create a
-
+    #. Modify the code above to validate for an age from 0 to 120.
 
     .. dropdown::
         :icon: codescan
@@ -144,27 +144,100 @@ Numeric validation
 
             .. tab-item:: Q1
 
-                Create a Tkinter window with a label.
+                Modify the code above to validate for an age from 0 to 120.
 
                 .. code-block:: python
 
                     import tkinter as tk
 
+
                     def validate_age(new_value):
-                        # Check if the new value is numeric and within the valid age range
                         if new_value.isdigit():
                             age = int(new_value)
-                            return 0 <= age <= 120
-                        return new_value == ""  # Allow empty string for clearing the entry
+                            return 0 <= age <= 120  # Returns True if within range, otherwise False
+                        else:
+                            return new_value == ""  # Returns True if empty, otherwise False
+
 
                     window = tk.Tk()
                     window.title("Age Validation Example")
                     window.geometry("500x300")  # Set window size
 
                     # Register the validation function
-                    vcmd = (window.register(validate_age), '%P')
+                    vcmd = (window.register(validate_age), "%P")
 
-                    entry = tk.Entry(window, font=("Arial",24), validate='key', validatecommand=vcmd)
+                    entry = tk.Entry(window, font=("Arial", 24), validate="key", validatecommand=vcmd)
+                    entry.pack(pady=10)
+
+                    window.mainloop()
+
+
+Phone number validation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| The code below will ensure that the entry field only accepts numeric input up to 10 digits.
+| **validate_phone** checks for a numeric input and that the length is no more than 10 digits.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    def validate_phone(new_value):
+        # Check if the new value is numeric and has at most 10 digits
+        return new_value.isdigit() and len(new_value) <= 10
+
+    window = tk.Tk()
+    window.title("Phone Number Validation Example")
+    window.geometry("500x300")  # Set window size
+
+    # Register the validation function
+    vcmd = (window.register(validate_phone), '%P')
+
+    entry = tk.Entry(window, font=("Arial", 24), validate='key', validatecommand=vcmd)
+    entry.pack(pady=10)
+
+    window.mainloop()
+
+
+
+.. admonition:: Tasks
+
+    #. Modify the code above to validate for a mobile phone number that requires a space after 4 digits and again after another 3 digits.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above to validate for a mobile phone number that requires a space after 4 digits and again after another 3 digits.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+
+                    def validate_phone(new_value):
+                        # Check if the new value follows the pattern: 4 digits, a space, 3 digits, a space, 3 digits
+                        if len(new_value) == 0:
+                            return True
+                        if len(new_value) in [5, 9]:
+                            return new_value[-1] == ' '  # Ensure the 5th and 9th characters are spaces
+                        if len(new_value) in [1, 2, 3, 4, 6, 7, 8, 10, 11, 12]:
+                            return new_value[-1].isdigit()  # Ensure other positions are digits
+                        return False
+
+                    window = tk.Tk()
+                    window.title("Phone Number Validation Example")
+                    window.geometry("500x300")  # Set window size
+
+                    # Register the validation function
+                    vcmd = (window.register(validate_phone), '%P')
+
+                    entry = tk.Entry(window, validate='key', validatecommand=vcmd, font=("Arial",20))
                     entry.pack(pady=10)
 
                     window.mainloop()
@@ -196,65 +269,6 @@ EMail validation
 
 
 
-Phone number validation
---------------------------
-
-| The validate_phone function checks if the new value (new_value) is numeric and has at most 10 digits.
-| The window.register(validate_phone) registers the validation function with Tkinter.
-| The validate='key' option specifies that validation should occur whenever the user types something.
-| The validatecommand=vcmd option sets the validation command to the registered function.
-| This will ensure that the entry field only accepts numeric input up to 10 digits, which is a common format for phone numbers.
-
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    def validate_phone(new_value):
-        # Check if the new value is numeric and has at most 10 digits
-        return new_value.isdigit() and len(new_value) <= 10
-
-    window = tk.Tk()
-    window.title("Phone Number Validation Example")
-    window.geometry("500x300")  # Set window size
-
-    # Register the validation function
-    vcmd = (window.register(validate_phone), '%P')
-
-    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
-    entry.pack(pady=10)
-
-    window.mainloop()
-
-
-MObile with spaces
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def validate_phone(new_value):
-        # Check if the new value follows the pattern: 4 digits, a space, 3 digits, a space, 3 digits
-        if len(new_value) == 0:
-            return True
-        if len(new_value) in [5, 9]:
-            return new_value[-1] == ' '  # Ensure the 5th and 9th characters are spaces
-        if len(new_value) in [1, 2, 3, 4, 6, 7, 8, 10, 11, 12]:
-            return new_value[-1].isdigit()  # Ensure other positions are digits
-        return False
-
-    window = tk.Tk()
-    window.title("Phone Number Validation Example")
-    window.geometry("500x300")  # Set window size
-
-    # Register the validation function
-    vcmd = (window.register(validate_phone), '%P')
-
-    entry = tk.Entry(window, validate='key', validatecommand=vcmd, font=("Arial",20))
-    entry.pack(pady=10)
-
-    window.mainloop()
 
 ----
 

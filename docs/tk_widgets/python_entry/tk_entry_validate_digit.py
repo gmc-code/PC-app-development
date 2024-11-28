@@ -11,7 +11,7 @@ window.geometry("500x300")  # Set window size
 # Register the validation function
 vcmd = (window.register(validate_input), '%P')
 
-entry = tk.Entry(window, validate='key', validatecommand=vcmd, font=("Arial",24))
+entry = tk.Entry(window, font=("Arial",24), validate='key', validatecommand=vcmd)
 entry.pack(pady=10)
 
 window.mainloop()
