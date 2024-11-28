@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Listbox` widget provides a list from which the user can select one or more items.
-| To create a listbox widget, the general syntax is:
+| To create a listbox widget, the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: listbox_widget = tk.Listbox(parent, option=value)
 

@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Checkbutton` widget provides a checkbutton (checkbox).
-| To create a checkbutton widget, the general syntax is:
+| To create a checkbutton widget, the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: checkbutton_widget = tk.Checkbutton(parent, option=value)
 

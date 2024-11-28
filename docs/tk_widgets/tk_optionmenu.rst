@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.OptionMenu` widget provides a dropdown menu.
-| To create an OptionMenu widget, the general syntax is:
+| To create an OptionMenu widget, the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values)
 

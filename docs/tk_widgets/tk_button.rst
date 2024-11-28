@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Button` widget provides a button.
-| To create a button widget the general syntax is:
+| To create a button widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: button_widget = tk.Button(parent, option=value)
 

@@ -212,6 +212,7 @@ Code:
     general_store = {"name": "General Store", "items": {
         "rope": 10, "torch": 5, "rations": 20, "water flask": 15, "map": 25}}
 
+    # create a list of store dictionaries
     stores = [blacksmith, alchemy_shop, general_store]
 
     # Create an empty shopping cart and set initial gold

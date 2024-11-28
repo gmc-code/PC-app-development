@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Entry` widget provides an input field.
-| To create an entry widget the general syntax is:
+| To create an entry widget the general syntax is (assuming import via "import tkinter as tk")
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
 
@@ -19,8 +19,8 @@ Usage
 
 ----
 
-Using an entry widget
-----------------------------
+Using a variable for the text of an entry widget
+----------------------------------------------------
 
 .. image:: images/entry_get.png
     :scale: 100%
@@ -29,8 +29,8 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
 
 1. **Main Window Setup**: Initializes the main window with a specified size and title.
 2. **Entry Widget**: Provides a text entry field where the user can input their name.
-3. **StringVar**: Associates the entry field with a `StringVar` to manage the input text.
-4. **Button**: Adds a button that, when clicked, triggers a function to retrieve the text from the entry field.
+3. **StringVar**: Associates the entry field with a `StringVar`, `name_var`,  to manage the input text.
+4. **Button**: When clicked, triggers a function to retrieve the text from `name_var` and sets the ``text`` value of the label widget.
 5. **Label**: Displays the retrieved text in a label, formatted to show on two lines.
 
 .. code-block:: python
@@ -67,6 +67,175 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
 
 ----
 
+Validation
+-------------------
+
+The `validate` option in Tkinter is used to control when validation should occur for an entry widget. It works in conjunction with the `validatecommand` option, which specifies the function to call for validation.
+
+The `validate` option determines the conditions under which the validation function is called. It can take the following values:
+- **`'focus'`**: Validation occurs when the entry widget gains or loses focus.
+- **`'focusin'`**: Validation occurs when the entry widget gains focus.
+- **`'focusout'`**: Validation occurs when the entry widget loses focus.
+- **`'key'`**: Validation occurs whenever the user types something in the entry widget.
+- **`'all'`**: Validation occurs under all the above conditions.
+- **`'none'`**: No validation occurs (default).
+
+The `validatecommand` option specifies the function to call for validation. This function should return `True` if the input is valid and `False` otherwise. The function can take various substitution codes as arguments, such as:
+- **`'%P'`**: The value of the entry if the edit is allowed.
+- **`'%s'`**: The current value of the entry before the edit.
+- **`'%d'`**: The type of action (1 for insert, 0 for delete, -1 for others).
+- **`'%S'`**: The text string being inserted or deleted.
+- **`'%v'`**: The current value of the `validate` option.
+- **`'%V'`**: The current value of the `validatecommand` option.
+- **`'%W'`**: The name of the entry widget.
+
+| In the code below
+| The validate_input function checks if the new value (new_value) is a digit or an empty string.
+| The window.register(validate_input) registers the validation function with Tkinter.
+| The validate='key' option specifies that validation should occur whenever the user types something.
+| The validatecommand=vcmd option sets the validation command to the registered function.
+
+
+Numeric validation
+----------------------
+
+| In the code below, the validate_input function checks if the new value (new_value) is a digit or an empty string.
+| The window.register(validate_input) registers the validation function with Tkinter.
+| The validate='key' option specifies that validation should occur whenever the user types something.
+| The validatecommand=vcmd option sets the validation command to the registered function.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    def validate_input(new_value):
+        # Check if the new value is numeric
+        return new_value.isdigit() or new_value == ""
+
+    window = tk.Tk()
+    window.title("Validate Entry Example")
+    window.geometry("500x300")  # Set window size
+
+    # Register the validation function
+    vcmd = (window.register(validate_input), '%P')
+
+    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
+    entry.pack(pady=10)
+
+    window.mainloop()
+
+-----
+
+EMail validation
+
+.. code-block:: python
+
+    import tkinter as tk
+    import re
+
+    def validate_email(new_value):
+        # Define the regex pattern for a valid email address
+        pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+        return re.match(pattern, new_value) is not None or new_value == ""
+
+    window = tk.Tk()
+    window.title("Email Validation Example")
+
+    # Register the validation function
+    vcmd = (window.register(validate_email), '%P')
+
+    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
+    entry.pack(pady=10)
+
+    window.mainloop()
+
+
+Age validation
+
+.. code-block:: python
+
+
+    import tkinter as tk
+
+    def validate_age(new_value):
+        # Check if the new value is numeric and within the valid age range
+        if new_value.isdigit():
+            age = int(new_value)
+            return 0 <= age <= 120
+        return new_value == ""  # Allow empty string for clearing the entry
+
+    window = tk.Tk()
+    window.title("Age Validation Example")
+
+    # Register the validation function
+    vcmd = (window.register(validate_age), '%P')
+
+    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
+    entry.pack(pady=10)
+
+    window.mainloop()
+
+
+Phone number validation
+--------------------------
+
+| The validate_phone function checks if the new value (new_value) is numeric and has at most 10 digits.
+| The window.register(validate_phone) registers the validation function with Tkinter.
+| The validate='key' option specifies that validation should occur whenever the user types something.
+| The validatecommand=vcmd option sets the validation command to the registered function.
+| This will ensure that the entry field only accepts numeric input up to 10 digits, which is a common format for phone numbers.
+
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    def validate_phone(new_value):
+        # Check if the new value is numeric and has at most 10 digits
+        return new_value.isdigit() and len(new_value) <= 10
+
+    window = tk.Tk()
+    window.title("Phone Number Validation Example")
+    window.geometry("500x300")  # Set window size
+
+    # Register the validation function
+    vcmd = (window.register(validate_phone), '%P')
+
+    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
+    entry.pack(pady=10)
+
+    window.mainloop()
+
+
+MObile with spaces
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def validate_phone(new_value):
+        # Check if the new value follows the pattern: 4 digits, a space, 3 digits, a space, 3 digits
+        if len(new_value) == 0:
+            return True
+        if len(new_value) in [5, 9]:
+            return new_value[-1] == ' '  # Ensure the 5th and 9th characters are spaces
+        if len(new_value) in [1, 2, 3, 4, 6, 7, 8, 10, 11, 12]:
+            return new_value[-1].isdigit()  # Ensure other positions are digits
+        return False
+
+    window = tk.Tk()
+    window.title("Phone Number Validation Example")
+    window.geometry("500x300")  # Set window size
+
+    # Register the validation function
+    vcmd = (window.register(validate_phone), '%P')
+
+    entry = tk.Entry(window, validate='key', validatecommand=vcmd, font=("Arial",20))
+    entry.pack(pady=10)
+
+    window.mainloop()
+
 Option details
 --------------------
 
@@ -100,6 +269,7 @@ Option details
         | Default: ``None``
         | Example: ``entry_widget = tk.Entry(window, cursor="xterm")``
         | Possible values include:
+
             - **"arrow"**: Standard arrow cursor.
             - **"xterm"**: I-beam cursor for text selection.
             - **"hand2"**: Hand cursor.
@@ -206,6 +376,7 @@ Option details
         | Default: ``left``
         | Example: ``entry_widget = tk.Entry(window, justify="center")``
         | Possible values include:
+
             - **"left"**: Aligns text to the left.
             - **"center"**: Centers text within the field.
             - **"right"**: Aligns text to the right.
@@ -217,6 +388,7 @@ Option details
         | Default: ``flat``
         | Example: ``entry_widget = tk.Entry(window, relief="sunken")``
         | Possible values include:
+
             - **"flat"**
             - **"raised"**
             - **"sunken"**
@@ -237,6 +409,7 @@ Option details
         | Default: ``normal``
         | Example: ``entry_widget = tk.Entry(window, state="disabled")``
         | Possible values include:
+
             - **"normal"**
             - **"disabled"**
             - **"readonly"**
@@ -262,6 +435,7 @@ Option details
         | Default: ``none``
         | Example: ``entry_widget = tk.Entry(window, validate="focusout")``
         | Possible values include:
+
             - **"none"**: No validation.
             - **"focus"**: Validation occurs when the entry loses focus.
             - **"focusin"**: Validation occurs when the entry gains focus.

@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Label` widget provides a text label.
-| To create a label widget the general syntax is:
+| To create a label widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: label_widget  = tk.Label(parent, option=value)
 
@@ -92,6 +92,51 @@ font example
 
 .. image:: images/label_font.png
     :scale: 100%
+
+
+Custom Font
+------------
+
+.. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
+
+   **``font.Font``**:
+   - This is a constructor from the ``tkinter.font`` module used to create a new font object.
+
+    **Parameters**:
+    - **``family=v_family``**:
+       - Specifies the font family to use. e.g. **``family="Comic Sans MS"``**
+    - **``size=v_size``**:
+       - Sets the font size in points.e.g. **``size=20``**:
+    - **``weight=v_weight``**:
+       - Sets the font weight. e.g. **``weight="bold"``**. e.g. **``weight="normal"``**.
+    - **``slant=v_slant``**:
+       - Makes the font italic or normal. e.g **``slant="italic"``**. Other possible values include "roman" (normal, upright text).
+
+
+custom font example
+~~~~~~~~~~~~~~~~~~~~~
+
+This code below uses a font object to style text in a Tkinter Label.
+
+.. code-block:: python
+
+    import tkinter as tk
+    from tkinter import font
+
+    # Create the main window
+    window = tk.Tk()
+    window.title("Formatted Label Example")
+
+    # Define the custom font
+    custom_font = font.Font(family="Comic Sans MS", size=20, weight="bold", slant="italic")
+
+    # Create a Label widget using the custom font
+    label = tk.Label(window, text="This is a label widget.", font=custom_font)
+    label.pack(padx=20, pady=20)
+
+    # Run the Tkinter event loop
+    window.mainloop()
+
 
 ----
 
@@ -317,6 +362,52 @@ border example
 
 .. image:: images/label_borders.png
     :scale: 67%
+
+----
+
+
+.. admonition:: Tasks
+
+    #. Create a Tkinter window with a label using the following specifications:
+    - The window should have a title "Formatted Label Example" and a size of 500x300 pixels.
+    - Use the "Comic Sans MS" font with a size of 20, bold weight, and italic slant for the Label widget.
+    - The Label widget should display the text "This is a label widget." with a pale mauve background (`#e0b0ff`) and purple text color.
+    - Add a raised border with a width of 2 pixels, padding of 10 pixels on all sides, and anchor the text to the northwest.
+    - Set the width of the Label widget to 300 and the height to 2.
+    - Ensure the Label widget is packed with padding of 20 pixels on all sides.
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Create a Tkinter window with a label.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+                    from tkinter import font
+
+                    # Create the main window
+                    window = tk.Tk()
+                    window.title("Formatted Label Example")
+                    window.geometry("500x300")
+
+                    # Define the custom font
+                    custom_font = font.Font(family="Comic Sans MS", size=20, weight="bold", slant="italic")
+
+                    # Create the Label widget with the specified formatting, border, padding, and anchor options
+                    label = tk.Label(window, text="This is a label widget.", font=custom_font, bg="#e0b0ff", fg="purple",
+                                    bd=2, relief="raised", padx=10, pady=10, anchor="nw", width=300, height=2)
+                    label.pack(padx=20, pady=20)
+
+                    # Run the Tkinter event loop
+                    window.mainloop()
 
 ----
 

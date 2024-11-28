@@ -10,7 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Radiobutton` widget provides a Radio button.
-| To create a Radio button widget the general syntax is:
+| To create a Radio button widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: button_widget = tk.Radiobutton(parent, option=value)
 
