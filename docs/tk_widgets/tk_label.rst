@@ -93,6 +93,7 @@ font example
 .. image:: images/label_font.png
     :scale: 100%
 
+----
 
 Custom Font
 ------------
