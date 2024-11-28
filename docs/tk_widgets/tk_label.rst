@@ -97,9 +97,10 @@ font example
 Custom Font
 ------------
 
-.. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
+| **font.Font** is a constructor from the ``tkinter.font`` module that is used to create a new font object.
+| **from tkinter import font** is required.
 
-    **font.Font** is a constructor from the ``tkinter.font`` module used to create a new font object.
+.. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
 
     **Parameters**
 
