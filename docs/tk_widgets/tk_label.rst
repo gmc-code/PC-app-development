@@ -99,9 +99,7 @@ Custom Font
 
 .. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
 
-   **``font.Font``**
-
-   - This is a constructor from the ``tkinter.font`` module used to create a new font object.
+   **``font.Font``** is a constructor from the ``tkinter.font`` module used to create a new font object.
 
     **Parameters**:
 
