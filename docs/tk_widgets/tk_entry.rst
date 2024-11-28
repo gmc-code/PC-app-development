@@ -34,8 +34,7 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
 5. **Label**: Displays the retrieved text in a label, formatted to show on two lines.
 
 | Using tk.StringVar():
-| **name_var = tk.StringVar()**
-| **tk.StringVar()** creates a Tkinter variable of type StringVar. This variable is used to store and manage the value of a string, and it can be associated with widgets like Entry to dynamically update and retrieve values.
+| **name_var = tk.StringVar()** creates a Tkinter variable of type StringVar. This variable is used to dynamically update and retrieve the value of a string associated with the Entry widget.
 | **get_name()** is a function that retrieves the current value of name_var using **name_var.get()**
 | tk.Entry(window, **textvariable=name_var**, font=('calibre', 24, 'normal'), width=20) creates an entry widget for text input.
 | **textvariable=name_var** links the entry widget to the name_var StringVar, so any text entered in the widget updates name_var and vice versa.
