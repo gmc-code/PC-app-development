@@ -99,18 +99,16 @@ Custom Font
 
 .. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
 
-   **``font.Font``**:
+   **``font.Font``**
+
    - This is a constructor from the ``tkinter.font`` module used to create a new font object.
 
     **Parameters**:
-    - **``family=v_family``**:
-       - Specifies the font family to use. e.g. **``family="Comic Sans MS"``**
-    - **``size=v_size``**:
-       - Sets the font size in points.e.g. **``size=20``**:
-    - **``weight=v_weight``**:
-       - Sets the font weight. e.g. **``weight="bold"``**. e.g. **``weight="normal"``**.
-    - **``slant=v_slant``**:
-       - Makes the font italic or normal. e.g **``slant="italic"``**. Other possible values include "roman" (normal, upright text).
+
+    - **``family=v_family``** Specifies the font family to use. e.g. **``family="Comic Sans MS"``**
+    - **``size=v_size``** Sets the font size in points.e.g. **``size=20``**:
+    - **``weight=v_weight``** Sets the font weight. e.g. **``weight="bold"``**. e.g. **``weight="normal"``**.
+    - **``slant=v_slant``** Makes the font italic or normal. e.g **``slant="italic"``**. Other possible values include "roman" (normal, upright text).
 
 
 custom font example
