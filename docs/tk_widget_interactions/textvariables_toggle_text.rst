@@ -15,6 +15,18 @@ Toggle text via button
 .. image:: images/toggle_text_2.png
     :scale: 67%
 
+
+| The code below creates a Tkinter GUI application that toggles text on a label when a button is clicked:
+
+1. A `StringVar` is created to hold the label's text: ``text_var = tk.StringVar()``.
+2. The `set` method initializes the text: ``text_var.set("Initial Text")``.
+3. The `get` method retrieves the current text: ``current_value = text_var.get()``.
+4. A label is associated with the `StringVar`: ``label = tk.Label(window, textvariable=text_var)``.
+5. A button is created with a command to toggle the text: ``button = tk.Button(window, command=update_text)``.
+6. The `update_text` function checks the current value of `text_var` and toggles it using ``set``.
+7. Clicking the button triggers the `command` to update the label's text.
+
+
 Required Syntax
 ~~~~~~~~~~~~~~~~~~~~~
 

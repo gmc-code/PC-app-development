@@ -12,6 +12,18 @@ Increment label float via buttons
 .. image:: images/increment_float.png
     :scale: 100%
 
+The code creates a Tkinter GUI application to manage a float value with increment, decrement, and reset functionality:
+
+1. A `DoubleVar` is created to hold the float value: ``double_var = tk.DoubleVar()``.
+2. The `set` method initializes the value: ``double_var.set(0.0)``.
+3. The `get` method retrieves the current value: ``current_value = double_var.get()``.
+4. A label is associated with the `DoubleVar`: ``label = tk.Label(window, textvariable=double_var)``.
+5. Buttons are created with `command` callbacks for increment, decrement, and reset operations.
+6. The `increment_value` function increases the `DoubleVar` value by 0.1, rounded to one decimal place.
+7. The `decrement_value` function decreases the value by 0.1, rounded to one decimal place.
+8. The `reset_value` function sets the value to 0.0.
+
+
 Required Syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -67,14 +79,14 @@ Code features
    - ``label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))``: Creates a label in the ``root`` window.
    - The ``textvariable`` parameter is linked to ``double_var``, so the label text displays ``double_var``'s value.
 
-3. **Defining the Functions**:
-4.
+3. **Definethe Functions**:
+
    - These functions use ``.get()`` and ``.set()`` methods on the variable  ``int_var``.
    - ``def increment_value()``: Defines a function to increment ``double_var``'s value by 0.1.
    - ``def decrement_value()``: Defines a function to decrement ``double_var``'s value by 0.1.
    - ``def reset_value()``: Defines a function to reset ``double_var``'s value to 0.0.
 
-5. **Set Button commands**:
+4. **Set Button commands**:
 
    - ``button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")``: Creates a button that calls ``decrement_value`` when clicked.
    - ``button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")``: Creates a button that calls ``reset_value`` when clicked.

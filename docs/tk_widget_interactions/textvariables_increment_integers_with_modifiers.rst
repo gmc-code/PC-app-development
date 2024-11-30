@@ -12,6 +12,19 @@ Increment label integer via buttons with modifiers
 .. image:: images/increment_integer.png
     :scale: 100%
 
+| The code creates a Tkinter GUI application to manage an integer value with customizable increment, decrement, and reset functionality:
+
+1. An `IntVar` is created to hold the integer value: ``int_var = tk.IntVar()``.
+2. The `set` method initializes the value: ``int_var.set(0)``.
+3. The `get` method retrieves the current value: ``current_value = int_var.get()``.
+4. A label is associated with the `IntVar`: ``label = tk.Label(window, textvariable=int_var)``.
+5. Buttons are created for increment, decrement, and reset operations.
+6. `bind` is used to associate mouse clicks with functions for different increments and decrements:
+   - `<Button-1>` triggers single-step changes. ``button_increment.bind("<Button-1>", increment_by_1)``
+   - `<Alt-Button-1>` triggers 10-step changes. ``button_increment.bind("<Alt-Button-1>", increment_by_10)``
+7. The `increment_value` and `decrement_value` functions adjust the value by specified amounts.
+8. The `reset_value` function sets the value to 0.
+
 
 Required Syntax
 ~~~~~~~~~~~~~~~~~~~~~
