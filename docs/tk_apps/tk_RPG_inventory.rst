@@ -303,7 +303,7 @@ Code:
 
     # Initialize the Tkinter root window
     root = tk.Tk()
-    root.title("Shop Game")
+    window.title("Shop Game")
 
     # Define colors for each store
     store_colors = {"Blacksmith": "#D3D3D3",
@@ -344,7 +344,7 @@ Code:
 
     update_store()
 
-    root.mainloop()
+    window.mainloop()
 
 ----
 

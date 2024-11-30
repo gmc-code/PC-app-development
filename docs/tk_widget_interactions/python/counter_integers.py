@@ -22,45 +22,45 @@ def reset_value():
 def start_increment(event):
     global increment_job
     # Start the repeating increment after 500 ms
-    increment_job = root.after(500, repeat_increment)
+    increment_job = window.after(500, repeat_increment)
 
 
 def repeat_increment():
     increment_value()
     global increment_job
     # Continue repeating every 100 ms
-    increment_job = root.after(100, repeat_increment)
+    increment_job = window.after(100, repeat_increment)
 
 
 # Function to start repeating decrement after a delay
 def start_decrement(event):
     global decrement_job
     # Start the repeating decrement after 500 ms
-    decrement_job = root.after(500, repeat_decrement)
+    decrement_job = window.after(500, repeat_decrement)
 
 
 def repeat_decrement():
     decrement_value()
     global decrement_job
     # Continue repeating every 100 ms
-    decrement_job = root.after(100, repeat_decrement)
+    decrement_job = window.after(100, repeat_decrement)
 
 
 # Function to stop repeating action
 def stop_action(event):
     global increment_job, decrement_job
     if "increment_job" in globals():
-        root.after_cancel(increment_job)
+        window.after_cancel(increment_job)
         del increment_job
     if "decrement_job" in globals():
-        root.after_cancel(decrement_job)
+        window.after_cancel(decrement_job)
         del decrement_job
 
 
 # Create the main window
 root = tk.Tk()
-root.geometry("300x200")
-root.title("IntVar Example")
+window.geometry("300x200")
+window.title("IntVar Example")
 
 # Create an IntVar to hold the integer value
 int_var = tk.IntVar()
@@ -88,4 +88,4 @@ button_reset.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
 button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
 # Run the application
-root.mainloop()
+window.mainloop()

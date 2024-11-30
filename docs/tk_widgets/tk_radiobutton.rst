@@ -56,7 +56,7 @@ This code demonstrates the use of option buttons (radio buttons) and a text widg
 
     # Create the main window
     root = tk.Tk()
-    root.title("Option Buttons")
+    window.title("Option Buttons")
 
     # Create a frame with a background color
     frame = tk.Frame(root, bg="light blue")
@@ -84,7 +84,7 @@ This code demonstrates the use of option buttons (radio buttons) and a text widg
     text_widget.pack(padx=10, pady=10)
 
     # Run the main event loop
-    root.mainloop()
+    window.mainloop()
 
 
 ----

@@ -65,8 +65,8 @@ Code example
 
     # Create the main window
     root = tk.Tk()
-    root.geometry("400x150")
-    root.title("Modify via Radiobutton Example")
+    window.geometry("400x150")
+    window.title("Modify via Radiobutton Example")
 
     # Create a StringVar to hold the color value
     color_var = tk.StringVar()
@@ -87,4 +87,4 @@ Code example
     label.grid(row=0, column=1, rowspan=3, padx=10, pady=20)
 
     # Run the application
-    root.mainloop()
+    window.mainloop()

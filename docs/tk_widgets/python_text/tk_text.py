@@ -2,7 +2,7 @@ import tkinter as tk
 
 
 root = tk.Tk()
-root.title("Text Widget Example")
+window.title("Text Widget Example")
 
 # Create a Text widget
 text = tk.Text(root, height=24, width=40, wrap="word", font=("Helvetica", 12))
@@ -24,4 +24,4 @@ text.config(
     padx=10,
     pady=10,yscrollcommand="True")
 
-root.mainloop()
+window.mainloop()

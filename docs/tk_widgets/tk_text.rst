@@ -31,7 +31,7 @@ Text widget with text altered by buttons
 
     Create the main window
     root = tk.Tk()
-    root.title("Interactive Text Widget Example")
+    window.title("Interactive Text Widget Example")
 
     Create a StringVar to hold the text content
     text_var = tk.StringVar()
@@ -63,7 +63,7 @@ Text widget with text altered by buttons
     remove_button.pack(side="left", padx=5)
 
     Run the main event loop
-    root.mainloop()
+    window.mainloop()
 
 
 ----
@@ -81,7 +81,7 @@ Text widget with Scrollbar
 
     Create the main window
     root = tk.Tk()
-    root.title("Text Widget Example")
+    window.title("Text Widget Example")
 
     Create a Text widget with a scrollbar
     text_frame = tk.Frame(root)
@@ -114,7 +114,7 @@ Text widget with Scrollbar
     )
 
     Run the main event loop
-    root.mainloop()
+    window.mainloop()
 
 ----
 

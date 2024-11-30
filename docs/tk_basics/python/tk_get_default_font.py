@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import font
 
 root = tk.Tk()
-root.title("Auto Exit Example")
-root.withdraw() # method hides the window immediately after it is created.
+window.title("Auto Exit Example")
+window.withdraw() # method hides the window immediately after it is created.
 
 # Retrieve the default font
 default_font = font.nametofont("TkDefaultFont")
@@ -12,10 +12,10 @@ print(default_font.actual())
 
 # Function to close the window
 def close_window():
-    root.destroy()
+    window.destroy()
 
 # Schedule the window to close after given milliseconds
-root.after(200, close_window)
+window.after(200, close_window)
 
 # Run the main loop
-root.mainloop()
+window.mainloop()

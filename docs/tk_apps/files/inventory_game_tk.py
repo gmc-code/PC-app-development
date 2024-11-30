@@ -140,7 +140,7 @@ def buy_items():
 
 # Initialize the Tkinter root window
 root = tk.Tk()
-root.title("Shop Game")
+window.title("Shop Game")
 
 # Define colors for each store
 store_colors = {
@@ -191,4 +191,4 @@ buy_button.pack(pady=10)
 
 update_store()
 
-root.mainloop()
+window.mainloop()

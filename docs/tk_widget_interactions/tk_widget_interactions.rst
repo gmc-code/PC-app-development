@@ -19,8 +19,8 @@ Variable Binding
 
     # Create the main window
     root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Tkinter Widget Interaction Examples")
+    window.geometry("300x200")
+    window.title("Tkinter Widget Interaction Examples")
 
     # Example 1: Variable Binding
     shared_var = tk.StringVar()
@@ -76,9 +76,9 @@ button2.pack(side="right")
 # Example 7: Advanced Interactions
 def scheduled_task():
     print("Task executed")
-    root.after(1000, scheduled_task)  # Repeat every 1000ms
+    window.after(1000, scheduled_task)  # Repeat every 1000ms
 
-root.after(1000, scheduled_task)
+window.after(1000, scheduled_task)
 
 # Run the application
-root.mainloop()
+window.mainloop()

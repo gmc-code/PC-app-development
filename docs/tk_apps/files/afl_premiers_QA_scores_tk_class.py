@@ -29,17 +29,17 @@ class QuizGame:
 
     def __init__(self, root):
         self.root = root
-        self.root.title("AFL Premiership Quiz Game")
+        self.window.title("AFL Premiership Quiz Game")
         self.score = 0
         self.teams = list(premiers.keys())
         random.shuffle(self.teams)
         self.current_team_index = 0
 
         # Set the window size to 600x800 pixels
-        self.root.geometry("600x800")
+        self.window.geometry("600x800")
 
         # Make the window resizable
-        self.root.resizable(True, True)
+        self.window.resizable(True, True)
 
         # Long text stored in a variable
         welcome_text = (
@@ -119,10 +119,10 @@ class QuizGame:
             self.result_label.config(text="Correct!", fg="green")
             self.score += 1
             self.current_team_index += 1
-            self.root.after(1000, self.next_question)
+            self.window.after(1000, self.next_question)
         else:
             self.result_label.config(text=f"Incorrect. {self.teams[self.current_team_index]} has won {correct_premierships} premierships.", fg="red")
-            self.root.after(2000, self.end_game)
+            self.window.after(2000, self.end_game)
 
     def end_game(self):
         if self.score == len(self.teams):
@@ -136,4 +136,4 @@ class QuizGame:
 if __name__ == "__main__":
     root = tk.Tk()
     game = QuizGame(root)
-    root.mainloop()
+    window.mainloop()

@@ -25,8 +25,8 @@ def update_costs(*args):
 
 # Create the main window
 root = tk.Tk()
-root.title("Pizza Ordering System")
-root.geometry("900x600")
+window.title("Pizza Ordering System")
+window.geometry("900x600")
 
 # Customer name
 tk.Label(root, text="Customer Name:").grid(row=0, column=0, padx=10, pady=5)
@@ -73,4 +73,4 @@ tk.Label(root, textvariable=order_cost_var).grid(row=5, column=1, padx=10, pady=
 
 
 # Run the application
-root.mainloop()
+window.mainloop()

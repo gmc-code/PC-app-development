@@ -108,8 +108,8 @@ Code
 
     # Create the main window
     root = tk.Tk()
-    root.geometry("300x200")
-    root.title("IntVar Example")
+    window.geometry("300x200")
+    window.title("IntVar Example")
 
     # Create an IntVar to hold the integer value
     int_var = tk.IntVar()
@@ -130,7 +130,7 @@ Code
     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
     # Run the application
-    root.mainloop()
+    window.mainloop()
 
 
 

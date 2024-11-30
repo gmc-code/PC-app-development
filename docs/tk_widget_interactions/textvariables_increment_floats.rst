@@ -109,8 +109,8 @@ This code creates a basic GUI with buttons to increment, decrement, and reset a 
 
     # Create the main window
     root = tk.Tk()
-    root.geometry("300x200")
-    root.title("DoubleVar Example")
+    window.geometry("300x200")
+    window.title("DoubleVar Example")
 
     # Create a DoubleVar to hold the float value
     double_var = tk.DoubleVar()
@@ -131,4 +131,4 @@ This code creates a basic GUI with buttons to increment, decrement, and reset a 
     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
     # Run the application
-    root.mainloop()
+    window.mainloop()

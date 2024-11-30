@@ -8,7 +8,7 @@ def display_options():
 
 # Create the main window
 root = tk.Tk()
-root.title("Checkbutton Example")
+window.title("Checkbutton Example")
 
 # Create a frame with a background color
 frame = tk.Frame(root, bg="light blue")
@@ -34,4 +34,4 @@ text_widget = tk.Text(root, height=2, width=40, bg="white", fg="black", font=fon
 text_widget.pack(padx=10, pady=10)
 
 # Run the main event loop
-root.mainloop()
+window.mainloop()

@@ -59,8 +59,8 @@ def update_order_list():
 
 # Create the main window
 root = tk.Tk()
-root.title("Pizza Ordering System")
-root.geometry("900x600")
+window.title("Pizza Ordering System")
+window.geometry("900x600")
 
 # Customer name
 tk.Label(root, text="Customer Name:").grid(row=0, column=0, padx=10, pady=5)
@@ -115,4 +115,4 @@ order_list = tk.Listbox(root, width=50)
 order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
 
 # Run the application
-root.mainloop()
+window.mainloop()

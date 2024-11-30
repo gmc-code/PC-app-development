@@ -217,10 +217,10 @@ Code:
             result_label.config(text="Correct!", fg="green")
             score += 1
             current_team_index += 1
-            root.after(1000, next_question)
+            window.after(1000, next_question)
         else:
             result_label.config(text=f"Incorrect. {teams[current_team_index]} has won {correct_premierships} premierships.", fg="red")
-            root.after(2000, end_game)
+            window.after(2000, end_game)
 
 
     def end_game():
@@ -238,17 +238,17 @@ Code:
 
 
     root = tk.Tk()
-    root.title("AFL Premiership Quiz Game")
+    window.title("AFL Premiership Quiz Game")
     score = 0
     teams = list(premiers.keys())
     random.shuffle(teams)
     current_team_index = 0
 
     # Set the window size to 600x800 pixels
-    root.geometry("600x800")
+    window.geometry("600x800")
 
     # Make the window resizable
-    root.resizable(True, True)
+    window.resizable(True, True)
 
     welcome_text = "Welcome to the AFL Premiership Quiz Game!\n\nRules:\n1. Guess the number of premierships won by each team.\n2. If you guess correctly, you will be asked another question.\n3. The game continues until you answer incorrectly or all teams are done.\n4. Your score is the number of consecutive correct answers. Answer all correctly to win!\n\nClick 'Start Quiz' to begin."
 
@@ -286,5 +286,5 @@ Code:
     feedback_label = tk.Label(feedback_frame, text="", font=("Helvetica", 14))
     feedback_label.pack(pady=10)
 
-    root.mainloop()
+    window.mainloop()
 

@@ -10,21 +10,21 @@ def toggle_label_color():
 
 
 # Create the main window
-root = tk.Tk()
-root.geometry("400x100")
-root.title("Toggle via checkbox Example")
+window = tk.Tk()
+window.geometry("400x100")
+window.title("Toggle via checkbox Example")
 
 # Create a BooleanVar to hold the boolean value
 bool_var = tk.BooleanVar()
 bool_var.set(False)  # Initial value
 
 # Create a Checkbutton to toggle the label color
-toggle_checkbutton = tk.Checkbutton(root, text="Blue Label", variable=bool_var, command=toggle_label_color)
+toggle_checkbutton = tk.Checkbutton(window, text="Blue Label", variable=bool_var, command=toggle_label_color)
 toggle_checkbutton.grid(row=0, column=0, padx=10, pady=20)
 
 # Create a Label widget
-label = tk.Label(root, text="Text to colour", font=("Helvetica", 16), fg="black")
+label = tk.Label(window, text="Text to colour", font=("Helvetica", 16), fg="black")
 label.grid(row=0, column=1, pady=20)
 
 # Run the application
-root.mainloop()
+window.mainloop()

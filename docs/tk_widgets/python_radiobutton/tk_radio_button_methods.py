@@ -5,7 +5,7 @@ def list_button_methods():
     root = tk.Tk()
     button = tk.Radiobutton(root, text="Click Me")
     methods = [method for method in dir(button) if callable(getattr(button, method))]
-    root.destroy()
+    window.destroy()
     return methods
 
 # Get the list of methods

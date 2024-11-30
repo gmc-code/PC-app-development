@@ -3,7 +3,7 @@ from tkinter import scrolledtext
 
 # Create the main window
 root = tk.Tk()
-root.title("Text Widget Example")
+window.title("Text Widget Example")
 
 # Create a Text widget with a scrollbar
 text_frame = tk.Frame(root)
@@ -36,4 +36,4 @@ text.config(
 )
 
 # Run the main event loop
-root.mainloop()
+window.mainloop()

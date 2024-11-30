@@ -89,8 +89,8 @@ The checkbox toggles the label color between blue and black.
 
     # Create the main window
     root = tk.Tk()
-    root.geometry("400x100")
-    root.title("Toggle via checkbox Example")
+    window.geometry("400x100")
+    window.title("Toggle via checkbox Example")
 
     # Create a BooleanVar to hold the boolean value
     bool_var = tk.BooleanVar()
@@ -105,7 +105,7 @@ The checkbox toggles the label color between blue and black.
     label.grid(row=0, column=1, pady=20)
 
     # Run the application
-    root.mainloop()
+    window.mainloop()
 
 
 ----
@@ -154,8 +154,8 @@ cget method for text
 
                     # Create the main window
                     root = tk.Tk()
-                    root.geometry("400x100")
-                    root.title("Toggle via Checkbox Example")
+                    window.geometry("400x100")
+                    window.title("Toggle via Checkbox Example")
 
                     # Create a BooleanVar to hold the boolean value
                     bool_var = tk.BooleanVar()
@@ -170,7 +170,7 @@ cget method for text
                     label.grid(row=0, column=1, pady=20)
 
                     # Run the application
-                    root.mainloop()
+                    window.mainloop()
 
 
 ----
@@ -219,8 +219,8 @@ Binary
 
                     # Create the main window
                     root = tk.Tk()
-                    root.geometry("400x100")
-                    root.title("Toggle Binary via Checkbox Example")
+                    window.geometry("400x100")
+                    window.title("Toggle Binary via Checkbox Example")
 
                     # Create a BooleanVar to hold the boolean value
                     bool_var = tk.BooleanVar()
@@ -235,4 +235,4 @@ Binary
                     label.grid(row=0, column=1, pady=20)
 
                     # Run the application
-                    root.mainloop()
+                    window.mainloop()

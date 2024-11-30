@@ -132,7 +132,7 @@ Here's an example of how to bind some of these events to a button:
     button.bind("<Leave>", on_leave)
     button.pack()
 
-    root.mainloop()
+    window.mainloop()
 
 ----
 
@@ -360,8 +360,8 @@ Widget Information
 - **winfo_reqheight**: Returns the widget's requested height.
 - **winfo_reqwidth**: Returns the widget's requested width.
 - **winfo_rgb**: Returns the RGB color value.
-- **winfo_rootx**: Returns the widget's x-coordinate relative to root.
-- **winfo_rooty**: Returns the widget's y-coordinate relative to root.
+- **winfo_rootx**: Returns the widget's x-coordinate relative to window.
+- **winfo_rooty**: Returns the widget's y-coordinate relative to window.
 - **winfo_screen**: Returns the screen's name.
 - **winfo_screencells**: Returns the number of cells in the screen colormap.
 - **winfo_screendepth**: Returns the screen color depth.
@@ -378,8 +378,8 @@ Widget Information
 - **winfo_visualsavailable**: Returns available visuals.
 - **winfo_vrootheight**: Returns the virtual root window height.
 - **winfo_vrootwidth**: Returns the virtual root window width.
-- **winfo_vrootx**: Returns the x-offset for the virtual root.
-- **winfo_vrooty**: Returns the y-offset for the virtual root.
+- **winfo_vrootx**: Returns the x-offset for the virtual window.
+- **winfo_vrooty**: Returns the y-offset for the virtual window.
 - **winfo_width**: Returns the widget's width in pixels.
 - **winfo_x**: Returns the widget's x-coordinate.
 - **winfo_y**: Returns the widget's y-coordinate.

@@ -43,7 +43,7 @@ This code demonstrates the use of check boxes (check buttons) and a text widget 
 
     # Create the main window
     root = tk.Tk()
-    root.title("Checkbutton Example")
+    window.title("Checkbutton Example")
 
     # Create a frame with a background color
     frame = tk.Frame(root, bg="light blue")
@@ -72,7 +72,7 @@ This code demonstrates the use of check boxes (check buttons) and a text widget 
     text_widget.pack(padx=10, pady=10)
 
     # Run the main event loop
-    root.mainloop()
+    window.mainloop()
 
 For loops
 ~~~~~~~~~~~~~~~
