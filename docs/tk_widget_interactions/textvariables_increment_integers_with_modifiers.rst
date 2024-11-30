@@ -20,6 +20,7 @@ Increment label integer via buttons with modifiers
 4. A label is associated with the `IntVar`: ``label = tk.Label(window, textvariable=int_var)``.
 5. Buttons are created for increment, decrement, and reset operations.
 6. `bind` is used to associate mouse clicks with functions for different increments and decrements:
+
    - `<Button-1>` triggers single-step changes. ``button_increment.bind("<Button-1>", increment_by_1)``
    - `<Alt-Button-1>` triggers 10-step changes. ``button_increment.bind("<Alt-Button-1>", increment_by_10)``
 7. The `increment_value` and `decrement_value` functions adjust the value by specified amounts.
