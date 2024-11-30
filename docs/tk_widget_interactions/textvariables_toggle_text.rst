@@ -28,14 +28,14 @@ Required Syntax
 .. py:method:: get
 
     | Syntax: ``current_value = text_var.get()``
-    | Description: Retrieves the current value of the `StringVar`.
+    | Description: Retrieves the current value of the ``StringVar``.
     | Default: None
     | Example: ``current_value = text_var.get()``
 
 .. py:method:: set
 
     | Syntax: ``text_var.set("New Value")``
-    | Description: Sets the value of the `StringVar` to the specified string.
+    | Description: Sets the value of the ``StringVar`` to the specified string.
     | Default: None
     | Example: ``text_var.set("Hello, World!")``
 
@@ -66,16 +66,16 @@ Code features
 
 2. **Link variable to Label with textvariable**:
 
-      - `label = tk.Label(window, textvariable=text_var, font=("Helvetica", 16))`: Creates a label in the `window` window. The `textvariable` parameter is linked to `text_var`, so the label text displays `text_var`'s value.
-   - `label.pack(pady=10)`: Adds the label to the window with 10 pixels of vertical padding.
+      - ``label = tk.Label(window, textvariable=text_var, font=("Helvetica", 16))``: Creates a label in the ``window`` window. The ``textvariable`` parameter is linked to ``text_var``, so the label text displays ``text_var``'s value.
+   - ``label.pack(pady=10)``: Adds the label to the window with 10 pixels of vertical padding.
 
 3. **Define the Function**:
 
-   - `def update_text()`: Defines a function, `update_text`, that checks `text_var`'s current value and toggles it between "Initial Text" and "Updated Text" by using `text_var.set()`.
+      - ``def update_text()``: Defines a function, ``update_text``, that checks ``text_var``'s current value and toggles it between "Initial Text" and "Updated Text" by using ``text_var.set()``.
 
 4. **Set Button command**:
 
-   - `button = tk.Button(window, text="Toggle Text", command=update_text)`: Creates a button with the label "Toggle Text" and sets `update_text` as the function that runs when clicked.
+   - ``button = tk.Button(window, text="Toggle Text", command=update_text)``: Creates a button with the label "Toggle Text" and sets ``update_text`` as the function that runs when clicked.
 
 
 Code

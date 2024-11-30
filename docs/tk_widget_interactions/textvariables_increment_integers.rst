@@ -26,14 +26,14 @@ Required Syntax
 .. py:method:: get
 
     | Syntax: ``current_value = int_var.get()``
-    | Description: Retrieves the current value of the `IntVar`.
+    | Description: Retrieves the current value of the ``IntVar``.
     | Default: None
     | Example: ``current_value = int_var.get()``
 
 .. py:method:: set
 
     | Syntax: ``int_var.set(new_value)``
-    | Description: Sets the value of the `IntVar` to the specified integer.
+    | Description: Sets the value of the ``IntVar`` to the specified integer.
     | Default: None
     | Example: ``int_var.set(42)``
 
@@ -59,25 +59,25 @@ Code features
 
 1. **Create a variable: IntVar**:
 
-   - `int_var = tk.IntVar()`: Creates an `IntVar` instance, `int_var`, which is a special Tkinter variable for holding integer data.
-   - `int_var.set(0)`: Sets the initial value of `int_var` to 0.
+   - ``int_var = tk.IntVar()``: Creates an ``IntVar`` instance, ``int_var``, which is a special Tkinter variable for holding integer data.
+   - ``int_var.set(0)``: Sets the initial value of ``int_var`` to 0.
 
 2. **Link variable to Label with textvariable**:
 
-   - `label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `int_var`, so the label text displays `int_var`'s value.
-   - `label.grid(row=0, column=0, columnspan=3, pady=5)`: Positions the label in the grid layout.
+   - ``label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))``: Creates a label in the ``root`` window. The ``textvariable`` parameter is linked to ``int_var``, so the label text displays ``int_var``'s value.
+   - ``label.grid(row=0, column=0, columnspan=3, pady=5)``: Positions the label in the grid layout.
 
 3. **Define the Functions**:
 
-   - `def increment_value()`: Defines a function to increment `int_var`'s value by 1.
-   - `def decrement_value()`: Defines a function to decrement `int_var`'s value by 1.
-   - `def reset_value()`: Defines a function to reset `int_var`'s value to 0.
+   - ``def increment_value()``: Defines a function to increment ``int_var``'s value by 1.
+   - ``def decrement_value()``: Defines a function to decrement ``int_var``'s value by 1.
+   - ``def reset_value()``: Defines a function to reset ``int_var``'s value to 0.
 
 4. **Set Button commands**:
 
-   - `button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")`: Creates a button to decrement the value, with a light red background.
-   - `button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")`: Creates a button to reset the value, with a light yellow background.
-   - `button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")`: Creates a button to increment the value, with a light green background.
+   - ``button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")``: Creates a button to decrement the value, with a light red background.
+   - ``button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")``: Creates a button to reset the value, with a light yellow background.
+   - ``button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")``: Creates a button to increment the value, with a light green background.
 
 Code
 ~~~~~~~~~~~

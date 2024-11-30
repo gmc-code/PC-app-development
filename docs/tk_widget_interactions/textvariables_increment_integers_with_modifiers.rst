@@ -26,14 +26,14 @@ Required Syntax
 .. py:method:: get
 
     | Syntax: ``current_value = int_var.get()``
-    | Description: Retrieves the current value of the `IntVar`.
+    | Description: Retrieves the current value of the ``IntVar``.
     | Default: None
     | Example: ``current_value = int_var.get()``
 
 .. py:method:: set
 
     | Syntax: ``int_var.set(new_value)``
-    | Description: Sets the value of the `IntVar` to the specified integer.
+    | Description: Sets the value of the ``IntVar`` to the specified integer.
     | Default: None
     | Example: ``int_var.set(42)``
 
@@ -65,10 +65,10 @@ Required Syntax
 Code features
 ~~~~~~~~~~~~~~~~~~
 
-| This Tkinter program demonstrates the use of `IntVar` to manage and display an integer value, with buttons for incrementing, decrementing, and resetting the value.
-| The variable `int_var` is bound to the label using `textvariable`, dynamically updating the label's display as the value changes.
-| Buttons use `command` functions for standard operations like resetting.
-| The `bind` method assigns specific key-modified mouse events (e.g., `<Shift-Button-1>`) to functions that increment or decrement by different amounts.
+| This Tkinter program demonstrates the use of ``IntVar`` to manage and display an integer value, with buttons for incrementing, decrementing, and resetting the value.
+| The variable ``int_var`` is bound to the label using ``textvariable``, dynamically updating the label's display as the value changes.
+| Buttons use ``command`` functions for standard operations like resetting.
+| The ``bind`` method assigns specific key-modified mouse events (e.g., ``<Shift-Button-1>``) to functions that increment or decrement by different amounts.
 | Modifier keys allow more flexible interactions with shared buttons for multiple actions.
 
 Code
