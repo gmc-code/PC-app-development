@@ -145,4 +145,77 @@ Code
     window.mainloop()
 
 
+----
 
+.. admonition:: Tasks
+
+    #. Modify the code to increment in steps of 2, keeping all numbers even.
+    #. Modify the code to increment in random steps from 1 to 10.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to increment in steps of 2, keeping all numbers even.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    INC = 2
+
+                    # Function to increment the integer value
+                    def increment_value():
+                        current_value = int_var.get()
+                        int_var.set(current_value + INC)  # Increment the value by INC
+
+
+                    # Function to decrement the integer value
+                    def decrement_value():
+                        current_value = int_var.get()
+                        int_var.set(current_value - INC)  # Decrement the value by INC
+
+
+                    # Function to reset the integer value to zero
+                    def reset_value():
+                        int_var.set(0)  # Reset the value to 0
+
+
+                    # Create the main window
+                    window = tk.Tk()
+                    window.geometry("300x200")
+                    window.title("IntVar Example")
+
+                    # Create an IntVar to hold the integer value
+                    int_var = tk.IntVar()
+                    int_var.set(0)  # Initial value
+
+                    # Create a Label widget with textvariable
+                    label = tk.Label(window, textvariable=int_var, font=("Helvetica", 16))
+                    label.grid(row=0, column=0, columnspan=3, pady=5)
+
+                    # Create Buttons to trigger the value update
+                    button_decrement = tk.Button(window, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")  # Light red
+                    button_reset = tk.Button(window, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")  # Light yellow
+                    button_increment = tk.Button(window, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")  # Light green
+
+                    # Position the buttons below the label
+                    button_decrement.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
+                    button_reset.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
+                    button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
+
+                    # Run the application
+                    window.mainloop()
+
+            .. tab-item:: Q2
+
+                Modify the code to increment in random steps from 1 to 10.
+
+                .. code-block:: python
+
+                    import tkinter as tk
