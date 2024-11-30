@@ -39,7 +39,7 @@ Required Syntax
 .. py:attribute:: textvariable
 
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
-    | Description: Associates a Tkinter variable with the label text.
+    | Description: Associates a Tkinter variable with the label text. If the variable is changed, the label text is updated.
     | Default: None
     | Example: ``label_widget = tk.Label(window, textvariable=my_var)``
 
