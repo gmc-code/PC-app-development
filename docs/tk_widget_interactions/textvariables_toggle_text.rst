@@ -66,12 +66,14 @@ Code features
 
 2. **Link variable to Label with textvariable**:
 
-      - ``label = tk.Label(window, textvariable=text_var, font=("Helvetica", 16))``: Creates a label in the ``window`` window. The ``textvariable`` parameter is linked to ``text_var``, so the label text displays ``text_var``'s value.
-   - ``label.pack(pady=10)``: Adds the label to the window with 10 pixels of vertical padding.
+   - ``label = tk.Label(window, textvariable=text_var, font=("Helvetica", 16))``: Creates a label in the ``window`` window.
+   - The ``textvariable`` parameter is linked to ``text_var``, so the label text displays ``text_var``'s value.
+
 
 3. **Define the Function**:
 
-      - ``def update_text()``: Defines a function, ``update_text``, that checks ``text_var``'s current value and toggles it between "Initial Text" and "Updated Text" by using ``text_var.set()``.
+   - ``def update_text()``: Defines a function, ``update_text``, that gets ``text_var``'s current value using ``text_var.get() ``.
+   - It toggles ``text_var`` between "Initial Text" and "Updated Text" by using ``text_var.set()``.
 
 4. **Set Button command**:
 

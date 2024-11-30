@@ -64,20 +64,21 @@ Code features
 
 2. **Link variable to Label with textvariable**:
 
-   - ``label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))``: Creates a label in the ``root`` window. The ``textvariable`` parameter is linked to ``int_var``, so the label text displays ``int_var``'s value.
-   - ``label.grid(row=0, column=0, columnspan=3, pady=5)``: Positions the label in the grid layout.
+   - ``label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))``: Creates a label in the ``root`` window.
+   - The ``textvariable`` parameter is linked to ``int_var``, so the label text displays ``int_var``'s value.
 
 3. **Define the Functions**:
 
+   - These functions use ``.get()`` and ``.set()`` methods on the variable  ``int_var``.
    - ``def increment_value()``: Defines a function to increment ``int_var``'s value by 1.
    - ``def decrement_value()``: Defines a function to decrement ``int_var``'s value by 1.
    - ``def reset_value()``: Defines a function to reset ``int_var``'s value to 0.
 
 4. **Set Button commands**:
 
-   - ``button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")``: Creates a button to decrement the value, with a light red background.
-   - ``button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")``: Creates a button to reset the value, with a light yellow background.
-   - ``button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")``: Creates a button to increment the value, with a light green background.
+   - ``button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")``: Creates a button that calls ``decrement_value`` when clicked.
+   - ``button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")``: Creates a button that calls ``reset_value`` when clicked.
+   - ``button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")``: Creates a button that calls ``increment_value`` when clicked.
 
 Code
 ~~~~~~~~~~~
