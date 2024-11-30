@@ -6,13 +6,15 @@ Increment floats
 
 ----
 
+
+Increment label float via buttons
+---------------------------------------
+
 .. image:: images/increment_float.png
     :scale: 100%
 
-----
-
 Required Syntax
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:class:: DoubleVar
 
@@ -50,34 +52,38 @@ Required Syntax
     | Example: ``button_widget = tk.Button(window, command=on_click)``
 
 
-Code example
+
+Code features
 ~~~~~~~~~~~~~~~~~~
 
-This code creates a basic GUI with buttons to increment, decrement, and reset a float value displayed in a label.
+| Here's a breakdown of the main parts of the code:
 
-1. **Using DoubleVar**:
+1. **Create a variable: DoubleVar**:
 
    - `double_var = tk.DoubleVar()`: Creates an `DoubleVar` instance, `double_var`, which is a special Tkinter variable for holding float data.
    - `double_var.set(0.0)`: Sets the initial value of `double_var` to 0.0.
 
-2. **Creating the Label Widget**:
+2. **Link variable to Label with textvariable**:
 
    - `label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `double_var`, so the label text displays `double_var`'s value.
    - `label.grid(row=0, column=0, columnspan=3, pady=5)`: Positions the label in the grid layout.
 
-3. **Defining the Update Functions**:
+3. **Defining the Functions**:
 
    - `def increment_value()`: Defines a function to increment `double_var`'s value by 0.1.
    - `def decrement_value()`: Defines a function to decrement `double_var`'s value by 0.1.
    - `def reset_value()`: Defines a function to reset `double_var`'s value to 0.0.
 
-4. **Creating the Button Widgets**:
+4. **Set Button commands**:
 
    - `button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")`: Creates a button to decrement the value, with a light red background.
    - `button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")`: Creates a button to reset the value, with a light yellow background.
    - `button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")`: Creates a button to increment the value, with a light green background.
 
+Code
+~~~~~~~~~~~~~~~~~~
 
+This code creates a basic GUI with buttons to increment, decrement, and reset a float value displayed in a label.
 
 .. code-block:: python
 

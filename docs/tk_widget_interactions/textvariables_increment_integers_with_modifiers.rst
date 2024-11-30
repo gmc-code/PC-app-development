@@ -1,6 +1,6 @@
-======================================================
-Label textvariable: Increment integers with modifiers
-======================================================
+=========================================================
+Label textvariable: Increment integers binding modifiers
+=========================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
 

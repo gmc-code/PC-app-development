@@ -73,7 +73,7 @@ Code features
    - `def decrement_value()`: Defines a function to decrement `int_var`'s value by 1.
    - `def reset_value()`: Defines a function to reset `int_var`'s value to 0.
 
-4. **Set Button command**:
+4. **Set Button commands**:
 
    - `button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")`: Creates a button to decrement the value, with a light red background.
    - `button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")`: Creates a button to reset the value, with a light yellow background.
