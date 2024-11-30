@@ -1,21 +1,24 @@
 import tkinter as tk
 
+INC = 0.001
+DECPLACES = 3
+
 
 # Function to increment the float value
 def increment_value():
     current_value = double_var.get()
-    double_var.set(f"{current_value + 0.1:.1f}")  # Increment the value by 0.1
+    double_var.set(f"{current_value + INC:.{DECPLACES}f}")  # Increment the value by INC
 
 
 # Function to decrement the float value
 def decrement_value():
     current_value = double_var.get()
-    double_var.set(f"{current_value - 0.1:.1f}")  # Decrement the value by 0.1
+    double_var.set(f"{current_value - INC:.{DECPLACES}f}")  # Decrement the value by INC
 
 
 # Function to reset the float value to zero
 def reset_value():
-    double_var.set(f"{0.0:.1f}")  # Reset the value to 0.0
+    double_var.set(f"{0.0:.{DECPLACES}f}")  # Reset the value
 
 
 # Create the main window
@@ -25,7 +28,7 @@ window.title("DoubleVar Example")
 
 # Create a DoubleVar to hold the float value
 double_var = tk.DoubleVar()
-double_var.set(f"{0.0:.1f}")  # Initial value
+double_var.set(f"{0.0:.{DECPLACES}f}")  # Initial value
 
 # Create a Label widget with textvariable
 label = tk.Label(window, textvariable=double_var, font=("Helvetica", 16))
