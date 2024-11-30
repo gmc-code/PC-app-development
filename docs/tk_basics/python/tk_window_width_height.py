@@ -1,24 +1,24 @@
 import tkinter as tk
 
 
-def window_set_height(window, height):
+def window_set_height(root, height):
     # Wait for the window to be fully initialized
-    window.update_idletasks()
-    window.geometry(f"{window.winfo_width()}x{height}")
+    root.update_idletasks()
+    root.geometry(f"{root.winfo_width()}x{height}")
 
 
-def window_set_width(window, width):
+def window_set_width(root, width):
     # Wait for the window to be fully initialized
-    window.update_idletasks()
-    window.geometry(f"{width}x{window.winfo_height()}")
+    root.update_idletasks()
+    root.geometry(f"{width}x{root.winfo_height()}")
 
 
-window = tk.Tk()
-window.title("Tkinter Window - Center")
+root = tk.Tk()
+root.title("Tkinter Window - Center")
 
 # set the top left position to 250,50
-window.geometry(f"+{250}+{50}")
-window_set_width(window, 1000)
-window_set_height(window, 250)
+root.geometry(f"+{250}+{50}")
+window_set_width(root, 1000)
+window_set_height(root, 250)
 
-window.mainloop()
+root.mainloop()

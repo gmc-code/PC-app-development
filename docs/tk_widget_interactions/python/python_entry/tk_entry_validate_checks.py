@@ -15,17 +15,17 @@ def on_validate(action, index, value_if_allowed, prior_value, text, validation_t
     return True
 
 
-window = tk.Tk()
-window.title("Validation Example")
-window.geometry("500x350")
+root = tk.Tk()
+root.title("Validation Example")
+root.geometry("500x350")
 
 output_text = tk.StringVar()
-output_label = tk.Label(window, font=("Arial",16), textvariable=output_text, justify="left")
+output_label = tk.Label(root, font=("Arial",16), textvariable=output_text, justify="left")
 output_label.pack(pady=10)
 
 entry_var = tk.StringVar()
-entry_field = tk.Entry(window, font=("Arial",24), textvariable=entry_var, validate="key", validatecommand=(window.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
+entry_field = tk.Entry(root, font=("Arial",24), textvariable=entry_var, validate="key", validatecommand=(root.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
 entry_field.pack(pady=10)
 
 
-window.mainloop()
+root.mainloop()

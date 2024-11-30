@@ -47,8 +47,8 @@ def add_order():
 
 # Create the main window
 root = tk.Tk()
-window.title("Pizza Ordering System")
-window.geometry("900x600")
+root.title("Pizza Ordering System")
+root.geometry("900x600")
 
 # Customer name
 tk.Label(root, text="Customer Name:").grid(row=0, column=0, padx=10, pady=5)
@@ -98,4 +98,4 @@ add_button = tk.Button(root, text="Add Order", command=add_order)
 add_button.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w")
 
 # Run the application
-window.mainloop()
+root.mainloop()

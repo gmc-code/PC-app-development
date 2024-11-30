@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Create the main window
 root = tk.Tk()
-window.title("Interactive Text Widget Example")
+root.title("Interactive Text Widget Example")
 
 # Create a StringVar to hold the text content
 text_var = tk.StringVar()
@@ -34,4 +34,4 @@ remove_button = tk.Button(button_frame, text="Remove Text", command=remove_text)
 remove_button.pack(side="left", padx=5)
 
 # Run the main event loop
-window.mainloop()
+root.mainloop()

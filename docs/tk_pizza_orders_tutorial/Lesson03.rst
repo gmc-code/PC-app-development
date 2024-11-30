@@ -101,7 +101,7 @@ See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
         pizza_var = tk.StringVar(root)
 
     - ``tk.StringVar`` is a class in the ``tkinter`` module that provides a way to manage the value of a widget, such as a label or entry, as a string.
-    - ``pizza_var`` is an instance of ``StringVar`` associated with the ``root`` window.
+    - ``pizza_var`` is an instance of ``StringVar``.
     - This variable will hold the value of the selected pizza type and can be used to retrieve or update the value dynamically.
 
 

@@ -1,14 +1,14 @@
 import tkinter as tk
 
-window = tk.Tk()
+root = tk.Tk()
 
-widget = tk.Button(window)
+widget = tk.Button(root)
 widget_options = widget.keys()
 
 for option in widget_options:
     print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
 
-# widget2 = tk.Frame(window)
+# widget2 = tk.Frame(root)
 # in1 = set(widget.configure().keys()) - set(widget2.configure().keys())
 # for option in in1:
 #     print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option

@@ -2,7 +2,7 @@
 tk geometry grid
 ====================================================
 
-| The grid geometry manager allows you to arrange widgets within a window.
+| The grid geometry manager allows you to arrange widgets within a root.
 | See: https://tkdocs.com/tutorial/grid.html
 | grid: see https://www.youtube.com/watch?v=IJ-iVnN09-8
 | grid: see https://www.pythontutorial.net/tkinter/tkinter-grid/
@@ -108,15 +108,15 @@ Example code
 
 
     # Create the main application window
-    window = tk.Tk()
-    window.title("grid")
-    window.geometry("200x150")
+    root = tk.Tk()
+    root.title("grid")
+    root.geometry("200x150")
 
     # define widgets
-    label1 = tk.Label(window, text="label 1", bg="light blue")
-    label2 = tk.Label(window, text="label 2", bg="light blue")
-    label3 = tk.Label(window, text="label 3", bg="light blue")
-    label4 = tk.Label(window, text="label 4", bg="light green")
+    label1 = tk.Label(root, text="label 1", bg="light blue")
+    label2 = tk.Label(root, text="label 2", bg="light blue")
+    label3 = tk.Label(root, text="label 3", bg="light blue")
+    label4 = tk.Label(root, text="label 4", bg="light green")
 
     # place widgets in grid layout
     label1.grid(row=0, column=0)
@@ -125,7 +125,7 @@ Example code
     label4.grid(row=3, column=0, columnspan=3, sticky="ew")
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()
 
 
 
@@ -159,7 +159,7 @@ columnconfigure and rowconfigure
     - `weight`: Resizes column on window resizing. Determines how much any extra space is distributed among columns. Columns with higher weights will get more space.
     - `uniform`: If set to a string value, columns with the same value will be of the same size.
     - `pad`: Specifies padding to add around the column.
-    -  e.g. `window.columnconfigure(1, weight=2, pad=10)`
+    -  e.g. `root.columnconfigure(1, weight=2, pad=10)`
 
 .. py:function:: widget.rowconfigure(row, option=value, ...)
 

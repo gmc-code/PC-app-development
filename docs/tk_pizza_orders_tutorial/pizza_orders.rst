@@ -17,7 +17,7 @@ Grid planning:
 Tutorial Outline
 ----------------------
 
-| Create a window.
+| Create a root.
 | Add Customer Label and Entry Widget
 | Add Radio Buttons for Pizza Types
 | Add Radio Buttons for Pizza Sizes

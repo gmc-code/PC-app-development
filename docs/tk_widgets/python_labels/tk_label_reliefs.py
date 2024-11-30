@@ -4,8 +4,8 @@ BGCOL = "LightGray"
 FGCOL = "black"
 
 root = tk.Tk()
-window.geometry("600x400")
-window.title("Relief options with different border widths")
+root.geometry("600x400")
+root.title("Relief options with different border widths")
 
 # Function to create a row of labels with different border widths
 def create_label_row(text, relief):
@@ -29,4 +29,4 @@ create_label_row("SUNKEN", tk.SUNKEN)
 create_label_row("GROOVE", tk.GROOVE)
 create_label_row("RIDGE", tk.RIDGE)
 
-window.mainloop()
+root.mainloop()

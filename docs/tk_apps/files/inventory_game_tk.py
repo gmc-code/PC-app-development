@@ -138,9 +138,9 @@ def buy_items():
     )  # Update the inventory display with purchased items
 
 
-# Initialize the Tkinter root window
+# Initialize the Tkinter window
 root = tk.Tk()
-window.title("Shop Game")
+root.title("Shop Game")
 
 # Define colors for each store
 store_colors = {
@@ -191,4 +191,4 @@ buy_button.pack(pady=10)
 
 update_store()
 
-window.mainloop()
+root.mainloop()

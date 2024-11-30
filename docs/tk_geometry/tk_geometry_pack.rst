@@ -2,7 +2,7 @@
 tk geometry pack
 ====================================================
 
-| The pack geometry manager allows you to arrange widgets within a window.
+| The pack geometry manager allows you to arrange widgets within a root.
 | See: https://www.pythontutorial.net/tkinter/tkinter-pack/
 | See: https://www.geeksforgeeks.org/python-pack-method-in-tkinter/?ref=lbp
 
@@ -52,15 +52,15 @@ Options for the `pack()` geometry manager
 
     import tkinter as tk
 
-    window = tk.Tk()
+    root = tk.Tk()
 
-    label1 = tk.Label(window, text="Red", bg="red", fg="white")
+    label1 = tk.Label(root, text="Red", bg="red", fg="white")
     label1.pack(ipadx=30, ipady=6)
 
-    label2 = tk.Label(window, text="Purple", bg="purple", fg="white")
+    label2 = tk.Label(root, text="Purple", bg="purple", fg="white")
     label2.pack(pady=20, ipadx=8, ipady=12)
 
-    window.mainloop()
+    root.mainloop()
 
 
 **Anchor**
@@ -82,20 +82,20 @@ Example: To create labels anchored at different positions:
 
     import tkinter as tk
 
-    window = tk.Tk()
-    window.title("pack anchor")
-    window.geometry('250x150')
+    root = tk.Tk()
+    root.title("pack anchor")
+    root.geometry('250x150')
 
-    label1 = tk.Label(window, text="Top-Left", bg="lightblue")
+    label1 = tk.Label(root, text="Top-Left", bg="lightblue")
     label1.pack(anchor='nw')
 
-    label2 = tk.Label(window, text="Center", bg="lightgreen")
+    label2 = tk.Label(root, text="Center", bg="lightgreen")
     label2.pack(anchor='center')
 
-    label3 = tk.Label(window, text="Bottom-Right", bg="lightpink")
+    label3 = tk.Label(root, text="Bottom-Right", bg="lightpink")
     label3.pack(anchor='se')
 
-    window.mainloop()
+    root.mainloop()
 
 
 **Side**
@@ -116,9 +116,9 @@ Example: To create labels anchored at different positions:
 
     import tkinter as tk
 
-    window = tk.Tk()
-    window.title("pack side")
-    window.geometry("250x150")
+    root = tk.Tk()
+    root.title("pack side")
+    root.geometry("250x150")
 
     button1 = tk.Button(text="Left")
     button1.pack(side="left")
@@ -132,7 +132,7 @@ Example: To create labels anchored at different positions:
     button4 = tk.Button(text="Bottom")
     button4.pack(side="bottom")
 
-    window.mainloop()
+    root.mainloop()
 
 **Expand**
 ~~~~~~~~~~~~~~~~
@@ -164,12 +164,12 @@ Example: Use `expand=True` so fill options are shown.
 
     import tkinter as tk
 
-    window = tk.Tk()
-    window.title("pack fill x")
-    window.geometry("250x150")
+    root = tk.Tk()
+    root.title("pack fill x")
+    root.geometry("250x150")
 
-    label = tk.Label(window, text="Expanding Label", bg="lightblue")
+    label = tk.Label(root, text="Expanding Label", bg="lightblue")
     label.pack(expand=True, fill='x')
 
-    window.mainloop()
+    root.mainloop()
 

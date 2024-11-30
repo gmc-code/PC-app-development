@@ -33,11 +33,11 @@ Sample OptionMenu
         text_widget.insert(tk.END, f"You selected: \n{selected_fruit}")
 
     # Create the main window
-    window = tk.Tk()
-    window.title("Fruit Selector")
+    root = tk.Tk()
+    root.title("Fruit Selector")
 
     # Define a variable to hold the selected option
-    fruit_var = tk.StringVar(window)
+    fruit_var = tk.StringVar(root)
     fruit_var.trace("w", show_selection)  # Trace the variable to call show_selection on change
 
     # Define the options for the OptionMenu
@@ -47,7 +47,7 @@ Sample OptionMenu
     fruit_var.set(fruits[0])
 
     # Create the OptionMenu widget
-    option_menu = tk.OptionMenu(window, fruit_var, *fruits)
+    option_menu = tk.OptionMenu(root, fruit_var, *fruits)
        # Define the options for the OptionMenu
     fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
 
@@ -55,14 +55,14 @@ Sample OptionMenu
     fruit_var.set(fruits[0])
 
     # Create the OptionMenu widget
-    option_menu = tk.OptionMenu(window, fruit_var, *fruits) option_menu.pack(pady=10)
+    option_menu = tk.OptionMenu(root, fruit_var, *fruits) option_menu.pack(pady=10)
 
     # Create a text widget to display the selected option with increased space
-    text_widget = tk.Text(window, height=2, width=20, bg="white", fg="black", font=("Helvetica", 12), bd=2, relief="solid")
+    text_widget = tk.Text(root, height=2, width=20, bg="white", fg="black", font=("Helvetica", 12), bd=2, relief="solid")
     text_widget.pack(pady=10, padx=20)
 
     # Run the main event loop
-    window.mainloop()
+    root.mainloop()
 
 
 | ``*fruits``: The asterisk (`*`) is used to unpack the list `fruits` into individual arguments.
@@ -305,9 +305,9 @@ Default options
 
     import tkinter as tk
 
-    window = tk.Tk()
+    root = tk.Tk()
 
-    button = tk.Button(window)
+    button = tk.Button(root)
     button_options = button.keys()
 
     for option in button_options:

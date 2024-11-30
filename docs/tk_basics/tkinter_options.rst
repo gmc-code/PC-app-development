@@ -15,7 +15,7 @@ At object creation time
 
 .. code-block:: python
 
-    button_1 = tk.Button(window, text="Button 1", fg="blue", bg="red")
+    button_1 = tk.Button(root, text="Button 1", fg="blue", bg="red")
 
 After object creation
 -------------------------
@@ -65,14 +65,14 @@ Example code
     import tkinter as tk
 
 
-    window = tk.Tk()
-    window.title("pack side")
-    window.geometry("250x150")
+    root = tk.Tk()
+    root.title("pack side")
+    root.geometry("250x150")
 
-    button_1 = tk.Button(window, text="Button 1", fg="blue", bg="red")
+    button_1 = tk.Button(root, text="Button 1", fg="blue", bg="red")
     button_1.pack()
 
-    button_2 = tk.Button(window, text="Button 2")
+    button_2 = tk.Button(root, text="Button 2")
     button_2.pack()
 
     # Function to change the button's appearance
@@ -80,14 +80,14 @@ Example code
         button_2.config(fg="green", bg="yellow", font=("Arial", 24))
 
     # Schedule the change_button function to run after 3000 milliseconds (3 seconds)
-    window.after(3000, change_button)
+    root.after(3000, change_button)
 
-    window.mainloop()
+    root.mainloop()
 
 
-| This code users window.after function to make changes after a specified time after the window is opened.
+| This code users root.after function to make changes after a specified time after the window is opened.
 
-.. function:: window.after(delay_ms, callback)
+.. function:: root.after(delay_ms, callback)
 
    Schedule a callback function to be called after a given time.
 

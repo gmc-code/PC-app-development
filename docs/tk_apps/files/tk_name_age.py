@@ -26,20 +26,20 @@ def place_name_age():
 
 
 # Create the main window
-window = tk.Tk()
-window.title("Name and age")
-window.geometry("700x380")
-window.configure(bg=BG_COLOR)
+root = tk.Tk()
+root.title("Name and age")
+root.geometry("700x380")
+root.configure(bg=BG_COLOR)
 
 #  create widgets
-name_label = tk.Label(window, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
+name_label = tk.Label(root, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+age_label = tk.Label(root, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+name_entry = tk.Entry(root, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+age_entry = tk.Entry(root, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+name_age_button = tk.Button(root, text="Name and Age", bg=BG_COLOR,
                             fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
 # Text widget height=2 where height is in text rows.
-name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+name_age_text = tk.Text(root, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 
 # place widgets on window
 name_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
@@ -50,4 +50,4 @@ name_age_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 name_age_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 # Start the main event loop
-window.mainloop()
+root.mainloop()

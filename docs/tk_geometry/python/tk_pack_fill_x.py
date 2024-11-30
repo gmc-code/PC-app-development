@@ -1,10 +1,10 @@
 import tkinter as tk
 
-window = tk.Tk()
-window.title("pack fill x")
-window.geometry("250x150")
+root = tk.Tk()
+root.title("pack fill x")
+root.geometry("250x150")
 
-label = tk.Label(window, text="Expanding Label", bg="lightblue")
+label = tk.Label(root, text="Expanding Label", bg="lightblue")
 label.pack(expand=True, fill='x')
 
-window.mainloop()
+root.mainloop()

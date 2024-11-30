@@ -22,21 +22,21 @@ Code summary
 Create the main window:
 ---------------------------------
 
-    - ``window = tk.Tk()`` creates the main application window.
-    - ``window.title("Name and age")`` sets the title of the window to "Name and age".
-    - ``window.geometry('700x380')`` specifies the initial size of the window (700 pixels wide and 380 pixels tall).
-    - ``window.configure(bg="#ffffff")`` sets the background color of the window to white.
+    - ``root = tk.Tk()`` creates the main application root.
+    - ``root.title("Name and age")`` sets the title of the window to "Name and age".
+    - ``root.geometry('700x380')`` specifies the initial size of the window (700 pixels wide and 380 pixels tall).
+    - ``root.configure(bg="#ffffff")`` sets the background color of the window to white.
 
     .. code-block:: python
 
         import tkinter as tk
 
-        window = tk.Tk()
-        window.title("Name and age")
-        window.geometry("700x380")
-        window.configure(bg="#ffffff")
+        root = tk.Tk()
+        root.title("Name and age")
+        root.geometry("700x380")
+        root.configure(bg="#ffffff")
 
-        window.mainloop()
+        root.mainloop()
 
 ----
 
@@ -56,7 +56,7 @@ Update the window colour using the constant:
 
 .. code-block:: python
 
-    window.configure(bg=BG_COLOR)
+    root.configure(bg=BG_COLOR)
 
 
 - Create several widgets (GUI elements) that will be displayed in the window:
@@ -67,13 +67,13 @@ Update the window colour using the constant:
 
 .. code-block:: python
 
-    name_label = tk.Label(window, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR, fg=FG_COLOR,
+    name_label = tk.Label(root, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    age_label = tk.Label(root, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_entry = tk.Entry(root, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    age_entry = tk.Entry(root, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_age_button = tk.Button(root, text="Name and Age", bg=BG_COLOR, fg=FG_COLOR,
                                 font=FONT_STYLE, command=place_name_age)
-    name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_age_text = tk.Text(root, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 
 
 Grid Placement of widgets on the window:
@@ -84,7 +84,7 @@ Design the grid positions:
 .. image:: images/name_age_grid.png
     :scale: 100%
 
-- Use the `grid` method to place the widgets in rows and columns in the window.
+- Use the `grid` method to place the widgets in rows and columns in the root.
 - The `row` and `column` parameters determine the position of each widget.
 - The labels and entry fields are placed in rows 0 and 1.
 - The button and text widget are placed in row 2 and 3.
@@ -182,20 +182,20 @@ Full code
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("Name and age")
-    window.geometry("700x380")
-    window.configure(bg=BG_COLOR)
+    root = tk.Tk()
+    root.title("Name and age")
+    root.geometry("700x380")
+    root.configure(bg=BG_COLOR)
 
     #  create widgets
-    name_label = tk.Label(window, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    age_label = tk.Label(window, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    age_entry = tk.Entry(window, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    name_age_button = tk.Button(window, text="Name and Age", bg=BG_COLOR,
+    name_label = tk.Label(root, text="Name", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    age_label = tk.Label(root, text="Age", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_entry = tk.Entry(root, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    age_entry = tk.Entry(root, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_age_button = tk.Button(root, text="Name and Age", bg=BG_COLOR,
                                 fg=FG_COLOR, font=FONT_STYLE, command=place_name_age)
     # Text widget height=2 where height is in text rows.
-    name_age_text = tk.Text(window, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    name_age_text = tk.Text(root, height=2, width=30, bg=BG_TEXT_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 
     # place widgets on window
     name_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
@@ -206,7 +206,7 @@ Full code
     name_age_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()
 
 ----
 

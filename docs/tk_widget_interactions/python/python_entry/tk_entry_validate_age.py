@@ -9,14 +9,14 @@ def validate_age(new_value):
         return new_value == ""  # Returns True if empty, otherwise False
 
 
-window = tk.Tk()
-window.title("Age Validation Example")
-window.geometry("500x300")  # Set window size
+root = tk.Tk()
+root.title("Age Validation Example")
+root.geometry("500x300")  # Set window size
 
 # Register the validation function
-vcmd = (window.register(validate_age), "%P")
+vcmd = (root.register(validate_age), "%P")
 
-entry = tk.Entry(window, font=("Arial", 24), validate="key", validatecommand=vcmd)
+entry = tk.Entry(root, font=("Arial", 24), validate="key", validatecommand=vcmd)
 entry.pack(pady=10)
 
-window.mainloop()
+root.mainloop()

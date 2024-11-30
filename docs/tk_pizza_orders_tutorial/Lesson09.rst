@@ -55,7 +55,7 @@ Adding font and colour settings to tkinter widgets
 .. code-block:: python
 
     # Create the main window
-    window.configure(bg=TEXT_BG)
+    root.configure(bg=TEXT_BG)
 
 .. code-block:: python
 

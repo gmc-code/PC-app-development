@@ -301,9 +301,9 @@ Code:
         update_store()  # Refresh the store display to remove purchased items
         update_inventory_display()  # Update the inventory display with purchased items
 
-    # Initialize the Tkinter root window
+    # Initialize the Tkinter window
     root = tk.Tk()
-    window.title("Shop Game")
+    root.title("Shop Game")
 
     # Define colors for each store
     store_colors = {"Blacksmith": "#D3D3D3",
@@ -344,7 +344,7 @@ Code:
 
     update_store()
 
-    window.mainloop()
+    root.mainloop()
 
 ----
 

@@ -30,15 +30,15 @@ def on_validate(action, index, value_if_allowed, prior_value, text, validation_t
     return True
 
 
-window = tk.Tk()
-window.title("Password Validator")
-window.geometry("300x200")
+root = tk.Tk()
+root.title("Password Validator")
+root.geometry("300x200")
 
 password_var = tk.StringVar()
-password_entry = tk.Entry(window, font=("Arial", 24), textvariable=password_var, show="*", validate="focusout", validatecommand=(window.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
+password_entry = tk.Entry(root, font=("Arial", 24), textvariable=password_var, show="*", validate="focusout", validatecommand=(root.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
 password_entry.pack(pady=10)
 
-validate_button = tk.Button(window, font=("Arial", 24), text="Validate Password", command=validate_password)
+validate_button = tk.Button(root, font=("Arial", 24), text="Validate Password", command=validate_password)
 validate_button.pack(pady=10)
 
-window.mainloop()
+root.mainloop()

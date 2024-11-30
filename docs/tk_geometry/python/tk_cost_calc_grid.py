@@ -11,21 +11,21 @@ def calculate_price():
 
 
 # Create the main window
-window = tk.Tk()
-window.title("grid calc")
-window.geometry("250x150")
+root = tk.Tk()
+root.title("grid calc")
+root.geometry("250x150")
 
 #  create widgets in frame
-price_per_item_label = tk.Label(window, text="Price per item")
-price_per_item_entry = tk.Entry(window)
+price_per_item_label = tk.Label(root, text="Price per item")
+price_per_item_entry = tk.Entry(root)
 
-number_of_items_label = tk.Label(window, text="Number of items")
-number_of_items_entry = tk.Entry(window)
+number_of_items_label = tk.Label(root, text="Number of items")
+number_of_items_entry = tk.Entry(root)
 
-total_price_label = tk.Label(window, text="Total price")
-total_price_entry = tk.Entry(window)
+total_price_label = tk.Label(root, text="Total price")
+total_price_entry = tk.Entry(root)
 
-calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
+calculate_button = tk.Button(root, text="Calculate total", bg="light blue", command=calculate_price)
 
 # # place widgets
 price_per_item_label.grid(row=0, column=0)
@@ -38,4 +38,4 @@ total_price_label.grid(row=3, column=0)
 total_price_entry.grid(row=3, column=1)
 
 # Start the main event loop
-window.mainloop()
+root.mainloop()

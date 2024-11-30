@@ -22,22 +22,22 @@ def reset_value():
 
 
 # Create the main window
-window = tk.Tk()
-window.geometry("300x200")
-window.title("DoubleVar Example")
+root = tk.Tk()
+root.geometry("300x200")
+root.title("DoubleVar Example")
 
 # Create a DoubleVar to hold the float value
 double_var = tk.DoubleVar()
 double_var.set(f"{0.0:.{DECPLACES}f}")  # Initial value
 
 # Create a Label widget with textvariable
-label = tk.Label(window, textvariable=double_var, font=("Helvetica", 16))
+label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))
 label.grid(row=0, column=0, columnspan=3, pady=5)
 
 # Create Buttons to trigger the value update
-button_decrement = tk.Button(window, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")  # Light red
-button_reset = tk.Button(window, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")  # Light yellow
-button_increment = tk.Button(window, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")  # Light green
+button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")  # Light red
+button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")  # Light yellow
+button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")  # Light green
 
 # Position the buttons below the label
 button_decrement.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
@@ -45,4 +45,4 @@ button_reset.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
 button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
 # Run the application
-window.mainloop()
+root.mainloop()

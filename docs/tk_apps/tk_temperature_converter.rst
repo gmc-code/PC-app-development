@@ -23,13 +23,13 @@ Start with the basic setup of the Tkinter window and start the main event loop.
     import tkinter as tk
 
     # Create the main window
-    window = tk.Tk()
-    window.title("Fahrenheit to Celsius Converter")
-    window.geometry("550x350")
-    window.configure(bg="#ffffff")
+    root = tk.Tk()
+    root.title("Fahrenheit to Celsius Converter")
+    root.geometry("550x350")
+    root.configure(bg="#ffffff")
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()
 
 
 ----
@@ -42,11 +42,11 @@ Add the widgets for the input and output fields, and the convert button.
 .. code-block:: python
 
     # Create widgets
-    f_label = tk.Label(window, text="Fahrenheit")
-    f_entry = tk.Entry(window, width=10)
-    c_label = tk.Label(window, text="Celsius")
-    c_text = tk.Text(window, height=1, width=10)
-    convert_button = tk.Button(window, text="Convert", width=20)
+    f_label = tk.Label(root, text="Fahrenheit")
+    f_entry = tk.Entry(root, width=10)
+    c_label = tk.Label(root, text="Celsius")
+    c_text = tk.Text(root, height=1, width=10)
+    convert_button = tk.Button(root, text="Convert", width=20)
 
 ----
 
@@ -89,11 +89,11 @@ Next, add formatting to the widgets, storing colours and font settings in consta
     FONT_STYLE = ("Arial", 32)
 
     # Create widgets
-    f_label = tk.Label(window, text="Fahrenheit", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-    f_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-    c_label = tk.Label(window, text="Celsius", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    c_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+    f_label = tk.Label(root, text="Fahrenheit", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+    f_entry = tk.Entry(root, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+    c_label = tk.Label(root, text="Celsius", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+    c_text = tk.Text(root, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+    convert_button = tk.Button(root, text="Convert", width=20, bg=BUTTON_BG_COLOR,
                                 fg=BUTTON_FG_COLOR, font=FONT_STYLE)
 
 
@@ -101,7 +101,7 @@ Update the window colour:
 
 .. code-block:: python
 
-    window.configure(bg=WINDOW_BG_COLOR)
+    root.configure(bg=WINDOW_BG_COLOR)
 
 ----
 
@@ -149,7 +149,7 @@ Finally, we'll connect the convert button to the `convert_f_to_c` function.
 
 .. code-block:: python
 
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+    convert_button = tk.Button(root, text="Convert", width=20, bg=BUTTON_BG_COLOR,
                                 fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_f_to_c)
 
 ----
@@ -192,17 +192,17 @@ Full Code
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("Fahrenheit to Celsius Converter")
-    window.geometry("550x350")
-    window.configure(bg=WINDOW_BG_COLOR)
+    root = tk.Tk()
+    root.title("Fahrenheit to Celsius Converter")
+    root.geometry("550x350")
+    root.configure(bg=WINDOW_BG_COLOR)
 
     # Create widgets
-    f_label = tk.Label(window, text="Fahrenheit", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-    f_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-    c_label = tk.Label(window, text="Celsius", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    c_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-    convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR,
+    f_label = tk.Label(root, text="Fahrenheit", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+    f_entry = tk.Entry(root, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+    c_label = tk.Label(root, text="Celsius", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+    c_text = tk.Text(root, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+    convert_button = tk.Button(root, text="Convert", width=20, bg=BUTTON_BG_COLOR,
                                 fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_f_to_c)
 
     # Place widgets on window
@@ -213,7 +213,7 @@ Full Code
     convert_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()
 
 ----
 

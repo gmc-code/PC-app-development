@@ -10,7 +10,7 @@ PASSWORD = "123"
 
 
 def custom_messagebox(title, message, parent):
-    """Custom messagebox aligned over the parent widget and disabling the parent window."""
+    """Custom messagebox aligned over the parent widget and disabling the parent root."""
     # Disable parent window while the messagebox is active
     parent.attributes('-disabled', True)
 
@@ -56,19 +56,19 @@ def login():
     entered_username = username_entry.get()
     entered_password = password_entry.get()
     if entered_username == USERNAME and entered_password == PASSWORD:
-        custom_messagebox("Login", "Logged in successfully!", window)
+        custom_messagebox("Login", "Logged in successfully!", root)
     else:
-        custom_messagebox("Login Error", "Invalid login", window)
+        custom_messagebox("Login Error", "Invalid login", root)
 
 
 # Create the main window
-window = tk.Tk()
-window.title("Login form")
-window.geometry("600x440")
-window.configure(bg=BG_COLOR)
+root = tk.Tk()
+root.title("Login form")
+root.geometry("600x440")
+root.configure(bg=BG_COLOR)
 
 # Create frame widget for other widgets
-frame = tk.Frame(window, bg=BG_COLOR)
+frame = tk.Frame(root, bg=BG_COLOR)
 frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
 
 # Create widgets inside the frame
@@ -87,4 +87,4 @@ username_entry.grid(row=1, column=1, pady=20)
 password_entry.grid(row=2, column=1, pady=20)
 login_button.grid(row=3, column=0, columnspan=2, pady=20)
 
-window.mainloop()
+root.mainloop()

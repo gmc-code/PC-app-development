@@ -1,8 +1,8 @@
 import tkinter as tk
 
-window = tk.Tk()
+root = tk.Tk()
 
-widget = tk.Checkbutton(window)
+widget = tk.Checkbutton(root)
 widget_options = widget.keys()
 
 for option in widget_options:

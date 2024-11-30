@@ -24,7 +24,7 @@ References
 #. Calculator icon: https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png
 #. Grid panel syntax: https://anvil.works/docs/api/anvil#GridPanel
 #. Button syntax: https://anvil.works/docs/api/anvil#Button
- 
+
 .. image:: images/calculator/Calculator-icon.png
     :scale: 60%
 
@@ -102,15 +102,15 @@ Code for buttons step 1
 | See Button syntax: https://anvil.works/docs/api/anvil#Button
 
 | Use ``self.btn = {}`` to set up the button dictionary which will store each button object with the button text as the key.
-| Use ``gp = GridPanel()`` to set up an empty Grid panel to which the buttons will be added. 
+| Use ``gp = GridPanel()`` to set up an empty Grid panel to which the buttons will be added.
 | Use ``enumerate(chars)`` to turn the list into a dictionary like object where each button has a key starting from 0, and the button text is the dictionary value.
 | Loop through the enumerate object using: ``for idx,i in enumerate(chars):``, where ``idx`` is the key and ``i`` is the button text.
 | Set some default values for the button variables to be adjusted later: ``row``, background colour ``bg_col``, foreground colour ``fg_col``, and button width ``btn_width``.
 | Create each button ``self.btn[i]``. The self prefix is required since this is an object in a class, ``Form1``.
 | Add each button to the Grid panel using: ``gp.add_component()``.
 | Add the Grid panel to the form using ``self.add_component(gp)``.
-| Add a spacer at the bottom of the form to fill the screen. 
-| Specify the spacer height first using ``self.space = Spacer(height=500)``. 
+| Add a spacer at the bottom of the form to fill the screen.
+| Specify the spacer height first using ``self.space = Spacer(height=500)``.
 | Then add it to the form using ``self.add_component(self.space)``.
 
 
@@ -144,7 +144,7 @@ Code for buttons step 2
 
 | Replace the default value for the button row based on the enumerate index, ``idx``.
 | The ``chars`` list has been set out as it will appear on screen, with 3, 4, 4, 4, 3 buttons per row.
-| These values are used to create the if, elif, else block in which the rows are specified from A to E. 
+| These values are used to create the if, elif, else block in which the rows are specified from A to E.
 
 .. code-block:: python
 
@@ -168,7 +168,7 @@ Code for buttons step 2
 Code for buttons step 3
 ------------------------------
 
-| Replace the default values for the button colours with those 
+| Replace the default values for the button colours with those
 | based on the text value, ``i in enumerate(chars)``.
 | See Colour hex values: https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185
 
@@ -176,7 +176,7 @@ Code for buttons step 3
 
         # enumerate buttons
         for idx,i in enumerate(chars):
-  
+
             #btn colour
             if i in ["AC", "C"]:
                 bg_col = "#999999"
@@ -187,7 +187,7 @@ Code for buttons step 3
             else:
                 bg_col = "#444444"
                 fg_col = "#FFFFFF"
-            
+
 
 ----
 
@@ -202,12 +202,12 @@ Code for buttons step 4
 
         # enumerate buttons
         for idx,i in enumerate(chars):
-            
+
             #btn width
             if i in ["AC", "0"]:
                 btn_width = 2
             else:
-                btn_width = 1  
+                btn_width = 1
 
 
 ----
@@ -225,7 +225,7 @@ Code for buttons click method
 | If the AC button, all clear, is pressed, clear the text box with: ``self.text_box_1.text = ""``.
 | If the C button, clear last entry, is pressed, clear the last character of the text box with: ``self.text_box_1.text = self.text_box_1.text[:-1]``.
 | When the ``=`` button is pressed, use the ``eval`` function to convert the expression in the text box to a value.
-| This needs to be placed in a try except block to handle cases in which the maths string can't be evaluated. e.g "4+/*3" 
+| This needs to be placed in a try except block to handle cases in which the maths string can't be evaluated. e.g "4+/*3"
 
 
 .. code-block:: python
@@ -303,7 +303,7 @@ Final code
                     row = 'D'
                 else:
                     row = 'E'
-                    
+
                 #btn colour
                 if i in ["AC", "C"]:
                     bg_col = "#999999"
@@ -314,13 +314,13 @@ Final code
                 else:
                     bg_col = "#444444"
                     fg_col = "#FFFFFF"
-                    
+
                 #btn width
                 if i in ["AC", "0"]:
                     btn_width = 2
                 else:
-                    btn_width = 1  
-                
+                    btn_width = 1
+
                 #create btns
                 self.btn[i] = Button(align="full", text=i, font="Consolas", font_size=32, bold=False, foreground=fg_col,background=bg_col)
                 # to collect the tag name when clicked
@@ -334,7 +334,7 @@ Final code
                 # add a spacer after grid panel to fill the bottom of the screen
                 self.space = Spacer(height=500)
                 self.add_component(self.space)
-            
+
         # click method for btns
         def click(self, **event_args):
             val = event_args['sender'].tag.name
@@ -354,7 +354,7 @@ Final code
 
 .. admonition:: Tasks
 
-    #. The keyboard can also be used instead of the buttons. Try it out. 
-    #. Try adding some maths function buttons in another row. e.g. x^2 which squares the text box. e.g. sqrt which takes the square window.
+    #. The keyboard can also be used instead of the buttons. Try it out.
+    #. Try adding some maths function buttons in another row. e.g. x^2 which squares the text box. e.g. sqrt which takes the square root.
     #. Try adding some maths function buttons in another row by importing the maths library. See: https://docs.python.org/3/library/math.html
 

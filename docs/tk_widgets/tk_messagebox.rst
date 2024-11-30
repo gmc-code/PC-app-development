@@ -85,8 +85,8 @@ tk messagebox
     from tkinter import messagebox
 
     # Create the main window
-    window = tk.Tk()
-    window.withdraw()  # Hide the main window
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
 
     # Show an information message box
     messagebox.showinfo("Information", "This is an info message box")
@@ -114,4 +114,4 @@ tk messagebox
     print(f"Response: {response}")
 
     # Run the main event loop
-    window.mainloop()
+    root.mainloop()

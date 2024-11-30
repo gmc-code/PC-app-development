@@ -93,8 +93,8 @@ def update_order_list():
 
 # Create the main window
 root = tk.Tk()
-window.title("Pizza Ordering System")
-window.geometry("900x600")
+root.title("Pizza Ordering System")
+root.geometry("900x600")
 
 # Customer name
 tk.Label(root, text="Customer Name:").grid(row=0, column=0, padx=10, pady=5)
@@ -159,4 +159,4 @@ cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order
 cancel_order_button.grid(row=6, column=3, padx=10, pady=5, ipadx=20, ipady=10, sticky="w")
 
 # Run the application
-window.mainloop()
+root.mainloop()

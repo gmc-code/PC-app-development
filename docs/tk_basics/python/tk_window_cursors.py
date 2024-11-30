@@ -23,12 +23,12 @@ cursors= [
 ]
 
 # Initialize the main Tkinter window
-window = tk.Tk()
-window.geometry("300x200+800+500")
-window.title("Cursor Demo")
+root = tk.Tk()
+root.geometry("300x200+800+500")
+root.title("Cursor Demo")
 
 # Label to show current cursor name
-label = tk.Label(window, text="", font=("Arial", 14))
+label = tk.Label(root, text="", font=("Arial", 14))
 label.pack(pady=40)
 
 # Function to iterate through each cursor
@@ -36,16 +36,16 @@ def cycle_cursors(index=0):
     if index < len(cursors):
         current_cursor = cursors[index]
         label.config(text=f"Cursor: {current_cursor}")
-        window.configure(cursor=current_cursor)
+        root.configure(cursor=current_cursor)
         # Call the function again after set number of ms with the next cursor
-        window.after(1000, cycle_cursors, index + 1)
+        root.after(1000, cycle_cursors, index + 1)
     else:
         # Reset to default cursor after the cycle completes
-        window.configure(cursor="arrow")
+        root.configure(cursor="arrow")
         label.config(text="Cycle complete")
 
 # Start cycling through cursors
 cycle_cursors()
 
 # Run the Tkinter main loop
-window.mainloop()
+root.mainloop()

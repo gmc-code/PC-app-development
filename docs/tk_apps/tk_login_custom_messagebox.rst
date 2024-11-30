@@ -58,7 +58,7 @@ Creating a Toplevel Window
 Making the Window Modal
 `````````````````````````````
 
-- `top.transient(parent)`: Ensures the messagebox stays on top of the parent window.
+- `top.transient(parent)`: Ensures the messagebox stays on top of the parent root.
 - `top.grab_set()`: Activates a "grab" on the messagebox, preventing the user from interacting with the main window until the messagebox is closed.
 
 Positioning the Messagebox over the Parent Window
@@ -163,13 +163,13 @@ Full code
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("Login form")
-    window.geometry("600x440")
-    window.configure(bg=BG_COLOR)
+    root = tk.Tk()
+    root.title("Login form")
+    root.geometry("600x440")
+    root.configure(bg=BG_COLOR)
 
     # Create frame widget for other widgets
-    frame = tk.Frame(window, bg=BG_COLOR)
+    frame = tk.Frame(root, bg=BG_COLOR)
     frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
 
     # Create widgets inside the frame
@@ -189,7 +189,7 @@ Full code
     password_entry.grid(row=2, column=1, pady=20)
     login_button.grid(row=3, column=0, columnspan=2, pady=20)
 
-    window.mainloop()
+    root.mainloop()
 
 
 ----
@@ -200,19 +200,19 @@ Locked parent version
 | This code replaces the def `custom_messagebox` function with a version that disables the parent window so it cannot be moved.
 
 - The following line ensures that the parent window cannot be moved or interacted with:
-- ``parent.attributes('-disabled', True)``: Temporarily disables the parent window.
+- ``parent.attributes('-disabled', True)``: Temporarily disables the parent root.
 - When the messagebox is closed, the parent is re-enabled with:
 - ``parent.attributes('-disabled', False)``.
 
-- ``top.transient(parent)``: Ensures the messagebox stays on top of the parent window.
+- ``top.transient(parent)``: Ensures the messagebox stays on top of the parent root.
 - ``top.grab_set()``: Makes the messagebox modal, blocking input to other windows.
 
-- ``top.protocol("WM_DELETE_WINDOW", on_close)`` ensures that clicking the close button (X) triggers the ``on_close()`` function, which destroys the messagebox and re-enables the parent window.
+- ``top.protocol("WM_DELETE_WINDOW", on_close)`` ensures that clicking the close button (X) triggers the ``on_close()`` function, which destroys the messagebox and re-enables the parent root.
 
 .. code-block:: python
 
     def custom_messagebox(title, message, parent):
-        """Custom messagebox aligned over the parent widget and disabling the parent window."""
+        """Custom messagebox aligned over the parent widget and disabling the parent root."""
         # Disable parent window while the messagebox is active
         parent.attributes('-disabled', True)
 

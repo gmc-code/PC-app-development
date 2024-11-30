@@ -37,18 +37,18 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
 
 - **name_var = tk.StringVar()** creates a Tkinter variable of type StringVar. This variable is used to dynamically update and retrieve the value of a string associated with the Entry widget.
 - **get_name()** is a function that retrieves the current value of name_var using **name_var.get()**
-- tk.Entry(window, **textvariable=name_var**, font=('calibre', 24, 'normal'), width=20) creates an entry widget for text input.
+- tk.Entry(root, **textvariable=name_var**, font=('calibre', 24, 'normal'), width=20) creates an entry widget for text input.
 - **textvariable=name_var** links the entry widget to the name_var StringVar, so any text entered in the widget updates name_var and vice versa.
-- tk.Button(window, text="Submit", **command=get_name**) creates a button that, when clicked, calls the get_name function.
+- tk.Button(root, text="Submit", **command=get_name**) creates a button that, when clicked, calls the get_name function.
 
 .. code-block:: python
 
     import tkinter as tk
 
     # Create the main window
-    window = tk.Tk()
-    window.geometry("500x300")  # Set window size
-    window.title("Entry Example")  # Set window title
+    root = tk.Tk()
+    root.geometry("500x300")  # Set window size
+    root.title("Entry Example")  # Set window title
 
     # Create a StringVar to associate with the entry
     name_var = tk.StringVar()
@@ -59,19 +59,19 @@ This code creates a simple Tkinter GUI application that allows a user to enter t
         output_label.config(text=f"Name entered:\n{name}")
 
     # Create the entry widget for input
-    name_entry = tk.Entry(window, textvariable=name_var, font=('calibre', 24, 'normal'), width=20)
+    name_entry = tk.Entry(root, textvariable=name_var, font=('calibre', 24, 'normal'), width=20)
     name_entry.pack(pady=20)  # Add some padding to the top
 
     # Create a button to trigger the get_name function
-    submit_button = tk.Button(window, text="Submit", command=get_name)
+    submit_button = tk.Button(root, text="Submit", command=get_name)
     submit_button.pack(pady=10)
 
     # Create a label to display the output
-    output_label = tk.Label(window, text="", font=('calibre', 24, 'normal'), width=30, height=2)
+    output_label = tk.Label(root, text="", font=('calibre', 24, 'normal'), width=30, height=2)
     output_label.pack(pady=20)
 
     # Run the main event loop
-    window.mainloop()
+    root.mainloop()
 
 ----
 
@@ -124,20 +124,20 @@ The `validatecommand` option specifies the function to call for validation. This
         return True
 
 
-    window = tk.Tk()
-    window.title("Validation Example")
-    window.geometry("500x350")
+    root = tk.Tk()
+    root.title("Validation Example")
+    root.geometry("500x350")
 
     output_text = tk.StringVar()
-    output_label = tk.Label(window, font=("Arial",16), textvariable=output_text, justify="left")
+    output_label = tk.Label(root, font=("Arial",16), textvariable=output_text, justify="left")
     output_label.pack(pady=10)
 
     entry_var = tk.StringVar()
-    entry_field = tk.Entry(window, font=("Arial",24), textvariable=entry_var, validate="key", validatecommand=(window.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
+    entry_field = tk.Entry(root, font=("Arial",24), textvariable=entry_var, validate="key", validatecommand=(root.register(on_validate), "%d", "%i", "%P", "%s", "%S", "%v", "%V", "%W"))
     entry_field.pack(pady=10)
 
 
-    window.mainloop()
+    root.mainloop()
 
 ----
 
@@ -145,7 +145,7 @@ Numeric validation
 ~~~~~~~~~~~~~~~~~~~~~
 
 | In the code below, the validate_input function checks if the new value (new_value) is a digit or an empty string.
-| The window.register(validate_input) registers the validation function with Tkinter.
+| The root.register(validate_input) registers the validation function with Tkinter.
 | %P is used to pass the new value of the entry to the validate_age function, allowing it to check if the entire new value is a valid age
 | The validate='key' option specifies that validation should occur whenever the user types something.
 | The validatecommand=vcmd option sets the validation command to the registered function.
@@ -159,17 +159,17 @@ Numeric validation
         # Check if the new value is numeric
         return new_value.isdigit() or new_value == ""
 
-    window = tk.Tk()
-    window.title("Validate Entry Example")
-    window.geometry("500x300")  # Set window size
+    root = tk.Tk()
+    root.title("Validate Entry Example")
+    root.geometry("500x300")  # Set window size
 
     # Register the validation function
-    vcmd = (window.register(validate_input), '%P')
+    vcmd = (root.register(validate_input), '%P')
 
-    entry = tk.Entry(window, font=("Arial", 24), validate='key', validatecommand=vcmd)
+    entry = tk.Entry(root, font=("Arial", 24), validate='key', validatecommand=vcmd)
     entry.pack(pady=10)
 
-    window.mainloop()
+    root.mainloop()
 
 ----
 
@@ -201,17 +201,17 @@ Numeric validation
                             return new_value == ""  # Returns True if empty, otherwise False
 
 
-                    window = tk.Tk()
-                    window.title("Age Validation Example")
-                    window.geometry("500x300")  # Set window size
+                    root = tk.Tk()
+                    root.title("Age Validation Example")
+                    root.geometry("500x300")  # Set window size
 
                     # Register the validation function
-                    vcmd = (window.register(validate_age), "%P")
+                    vcmd = (root.register(validate_age), "%P")
 
-                    entry = tk.Entry(window, font=("Arial", 24), validate="key", validatecommand=vcmd)
+                    entry = tk.Entry(root, font=("Arial", 24), validate="key", validatecommand=vcmd)
                     entry.pack(pady=10)
 
-                    window.mainloop()
+                    root.mainloop()
 
 
 Phone number validation
@@ -228,17 +228,17 @@ Phone number validation
         # Check if the new value is numeric and has at most 10 digits
         return new_value.isdigit() and len(new_value) <= 10
 
-    window = tk.Tk()
-    window.title("Phone Number Validation Example")
-    window.geometry("500x300")  # Set window size
+    root = tk.Tk()
+    root.title("Phone Number Validation Example")
+    root.geometry("500x300")  # Set window size
 
     # Register the validation function
-    vcmd = (window.register(validate_phone), '%P')
+    vcmd = (root.register(validate_phone), '%P')
 
-    entry = tk.Entry(window, font=("Arial", 24), validate='key', validatecommand=vcmd)
+    entry = tk.Entry(root, font=("Arial", 24), validate='key', validatecommand=vcmd)
     entry.pack(pady=10)
 
-    window.mainloop()
+    root.mainloop()
 
 
 
@@ -272,17 +272,17 @@ Phone number validation
                             return new_value[-1].isdigit()  # Ensure other positions are digits
                         return False
 
-                    window = tk.Tk()
-                    window.title("Phone Number Validation Example")
-                    window.geometry("500x300")  # Set window size
+                    root = tk.Tk()
+                    root.title("Phone Number Validation Example")
+                    root.geometry("500x300")  # Set window size
 
                     # Register the validation function
-                    vcmd = (window.register(validate_phone), '%P')
+                    vcmd = (root.register(validate_phone), '%P')
 
-                    entry = tk.Entry(window, validate='key', validatecommand=vcmd, font=("Arial",20))
+                    entry = tk.Entry(root, validate='key', validatecommand=vcmd, font=("Arial",20))
                     entry.pack(pady=10)
 
-                    window.mainloop()
+                    root.mainloop()
 
 ----
 
@@ -298,16 +298,16 @@ EMail validation
         pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         return re.match(pattern, new_value) is not None or new_value == ""
 
-    window = tk.Tk()
-    window.title("Email Validation Example")
+    root = tk.Tk()
+    root.title("Email Validation Example")
 
     # Register the validation function
-    vcmd = (window.register(validate_email), '%P')
+    vcmd = (root.register(validate_email), '%P')
 
-    entry = tk.Entry(window, validate='key', validatecommand=vcmd)
+    entry = tk.Entry(root, validate='key', validatecommand=vcmd)
     entry.pack(pady=10)
 
-    window.mainloop()
+    root.mainloop()
 
 
 
@@ -330,7 +330,7 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, bg="color")``
         | Description: Sets the background color of the entry field.
         | Default: SystemWindow RGB: (255, 255, 255)
-        | Example: ``entry_widget = tk.Entry(window, bg="lightgrey")``
+        | Example: ``entry_widget = tk.Entry(root, bg="lightgrey")``
 
     .. py:attribute:: bd
     .. py:attribute:: borderwidth
@@ -338,14 +338,14 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, bd=width)``
         | Description: Sets the width of the border around the entry field.
         | Default: ``2``
-        | Example: ``entry_widget = tk.Entry(window, bd=5)``
+        | Example: ``entry_widget = tk.Entry(root, bd=5)``
 
     .. py:attribute:: cursor
 
         | Syntax: ``entry_widget = tk.Entry(parent, cursor="cursor_type")``
         | Description: Changes the cursor when hovering over the entry field.
         | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(window, cursor="xterm")``
+        | Example: ``entry_widget = tk.Entry(root, cursor="xterm")``
         | Possible values include:
 
             - **"arrow"**: Standard arrow cursor.
@@ -360,28 +360,28 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, disabledbackground="color")``
         | Description: Sets the background color when the entry is disabled.
         | Default: SystemDisabled RGB: (240, 240, 240)
-        | Example: ``entry_widget = tk.Entry(window, disabledbackground="lightgrey")``
+        | Example: ``entry_widget = tk.Entry(root, disabledbackground="lightgrey")``
 
     .. py:attribute:: disabledforeground
 
         | Syntax: ``entry_widget = tk.Entry(parent, disabledforeground="color")``
         | Description: Sets the text color when the entry is disabled.
         | Default: SystemDisabledText RGB: (109, 109, 109)
-        | Example: ``entry_widget = tk.Entry(window, disabledforeground="darkgrey")``
+        | Example: ``entry_widget = tk.Entry(root, disabledforeground="darkgrey")``
 
     .. py:attribute:: exportselection
 
         | Syntax: ``entry_widget = tk.Entry(parent, exportselection=boolean)``
         | Description: Determines if the text selection is exported to the clipboard.
         | Default: ``1``
-        | Example: ``entry_widget = tk.Entry(window, exportselection=False)``
+        | Example: ``entry_widget = tk.Entry(root, exportselection=False)``
 
     .. py:attribute:: font
 
         | Syntax: ``entry_widget = tk.Entry(parent, font=("font_name", size))``
         | Description: Sets the font type and size of the entry text.
         | Default: System font and size
-        | Example: ``entry_widget = tk.Entry(window, font=("Arial", 12))``
+        | Example: ``entry_widget = tk.Entry(root, font=("Arial", 12))``
 
     .. py:attribute:: foreground
     .. py:attribute:: fg
@@ -389,70 +389,70 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, fg="color")``
         | Description: Sets the text color of the entry field.
         | Default: SystemWindowText RGB: (0, 0, 0)
-        | Example: ``entry_widget = tk.Entry(window, fg="blue")``
+        | Example: ``entry_widget = tk.Entry(root, fg="blue")``
 
     .. py:attribute:: highlightbackground
 
         | Syntax: ``entry_widget = tk.Entry(parent, highlightbackground="color")``
         | Description: Sets the color of the highlight when the entry does not have focus.
         | Default: SystemButtonFace RGB: (240, 240, 240)
-        | Example: ``entry_widget = tk.Entry(window, highlightbackground="grey")``
+        | Example: ``entry_widget = tk.Entry(root, highlightbackground="grey")``
 
     .. py:attribute:: highlightcolor
 
         | Syntax: ``entry_widget = tk.Entry(parent, highlightcolor="color")``
         | Description: Sets the color of the highlight when the entry has focus.
         | Default: SystemHighlight RGB: (100, 100, 100)
-        | Example: ``entry_widget = tk.Entry(window, highlightcolor="blue")``
+        | Example: ``entry_widget = tk.Entry(root, highlightcolor="blue")``
 
     .. py:attribute:: highlightthickness
 
         | Syntax: ``entry_widget = tk.Entry(parent, highlightthickness=thickness)``
         | Description: Sets the thickness of the focus highlight border.
         | Default: ``1``
-        | Example: ``entry_widget = tk.Entry(window, highlightthickness=2)``
+        | Example: ``entry_widget = tk.Entry(root, highlightthickness=2)``
 
     .. py:attribute:: insertbackground
 
         | Syntax: ``entry_widget = tk.Entry(parent, insertbackground="color")``
         | Description: Sets the color of the insertion cursor (caret).
         | Default: SystemWindowText RGB: (0, 0, 0)
-        | Example: ``entry_widget = tk.Entry(window, insertbackground="red")``
+        | Example: ``entry_widget = tk.Entry(root, insertbackground="red")``
 
     .. py:attribute:: insertborderwidth
 
         | Syntax: ``entry_widget = tk.Entry(parent, insertborderwidth=width)``
         | Description: Sets the width of the insertion cursor's border.
         | Default: ``0``
-        | Example: ``entry_widget = tk.Entry(window, insertborderwidth=1)``
+        | Example: ``entry_widget = tk.Entry(root, insertborderwidth=1)``
 
     .. py:attribute:: insertofftime
 
         | Syntax: ``entry_widget = tk.Entry(parent, insertofftime=milliseconds)``
         | Description: Sets the time the insertion cursor is off per blink in milliseconds.
         | Default: ``300``
-        | Example: ``entry_widget = tk.Entry(window, insertofftime=500)``
+        | Example: ``entry_widget = tk.Entry(root, insertofftime=500)``
 
     .. py:attribute:: insertontime
 
         | Syntax: ``entry_widget = tk.Entry(parent, insertontime=milliseconds)``
         | Description: Sets the time the insertion cursor is on per blink in milliseconds.
         | Default: ``600``
-        | Example: ``entry_widget = tk.Entry(window, insertontime=500)``
+        | Example: ``entry_widget = tk.Entry(root, insertontime=500)``
 
     .. py:attribute:: insertwidth
 
         | Syntax: ``entry_widget = tk.Entry(parent, insertwidth=width)``
         | Description: Sets the width of the insertion cursor.
         | Default: ``2``
-        | Example: ``entry_widget = tk.Entry(window, insertwidth=3)``
+        | Example: ``entry_widget = tk.Entry(root, insertwidth=3)``
 
     .. py:attribute:: justify
 
         | Syntax: ``entry_widget = tk.Entry(parent, justify="alignment")``
         | Description: Specifies how the text is aligned within the entry field.
         | Default: ``left``
-        | Example: ``entry_widget = tk.Entry(window, justify="center")``
+        | Example: ``entry_widget = tk.Entry(root, justify="center")``
         | Possible values include:
 
             - **"left"**: Aligns text to the left.
@@ -464,7 +464,7 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, relief="relief_type")``
         | Description: Sets the border style of the entry field.
         | Default: ``flat``
-        | Example: ``entry_widget = tk.Entry(window, relief="sunken")``
+        | Example: ``entry_widget = tk.Entry(root, relief="sunken")``
         | Possible values include:
 
             - **"flat"**
@@ -478,14 +478,14 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, show="character")``
         | Description: Masks characters, often used for passwords.
         | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(window, show="*")``
+        | Example: ``entry_widget = tk.Entry(root, show="*")``
 
     .. py:attribute:: state
 
         | Syntax: ``entry_widget = tk.Entry(parent, state="state")``
         | Description: Sets the state of the entry field.
         | Default: ``normal``
-        | Example: ``entry_widget = tk.Entry(window, state="disabled")``
+        | Example: ``entry_widget = tk.Entry(root, state="disabled")``
         | Possible values include:
 
             - **"normal"**
@@ -497,21 +497,21 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, takefocus=boolean)``
         | Description: Determines if the entry field can receive focus via keyboard navigation.
         | Default: ``1``
-        | Example: ``entry_widget = tk.Entry(window, takefocus=False)``
+        | Example: ``entry_widget = tk.Entry(root, takefocus=False)``
 
     .. py:attribute:: textvariable
 
         | Syntax: ``entry_widget = tk.Entry(parent, textvariable=variable)``
         | Description: Associates a Tkinter variable (usually a StringVar) with the entry text.
         | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(window, textvariable=my_var)``
+        | Example: ``entry_widget = tk.Entry(root, textvariable=my_var)``
 
     .. py:attribute:: validate
 
         | Syntax: ``entry_widget = tk.Entry(parent, validate="validation_type")``
         | Description: Sets the type of validation to apply to the entry field.
         | Default: ``none``
-        | Example: ``entry_widget = tk.Entry(window, validate="focusout")``
+        | Example: ``entry_widget = tk.Entry(root, validate="focusout")``
         | Possible values include:
 
             - **"none"**: No validation.
@@ -525,11 +525,11 @@ Option details
         | Syntax: ``entry_widget = tk.Entry(parent, width=characters)``
         | Description: Sets the width of the entry field in characters.
         | Default: ``20``
-        | Example: ``entry_widget = tk.Entry(window, width=30)``
+        | Example: ``entry_widget = tk.Entry(root, width=30)``
 
     .. py:attribute:: xscrollcommand
 
         | Syntax: ``entry_widget = tk.Entry(parent, xscrollcommand=scroll_function)``
         | Description: Specifies a function for horizontal scrolling.
         | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(window, xscrollcommand=my_scroll_function)``
+        | Example: ``entry_widget = tk.Entry(root, xscrollcommand=my_scroll_function)``

@@ -13,14 +13,14 @@ def validate_phone(new_value):
     return False
 
 
-window = tk.Tk()
-window.title("Mobile Phone Number Validation with spaces")
-window.geometry("500x300")  # Set window size
+root = tk.Tk()
+root.title("Mobile Phone Number Validation with spaces")
+root.geometry("500x300")  # Set window size
 
 # Register the validation function
-vcmd = (window.register(validate_phone), '%P')
+vcmd = (root.register(validate_phone), '%P')
 
-entry = tk.Entry(window, font=("Arial",24), validate='key', validatecommand=vcmd)
+entry = tk.Entry(root, font=("Arial",24), validate='key', validatecommand=vcmd)
 entry.pack(pady=10)
 
-window.mainloop()
+root.mainloop()

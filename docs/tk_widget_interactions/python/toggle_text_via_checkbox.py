@@ -10,21 +10,21 @@ def toggle_label():
 
 
 # Create the main window
-window = tk.Tk()
-window.geometry("400x100")
-window.title("Toggle via Checkbox Example")
+root = tk.Tk()
+root.geometry("400x100")
+root.title("Toggle via Checkbox Example")
 
 # Create a BooleanVar to hold the boolean value
 bool_var = tk.BooleanVar()
 bool_var.set(False)  # Initial value
 
 # Create a Checkbutton to toggle the label color and case
-toggle_checkbutton = tk.Checkbutton(window, text="Toggle Case and Color", variable=bool_var, command=toggle_label)
+toggle_checkbutton = tk.Checkbutton(root, text="Toggle Case and Color", variable=bool_var, command=toggle_label)
 toggle_checkbutton.grid(row=0, column=0, padx=10, pady=20)
 
 # Create a Label widget
-label = tk.Label(window, text="Case and Colour", font=("Helvetica", 16), fg="black")
+label = tk.Label(root, text="Case and Colour", font=("Helvetica", 16), fg="black")
 label.grid(row=0, column=1, pady=20)
 
 # Run the application
-window.mainloop()
+root.mainloop()

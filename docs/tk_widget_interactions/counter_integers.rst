@@ -41,14 +41,14 @@ Required Syntax
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text. If the variable is changed, the label text is updated.
     | Default: None
-    | Example: ``label_widget = tk.Label(window, textvariable=my_var)``
+    | Example: ``label_widget = tk.Label(root, textvariable=my_var)``
 
 .. py:attribute:: command
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.
     | Default: ``None``
-    | Example: ``button_widget = tk.Button(window, command=on_click)``
+    | Example: ``button_widget = tk.Button(root, command=on_click)``
 
 .. py:attribute:: bind
 
@@ -59,17 +59,17 @@ Required Syntax
 
 .. py:method:: after
 
-    | Syntax: ``job_id = window.after(delay_ms, callback_function)``
+    | Syntax: ``job_id = root.after(delay_ms, callback_function)``
     | Description: Schedules `callback_function` to be called after a delay specified in milliseconds. Returns a job ID, which can be used to cancel the scheduled function with `after_cancel()`.
     | Default: ``None``
-    | Example: ``job_id = window.after(1000, update_label)``
+    | Example: ``job_id = root.after(1000, update_label)``
 
 .. py:method:: after_cancel
 
-    | Syntax: ``window.after_cancel(job_id)``
+    | Syntax: ``root.after_cancel(job_id)``
     | Description: Cancels a scheduled callback function that was set up using `after()`. The `job_id` should be the identifier returned by `after()`.
     | Default: ``None``
-    | Example: ``window.after_cancel(job_id)``
+    | Example: ``root.after_cancel(job_id)``
 
 
 ----
@@ -90,13 +90,13 @@ Code features
 
    - **Purpose**: The ``after()`` method in Tkinter is used to schedule the repeated execution of the increment or decrement function every 100 milliseconds, allowing for continuous adjustment while the button is held down.
    - **Syntax**: `widget.after(milliseconds, function_name)`
-   - `window.after(100, start_increment)` schedules the ``start_increment`` function to run again after a delay of 100 milliseconds, creating a loop that continues to increment the value while the button is pressed.
+   - `root.after(100, start_increment)` schedules the ``start_increment`` function to run again after a delay of 100 milliseconds, creating a loop that continues to increment the value while the button is pressed.
    - The ``after()`` method calls ``start_increment`` after each delay, creating a cycle that continues until stopped (e.g., by releasing the button).
 
 3. **Stopping the Repeating Action**:
 
-   - **Purpose**: `stop_action` is called when the mouse button is released, canceling any repeating actions with `window.after_cancel()`.
-   - **Syntax**: `window.after_cancel(job_id)`
+   - **Purpose**: `stop_action` is called when the mouse button is released, canceling any repeating actions with `root.after_cancel()`.
+   - **Syntax**: `root.after_cancel(job_id)`
    - This code, ``if "increment_job" in globals()``, checks if `increment_job` is defined (using `globals()`), then cancels the ongoing `after` job, stopping the repeat.
 
 4. **Increment Button `+`**
@@ -110,7 +110,7 @@ Code features
 5. **Hold-to-Increment**
 
      - When the `+` button is pressed and held, the `start_increment` function triggers.
-     - `start_increment` starts a delayed loop using `window.after(500, repeat_increment)` to call `repeat_increment` after 500 milliseconds.
+     - `start_increment` starts a delayed loop using `root.after(500, repeat_increment)` to call `repeat_increment` after 500 milliseconds.
      - `repeat_increment` repeatedly calls `increment_value` every 100 milliseconds until the button is released.
      - Releasing the button triggers `stop_action`, which cancels the ongoing repeat loop.
 
@@ -141,45 +141,45 @@ Code features
     def start_increment(event):
         global increment_job
         # Start the repeating increment after 500 ms
-        increment_job = window.after(500, repeat_increment)
+        increment_job = root.after(500, repeat_increment)
 
 
     def repeat_increment():
         increment_value()
         global increment_job
         # Continue repeating every 100 ms
-        increment_job = window.after(100, repeat_increment)
+        increment_job = root.after(100, repeat_increment)
 
 
     # Function to start repeating decrement after a delay
     def start_decrement(event):
         global decrement_job
         # Start the repeating decrement after 500 ms
-        decrement_job = window.after(500, repeat_decrement)
+        decrement_job = root.after(500, repeat_decrement)
 
 
     def repeat_decrement():
         decrement_value()
         global decrement_job
         # Continue repeating every 100 ms
-        decrement_job = window.after(100, repeat_decrement)
+        decrement_job = root.after(100, repeat_decrement)
 
 
     # Function to stop repeating action
     def stop_action(event):
         global increment_job, decrement_job
         if "increment_job" in globals():
-            window.after_cancel(increment_job)
+            root.after_cancel(increment_job)
             del increment_job
         if "decrement_job" in globals():
-            window.after_cancel(decrement_job)
+            root.after_cancel(decrement_job)
             del decrement_job
 
 
     # Create the main window
     root = tk.Tk()
-    window.geometry("300x200")
-    window.title("IntVar Example")
+    root.geometry("300x200")
+    root.title("IntVar Example")
 
     # Create an IntVar to hold the integer value
     int_var = tk.IntVar()
@@ -206,7 +206,7 @@ Code features
     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
     # Run the application
-    window.mainloop()
+    root.mainloop()
 
 
 ----

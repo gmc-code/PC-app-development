@@ -48,8 +48,8 @@ Special features
 
 
     # create frame widget for other widgets
-    frame = tk.Frame(window, bg=BG_COLOR)
+    frame = tk.Frame(root, bg=BG_COLOR)
     frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
 
-    # create other widgets with frame as the parent instead of window.
+    # create other widgets with frame as the parent instead of root.
 

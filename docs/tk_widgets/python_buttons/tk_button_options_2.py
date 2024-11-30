@@ -1,11 +1,11 @@
 import tkinter as tk
 
 # Create a new window
-window = tk.Tk()
+root = tk.Tk()
 # Set the title of the window
-window.title("Button formatting")
+root.title("Button formatting")
 # Set the size of the window
-window.geometry("350x400")
+root.geometry("350x400")
 
 def button_clicked():
     print("Button clicked!")
@@ -49,7 +49,7 @@ def set_active():
                   activebackground="lightblue")
 
 # Creating the main button with specified options
-button = tk.Button(window,
+button = tk.Button(root,
                 text="Click Me",
                 command=button_clicked,
                 activebackground="lightblue",
@@ -72,26 +72,26 @@ button = tk.Button(window,
 button.pack(padx=20, pady=20)
 
 # Creating additional buttons to modify the main button
-change_text_button = tk.Button(window, text="Change Text", command=change_text)
+change_text_button = tk.Button(root, text="Change Text", command=change_text)
 change_text_button.pack(pady=5)
 
-toggle_state_button = tk.Button(window, text="Disable/Enable", command=toggle_state)
+toggle_state_button = tk.Button(root, text="Disable/Enable", command=toggle_state)
 toggle_state_button.pack(pady=5)
 
-change_color_button = tk.Button(window, text="Change Color", command=change_color)
+change_color_button = tk.Button(root, text="Change Color", command=change_color)
 change_color_button.pack(pady=5)
 
-reset_button = tk.Button(window, text="Reset", command=reset_defaults)
+reset_button = tk.Button(root, text="Reset", command=reset_defaults)
 reset_button.pack(pady=5)
 
 # Creating state buttons to set the main button state
-set_normal_button = tk.Button(window, text="Set Normal", command=set_normal)
+set_normal_button = tk.Button(root, text="Set Normal", command=set_normal)
 set_normal_button.pack(pady=5)
 
-set_disabled_button = tk.Button(window, text="Set Disabled", command=set_disabled)
+set_disabled_button = tk.Button(root, text="Set Disabled", command=set_disabled)
 set_disabled_button.pack(pady=5)
 
-set_active_button = tk.Button(window, text="Set Active", command=set_active)
+set_active_button = tk.Button(root, text="Set Active", command=set_active)
 set_active_button.pack(pady=5)
 
-window.mainloop()
+root.mainloop()

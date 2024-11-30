@@ -6,4 +6,4 @@ root = tk.Tk()
 tk.Label(root, text='Classic Label').pack()
 ttk.Label(root, text='Themed Label').pack()
 
-window.mainloop()
+root.mainloop()

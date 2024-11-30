@@ -11,18 +11,18 @@ def validate_email(event):
     else:
         error_label.config(text="Invalid email address")  # Display the error message
 
-window = tk.Tk()
-window.title("Email Validation Example")
-window.geometry("500x300")  # Set window size
+root = tk.Tk()
+root.title("Email Validation Example")
+root.geometry("500x300")  # Set window size
 
-entry = tk.Entry(window, font=("Arial",24))
+entry = tk.Entry(root, font=("Arial",24))
 entry.pack(pady=10)
 
 # Bind the Leave event to the validate_email function
 entry.bind("<Leave>", validate_email)
 
 # Create a label to display error messages
-error_label = tk.Label(window, text="", fg="red")
+error_label = tk.Label(root, text="", fg="red")
 error_label.pack()
 
-window.mainloop()
+root.mainloop()

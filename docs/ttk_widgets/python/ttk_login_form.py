@@ -11,10 +11,10 @@ def login_action():
 
 def create_login_form():
     global username  # Declare username as global
-    window = tk.Tk()
-    window.geometry('300x110+200+300')
-    window.resizable(0, 0)
-    window.title('Login')
+    root = tk.Tk()
+    root.geometry('300x110+200+300')
+    root.resizable(0, 0)
+    root.title('Login')
 
     # UI options
     paddings = {'padx': 5, 'pady': 5}
@@ -23,16 +23,16 @@ def create_login_form():
     username = tk.StringVar()
 
     # Username label
-    username_label = ttk.Label(window, text="Username:")
+    username_label = ttk.Label(root, text="Username:")
     username_label.grid(column=0, row=0, sticky=tk.W, **paddings)
 
     # Username entry
-    username_entry = ttk.Entry(window, textvariable=username, **ENTRY_FONT)
+    username_entry = ttk.Entry(root, textvariable=username, **ENTRY_FONT)
     username_entry.grid(column=1, row=0, sticky=tk.E, **paddings)
 
-    login_button = ttk.Button(window, text="Login", command=login_action)
+    login_button = ttk.Button(root, text="Login", command=login_action)
     login_button.grid(column=1, row=1, sticky=tk.E, **paddings)
 
-    window.mainloop()
+    root.mainloop()
 
 create_login_form()

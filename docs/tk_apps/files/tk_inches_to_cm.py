@@ -32,18 +32,18 @@ def convert_inches_to_cm():
 
 
 # Create the main window
-window = tk.Tk()
-window.title("Inches to cm Converter")
-window.geometry("550x300")
-window.configure(bg=WINDOW_BG_COLOR)
+root = tk.Tk()
+root.title("Inches to cm Converter")
+root.geometry("550x300")
+root.configure(bg=WINDOW_BG_COLOR)
 
 # Create widgets
-inches_label = tk.Label(window, text="inches", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-inches_entry = tk.Entry(window, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
-cm_label = tk.Label(window, text="cm", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+inches_label = tk.Label(root, text="inches", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+inches_entry = tk.Entry(root, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
+cm_label = tk.Label(root, text="cm", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
 # height of 1 is one text row
-cm_text = tk.Text(window, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
-convert_button = tk.Button(window, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
+cm_text = tk.Text(root, height=1, width=10, bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
+convert_button = tk.Button(root, text="Convert", width=20, bg=BUTTON_BG_COLOR, fg=BUTTON_FG_COLOR, font=FONT_STYLE, command=convert_inches_to_cm)
 
 # Place widgets in the window
 inches_label.grid(row=0, column=0, sticky="e", padx=10, pady=10)
@@ -53,4 +53,4 @@ cm_text.grid(row=2, column=1, sticky="w", padx=10, pady=10)
 convert_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
 # Start the main event loop
-window.mainloop()
+root.mainloop()

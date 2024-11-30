@@ -81,6 +81,6 @@ Import themed widgets module
     tk.Label(root, text='Classic Label').pack()
     ttk.Label(root, text='Themed Label').pack()
 
-    window.mainloop()
+    root.mainloop()
 
 

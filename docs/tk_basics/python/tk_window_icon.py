@@ -4,17 +4,17 @@ import tkinter as tk
 root = tk.Tk()
 
 # Set the title of the window
-window.title("PC Tkinter Window")
+root.title("PC Tkinter Window")
 
 # Set the size of the window
-window.geometry("300x100")
+root.geometry("300x100")
 
 # Set the window icon using a raw string
-window.iconbitmap(r'docs/tk_basics/images/favicon.ico')
+root.iconbitmap(r'docs/tk_basics/images/favicon.ico')
 
 # Add a label to the window
 label = tk.Label(root, text="Hello, PC Tkinter!")
 label.pack(pady=20)
 
 # Start the Tkinter event loop
-window.mainloop()
+root.mainloop()

@@ -2,17 +2,17 @@ import tkinter as tk
 
 
 # Create the main application window
-window = tk.Tk()
-window.title("hello world - pack")
-window.geometry("300x200")
+root = tk.Tk()
+root.title("hello world - pack")
+root.geometry("300x200")
 
 # define widgets
-label = tk.Label(window, text="Hello World!")
-button = tk.Button(window, text="Quit", command=window.destroy)
+label = tk.Label(root, text="Hello World!")
+button = tk.Button(root, text="Quit", command=root.destroy)
 
 # place widgets using pack
 label.pack()
 button.pack()
 
 # Start the main event loop
-window.mainloop()
+root.mainloop()

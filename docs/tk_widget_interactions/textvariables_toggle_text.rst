@@ -21,8 +21,8 @@ Toggle text via button
 1. A `StringVar` is created to hold the label's text: ``text_var = tk.StringVar()``.
 2. The `set` method initializes the text: ``text_var.set("Initial Text")``.
 3. The `get` method retrieves the current text: ``current_value = text_var.get()``.
-4. A label is associated with the `StringVar`: ``label = tk.Label(window, textvariable=text_var)``.
-5. A button is created with a command to toggle the text: ``button = tk.Button(window, command=update_text)``.
+4. A label is associated with the `StringVar`: ``label = tk.Label(root, textvariable=text_var)``.
+5. A button is created with a command to toggle the text: ``button = tk.Button(root, command=update_text)``.
 6. The `update_text` function checks the current value of `text_var` and toggles it using ``set``.
 7. Clicking the button triggers the `command` to update the label's text.
 
@@ -56,14 +56,14 @@ Required Syntax
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text.  If the variable is changed, the label text is updated.
     | Default: None
-    | Example: ``label_widget = tk.Label(window, textvariable=my_var)``
+    | Example: ``label_widget = tk.Label(root, textvariable=my_var)``
 
 .. py:attribute:: command
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.
     | Default: ``None``
-    | Example: ``button_widget = tk.Button(window, command=on_click)``
+    | Example: ``button_widget = tk.Button(root, command=on_click)``
 
 
 Code features
@@ -78,7 +78,7 @@ Code features
 
 2. **Link variable to Label with textvariable**:
 
-   - ``label = tk.Label(window, textvariable=text_var, font=("Helvetica", 16))``: Creates a label in the ``window`` window.
+   - ``label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))``: Creates a label in the ``window`` root.
    - The ``textvariable`` parameter is linked to ``text_var``, so the label text displays ``text_var``'s value.
 
 
@@ -89,7 +89,7 @@ Code features
 
 4. **Set Button command**:
 
-   - ``button = tk.Button(window, text="Toggle Text", command=update_text)``: Creates a button with the label "Toggle Text" and sets ``update_text`` as the function that runs when clicked.
+   - ``button = tk.Button(root, text="Toggle Text", command=update_text)``: Creates a button with the label "Toggle Text" and sets ``update_text`` as the function that runs when clicked.
 
 
 Code
@@ -112,24 +112,24 @@ Code
 
 
     # Create the main window
-    window = tk.Tk()
-    window.geometry("300x100")
-    window.title("Toggle Text")
+    root = tk.Tk()
+    root.geometry("300x100")
+    root.title("Toggle Text")
 
     # Create a StringVar to hold the text
     text_var = tk.StringVar()
     text_var.set("Initial Text")
 
     # Create a Label widget with textvariable
-    label = tk.Label(window, textvariable=text_var, font=("Helvetica", 16))
+    label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))
     label.pack(pady=10)
 
     # Create a Button to trigger the text update
-    button = tk.Button(window, text="Toggle Text", command=update_text)
+    button = tk.Button(root, text="Toggle Text", command=update_text)
     button.pack(pady=10)
 
     # Run the application
-    window.mainloop()
+    root.mainloop()
 
 ----
 
@@ -170,21 +170,21 @@ Code
 
 
                     # Create the main window
-                    window = tk.Tk()
-                    window.geometry("300x200")
-                    window.title("String Reverser")
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("String Reverser")
 
                     # Create a StringVar to hold the user input
                     input_var = tk.StringVar()
 
                     # Create a Label and Entry for user input
-                    input_label = tk.Label(window, text="Enter a string:", font=("Helvetica", 12))
+                    input_label = tk.Label(root, text="Enter a string:", font=("Helvetica", 12))
                     input_label.pack(pady=5)
-                    input_entry = tk.Entry(window, textvariable=input_var, font=("Helvetica", 12))
+                    input_entry = tk.Entry(root, textvariable=input_var, font=("Helvetica", 12))
                     input_entry.pack(pady=5)
 
                     # Create a Button to trigger the text Reversal
-                    button = tk.Button(window, text="Reversed Text", command=transform_text)
+                    button = tk.Button(root, text="Reversed Text", command=transform_text)
                     button.pack(pady=5)
 
                     # Create a StringVar to hold the transformed text
@@ -192,11 +192,11 @@ Code
                     output_var.set("")
 
                     # Create a Label widget with textvariable for the output
-                    output_result = tk.Label(window, textvariable=output_var, font=("Helvetica", 12))
+                    output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
                     output_result.pack(pady=5)
 
                     # Run the application
-                    window.mainloop()
+                    root.mainloop()
 
 
             .. tab-item:: Q2
@@ -231,21 +231,21 @@ Code
 
 
                     # Create the main window
-                    window = tk.Tk()
-                    window.geometry("300x200")
-                    window.title("String Reverser")
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("String Reverser")
 
                     # Create a StringVar to hold the user input
                     input_var = tk.StringVar()
 
                     # Create a Label and Entry for user input
-                    input_label = tk.Label(window, text="Enter a string:", font=("Helvetica", 12))
+                    input_label = tk.Label(root, text="Enter a string:", font=("Helvetica", 12))
                     input_label.pack(pady=5)
-                    input_entry = tk.Entry(window, textvariable=input_var, font=("Helvetica", 12))
+                    input_entry = tk.Entry(root, textvariable=input_var, font=("Helvetica", 12))
                     input_entry.pack(pady=5)
 
                     # Create a Button to trigger the text reversal
-                    button = tk.Button(window, text="Reverse Text", command=transform_text)
+                    button = tk.Button(root, text="Reverse Text", command=transform_text)
                     button.pack(pady=20)
 
                     # Create a StringVar to hold the transformed text
@@ -253,8 +253,8 @@ Code
                     output_var.set("")
 
                     # Create a Label widget with textvariable for the output
-                    output_result = tk.Label(window, textvariable=output_var, font=("Helvetica", 12))
+                    output_result = tk.Label(root, textvariable=output_var, font=("Helvetica", 12))
                     output_result.pack(pady=5)
 
                     # Run the application
-                    window.mainloop()
+                    root.mainloop()

@@ -1,8 +1,8 @@
 import tkinter as tk
 
-window = tk.Tk()
+root = tk.Tk()
 
-widget = tk.Label(window)
+widget = tk.Label(root)
 widget_options = widget.keys()
 
 for option in widget_options:

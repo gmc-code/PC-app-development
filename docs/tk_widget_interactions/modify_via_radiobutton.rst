@@ -40,14 +40,14 @@ Required Syntax
     | Syntax: ``widget = tk.Radiobutton(parent, text="label", variable=variable, command=callback_function)``
     | Description: Associates a Tkinter variable with the Radiobutton state.
     | Default: None
-    | Example: ``blue_radiobutton = tk.Radiobutton(window, text="Blue Label", variable=color_var, value="blue", command=set_label_color)``
+    | Example: ``blue_radiobutton = tk.Radiobutton(root, text="Blue Label", variable=color_var, value="blue", command=set_label_color)``
 
 .. py:attribute:: command
 
     | Syntax: ``button_widget = tk.BuRadiobuttontton(parent, command=callback_function)``
     | Description: Specifies the function to be called when the Radiobutton is clicked.
     | Default: ``None``
-    | Example: ``button_widget = tk.Radiobutton(window, command=on_click)``
+    | Example: ``button_widget = tk.Radiobutton(root, command=on_click)``
 
 
 Code example
@@ -65,8 +65,8 @@ Code example
 
     # Create the main window
     root = tk.Tk()
-    window.geometry("400x150")
-    window.title("Modify via Radiobutton Example")
+    root.geometry("400x150")
+    root.title("Modify via Radiobutton Example")
 
     # Create a StringVar to hold the color value
     color_var = tk.StringVar()
@@ -87,4 +87,4 @@ Code example
     label.grid(row=0, column=1, rowspan=3, padx=10, pady=20)
 
     # Run the application
-    window.mainloop()
+    root.mainloop()

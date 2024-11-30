@@ -16,7 +16,7 @@ Usage
 
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
-    | e.g. listbox_widget = tk.Listbox(window, height=10, width=50)
+    | e.g. listbox_widget = tk.Listbox(root, height=10, width=50)
 
 ----
 
@@ -32,30 +32,30 @@ This code creates a simple Tkinter GUI application that allows a user to select 
 
     import tkinter as tk  # Import the tkinter module for GUI creation.
 
-    window = tk.Tk()  # Create the main window.
-    window.geometry("400x400")  # Set window size.
-    window.title("Listbox Example")  # Set window title.
+    root = tk.Tk()  # Create the main root.
+    root.geometry("400x400")  # Set window size.
+    root.title("Listbox Example")  # Set window title.
 
     def get_selection():  # Define a function to get selected items from the listbox.
         selected_indices = listbox.curselection()  # Get indices of selected items.
         selected_items = [listbox.get(i) for i in selected_indices]  # Retrieve selected items.
         output_label.config(text=f"Selected items:\n{', '.join(selected_items)}")  # Display selected items in the label.
 
-    listbox = tk.Listbox(window, selectmode=tk.MULTIPLE, font=('calibre', 14, 'normal'), width=30, height=7)  # Create a listbox widget.
+    listbox = tk.Listbox(root, selectmode=tk.MULTIPLE, font=('calibre', 14, 'normal'), width=30, height=7)  # Create a listbox widget.
     listbox.pack(pady=10)  # Add padding to the top of the listbox.
 
     items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]  # Define items to add to the listbox.
     for item in items:
         listbox.insert(tk.END, item)  # Insert items into the listbox.
 
-    submit_button = tk.Button(window, text="Submit", font=('calibre', 14, 'normal'), command=get_selection)  # Create a button to trigger the get_selection function.
+    submit_button = tk.Button(root, text="Submit", font=('calibre', 14, 'normal'), command=get_selection)  # Create a button to trigger the get_selection function.
     submit_button.pack(pady=10)  # Add padding to the button.
 
-    output_label = tk.Label(window, text="", font=('calibre', 14, 'normal'), width=50, height=3,
+    output_label = tk.Label(root, text="", font=('calibre', 14, 'normal'), width=50, height=3,
                              bd=2, highlightthickness=2 highlightbackground="gray")  # Create a label to display the output.
     output_label.pack(pady=10, padx=10)  # Add padding around the label.
 
-    window.mainloop()  # Run the main event loop.
+    root.mainloop()  # Run the main event loop.
 
 
 ----
@@ -75,7 +75,7 @@ Option details
         | Syntax: ``listbox_widget = tk.Listbox(parent, activestyle="underline")``
         | Description: Sets the style of the active item.
         | Default: underline
-        | Example: ``listbox_widget = tk.Listbox(window, activestyle="underline")``
+        | Example: ``listbox_widget = tk.Listbox(root, activestyle="underline")``
 
     .. py:attribute:: background
     .. py:attribute:: bg
@@ -83,7 +83,7 @@ Option details
         | Syntax: ``listbox_widget = tk.Listbox(parent, bg="color")``
         | Description: Sets the background color of the listbox.
         | Default: SystemWindow
-        | Example: ``listbox_widget = tk.Listbox(window, bg="SystemWindow")``
+        | Example: ``listbox_widget = tk.Listbox(root, bg="SystemWindow")``
 
     .. py:attribute:: bd
     .. py:attribute:: borderwidth
@@ -91,28 +91,28 @@ Option details
         | Syntax: ``listbox_widget = tk.Listbox(parent, bd=value)``
         | Description: Sets the border width of the listbox.
         | Default: 1
-        | Example: ``listbox_widget = tk.Listbox(window, bd=1)``
+        | Example: ``listbox_widget = tk.Listbox(root, bd=1)``
 
     .. py:attribute:: cursor
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, cursor="cursor_type")``
         | Description: Sets the cursor that appears when the mouse is over the listbox.
         | Default: None
-        | Example: ``listbox_widget = tk.Listbox(window, cursor="arrow")``
+        | Example: ``listbox_widget = tk.Listbox(root, cursor="arrow")``
 
     .. py:attribute:: disabledforeground
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, disabledforeground="color")``
         | Description: Sets the foreground color of the listbox when it is disabled.
         | Default: SystemDisabledText
-        | Example: ``listbox_widget = tk.Listbox(window, disabledforeground="SystemDisabledText")``
+        | Example: ``listbox_widget = tk.Listbox(root, disabledforeground="SystemDisabledText")``
 
     .. py:attribute:: exportselection
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, exportselection=value)``
         | Description: Controls whether the selection is exported to the clipboard.
         | Default: 1
-        | Example: ``listbox_widget = tk.Listbox(window, exportselection=1)``
+        | Example: ``listbox_widget = tk.Listbox(root, exportselection=1)``
 
     .. py:attribute:: fg
     .. py:attribute:: foreground
@@ -120,130 +120,130 @@ Option details
         | Syntax: ``listbox_widget = tk.Listbox(parent, fg="color")``
         | Description: Sets the foreground color of the listbox.
         | Default: SystemButtonText
-        | Example: ``listbox_widget = tk.Listbox(window, fg="SystemButtonText")``
+        | Example: ``listbox_widget = tk.Listbox(root, fg="SystemButtonText")``
 
     .. py:attribute:: font
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, font="font")``
         | Description: Sets the font of the listbox text.
         | Default: TkDefaultFont
-        | Example: ``listbox_widget = tk.Listbox(window, font="TkDefaultFont")``
+        | Example: ``listbox_widget = tk.Listbox(root, font="TkDefaultFont")``
 
     .. py:attribute:: height
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, height=value)``
         | Description: Sets the height of the listbox in number of lines.
         | Default: 10
-        | Example: ``listbox_widget = tk.Listbox(window, height=10)``
+        | Example: ``listbox_widget = tk.Listbox(root, height=10)``
 
     .. py:attribute:: highlightbackground
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, highlightbackground="color")``
         | Description: Sets the color of the focus highlight when the listbox does not have focus.
         | Default: SystemButtonFace
-        | Example: ``listbox_widget = tk.Listbox(window, highlightbackground="SystemButtonFace")``
+        | Example: ``listbox_widget = tk.Listbox(root, highlightbackground="SystemButtonFace")``
 
     .. py:attribute:: highlightcolor
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, highlightcolor="color")``
         | Description: Sets the color of the focus highlight when the listbox has focus.
         | Default: SystemWindowFrame
-        | Example: ``listbox_widget = tk.Listbox(window, highlightcolor="SystemWindowFrame")``
+        | Example: ``listbox_widget = tk.Listbox(root, highlightcolor="SystemWindowFrame")``
 
     .. py:attribute:: highlightthickness
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, highlightthickness=value)``
         | Description: Sets the thickness of the focus highlight.
         | Default: 1
-        | Example: ``listbox_widget = tk.Listbox(window, highlightthickness=1)``
+        | Example: ``listbox_widget = tk.Listbox(root, highlightthickness=1)``
 
     .. py:attribute:: justify
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, justify="left")``
         | Description: Sets the justification of the text within the listbox.
         | Default: left
-        | Example: ``listbox_widget = tk.Listbox(window, justify="left")``
+        | Example: ``listbox_widget = tk.Listbox(root, justify="left")``
 
     .. py:attribute:: relief
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, relief="style")``
         | Description: Sets the 3D effect of the listbox border.
         | Default: sunken
-        | Example: ``listbox_widget = tk.Listbox(window, relief="sunken")``
+        | Example: ``listbox_widget = tk.Listbox(root, relief="sunken")``
 
     .. py:attribute:: selectbackground
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, selectbackground="color")``
         | Description: Sets the background color of selected items.
         | Default: SystemHighlight
-        | Example: ``listbox_widget = tk.Listbox(window, selectbackground="SystemHighlight")``
+        | Example: ``listbox_widget = tk.Listbox(root, selectbackground="SystemHighlight")``
 
     .. py:attribute:: selectborderwidth
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, selectborderwidth=value)``
         | Description: Sets the width of the border around selected items.
         | Default: 0
-        | Example: ``listbox_widget = tk.Listbox(window, selectborderwidth=0)``
+        | Example: ``listbox_widget = tk.Listbox(root, selectborderwidth=0)``
 
     .. py:attribute:: selectforeground
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, selectforeground="color")``
         | Description: Sets the foreground color of selected items.
         | Default: SystemHighlightText
-        | Example: ``listbox_widget = tk.Listbox(window, selectforeground="SystemHighlightText")``
+        | Example: ``listbox_widget = tk.Listbox(root, selectforeground="SystemHighlightText")``
 
     .. py:attribute:: selectmode
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, selectmode="mode")``
         | Description: Sets the selection mode of the listbox.
         | Default: browse
-        | Example: ``listbox_widget = tk.Listbox(window, selectmode="browse")``
+        | Example: ``listbox_widget = tk.Listbox(root, selectmode="browse")``
 
     .. py:attribute:: setgrid
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, setgrid=value)``
         | Description: Controls whether the listbox is gridded.
         | Default: 0
-        | Example: ``listbox_widget = tk.Listbox(window, setgrid=0)``
+        | Example: ``listbox_widget = tk.Listbox(root, setgrid=0)``
 
     .. py:attribute:: state
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, state="state")``
         | Description: Sets the state of the listbox (normal or disabled).
         | Default: normal
-        | Example: ``listbox_widget = tk.Listbox(window, state="normal")``
+        | Example: ``listbox_widget = tk.Listbox(root, state="normal")``
 
     .. py:attribute:: takefocus
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, takefocus=value)``
         | Description: Controls whether the listbox accepts focus.
         | Default: None
-        | Example: ``listbox_widget = tk.Listbox(window, takefocus=1)``
+        | Example: ``listbox_widget = tk.Listbox(root, takefocus=1)``
 
     .. py:attribute:: width
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, width=value)``
         | Description: Sets the width of the listbox in number of characters.
         | Default: 20
-        | Example: ``listbox_widget = tk.Listbox(window, width=20)``
+        | Example: ``listbox_widget = tk.Listbox(root, width=20)``
 
     .. py:attribute:: xscrollcommand
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, xscrollcommand=callback)``
         | Description: Sets the horizontal scroll command.
         | Default: None
-        | Example: ``listbox_widget = tk.Listbox(window, xscrollcommand=scrollbar.set)``
+        | Example: ``listbox_widget = tk.Listbox(root, xscrollcommand=scrollbar.set)``
 
     .. py:attribute:: yscrollcommand
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, yscrollcommand=callback)``
         | Description: Sets the vertical scroll command.
         | Default: None
-        | Example: ``listbox_widget = tk.Listbox(window, yscrollcommand=scrollbar.set)``
+        | Example: ``listbox_widget = tk.Listbox(root, yscrollcommand=scrollbar.set)``
 
     .. py:attribute:: listvariable
 
         | Syntax: ``listbox_widget = tk.Listbox(parent, listvariable=variable)``
         | Description: Sets the variable associated with the listbox.
         | Default: None
-        | Example: ``listbox_widget = tk.Listbox(window, listvariable=my_var)``
+        | Example: ``listbox_widget = tk.Listbox(root, listvariable=my_var)``

@@ -43,7 +43,7 @@ widget anchor
     | The default value of the anchor is 'nw' for the top left of the widget at the specified coordinates.
     | parameter accepts values such as: 'n', 'ne', 'e', 'se', "s", 'sw', 'w', 'nw'
     | These constants represent north, northeast, east, southeast, south, southwest, west, northwest.
-    | 'center': This value instructs the place() method to position the center of the widget at the coordinates (x, y).                                 
+    | 'center': This value instructs the place() method to position the center of the widget at the coordinates (x, y).
 
 Sample code
 --------------
@@ -56,14 +56,14 @@ Sample code
     import tkinter as tk
 
     # window
-    window = tk.Tk()
-    window.title('Layout intro')
-    window.geometry('600x400')
+    root = tk.Tk()
+    root.title('Layout intro')
+    root.geometry('600x400')
 
     # widgets
-    label1 = tk.Label(window, text = 'Label 1', background = 'red')
-    label2 = tk.Label(window, text = 'Label 2', background = 'pink')
-    label3 = tk.Label(window, text = 'Label 3', background = 'orange')
+    label1 = tk.Label(root, text = 'Label 1', background = 'red')
+    label2 = tk.Label(root, text = 'Label 2', background = 'pink')
+    label3 = tk.Label(root, text = 'Label 3', background = 'orange')
 
     # place
     label1.place(x=150, y=50)
@@ -71,6 +71,6 @@ Sample code
     label3.place(x=150, y=200, anchor="center")
 
     # run
-    window.mainloop()
+    root.mainloop()
 
 

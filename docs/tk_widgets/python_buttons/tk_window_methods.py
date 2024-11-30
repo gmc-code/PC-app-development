@@ -17,7 +17,7 @@ unique_to_tk = set(tk_methods) - common_methods
 unique_to_button = set(button_methods) - common_methods
 
 # Close the Tkinter root
-window.destroy()
+root.destroy()
 
 # Format output as reStructuredText
 output_rst = f"""

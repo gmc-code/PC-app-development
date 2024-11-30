@@ -1,8 +1,8 @@
 import tkinter as tk
 
-window = tk.Tk()
-window.title("pack side")
-window.geometry("250x150")
+root = tk.Tk()
+root.title("pack side")
+root.geometry("250x150")
 
 button1 = tk.Button(text="Left")
 button1.pack(side="left")
@@ -16,4 +16,4 @@ button3.pack(side="right")
 button4 = tk.Button(text="Bottom")
 button4.pack(side="bottom")
 
-window.mainloop()
+root.mainloop()

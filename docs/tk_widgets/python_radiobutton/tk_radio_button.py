@@ -8,7 +8,7 @@ def display_option():
 
 # Create the main window
 root = tk.Tk()
-window.title("Option Buttons")
+root.title("Option Buttons")
 
 # Create a frame with a background color
 frame = tk.Frame(root, bg="light blue")
@@ -36,4 +36,4 @@ text_widget = tk.Text(root, height=2, width=30, bg="white", fg="black",
 text_widget.pack(padx=10, pady=10)
 
 # Run the main event loop
-window.mainloop()
+root.mainloop()

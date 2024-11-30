@@ -1,7 +1,7 @@
 import tkinter as tk
 import random
 
-# Dictionary of premiers with full team names
+# Dictionary of premiers with full team names as of 2024
 premiers = {
     "Essendon": 16,
     "Collingwood": 16,
@@ -25,21 +25,22 @@ premiers = {
     "South Melbourne": 3,
 }
 
+
 class QuizGame:
 
-    def __init__(self, root):
-        self.root = root
-        self.window.title("AFL Premiership Quiz Game")
+    def __init__(self, window):
+        self.root = window
+        self.root.title("AFL Premiership Quiz Game")
         self.score = 0
         self.teams = list(premiers.keys())
         random.shuffle(self.teams)
         self.current_team_index = 0
 
         # Set the window size to 600x800 pixels
-        self.window.geometry("600x800")
+        self.root.geometry("600x800")
 
         # Make the window resizable
-        self.window.resizable(True, True)
+        self.root.resizable(True, True)
 
         # Long text stored in a variable
         welcome_text = (
@@ -53,7 +54,7 @@ class QuizGame:
         )
 
         self.label = tk.Label(
-            root,
+            window,
             text=welcome_text,
             wraplength=550,
             anchor="w",
@@ -104,7 +105,10 @@ class QuizGame:
 
     def next_question(self):
         if self.current_team_index < len(self.teams):
-            self.team_label.config(text=f"How many premierships has {self.teams[self.current_team_index]} won?")
+            self.team_label.config(
+                text=f"How many premierships has {
+                                   self.teams[self.current_team_index]} won?"
+            )
             self.entry.delete(0, tk.END)
             self.entry.focus()  # Set focus to the entry field
             self.result_label.config(text="")
@@ -119,21 +123,30 @@ class QuizGame:
             self.result_label.config(text="Correct!", fg="green")
             self.score += 1
             self.current_team_index += 1
-            self.window.after(1000, self.next_question)
+            self.root.after(1000, self.next_question)
         else:
-            self.result_label.config(text=f"Incorrect. {self.teams[self.current_team_index]} has won {correct_premierships} premierships.", fg="red")
-            self.window.after(2000, self.end_game)
+            self.result_label.config(
+                text=f"Incorrect. {self.teams[self.current_team_index]} has won {
+                                     correct_premierships} premierships.",
+                fg="red",
+            )
+            self.root.after(2000, self.end_game)
 
     def end_game(self):
         if self.score == len(self.teams):
-            self.feedback_label.config(text=f"Congratulations! You answered all {self.score} questions correctly and are a winner!", fg="green")
+            self.feedback_label.config(
+                text=f"Congratulations! You answered all {
+                                       self.score} questions correctly and are a winner!",
+                fg="green",
+            )
         else:
             self.feedback_label.config(text=f"You answered {self.score} questions correctly in a row.", fg="blue")
         self.team_label.config(text="")
         self.entry.delete(0, tk.END)
         self.result_label.config(text="")
 
+
 if __name__ == "__main__":
     root = tk.Tk()
     game = QuizGame(root)
-    window.mainloop()
+    root.mainloop()

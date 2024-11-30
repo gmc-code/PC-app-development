@@ -1,9 +1,9 @@
 import tkinter as tk
 
 # Create the main window
-window = tk.Tk()
-window.geometry("500x200")  # Set window size
-window.title("Label anchor")  # Set window title
+root = tk.Tk()
+root.geometry("500x200")  # Set window size
+root.title("Label anchor")  # Set window title
 
 # Create the label widget with options
 label = tk.Label(text="anchor nw", font=("Arial", 24), fg="blue", bg="lightyellow",
@@ -20,4 +20,4 @@ label_2 = tk.Label(text="anchor nw padded", font=("Arial", 24), fg="purple", bg=
 label_2.pack()
 
 # Run the main event loop
-window.mainloop()
+root.mainloop()

@@ -17,7 +17,7 @@ Increment label integer via buttons with modifiers
 1. An `IntVar` is created to hold the integer value: ``int_var = tk.IntVar()``.
 2. The `set` method initializes the value: ``int_var.set(0)``.
 3. The `get` method retrieves the current value: ``current_value = int_var.get()``.
-4. A label is associated with the `IntVar`: ``label = tk.Label(window, textvariable=int_var)``.
+4. A label is associated with the `IntVar`: ``label = tk.Label(root, textvariable=int_var)``.
 5. Buttons are created for increment, decrement, and reset operations.
 6. `bind` is used to associate mouse clicks with functions for different increments and decrements:
 
@@ -56,14 +56,14 @@ Required Syntax
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text. If the variable is changed, the label text is updated.
     | Default: None
-    | Example: ``label_widget = tk.Label(window, textvariable=my_var)``
+    | Example: ``label_widget = tk.Label(root, textvariable=my_var)``
 
 .. py:attribute:: command
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.
     | Default: ``None``
-    | Example: ``button_widget = tk.Button(window, command=on_click)``
+    | Example: ``button_widget = tk.Button(root, command=on_click)``
 
 .. py:attribute:: bind
 
@@ -133,8 +133,8 @@ Code
 
     # Create the main window
     root = tk.Tk()
-    window.geometry("300x200")
-    window.title("IntVar Example")
+    root.geometry("300x200")
+    root.title("IntVar Example")
 
     # Create an IntVar to hold the integer value
     int_var = tk.IntVar()
@@ -163,7 +163,7 @@ Code
     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
     # Run the application
-    window.mainloop()
+    root.mainloop()
 
 
 ----
@@ -243,8 +243,8 @@ Code
 
                     # Create the main window
                     root = tk.Tk()
-                    window.geometry("300x200")
-                    window.title("IntVar Example")
+                    root.geometry("300x200")
+                    root.title("IntVar Example")
 
                     # Create an IntVar to hold the integer value
                     int_var = tk.IntVar()
@@ -277,7 +277,7 @@ Code
                     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
                     # Run the application
-                    window.mainloop()
+                    root.mainloop()
 
 
             .. tab-item:: Q2
@@ -342,8 +342,8 @@ Code
 
                     # Create the main window
                     root = tk.Tk()
-                    window.geometry("300x200")
-                    window.title("IntVar Example")
+                    root.geometry("300x200")
+                    root.title("IntVar Example")
 
                     # Create an IntVar to hold the integer value
                     int_var = tk.IntVar()
@@ -376,4 +376,4 @@ Code
                     button_increment.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
 
                     # Run the application
-                    window.mainloop()
+                    root.mainloop()

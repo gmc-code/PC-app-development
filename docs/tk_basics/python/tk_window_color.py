@@ -4,7 +4,7 @@ import tkinter as tk
 root = tk.Tk()
 
 # Set window options
-window.configure(highlightbackground='red', highlightcolor='green', highlightthickness=5)
+root.configure(highlightbackground='red', highlightcolor='green', highlightthickness=5)
 
 # Create a label
 label = tk.Label(root, text="Hello, Tkinter!")
@@ -15,7 +15,7 @@ button = tk.Button(root, text="Click Me")
 button.pack(padx=10, pady=10)
 
 # Ensure the window can take focus
-# window.focus_set()
+# root.focus_set()
 
 # Run the application
-window.mainloop()
+root.mainloop()

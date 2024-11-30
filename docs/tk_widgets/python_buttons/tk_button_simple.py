@@ -5,7 +5,7 @@ def button_clicked():
     print("Button clicked!")
 
 
-window = tk.Tk()
+root = tk.Tk()
 
 # Creating a button with specified options
 button = tk.Button(
@@ -24,4 +24,4 @@ button = tk.Button(
 
 button.pack(padx=20, pady=20)
 
-window.mainloop()
+root.mainloop()

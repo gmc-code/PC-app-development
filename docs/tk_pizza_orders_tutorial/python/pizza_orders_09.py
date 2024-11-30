@@ -122,9 +122,9 @@ def update_order_list():
 
 # Create the main window
 root = tk.Tk()
-window.title("Pizza Ordering System")
-window.configure(bg=TEXT_BG)
-window.geometry("900x600")
+root.title("Pizza Ordering System")
+root.configure(bg=TEXT_BG)
+root.geometry("900x600")
 
 # Customer name
 tk.Label(root, text="Customer Name:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=0, padx=10, pady=5, sticky="e")
@@ -236,4 +236,4 @@ cancel_order_button.bind("<Leave>", on_leave_cancel)
 
 
 # Run the application
-window.mainloop()
+root.mainloop()

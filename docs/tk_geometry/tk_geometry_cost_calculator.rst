@@ -10,15 +10,15 @@ tkinter geometry Cost Calculator
 Cost Calculator - pack
 ---------------------------
 
-.. py:function:: widget.pack() 
-    
+.. py:function:: widget.pack()
+
     | pack() positions widgets relative to each other.
     | By default, widgets are stacked vertically from the top of the container.
 
 .. image:: images/calc_pack.png
     :scale: 100%
 
-| Below is a sample cost calculator using the pack layout. 
+| Below is a sample cost calculator using the pack layout.
 | The calculate_price() function computes the total price based on the user input for price per item and number of items.
 | Inside the try block: it retrieves the user input from the price_per_item_entry and number_of_items_entry widgets using the .get() method.
 | It converts these input values to integers using int().
@@ -44,21 +44,21 @@ Cost Calculator - pack
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("pack calc")
-    window.geometry("250x150")
+    root = tk.Tk()
+    root.title("pack calc")
+    root.geometry("250x150")
 
     #  create widgets in frame
-    price_per_item_label = tk.Label(window, text="Price per item")
-    price_per_item_entry = tk.Entry(window)
+    price_per_item_label = tk.Label(root, text="Price per item")
+    price_per_item_entry = tk.Entry(root)
 
-    number_of_items_label = tk.Label(window, text="Number of items")
-    number_of_items_entry = tk.Entry(window)
+    number_of_items_label = tk.Label(root, text="Number of items")
+    number_of_items_entry = tk.Entry(root)
 
-    total_price_label = tk.Label(window, text="Total price")
-    total_price_entry = tk.Entry(window)
+    total_price_label = tk.Label(root, text="Total price")
+    total_price_entry = tk.Entry(root)
 
-    calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
+    calculate_button = tk.Button(root, text="Calculate total", bg="light blue", command=calculate_price)
 
     # # place widgets
     price_per_item_label.pack()
@@ -71,20 +71,20 @@ Cost Calculator - pack
     total_price_entry.pack()
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()
 
 ----
 
 Cost Calculator - grid
 ----------------------------
 
-.. py:function:: widget.grid(row=row_index,column=column_index) 
-    
+.. py:function:: widget.grid(row=row_index,column=column_index)
+
     | The `grid()` method is used to position widgets within a container using a grid-based layout.
     | Widgets are placed in rows and columns.
     | Specify the row and column indices where the widget should appear.
 
-| Below is a sample Cost Calculator using grid layout. 
+| Below is a sample Cost Calculator using grid layout.
 | ``calculate_button.grid(row=2, column=0, columnspan=2, ipadx=70)`` uses ipadx to stretch the button.
 
 .. image:: images/calc_grid.png
@@ -105,21 +105,21 @@ Cost Calculator - grid
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("grid calc")
-    window.geometry("250x150")
+    root = tk.Tk()
+    root.title("grid calc")
+    root.geometry("250x150")
 
     #  create widgets in frame
-    price_per_item_label = tk.Label(window, text="Price per item")
-    price_per_item_entry = tk.Entry(window)
+    price_per_item_label = tk.Label(root, text="Price per item")
+    price_per_item_entry = tk.Entry(root)
 
-    number_of_items_label = tk.Label(window, text="Number of items")
-    number_of_items_entry = tk.Entry(window)
+    number_of_items_label = tk.Label(root, text="Number of items")
+    number_of_items_entry = tk.Entry(root)
 
-    total_price_label = tk.Label(window, text="Total price")
-    total_price_entry = tk.Entry(window)
+    total_price_label = tk.Label(root, text="Total price")
+    total_price_entry = tk.Entry(root)
 
-    calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
+    calculate_button = tk.Button(root, text="Calculate total", bg="light blue", command=calculate_price)
 
     # # place widgets
     price_per_item_label.grid(row=0, column=0)
@@ -132,7 +132,7 @@ Cost Calculator - grid
     total_price_entry.grid(row=3, column=1)
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()
 
 ----
 
@@ -140,11 +140,11 @@ Cost Calculator - place
 -------------------------
 
 .. py:function:: widget.place(x=x_value, y=y_value)
-    
+
     | The `place()` method is used to precisely position widgets within a container using the (x, y) coordinate system. Here's how it works:
     | In absolute positioning, specify the exact x and y coordinates of the widget using the `x` and `y` parameters.
 
-| Below is a sample Cost Calculator using place method to position widgets. 
+| Below is a sample Cost Calculator using place method to position widgets.
 | ``calculate_button.place(x=0, y=60, width=230)`` uses a width of 230 to stretch out the button.
 
 .. image:: images/calc_place.png
@@ -165,21 +165,21 @@ Cost Calculator - place
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("place calc")
-    window.geometry("250x150")
+    root = tk.Tk()
+    root.title("place calc")
+    root.geometry("250x150")
 
     #  create widgets in frame
-    price_per_item_label = tk.Label(window, text="Price per item")
-    price_per_item_entry = tk.Entry(window)
+    price_per_item_label = tk.Label(root, text="Price per item")
+    price_per_item_entry = tk.Entry(root)
 
-    number_of_items_label = tk.Label(window, text="Number of items")
-    number_of_items_entry = tk.Entry(window)
+    number_of_items_label = tk.Label(root, text="Number of items")
+    number_of_items_entry = tk.Entry(root)
 
-    total_price_label = tk.Label(window, text="Total price")
-    total_price_entry = tk.Entry(window)
+    total_price_label = tk.Label(root, text="Total price")
+    total_price_entry = tk.Entry(root)
 
-    calculate_button = tk.Button(window, text="Calculate total", bg="light blue", command=calculate_price)
+    calculate_button = tk.Button(root, text="Calculate total", bg="light blue", command=calculate_price)
 
     # place widgets
     price_per_item_label.place(x=0, y=0)
@@ -191,4 +191,4 @@ Cost Calculator - place
     total_price_entry.place(x=100, y=90)
 
     # Start the main event loop
-    window.mainloop()
+    root.mainloop()

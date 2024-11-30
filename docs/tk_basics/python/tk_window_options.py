@@ -1,7 +1,7 @@
 # import tkinter as tk
 
-# window = tk.Tk()
-# widget_options = window.keys()
+# root = tk.Tk()
+# widget_options = root.keys()
 
 # print("Available options for the widget:")
 # for option in widget_options:
@@ -10,18 +10,18 @@
 
 import tkinter as tk
 
-window = tk.Tk()
-window.geometry("250x170")
+root = tk.Tk()
+root.geometry("250x170")
 
 # Get all the options and their values
-options = window.config()
+options = root.config()
 
 # Print the options
 for option, value in options.items():
     print(f"{option}: {value}")
     #print(f"{option}")
 
-#window.mainloop()
+#root.mainloop()
 
 '''
 bd

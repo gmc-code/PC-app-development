@@ -36,13 +36,13 @@ Create the Main Window
     BG_COLOR = "#333333"
 
 
-    window = tk.Tk()
-    window.title("Login form")
-    window.geometry("600x440")
-    window.configure(bg=BG_COLOR)
+    root = tk.Tk()
+    root.title("Login form")
+    root.geometry("600x440")
+    root.configure(bg=BG_COLOR)
 
 
-    window.mainloop()
+    root.mainloop()
 
 ----
 
@@ -92,7 +92,7 @@ Create Widgets
 
 .. code-block:: python
 
-    frame = tk.Frame(window, bg=BG_COLOR)
+    frame = tk.Frame(root, bg=BG_COLOR)
     frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
 
     login_label = tk.Label(frame, text="Login", bg=BG_COLOR, fg=FG_BUTTON_COLOR, font=FONT_STYLE)
@@ -158,10 +158,10 @@ Full code
 
 
     # Create the main window
-    window = tk.Tk()
-    window.title("Login form")
-    window.geometry("600x440")
-    window.configure(bg=BG_COLOR)
+    root = tk.Tk()
+    root.title("Login form")
+    root.geometry("600x440")
+    root.configure(bg=BG_COLOR)
 
     #  create frame widget for other widgets
     frame = tk.Frame(bg=BG_COLOR)
@@ -188,4 +188,4 @@ Full code
     frame.pack()
 
 
-    window.mainloop()
+    root.mainloop()

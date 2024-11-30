@@ -2,11 +2,11 @@ import tkinter as tk
 
 
 # Create a new window
-window = tk.Tk()
+root = tk.Tk()
 # Set the title of the window
-window.title("Button formatting")
+root.title("Button formatting")
 # Set the size of the window
-window.geometry("350x400")
+root.geometry("350x400")
 
 def button_clicked():
     print("Button clicked!")
@@ -14,7 +14,7 @@ def button_clicked():
 
 # Creating a button with specified options
 # Create a new button widget and add it to the window
-button = tk.Button(window,
+button = tk.Button(root,
                 # Set the text displayed on the button
                 text="Click Me",
                 # Set the function to be called when the button is clicked
@@ -61,4 +61,4 @@ button = tk.Button(window,
 
 button.pack(padx=20, pady=20)
 
-window.mainloop()
+root.mainloop()

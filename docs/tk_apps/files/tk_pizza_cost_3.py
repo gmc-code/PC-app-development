@@ -17,14 +17,14 @@ def calculate_total_cost(*args):
         total_cost += pizza_cost * num_pizzas
     total_cost_label.config(text=f"Total Cost: ${total_cost:.2f}")
 
-window = tk.Tk()
-window.title("Pizza Order App")
-window.geometry("400x200")
+root = tk.Tk()
+root.title("Pizza Order App")
+root.geometry("400x200")
 
 # Create three rows of pizza selection
 pizza_rows = []
 for i, pizza_name in enumerate(["Margherita", "Pepperoni", "Vegetarian"]):
-    row_frame = tk.Frame(window)
+    row_frame = tk.Frame(root)
     row_frame.grid(row=i, column=0, padx=10)
 
     pizza_var = tk.StringVar(row_frame)
@@ -48,7 +48,7 @@ for i, pizza_name in enumerate(["Margherita", "Pepperoni", "Vegetarian"]):
     pizza_rows.append({"var": pizza_var, "spinbox": pizza_spinbox})
 
 # Total cost label
-total_cost_label = tk.Label(window, text="Total Cost: $0.00")
+total_cost_label = tk.Label(root, text="Total Cost: $0.00")
 total_cost_label.grid(row=len(pizza_rows), column=0, padx=10)
 
-window.mainloop()
+root.mainloop()

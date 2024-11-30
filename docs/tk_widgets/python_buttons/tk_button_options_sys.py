@@ -1,18 +1,18 @@
 import tkinter as tk
 from tkinter import font
 
-window = tk.Tk()
+root = tk.Tk()
 
 # Create a temporary button to get the system colors
-button = tk.Button(window)
+button = tk.Button(root)
 
 # Get the system-defined colors for `SystemButtonFace` and `SystemButtonText`
-system_button_face = window.winfo_rgb(button.cget("background"))
-system_button_text = window.winfo_rgb(button.cget("foreground"))
+system_button_face = root.winfo_rgb(button.cget("background"))
+system_button_text = root.winfo_rgb(button.cget("foreground"))
 # Get the `highlightcolor` in system-defined color (e.g., SystemWindowFrame)
-highlight_color = window.winfo_rgb(button.cget("highlightcolor"))
+highlight_color = root.winfo_rgb(button.cget("highlightcolor"))
 # Get the disabledforeground: SystemDisabledText
-disabledforeground_color = window.winfo_rgb(button.cget("disabledforeground"))
+disabledforeground_color = root.winfo_rgb(button.cget("disabledforeground"))
 
 # Convert the RGB values from 16-bit to 8-bit format
 system_button_face_rgb = tuple(value // 256 for value in system_button_face)
@@ -40,7 +40,7 @@ print("Default Font Size:", font_size)
 print("Default Font Weight:", font_weight)
 print("Default Font Slant:", font_slant)
 
-window.destroy()
+root.destroy()
 
 ''''
 SystemButtonFace RGB: (240, 240, 240)

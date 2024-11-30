@@ -1,10 +1,10 @@
 import tkinter as tk
 
 # Create the main window
-window = tk.Tk()
+root = tk.Tk()
 
 # Define a variable to hold the selected option
-selected_option = tk.StringVar(window)
+selected_option = tk.StringVar(root)
 
 # Define the options for the OptionMenu
 options = ["Option 1", "Option 2", "Option 3"]
@@ -13,7 +13,7 @@ options = ["Option 1", "Option 2", "Option 3"]
 selected_option.set(options[0])
 
 # Create the OptionMenu widget
-widget = tk.OptionMenu(window, selected_option, *options)
+widget = tk.OptionMenu(root, selected_option, *options)
 
 # Pack the widget into the window
 widget.pack()

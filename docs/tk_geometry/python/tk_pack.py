@@ -1,8 +1,8 @@
 import tkinter as tk
 
-window = tk.Tk()
-window.title('Tkinter Pack Layout')
-window.geometry('300x200')
+root = tk.Tk()
+root.title('Tkinter Pack Layout')
+root.geometry('300x200')
 
 label1 = tk.Label(master=window, text='x', bg='red', fg='black')
 label2 = tk.Label(master=window, text='y', bg='light green', fg='black')
@@ -15,4 +15,4 @@ label3.pack(side='top', expand=False, fill="none")
 label4.pack(side='top', expand=False, fill="both")
 
 
-window.mainloop()
+root.mainloop()

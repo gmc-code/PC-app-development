@@ -10,20 +10,20 @@ def validate_email(email):
         error_label.config(text="Invalid email address")
         return False
 
-window = tk.Tk()
-window.title("Email Validation Example")
-window.geometry("500x300")
+root = tk.Tk()
+root.title("Email Validation Example")
+root.geometry("500x300")
 
 # Register the validation function
-vcmd = (window.register(validate_email), '%P')
+vcmd = (root.register(validate_email), '%P')
 
-entry = tk.Entry(window, font=("Arial", 24), validate="focusout", validatecommand=vcmd)
+entry = tk.Entry(root, font=("Arial", 24), validate="focusout", validatecommand=vcmd)
 entry.pack(pady=10)
 
-error_label = tk.Label(window, text="", fg="red")
+error_label = tk.Label(root, text="", fg="red")
 error_label.pack()
 
-entry2 = tk.Entry(window, font=("Arial", 24))
+entry2 = tk.Entry(root, font=("Arial", 24))
 entry2.pack(pady=10)
 
-window.mainloop()
+root.mainloop()
