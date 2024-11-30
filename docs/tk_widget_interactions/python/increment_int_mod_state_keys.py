@@ -16,7 +16,7 @@ label.grid(row=0, column=0, columnspan=3, pady=5)
 
 # Function to increment the integer value
 def increment_value(event):
-    print(event.state)
+    # print(event.state)
     if event.state == 9:  # Shift key
         increment = 100
     elif event.state == 131080:  # Alt key

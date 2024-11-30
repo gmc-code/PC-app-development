@@ -1,18 +1,20 @@
 ====================================================
-Increment integers
+Label textvariable: Increment integers
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
 
 ----
 
+Increment label integer via buttons
+---------------------------------------
+
 .. image:: images/increment_integer.png
     :scale: 100%
 
-----
 
 Required Syntax
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:class:: IntVar
 
@@ -50,34 +52,37 @@ Required Syntax
     | Example: ``button_widget = tk.Button(window, command=on_click)``
 
 
-Code example
+Code features
 ~~~~~~~~~~~~~~~~~~
 
-This code creates a basic GUI with buttons to increment, decrement, and reset an integer value displayed in a label.
+| Here's a breakdown of the main parts of the code:
 
-1. **Using IntVar**:
+1. **Create a variable: IntVar**:
 
    - `int_var = tk.IntVar()`: Creates an `IntVar` instance, `int_var`, which is a special Tkinter variable for holding integer data.
    - `int_var.set(0)`: Sets the initial value of `int_var` to 0.
 
-2. **Creating the Label Widget**:
+2. **Link variable to Label with textvariable**:
 
    - `label = tk.Label(root, textvariable=int_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `int_var`, so the label text displays `int_var`'s value.
    - `label.grid(row=0, column=0, columnspan=3, pady=5)`: Positions the label in the grid layout.
 
-3. **Defining the Update Functions**:
+3. **Define the Functions**:
 
    - `def increment_value()`: Defines a function to increment `int_var`'s value by 1.
    - `def decrement_value()`: Defines a function to decrement `int_var`'s value by 1.
    - `def reset_value()`: Defines a function to reset `int_var`'s value to 0.
 
-4. **Creating the Button Widgets**:
+4. **Set Button command**:
 
    - `button_decrement = tk.Button(root, text="-", width=4, command=decrement_value, font=("Helvetica", 24), bg="#FF6666")`: Creates a button to decrement the value, with a light red background.
    - `button_reset = tk.Button(root, text="Reset", command=reset_value, font=("Helvetica", 16), bg="#FFFF99")`: Creates a button to reset the value, with a light yellow background.
    - `button_increment = tk.Button(root, text="+", width=4, command=increment_value, font=("Helvetica", 24), bg="#99FF99")`: Creates a button to increment the value, with a light green background.
 
+Code
+~~~~~~~~~~~
 
+| This code creates a basic GUI with buttons to increment, decrement, and reset an integer value displayed in a label.
 
 .. code-block:: python
 

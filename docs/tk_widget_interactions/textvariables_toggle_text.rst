@@ -1,10 +1,13 @@
 ====================================================
-Update text
+Label textvariable: toggle text
 ====================================================
 
 | See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
 
 ----
+
+Toggle text via button
+----------------------------
 
 .. image:: images/toggle_text_1.png
     :scale: 67%
@@ -12,10 +15,8 @@ Update text
 .. image:: images/toggle_text_2.png
     :scale: 67%
 
-----
-
 Required Syntax
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 .. py:class:: StringVar
 
@@ -53,28 +54,35 @@ Required Syntax
     | Example: ``button_widget = tk.Button(window, command=on_click)``
 
 
-Code example
+Code features
 ~~~~~~~~~~~~~~~~~~
 
-This code creates a basic GUI with a button that toggles the text of a label.
+| Here's a breakdown of the main parts of the code:
 
-1. **Using StringVar**:
+1. **Create a variable: StringVar**:
 
    - `text_var = tk.StringVar()`: Creates a `StringVar` instance, `text_var`, which is a special tkinter variable for holding string data.
    - `text_var.set("Initial Text")`: Sets the initial value of `text_var`.
 
-2. **Creating the Label Widget**:
+2. **Link variable to Lable with textvariable**:
 
    - `label = tk.Label(root, textvariable=text_var, font=("Helvetica", 16))`: Creates a label in the `root` window. The `textvariable` parameter is linked to `text_var`, so the label text displays `text_var`'s value.
    - `label.pack(pady=10)`: Adds the label to the window with 10 pixels of vertical padding.
 
-3. **Defining the Update Function**:
+3. **Define the Function**:
 
    - `def update_text()`: Defines a function, `update_text`, that checks `text_var`'s current value and toggles it between "Initial Text" and "Updated Text" by using `text_var.set()`.
 
-4. **Creating the Button Widget**:
+4. **Set Button command**:
 
    - `button = tk.Button(root, text="Toggle Text", command=update_text)`: Creates a button with the label "Toggle Text" and sets `update_text` as the function that runs when clicked.
+
+
+Code
+~~~~~~~~~~~~~~~~~~
+
+| This code creates a basic GUI with a button that toggles the text of a label.
+
 
 .. code-block:: python
 
@@ -109,6 +117,7 @@ This code creates a basic GUI with a button that toggles the text of a label.
     # Run the application
     root.mainloop()
 
+----
 
 .. admonition:: Tasks
 

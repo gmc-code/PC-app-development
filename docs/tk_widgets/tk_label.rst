@@ -535,7 +535,7 @@ Options
     .. py:attribute:: image
 
         | Syntax: ``label_widget = tk.Label(parent, image="image")``
-        | Description: Sets an image to be displayed in the label. The value should be a PhotoImage, BitmapImage, or a compatible object. If specified, this takes precedence over the text and bitmap options.
+        | Description: Sets an image to be displayed in the label. The value should be a PhotoImage (.gif, .png), BitmapImage (.bmp), or a .jpg via the pillow library. If specified, this takes precedence over the text and bitmap options.
         | Default: None
         | Example: ``label_widget = tk.Label(window, image=my_image)``
 

@@ -58,10 +58,11 @@ PC-app-development
     :caption: tk widgets interactions
     :numbered:
 
-    tk_widget_interactions/update_text.rst
-    tk_widget_interactions/increment_integers.rst
-    tk_widget_interactions/increment_floats.rst
-    tk_widget_interactions/increment_integers_with_modifiers.rst
+    tk_widget_interactions/textvariables__toggle_text.rst
+    tk_widget_interactions/textvariables__increment_integers.rst
+
+    tk_widget_interactions/textvariables_increment_floats.rst
+    tk_widget_interactions/textvariables_increment_integers_with_modifiers.rst
 
     tk_widget_interactions/counter_integers.rst
     tk_widget_interactions/counter_floats.rst
