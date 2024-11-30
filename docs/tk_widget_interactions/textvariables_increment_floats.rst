@@ -34,19 +34,19 @@ Required Syntax
     | Default: None
     | Example: ``double_var = tk.DoubleVar()``
 
-.. py:method:: get
-
-    | Syntax: ``current_value = double_var.get()``
-    | Description: Retrieves the current value of the ``DoubleVar``.
-    | Default: None
-    | Example: ``current_value = double_var.get()``
-
 .. py:method:: set
 
     | Syntax: ``double_var.set(new_value)``
     | Description: Sets the value of the ``DoubleVar`` to the specified float.
     | Default: None
     | Example: ``double_var.set(0.0)``
+
+.. py:method:: get
+
+    | Syntax: ``current_value = double_var.get()``
+    | Description: Retrieves the current value of the ``DoubleVar``.
+    | Default: None
+    | Example: ``current_value = double_var.get()``
 
 .. py:attribute:: textvariable
 

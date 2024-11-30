@@ -37,19 +37,19 @@ Required Syntax
     | Default: None
     | Example: ``text_var = tk.StringVar()``
 
-.. py:method:: get
-
-    | Syntax: ``current_value = text_var.get()``
-    | Description: Retrieves the current value of the ``StringVar``.
-    | Default: None
-    | Example: ``current_value = text_var.get()``
-
 .. py:method:: set
 
     | Syntax: ``text_var.set("New Value")``
     | Description: Sets the value of the ``StringVar`` to the specified string.
     | Default: None
     | Example: ``text_var.set("Hello, World!")``
+
+.. py:method:: get
+
+    | Syntax: ``current_value = text_var.get()``
+    | Description: Retrieves the current value of the ``StringVar``.
+    | Default: None
+    | Example: ``current_value = text_var.get()``
 
 .. py:attribute:: textvariable
 
