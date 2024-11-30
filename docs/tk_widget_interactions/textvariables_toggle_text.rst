@@ -210,8 +210,9 @@ Code
 
                     # List of palindromes
                     palindromes = [
-                        "aibohphobia", "civic", "deified", "kayak", "level", "madam", "minim", "noon", "racecar", "radar",
-                        "refer", "repaper", "reviver", "rotator", "rotor", "sagas", "solos", "stats", "tenet", "wow"
+                        "aibohphobia", "civic", "deified", "kayak", "level", "madam", "minim", "noon",
+                        "racecar", "radar", "refer", "repaper", "reviver", "rotator", "rotor", "sagas",
+                        "solos", "stats", "tenet", "wow"
                     ]
 
 
