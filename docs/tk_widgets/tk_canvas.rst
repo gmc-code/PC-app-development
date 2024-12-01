@@ -1,7 +1,6 @@
 ====================================================
-tk Spinbox
+tk Canvas
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-spinbox/
+| See: https://www.geeksforgeeks.org/python-tkinter-canvas-widget/
 
--

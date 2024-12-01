@@ -5,12 +5,46 @@ tk variables
 | In Tkinter, several widgets can have a variable associated with them.
 | These variables are instances of `StringVar`, `IntVar`, `DoubleVar`, or `BooleanVar`.
 | They allow you to link the widget's value to a variable that can be updated and accessed programmatically.
-| Here are some common widgets that can have an associated variable:
+
+| See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
 
 ----
 
+Variable Binding
+-------------------------
+
+| Widgets can share and update common variables.
+| For example, StringVar, IntVar, DoubleVar, and BooleanVar are special Tkinter variables that can be linked to multiple widgets.
+| When the variable's value changes, all linked widgets update automatically.
+| The code below shared variable binding between an entry widget and a label widget.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    # Create the main window
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Variable binding Examples")
+
+    # Example 1: Variable Binding
+    shared_var = tk.StringVar()
+    entry = tk.Entry(root, font=("Helvetica", 16), justify="left", width=20, textvariable=shared_var)
+    entry.pack()
+    label = tk.Label(root, font=("Helvetica", 16), anchor="w", width=20, bg='yellow', textvariable=shared_var)
+    label.pack()
+
+
+    root.mainloop()
+
+
+----
+
+Variables
+-----------------
+
 StringVar
-------------
+~~~~~~~~~~~~
 
 | Purpose: Holds string values.
 | Basic Initialization: string_var = tk.StringVar()
@@ -20,7 +54,7 @@ StringVar
 ----
 
 IntVar
-------------
+~~~~~~~~~~~~~~~~~
 
 | Purpose: Holds integer values.
 | Basic Initialization: int_var = tk.IntVar()
@@ -29,7 +63,7 @@ IntVar
 ----
 
 DoubleVar
-------------
+~~~~~~~~~~~~~
 
 | Purpose: Holds floating-point values.
 | Basic Initialization: double_var = tk.DoubleVar()
@@ -38,7 +72,7 @@ DoubleVar
 ----
 
 BooleanVar
-------------
+~~~~~~~~~~~~~~~~~~~
 
 | Purpose: Holds boolean values (True or False).
 | Basic Initialization: bool_var = tk.BooleanVar()
@@ -48,6 +82,8 @@ BooleanVar
 
 Binding variables to widgets
 -----------------------------------------
+
+| Here are some common widgets that can have an associated variable:
 
 1. **Label**: Can display text that is linked to a variable.
 
@@ -343,10 +379,8 @@ Scale
 - **Creates a `Scale` widget**: Horizontal, ranges from 0 to 1, linked to `DoubleVar`, calls `update_intensity` on change.
 - **Creates a `Canvas` widget**: to enable displays of a rectangle.
 - **Creates a rectangle on the `Canvas`**: Initial color intensity set based on `DoubleVar`.
-- The expression {intensity:02x} is a Python string formatting operation that converts an integer to a two-digit hexadecimal string
+- The expression **{intensity:02x}** is a Python string formatting operation that converts an integer to a two-digit hexadecimal string
 
-.
-```
 .. code-block:: python
 
 	import tkinter as tk
