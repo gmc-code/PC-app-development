@@ -2,7 +2,7 @@
 tk Listbox
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-listbox-widget/
+| See: https://www.geeksforgeeks.org/-tkinter-listbox-widget/
 
 ----
 
@@ -28,7 +28,7 @@ Using a listbox widget
 
 This code creates a simple Tkinter GUI application that allows a user to select from a list.
 
-.. code-block:: python
+.. code-block::
 
     import tkinter as tk  # Import the tkinter module for GUI creation.
 
@@ -56,6 +56,54 @@ This code creates a simple Tkinter GUI application that allows a user to select 
     output_label.pack(pady=10, padx=10)  # Add padding around the label.
 
     root.mainloop()  # Run the main event loop.
+
+
+----
+
+Listbox methods
+---------------------
+
+Tkinter's `Listbox` widget provides several methods to help you work with selected items. Here are some key methods:
+
+1. **`curselection()`**: Returns a tuple of indices of the selected items.
+
+   selected_indices = listbox.curselection()
+
+
+2. **`get(index)`**: Retrieves the item at the specified index.
+
+   item = listbox.get(index)
+
+
+3. **`selection_set(first, last=None)`**: Selects items from the `first` index to the `last` index. If `last` is not specified, only the item at `first` is selected.
+
+   listbox.selection_set(0, 2)  # Selects items from index 0 to 2
+
+
+4. **`selection_clear(first, last=None)`**: Deselects items from the `first` index to the `last` index. If `last` is not specified, only the item at `first` is deselected.
+
+   listbox.selection_clear(0, 2)  # Deselects items from index 0 to 2
+
+
+5. **`selection_includes(index)`**: Returns `True` if the item at the specified index is selected.
+
+   is_selected = listbox.selection_includes(index)
+
+
+6. **`size()`**: Returns the number of items in the listbox.
+
+   num_items = listbox.size()
+
+
+7. **`activate(index)`**: Sets the active item to the specified index.
+
+   listbox.activate(index)
+
+
+8. **`see(index)`**: Scrolls the listbox to make the item at the specified index visible.
+
+   listbox.see(index)
+
 
 
 ----

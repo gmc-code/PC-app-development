@@ -1,7 +1,7 @@
 import tkinter as tk
 import random
 
-# Dictionary of premiers with full team names
+# Dictionary of premiers with full team names as of 2024
 premiers = {
     "Essendon": 16,
     "Collingwood": 16,
