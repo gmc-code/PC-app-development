@@ -10,6 +10,7 @@ Usage
 ---------------
 
 | The `tkinter.Entry` widget provides an single line input field.
+| The Entry widget is great for simple, single-line inputs like usernames or passwords, while the Text widget is better for larger text inputs, such as comments or descriptions.
 | To create an entry widget the general syntax is (assuming import via "import tkinter as tk")
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
@@ -17,12 +18,13 @@ Usage
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
+
 ----
 
-Using a variable for the text of an entry widget
+Entry example
 ----------------------------------------------------
 
-.. image:: images/entry_get.png
+.. image:: images/entry.png
     :scale: 100%
 
 .. code-block:: python

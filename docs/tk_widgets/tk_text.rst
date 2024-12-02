@@ -9,7 +9,7 @@ tk Text
 Usage
 ---------------
 
-| The `tkinter.Text` widget provides a versatile multi-line text area that you can use for various purposes.
+| The `tkinter.Text` widget provides a versatile multi-line text area that you can use for various purposes such as comments or descriptions
 | To create a multi-line text widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: text_widget  = tk.Text(parent, option=value)
