@@ -369,9 +369,6 @@ border example
 
     #. Create a Tkinter window with a label using the following specifications:
 
-        .. image:: images/label_question.png
-            :scale: 67%
-
       - The window should have a title "Formatted Label Example" and a size of 500x300 pixels.
       - Use the "Comic Sans MS" font with a size of 20, bold weight, and italic slant for the Label widget.
       - The Label widget should display the text "This is a label widget." with a pale mauve background (`#e0b0ff`) and purple text color.
@@ -379,6 +376,8 @@ border example
       - Set the width of the Label widget to 300 and the height to 2.
       - Ensure the Label widget is packed with padding of 20 pixels on all sides.
 
+        .. image:: images/label_question.png
+            :scale: 67%
 
     .. dropdown::
         :icon: codescan
