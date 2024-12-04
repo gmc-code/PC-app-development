@@ -10,7 +10,7 @@ root.geometry("400x300")
 custom_font = font.Font(family="Comic Sans MS", size=20, weight="normal", slant="roman")
 
 # First Entry widget
-entry = tk.Entry(root, font=custom_font, bg="#eff1db", fg="#4B0082", bd=2, relief="sunken", justify="left", width=20)
+entry = tk.Entry(root, font=custom_font, bg="#fafafa", fg="#2f2f2f", bd=2, relief="sunken", justify="left", width=20)
 # ipadx does not put move the left justification, so is omitted.
 entry.pack(padx=20, pady=20, ipady=5)
 

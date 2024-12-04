@@ -24,6 +24,8 @@ Usage
 Entry example
 ----------------------------------------------------
 
+| The font and width are the options used in the entry widget below.
+
 .. image:: images/entry.png
     :scale: 100%
 
@@ -48,11 +50,10 @@ Entry example
 
 .. admonition:: Tasks
 
-    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font (size 20, normal weight, roman slant), a background color of `#eff1db`, a foreground color of `#4B0082`, a border width of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding and internal padding of 20 and 5 units respectively."
+    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font (size 20, normal weight, roman slant), a background color of `#fafafa`, a foreground color of `#2f2f2f`, a border width of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5."
 
         .. image:: images/entry_question.png
             :scale: 67%
-
 
     .. dropdown::
         :icon: codescan
@@ -63,7 +64,7 @@ Entry example
 
             .. tab-item:: Q1
 
-                Create a Tkinter window with an entry.
+                Create a Tkinter window with an entry widget.
 
                 .. code-block:: python
 
@@ -79,8 +80,8 @@ Entry example
                     custom_font = font.Font(family="Comic Sans MS", size=20, weight="normal", slant="roman")
 
                     # First Entry widget
-                    entry = tk.Entry(root, font=custom_font, bg="#eff1db", fg="#4B0082", bd=2, relief="sunken", justify="left", width=20)
-                    # ipadx does not put move the left justification, so is omitted.
+                    entry = tk.Entry(root, font=custom_font, bg="#fafafa", fg="#2f2f2f", bd=2, relief="sunken", justify="left", width=20)
+                    # ipadx does put move the left justification, so is omitted.
                     entry.pack(padx=20, pady=20, ipady=5)
 
 

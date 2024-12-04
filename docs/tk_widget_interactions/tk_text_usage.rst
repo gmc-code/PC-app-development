@@ -17,56 +17,104 @@ Usage
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
-| Options can also be added after widget creation.
-
-.. py:function:: text_widget.config(option=value)
-
-    | text_widget is the Text widget object.
-    | Options can be passed as parameters separated by commas.
-
 ----
 
-Text widget example
+Text widget with text altered by buttons
 ---------------------------------------------
 
-.. image:: images/text.png
+.. image:: images/text_and_buttons.png
         :scale: 100%
-
-| The code below sets some widget options at creation.
-| It also uses **.config()** to add other custom options.
 
 .. code-block:: python
 
     import tkinter as tk
 
+    Create the main window
+    root = tk.Tk()
+    root.title("Interactive Text Widget Example")
+
+    Create a StringVar to hold the text content
+    text_var = tk.StringVar()
+    text_var.set("This is a simple text widget example.")
+
+    Create a Text widget
+    text = tk.Text(root, height=10, width=40, wrap="word", font=("Helvetica", 12))
+    text.pack(padx=10, pady=10, fill="both", expand=True)
+
+    Insert initial content from StringVar
+    text.insert("1.0", text_var.get())
+
+    Function to add text
+    def add_text():
+        text.insert("end", "\nAdditional text added.")
+
+    Function to remove text
+    def remove_text():
+        text.delete("2.0", "end")
+
+    Create buttons to add and remove text
+    button_frame = tk.Frame(root)
+    button_frame.pack(pady=10)
+
+    add_button = tk.Button(button_frame, text="Add Text", command=add_text)
+    add_button.pack(side="left", padx=5)
+
+    remove_button = tk.Button(button_frame, text="Remove Text", command=remove_text)
+    remove_button.pack(side="left", padx=5)
+
+    Run the main event loop
+    root.mainloop()
+
+
+----
+
+Text widget with Scrollbar
+--------------------------------
+
+.. image:: images/text.png
+        :scale: 100%
+
+.. code-block:: python
+
+    import tkinter as tk
+    from tkinter import scrolledtext
+
+    Create the main window
     root = tk.Tk()
     root.title("Text Widget Example")
 
-    # Create a Text widget
-    text = tk.Text(root, height=6, width=40, wrap="word", font=("Helvetica", 12))
-    text.pack(padx=10, pady=10)
+    Create a Text widget with a scrollbar
+    text_frame = tk.Frame(root)
+    text_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
-    # Insert initial content
-    text.insert(
-        "1.0", "Welcome to \nthe Text Widget!\nIt has multiline text.")
+    scrollbar = tk.Scrollbar(text_frame)
+    scrollbar.pack(side="right", fill="y")
 
-    # Customize options
+    text = tk.Text(text_frame, height=10, width=40, wrap="word", font=("Helvetica", 12), yscrollcommand=scrollbar.set)
+    text.pack(padx=10, pady=10, fill="both", expand=True)
+
+    scrollbar.config(command=text.yview)
+
+    Insert initial content
+    initial_content = "\n".join([f"Line {i+1}" for i in range(15)])
+    text.insert("1.0", initial_content)
+
+    Customize options
     text.config(
-        bg="#fafafa",  # Background color
-        fg="blue",  # Text color
-        bd=1,  # Border width
-        relief="solid",  # Border style
-        insertbackground="blue",  # Insertion cursor color
-        state="normal",  # Enable editing (use "disabled" to disable)
-        highlightthickness=1,
-        highlightcolor="blue",
+        bg="lightyellow",  Background color
+        fg="blue",  Text color
+        bd=2,  Border width
+        relief="solid",  Border style
+        insertbackground="blue",  Insertion cursor color
+        state="normal",  Enable editing (use "disabled" to disable)
+        highlightthickness=5,
+        highlightcolor="red",
         padx=10,
-        pady=10,
-        yscrollcommand="True",
+        pady=10
     )
 
+    Run the main event loop
     root.mainloop()
-
 
 ----
 
