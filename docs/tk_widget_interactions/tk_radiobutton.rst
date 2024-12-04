@@ -17,6 +17,7 @@ Usage
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
+
 ----
 
 Using radio buttons
@@ -25,13 +26,22 @@ Using radio buttons
 .. image:: images/radio_buttons.png
     :scale: 100%
 
-| This code create one group of radio buttons in a frame and a second group in root window below the frame.
-| To group radio buttons together set the variable option to be the same for each widget. e.g. ``variable=option_grp1_var``.
-| All radio buttons in the same group should share this variable to ensure only one can be selected at a time.
-| To preselect the first radio button in each group use: ``option_grp1_var.set("Option 1")`` and ``option_grp2_var.set("Option 4")`
+This code demonstrates the use of option buttons (radio buttons) and a text widget to display the selected option.
 
-| The `indicatoron` option is set to `0` to make the radio buttons look like regular buttons.
-| The `indicatoron` option is set to `1` to make the radio buttons look like radio buttons.
+1. **Frame Creation**:
+   - A frame with a light blue background is created to hold the radio buttons.
+
+2. **Option Variable**:
+   - A `StringVar` is created to hold the value of the selected option.
+   - Initially, no default value is set.
+
+3. **Radio Buttons**:
+   - Three radio buttons are created for the options "Option 1", "Option 2", and "Option 3".
+   - The `indicatoron` option is set to `0` to make the radio buttons look like regular buttons.
+   - The `display_option` function is called when a button is selected, updating the text widget with the selected option.
+
+4. **Text Widget**:
+   - A text widget is created to display the selected option.
 
 
 .. code-block:: python
@@ -39,6 +49,10 @@ Using radio buttons
     import tkinter as tk
     from tkinter import font
 
+    def display_option():
+        selected_option = option_var.get()
+        text_widget.delete(1.0, 'end')
+        text_widget.insert(tk.END, f"You selected: {selected_option}")
 
     # Create the main window
     root = tk.Tk()
@@ -52,36 +66,25 @@ Using radio buttons
     fontStyle = font.Font(family="Lucida Grande", size=18)
 
     # Create a StringVar to hold the selected option
-    option_grp1_var = tk.StringVar(value=None)  # No default value
+    option_var = tk.StringVar(value=None)  # No default value
 
     # Define the options
     options = ["Option 1", "Option 2", "Option 3"]
 
     # Create and pack the radio buttons
     for option in options:
-        button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
-                                bg="white", fg="black", font=fontStyle, indicatoron=0, padx=10, pady=5)
+        button = tk.Radiobutton(frame, text=option, variable=option_var, value=option,
+                                 command=display_option, bg="white", fg="black",
+                                font=fontStyle, indicatoron=0, padx=10, pady=5)
         button.pack(side="left", padx=5, pady=5)
-    option_grp1_var.set("Option 1")
 
-
-    # Create a StringVar to hold the selected option
-    option_grp2_var = tk.StringVar(value=None)  # No default value
-
-    # Define the options
-    options = ["Option 4", "Option 5", "Option 6"]
-
-    # Create and pack the radio buttons
-    for option in options:
-        button = tk.Radiobutton(root, text=option, value=option, variable=option_grp2_var,
-                                bg="white", fg="black", font=fontStyle, indicatoron=1, padx=10, pady=5)
-        button.pack(side="left", padx=5, pady=5)
-    option_grp2_var.set("Option 4")
+    # Create a text widget to display the selected option
+    text_widget = tk.Text(root, height=2, width=30, bg="white", fg="black",
+                            font=fontStyle, bd=2, relief="solid")
+    text_widget.pack(padx=10, pady=10)
 
     # Run the main event loop
     root.mainloop()
-
-
 
 
 ----
