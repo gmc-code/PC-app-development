@@ -50,7 +50,7 @@ Entry example
 
 .. admonition:: Tasks
 
-    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font (size 20, normal weight, roman slant), a background color of `#fafafa`, a foreground color of `#2f2f2f`, a border width of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5."
+    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font (size 20, normal weight, roman slant), a background color of `#fafafa`, a foreground color of `#2f2f2f`, a border width of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5.
 
         .. image:: images/entry_question.png
             :scale: 67%

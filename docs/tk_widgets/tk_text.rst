@@ -68,6 +68,64 @@ Text widget example
     root.mainloop()
 
 
+
+
+
+
+
+----
+
+.. admonition:: Tasks
+
+     #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color to dark green, a border width to 2, a border style of "groove" and disabled state so it can't be edited.
+
+        .. image:: images/entry_question.png
+            :scale: 67%
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color to dark green, a border width to 2, a border style of "groove" and disabled state so it can't be edited.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.title("Text Widget Questions")
+
+                    # Create a Text widget
+                    text = tk.Text(root, height=6, width=40, wrap="word", font=("Helvetica", 12))
+                    text.pack(padx=10, pady=10)
+
+                    # Insert initial content
+                    text.insert(
+                        "1.0", "Welcome to \nthe Text Widget!\nIt has multiline text.")
+
+                    # Customize options
+                    text.config(
+                        bg="light yellow",  # Background color
+                        fg="dark green",  # Text color
+                        bd=2,  # Border width
+                        relief="groove",  # Border style
+                        insertbackground="dark green",  # Insertion cursor color
+                        state="disabled",  # Disable editing
+                        highlightthickness=1,
+                        highlightcolor="dark green",
+                        padx=10,
+                        pady=10,
+                        yscrollcommand="True",
+                    )
+
+                    root.mainloop()
+
+
 ----
 
 Parameter syntax
