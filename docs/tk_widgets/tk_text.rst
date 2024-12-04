@@ -67,19 +67,13 @@ Text widget example
 
     root.mainloop()
 
-
-
-
-
-
-
 ----
 
 .. admonition:: Tasks
 
      #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color to dark green, a border width to 2, a border style of "groove" and disabled state so it can't be edited.
 
-        .. image:: images/entry_question.png
+        .. image:: images/text_question.png
             :scale: 67%
 
     .. dropdown::
