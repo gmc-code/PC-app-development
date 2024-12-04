@@ -42,22 +42,19 @@ Sample button
       .. image:: images/button_simple_pressed.png
         :scale: 100%
 
+| The code below causes the button to change colour when clicked.
+
 .. code-block:: python
 
     import tkinter as tk
 
-
-    def button_clicked():
-        print("Button clicked!")
-
-
     root = tk.Tk()
+    root.title("Button Widget Example")
 
     # Creating a button with specified options
     button = tk.Button(
-        window,
-        text="Click Me",
-        command=button_clicked,
+        root,
+        text="Button",
         fg="black",  # Text color
         bg="lightblue",  # Background color
         activebackground="blue",  # Background color when clicked
@@ -71,6 +68,79 @@ Sample button
     button.pack(padx=20, pady=20)
 
     root.mainloop()
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to change the window title to "Button question," set the window size to 350x400, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border of 3, a height of 2, a hand-shaped cursor on hover, a raised border style when pressed, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
+
+        .. image:: images/button_question.png
+            :scale: 67%
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above to change the window title to "Button question," set the window size to 350x400, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border of 3, a height of 2, a hand-shaped cursor on hover, a raised border style when pressed, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    # Create a new window
+                    root = tk.Tk()
+                    # Set the title of the window
+                    root.title("Button question")
+                    # Set the size of the window
+                    root.geometry("350x400")
+
+                    button = tk.Button(
+                        root,
+                        # Set the text displayed on the button
+                        text="Click Me",
+                        # Set the background color of the button
+                        bg="lightgray",
+                        # Set the text color of the button
+                        fg="black",
+                        # Set the background color when the button is active (clicked)
+                        activebackground="black",
+                        # Set the text color when the button is active (clicked)
+                        activeforeground="white",
+                        # Set the font of the button text
+                        font=("Arial", 14),
+                        # Set the alignment of the text within the button
+                        anchor="center",
+                        # Set the border width of the button
+                        bd=3,
+                        # Set the height of the button
+                        height=2,
+                        # Set the justification of the text within the button
+                        justify="center",
+                        # Set the cursor that appears when hovering over the button
+                        cursor="hand2",
+                        # Set the relief style of the button when it is pressed
+                        overrelief="raised",
+                        # Set the padding around the text inside the button (horizontal)
+                        padx=10,
+                        # Set the padding around the text inside the button (vertical)
+                        pady=5,
+                        # Set the width of the button
+                        width=15,
+                        # Set the maximum line length for the text before wrapping
+                        wraplength=50,
+                    )
+
+
+                    button.pack(padx=20, pady=20)
+
+                    root.mainloop()
+
 
 ----
 

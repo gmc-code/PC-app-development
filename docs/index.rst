@@ -45,7 +45,7 @@ PC-app-development
     tk_widgets/tk_entry.rst
     tk_widgets/tk_text.rst
     tk_widgets/tk_button.rst
-    tk_widgets/tk_button_methods.rst
+
     tk_widgets/tk_radiobutton.rst
     tk_widgets/tk_checkbutton.rst
     tk_widgets/tk_optionmenu.rst
@@ -73,8 +73,9 @@ PC-app-development
     tk_widget_interactions/modify_via_checkbox.rst
     tk_widget_interactions/modify_via_radiobutton.rst
 
-    .. tk_widgets/tk_widget_interactions.rst
+    .. tk_widget_interactions/tk_widget_interactions.rst
 
+    tk_widget_interactions/tk_button_methods.rst
 
 .. toctree::
     :maxdepth: 2

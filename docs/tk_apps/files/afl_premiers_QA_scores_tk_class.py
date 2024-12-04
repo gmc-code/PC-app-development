@@ -54,7 +54,7 @@ class QuizGame:
         )
 
         self.label = tk.Label(
-            window,
+            root,
             text=welcome_text,
             wraplength=550,
             anchor="w",

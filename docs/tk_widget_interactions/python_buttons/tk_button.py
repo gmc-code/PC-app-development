@@ -1,17 +1,13 @@
 import tkinter as tk
 
 
-def button_clicked():
-    print("Button clicked!")
-
-
 root = tk.Tk()
+root.title("Button Widget Example")
 
 # Creating a button with specified options
 button = tk.Button(
-    window,
-    text="Click Me",
-    command=button_clicked,
+    root,
+    text="Button",
     fg="black",  # Text color
     bg="lightblue",  # Background color
     activebackground="blue",  # Background color when clicked

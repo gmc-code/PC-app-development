@@ -71,7 +71,7 @@ Text widget example
 
 .. admonition:: Tasks
 
-     #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color to dark green, a border width to 2, a border style of "groove" and disabled state so it can't be edited.
+     #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
 
         .. image:: images/text_question.png
             :scale: 67%
@@ -85,7 +85,7 @@ Text widget example
 
             .. tab-item:: Q1
 
-                Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color to dark green, a border width to 2, a border style of "groove" and disabled state so it can't be edited.
+                Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
 
                 .. code-block:: python
 
