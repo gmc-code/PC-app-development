@@ -28,7 +28,7 @@ Using radio buttons
 | This code create one group of radio buttons in a frame and a second group in root window below the frame.
 | To group radio buttons together set the variable option to be the same for each widget. e.g. ``variable=option_grp1_var``.
 | All radio buttons in the same group should share this variable to ensure only one can be selected at a time.
-| To preselect the first radio button in each group use: ``option_grp1_var.set("Option 1")`` and ``option_grp2_var.set("Option 4")`
+| To preselect the first radio button in each group use: ``option_grp1_var.set("Option 1")`` and ``option_grp2_var.set("Option 4")``.
 
 | The `indicatoron` option is set to `0` to make the radio buttons look like regular buttons.
 | The `indicatoron` option is set to `1` to make the radio buttons look like radio buttons.
