@@ -6,7 +6,7 @@ root = tk.Tk()
 # Set the title of the window
 root.title("Button question")
 # Set the size of the window
-root.geometry("350x400")
+root.geometry("350x100")
 
 button = tk.Button(
     root,
