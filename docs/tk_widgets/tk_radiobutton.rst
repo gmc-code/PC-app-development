@@ -33,6 +33,7 @@ Using radio buttons
 | The `indicatoron` option is set to `0` to make the radio buttons look like regular buttons.
 | The `indicatoron` option is set to `1` to make the radio buttons look like radio buttons.
 
+| A for loop is used to create each group of radio buttons since they have the dame formatting options apart from the text and value options which are taken care of by the loop variable, `option`.
 
 .. code-block:: python
 
@@ -46,7 +47,7 @@ Using radio buttons
 
     # Create a frame with a background color
     frame = tk.Frame(root, bg="light blue")
-    frame.pack(padx=10, pady=10, fill="both", expand=True)
+    frame.pack(anchor="nw", padx=10, pady=10)
 
     # Define a font style
     fontStyle = font.Font(family="Lucida Grande", size=18)
@@ -55,13 +56,13 @@ Using radio buttons
     option_grp1_var = tk.StringVar(value=None)  # No default value
 
     # Define the options
-    options = ["Option 1", "Option 2", "Option 3"]
+    options_grp1 = ["Option 1", "Option 2", "Option 3"]
 
     # Create and pack the radio buttons
-    for option in options:
+    for option in options_grp1:
         button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
                                 bg="white", fg="black", font=fontStyle, indicatoron=0, padx=10, pady=5)
-        button.pack(side="left", padx=5, pady=5)
+        button.pack(anchor="nw", side="left", padx=5, pady=5)
     option_grp1_var.set("Option 1")
 
 
@@ -69,13 +70,13 @@ Using radio buttons
     option_grp2_var = tk.StringVar(value=None)  # No default value
 
     # Define the options
-    options = ["Option 4", "Option 5", "Option 6"]
+    options_grp2 = ["Option 4", "Option 5", "Option 6"]
 
     # Create and pack the radio buttons
-    for option in options:
+    for option in options_grp2:
         button = tk.Radiobutton(root, text=option, value=option, variable=option_grp2_var,
                                 bg="white", fg="black", font=fontStyle, indicatoron=1, padx=10, pady=5)
-        button.pack(side="left", padx=5, pady=5)
+        button.pack(anchor="nw", side="left", padx=5, pady=5)
     option_grp2_var.set("Option 4")
 
     # Run the main event loop
