@@ -34,7 +34,7 @@ Using check buttons
     - In each iteration of the loop, item1 is an element from `list1` and `item2` is the corresponding element from `list2`.
 
 
- | State Management: option_vars1 is a list that holds IntVar objects. Each IntVar is associated with a checkbutton and is used to track whether the checkbutton is selected (1) or not selected (0). While those values are not used to do anything in the code below, they should be set up in preparation for doing so.
+| State Management: option_vars1 is a list that holds IntVar objects. Each IntVar is associated with a checkbutton and is used to track whether the checkbutton is selected (1) or not selected (0). While those values are not used to do anything in the code below, they have been set up in preparation for doing so.
 
 .. code-block:: python
 
