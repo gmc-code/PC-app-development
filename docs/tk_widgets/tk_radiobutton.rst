@@ -87,7 +87,7 @@ Using radio buttons
 
 .. admonition:: Tasks
 
-     #. Modify the code to have 4 radio buttons one under another.
+    #. Modify the code to have 4 radio buttons one under another.
 
         .. image:: images/radio_buttons_question.png
             :scale: 67%
