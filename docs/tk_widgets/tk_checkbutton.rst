@@ -99,7 +99,7 @@ Using check buttons
 
      #. Modify the code to have 4 check boxes, one under another.
 
-        .. image:: images/radio_buttons_question.png
+        .. image:: images/check_buttons_question.png
             :scale: 67%
 
     .. dropdown::
