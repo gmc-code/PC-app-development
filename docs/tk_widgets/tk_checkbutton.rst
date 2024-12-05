@@ -92,12 +92,12 @@ Using check buttons
     # Run the main event loop
     root.mainloop()
 
---
+----
 
 
 .. admonition:: Tasks
 
-     #. Modify the code to have 4 check boxes, one under another.
+    #. Modify the code to have 4 check boxes, one under another.
 
         .. image:: images/check_buttons_question.png
             :scale: 67%

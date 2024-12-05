@@ -28,7 +28,7 @@ for option in options_grp1:
 
 # Create and pack the checkbuttons for group 1
 for option, var in zip(options_grp1, option_vars1):
-    button = tk.Checkbutton(frame1, text=option, variable=var, indicatoron=0,
+    button = tk.Checkbutton(frame1, text=option, variable=var, indicatoron=1,
                             bg="white", fg="black", font=fontStyle, padx=10, pady=5)
     button.pack(anchor="nw", side="top", padx=5, pady=5)
 
