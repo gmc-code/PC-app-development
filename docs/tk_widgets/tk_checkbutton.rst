@@ -25,8 +25,16 @@ Using check buttons
 .. image:: images/check_buttons.png
     :scale: 100%
 
-This code demonstrates the use of check boxes (check buttons).
+| This code demonstrates the creation of check boxes (check buttons).
+| The zip function is used to efficiently loop through 2 lists together.
 
+.. py:function:: for item1, item2 in zip(list1, list2)
+
+    - The `zip` function pairs each element from `list1` with the corresponding element from `list2`.
+    - In each iteration of the loop, item1 is an element from `list1` and `item2` is the corresponding element from `list2`.
+
+
+ | State Management: option_vars1 is a list that holds IntVar objects. Each IntVar is associated with a checkbutton and is used to track whether the checkbutton is selected (1) or not selected (0). While those values are not used to do anything in the code below, they should be set up in preparation for doing so.
 
 .. code-block:: python
 

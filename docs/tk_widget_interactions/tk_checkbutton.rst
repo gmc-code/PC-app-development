@@ -25,7 +25,7 @@ Using check buttons
 .. image:: images/check_buttons.png
     :scale: 100%
 
-This code demonstrates the use of check boxes (check buttons) and a text widget to display the selected options.
+This code demonstrates the creation of check boxes (check buttons) and a text widget to display the selected options.
 
 
 .. code-block:: python
