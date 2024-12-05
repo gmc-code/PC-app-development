@@ -154,9 +154,6 @@ Using check buttons
                     root.mainloop()
 
 
---
-
-docs/tk_widgets/python_checkbutton/tk_check_button_questions.py
 ----
 
 Parameter syntax
