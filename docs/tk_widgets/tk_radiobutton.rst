@@ -89,7 +89,7 @@ Using radio buttons
 
      #. Modify the code to have 4 option buttons one under another.
 
-        .. image:: images/text_question.png
+        .. image:: images/radio_buttons_question.png
             :scale: 67%
 
     .. dropdown::
@@ -135,6 +135,7 @@ Using radio buttons
 
                     # Run the main event loop
                     root.mainloop()
+
 
 
 ----
