@@ -9,36 +9,49 @@ tk Optionmenu
 Usage
 ---------------
 
-| The `tkinter.OptionMenu` widget provides a dropdown menu.
+| The `tkinter.OptionMenu` widget provides a dropdown menu for selecting one option from a predefined list.
 | To create an OptionMenu widget, the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values)
 
     | parent is the window or frame object.
-    | variable is a `tk.StringVar` that holds the selected value.
-    | *values are the options to be displayed in the dropdown menu, passed as separate arguments.
+    | variable is a `tk.StringVar` that holds the currently selected value.
+    | \*values are the options to be displayed in the dropdown menu, passed as separate arguments.
+
+| The OptionMenu consists of a main button and a dropdown menu.
+| Both can be configured using the config method:
+
+.. py:function:: option_menu_widget.config(option=value)
+
+    | Allows you to set one or more option=value pairs to customize the widget.
+
+| To configure the dropdown menu itself, access the menu directly:
+
+.. py:function:: option_menu_widget["menu"].config(option=value)
+
+    | Similarly, multiple option=value pairs can be passed to customize the menu's behavior or appearance.
+
 
 ----
 
 Sample OptionMenu
 --------------------
 
+.. image:: images/check_buttons_question.png
+    :scale: 67%
+
 .. code-block:: python
 
     import tkinter as tk
-
-    def show_selection(*args):
-        selected_fruit = fruit_var.get()
-        text_widget.delete(1.0, 'end')
-        text_widget.insert(tk.END, f"You selected: \n{selected_fruit}")
+    from tkinter import font
 
     # Create the main window
     root = tk.Tk()
     root.title("Fruit Selector")
+    root.geometry("300x200")
 
     # Define a variable to hold the selected option
     fruit_var = tk.StringVar(root)
-    fruit_var.trace("w", show_selection)  # Trace the variable to call show_selection on change
 
     # Define the options for the OptionMenu
     fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
@@ -46,20 +59,16 @@ Sample OptionMenu
     # Set the default value for the OptionMenu
     fruit_var.set(fruits[0])
 
+    # Define the font style
+    fontStyle1 = font.Font(family="Arial", size=16, weight="bold")
+    # Define the font style
+    fontStyle2 = font.Font(family="Arial", size=14, weight="normal")
+
     # Create the OptionMenu widget
     option_menu = tk.OptionMenu(root, fruit_var, *fruits)
-       # Define the options for the OptionMenu
-    fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
-
-    # Set the default value for the OptionMenu
-    fruit_var.set(fruits[0])
-
-    # Create the OptionMenu widget
-    option_menu = tk.OptionMenu(root, fruit_var, *fruits) option_menu.pack(pady=10)
-
-    # Create a text widget to display the selected option with increased space
-    text_widget = tk.Text(root, height=2, width=20, bg="white", fg="black", font=("Helvetica", 12), bd=2, relief="solid")
-    text_widget.pack(pady=10, padx=20)
+    option_menu.config(font=fontStyle1, bg="light green", fg="black", activebackground="dark green", activeforeground="white")
+    option_menu["menu"].config(font=fontStyle2, bg="light blue", fg="black", activebackground="dark blue", activeforeground="white")
+    option_menu.pack(pady=10, padx=10)
 
     # Run the main event loop
     root.mainloop()
