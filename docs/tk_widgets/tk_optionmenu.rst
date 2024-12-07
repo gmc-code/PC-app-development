@@ -37,7 +37,7 @@ Usage
 Sample OptionMenu
 --------------------
 
-.. image:: images/check_buttons_question.png
+.. image:: images/option_menu.png
     :scale: 67%
 
 .. code-block:: python
@@ -77,6 +77,60 @@ Sample OptionMenu
 | ``*fruits``: The asterisk (`*`) is used to unpack the list `fruits` into individual arguments.
 | This means that each item in the `fruits` list is passed as a separate argument to the `OptionMenu`.
 | For example, if `fruits = ["Apple", "Banana", "Cherry"]`, the `*fruits` will be equivalent to passing `"Apple", "Banana", "Cherry"` as separate arguments.
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to change the OptionMenu options to ["Mango", "Pineapple", "Grapes", "Orange", "Strawberry"]. The OptionMenu widget's background (bg) is set to "light yellow" and the text color (fg) is set to "blue". The active background (activebackground) is set to "orange" and the active text color (activeforeground) is set to "red". The menu's background (bg) is set to "light pink" and the text color (fg) is set to "purple". The active background (activebackground) is set to "yellow" and the active text color (activeforeground) is set to "green".
+
+    .. image:: images/option_menu_question.png
+        :scale: 67%
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above to change the OptionMenu options.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+                    from tkinter import font
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.title("Fruit Selector")
+                    root.geometry("300x200")
+
+                    # Define a variable to hold the selected option
+                    fruit_var = tk.StringVar(root)
+
+                    # Define the options for the OptionMenu
+                    fruits = ["Mango", "Pineapple", "Grapes", "Orange", "Strawberry"]
+
+                    # Set the default value for the OptionMenu
+                    fruit_var.set(fruits[0])
+
+                    # Define the font style
+                    fontStyle1 = font.Font(family="Arial", size=16, weight="bold")
+                    # Define the font style
+                    fontStyle2 = font.Font(family="Arial", size=14, weight="normal")
+
+                    # Create the OptionMenu widget
+                    option_menu = tk.OptionMenu(root, fruit_var, *fruits)
+                    option_menu.config(font=fontStyle1, bg="light yellow", fg="blue", activebackground="orange", activeforeground="red")
+                    option_menu["menu"].config(font=fontStyle2, bg="light pink", fg="purple", activebackground="yellow", activeforeground="green")
+                    option_menu.pack(pady=10, padx=10)
+
+                    # Run the main event loop
+                    root.mainloop()
+
 
 ----
 
