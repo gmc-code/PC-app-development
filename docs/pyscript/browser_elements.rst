@@ -76,10 +76,6 @@ when decorator in python
 	| e.g. @when("click", "#start_button")
 
 
-
-
-
-
 ----
 
 Output to the browser window
@@ -89,11 +85,11 @@ Output to the browser window
 
 .. py:function:: display(*values, target=None, append=True)
 
-    *values (list) - the list of objects to be displayed. Can be any of the following MIME types:: "text/plain", "text/html", "image/png", "image/jpeg", "image/svg+xml", "application/json" or "application/javascript"
+    \*values (list) - the list of objects to be displayed. Can be any of the following MIME types:: "text/plain", "text/html", "image/png", "image/jpeg", "image/svg+xml", "application/json" or "application/javascript"
 
     target (str)- the ID of the html tag to output to. If none, output to the current <py-script> tag.
 
-    append (boolean) if the output is going to be appended or not to the `target`ed element. It creates a <div> tag if True and a <py-script> tag with a random ID if False
+    append (boolean) if the output is going to be appended or not to the targeted element. It creates a <div> tag if True and a <py-script> tag with a random ID if False
 
 .. code-block:: python
 
