@@ -186,19 +186,9 @@ main.py
 
     @when('click', '#elf_generator')
     def elf_generator(event):
+        validate_elfnumber(event)
         input_text_element = document.getElementById("elfnumber")
-        try:
-            num = int(input_text_element.value)
-            if num < 1 or num > 20:
-                if num < 1:
-                    num = 1
-                    input_text_element.value = 1
-                elif num > 20:
-                    num = 20
-                    input_text_element.value =20
-        except ValueError:
-            num = 1
-            input_text_element.value = 1
+        num = int(input_text_element.value)
         elves_text = get_elves(num)
         output_div_text = document.getElementById("elves")
         # output_div_text.innerText = elves_text
