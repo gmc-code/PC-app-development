@@ -46,17 +46,17 @@ index.html
     <html lang="en">
     <head>
         <title>Superhero</title>
-        
+
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
-        
+        <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
+
     </head>
     <body>
         <h1>Superhero Name Generator</h1>
@@ -83,7 +83,7 @@ index.html
 main.py
 ------------
 
-| The code is a program that generates and displays a superhero name based on the user input. It uses two dictionaries to store the possible first and last names for superheroes, and a function that returns a superhero name based on the first and last initials. It also uses another function that handles the user input and displays the superhero name or an error message if the input is not valid. The code uses the pyscript module to interact with the HTML elements of the web page. 
+| The code is a program that generates and displays a superhero name based on the user input. It uses two dictionaries to store the possible first and last names for superheroes, and a function that returns a superhero name based on the first and last initials. It also uses another function that handles the user input and displays the superhero name or an error message if the input is not valid. The code uses the pyscript module to interact with the HTML elements of the web page.
 
 .. code-block:: python
 
@@ -128,7 +128,7 @@ main.py
         superhero_name = first_names[first_initial] + " " + last_names[last_initial]
         return superhero_name
 
-        
+
     # Define a function that handles the user input and displays the superhero name
     def name_generator(event):
         """Generates and displays a superhero name based on the user input.

@@ -5,15 +5,15 @@ Introduction to pyscript
 | PyScript is a platform for Python in the browser.
 | It combines html, css, and python in separate files.
 | PyScript is designed to allow the running of Python in web browsers.
-| PyScript apps can be hosted as a static web site. 
+| PyScript apps can be hosted as a static web site.
 
 ----
 
 Key references:
 ---------------------
 
-| Docs https://docs.pyscript.net/2024.5.2/
-| User guide: https://docs.pyscript.net/2024.5.2/user-guide/
+| Docs https://docs.pyscript.net/2024.10.2/
+| User guide: https://docs.pyscript.net/2024.10.2/user-guide/
 | Developer blog on latest update changes: https://jeff.glass/tags/pyscript/
 
 ----
@@ -46,7 +46,7 @@ Project files
 
 | The **index.html** file is served to your browser. It has the interface elements and links to python code.
 | The **main.py** is for python code that defines how your application works.
-| The **pyscript.toml** file is used to configure the project. e.g specifying python modules via   ``packages = ["numpy", "pandas"]``. It can be empty. 
+| The **pyscript.toml** file is used to configure the project. e.g specifying python modules via   ``packages = ["numpy", "pandas"]``. It can be empty.
 
 | The **index.html** file starts as a basic template.
 | The latest versions of the <link> and <script> tags have been inserted as shown below (as of May 2024).
@@ -69,10 +69,10 @@ index.html
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
     </head>
     <body>
         <script type="py" src="./main.py" config="./pyscript.toml"></script>

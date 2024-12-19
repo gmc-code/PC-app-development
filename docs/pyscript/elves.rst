@@ -38,17 +38,17 @@ The html is below.
     <html lang="en">
     <head>
         <title>20_Elves</title>
-        
+
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
-        
+        <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
+
         <!-- CSS only -->
         <link rel="stylesheet" href="main.css">
     </head>
@@ -71,11 +71,11 @@ The html is below.
             </script>
             <button py-click="elf_generator">Name Elves</button>
         </div>
-        
+
         <h2>Elf names:</h2>
         <div id="elves">
         </div>
-        
+
         <script type="py" src="./main.py" config="./pyscript.toml"></script>
 
     </body>
@@ -153,7 +153,7 @@ main.py
 .. code-block:: python
 
     from pyscript import document
-    from pyscript import display 
+    from pyscript import display
     import random
 
     firstNames = {
