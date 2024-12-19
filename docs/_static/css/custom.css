@@ -32,7 +32,7 @@ div.admonition-answer,
 div.admonition-answers{
     color: blue;
     border: 2px solid;
-    background-color: #e7f2fa;
+    background-color: rgb(231, 242, 250);
 }
 
 div.admonition-answer p.admonition-title,
@@ -264,11 +264,11 @@ div.highlight-default div.highlight {
 }
 
 /** to override css code block */
-.highlight-css {
-    background: #fffecc;
+.highlight-css .highlight {
+    background: rgb(255, 255, 224);
 }
 
 /** to override css code block */
-.highlight-html {
-    background: #ccfdff;
+.highlight-html .highlight {
+    background: rgb(231, 242, 250);
 }
