@@ -121,7 +121,13 @@ The custom css is below.
 main.py
 ------------------
 
-| The python code is below.
+| The python code below generates random elf names based on user input. Here's a brief summary:
+
+- Imports: It imports necessary modules from PyScript and the random module.
+- Dictionaries: Two dictionaries, firstNames and lastNames, map initials to festive names.
+- Function get_elves(num): Generates a specified number of random elf names by combining a random first name and last name from the dictionaries.
+- Function validate_elfnumber(event): Validates the user input for the number of elves, ensuring it's between 1 and 20. If the input is invalid, it sets a default value. This function is called whenever there is an input event on the element with the ID elfnumber. This ensures that the number of elves entered by the user is validated in real-time.
+- Function elf_generator(event): This function is called when the element with the ID elf_generator is clicked. Calls validate_elfnumber to ensure the input is valid, generates the elf names using get_elves, and displays the result in an HTML element with the ID elves.
 
 .. code-block:: python
 
