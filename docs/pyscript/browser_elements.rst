@@ -68,7 +68,7 @@ when decorator in python
 | Change Event: Detects changes in a dropdown menu selection.
 | Mouseover Event: Triggers actions when the mouse hovers over an image.
 
-.. py:attribute:: @when(event_type, selector)
+.. py:decorator:: @when(event_type, selector)
 
     | The decorator takes two parameters:
 	| The **event_type** should be the name of the browser event to handle as a string (e.g. "click", "input", "keypress", "change", "mouseover").
