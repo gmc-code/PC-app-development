@@ -13,27 +13,11 @@ Elves
 index.html
 ---------------------
 
-The html below incudes javascript to validate the number entry for the number of elves.
-
-.. code-block::
-
-    <script>
-        function validateInput(input) {
-            var max = parseInt(input.max);
-            var min = parseInt(input.min);
-            var value = input.value.replace(/[^0-9]/g, ''); // Remove non-digit characters such as e
-            if (value > max) { value = max; }
-            if (value < min) { value = min; }
-            input.value = value;
-        }
-    </script>
-
-
 The html is below.
 
-.. code-block::
+.. code-block:: html
 
-    <!-- GMC Nov 2023 -->
+    <!-- GMC Dec 2024 -->
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -44,10 +28,10 @@ The html is below.
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
 
         <!-- CSS only -->
         <link rel="stylesheet" href="main.css">
@@ -56,27 +40,16 @@ The html is below.
 
         <h1>Elves Name Generator</h1>
         <p>How many Elves (from 1 to 20) would you like to name?</p>
-        <!-- validation via javascript to restrict typing to 1 to 20; min and max work on arrows without the script-->
         <div style="display: flex; align-items: center;">
-            <input type="number" min="1" max="20" id="elfnumber" placeholder="1" oninput="validateInput(this)">
-            <script>
-                function validateInput(input) {
-                    var max = parseInt(input.max);
-                    var min = parseInt(input.min);
-                    var value = input.value.replace(/[^0-9]/g, ''); // Remove non-digit characters
-                    if (value > max) { value = max; }
-                    if (value < min) { value = min; }
-                    input.value = value;
-                }
-            </script>
-            <button py-click="elf_generator">Name Elves</button>
+            <input type="number" min="1" max="20" id="elfnumber" placeholder="1" ">
+            <button id="elf_generator">Name Elves</button>
         </div>
 
         <h2>Elf names:</h2>
         <div id="elves">
         </div>
 
-        <script type="py" src="./main.py" config="./pyscript.toml"></script>
+        <script type="py" src="./main.py" config="./pyscript.json"></script>
 
     </body>
     </html>
@@ -88,7 +61,7 @@ main css:
 
 The custom css is below.
 
-.. code-block::
+.. code-block:: css
 
     body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -154,6 +127,7 @@ main.py
 
     from pyscript import document
     from pyscript import display
+    from pyscript import when
     import random
 
     firstNames = {
@@ -193,21 +167,39 @@ main.py
                 elves = elves + ", " + elfName
         return elves
 
+    @when('input', '#elfnumber')
+    def validate_elfnumber(event):
+        input_text_element = document.getElementById("elfnumber")
+        try:
+            num = int(input_text_element.value)
+            if num < 1 or num > 20:
+                if num < 1:
+                    num = 1
+                    input_text_element.value = 1
+                elif num > 20:
+                    num = 20
+                    input_text_element.value =20
+        except ValueError:
+            num = 1
+            input_text_element.value = 1
 
+
+    @when('click', '#elf_generator')
     def elf_generator(event):
         input_text_element = document.getElementById("elfnumber")
         try:
             num = int(input_text_element.value)
-            if num < 1:
-                num = 1
-                input_text_element.innerText = 1
-            elif num > 20:
-                num = 20
-                input_text_element.innerText = 20
+            if num < 1 or num > 20:
+                if num < 1:
+                    num = 1
+                    input_text_element.value = 1
+                elif num > 20:
+                    num = 20
+                    input_text_element.value =20
         except ValueError:
             num = 1
+            input_text_element.value = 1
         elves_text = get_elves(num)
         output_div_text = document.getElementById("elves")
         # output_div_text.innerText = elves_text
         display(elves_text, target="#elves", append=False)
-
