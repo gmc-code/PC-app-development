@@ -61,19 +61,19 @@ when decorator in python
 --------------------------
 
 | Use the Python decorator, **when**, to handle specified events for selected elements.
-| examples:
-| Input Event: Handles changes in a text field.
-| Click Event: Responds to clicks on a submit button.
-| Keypress Event: Captures key presses in a textarea.
-| Change Event: Detects changes in a dropdown menu selection.
-| Mouseover Event: Triggers actions when the mouse hovers over an image.
+| Examples:
+
+  - Input Event: Handles changes in a text field.
+  - Click Event: Responds to clicks on a submit button.
+  - Keypress Event: Captures key presses in a textarea.
+  - Change Event: Detects changes in a dropdown menu selection.
+  - Mouseover Event: Triggers actions when the mouse hovers over an image.
 
 .. py:decorator:: @when(event_type, selector)
 
-    | The decorator takes two parameters:
 	| The **event_type** should be the name of the browser event to handle as a string (e.g. "click", "input", "keypress", "change", "mouseover").
 	| The **selector** should be a string containing a valid selector to indicate the target elements in the DOM whose events of event_type are of interest.
-    | e.g. @when("click", "#start_button")
+	| e.g. @when("click", "#start_button")
 
 
 
