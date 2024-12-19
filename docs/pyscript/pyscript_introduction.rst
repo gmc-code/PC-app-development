@@ -46,36 +46,45 @@ Project files
 
 | The **index.html** file is served to your browser. It has the interface elements and links to python code.
 | The **main.py** is for python code that defines how your application works.
-| The **pyscript.toml** file is used to configure the project. e.g specifying python modules via   ``packages = ["numpy", "pandas"]``. It can be empty.
+| The **pyscript.toml** file is used to configure the project.
+| e.g specifying python modules via ``packages = ["numpy", "pandas"]``. It can be empty.
 
-| The **index.html** file starts as a basic template.
-| The latest versions of the <link> and <script> tags have been inserted as shown below (as of May 2024).
+| The **pyscript.json** file is more efficient to use than the **pyscript.toml** file. An empty json file needs curly brackets as **{}**.
+| For using comments and more complicated configurations use a toml file.
+| See: https://docs.pyscript.net/2024.11.1/user-guide/configuration/
+
+| A **main.css** file is often added to customize the html element appearance.
 
 ----
 
 index.html
 -----------------
 
-.. code-block::
+| The **index.html** file starts as a basic template.
+| The latest versions of the <link> and <script> tags have been inserted as shown below (as of Dec 2024).
+
+.. code-block:: html
 
 
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>New Project</title>
-
+        <title>App title</title>
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+
+        <!-- custom CSS only -->
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <script type="py" src="./main.py" config="./pyscript.toml"></script>
+        <script type="py" src="./main.py" config="./pyscript.json></script>
     </body>
     </html>
 
@@ -85,10 +94,11 @@ index.html
 Terminal
 -----------------
 
-To view the terminal as well use this in the body:
+To view the terminal as well use this script tag in the body:
 
-.. code-block::
+.. code-block:: html
 
     ...
-    <script type="py" src="./main.py" config="./pyscript.toml" terminal></script>
+    <script type="py" src="./main.py" config="./pyscript.json" terminal></script>
     ...
+
