@@ -85,6 +85,7 @@ main css:
 
     /* Card Styling */
     .card {
+        width: 400px;
         border: 1px solid #ddd;
         border-radius: 4px;
         padding: 10px;
