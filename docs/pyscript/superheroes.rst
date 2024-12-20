@@ -1,11 +1,11 @@
 ====================================================
-Superheroes 2
+Superheroes
 ====================================================
 
 | Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
 
 .. image:: images/superhero.png
-    :scale: 50%
+    :scale: 75%
 
 | The appearance is controlled via custom css.
 | The user interactions with the interface are controlled via python.
@@ -18,14 +18,9 @@ index.html
 | Custom css is provided by: ``<link rel="stylesheet" href="main.css">``
 
 | The body tag has the user interface for the web app.
-| ``<div class="form-group">`` is an HTML element that is used to group related form elements together. It is used here to the labels and input fields together.
+| ``<div class="form-group">`` is an html element that is used to group related form elements together. It is used here to keep the labels and input fields and buttons together.
 | ``<p id="superhero"></p>`` has no text between the tags. It will be filled via python code when the button is clicked.
 
-
-| In the ``input type="text"`` tag, ``py-input="check_first_initial"`` was added to restrict input to capital letters.
-| ``tabindex="1"`` and ``tabindex="2"`` were added to elements to control the navigation order via the tab key.
-| ``<button py-click="random_first_initial">Random</button>`` provides quick placement of a random letter.
-| ``<button class="clear-button" py-click="clear_first_initial">Clear</button>`` provides convenient clearing of the input.
 
 .. code-block:: html
 
@@ -53,15 +48,13 @@ index.html
         <p>Enter capital letters.</p>
         <div class="form-group">
             <label for="firstinitial">First name initial:</label>
-            <input type="text" id="firstinitial" name="firstinitial" title="Enter first initial"
-                py-input="check_firstinitial" tabindex="1">
+            <input type="text" id="firstinitial" name="firstinitial" title="Enter first initial" tabindex="1">
             <button id="random_firstinitial">Random</button>
             <button class="clear-button" id="clear_firstinitial">Clear</button>
         </div>
         <div class="form-group">
             <label for="lastinitial">Last name initial:</label>
-            <input type="text" id="lastinitial" name="lastinitial" title="Enter last initial"
-                py-input="check_lastinitial" tabindex="2">
+            <input type="text" id="lastinitial" name="lastinitial" title="Enter last initial" tabindex="2">
             <button id="random_lastinitial">Random</button>
             <button class="clear-button" id="clear_lastinitial">Clear</button>
         </div>
@@ -86,7 +79,7 @@ main css:
 | The attribute selector targets HTML elements based on the presence and value of a specific attribute.
 | In input[type="text"] targets <input> elements with the attribute type set to "text".
 
-| ** .form-group** and ** .form-grouplabel ** create a form layout where each .form-group is a flex container.
+| **.form-group** and **.form-group label** create a form layout where each .form-group is a flex container.
 | The labels within each .form-group are given a fixed width, ensuring that the input fields align neatly next to the labels.
 | The vertical centering and bottom margin help maintain a clean and organized appearance.
 
