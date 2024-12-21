@@ -5,7 +5,7 @@ Elves
 | The details below are for a simple elves name generator.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/elves/latest/
 
-.. image:: images/elves.png
+.. image:: images/elves/elves.png
     :scale: 75%
 
 ----
@@ -14,7 +14,7 @@ index.html
 ---------------------
 
 | The html is below.
-| Note that is refers to a faviconico that is placed in the files section in the pyscirpt editor.
+| Note that is refers to a favicon.ico that is placed in the files section in the pyscirpt editor so it shows in a browser tab bar.
 
 .. code-block:: html
 

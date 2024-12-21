@@ -2,7 +2,7 @@
 Santa's helper
 ====================================================
 
-| The details below are for a simple middle name generator.
+| The details below are for a guessing game for the names of santa's reindeers.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/elves/latest/
 
 .. image:: images/elves.png
