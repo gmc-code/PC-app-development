@@ -272,3 +272,8 @@ div.highlight-default div.highlight {
 .highlight-html .highlight {
     background: rgb(231, 242, 250);
 }
+
+/** to override css code block */
+.highlight-toml .highlight {
+    background: rgb(250, 231, 248);
+}
