@@ -18,7 +18,7 @@ index.html
 
 .. code-block:: html
 
-    <!-- GMC Nov 2024 -->
+    <!-- GMC Dec 2024 -->
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -28,7 +28,7 @@ index.html
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- favicon to appear in browser tab -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
@@ -40,14 +40,17 @@ index.html
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <h1>Elves Name Generator</h1>
-        <p>How many Elves (from 1 to 20) would you like to name?</p>
+        <div>
+            <h1>Elves Name Generator</h1>
+            <p>How many Elves (from 1 to 20) would you like to name?</p>
+        </div>
         <div style="display: flex; align-items: center;">
-            <input type="number" min="1" max="20" id="elfnumber" placeholder="1" ">
+            <input type="number" min="1" max="20" id="elfnumber" placeholder="1">
             <button id="elf_generator">Name Elves</button>
         </div>
-
-        <h2>Elf names:</h2>
+        <div>
+            <h2>Elf names:</h2>
+        </div>
         <div id="elves">
         </div>
 
