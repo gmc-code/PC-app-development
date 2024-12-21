@@ -56,6 +56,26 @@ Project files
 
 ----
 
+toml file
+--------------
+
+See: https://docs.pyscript.net/2024.11.1////user-guide/configuration/
+
+e.g. toml file
+
+.. code-block:: toml
+
+    name = "Temp converter"
+    description = "Fahrenheit <-> Celsius converter with integer values"
+    packages = []
+
+
+| In PyScript's TOML configuration files, the `name` and `description` fields are primarily used for documentation and organizational purposes.
+| They help you and others understand the purpose and functionality of the application at a glance.
+| While these fields are not used directly by PyScript to influence the behavior of your application, they are valuable for maintaining clarity and organization within your project.
+
+----
+
 index.html
 -----------------
 
