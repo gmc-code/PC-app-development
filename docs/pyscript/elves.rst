@@ -28,7 +28,7 @@ index.html
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- favicon to appear in browser tab -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon
+        <link rel="icon" href="favicon.ico" type="image/x-icon>
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
@@ -51,7 +51,7 @@ index.html
         <div id="elves">
         </div>
 
-        <script type="py" src="./main.py" config="./pyscript.json"></script>
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
     </body>
     </html>
 

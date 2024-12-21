@@ -48,10 +48,9 @@ Project files
 | The **main.py** is for python code that defines how your application works.
 | The **pyscript.toml** file is used to configure the project.
 | e.g specifying python modules via ``packages = ["numpy", "pandas"]``. It can be empty.
-
-| The **pyscript.json** file is more efficient to use than the **pyscript.toml** file. An empty json file needs curly brackets as **{}**.
 | For using comments and more complicated configurations use a toml file.
 | See: https://docs.pyscript.net/2024.11.1/user-guide/configuration/
+| Alternatively, a **pyscript.json** file can be used instead of the **pyscript.toml** file. An empty json file needs curly brackets as **{}**.
 
 | A **main.css** file is often added to customize the html element appearance.
 

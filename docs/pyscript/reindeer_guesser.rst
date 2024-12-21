@@ -1,5 +1,5 @@
 ====================================================
-Santa's helper
+Reindeer guesser
 ====================================================
 
 | The details below are for a guessing game for the names of santa's reindeers.

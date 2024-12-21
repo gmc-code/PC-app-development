@@ -5,9 +5,8 @@ Temperature converter
 | The details below are for a simple Temperature converter.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/temp-converter/latest/
 
-.. image:: images/temp_conversion.png
-    :scale: 80%
-
+.. image:: images/temp_converter/temp_conversion.png
+    :scale: 75%
 
 ----
 
@@ -25,6 +24,9 @@ index.html
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+        <!-- favicon to appear in browser tab -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon>
+
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
 
@@ -36,18 +38,17 @@ index.html
     </head>
 
     <body>
-    <!-- Use a container to wrap the content -->
-    <div class="container">
-        <!-- Use a jumbotron component for the title -->
-        <div class="jumbotron">
+        <div>
         <h1>Temperature Converter</h1>
         </div>
+        <!-- Use a container to wrap the content -->
+    <div class="container
         <!-- Use a card class for the temperatures -->
         <div class="card">
             <div class="form-group">
                 <label for="f_temp" class="fah">Fahrenheit</label>
                 <!-- Use a form-control class for the input -->
-                <input id="f_temp" class="form-control fah" type="number" min="-459" max="6177" placeholder="32"">
+                <input id="f_temp" class="form-control fah" type="number" min="-459" max="6177" placeholder="32">
             </div>
             <div class="form-group">
                 <label for="c_temp" class="cel">Celsius</label>
@@ -56,9 +57,8 @@ index.html
             </div>
         </div>
     <!-- Include your custom script -->
-    <script type="py" src="./main.py" config="./pyscript.json"></script>
+    <script type="py" src="./main.py" config="./pyscript.toml"></script>
     </body>
-
 
     </html>
 
@@ -69,17 +69,19 @@ main css:
 
 .. code-block:: css
 
-    /* Jumbotron Styling */
-    .jumbotron {
-        text-align: left;
-        padding: 10px;
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 5px; /* Override margin */
+    padding: 5px;
+    /*   background-color: #f8f9fa; /* Bootstrap gray-100 */ */
     }
 
-    .jumbotron h1 {
+    h1 {
         text-align: left;
-        margin: 12px 20px;
         font-size: 2rem;
-        color: #000000;
+        color: #00f;
+        margin: 12px 20px;
     }
 
 
@@ -138,17 +140,10 @@ Here's a breakdown of how it works:
 
 This means that whenever an 'input' event occurs on the element with the ID `#f_temp`, the `_f` function will be executed.
 
-The `@when` decorator simplifies event handling by allowing you to write event-driven code in a more readable and maintainable way.
-
 .. code-block:: python
 
     '''
     mod GMC dec 2024
-    updated from using @when instead of proxy/eventlisterners
-    not working on mobile
-    https://eugenkiss.github.io/7guis/tasks/#temp
-    https://jeff.glass/project/the-7-guis-pyscript/
-    https://jeff.glass/post/whats-new-pyscript-2023-05-1/
     '''
     from pyscript import document
     from pyscript import display
@@ -156,12 +151,35 @@ The `@when` decorator simplifies event handling by allowing you to write event-d
 
     write_in_progress = False
 
-    def isTemp(input_temp):
+    def validate_f(f_temp_input):
         try:
-            _ = float(input_temp)
-        except Exception as err:
-            return False
-        return True
+            f_temp = float(f_temp_input.value)
+            if f_temp < -459 or f_temp > 6177:
+                if f_temp < -459:
+                    f_temp = -459
+                    f_temp_input.value = -459
+                elif f_temp > 6177:
+                    f_temp = 6177
+                    f_temp_input.value = 6177
+        except ValueError:
+            f_temp = 0
+            f_temp_input.value = 0
+        return f_temp
+
+    def validate_c(c_temp_input):
+        try:
+            c_temp = float(c_temp_input.value)
+            if c_temp < -273 or c_temp > 3414:
+                if c_temp < -273:
+                    c_temp = -273
+                    c_temp_input.value = -273
+                elif c_temp > 3414:
+                    c_temp = 3414
+                    c_temp_input.value = 3414
+        except ValueError:
+            c_temp = 0
+            c_temp_input.value = 0
+        return c_temp
 
     @when('input', '#f_temp')
     def _f(self, *args, **kwargs):
@@ -172,11 +190,8 @@ The `@when` decorator simplifies event handling by allowing you to write event-d
             write_in_progress = True
             f_input = document.getElementById("f_temp")
             c_output = document.getElementById("c_temp")
-            input_value = f_input.value
-            if isTemp(input_value):
-                c_output.value = round((int(float(input_value)) - 32) * (5/9), 1)
-            else:
-                c_output.value = ""
+            input_value = validate_f(f_input)
+            c_output.value = round((int(float(input_value)) - 32) * (5/9), 1)
             write_in_progress = False
 
     @when('input', '#c_temp')
@@ -188,9 +203,6 @@ The `@when` decorator simplifies event handling by allowing you to write event-d
             write_in_progress = True
             c_input = document.getElementById("c_temp")
             f_output = document.getElementById("f_temp")
-            input_value = c_input.value
-            if isTemp(input_value):
-                f_output.value = round((int(float(input_value)) * (9/5)) + 32, 1)
-            else:
-                f_output.value = ""
+            input_value = validate_c(c_input)
+            f_output.value = round((int(float(input_value)) * (9/5)) + 32, 1)
             write_in_progress = False

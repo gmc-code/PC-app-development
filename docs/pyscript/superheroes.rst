@@ -63,7 +63,7 @@ index.html
         <div class="form-group">
             <label for="superhero">Superhero name:</label> <p id="superhero"></p>
         </div>
-        <script type="py" src="./main.py" config="./pyscript.json"></script>
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
     </body>
     </html>
 
