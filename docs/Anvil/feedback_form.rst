@@ -30,7 +30,7 @@ Get started
 Settings
 ------------------------------
 
-#. Click on the cog icon to show thie settings tab.
+#. Click on the cog icon to show the settings tab.
 #. Enter an App name. Feedback_Form
 #. Enter an App title. Feedback_Form
 #. Enter an App description. Feedback_Form using server side code and a PGSQL database.
@@ -51,7 +51,7 @@ Build first part of interface
 | In the properties panel: text section, set the text to ``Feedback Form``.
 | In the properties panel: appearance section, set the role to ``Headline``.
 
-| Drag and drop three *label* components onto card_1 below the Feedback Form label, one below the other. 
+| Drag and drop three *label* components onto card_1 below the Feedback Form label, one below the other.
 
 .. image:: images/feedback/Feedback_Form_Add_label_below.png
     :scale: 60%
@@ -59,7 +59,7 @@ Build first part of interface
 | A horizontal blue line will indicate that you are in the right place to drop it.
 | In the properties panel: set their text to ``Name:``, ``Email:`` and ``Feedback:``.
 
-| Drag and drop a *text box* component onto card_1 to the right of the Name label. 
+| Drag and drop a *text box* component onto card_1 to the right of the Name label.
 
 .. image:: images/feedback/Feedback_Form_add_text_box.png
     :scale: 80%
@@ -67,15 +67,15 @@ Build first part of interface
 | In the properties panel: set the name to ``name_box``.
 | In the properties panel: set the placeholder to ``Name here``.
 
-| Drag and drop a *text box* component onto card_1 to the right of the Email label. 
+| Drag and drop a *text box* component onto card_1 to the right of the Email label.
 | In the properties panel: set the name to ``email_box``.
 | In the properties panel: set the placeholder to ``Email here``.
 
-| Drag and drop a *text area* component onto card_1 below the Feedback label. 
+| Drag and drop a *text area* component onto card_1 below the Feedback label.
 | In the properties panel: set the name to ``feedback_box``.
 | In the properties panel: set the placeholder to ``Feedback here``.
 
-| Drag and drop a *button* component onto card_1 below the Feedback text area. 
+| Drag and drop a *button* component onto card_1 below the Feedback text area.
 | In the properties panel: set the text to ``Submit``.
 | In the properties panel: set the name to ``submit_button``.
 | In the properties panel: set the role to ``primary-colour``.
@@ -155,8 +155,8 @@ Build the Server Code
 
     @anvil.server.callable
     def add_feedback(name, email, feedback):
-        app_tables.feedback.add_row(name=name, 
-                                    email=email, 
+        app_tables.feedback.add_row(name=name,
+                                    email=email,
                                     feedback=feedback,
                                     created_on=datetime.now())
 
@@ -167,7 +167,7 @@ Build the Submit Code
 
 | Click on the Form1 tab.
 | Double click the Submit button. This adds default code for it.
-| The text from each feedback field needs to be stored in a variable. 
+| The text from each feedback field needs to be stored in a variable.
 | The text property is used to get the text. e.g ``name = self.name_box.text``
 
 .. code-block:: python
@@ -188,7 +188,7 @@ Build the Submit Code
         name = self.name_box.text
         email = self.email_box.text
         feedback = self.feedback_box.text
-        
+
         anvil.server.call('add_feedback', name, email, feedback)
         Notification("Feedback submitted.").show()
 
@@ -203,11 +203,11 @@ Build the Submit Code
         name = self.name_box.text
         email = self.email_box.text
         feedback = self.feedback_box.text
-        
+
         anvil.server.call('add_feedback', name, email, feedback)
         Notification("Feedback submitted.").show()
         self.clear_inputs()
-        
+
     def clear_inputs(self, **event_args):
         self.name_box.text = ""
         self.email_box.text = ""
@@ -239,15 +239,15 @@ Form Code
         name = self.name_box.text
         email = self.email_box.text
         feedback = self.feedback_box.text
-        
+
         anvil.server.call('add_feedback', name, email, feedback)
         Notification("Feedback submitted.").show()
         self.clear_inputs()
-        
+
     def clear_inputs(self, **event_args):
         self.name_box.text = ""
         self.email_box.text = ""
         self.feedback_box.text = ""
 
 
-    
+

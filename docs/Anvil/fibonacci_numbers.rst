@@ -2,10 +2,10 @@
 Fibonacci numbers
 ====================================================
 
-| The Fibonacci sequence is a sequence of numbers in which each term of the sequence is equal to the sum of two preceding terms. 
+| The Fibonacci sequence is a sequence of numbers in which each term of the sequence is equal to the sum of two preceding terms.
 | This way, each term can be expressed by this equation:
 | Fₙ = Fₙ₋₂ + Fₙ₋₁
-| The Fibonacci sequence typically has the first two terms equal to F₀ = 0 and F₁ = 1. 
+| The Fibonacci sequence typically has the first two terms equal to F₀ = 0 and F₁ = 1.
 
 See working app at: ********************
 
@@ -82,7 +82,7 @@ Info
 | In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
-    
+
     Fibonacci numbers are a sequence of odd and even positive integers.
     The values typically rise and fall, like a Fibonacci inside a cloud.
     e.g. 6, 3, 10, 5, 16, 8, 4, 2, 1
@@ -107,7 +107,7 @@ Directions
 
 ----
 
-Fibonacci_start 
+Fibonacci_start
 ~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *TextBox* component onto the column panel.
@@ -146,7 +146,7 @@ Error field
 .. image:: images/Fibonacci/Fibonacci_error.png
     :scale: 60
 
-----
+----Fibonacci
 
 Length_label
 ~~~~~~~~~~~~~~~~~~~
@@ -189,7 +189,7 @@ Fibonacci_numbers
 
 ----
 
-Initial Code 
+Initial Code
 --------------------
 
 | Hide the **error** field by setting its **visible** property to **False**.
@@ -213,7 +213,7 @@ Initial Code
 
 ----
 
-Event Code 
+Event Code
 --------------------
 
 | Both the button click and pressing enter need to generate the Fibonacci list.
@@ -223,20 +223,20 @@ Event Code
 
     def generate_click(self, **event_args):
         self.generate()
-        
+
     def Fibonacci_start_pressed_enter(self, **event_args):
         self.generate()
 
 ----
 
-Fibonacci Code 
+Fibonacci Code
 --------------------
 
 | The **Fibonacci** function takes the parameter, **num**.
 | The list is set to this value: **Fibonacci_list = [num]**.
 | The **while num > 1:** loop runs while **num** is greater than 1. If the **num** value is 1, the Fibonacci_list, **[1]**, is immediately returned.
 | In the while loop, the last value is checked, Fibonacci_list[-1]. If the last value is 1, then the Fibonacci_list is returned.
-| **Fibonacci_list[-1] % 2 == 0** is used to check whether the last number is an even number. 
+| **Fibonacci_list[-1] % 2 == 0** is used to check whether the last number is an even number.
 | If it is even, the last value is halved.
 | If it is odd, the last value is multiplied by three and 1 is added.
 
@@ -284,7 +284,7 @@ Checking the input
 
 ----
 
-Generate Code 
+Generate Code
 --------------------
 
 | The **generate** function uses the **test_integer** and **Fibonacci** functions to get the Fibonacci list.
@@ -310,7 +310,7 @@ Generate Code
         self.Fibonacci_numbers.text = hns
         self.length.text = len(hns)
         self.set_output_field_vis(True)
-        
+
     def test_integer(self):
         # str(invalid entries) give the string 'None'
         if str(self.Fibonacci_start.text) == 'None':
@@ -343,7 +343,7 @@ Generate Code
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.
@@ -363,22 +363,22 @@ Final  Code
             # hide error field and output fields
             self.error.visible = False
             self.set_output_field_vis(False)
-            
+
         def set_output_field_vis(self, vis_bool):
             self.length_label.visible = vis_bool
             self.length.visible = vis_bool
             self.Fibonacci_numbers.visible = vis_bool
-            
+
         def Fibonacci_start_change(self, **event_args):
             if self.Fibonacci_start.text:
                 self.Fibonacci_start.text = min(100000, self.Fibonacci_start.text)
-        
+
         def generate_click(self, **event_args):
             self.generate()
-            
+
         def Fibonacci_start_pressed_enter(self, **event_args):
             self.generate()
-            
+
         def generate(self):
             # hide error and clear it
             self.error.visible = False
@@ -397,7 +397,7 @@ Final  Code
             self.Fibonacci_numbers.text = hns
             self.length.text = len(hns)
             self.set_output_field_vis(True)
-            
+
         def test_integer(self):
             # str(invalid entries) give the string 'None'
             if str(self.Fibonacci_start.text) == 'None':
@@ -434,7 +434,7 @@ Final  Code
 .. admonition:: Tasks
 
     #. Limit the initial input to under 100000.
- 
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -506,7 +506,7 @@ Final  Code
                         multiplier_list = self.multiplier.text
                         multiplier_list = multiplier_list.split(",")
                         multiplier_list = [int(x) for x in multiplier_list if int(x) % 2 == 1 and int(x) < 10 and int(x) > 0]
-                        if len(multiplier_list) == 0: 
+                        if len(multiplier_list) == 0:
                             multiplier_list = [3]
                             self.multiplier_list = multiplier_list
                             self.multiplier.text = str(multiplier_list).strip('[]')
@@ -537,4 +537,3 @@ Final  Code
                                 if len(Fibonacci_list) > 1000:
                                     return Fibonacci_list
                         return Fibonacci_list
-                    

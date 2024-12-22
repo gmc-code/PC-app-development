@@ -158,6 +158,7 @@ PC-app-development
     Anvil/rectangle_area.rst
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
+    Anvil/feedback_form.rst
 
     .. Anvil/days_calculator.rst
     .. Anvil/fibonacci_numbers.rst
