@@ -9,12 +9,12 @@ PC-app-development
 Anvil Key references:
 -----------------------------
 
-#. docs: https://anvil.works/beta-docs/overview
-#. anvil module: https://anvil.works/beta-docs/api/anvil
-#. quick start: https://anvil.works/beta-docs/client/quickstart
-#. user interface: https://anvil.works/beta-docs/client/ui
-#. client side python: https://anvil.works/beta-docs/client/python
-#. anvil components and events: https://anvil.works/beta-docs/client/components
+#. docs: https://anvil.works/docs/overview
+#. anvil module: https://anvil.works/docs/api/anvil
+#. quick start: https://anvil.works/docs/client/quickstart
+#. user interface: https://anvil.works/docs/client/ui
+#. client side python: https://anvil.works/docs/client/python
+#. anvil components and events: https://anvil.works/docs/client/components
 
 tKinter Key references:
 -----------------------------
