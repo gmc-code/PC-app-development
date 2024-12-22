@@ -4,7 +4,7 @@ Superheroes
 
 | Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
 
-.. image:: images/superhero.png
+.. image:: images/superheroes/superhero.png
     :scale: 75%
 
 | The appearance is controlled via custom css.

@@ -9,17 +9,20 @@ Sign up for free at Anvil:
 Go to https://anvil.works/login
 Click: Sign up for free, create a login and click: Sign up.
 
-
 .. image:: images/Anvil_sign_up.png
     :scale: 60%
 
 ----
 
-New editor
+App editor
 ------------------------------
 
-Click: Try the new editor
-Go to: https://anvil.works/new-build
+| The build page will open after signing in: https://anvil.works/build
+| Click: Create a new app to start building a new app.
+
+.. image:: images/Anvil_new_app.png
+    :scale: 75%
+
 
 ----
 

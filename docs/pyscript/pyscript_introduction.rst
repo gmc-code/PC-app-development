@@ -70,7 +70,7 @@ e.g. toml file
     packages = []
 
 
-| In PyScript's TOML configuration files, the `name` and `description` fields are primarily used for documentation and organizational purposes.
+| In PyScript's TOML configuration files, the **name** and **description** fields are primarily used for documentation and organizational purposes.
 | They help you and others understand the purpose and functionality of the application at a glance.
 | While these fields are not used directly by PyScript to influence the behavior of your application, they are valuable for maintaining clarity and organization within your project.
 
