@@ -159,9 +159,10 @@ PC-app-development
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
     Anvil/feedback_form.rst
+    Anvil/fibonacci_numbers.rst
 
     .. Anvil/days_calculator.rst
-    .. Anvil/fibonacci_numbers.rst
+    ..
 
 .. toctree::
     :maxdepth: 2

@@ -28,8 +28,8 @@ Design
 | Add a button to generate the fibonacci numbers.
 | Add a text area to display the fibonacci numbers.
 
-.. image:: images/*************************
-    :scale: 60
+.. image:: images/Fibonacci/Fibonacci.png
+    :scale: 60%
 
 ----
 
@@ -144,9 +144,9 @@ Error field
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
 .. image:: images/Fibonacci/Fibonacci_error.png
-    :scale: 60
+    :scale: 60%
 
-----Fibonacci
+----
 
 Length_label
 ~~~~~~~~~~~~~~~~~~~
