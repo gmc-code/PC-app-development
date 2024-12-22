@@ -81,7 +81,7 @@ Info
 | In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
-    
+
     Hailstone numbers are a sequence of odd and even positive integers.
     The values typically rise and fall, like a hailstone inside a cloud.
     e.g. 6, 3, 10, 5, 16, 8, 4, 2, 1
@@ -97,7 +97,7 @@ Rules
 | In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
-    
+
     The rules for producing hailstone numbers:
     * Start with a positive whole number (integer)
     * If the number is even, divide by 2.
@@ -115,12 +115,12 @@ Directions
 | In the properties panel: text section, set the **text** to the text below.
 
 .. code-block::
-    
+
     Enter the start number (positive integer) and click Generate.
 
 ----
 
-Hailstone_start 
+Hailstone_start
 ~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *TextBox* component onto the column panel.
@@ -202,7 +202,7 @@ Hailstone_numbers
 
 ----
 
-Initial Code 
+Initial Code
 --------------------
 
 | Hide the **error** field by setting its **visible** property to **False**.
@@ -226,7 +226,7 @@ Initial Code
 
 ----
 
-Event Code 
+Event Code
 --------------------
 
 | Both the button click and pressing enter need to generate the hailstone list.
@@ -236,20 +236,20 @@ Event Code
 
     def generate_click(self, **event_args):
         self.generate()
-        
+
     def hailstone_start_pressed_enter(self, **event_args):
         self.generate()
 
 ----
 
-Hailstone Code 
+Hailstone Code
 --------------------
 
 | The **hailstone** function takes the parameter, **num**.
 | The list is set to this value: **hailstone_list = [num]**.
 | The **while num > 1:** loop runs while **num** is greater than 1. If the **num** value is 1, the hailstone_list, **[1]**, is immediately returned.
 | In the while loop, the last value is checked, hailstone_list[-1]. If the last value is 1, then the hailstone_list is returned.
-| **hailstone_list[-1] % 2 == 0** is used to check whether the last number is an even number. 
+| **hailstone_list[-1] % 2 == 0** is used to check whether the last number is an even number.
 | If it is even, the last value is halved.
 | If it is odd, the last value is multiplied by three and 1 is added.
 
@@ -297,7 +297,7 @@ Checking the input
 
 ----
 
-Generate Code 
+Generate Code
 --------------------
 
 | The **generate** function uses the **test_integer** and **hailstone** functions to get the hailstone list.
@@ -323,7 +323,7 @@ Generate Code
         self.hailstone_numbers.text = hns
         self.length.text = len(hns)
         self.set_output_field_vis(True)
-        
+
     def test_integer(self):
         # str(invalid entries) give the string 'None'
         if str(self.hailstone_start.text) == 'None':
@@ -356,7 +356,7 @@ Generate Code
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.
@@ -376,22 +376,22 @@ Final  Code
             # hide error field and output fields
             self.error.visible = False
             self.set_output_field_vis(False)
-            
+
         def set_output_field_vis(self, vis_bool):
             self.length_label.visible = vis_bool
             self.length.visible = vis_bool
             self.hailstone_numbers.visible = vis_bool
-            
+
         def hailstone_start_change(self, **event_args):
             if self.hailstone_start.text:
                 self.hailstone_start.text = min(100000, self.hailstone_start.text)
-        
+
         def generate_click(self, **event_args):
             self.generate()
-            
+
         def hailstone_start_pressed_enter(self, **event_args):
             self.generate()
-            
+
         def generate(self):
             # hide error and clear it
             self.error.visible = False
@@ -410,7 +410,7 @@ Final  Code
             self.hailstone_numbers.text = hns
             self.length.text = len(hns)
             self.set_output_field_vis(True)
-            
+
         def test_integer(self):
             # str(invalid entries) give the string 'None'
             if str(self.hailstone_start.text) == 'None':
@@ -447,7 +447,7 @@ Final  Code
 .. admonition:: Tasks
 
     #. Limit the initial input to under 100000.
- 
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -470,7 +470,7 @@ Final  Code
 .. admonition:: Tasks
 
      #. The longest sequence is 351 for hailstone(77031) for numbers <100,000. Find another hailstone number under 100000 with a sequence length over 200.
-     #. Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the hailstone sequence.
+     #. Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose from this list when generating each new number in the hailstone sequence. Add a plot component and plot the hailstone numbers.
 
     .. dropdown::
         :icon: codescan
@@ -487,67 +487,140 @@ Final  Code
 
             .. tab-item:: Q2
 
-                Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the hailstone sequence.
+                Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose from this list when generating each new number in the hailstone sequence.
 
                 Working app at: https://pc-hailstone-random-multipliers.anvil.app
 
                 .. code-block:: python
 
-                    # code to allow random choice from a list
-
+                    from ._anvil_designer import Form1Template
+                    from anvil import *
+                    import plotly.graph_objects as go
+                    import anvil.tables as tables
+                    import anvil.tables.query as q
+                    from anvil.tables import app_tables
                     from random import choice
 
-                    # code to insert in def generate(self):
+                    class Form1(Form1Template):
 
-                    def generate(self):
-                        ...
-                        # check for error in multiplier and display it if present
-                        error = self.test_multiplier()
-                        if error:
-                        self.error.text = error
-                        self.error.visible = True
-                        self.length.text = ""
-                        self.hailstone_numbers.text = ""
-                        self.set_output_field_vis(False)
-                        return
-                        ...
+                        def __init__(self, **properties):
+                            # Set Form properties and Data Bindings.
+                            self.init_components(**properties)
+                            # hide error field and output fields
+                            self.error.visible = False
+                            self.set_output_field_vis(False)
 
-                    # code to text multiplier input
+                        def set_output_field_vis(self, vis_bool):
+                            self.length_label.visible = vis_bool
+                            self.length.visible = vis_bool
+                            self.hailstone_numbers.visible = vis_bool
 
-                     def test_multiplier(self):
-                        try:
-                        multiplier_list = self.multiplier.text
-                        multiplier_list = multiplier_list.split(",")
-                        multiplier_list = [int(x) for x in multiplier_list if int(x) % 2 == 1 and int(x) < 10 and int(x) > 0]
-                        if len(multiplier_list) == 0: 
-                            multiplier_list = [3]
-                            self.multiplier_list = multiplier_list
-                            self.multiplier.text = str(multiplier_list).strip('[]')
-                            print(self.multiplier.text)
+                        def hailstone_start_change(self, **event_args):
+                            if self.hailstone_start.text:
+                                self.hailstone_start.text = min(100000, self.hailstone_start.text)
+
+                        def generate_click(self, **event_args):
+                            self.generate()
+
+                        def hailstone_start_pressed_enter(self, **event_args):
+                            self.generate()
+
+                        def generate(self):
+                            # hide error and clear it
+                            self.error.visible = False
+                            self.error.text = ""
+                            # check for error and display it if present
+                            error = self.test_integer()
+                            if error:
+                                self.error.text = error
+                                self.error.visible = True
+                                self.length.text = ""
+                                self.hailstone_numbers.text = ""
+                                self.set_output_field_vis(False)
+                                return
+                            # check for error in multiplier and display it if present
+                            error = self.test_multiplier()
+                            if error:
+                                self.error.text = error
+                                self.error.visible = True
+                                self.length.text = ""
+                                self.hailstone_numbers.text = ""
+                                self.set_output_field_vis(False)
+                                return
+                            # continue if no error
+                            hns = self.hailstone(self.hailstone_start.text)
+                            self.hailstone_numbers.text = hns
+                            self.length.text = len(hns)
+                            self.set_output_field_vis(True)
+                            # Update the plot with the new hailstone sequence
+                            self.update_plot(hns)
+
+                        def update_plot(self, hailstone_sequence):
+                            # Generate x values (indices of the sequence)
+                            x_values = list(range(1, len(hailstone_sequence) + 1))
+                            # Create the plot
+                            trace = go.Scatter(x=x_values, y=hailstone_sequence, mode="lines+markers")
+                            # Set up the layout
+                            layout = go.Layout(
+                                title="Hailstone Sequence", xaxis=dict(title="Step"), yaxis=dict(title="Value")
+                            )
+                            # Combine data and layout into a figure
+                            fig = go.Figure(data=[trace], layout=layout)
+                            # Assign the figure to the Plot component
+                            self.hailstone_plot.data = fig.data
+                            self.hailstone_plot.layout = fig.layout
+
+                        def test_integer(self):
+                            # str(invalid entries) give the string 'None'
+                            if str(self.hailstone_start.text) == "None":
+                                return "Invalid number."
+                            # invalid entries give False, so not False is True
+                            if not self.hailstone_start.text:
+                                return "Not a valid start number."
+                            # catch 0, negative ints and floats below 1
+                            if self.hailstone_start.text < 1:
+                                return "Enter a whole number above 0."
+                            # floats
+                            if self.hailstone_start.text != int(self.hailstone_start.text):
+                                return "Postitive Integers, not floats are needed."
+                            self.hailstone_seed = int(self.hailstone_start.text)
                             return None
-                        except ValueError as error:
-                            self.multiplier_list = None
-                            return "multiplier requires positive integers separated by commas."
-                        except IndexError as error:
-                            self.multiplier_list = None
-                            return "multiplier requires positive integers separated by commas."
 
-                    # code to generate hailstone using **choice(self.multiplier_list)**
+                        def test_multiplier(self):
+                            try:
+                                multiplier_list = self.multiplier.text
+                                multiplier_list = multiplier_list.split(",")
+                                multiplier_list = [
+                                    int(x)
+                                    for x in multiplier_list
+                                    if int(x) % 2 == 1 and int(x) < 10 and int(x) > 0
+                                ]
+                                if len(multiplier_list) == 0:
+                                    multiplier_list = [3]
+                                self.multiplier_list = multiplier_list
+                                self.multiplier.text = str(multiplier_list).strip("[]")
+                                print(self.multiplier.text)
+                                return None
+                            except ValueError as error:
+                                self.multiplier_list = None
+                                return "multiplier requires positive integers separated by commas."
+                            except IndexError as error:
+                                self.multiplier_list = None
+                                return "multiplier requires positive integers separated by commas."
 
-                    def hailstone(self, num):
-                        # return list of numbers
-                        hailstone_list = [num]
-                        while num > 1:
-                            if hailstone_list[-1] == 1:
-                                return hailstone_list
-                            else:
-                                if hailstone_list[-1] % 2 == 0:
-                                    new_num = int(hailstone_list[-1] / 2)
-                                else:
-                                    multiplier = choice(self.multiplier_list)
-                                    new_num = (hailstone_list[-1] * multiplier) + 1
-                                hailstone_list.append(new_num)
-                                if len(hailstone_list) > 1000:
+                        def hailstone(self, num):
+                            # return list of numbers
+                            hailstone_list = [num]
+                            while num > 1:
+                                if hailstone_list[-1] == 1:
                                     return hailstone_list
-                        return hailstone_list
-                    
+                                else:
+                                    if hailstone_list[-1] % 2 == 0:
+                                        new_num = int(hailstone_list[-1] / 2)
+                                    else:
+                                        multiplier = choice(self.multiplier_list)
+                                        new_num = (hailstone_list[-1] * multiplier) + 1
+                                    hailstone_list.append(new_num)
+                                    if len(hailstone_list) > 1000:
+                                        return hailstone_list
+                            return hailstone_list

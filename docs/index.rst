@@ -150,6 +150,7 @@ PC-app-development
 
     Anvil/name_and_age.rst
     Anvil/hailstone_numbers.rst
+    Anvil/fibonacci_numbers.rst
     Anvil/insult_generator.rst
     Anvil/sportsmen.rst
     Anvil/temperature_converter.rst
@@ -158,8 +159,7 @@ PC-app-development
     Anvil/rectangle_area.rst
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
-    Anvil/feedback_form.rst
-    Anvil/fibonacci_numbers.rst
+
 
     .. Anvil/days_calculator.rst
     ..
