@@ -438,7 +438,7 @@ Shakespearean pattern
 Themes, Roles, Colour Schemes and theme.css
 ----------------------------------------------
 
-| Colouring the new buttons to work like the Shakespearean INsult button requires lots of work.
+| Colouring the new buttons to work like the Shakespearean Insult button requires lots of work.
 
 Colour Scheme panel
 ~~~~~~~~~~~~~~~~~~~~~~
