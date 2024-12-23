@@ -6,7 +6,7 @@ This app generates a random insult.
 
 A useful tool for formatting long lists is at: https://www.xhcode.com/pythonformat/
 
-| Working app at: https://pc-insult-generator.anvil.app
+| Working app at: https://total-tough-keep.anvil.app
 
 ----
 
@@ -68,7 +68,7 @@ Instructions
 | In the properties panel: text section, set the **text** to text below.
 
 .. code-block::
-    
+
     Choose an insult style.
 
 ----
@@ -94,7 +94,7 @@ Buttons
 
 ----
 
-Output 
+Output
 ~~~~~~~~~~~~~~~~~~~
 
 
@@ -105,7 +105,7 @@ Output
 
 ----
 
-Initial Code & Event Code 
+Initial Code & Event Code
 ---------------------------
 
 | The event, **get_old_insult_click**, calls the **make_old_insult** function.
@@ -128,13 +128,13 @@ Initial Code & Event Code
 
         def get_old_insult_click(self, **event_args):
             self.make_old_insult()
-            
+
         def get_insult_click(self, **event_args):
             self.make_insult()
 
 ----
 
-Insult maker 
+Insult maker
 ---------------------------
 
 | **make_old_insult** places a random Shakespearean insult in the output textbox.
@@ -238,7 +238,7 @@ Insult maker
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.
@@ -260,10 +260,10 @@ Final  Code
 
         def get_old_insult_click(self, **event_args):
             self.make_old_insult()
-            
+
         def get_insult_click(self, **event_args):
             self.make_insult()
-            
+
         def make_old_insult(self):
             insult1 = ['artless', 'bawdy', 'beslubbering', 'bootless',
                 'burly-boned', 'caluminous', 'churlish', 'clouted',
@@ -315,7 +315,7 @@ Final  Code
             ]
             self.output.text = ("Thou art a " + choice(insult1) + " " +
                 choice(insult2) + " " + choice(insult3) + ".")
-            
+
         def make_insult(self):
             insult1 = ['animalistic', 'appalling', 'awful', 'bad-looking',
                 'beastly', 'deformed', 'disfigured', 'foul', 'frightful',
@@ -351,7 +351,7 @@ Final  Code
             ]
             self.output.text = ("You are a " + choice(insult1) + " " +
                 choice(insult2) + " " + choice(insult3)+ ".")
-            
+
 ----
 
 .. admonition:: Tasks
@@ -383,12 +383,13 @@ Final  Code
                 'child genius', 'creator', 'designer', 'egghead', 'Einstein',
                 'experimenter', 'founder', 'freak', 'genius', 'good egg',
                 'good guy', 'good person', 'highbrow', 'innovator',
-                'intellect', 'intellectual', 'maker', 'man of his word',
-                'man of honor', 'marvel', 'mastermind', 'miracle',
+                'intellect', 'intellectual', 'maker', 'person of his word',
+                'person of honor', 'marvel', 'mastermind', 'miracle',
                 'moonwalker', 'natural', 'nice guy', 'one in a million',
-                'originator', 'phenomenon', 'pioneer', 'polished man',
-                'prodigy', 'rarity', 'refined man', 'rocket scientist',
+                'originator', 'phenomenon', 'pioneer', 'polished person',
+                'prodigy', 'rarity', 'refined person', 'rocket scientist',
                 'sage', 'scholar', 'sensation', 'spectacle', 'star person',
                 'stunner', 'talent', 'whiz', 'whiz kid', 'wizard', 'wonder',
                 'wonder child', 'wunderkind'
             ]
+
