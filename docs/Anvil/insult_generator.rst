@@ -536,7 +536,7 @@ Apply roles to buttons
 
 | Select each new button to apply the new colours.
 | In the properties panel: appearance section, set the **role** to **tertiary-color**.
-| CHoose a different role for each button so they have different colours.
+| Choose a different role for each button so they have different colours.
 
 .. image:: images/insults/button_appearance_role.png
     :scale: 80
