@@ -56,7 +56,3 @@ useful tips:
 | The web browser is a constrained environment, so you can't open a file in the browser.
 | You can make function calls to and from your own Python environments using the Uplink.
 
-|
-|
-|
-|

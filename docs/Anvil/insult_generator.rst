@@ -56,14 +56,14 @@ Title
 Column panel
 ~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *column panel* component onto the form.
+| Drag and drop a *c*olumn panel** component onto the form.
 
 ----
 
 Instructions
 ~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *label* component onto the column panel.
+| Drag and drop a **label** component onto the column panel.
 | In the properties panel: name section, set the **name** to **instructions**.
 | In the properties panel: text section, set the **text** to text below.
 
@@ -392,4 +392,152 @@ Final  Code
                 'stunner', 'talent', 'whiz', 'whiz kid', 'wizard', 'wonder',
                 'wonder child', 'wunderkind'
             ]
+
+----
+
+Adding Bad and Nice Santa
+--------------------------
+
+| Restructure and add to the app to build the one below.
+
+.. image:: images/insults/random_insults_and_compliments.png
+    :scale: 80
+
+----
+
+| The XY panel will allow easy sizing of the components.
+| In Design mode, add an XY panel from the Layout Components, into the Form1. Set its height to 400 and width to 300.
+
+| Drag all buttons into the XY panel for resizing later.
+| Delete all other components: the content panel, the instructions, the output, the navbar_links, the title.
+| Add a text area component to the XY panel. In properties, name it self.output. Give it a height of 200, width of 300, x of 0, y of 200, font_size of 24.
+| Copy one of the buttons and paste it in again so that there are 5 buttons in total.
+| Set their text property to match those in the picture.
+| Each of the buttons need to be set up in a similar pattern to the first: Shakespearean.
+
+Shakespearean pattern
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| In the properties panel: name section, set the **name** to **get_old_insult**.
+| In the properties panel: text section, set the **text** to **Shakespearean Insult**.
+| In the properties panel: text section, set the **font_size** to **22**.
+| In the properties panel: appearance section, set the **role** to **secondary-color**.
+| In the properties panel: Events section, click on the blue icon to the right of the **click** label.
+| This will add a default script, **get_old_insult_click**, to the code. This will be coded later to generate the output.
+
+| Name the other buttons: get_insult, get_compliment, get_badsanta, get_nicesanta.
+| Make sure each click event for these follows the name pattern with "_click" appended.
+| i.e. get_insult_click, get_compliment_click, get_badsanta_click, get_nicesanta_click.
+
+| Set these button widths to 150. Set their x values to 0 or 150. Adjust their y values to fit.
+
+| Create code for each button following the patterns above. Obtain lists christmas themes insults or compliments use AI.
+
+----
+
+Themes, Roles, Colour Schemes and theme.css
+----------------------------------------------
+
+| Colouring the new buttons to work like the Shakespearean INsult button requires lots of work.
+
+Colour Scheme panel
+~~~~~~~~~~~~~~~~~~~~~~
+
+| Start by adding colours to the Colour Scheme panel.
+
+.. image:: images/insults/app_theme.png
+    :scale: 80
+
+| Click **Add new colour** at the bottom of the Colour Scheme panel.
+| Add the color names and colors as shown in the image below.
+
+.. image:: images/insults/color_scheme_add_new_color.png
+    :scale: 80
+
+Roles panel
+~~~~~~~~~~~~~~~~~~~~~~
+
+| Now add the roles that will use these colors and be selectable in the button properties roles property in the properties appearance group.
+| An example of a new roles is below.
+| In the Roles panel click the blue button near the top labelled **Add new role**.
+| Name it as shown below. In the input field (+ New component name) type in **Button** and click the check box to the right (Show in Toolbox).
+
+ .. image:: images/insults/tertiary_color_scheme.png
+    :scale: 80
+
+| Repeat for quarternary-color and quinary-color.
+
+App Assets theme.css
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Edit the css so the role colors will be applied to the buttons.
+
+| Navigate to the place in the css where these selectors are found for the secondary color.
+| Add these.
+
+.. code-block:: css
+
+    .anvil-role-tertiary-color > .btn, .anvil-role-tertiary-color.file-loader>label {
+        color: white;
+        background-color: %color:Tertiary 500%;
+    }
+
+    .anvil-role-quarternary-color > .btn, .anvil-role-quarternary-color.file-loader>label {
+        color: white;
+        background-color: %color:Quarternary 500%;
+    }
+
+    .anvil-role-quinary-color > .btn, .anvil-role-quinary-color.file-loader>label {
+        color: white;
+        background-color: %color:Quinary 500%;
+    }
+
+| Navigate to the place in the css where these selectors are found for the secondary color.
+| Add these.
+
+.. code-block:: css
+
+    .anvil-role-tertiary-color > .btn:hover, .anvil-role-tertiary-color > .btn:active, .anvil-role-tertiary-color > .btn:focus {
+        color: white;
+        background-color: %color:Tertiary 700%;
+    }
+
+    .anvil-role-quarternary-color > .btn:hover, .anvil-role-quarternary-color > .btn:active, .anvil-role-quarternary-color > .btn:focus {
+        color: white;
+        background-color: %color:Quarternary 700%;
+    }
+
+    .anvil-role-quinary-color > .btn:hover, .anvil-role-quinary-color > .btn:active, .anvil-role-quinary-color > .btn:focus {
+        color: white;
+        background-color: %color:Quinary 700%;
+    }
+
+| Navigate to the place in the css where these selectors are found.
+| Modify it by adding in the new selectors for the 3 new colours.
+| e.g .anvil-role-tertiary-color > .btn:active
+
+.. code-block:: css
+
+    /* modified for new colors */
+    .anvil-role-raised > .btn:active,
+    .anvil-role-primary-color > .btn:active,
+    .anvil-role-secondary-color > .btn:active,
+    .anvil-role-tertiary-color > .btn:active,
+    .anvil-role-quarternary-color > .btn:active,
+    .anvil-role-quinary-color > .btn:active,
+    .btn-primary:active, .btn-success:active, .btn-info:active, .btn-warning:active, .btn-danger:active {
+        /* 8dp */ box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+        top: -1px;
+    }
+
+
+Apply roles to buttons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Select each new button to apply the new colours.
+| In the properties panel: appearance section, set the **role** to **tertiary-color**.
+| CHoose a different role for each button so they have different colours.
+
+.. image:: images/insults/button_appearance_role.png
+    :scale: 80
 
