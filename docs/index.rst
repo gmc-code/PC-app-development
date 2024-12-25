@@ -151,15 +151,15 @@ PC-app-development
     Anvil/name_and_age.rst
     Anvil/hailstone_numbers.rst
     Anvil/fibonacci_numbers.rst
-    Anvil/insult_generator.rst
     Anvil/sportsmen.rst
     Anvil/temperature_converter.rst
     Anvil/temperature_converter2.rst
     Anvil/temperature_converter3.rst
+    Anvil/insult_generator.rst
     Anvil/rectangle_area.rst
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
-
+    Anvil/christmas_jokes.rst
 
     .. Anvil/days_calculator.rst
     ..

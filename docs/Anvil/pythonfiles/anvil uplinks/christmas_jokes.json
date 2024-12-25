@@ -1,0 +1,470 @@
+{
+    "1": {
+        "joke": "What do you get if you cross a snowman and a dog?",
+        "reply": "Frostbite."
+    },
+    "2": {
+        "joke": "Why did Santa go to music school?",
+        "reply": "So he could improve his wrap skills."
+    },
+    "3": {
+        "joke": "What do you call a greedy elf?",
+        "reply": "Elfish."
+    },
+    "4": {
+        "joke": "Why did the Christmas tree go to the barber?",
+        "reply": "It needed a trim."
+    },
+    "5": {
+        "joke": "What do you get when you cross a bell with a skunk?",
+        "reply": "Jingle smells."
+    },
+    "6": {
+        "joke": "What do you get if you eat Christmas decorations?",
+        "reply": "Tinsilitis."
+    },
+    "7": {
+        "joke": "Why did the elf put his bed into the fireplace?",
+        "reply": "He wanted to sleep like a log."
+    },
+    "8": {
+        "joke": "What do you call a snowman with a six-pack?",
+        "reply": "An abdominal snowman."
+    },
+    "9": {
+        "joke": "What do you call a cat on the beach at Christmas time?",
+        "reply": "Sandy Claws."
+    },
+    "10": {
+        "joke": "What do you get if you cross a Christmas tree with an apple?",
+        "reply": "A pine-apple."
+    },
+    "11": {
+        "joke": "Why did the Christmas lights go to school?",
+        "reply": "They wanted to be brighter."
+    },
+    "12": {
+        "joke": "What do you call a snowman party?",
+        "reply": "A snowball."
+    },
+    "13": {
+        "joke": "Why did Santa bring a ladder to the bar?",
+        "reply": "He heard the drinks were on the house."
+    },
+    "14": {
+        "joke": "Why did the Christmas ornament go to the doctor?",
+        "reply": "It was feeling a bit off-color."
+    },
+    "15": {
+        "joke": "What do you call a snowman with a temper tantrum?",
+        "reply": "A meltdown."
+    },
+    "16": {
+        "joke": "Why did the elf go to school?",
+        "reply": "To learn the elf-abet."
+    },
+    "17": {
+        "joke": "What do you get if you cross a snowman and a vampire?",
+        "reply": "Frostbite."
+    },
+    "18": {
+        "joke": "What do you call a reindeer with bad manners?",
+        "reply": "Rude-olph."
+    },
+    "19": {
+        "joke": "Why did the gingerbread man go to the doctor?",
+        "reply": "He was feeling crumby."
+    },
+    "20": {
+        "joke": "What do you call a snowman with a sunburn?",
+        "reply": "A puddle."
+    },
+    "21": {
+        "joke": "Why did Santa go to the beach?",
+        "reply": "To be a sandy Claus."
+    },
+    "22": {
+        "joke": "How do snowmen travel around?",
+        "reply": "By riding an icicle."
+    },
+    "23": {
+        "joke": "What do you get when you mix a snowman with a baker?",
+        "reply": "Frosting."
+    },
+    "24": {
+        "joke": "Why don't Christmas trees sew?",
+        "reply": "They always drop their needles."
+    },
+    "25": {
+        "joke": "What do you call an old snowman?",
+        "reply": "Water."
+    },
+    "26": {
+        "joke": "What's Santa's favorite kind of music?",
+        "reply": "Wrap music."
+    },
+    "27": {
+        "joke": "What do you get if you cross an iPad and a Christmas tree?",
+        "reply": "A pine-apple."
+    },
+    "28": {
+        "joke": "What did one snowman say to the other snowman?",
+        "reply": "Do you smell carrots?"
+    },
+    "29": {
+        "joke": "Why did the turkey join the band?",
+        "reply": "Because it had the drumsticks."
+    },
+    "30": {
+        "joke": "How does a snowman get around?",
+        "reply": "By riding a snowmobile."
+    },
+    "31": {
+        "joke": "What did one dinosaur say to the other while playing hide and seek at Christmas?",
+        "reply": "Santa-saur-us."
+    },
+    "32": {
+        "joke": "What's a sheep's favorite Christmas song?",
+        "reply": "Fleece Navidad."
+    },
+    "33": {
+        "joke": "What kind of photos do elves take?",
+        "reply": "(S)elfies."
+    },
+    "34": {
+        "joke": "What do snowmen eat for breakfast?",
+        "reply": "Frosted flakes."
+    },
+    "35": {
+        "joke": "What do you call Santa's little helpers?",
+        "reply": "Subordinate clauses."
+    },
+    "36": {
+        "joke": "What do you call a shark that delivers presents?",
+        "reply": "Santa Jaws."
+    },
+    "37": {
+        "joke": "What did the reindeer say before telling a joke?",
+        "reply": "This one's going to sleigh you."
+    },
+    "38": {
+        "joke": "What did the Santa say before telling a joke?",
+        "reply": "This one's going to sleigh you."
+    },
+    "39": {
+        "joke": "What do you call a Christmas wreath made of $100 bills?",
+        "reply": "Aretha Franklin."
+    },
+    "40": {
+        "joke": "How does Santa keep his suits wrinkle-free?",
+        "reply": "He uses Claus-et space."
+    },
+    "41": {
+        "joke": "What does Santa eat for breakfast?",
+        "reply": "Ho-ho-ho-tcakes."
+    },
+    "42": {
+        "joke": "What kind of cars do elves drive?",
+        "reply": "Toy-otas."
+    },
+    "43": {
+        "joke": "How does Frosty get around on Christmas?",
+        "reply": "By riding a snowdrift."
+    },
+    "44": {
+        "joke": "What wears a red suit and goes Oh, oh, oh?",
+        "reply": "Santa walking backwards."
+    },
+    "45": {
+        "joke": "What do you call a reindeer with no eyes?",
+        "reply": "No-eye-deer."
+    },
+    "46": {
+        "joke": "What do you get if you cross Santa with a detective?",
+        "reply": "Santa Clues."
+    },
+    "47": {
+        "joke": "Why does Santa go down the chimney on Christmas Eve?",
+        "reply": "Because it soots him."
+    },
+    "48": {
+        "joke": "Why did Santa get stuck in the chimney?",
+        "reply": "He was Claus-trophobic."
+    },
+    "49": {
+        "joke": "Why did Santa go down the chimney at the bakery?",
+        "reply": "Because it was a piece of cake."
+    },
+    "50": {
+        "joke": "What does Santa use to clean the chimney?",
+        "reply": "Santa-tizer."
+    },
+    "51": {
+        "joke": "What do snowmen like to do on the weekend?",
+        "reply": "Chill out."
+    },
+    "52": {
+        "joke": "What do elves do after school?",
+        "reply": "Their gnome work."
+    },
+    "53": {
+        "joke": "What's the difference between Santa's reindeer and a knight?",
+        "reply": "One slays the dragon, and the other's draggin' the sleigh."
+    },
+    "54": {
+        "joke": "Why was Santa's little helper depressed?",
+        "reply": "Because he had low elf esteem."
+    },
+    "55": {
+        "joke": "What did the cow say on Christmas morning?",
+        "reply": "Mooooey Christmas."
+    },
+    "56": {
+        "joke": "What do monkeys sing at Christmas?",
+        "reply": "Jungle bells, jungle bells."
+    },
+    "57": {
+        "joke": "What do you sing at a snowman's birthday party?",
+        "reply": "Freeze a jolly good fellow."
+    },
+    "58": {
+        "joke": "Why does Santa have three gardens?",
+        "reply": "So he can hoe hoe hoe."
+    },
+    "59": {
+        "joke": "When does Christmas come before Thanksgiving?",
+        "reply": "In the dictionary."
+    },
+    "60": {
+        "joke": "What's the difference between the Christmas alphabet and the ordinary alphabet?",
+        "reply": "The Christmas one has no L (noel)."
+    },
+    "61": {
+        "joke": "What carol is most often heard in the dessert?",
+        "reply": "Camel ye faithful."
+    },
+    "62": {
+        "joke": "What do you get if Santa goes down the chimney when the fire is lit?",
+        "reply": "Krisp Kringle."
+    },
+    "63": {
+        "joke": "Why are turkeys smarter than chickens?",
+        "reply": "Ever heard of Kentucky Fried Turkey?."
+    },
+    "64": {
+        "joke": "What often falls at the North Pole but never gets hurt?",
+        "reply": "Snow."
+    },
+    "65": {
+        "joke": "Why is Santa so good at karate?",
+        "reply": "Because he has a black belt."
+    },
+    "66": {
+        "joke": "How much did Santa pay for his sleigh?",
+        "reply": "Nothing, it was on the house."
+    },
+    "67": {
+        "joke": "What do fish sing when Santa comes?",
+        "reply": "Christmas Corals."
+    },
+    "68": {
+        "joke": "What did the reindeer say when he saw an elf?",
+        "reply": "Nothing, reindeer can't talk."
+    },
+    "69": {
+        "joke": "Which elf was the best singer?",
+        "reply": "ELFis Presley."
+    },
+    "70": {
+        "joke": "How does Santa take pictures?",
+        "reply": "With his North Pole-aroid."
+    },
+    "71": {
+        "joke": "What is invisible and smells like milk and cookies?",
+        "reply": "Santa's burps."
+    },
+    "72": {
+        "joke": "What does Santa put on his head when he has a headache?",
+        "reply": "A polar ice cap."
+    },
+    "73": {
+        "joke": "What did Santa say when Mrs. Claus asked about the weather?",
+        "reply": "Looks like rain, dear."
+    },
+    "74": {
+        "joke": "Who is never hungry at Christmas?",
+        "reply": "The turkey - he's always stuffed."
+    },
+    "75": {
+        "joke": "What does Santa use to measure?",
+        "reply": "Santameters."
+    },
+    "76": {
+        "joke": "What should you give your parents at Christmas?",
+        "reply": "A list of what you want."
+    },
+    "77": {
+        "joke": "What do snowmen take when the sun gets too hot?",
+        "reply": "A chill pill."
+    },
+    "78": {
+        "joke": "What did one snowman say to another snowman?",
+        "reply": "You're cool."
+    },
+    "79": {
+        "joke": "What kind of bug hates Christmas?",
+        "reply": "A humbug."
+    },
+    "80": {
+        "joke": "How does Christmas Day end?",
+        "reply": "With the letter Y."
+    },
+    "81": {
+        "joke": "Why did the turkey cross the road?",
+        "reply": "Because it was the chicken's day off."
+    },
+    "82": {
+        "joke": "When is a boat just like snow?",
+        "reply": "When it's adrift."
+    },
+    "83": {
+        "joke": "What is the best Christmas present in the world?",
+        "reply": "A broken drum, you just can't beat it."
+    },
+    "84": {
+        "joke": "Who delivers presents to cats?",
+        "reply": "Santa Paws."
+    },
+    "85": {
+        "joke": "Why is it getting harder to buy Advent calendars?",
+        "reply": "Their days are numbered."
+    },
+    "86": {
+        "joke": "What kind of motorbike does Santa ride?",
+        "reply": "A Holly Davidson."
+    },
+    "87": {
+        "joke": "What do angry mice send to each other at Christmas?",
+        "reply": "Cross-mouse cards."
+    },
+    "88": {
+        "joke": "What did Adam say the day before Christmas?",
+        "reply": "It's Christmas, Eve."
+    },
+    "89": {
+        "joke": "Why don't you ever see Santa in a public hospital?",
+        "reply": "Because he has private elf care."
+    },
+    "90": {
+        "joke": "What's a child's favorite king at Christmas?",
+        "reply": "A stoc-king."
+    },
+    "91": {
+        "joke": "What do you get if you cross Santa with a duck?",
+        "reply": "A Christmas Quacker."
+    },
+    "92": {
+        "joke": "What happened to the man who stole an Advent Calendar?",
+        "reply": "He got 25 days."
+    },
+    "93": {
+        "joke": "Why was the snowman looking through the carrots?",
+        "reply": "He was picking his nose."
+    },
+    "94": {
+        "joke": "What do you call buying a piano for the holidays?",
+        "reply": "Christmas Chopin."
+    },
+    "95": {
+        "joke": "What did the beaver say to the Christmas Tree?",
+        "reply": "Nice gnawing you."
+    },
+    "96": {
+        "joke": "What athlete is warmest in winter?",
+        "reply": "A long jumper."
+    },
+    "97": {
+        "joke": "What type of key do you need for a Nativity play?",
+        "reply": "A don-key."
+    },
+    "98": {
+        "joke": "What do snowmen wear on their heads?",
+        "reply": "Ice caps."
+    },
+    "99": {
+        "joke": "How do elves get to the top floor of Santa's workshop?",
+        "reply": "They use the elfelator."
+    },
+    "100": {
+        "joke": "How did Santa describe the elf who refused to take a bath?",
+        "reply": "He's elfully smelly."
+    },
+    "101": {
+        "joke": "What do sheep say to each other at Christmas?",
+        "reply": "Merry Christmas to ewe."
+    },
+    "102": {
+        "joke": "What color Christmas candle burns longer, a red candle or a green candle?",
+        "reply": "Neither; candles always burn shorter."
+    },
+    "103": {
+        "joke": "Which Christmas carol do parents like the most?",
+        "reply": "Silent Night."
+    },
+    "104": {
+        "joke": "What goes ho-ho whoosh, ho-ho whoosh?",
+        "reply": "Santa caught in a revolving door."
+    },
+    "105": {
+        "joke": "What does Santa do in his garden?",
+        "reply": "He hoe hoe hoes."
+    },
+    "106": {
+        "joke": "What do reindeer have that no other animals have?",
+        "reply": "Baby reindeer."
+    },
+    "107": {
+        "joke": "What type of potato chip is Santa's favorite?",
+        "reply": "Crisp Pringles."
+    },
+    "108": {
+        "joke": "What is Santa's favorite Olympic event?",
+        "reply": "North Pole-vault."
+    },
+    "109": {
+        "joke": "Why do reindeer tell such good stories?",
+        "reply": "Because they all have tails."
+    },
+    "110": {
+        "joke": "How do you make a slow reindeer fast?",
+        "reply": "You don't feed it."
+    },
+    "111": {
+        "joke": "What's the best thing to put into a Christmas pie?",
+        "reply": "Your teeth."
+    },
+    "112": {
+        "joke": "Where do you find reindeer?",
+        "reply": "Depends where you left them."
+    },
+    "113": {
+        "joke": "Noah commented 'I thought we had two turkeys when we left?'",
+        "reply": "Noah's Wife replied 'Well, it is Christmas.'"
+    },
+    "114": {
+        "joke": "What did the bald man say when he got a comb for Christmas?",
+        "reply": "Thanks, I'll never part with it."
+    },
+    "115": {
+        "joke": "If a reindeer lost his tail, where would it go for a new one?",
+        "reply": "A re-tail shop."
+    },
+    "116": {
+        "joke": "What do you call it when Santa takes a break from delivering presents?",
+        "reply": "Santa pause."
+    },
+    "117": {
+        "joke": "What do you call it when Kris Kringle claps his hands?",
+        "reply": "Santapplause."
+    }
+}

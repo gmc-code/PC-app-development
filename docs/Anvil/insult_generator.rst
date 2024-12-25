@@ -405,12 +405,12 @@ Adding Bad and Nice Santa
 
 ----
 
-| The XY panel will allow easy sizing of the components.
-| In Design mode, add an XY panel from the Layout Components, into the Form1. Set its height to 400 and width to 300.
+| The XYpanel will allow easy sizing of the components.
+| In Design mode, add an XYpanel from the Layout Components, into the Form1. Set its height to 400 and width to 300.
 
-| Drag all buttons into the XY panel for resizing later.
+| Drag all buttons into the XYpanel for resizing later.
 | Delete all other components: the content panel, the instructions, the output, the navbar_links, the title.
-| Add a text area component to the XY panel. In properties, name it self.output. Give it a height of 200, width of 300, x of 0, y of 200, font_size of 24.
+| Add a text area component to the XYpanel. In properties, name it self.output. Give it a height of 200, width of 300, x of 0, y of 200, font_size of 24.
 | Copy one of the buttons and paste it in again so that there are 5 buttons in total.
 | Set their text property to match those in the picture.
 | Each of the buttons need to be set up in a similar pattern to the first: Shakespearean.

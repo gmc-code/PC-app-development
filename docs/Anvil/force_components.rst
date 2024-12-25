@@ -9,7 +9,7 @@ This app calculates the horizontal and vertical components of a force at a given
 .. image:: images/forces/force_components.png
 
 | Use the image above to build the interface, using textboxes for the inputs and labels for other text fields.
-| Use a XY panel for the diagram region, so that the text labels can be placed over the force diagram.
+| Use a XYpanel for the diagram region, so that the text labels can be placed over the force diagram.
 
 | Download the diagram file :download:`force_diagram <images/forces/force_diagram.png>`.
 
@@ -68,7 +68,7 @@ Error field
 
 ----
 
-Event Code 
+Event Code
 --------------------
 
 | Both the clicking the calculate button and pressing enter in the input textboxes attempts to produce the output.
@@ -134,7 +134,7 @@ Calculation
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.

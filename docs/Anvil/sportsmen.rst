@@ -19,7 +19,7 @@ References
 Design
 ---------
 
-| Use an XY panel for easy resizing and placement of fields.
+| Use an XYpanel for easy resizing and placement of fields.
 | Use a label field to display instructions.
 | Use 4 radio buttons to choose the information to display.
 | Use 3 label fields to display the information type.
@@ -41,7 +41,7 @@ Instructions
 | In the properties panel: text section, set the **font_size** to 18.
 
 .. code-block::
-    
+
     Press a sport option button to show a famous player.
 
 ----
@@ -52,11 +52,11 @@ Radio buttons
 | Place the radio buttons together in a horizontal line at the top.
 | Use the properties panel to set their names and their text property to "basketball", "cricket", "soccer", "AFL".
 | Resize them to just fit the text.
-| Click the XY panel and drag its right handle to resize it horizontally to comfortably fit the radio buttons text. Suggested width is about 400.
+| Click the XYpanel and drag its right handle to resize it horizontally to comfortably fit the radio buttons text. Suggested width is about 400.
 
 ----
 
-Information type 
+Information type
 ~~~~~~~~~~~~~~~~~~~
 
 | Place 3 label fields in a vertical line at the left below the first radio button.
@@ -65,7 +65,7 @@ Information type
 
 ----
 
-Information content 
+Information content
 ~~~~~~~~~~~~~~~~~~~
 
 | Place 3 label fields in a vertical line at the left below the second radio button.
@@ -74,7 +74,7 @@ Information content
 
 ----
 
-Images 
+Images
 ~~~~~~~~~~~~~~~~~~~
 
 | Place 4 image objects below the other fields, 1 at a time.
@@ -85,7 +85,7 @@ Images
 
 .. image:: images/sportsmen/Bryant.png
     :scale: 60
-    
+
 .. image:: images/sportsmen/Sobers.png
     :scale: 60
 
@@ -100,7 +100,7 @@ Images
 
 ----
 
-Code 
+Code
 --------------------
 
 | Add content info via a nested dictionary.
@@ -111,7 +111,7 @@ Code
 
 .. admonition:: Tasks
 
-    #. Write code for the nested dictionary.   
+    #. Write code for the nested dictionary.
 
     .. dropdown::
             :icon: codescan
@@ -122,7 +122,7 @@ Code
 
                 .. tab-item:: Q1
 
-                    Write code for the nested dictionary. 
+                    Write code for the nested dictionary.
 
                     .. code-block:: python
 
@@ -159,29 +159,29 @@ Code
                                 "average": "25.0",
                                 "image_filename": "Bryant.png",
                             },
-                        
+
                         }
 
 ----
 
-radio button click handler 
+radio button click handler
 -------------------------------
 
-| To each of the 4 radio buttons add a clicked event by clicking in the blue icon for the clicked field in the events section of the properties panel. 
-| e.g. "basketball_clicked",  "cricket_clicked",  "soccer_clicked", and "AFL_clicked". 
+| To each of the 4 radio buttons add a clicked event by clicking in the blue icon for the clicked field in the events section of the properties panel.
+| e.g. "basketball_clicked",  "cricket_clicked",  "soccer_clicked", and "AFL_clicked".
 
 ----
 
-Code 
+Code
 --------------------
 
 | Use code to pick out parts of the nested dictionary.
 
 .. admonition:: Tasks
 
-    #. Write code for each radio button click event.   
-    #. Write a **place_info** method that puts text into the 6 label fields and shows the image for the chosen sport.   
-    #. Write a **show_sport_image** method that shows the image for the chosen sport, after first hiding all 4 images.   
+    #. Write code for each radio button click event.
+    #. Write a **place_info** method that puts text into the 6 label fields and shows the image for the chosen sport.
+    #. Write a **show_sport_image** method that shows the image for the chosen sport, after first hiding all 4 images.
 
     .. dropdown::
             :icon: codescan
@@ -192,7 +192,7 @@ Code
 
                 .. tab-item:: Q1
 
-                    Write code for each radio button click event. 
+                    Write code for each radio button click event.
 
                     .. code-block:: python
 
@@ -202,7 +202,7 @@ Code
 
                 .. tab-item:: Q2
 
-                    Write a **place_info** method that puts text into the 6 label fields and shows the image for that sport. 
+                    Write a **place_info** method that puts text into the 6 label fields and shows the image for that sport.
 
                     .. code-block:: python
 
@@ -217,7 +217,7 @@ Code
 
                 .. tab-item:: Q3
 
-                    Write a **show_sport_image** method that shows the image for the chosen sport, after first hiding all 4 images. 
+                    Write a **show_sport_image** method that shows the image for the chosen sport, after first hiding all 4 images.
 
                     .. code-block:: python
 
@@ -226,18 +226,18 @@ Code
                             self.img_basketball.visible = False
                             self.img_soccer.visible = False
                             self.img_cricket.visible = False
-                            if choice == 'AFL': 
+                            if choice == 'AFL':
                                 self.img_afl.visible = True
-                            elif choice == 'basketball': 
+                            elif choice == 'basketball':
                                 self.img_basketball.visible = True
-                            elif choice == 'soccer': 
+                            elif choice == 'soccer':
                                 self.img_soccer.visible = True
-                            elif choice == 'cricket': 
+                            elif choice == 'cricket':
                                 self.img_cricket.visible = True
 
 ----
 
-Final Code 
+Final Code
 --------------------
 
 | The final code is shown below.
@@ -257,7 +257,7 @@ Final Code
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
 
-            
+
         sportsmen_dict = {
             "cricket": {
                 "player": "Sobers",
@@ -291,9 +291,9 @@ Final Code
                 "average": "25.0",
                 "image_filename": "Bryant.png",
             },
-        
+
         }
-        
+
         def place_info(self, choice):
             # player = self.sportsmen_dict[choice]['player']
             # player_img = self.sportsmen_dict[choice]['image_filename']
@@ -304,21 +304,21 @@ Final Code
             self.average_label.text = self.sportsmen_dict[choice]['average_label']
             self.average.text = self.sportsmen_dict[choice]['average']
             self.show_sport_image(choice)
-            
+
         def show_sport_image(self, choice):
             self.img_afl.visible = False
             self.img_basketball.visible = False
             self.img_soccer.visible = False
             self.img_cricket.visible = False
-            if choice == 'AFL': 
+            if choice == 'AFL':
                 self.img_afl.visible = True
-            elif choice == 'basketball': 
+            elif choice == 'basketball':
                 self.img_basketball.visible = True
-            elif choice == 'soccer': 
+            elif choice == 'soccer':
                 self.img_soccer.visible = True
-            elif choice == 'cricket': 
+            elif choice == 'cricket':
                 self.img_cricket.visible = True
-        
+
         def AFL_clicked(self, **event_args):
             choice = 'AFL'
             self.place_info(choice)
@@ -330,7 +330,7 @@ Final Code
         def cricket_clicked(self, **event_args):
             choice = 'cricket'
             self.place_info(choice)
-            
+
         def basketball_clicked(self, **event_args):
             choice = 'basketball'
             self.place_info(choice)

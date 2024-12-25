@@ -8,8 +8,8 @@ This app calculates the area of a rectangle, given the length and width.
 
 .. image:: images/area/rectangle_area.png
     :scale: 60
-    
-| Use a XY panel for the diagram region, so that the text labels can be placed over the diagram.
+
+| Use a XYpanel for the diagram region, so that the text labels can be placed over the diagram.
 
 | Download the diagram file :download:`rectangle diagram <images/area/rectangle.png>`.
 
@@ -63,7 +63,7 @@ Error field
 
 ----
 
-Event Code 
+Event Code
 --------------------
 
 | Both clicking the calculate button and pressing enter in the input textboxes produces the output.
@@ -96,7 +96,7 @@ Calculation
 
 | A try-except block is used to make sure an **error** output, **use positive lengths**, is given when the inputs are not valid.
 | Testing with invalid inputs shows that **TypeError** is the only error type to put in the try-except block.
-| Any values of 0 or less are then detected: 
+| Any values of 0 or less are then detected:
 | ``if val <= 0 or self.length.text <= 0 or self.width.text <= 0:``.
 
 | f-stings allow convenient formatting to 2 decimal places.
@@ -120,7 +120,7 @@ Calculation
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.

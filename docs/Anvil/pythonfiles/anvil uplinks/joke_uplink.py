@@ -4,6 +4,9 @@ import anvil.server
 import csv
 from anvil.tables import app_tables
 
+# Specify the path to your tab-delimited text file
+file_path = 'docs/Anvil/pythonfiles/christmas_jokes.txt'
+
 # Replace with your Anvil Uplink key
 ANVIL_UPLINK_KEY = "server_2LPC4YBQWDFEIMFBEHUGYT6I-LKHZZ6NUK3YOTG4K"
 
@@ -43,8 +46,6 @@ def upload_jokes(file_path):
         anvil.server.call('add_joke_to_database', joke, reply)
         print(f"Uploaded joke: {joke}")
 
-# Specify the path to your tab-delimited text file
-file_path = 'docs/Anvil/pythonfiles/christmas_jokes.txt'
 
 # Upload jokes to the database
 upload_jokes(file_path)
