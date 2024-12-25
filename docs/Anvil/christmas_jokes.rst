@@ -95,14 +95,14 @@ Create a new database table and name it "jokes".
 | Set Client code access to search this table.
 | Server code should be set to search, edit and delete.
 
-.. image::  images/christmas_jokes/add_new_table.png
+.. image::  images/christmas_jokes/jokes_table.png
     :scale: 100
 
 | Add 2 New Columns.
 | Name them "joke" amd "reply".
 | Set their column type to text in the **Add a Column** window.
 
-.. image::  images/christmas_jokes/add_new_table.png
+.. image::  images/christmas_jokes/add_a_column.png
     :scale: 100
 
 | Enable the Uplink in the Anvil IDE using these steps.
