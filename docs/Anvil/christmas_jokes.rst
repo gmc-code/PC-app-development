@@ -42,6 +42,11 @@ The initial components are shown below.
     :scale: 100
 
 | Delete the navbar_links FlowPanel.
+| Add the components below.
+| The final components are shown below.
+
+.. image:: images/christmas_jokes/final_components.png
+    :scale: 100
 
 | Add an XYPanel to the content_panel. Set this width to 320 and height to 400.
 | Add an image, then 2 buttons and 2 labels to the XYPanel.
@@ -75,10 +80,6 @@ The initial components are shown below.
 | Set its font size to 20.
 | Set its width to 300, with x set to 0, and y set to 295.
 
-The final components are shown below.
-
-.. image:: images/christmas_jokes/final_components.png
-    :scale: 100
 
 ----
 
