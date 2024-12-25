@@ -1,14 +1,17 @@
 # Connect to your Anvil app
+# update path and server uplink key.
 
 import anvil.server
 import csv
 from anvil.tables import app_tables
 
+
 # Specify the path to your tab-delimited text file
-file_path = 'docs/Anvil/pythonfiles/christmas_jokes.txt'
+file_path = 'docs/Anvil/pythonfiles/anvil uplinks/jokes.txt'
 
 # Replace with your Anvil Uplink key
-ANVIL_UPLINK_KEY = "server_2LPC4YBQWDFEIMFBEHUGYT6I-LKHZZ6NUK3YOTG4K"
+ANVIL_UPLINK_KEY = "server_EKBBYU5E64L4T7F2G6IDEW7W-K5NOBNJ7B7QL7PF4"
+
 
 # Connect to the Anvil server
 

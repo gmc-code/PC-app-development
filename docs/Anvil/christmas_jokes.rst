@@ -121,17 +121,17 @@ Create a new database table and name it "jokes".
 
 .. code-block:: python
 
-    # Connect to your Anvil app
-
     import anvil.server
     import csv
     from anvil.tables import app_tables
+
 
     # Specify the path to your tab-delimited text file
     file_path = 'christmas_jokes.txt'
 
     # Replace with your Anvil Uplink key
-    ANVIL_UPLINK_KEY = "server_...rest of key..."
+    ANVIL_UPLINK_KEY = "server_EKBBYU5E64L4T7F2G6IDEW7W-K5NOBNJ7B7QL7PF4"
+
 
     # Connect to the Anvil server
 
@@ -173,18 +173,20 @@ Create a new database table and name it "jokes".
     # Upload jokes to the database
     upload_jokes(file_path)
 
-    # # Disconnect from the Anvil server
-    # anvil.server.disconnect()
 
+| The jokes table will now be filled with jokes.
 
-
-
+.. image::  images/christmas_jokes/server_uplink.png
+    :scale: 100
 
 
 ----
 
-Code
+Client Code
 ------------
+
+| Place the code below in the Form 1 code.
+| Run the code to check that it works.
 
 .. code-block:: python
 
