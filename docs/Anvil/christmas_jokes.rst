@@ -188,7 +188,7 @@ Create a new database table and name it "jokes".
 Client Code
 ------------
 
-| Place the code below in the Form 1 code.
+| Place the code below in the Form1 code.
 | Run the code to check that it works.
 
 .. code-block:: python
@@ -233,6 +233,27 @@ Client Code
         def place_joke_reply(self):
             self.joke_reply.text = self.joke_reply_text
 
+
+Code Notes
+-----------------
+
+
+# Understanding `app_tables.jokes.search()` in Anvil
+
+# 1. Search Result Type: ``jokes = app_tables.jokes.search()``
+# Returns a search iterator, not a dictionary or list.
+# You can iterate over it like a generator.
+
+# 2. Lazy Evaluation:
+# The search iterator fetches rows lazily, making it efficient for large datasets.
+
+# 3. Converting to a List: ``jokes_list = list(app_tables.jokes.search())``
+# Convert to a list for random access via random.choice().
+
+# 4. Random Row Example: ``random_joke = random.choice(jokes_list)``
+
+# 5. Accessing Rows:  ``random_joke['joke'], random_joke['reply']``
+# Each row is dictionary-like.
 
 
 
