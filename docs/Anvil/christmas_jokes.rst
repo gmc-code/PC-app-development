@@ -2,10 +2,12 @@
 Christmas Jokes
 ====================================================
 
-This app displays christmas themed jokes.
+| This app displays christmas themed jokes.
+| It uses a data table created by python using an uplink.
 
 .. image:: images/christmas_jokes/christmas_jokes.png
     :scale: 100%
+
 
 ----
 
@@ -18,7 +20,7 @@ App Theme
 | Set the python environment to the latest version.
 
 .. image::  images/christmas_jokes/python_version.png
-    :scale: 100%
+    :scale: 80%
 
 ----
 Assets
