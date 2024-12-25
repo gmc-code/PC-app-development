@@ -4,7 +4,7 @@ Rock paper scissors
 
 | This app is a computer versus human game of rock paper scissors.
 
-.. image:: images/christmas_jokes/christmas_jokes.png
+.. image:: images/rps/RPS.png
     :scale: 100%
 
 ----
@@ -17,10 +17,8 @@ App Theme
 | In the Choose Theme window choose Material Design 3.
 | Set the python environment to the latest version.
 
-.. image::  images/rps/python_version.png
-    :scale: 80%
-
 ----
+
 Assets
 -----------
 
@@ -29,6 +27,8 @@ Assets
 
 .. image:: images/rps/rps_assets.png
     :scale: 100%
+
+----
 
 Components
 ----------------
@@ -43,7 +43,6 @@ The required components are shown below.
 | Add an image for the background, then 3 buttons and 3 text labels and 5 images to the XYPanel.
 
 ----
-
 
 Client Code
 ------------
@@ -112,7 +111,6 @@ Client Code
                 return self.images[f"{choice}_Win"]
             else:
                 return self.images[f"{choice}_Loose"]
-
 
 
 ----
