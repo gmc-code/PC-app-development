@@ -160,6 +160,7 @@ PC-app-development
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
     Anvil/christmas_jokes.rst
+    Anvil/rock_paper_scissors.rst
 
     .. Anvil/days_calculator.rst
     ..
