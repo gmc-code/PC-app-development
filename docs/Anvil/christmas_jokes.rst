@@ -179,7 +179,7 @@ Create a new database table and name it "jokes".
 
 | The jokes table will now be filled with jokes.
 
-.. image::  images/christmas_jokes/server_uplink.png
+.. image::  images/christmas_jokes/uplink_table.png
     :scale: 100%
 
 
