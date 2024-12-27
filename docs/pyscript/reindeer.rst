@@ -13,7 +13,7 @@ Reindeer
 Game features
 ----------------
 
-This game combines Python and HTML through PyScript to create an interactive and engaging experience.
+This game combines Python and HTML through PyScript to create a reindeer guessing game.
 
 1. **PyScript Integration**: The game uses PyScript to interact with HTML elements and handle events. Modules like `document`, `display`, and `when` are imported from PyScript.
 
@@ -86,7 +86,7 @@ Output Areas:
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- favicon to appear in browser tab -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
