@@ -6,7 +6,7 @@ Reindeer
 | Demo app is at: https://gmc_ps.pyscriptapps.com/reindeer/latest/
 
 .. image:: images/reindeer/reindeer_guess.png
-    :scale: 50%
+    :scale: 60%
 
 ----
 
@@ -47,7 +47,7 @@ Files
 Add an image folder and add images of each reindeer.
 
 .. image:: images/reindeer/reindeer_files.png
-    :scale: 50%
+    :scale: 75%
 
 ----
 
