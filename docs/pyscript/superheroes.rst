@@ -33,6 +33,9 @@ index.html
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+        <!-- favicon to appear in browser tab -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
 
@@ -86,13 +89,14 @@ main css:
 .. code-block:: css
 
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         padding: 20px;
         background-color: #f8f9fa; /* Bootstrap gray-100 */
         font-size: 16px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         color: #212529; /* Bootstrap gray-900 */
     }
 
@@ -107,6 +111,7 @@ main css:
 
     .form-group {
         display: flex;
+        flex-direction: row;
         align-items: center;
         margin-bottom: 1em;
     }
@@ -120,7 +125,7 @@ main css:
         margin-right: 10px;
         padding: 10px 20px; /* Adjust padding as needed */
         border: 1px solid #ced4da; /* Bootstrap gray-400 */
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         font-size: 18px; /* Increase the font size */
         background-color: white;
         color: #0d6efd; /* Bootstrap primary */
@@ -132,7 +137,7 @@ main css:
         margin-right: 10px;
         padding: 10px 20px; /* Adjust padding as needed */
         border: 1px solid #ced4da; /* Bootstrap gray-400 */
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         font-size: 18px; /* Increase the font size */
     }
 
@@ -150,9 +155,9 @@ main css:
         text-decoration: none;
         display: inline-block;
         font-size: 24px; /* Adjust font size as needed */
-        margin: .375rem .375rem;
+        margin: 0.375rem 0.375rem;
         cursor: pointer;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
         transition: background-color 0.15s ease-in-out;
     }
 
@@ -168,6 +173,8 @@ main css:
     .clear-button:hover {
         background-color: #b02a37; /* Bootstrap danger-dark */
     }
+
+
 
 ----
 
@@ -255,6 +262,7 @@ The main components of the script are:
         # set the focus back to the input element with id "firstinitial"
         set_firstinitial_focus()
 
+
     @when('input', '#firstinitial')
     def check_firstinitial(event):
         # select the input element with id "firstinitial"
@@ -272,6 +280,7 @@ The main components of the script are:
                 set_firstinitial_input_text("")
         # set the focus back to the input element with id "firstinitial"
         set_firstinitial_focus()
+
 
     @when('click', '#clear_firstinitial')
     def clear_firstinitial(event):

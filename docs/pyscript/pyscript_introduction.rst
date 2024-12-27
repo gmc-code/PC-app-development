@@ -76,6 +76,17 @@ e.g. toml file
 
 ----
 
+favicon.ico file
+-------------------
+
+For creating favicon.ico from a png file see: https://www.favicon.cc/?
+
+| The favicon.ico is placed in the files section in the pyscript editor so it shows in a browser tab.
+| The head reference to the favicon is **<link rel="icon" href="favicon.ico" type="image/x-icon">**.
+| Since this is optional it can be omitted.
+
+----
+
 index.html
 -----------------
 
@@ -92,6 +103,9 @@ index.html
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- favicon to appear in browser tab -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">

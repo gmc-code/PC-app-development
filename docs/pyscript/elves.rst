@@ -14,7 +14,7 @@ index.html
 ---------------------
 
 | The html is below.
-| Note that is refers to a favicon.ico that is placed in the files section in the pyscirpt editor so it shows in a browser tab bar.
+| The favicon.ico is placed in the files section in the pyscript editor so it shows in a browser tab.
 
 .. code-block:: html
 
@@ -67,15 +67,19 @@ The custom css is below.
 
 .. code-block:: css
 
+
     body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        padding: 20px;
-        background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 5px; /* Override margin */
+    padding: 5px;
+    background-color: #f8f9fa; /* Bootstrap gray-100 */
     }
 
     h1,
     h2 {
-        color: #343a40;
+        color: #007bff;
+        margin: 5px;
     }
 
     p {
@@ -122,6 +126,7 @@ The custom css is below.
     }
 
 
+
 ----
 
 main.py
@@ -134,6 +139,9 @@ main.py
 - Function get_elves(num): Generates a specified number of random elf names by combining a random first name and last name from the dictionaries.
 - Function validate_elfnumber(event): Validates the user input for the number of elves, ensuring it's between 1 and 20. If the input is invalid, it sets a default value. This function is called whenever there is an input event on the html element with the ID elfnumber. This ensures that the number of elves entered by the user is validated in real-time.
 - Function elf_generator(event): This function is called when the element with the ID elf_generator is clicked. It calls validate_elfnumber to ensure the input is valid, generates the elf names using get_elves, and displays the result in the html element with the ID elves.
+- display is not used in the code below but is ready for use if the "<br>" is not needed in the output.
+
+
 
 .. code-block:: python
 
@@ -143,27 +151,27 @@ main.py
     import random
 
     firstNames = {
-        'A':'Angelic', 'B':'Blustery', 'C':'Cheery',
-        'D':'Dancy', 'E':'Elfie', 'F':'Festive',
-        'G':'Glistening', 'H':'Happy', 'I':'Icy',
-        'J':'Jolly', 'K':'Kringle', 'L':'Lucky',
-        'M':'Merry', 'N':'Naughty', 'O':'Oily',
-        'P':'Pointy', 'Q':'Quirky', 'R':'Rosie',
-        'S':'Snowy', 'T':'Tinsel', 'U':'Unity',
-        'V':'Very Merry', 'W':'Wintry', 'X':'Xmasy',
-        'Y':'Yule', 'Z':'Zippy'
+        'A': 'Artful', 'B': 'Bouncy', 'C': 'Crafty',
+        'D': 'Doodly', 'E': 'Eager', 'F': 'Fizzy',
+        'G': 'Giggly', 'H': 'Holly', 'I': 'Inventive',
+        'J': 'Jolly', 'K': 'Kindly', 'L': 'Lively',
+        'M': 'Mirthful', 'N': 'Noggy', 'O': 'Ornery',
+        'P': 'Playful', 'Q': 'Quickfingers', 'R': 'Roly',
+        'S': 'Sparkly', 'T': 'Tinkering', 'U': 'Unwrappy',
+        'V': 'Vivid', 'W': 'Whimsical', 'X': 'Xylophoney',
+        'Y': 'Yippy', 'Z': 'Zesty'
     }
 
     lastNames = {
-        'A':'Angel', 'B':'Bells', 'C':'Candy Cane',
-        'D':'Dash', 'E':'Evergreen', 'F':'Feet',
-        'G':'Gingerbread', 'H':'Holidays', 'I':'Icicles',
-        'J':'Jingles', 'K':'Kringles', 'L':'Lights',
-        'M':'McSnowface', 'N':'Noel', 'O':'Ornament',
-        'P':'Peppermint', 'Q':'Quince Pie', 'R':'Ribbon',
-        'S':'Snowball', 'T':'Toes', 'U':'Upatree',
-        'V':'Vixen', 'W':'Wonderland', 'X':'Xmas',
-        'Y':'Yuletide', 'Z':'Zest'
+        'A': 'Artisan', 'B': 'Buttons', 'C': 'Cobbler',
+        'D': 'Doodles', 'E': 'Elfworthy', 'F': 'Frost',
+        'G': 'Giftwrap', 'H': 'Hearth', 'I': 'Icecap',
+        'J': 'Jollyboots', 'K': 'Knots', 'L': 'Lollipops',
+        'M': 'Mittens', 'N': 'Nutmeg', 'O': 'Overalls',
+        'P': 'Pinecone', 'Q': 'Quiltmaker', 'R': 'Rockinghorse',
+        'S': 'Stockings', 'T': 'Toymaker', 'U': 'Umbrella',
+        'V': 'Velvet', 'W': 'Workshop', 'X': 'Xylophone',
+        'Y': 'Yarnspool', 'Z': 'Zingerbell'
     }
 
 
@@ -176,8 +184,9 @@ main.py
             if elves == "":
                 elves = elfName
             else:
-                elves = elves + ", " + elfName
+                elves = elves + ", <br>" + elfName
         return elves
+
 
     @when('input', '#elfnumber')
     def validate_elfnumber(event):
@@ -203,5 +212,5 @@ main.py
         num = int(input_text_element.value)
         elves_text = get_elves(num)
         output_div_text = document.getElementById("elves")
-        # output_div_text.innerText = elves_text
-        display(elves_text, target="#elves", append=False)
+        output_div_text.innerHTML = elves_text
+        # display(elves_text, target="#elves", append=False) # doesn't render <br>
