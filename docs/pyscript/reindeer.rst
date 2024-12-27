@@ -54,11 +54,29 @@ Add an image folder and add images of each reindeer.
 index.html
 ---------------------
 
-The html is below.
+
+| The HTML components are:
+
+ - Input Field: An input box where players can type their guesses for the reindeer's name.
+
+Buttons: Several buttons to interact with the game:
+
+ - Start Again: To reset the game and start with a new reindeer.
+ - Make Guess: To submit the player's guess.
+ - Get Hint: To receive a hint about the reindeer's name.
+ - Clear Guess: To clear the input field.
+
+Output Areas:
+
+ - Description: To show the description of the current reindeer.
+ - Image Container: To display the image of the current reindeer.
+ - Output: To show feedback messages and hints.
+
+| The html is below.
 
 .. code-block:: html
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><!-- GMC Dec 2024 -->
+    <!-- GMC Dec 2024 -->
     <!DOCTYPE html>
     <html lang="en">
     <head>
