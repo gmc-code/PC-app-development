@@ -1,11 +1,11 @@
 ====================================================
-Jokes
+Christmas Jokes
 ====================================================
 
 | The details below are for a simple joke app.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/jokes/latest/
 
-.. image:: images/jokes/jokes_app.png
+.. image:: images/christmas_jokeschristmas_jokes/santa_jokes_app.png
     :scale: 75%
 
 ----
@@ -13,18 +13,21 @@ Jokes
 files
 ---------
 
-.. image:: images/jokes/jokes.png
+.. image:: images/christmas_jokes/jokes.png
     :scale: 100%
 
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
+| festive.png is used in the css to make a background image.
 
 .. code-block:: toml
 
-    name = "Jokes"
-    description = "A simple jokes app."
+    name = "Christmas jokes"
+    description = "Christmas jokes"
 
     [files]
     "./jokes.txt" = "jokes.txt"
+    "./festive.png" = "festive.png"
+
 
 ----
 
@@ -52,13 +55,13 @@ Output Areas:
     <html lang="en">
 
     <head>
-        <title>Jokes</title>
+        <title>Christmas Jokes</title>
         <!-- Recommended meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- favicon to appear in browser tab -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon>
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
@@ -86,7 +89,7 @@ Output Areas:
         </dialog>
 
         <section class="jokes">
-            <h1>Jokes</h1>
+            <h1>Christmas Jokes</h1>
             <div>
                 <button id="get_joke"">Get a new Joke</button>
             </div>
@@ -100,6 +103,7 @@ Output Areas:
 
     </body>
     </html>
+
 
 ----
 
@@ -179,32 +183,34 @@ The custom css is below.
 .. code-block:: css
 
     body {
-        background-color: #f8f9fa; /* light background */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 16px;
+        background-image: url('festive.png');
+        background-repeat: repeat;
+        background-size: auto;
     }
 
     .jokes {
         max-width: 600px;
         margin: 50px auto;
         padding: 20px;
-        background-color: #ffffff; /* White background */
-        border: 1px solid #dee2e6; /* border */
+    /*     background-color: #ffffff; /* White background */ */
+        border: 1px solid #dee2e6; /* Bootstrap border color */
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .jokes h1 {
-        color: #ff0000;
+        color: #ffffff;
         text-align: center;
         margin-bottom: 20px;
     }
 
     .jokes button {
-        display: block;
-        width: 100%;
+        display: inline-block; /* Ensure buttons are inline-block */
+        width: 200px;
         padding: 10px;
-        margin: 10px 0;
+        margin: 5px 0;
         color: #ffffff;
         border: none;
         border-radius: 5px;
@@ -232,14 +238,18 @@ The custom css is below.
         background-color: #f0f0f0; /* Slightly darker white */
         color: #cc0000; /* Darker red text */
     }
+
     #joke, #joke_answer {
-        margin-top: 20px;
-        min-height: 24px;
+        margin-bottom: 10px;
+        min-height: 36px;
         padding: 10px;
-        background-color: #e9ecef; /* light gray background */
+        background-color: #e9ecef; /* Bootstrap light gray background */
         border-radius: 5px;
-        border: 1px solid #ced4da; /* border color */
+        border: 1px solid #ced4da; /* Bootstrap border color */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Same font as buttons */
+        font-size: 24px; /* Same size as buttons */
     }
+
 
 
 ----
@@ -251,11 +261,11 @@ main.py
 
 .. code-block:: python
 
+    import os
+    import random
     from pyscript import document
     from pyscript import display
     from pyscript import when
-    import os
-    import random
 
     # Function to convert Question tab Answer formatted text into a dictionary
     def convert_to_dict(file_path):
@@ -280,7 +290,6 @@ main.py
     def get_joke_from_dict():
         global joke, joke_answer
         joke, joke_answer = random.choice(list(qa_dict.items()))
-        print(joke,joke_answer)
         return joke
 
     @when('click', '#get_joke')

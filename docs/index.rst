@@ -141,6 +141,7 @@ PC-app-development
     pyscript/temperature_converter.rst
     pyscript/reindeer.rst
     pyscript/jokes.rst
+    pyscript/christmas_jokes.rst
 
 
 .. toctree::
