@@ -106,16 +106,10 @@ Output Areas:
 loading html
 ----------------
 
-Splash Screen Loading Technique
-===============================
-
-Overview
---------
-
 This code snippet displays a loading dialog while PyScript is initializing. Once PyScript is ready, the loading dialog closes, providing users with a visual indication that the page is loading and preventing interaction until everything is ready.
 
 HTML Structure and Styles
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: html
 
@@ -137,7 +131,13 @@ HTML Structure and Styles
 - **background: transparent**: Makes the background of the dialog transparent.
 
 JavaScript for Splash Screen
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. The HTML page loads and the ``<dialog>`` element with "Loading..." is displayed using ``loading.showModal()``.
+2. The page continues to load, and PyScript initializes.
+3. Once PyScript is fully loaded, it triggers the ``py:ready`` event.
+4. The event listener for ``py:ready`` activates, and ``loading.close()`` closes the loading dialog.
+
 
 .. code-block:: html
 
@@ -162,21 +162,11 @@ JavaScript for Splash Screen
 - ``addEventListener('py:ready', ...)``: Listens for the ``py:ready`` event, triggered by PyScript once initialized.
 - ``loading.close()``: Closes the loading dialog when the ``py:ready`` event is triggered.
 
-**Showing the Loading Dialog**::
+.. code-block:: html
 
     loading.showModal();
 
 - Shows the loading dialog as a modal, preventing user interaction with the page until closed.
-
-Sequence of Operations
-----------------------
-
-1. The HTML page loads and the ``<dialog>`` element with "Loading..." is displayed using ``loading.showModal()``.
-2. The page continues to load, and PyScript initializes.
-3. Once PyScript is fully loaded, it triggers the ``py:ready`` event.
-4. The event listener for ``py:ready`` activates, and ``loading.close()`` closes the loading dialog.
-
-This technique ensures a smooth user experience by displaying a splash screen until PyScript is ready, preventing any premature interaction with the web page.
 
 
 ----
