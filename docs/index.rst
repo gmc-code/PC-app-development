@@ -124,11 +124,18 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: pyscript
+    :caption: pyscript use
     :numbered:
 
     pyscript/pyscript_introduction.rst
     pyscript/browser_elements.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: pyscript apps
+    :numbered:
+
     pyscript/elves.rst
     pyscript/superheroes.rst
     pyscript/temperature_converter.rst

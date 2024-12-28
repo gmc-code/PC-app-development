@@ -1,14 +1,26 @@
 ====================================================
-Santa's helper
+Jokes
 ====================================================
 
-| The details below are for a simple middle name generator.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/elves/latest/
+| The details below are for a simple joke app.
+| Demo app is at: https://gmc_ps.pyscriptapps.com/jokes/latest/
 
-.. image:: images/elves.png
+.. image:: images/jokes.png
     :scale: 50%
 
 ----
+
+files
+---------
+
+.. code-block:: html
+  name = "Jokes"
+  description = "A simple jokes app."
+
+  [files]
+  "./jokes.txt" = "jokes.txt"
+
+
 
 index.html
 ---------------------
