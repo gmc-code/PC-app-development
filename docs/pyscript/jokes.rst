@@ -5,7 +5,7 @@ Jokes
 | The details below are for a simple joke app.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/jokes/latest/
 
-.. image:: images/jokes_app.png
+.. image:: images/jokes/jokes_app.png
     :scale: 75%
 
 ----
@@ -13,7 +13,7 @@ Jokes
 files
 ---------
 
-.. image:: images/jokes_files.png
+.. image:: images/jokes/jokes.png
     :scale: 100%
 
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
@@ -153,7 +153,7 @@ JavaScript for Splash Screen
 
       const loading = document.getElementById('loading');
 
-  This retrieves the dialog element with the id ``loading`` and stores it in the ``loading`` variable.
+ - This retrieves the dialog element with the id ``loading`` and stores it in the ``loading`` variable.
 
 .. code-block:: html
 
