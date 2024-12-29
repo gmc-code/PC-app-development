@@ -61,6 +61,8 @@ when decorator in python
 --------------------------
 
 | Use the Python decorator, **when**, to handle specified events for selected elements.
+| For info on using the decorator ``@when``, See: https://jeff.glass/post/whats-new-pyscript-2023-05-1/
+| The `@when` decorator in PyScript is used to handle events in a Pythonic way, similar to how you might use `addEventListener` in JavaScript. It allows you to specify a function to be called when a particular event occurs on a specified element.
 | Examples:
 
   - Input Event: Handles changes in a text field.
@@ -74,7 +76,7 @@ when decorator in python
 	| The **event_type** should be the name of the browser event to handle as a string (e.g. "click", "input", "keypress", "change", "mouseover").
 	| The **selector** should be a string containing a valid selector to indicate the target elements in the DOM whose events of event_type are of interest.
 	| e.g. @when("click", "#start_button")
-
+	| The function decorated with `@when` will be called whenever the specified event occurs on the target element.
 
 ----
 

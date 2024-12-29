@@ -49,19 +49,7 @@ Add an image folder and add images of each reindeer.
 .. image:: images/reindeer/reindeer_files.png
     :scale: 100%
 
-
-
-| The santa_joke.png is used to make a favicon.ico for use in the browser tab.
-
-.. image:: images/christmas_jokes/santa_joke.png
-    :scale: 25%
-
-| The festive.png is referenced in the css to make a background image.
-
-.. image:: images/christmas_jokes/festive.png
-    :scale: 50%
-
-The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 
 ----
 
@@ -69,18 +57,12 @@ toml configuration file
 -------------------------------
 
 | The toml configuration file contents is shown below.
-| The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
-| The jokes are on one line each with a tab between the joke and the reply.
+| The name and description entries are metadata only and are for documentation purposes.
 
 .. code-block:: toml
 
-    name = "Christmas jokes"
-    description = "Christmas jokes"
-
-    [files]
-    "./jokes.txt" = "jokes.txt"
-    "./festive.png" = "festive.png"
-
+    name = "Reindeer"
+    description = "A reindeer name guessing game"
 
 ----
 

@@ -6,24 +6,19 @@ Temperature converter
 | Demo app is at: https://gmc_ps.pyscriptapps.com/temp-converter/latest/
 
 .. image:: images/temp_converter/temp_conversion.png
-    :scale: 75%
+    :scale: 100%
 
 ----
 
 Files
 ---------
 
-| The santa_joke.png is used to make a favicon.ico for use in the browser tab.
+The files used are listed below.
 
-.. image:: images/christmas_jokes/santa_joke.png
-    :scale: 25%
+.. image:: images/temp_converter/files.png
+    :scale: 100%
 
-| The festive.png is referenced in the css to make a background image.
-
-.. image:: images/christmas_jokes/festive.png
-    :scale: 50%
-
-The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 
 ----
 
@@ -31,8 +26,7 @@ toml configuration file
 -------------------------------
 
 | The toml configuration file contents is shown below.
-| The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
-| The jokes are on one line each with a tab between the joke and the reply.
+| The name and description entries are metadata only and are for documentation purposes.
 
 .. code-block:: toml
 
@@ -43,6 +37,8 @@ toml configuration file
 
 index.html
 ---------------------
+
+| The html is below.
 
 .. code-block:: html
 
@@ -98,6 +94,8 @@ index.html
 main css:
 --------------------
 
+| The css is below.
+
 .. code-block:: css
 
     body {
@@ -105,7 +103,7 @@ main css:
     font-size: 16px;
     margin: 5px; /* Override margin */
     padding: 5px;
-    /*   background-color: #f8f9fa; /* Bootstrap gray-100 */ */
+    /*   background-color: #f8f9fa; */
     }
 
     h1 {
@@ -153,6 +151,11 @@ main css:
         color: #f00;
     }
 
+    .cel {
+        color: #f00;
+    }
+
+
 
 ----
 
@@ -160,16 +163,6 @@ main.py
 ------------------
 
 | The python code is below.
-| For info on using the decorator ``@when``, See: https://jeff.glass/post/whats-new-pyscript-2023-05-1/
-| The `@when` decorator in PyScript is used to handle events in a Pythonic way, similar to how you might use `addEventListener` in JavaScript. It allows you to specify a function to be called when a particular event occurs on a specified element.
-
-Here's a breakdown of how it works:
-
-1. **Importing the Decorator**: You import the `when` decorator from PyScript.
-2. **Defining the Event and Element**: You use the `@when` decorator to specify the event type (e.g., 'input', 'click') and the target element (e.g., '#f_temp', '#c_temp').
-3. **Event Handling Function**: The function decorated with `@when` will be called whenever the specified event occurs on the target element.
-
-This means that whenever an 'input' event occurs on the element with the ID `#f_temp`, the `_f` function will be executed.
 
 .. code-block:: python
 
