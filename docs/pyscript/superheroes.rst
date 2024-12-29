@@ -5,7 +5,7 @@ Superheroes
 | Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
 
 .. image:: images/superheroes/superhero.png
-    :scale: 75%
+    :scale: 100%
 
 | The appearance is controlled via custom css.
 | The user interactions with the interface are controlled via python.

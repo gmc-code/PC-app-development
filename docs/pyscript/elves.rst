@@ -6,7 +6,7 @@ Elves
 | Demo app is at: https://gmc_ps.pyscriptapps.com/elves/latest/
 
 .. image:: images/elves/elves.png
-    :scale: 75%
+    :scale: 100%
 
 ----
 
