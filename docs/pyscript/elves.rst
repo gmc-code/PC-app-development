@@ -10,6 +10,16 @@ Elves
 
 ----
 
+Files
+-------------
+
+The files used are listed below..
+
+.. image:: images/elves/files.png
+    :scale: 100%
+
+----
+
 index.html
 ---------------------
 

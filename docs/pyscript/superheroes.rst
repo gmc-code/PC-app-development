@@ -12,6 +12,16 @@ Superheroes
 
 ----
 
+Files
+-------------
+
+The files used are listed below..
+
+.. image:: images/superheroes/files.png
+    :scale: 100%
+
+----
+
 index.html
 ---------------------
 
