@@ -6,17 +6,19 @@ Christmas Jokes
 | Demo app is at: https://gmc_ps.pyscriptapps.com/jokes/latest/
 
 .. image:: images/christmas_jokes/santa_jokes_app.png
-    :scale: 75%
+    :scale: 100%
 
 ----
 
-files
+Files
 ---------
 
-| The santa_joke.png is used to make a favicon.ico for use in the browser tab.
+The files used are listed below.
 
-.. image:: images/christmas_jokes/santa_joke.png
-    :scale: 25%
+.. image:: images/christmas_jokes/files.png
+    :scale: 100%
+
+| The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 
 | The festive.png is referenced in the css to make a background image.
 
