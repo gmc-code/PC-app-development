@@ -13,8 +13,10 @@ Jokes
 files
 ---------
 
+| The jokes.png is used to make a favicon.ico for use in the browser tab.
+
 .. image:: images/jokes/jokes.png
-    :scale: 100%
+    :scale: 50%
 
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
 

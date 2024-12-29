@@ -5,7 +5,7 @@ Christmas Jokes
 | The details below are for a simple joke app.
 | Demo app is at: https://gmc_ps.pyscriptapps.com/jokes/latest/
 
-.. image:: images/christmas_jokeschristmas_jokes/santa_jokes_app.png
+.. image:: images/christmas_jokes/santa_jokes_app.png
     :scale: 75%
 
 ----
@@ -13,8 +13,15 @@ Christmas Jokes
 files
 ---------
 
-.. image:: images/christmas_jokes/jokes.png
-    :scale: 100%
+| The santa_joke.png is used to make a favicon.ico for use in the browser tab.
+
+.. image:: images/christmas_jokes/santa_joke.png
+    :scale: 50%
+
+| The festive.png is referenced in the css to make a background image.
+
+.. image:: images/christmas_jokes/festive.png
+    :scale: 50%
 
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
 | festive.png is used in the css to make a background image.
