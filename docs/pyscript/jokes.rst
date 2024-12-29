@@ -13,15 +13,12 @@ Jokes
 Files
 -------------
 
-The files used are listed below..
+The files used are listed below.
 
 .. image:: images/jokes/jokes_files.png
     :scale: 100%
 
-| The jokes.png is used to make a favicon.ico for use in the browser tab.
-
-.. image:: images/jokes/jokes.png
-    :scale: 25%
+The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 
 ----
 
@@ -59,6 +56,8 @@ Output Areas:
  - Joke Reply Display: An area to show the reply to the joke.
 
 | The html is below.
+| ``<link rel="icon" href="favicon.ico" type="image/x-icon">`` uses the favicon.ico placed in the files section in the pyscript editor so it shows in a browser tab.
+
 
 .. code-block:: html
 
