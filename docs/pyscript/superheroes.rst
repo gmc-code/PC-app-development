@@ -2,7 +2,7 @@
 Superheroes
 ====================================================
 
-| Demo app is at: https://gmc_ps.pyscriptapps.com/superhero/latest/
+| Demo app is at: https://gmc_ps.pyscriptapps.com/superheroes/latest/
 
 .. image:: images/superheroes/superhero.png
     :scale: 100%
