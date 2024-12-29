@@ -13,10 +13,23 @@ Elves
 Files
 -------------
 
-The files used are listed below..
+The files used are listed below.
 
 .. image:: images/elves/files.png
     :scale: 100%
+
+----
+
+toml configuration file
+-------------------------------
+
+| The toml configuration file contents is shown below.
+| The name and description entries are metadata only and are for documentation purposes.
+
+.. code-block:: toml
+
+    name = "Elves"
+    description = "An elf name generator"
 
 ----
 

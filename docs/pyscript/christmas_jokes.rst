@@ -23,6 +23,11 @@ files
 .. image:: images/christmas_jokes/festive.png
     :scale: 50%
 
+----
+
+toml configuration file
+-------------------------------
+
 | The toml configuration file contents is shown below.
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
 | The jokes are on one line each with a tab between the joke and the reply.
@@ -35,7 +40,6 @@ files
     [files]
     "./jokes.txt" = "jokes.txt"
     "./festive.png" = "festive.png"
-
 
 ----
 

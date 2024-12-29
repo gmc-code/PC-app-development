@@ -10,6 +10,39 @@ Temperature converter
 
 ----
 
+Files
+---------
+
+| The santa_joke.png is used to make a favicon.ico for use in the browser tab.
+
+.. image:: images/christmas_jokes/santa_joke.png
+    :scale: 25%
+
+| The festive.png is referenced in the css to make a background image.
+
+.. image:: images/christmas_jokes/festive.png
+    :scale: 50%
+
+----
+
+toml configuration file
+-------------------------------
+
+| The toml configuration file contents is shown below.
+| The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
+| The jokes are on one line each with a tab between the joke and the reply.
+
+.. code-block:: toml
+
+    name = "Christmas jokes"
+    description = "Christmas jokes"
+
+    [files]
+    "./jokes.txt" = "jokes.txt"
+    "./festive.png" = "festive.png"
+
+----
+
 index.html
 ---------------------
 

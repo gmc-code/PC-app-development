@@ -22,6 +22,19 @@ The files used are listed below..
 
 ----
 
+toml configuration file
+-------------------------------
+
+| The toml configuration file contents is shown below.
+| The name and description entries are metadata only and are for documentation purposes.
+
+.. code-block:: toml
+
+    name = "Superheroes"
+    description = "A superhero name generator"
+
+----
+
 index.html
 ---------------------
 
