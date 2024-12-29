@@ -45,6 +45,7 @@ index.html
 | The body tag has the user interface for the web app.
 | ``<div class="form-group">`` is an html element that is used to group related form elements together. It is used here to keep the labels and input fields and buttons together.
 | ``<p id="superhero"></p>`` has no text between the tags. It will be filled via python code when the button is clicked.
+| ``<link rel="icon" href="favicon.ico" type="image/x-icon">`` uses the favicon.ico placed in the files section in the pyscript editor so it shows in a browser tab.
 
 
 .. code-block:: html

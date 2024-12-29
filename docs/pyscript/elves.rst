@@ -18,7 +18,7 @@ The files used are listed below.
 .. image:: images/elves/files.png
     :scale: 100%
 
-The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 
 ----
 
@@ -39,7 +39,7 @@ index.html
 ---------------------
 
 | The html is below.
-| The favicon.ico is placed in the files section in the pyscript editor so it shows in a browser tab.
+| ``<link rel="icon" href="favicon.ico" type="image/x-icon">`` uses the favicon.ico placed in the files section in the pyscript editor so it shows in a browser tab.
 
 .. code-block:: html
 
