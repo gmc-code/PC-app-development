@@ -23,6 +23,8 @@ Files
 .. image:: images/christmas_jokes/festive.png
     :scale: 50%
 
+The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+
 ----
 
 toml configuration file
@@ -34,12 +36,8 @@ toml configuration file
 
 .. code-block:: toml
 
-    name = "Christmas jokes"
-    description = "Christmas jokes"
-
-    [files]
-    "./jokes.txt" = "jokes.txt"
-    "./festive.png" = "festive.png"
+    name = "Temp converter"
+    description = "Fahrenheit <-> Celsius converter with integer values"
 
 ----
 

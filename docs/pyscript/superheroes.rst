@@ -20,6 +20,8 @@ The files used are listed below..
 .. image:: images/superheroes/files.png
     :scale: 100%
 
+The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+
 ----
 
 toml configuration file

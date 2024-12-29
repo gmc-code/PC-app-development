@@ -41,6 +41,8 @@ toml configuration file
     "./jokes.txt" = "jokes.txt"
     "./festive.png" = "festive.png"
 
+The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+
 ----
 
 index.html

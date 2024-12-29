@@ -61,6 +61,8 @@ Add an image folder and add images of each reindeer.
 .. image:: images/christmas_jokes/festive.png
     :scale: 50%
 
+The favicon.ico is optional. It shows as a small icon in the browser tab when the pp is run.
+
 ----
 
 toml configuration file
