@@ -25,7 +25,7 @@ files
 
 | The toml configuration file contents is shown below.
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
-| festive.png is used in the css to make a background image.
+| The jokes are on one line each with a tab between the joke and the reply.
 
 .. code-block:: toml
 
