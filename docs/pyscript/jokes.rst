@@ -16,8 +16,10 @@ files
 | The jokes.png is used to make a favicon.ico for use in the browser tab.
 
 .. image:: images/jokes/jokes.png
-    :scale: 50%
+    :scale: 25%
 
+
+| The toml configuration file contents is shown below.
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
 
 .. code-block:: toml

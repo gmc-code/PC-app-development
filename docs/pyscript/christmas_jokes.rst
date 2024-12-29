@@ -16,13 +16,14 @@ files
 | The santa_joke.png is used to make a favicon.ico for use in the browser tab.
 
 .. image:: images/christmas_jokes/santa_joke.png
-    :scale: 50%
+    :scale: 25%
 
 | The festive.png is referenced in the css to make a background image.
 
 .. image:: images/christmas_jokes/festive.png
     :scale: 50%
 
+| The toml configuration file contents is shown below.
 | The files section specifies that the file "./jokes.txt" is accessible within the PyScript environment as "jokes.txt".
 | festive.png is used in the css to make a background image.
 
