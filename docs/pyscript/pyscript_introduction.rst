@@ -117,7 +117,7 @@ index.html
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <script type="py" src="./main.py" config="./pyscript.json></script>
+        <script type="py" src="./main.py" config="./pyscript.toml></script>
     </body>
     </html>
 
@@ -132,6 +132,6 @@ To view the terminal as well use this script tag in the body:
 .. code-block:: html
 
     ...
-    <script type="py" src="./main.py" config="./pyscript.json" terminal></script>
+    <script type="py" src="./main.py" config="./pyscript.toml" terminal></script>
     ...
 
