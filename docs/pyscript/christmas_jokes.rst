@@ -310,6 +310,7 @@ main.py
     def get_joke(event):
         joke = get_joke_from_dict()
         display(joke, target="#joke", append=False)
+        display(joke_answer, target="#joke_answer", append=False)
 
     @when('click', '#get_joke_answer')
     def get_joke_answer(event):
