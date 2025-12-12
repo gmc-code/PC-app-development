@@ -98,3 +98,4 @@ Output to the browser window
 	from pyscript import document, display
 
 	display("Enter initials.", target="#superhero", append=False)
+
