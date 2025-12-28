@@ -58,7 +58,7 @@ Code:
         "Hawthorn": 13,
         "Geelong": 10,
         "Sydney Swans": 5,  # Linked to South Melbourne
-        "Brisbane Lions": 4,  # Linked to Fitzroy
+        "Brisbane Lions": 5,  # Linked to Fitzroy
         "West Coast Eagles": 4,
         "North Melbourne": 4,
         "Western Bulldogs": 2,
@@ -118,7 +118,7 @@ Python tk game
 -------------------------
 
 .. image:: images/tk_AFL_premiers.png
-    :scale: 67%
+    :scale: 80%
 
 This Python script creates a graphical quiz game using the `tkinter` library. Below is a summary of its key components:
 
@@ -171,7 +171,7 @@ Code:
         "Hawthorn": 13,
         "Geelong": 10,
         "Sydney Swans": 5,  # Linked to South Melbourne
-        "Brisbane Lions": 4,  # Linked to Fitzroy
+        "Brisbane Lions": 5,  # Linked to Fitzroy
         "West Coast Eagles": 4,
         "North Melbourne": 4,
         "Western Bulldogs": 2,
@@ -295,8 +295,8 @@ Code:
 
     #. Modify the code to create a quiz on capitals of countries.
 
-        .. image:: images/radio_buttons_question.png
-            :scale: 67%
+        .. image:: images/tk_country_capitals.png
+            :scale: 80%
 
     .. dropdown::
         :icon: codescan
