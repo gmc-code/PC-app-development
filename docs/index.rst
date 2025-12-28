@@ -92,7 +92,7 @@ PC-app-development
     tk_apps/tk_login.rst
     tk_apps/tk_login_custom_messagebox.rst
 
-    tk_apps/tk_afl_premiers.rst
+    tk_quiz_apps/tk_afl_premiers.rst
     tk_apps/tk_RPG_inventory.rst
 
 
@@ -169,11 +169,13 @@ PC-app-development
     Anvil/rectangle_area.rst
     Anvil/force_components.rst
     Anvil/displacement_calculator.rst
-    Anvil/christmas_jokes.rst
     Anvil/rock_paper_scissors.rst
+    Anvil/christmas_jokes.rst
+    Anvil/christmas_tunes.rst
 
     .. Anvil/days_calculator.rst
     ..
+
 
 .. toctree::
     :maxdepth: 2
