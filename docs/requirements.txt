@@ -3,3 +3,4 @@ sphinx_rtd_theme
 sphinx-copybutton
 sphinx-design
 sphinx-togglebutton
+sphinx_new_tab_link
