@@ -74,10 +74,10 @@ Output Areas:
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.2/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2025.11.2/core.js"></script>
 
         <!-- custom CSS only -->
         <link rel="stylesheet" href="main.css">

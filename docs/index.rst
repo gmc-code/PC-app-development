@@ -53,6 +53,16 @@ PC-app-development
     tk_widgets/tk_messagebox.rst
 
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Themed widgets
+    :numbered:
+
+    tk_basics/ttk_import.rst
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: tk widgets interactions
@@ -124,28 +134,6 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: pyscript use
-    :numbered:
-
-    pyscript/pyscript_introduction.rst
-    pyscript/browser_elements.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: pyscript apps
-    :numbered:
-
-    pyscript/elves.rst
-    pyscript/superheroes.rst
-    pyscript/temperature_converter.rst
-    pyscript/reindeer.rst
-    pyscript/jokes.rst
-    pyscript/christmas_jokes.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Anvil use
     :numbered:
 
@@ -188,10 +176,23 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Themed widgets
+    :caption: pyscript use
     :numbered:
 
-    tk_basics/ttk_import.rst
+    pyscript/pyscript_introduction.rst
+    pyscript/browser_elements.rst
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: pyscript apps
+    :numbered:
+
+    pyscript/elves.rst
+    pyscript/superheroes.rst
+    pyscript/temperature_converter.rst
+    pyscript/reindeer.rst
+    pyscript/jokes.rst
+    pyscript/christmas_jokes.rst
 
 

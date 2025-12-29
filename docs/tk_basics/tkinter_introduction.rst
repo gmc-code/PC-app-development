@@ -14,8 +14,8 @@ Key references:
 | Tk Docs http://www.tkdocs.com/>`_
 | Tk Refs `<https://tkdocs.com/pyref/index.html>`_
 | Tutorial `<https://tkdocs.com/tutorial/index.html>`_
-| `<https://docs.python.org/3.13/library/tk.html>`_
-| `<https://docs.python.org/3.13/library/tkinter.ttk.html>`_
+| `<https://docs.python.org/3.14/library/tk.html>`_
+| `<https://docs.python.org/3.14/library/tkinter.ttk.html>`_
 
 
 | Python Tutorial `<https://www.pythontutorial.net/tkinter/>`_
@@ -40,6 +40,7 @@ Version checks
 
 | Check the Tk version:
 | Tcl/Tk version 8.6.14 with python 3.13.
+| Tcl/Tk version 8.6.15 with python 3.14.
 
 .. code-block:: python
 

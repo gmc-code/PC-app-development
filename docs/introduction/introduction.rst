@@ -54,8 +54,8 @@ Key Anvil references:
 Key Pyscript references:
 --------------------------
 
-| Docs `<https://docs.pyscript.net/2024.11.1/>`_
-| User guide: `<https://docs.pyscript.net/2024.11.1/user-guide/>`_
+| Docs `<https://docs.pyscript.net/2025.11.2/>`_
+| User guide: `<https://docs.pyscript.net/2025.11.2/user-guide/>`_
 
 ----
 

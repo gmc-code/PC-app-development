@@ -12,8 +12,8 @@ Introduction to pyscript
 Key references:
 ---------------------
 
-| Docs `<https://docs.pyscript.net/2024.11.1/>`_
-| User guide: `<https://docs.pyscript.net/2024.11.1/user-guide/>`_
+| Docs `<https://docs.pyscript.net/2025.11.2/>`_
+| User guide: `<https://docs.pyscript.net/2025.11.2/user-guide/>`_
 | Developer blog on latest update changes: `<https://jeff.glass/tags/pyscript/>`_
 
 ----
@@ -22,7 +22,7 @@ Sign up
 ----------
 
 | Sign up is free.
-| Go to `<https://pyscript.com/ and sign up>`_.
+| Go to `<https://pyscript.com/>`_ and sign up.
 
 ----
 
@@ -49,7 +49,7 @@ Project files
 | The **pyscript.toml** file is used to configure the project.
 | e.g specifying python modules via ``packages = ["numpy", "pandas"]``. It can be empty.
 | For using comments and more complicated configurations use a toml file.
-| See: `<https://docs.pyscript.net/2024.11.1/user-guide/configuration/>`_
+| See: `<https://docs.pyscript.net/2025.11.2/user-guide/configuration/>`_
 | Alternatively, a **pyscript.json** file can be used instead of the **pyscript.toml** file. An empty json file needs curly brackets as **{}**.
 
 | A **main.css** file is often added to customize the html element appearance.
@@ -59,7 +59,7 @@ Project files
 toml file
 --------------
 
-See: `<https://docs.pyscript.net/2024.11.1////user-guide/configuration/>`_
+See: `<https://docs.pyscript.net/2025.11.2/user-guide/configuration/>`_
 
 e.g. toml file
 
@@ -108,10 +108,10 @@ index.html
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.2/core.css">
 
         <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+        <script type="module" src="https://pyscript.net/releases/2025.11.2/core.js"></script>
 
         <!-- custom CSS only -->
         <link rel="stylesheet" href="main.css">

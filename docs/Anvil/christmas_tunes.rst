@@ -8,6 +8,7 @@ Christmas Tunes
 .. image:: images/christmas_tunes/christmas_tunes.png
     :scale: 100%
 
+Music based on selections from  `<https://www.youtube.com/playlist?list=PLOpV149mUpV8JCPRB863c21GjKvRq8F05>`_
 
 ----
 
