@@ -1,7 +1,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'PC-app-development'
-copyright = '2021-4, GMC'
+copyright = '2021-6, GMC'
 author = 'GMC'
 
 
@@ -16,6 +16,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx_togglebutton',
     'sphinx_design',
+    "sphinx_new_tab_link",
 ]
 
 # for copybutton to allow use of :class: no-copybutton  in code blocks

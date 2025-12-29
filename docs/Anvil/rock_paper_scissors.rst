@@ -7,7 +7,7 @@ Rock paper scissors
 .. image:: images/rps/RPS.png
     :scale: 100%
 
-| Try it out at: `<https://gmc-rps.anvil.app>`_
+| Try it out at: `<https://pc-rps.anvil.app>`_
 
 ----
 
