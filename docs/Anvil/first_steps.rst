@@ -5,28 +5,28 @@ First steps
 Do the tutorials
 ------------------------------
 
-| Start at: https://anvil.works/learn/tutorials/feedback-form/chapter-1
+| Start at: `<https://anvil.works/learn/tutorials/feedback-form/chapter-1>`_
 | Work through the tutorials.
-| Our own guide to the feedback form is at: https://pc-app-development.readthedocs.io/en/latest/Anvil/feedback_form.html
+| Our own guide to the feedback form is at: `<https://pc-app-development.readthedocs.io/en/latest/Anvil/feedback_form.html>`_
 
 ----
 
 Become familiar with the docs
 ------------------------------
 
-| Read: https://anvil.works/docs/editor
-| Read: https://anvil.works/docs/client/quickstart
-| Read: https://anvil.works/docs/client/ui
-| Read: https://anvil.works/docs/client/components
+| Read: `<https://anvil.works/docs/editor>`_
+| Read: `<https://anvil.works/docs/client/quickstart>`_
+| Read: `<https://anvil.works/docs/client/ui>`_
+| Read: `<https://anvil.works/docs/client/components>`_
 
-| For publishing the app: https://anvil.works/docs/deployment-new-ide/quickstart#quickstart-deployment
+| For publishing the app: `<https://anvil.works/docs/deployment-new-ide/quickstart#quickstart-deployment>`_
 
 ----
 
 As you use components:
 ------------------------------
 
-| See the index to components in the anvil module: https://anvil.works/docs/api/anvil
+| See the index to components in the anvil module: `<https://anvil.works/docs/api/anvil>`_
 
 -----
 

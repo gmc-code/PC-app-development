@@ -61,7 +61,7 @@ when decorator in python
 --------------------------
 
 | Use the Python decorator, **when**, to handle specified events for selected elements.
-| For info on using the decorator ``@when``, See: https://jeff.glass/post/whats-new-pyscript-2023-05-1/
+| For info on using the decorator ``@when``, See: `<https://jeff.glass/post/whats-new-pyscript-2023-05-1/>`_
 | The `@when` decorator in PyScript is used to handle events in a Pythonic way, similar to how you might use `addEventListener` in JavaScript. It allows you to specify a function to be called when a particular event occurs on a specified element.
 | Examples:
 

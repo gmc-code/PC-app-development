@@ -9,19 +9,19 @@ Introduction to tkinter
 Key references:
 ---------------------
 
-| Latest python versions: https://www.python.org/downloads/
+| Latest python versions: `<https://www.python.org/downloads/>`_
 
-| Tk Docs http://www.tkdocs.com/
-| Tk Refs https://tkdocs.com/pyref/index.html
-| Tutorial https://tkdocs.com/tutorial/index.html
-| https://docs.python.org/3.13/library/tk.html
-| https://docs.python.org/3.13/library/tkinter.ttk.html
+| Tk Docs http://www.tkdocs.com/>`_
+| Tk Refs `<https://tkdocs.com/pyref/index.html>`_
+| Tutorial `<https://tkdocs.com/tutorial/index.html>`_
+| `<https://docs.python.org/3.13/library/tk.html>`_
+| `<https://docs.python.org/3.13/library/tkinter.ttk.html>`_
 
 
-| Python Tutorial https://www.pythontutorial.net/tkinter/
-| Tkinter (GUI Programming) - Python Tutorial. https://pythonbasics.org/tkinter/.
-| What is Tkinter for Python? - GeeksforGeeks. https://www.geeksforgeeks.org/introduction-to-tkinter/.
-| tk widgets: https://www.geeksforgeeks.org/python-gui-tkinter/
+| Python Tutorial `<https://www.pythontutorial.net/tkinter/>`_
+| Tkinter (GUI Programming) - Python Tutorial. `<https://pythonbasics.org/tkinter/>`_.
+| What is Tkinter for Python? - GeeksforGeeks. `<https://www.geeksforgeeks.org/introduction-to-tkinter>`_.
+| tk widgets: `<https://www.geeksforgeeks.org/python-gui-tkinter/>`_
 
 ----
 

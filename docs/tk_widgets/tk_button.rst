@@ -2,7 +2,7 @@
 tk Button
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-creating-a-button-in-tkinter/
+| See: `<https://www.geeksforgeeks.org/python-creating-a-button-in-tkinter/>`_
 
 ----
 

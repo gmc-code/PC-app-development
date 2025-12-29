@@ -3,7 +3,7 @@ Jokes
 ====================================================
 
 | The details below are for a simple joke app.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/jokes/latest/
+| Demo app is at: `<https://gmc_ps.pyscriptapps.com/jokes/latest/>`_
 
 .. image:: images/jokes/jokes_app.png
     :scale: 100%

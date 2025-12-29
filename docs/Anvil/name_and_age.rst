@@ -4,7 +4,7 @@ Name and age
 
 This app takes inputs of the name and age and outputs a string containing that info.
 
-| Working app at: https://pc-name-and-age.anvil.app
+| Working app at: `<https://pc-name-and-age.anvil.app>`_
 
 ----
 
@@ -22,7 +22,7 @@ Design
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -43,7 +43,7 @@ Build interface
 -------------------
 
 | Navigation from one textbox field to the next is automatic. Press TAB or SHIFT-TAB
-| Buttons are also navigated to using TAB. 
+| Buttons are also navigated to using TAB.
 
 Title
 ~~~~~~~~~~~~~~~~~~~
@@ -71,12 +71,12 @@ Instructions
 | In the properties panel: text section, set the **font_size** to 18.
 
 .. code-block::
-    
+
     Press tab to go to the next input. Press Enter to get the Name and Age output.
 
 ----
 
-Name 
+Name
 ~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the column panel.
@@ -93,7 +93,7 @@ Name
 
 ----
 
-Age 
+Age
 ~~~~~~~~~~~~~~~~~~~
 
 | Drag and drop a *label* component onto the column panel.
@@ -123,7 +123,7 @@ Name And Age button
 
 ----
 
-Output Code 
+Output Code
 --------------------
 
 | The **get_name_age** function has 2 parameters: **name** and **age**.
@@ -146,7 +146,7 @@ Output Code
 
 ----
 
-Event Code 
+Event Code
 --------------------
 
 | Both the button click and pressing enter in an input textbox attempts to produce the output.
@@ -155,7 +155,7 @@ Event Code
 
     def name_age_click(self, **event_args):
         self.do_output()
-        
+
     def name_pressed_enter(self, **event_args):
         self.do_output()
 
@@ -164,7 +164,7 @@ Event Code
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.
@@ -191,10 +191,10 @@ Final  Code
 
         def do_output(self):
             self.output.text = self.get_name_age(self.name.text, self.age.text)
-            
+
         def name_age_click(self, **event_args):
             self.do_output()
-            
+
         def name_pressed_enter(self, **event_args):
             self.do_output()
 

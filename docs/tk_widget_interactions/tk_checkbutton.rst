@@ -2,7 +2,7 @@
 tk Checkbutton
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/
+| See: `<https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/>`_
 
 ----
 

@@ -14,7 +14,7 @@ Christmas Jokes
 App Theme
 --------------
 
-| Go to https://anvil.works/build
+| Go to `<https://anvil.works/build>`_
 | Click Create a new app.
 | In the Choose Theme window choose Material Design 3.
 | Set the python environment to the latest version.

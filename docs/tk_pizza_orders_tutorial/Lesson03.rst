@@ -92,7 +92,7 @@ Creating and Positioning Radio Buttons for Pizza Type
 Using StringVar to Manage Radio Button Values
 ----------------------------------------------------------------
 
-See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
+See: `<https://python-course.eu/tkinter/variable-classes-in-tkinter.php>`_
 
 1. **StringVar Initialization**:
 

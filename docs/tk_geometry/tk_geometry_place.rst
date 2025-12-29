@@ -3,9 +3,9 @@ tk geometry place
 ====================================================
 
 | The place geometry manager allows you to arrange widgets within a window using absolute positions.
-| place: https://www.youtube.com/watch?v=bx0YmWFfsEI
-| layouts: https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa
-| options: https://www.pythontutorial.net/tkinter/tkinter-place/
+| place: `<https://www.youtube.com/watch?v=bx0YmWFfsEI>`_
+| layouts: `<https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa>`_
+| options: `<https://www.pythontutorial.net/tkinter/tkinter-place/>`_
 
 ----
 

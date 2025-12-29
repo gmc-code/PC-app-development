@@ -4,17 +4,17 @@ Displacement calculator
 
 This app calculates the displacement, S, given u, v, and t.
 
-| Working app at: https://pc-displacement-calculator.anvil.app
+| Working app at: `<https://pc-displacement-calculator.anvil.app>`_
 
 .. image:: images/kinematics/displacement_calc.png
     :scale: 60
-    
+
 ----
 
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -38,7 +38,7 @@ Key components
 
 ----
 
-Decimal Places Dropdown 
+Decimal Places Dropdown
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 | Name the dropdown: **decimal_places**.
@@ -58,7 +58,7 @@ Decimal Places Dropdown
         self.decimal_places.items = ['0', '1', '2', '3', '4']   #requires list of strings
         self.decimal_places.selected_value = '2'
         self.dp = int(self.decimal_places.selected_value)
-        
+
 | In the properties panel: Events section, click on the blue icon to the right of the **change** label.
 | This will add a default script, **decimal_places_change**, to the code.
 | Add the code below to update **self.dp** when the dropdown is used.
@@ -111,7 +111,7 @@ Calculation
 | f-stings allow convenient formatting to 2 decimal places.
 | e.g. ``self.S.text = f'{val:.2f}'``
 | Instead of using a fixed number, as in **.2f**, the dropdown value, **self.dp**,  can be used.
-| i.e. ``self.S.text = f'{S:.{self.dp}f}'`` 
+| i.e. ``self.S.text = f'{S:.{self.dp}f}'``
 
 .. code-block:: python
 
@@ -131,7 +131,7 @@ Calculation
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.
@@ -154,7 +154,7 @@ Final  Code
             self.dp = int(self.decimal_places.selected_value)
             # hide error field
             self.error.visible = False
-            
+
         def decimal_places_change(self, **event_args):
             self.dp = int(self.decimal_places.selected_value)
 

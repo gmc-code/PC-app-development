@@ -9,10 +9,10 @@ This builds a days calculator to find the difference in days between 2 dates.
 References
 ------------------------------
 
-#. Python date time: https://www.w3schools.com/python/python_datetime.asp
-#. Python date differences: https://docs.python.org/3/library/datetime.html#examples-of-usage-timedelta
-#. Duration calculator: https://www.timeanddate.com/date/durationresult.html?d1=6&m1=4&y1=2018&d2=2&m2=4&y2=2022
-#. Future date calculator: https://www.timeanddate.com/date/dateadded.html?d1=8&m1=3&y1=2022&type=add&ay=&am=02&aw=&ad=3&rec=
+#. Python date time: `<https://www.w3schools.com/python/python_datetime.asp>`_
+#. Python date differences: `<https://docs.python.org/3/library/datetime.html#examples-of-usage-timedelta>`_
+#. Duration calculator: `<https://www.timeanddate.com/date/durationresult.html?d1=6&m1=4&y1=2018&d2=2&m2=4&y2=2022>`_
+#. Future date calculator: `<https://www.timeanddate.com/date/dateadded.html?d1=8&m1=3&y1=2022&type=add&ay=&am=02&aw=&ad=3&rec=>`_
 
 ----
 
@@ -29,11 +29,11 @@ Design
 .. image:: images/dates/DC_age.PNG
     :scale: 60%
 
-    
+
 .. image:: images/dates/DC_birthday.PNG
     :scale: 60%
 
-    
+
 .. image:: images/dates/DC_future.PNG
     :scale: 60%
 
@@ -41,7 +41,7 @@ Design
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -74,7 +74,7 @@ DateCalc module code:
 | The **calculate_years_months_days** function will take in 2 dates and return a tuple of the years, months, days difference.
 
 .. code-block:: python
-        
+
     import anvil.server
     import anvil.tables as tables
     import anvil.tables.query as q
@@ -99,27 +99,27 @@ DateCalc module code:
         ndays = mdays[date.month] + (date.month == 2 and isleap(date.year))
         return ndays
 
-    
+
     def end_month(date):
         date_end_month = date.replace(day=number_of_days_in_month(date))
         return date_end_month
-    
-    
+
+
     def start_month(date):
         date_start_of_month = date.replace(day=1)
         return date_start_of_month
 
 
     class DateCalc:
-        
+
         def calculate_years_months_days(self, d1, d2):
             """d1 is the start date, d2 is the end date"""
             if d1 > d2:
                 return (0, 0, 0)   # for convenience
-                
+
             d1_end_month = end_month(d1)
             d2_start_month = start_month(d2)
-            
+
             if d1.day > d2.day:
                 years = d2_start_month.year - d1_end_month.year
                 months = d2_start_month.month - d1_end_month.month - 1  # -1 since not full month
@@ -132,7 +132,7 @@ DateCalc module code:
                 months += 12
                 years -= 1
             return (years, months, days)
-    
+
 
 ----
 
@@ -143,7 +143,7 @@ Sidebar
 | Add 4 link components.
 | Set teh name of teh first to duration_link and its text to duration.
 
-| Drag and drop a *link* component onto the column panel. 
+| Drag and drop a *link* component onto the column panel.
 | In the properties panel: set the name to ``feedback_box``.
 | In the properties panel: set the placeholder to ``Feedback here``.
 

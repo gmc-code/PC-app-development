@@ -3,10 +3,10 @@ Importing tkinter themed widgets
 ====================================================
 
 | In **Tkinter**, themed widgets play a crucial role in determining the "look and feel" of all the widgets.
-| See: Tkinter ttk Themed Widgets - Python Tutorial. https://www.pythontutorial.net/tkinter/tkinter-ttk/.
-| See: TkDocs Tutorial - Styles and Themes. https://tkdocs.com/tutorial/styles.html.
-| See: Tkinter Themes - python tutorials. https://python-tutorials.in/tkinter-themes/.
-| See: How to Change Tkinter Theme from One to Another - Python Tutorial. https://www.pythontutorial.net/tkinter/tkinter-theme/.
+| See: Tkinter ttk Themed Widgets - Python Tutorial. `<https://www.pythontutorial.net/tkinter/tkinter-ttk/>`_.
+| See: TkDocs Tutorial - Styles and Themes. `<https://tkdocs.com/tutorial/styles.html>`_.
+| See: Tkinter Themes - python tutorials. `<https://python-tutorials.in/tkinter-themes/>`_.
+| See: How to Change Tkinter Theme from One to Another - Python Tutorial. `<https://www.pythontutorial.net/tkinter/tkinter-theme/>`_.
 
 
 **Classic Tk Widgets**:

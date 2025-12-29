@@ -2,9 +2,9 @@
 tk window
 ====================================================
 
-| See: https://tkdocs.com/tutorial/windows.html
-| See: https://tcl.tk/man/tcl8.6/TkCmd/wm.htm
-| See: https://www.pythontutorial.net/tkinter/tkinter-window/
+| See: `<https://tkdocs.com/tutorial/windows.html>`_
+| See: `<https://tcl.tk/man/tcl8.6/TkCmd/wm.htm>`_
+| See: `<https://www.pythontutorial.net/tkinter/tkinter-window/>`_
 
 ----
 
@@ -92,10 +92,10 @@ Window size
 Background color
 --------------------
 
-| Online color picker see: https://www.w3schools.com/colors/colors_picker.asp
-| See: https://pickcoloronline.com/
-| See: https://htmlcolorcodes.com/color-chart/
-| See: https://www.w3schools.com/colors/colors_names.asp
+| Online color picker see: `<https://www.w3schools.com/colors/colors_picker.asp>`_
+| See: `<https://pickcoloronline.com/>`_
+| See: `<https://htmlcolorcodes.com/color-chart/>`_
+| See: `<https://www.w3schools.com/colors/colors_names.asp>`_
 
 .. py:function:: root.configure(bg=color)
 

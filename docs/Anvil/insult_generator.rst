@@ -4,9 +4,9 @@ Insult generator
 
 This app generates a random insult.
 
-A useful tool for formatting long lists is at: https://www.xhcode.com/pythonformat/
+A useful tool for formatting long lists is at: `<https://www.xhcode.com/pythonformat/>`_
 
-| Working app at: https://total-tough-keep.anvil.app
+| Working app at: `<https://total-tough-keep.anvil.app>`_
 
 ----
 
@@ -24,7 +24,7 @@ Design
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 

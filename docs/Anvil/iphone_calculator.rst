@@ -5,7 +5,7 @@ iPhone Calculator
 | This builds a simple calculator using code to add the buttons.
 | It is based on, with slight variations to suit, the the iphone calculator with a grid of 5 rows and 4 columns.
 
-| Working app at: https://pc-iphone-calculator.anvil.app
+| Working app at: `<https://pc-iphone-calculator.anvil.app>`_
 
 .. image:: images/calculator/calculator.png
     :scale: 60%
@@ -15,15 +15,15 @@ iPhone Calculator
 References
 ------------------------------
 
-#. Youtube guide for using code to create the components: https://www.youtube.com/watch?v=NiQdsK3H57Y
-#. Anvil events: https://anvil.works/docs/client/components
-#. Python try-except: https://www.w3schools.com/python/python_try_except.asp
-#. Python eval: https://www.w3schools.com/python/ref_func_eval.asp
-#. Python enumerate: https://www.w3schools.com/python/ref_func_enumerate.asp
-#. Colour hex values: https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185
-#. Calculator icon: https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png
-#. Grid panel syntax: https://anvil.works/docs/api/anvil#GridPanel
-#. Button syntax: https://anvil.works/docs/api/anvil#Button
+#. Youtube guide for using code to create the components: `<https://www.youtube.com/watch?v=NiQdsK3H57Y>`_
+#. Anvil events: `<https://anvil.works/docs/client/components>`_
+#. Python try-except: `<https://www.w3schools.com/python/python_try_except.asp>`_
+#. Python eval: `<https://www.w3schools.com/python/ref_func_eval.asp>`_
+#. Python enumerate: `<https://www.w3schools.com/python/ref_func_enumerate.asp>`_
+#. Colour hex values: `<https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185>`_
+#. Calculator icon: `<https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png>`_
+#. Grid panel syntax: `<https://anvil.works/docs/api/anvil#GridPanel>`_
+#. Button syntax: `<https://anvil.works/docs/api/anvil#Button>`_
 
 .. image:: images/calculator/Calculator-icon.png
     :scale: 60%
@@ -33,7 +33,7 @@ References
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Custom HTML
 #. Choose: Blank Panel
@@ -47,7 +47,7 @@ Settings
 #. Enter an App name. iPhone_Calculator
 #. Enter an App title. iPhone_Calculator
 #. Enter an App description. iPhone_Calculator using code to build the buttons
-#. Get a calculator icon to upload such as: https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png
+#. Get a calculator icon to upload such as: `<https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png
 #. Click Change Image to upload an App logo.
 #. Close the settings tab.
 
@@ -96,10 +96,10 @@ Code for buttons step 1
 ------------------------------
 
 | Add code to the end of the init method to create buttons.
-| See Grid panel syntax: https://anvil.works/docs/api/anvil#GridPanel
+| See Grid panel syntax: `<https://anvil.works/docs/api/anvil#GridPanel
 | The grid panel has rows specified by letters: A, B, C...
 | The grid panel has 12 columns specified by numbers: 0, 1, 2, ....11
-| See Button syntax: https://anvil.works/docs/api/anvil#Button
+| See Button syntax: `<https://anvil.works/docs/api/anvil#Button
 
 | Use ``self.btn = {}`` to set up the button dictionary which will store each button object with the button text as the key.
 | Use ``gp = GridPanel()`` to set up an empty Grid panel to which the buttons will be added.
@@ -170,7 +170,7 @@ Code for buttons step 3
 
 | Replace the default values for the button colours with those
 | based on the text value, ``i in enumerate(chars)``.
-| See Colour hex values: https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185
+| See Colour hex values: `<https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185
 
 .. code-block:: python
 
@@ -215,7 +215,7 @@ Code for buttons step 4
 Code for buttons click method
 ------------------------------
 
-| See: https://anvil.works/docs/client/components
+| See: `<https://anvil.works/docs/client/components
 | Define a click method to determine what happens to the calculator text box.
 | Use the arguments: ``(self, **event_args)``.
 | ``event_args`` has an index ``['sender']`` from which the button text can be found using the tab.name property, which is set when the button was created.
@@ -356,5 +356,5 @@ Final code
 
     #. The keyboard can also be used instead of the buttons. Try it out.
     #. Try adding some maths function buttons in another row. e.g. x^2 which squares the text box. e.g. sqrt which takes the square root.
-    #. Try adding some maths function buttons in another row by importing the maths library. See: https://docs.python.org/3/library/math.html
+    #. Try adding some maths function buttons in another row by importing the maths library. See: `<https://docs.python.org/3/library/math.html
 

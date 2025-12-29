@@ -2,7 +2,7 @@
 tk Optionmenu
 ====================================================
 
-| See: https://www.geeksforgeeks.org/tkinter-optionmenu-widget/
+| See: `<https://www.geeksforgeeks.org/tkinter-optionmenu-widget/>`_
 
 ----
 

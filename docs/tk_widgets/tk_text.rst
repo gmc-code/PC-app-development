@@ -2,7 +2,7 @@
 tk Text
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-text-widget/
+| See: `<https://www.geeksforgeeks.org/python-tkinter-text-widget/>`_
 
 ----
 

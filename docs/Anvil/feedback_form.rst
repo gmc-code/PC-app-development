@@ -5,7 +5,7 @@ Feedback Form
 | This builds a feedback form that uses full stack: client side and server side code in python.
 | The references add an email capability but email has account quotas, so it will not be included below.
 
-| Working app at: https://pc-feedback-form.anvil.app
+| Working app at: `<https://pc-feedback-form.anvil.app>`_
 
 .. image:: images/feedback/Feedback_Form.png
     :scale: 70%
@@ -13,15 +13,15 @@ Feedback Form
 References
 ------------------------------
 
-#. Youtube guide to create the app: https://www.youtube.com/watch?v=liZThmkIwys
-#. Official Anvil guide with screenshots and animated gifs: https://anvil.works/learn/tutorials/feedback-form
+#. Youtube guide to create the app: `<https://www.youtube.com/watch?v=liZThmkIwys>`_
+#. Official Anvil guide with screenshots and animated gifs: `<https://anvil.works/learn/tutorials/feedback-form>`_
 
 ----
 
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -34,7 +34,7 @@ Settings
 #. Enter an App name. Feedback_Form
 #. Enter an App title. Feedback_Form
 #. Enter an App description. Feedback_Form using server side code and a PGSQL database.
-#. Get a feedback icon to upload such as: https://pics.freeicons.io/uploads/icons/png/121888721582994865-512.png
+#. Get a feedback icon to upload such as: `<https://pics.freeicons.io/uploads/icons/png/121888721582994865-512.png>`_
 #. Click Change Image to upload an App logo.
 #. Close the settings tab.
 
@@ -180,7 +180,7 @@ Build the Submit Code
 | Now use ``anvil.server.call`` to call ``add_feedback`` in the server module, passing the 3 variables, ``name, email, feedback``, to be added to the table.
 | i.e, ``anvil.server.call('add_feedback', name, email, feedback)``
 | A notification can be added is desired: ``Notification("Feedback submitted.").show()``
-| See: https://anvil.works/docs/client/python/alerts-and-notifications#notifications
+| See: `<https://anvil.works/docs/client/python/alerts-and-notifications#notifications>`_
 
 .. code-block:: python
 

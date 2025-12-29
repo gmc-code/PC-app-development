@@ -2,7 +2,7 @@
 tk Radiobutton
 ====================================================
 
-| See: https://www.geeksforgeeks.org/radiobutton-in-tkinter-python/
+| See: `<https://www.geeksforgeeks.org/radiobutton-in-tkinter-python/>`_
 
 ----
 

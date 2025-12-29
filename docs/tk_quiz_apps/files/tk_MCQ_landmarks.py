@@ -24,7 +24,6 @@ quiz_data = {
     "Golden Gate Bridge": "San Francisco",
     "Guggenheim Museum": "New York",
     "Hagia Sophia": "Istanbul",
-    "Hollywood Sign": "Los Angeles",
     "Kremlin": "Moscow",
     "Leaning Tower of Pisa": "Pisa",
     "Louvre Museum": "Paris",
@@ -121,7 +120,9 @@ def handle_key(event):
             buttons[index].invoke()
 
 
-# Center the window on the screen
+# --------------------------------------------------
+# UI helpers
+# --------------------------------------------------
 def center_window(window):
     window.update_idletasks()
     width = window.winfo_width()
@@ -133,6 +134,11 @@ def center_window(window):
 
 
 root = tk.Tk()
+# Make the window not resizable
+root.resizable(False, False)
+# Center the window
+center_window(root)
+
 root.title(f"{datatype_questions} Quiz Game")
 score = 0
 answers = quiz_data
@@ -161,10 +167,10 @@ question_frame = tk.Frame(root, bd=2, relief="solid")
 question_frame.pack(pady=10, padx=10, fill="x")
 
 question_label = tk.Label(question_frame, text="Question:", font=("Helvetica", 12))
-question_label.pack(anchor="w")
+question_label.pack(pady=5, padx=20, anchor="w")
 
 question_text = tk.Label(question_frame, text="", font=("Helvetica", 12))
-question_text.pack(pady=10)
+question_text.pack(pady=10, padx=20, anchor="w")
 
 # Labels for A, B, C, D
 option_labels = ["A", "B", "C", "D"]

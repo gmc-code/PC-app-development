@@ -4,10 +4,10 @@ Temperature converter3
 
 Multi Temperature converter
 ------------------------------
- 
+
 | Make an new app that converts between F, C and K all at once.
 
-| Working app at: https://pc-temperature-converter-3.anvil.app
+| Working app at: `<https://pc-temperature-converter-3.anvil.app>`_
 
 | See gif to see it in action.
 
@@ -67,7 +67,7 @@ Code
                                 self.init_components(**properties)
                                 # start with from F
                                 self.from_F_click()
-                                
+
                             def from_F_click(self, **event_args):
                                 self.TF_label.text = "from Fahrenheit"
                                 self.TC_label.text = "Celsius"
@@ -76,7 +76,7 @@ Code
                                 self.convertC.visible = False
                                 self.convertK.visible = False
                                 self.TF.select()
-                                
+
                             def from_C_click(self, **event_args):
                                 self.TF_label.text = "Fahrenheit"
                                 self.TC_label.text = "from Celsius"
@@ -85,7 +85,7 @@ Code
                                 self.convertC.visible = True
                                 self.convertK.visible = False
                                 self.TC.select()
-                                
+
                             def from_K_click(self, **event_args):
                                 self.TF_label.text = "Fahrenheit"
                                 self.TC_label.text = "Celsius"
@@ -111,10 +111,10 @@ Code
 
                             def convertF_click(self, **event_args):
                                 self.f_calculate()
-                                
+
                             def convertC_click(self, **event_args):
                                 self.c_calculate()
-                                
+
                             def convertK_click(self, **event_args):
                                 self.k_calculate()
 
@@ -141,7 +141,7 @@ Code
                                 except TypeError as error:
                                     self.TC.text = None
                                     self.TK.text = None
-                                
+
                             def k_calculate(self):
                                 try:
                                     kelvin = self.TK.text
@@ -152,8 +152,8 @@ Code
                                     self.TF.text =  f'{fahrenheit:.1f}'
                                 except TypeError as error:
                                     self.TC.text = None
-                                    self.TK.text = None  
-      
+                                    self.TK.text = None
+
 
                 .. tab-item:: Q3
 
@@ -174,7 +174,7 @@ Code
                                 self.init_components(**properties)
                                 # start with from F
                                 self.from_F_click()
-                                
+
                             def from_F_click(self, **event_args):
                                 self.TF_label.text = "from Fahrenheit"
                                 self.TC_label.text = "Celsius"
@@ -183,7 +183,7 @@ Code
                                 self.convertC.visible = False
                                 self.convertK.visible = False
                                 self.TF.select()
-                                
+
                             def from_C_click(self, **event_args):
                                 self.TF_label.text = "Fahrenheit"
                                 self.TC_label.text = "from Celsius"
@@ -192,7 +192,7 @@ Code
                                 self.convertC.visible = True
                                 self.convertK.visible = False
                                 self.TC.select()
-                                
+
                             def from_K_click(self, **event_args):
                                 self.TF_label.text = "Fahrenheit"
                                 self.TC_label.text = "Celsius"
@@ -204,10 +204,10 @@ Code
 
                             def convertF_click(self, **event_args):
                                 self.f_calculate()
-                                
+
                             def convertC_click(self, **event_args):
                                 self.c_calculate()
-                                
+
                             def convertK_click(self, **event_args):
                                 self.k_calculate()
 
@@ -234,7 +234,7 @@ Code
                                 except TypeError as error:
                                     self.TC.text = None
                                     self.TK.text = None
-                                
+
                             def k_calculate(self):
                                 try:
                                     kelvin = self.TK.text
@@ -245,5 +245,5 @@ Code
                                     self.TF.text =  f'{fahrenheit:.1f}'
                                 except TypeError as error:
                                     self.TC.text = None
-                                    self.TK.text = None      
+                                    self.TK.text = None
 

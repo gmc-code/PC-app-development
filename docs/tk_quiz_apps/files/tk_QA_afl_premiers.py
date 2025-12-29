@@ -11,7 +11,7 @@ premiers = {
     "Hawthorn": 13,
     "Geelong": 10,
     "Sydney Swans": 5,  # Linked to South Melbourne
-    "Brisbane Lions": 4,  # Linked to Fitzroy
+    "Brisbane Lions": 5,  # Linked to Fitzroy
     "West Coast Eagles": 4,
     "North Melbourne": 4,
     "Western Bulldogs": 2,
@@ -76,6 +76,18 @@ def end_game():
     entry.delete(0, tk.END)
     result_label.config(text="")
 
+# --------------------------------------------------
+# UI helpers
+# --------------------------------------------------
+def center_window(window):
+    window.update_idletasks()
+    width = window.winfo_width()
+    height = window.winfo_height()
+    x = (window.winfo_screenwidth() // 2) - (width // 2)
+    y = (window.winfo_screenheight() // 2) - (height // 2)
+    y = y if y < 50 else 30
+    window.geometry(f"{width}x{height}+{x}+{y}")
+
 
 root = tk.Tk()
 root.title("AFL Premiership Quiz Game")
@@ -86,9 +98,10 @@ current_team_index = 0
 
 # Set the window size to 600x800 pixels
 root.geometry("600x800")
-
-# Make the window resizable
-root.resizable(True, True)
+# Make the window not resizable
+root.resizable(False, False)
+# Center the window
+center_window(root)
 
 welcome_text = "Welcome to the AFL Premiership Quiz Game!\n\nRules:\n1. Guess the number of premierships won by each team.\n2. If you guess correctly, you will be asked another question.\n3. The game continues until you answer incorrectly or all teams are done.\n4. Your score is the number of consecutive correct answers. Answer all correctly to win!\n\nClick 'Start Quiz' to begin."
 
@@ -102,7 +115,7 @@ question_frame = tk.Frame(root, bd=2, relief="solid")
 question_frame.pack(pady=10, padx=10, fill="x")
 
 question_label = tk.Label(question_frame, text="Question:", font=("Helvetica", 14))
-question_label.pack(anchor="w")
+question_label.pack(padx=10, anchor="w")
 
 team_label = tk.Label(question_frame, text="", font=("Helvetica", 16))
 team_label.pack(pady=10)

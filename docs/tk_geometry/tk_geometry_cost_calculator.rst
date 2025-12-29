@@ -3,7 +3,7 @@ tkinter geometry Cost Calculator
 ====================================================
 
 | The cost calculator below has 3 versions which use the pack, grid and place geometry managers.
-| See: https://www.youtube.com/watch?v=OKfra37r4D0&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=4
+| See: `<https://www.youtube.com/watch?v=OKfra37r4D0&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=4>`_
 
 ----
 

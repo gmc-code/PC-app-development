@@ -3,7 +3,7 @@ Christmas Jokes
 ====================================================
 
 | The details below are for a simple joke app.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/christmas-jokes-3/latest/
+| Demo app is at: `<https://gmc_ps.pyscriptapps.com/christmas-jokes-3/latest/>`_
 
 .. image:: images/christmas_jokes/santa_jokes_app.png
     :scale: 100%

@@ -4,15 +4,15 @@ Sportsmen
 
 This uses nested dictionaries to display chosen information from nested dictionaries.
 
-| Working app at: https://pc-sportsmen.anvil.app
+| Working app at: `<https://pc-sportsmen.anvil.app>`_
 
 ----
 
 References
 ------------------------------
 
-#. https://anvil.works/docs/media/image-manipulation
-#. https://www.geeksforgeeks.org/python-nested-dictionary/
+#. `<https://anvil.works/docs/media/image-manipulation>`_
+#. `<https://www.geeksforgeeks.org/python-nested-dictionary/>`_
 
 ----
 

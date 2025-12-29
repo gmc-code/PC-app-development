@@ -3,7 +3,7 @@ Santa's helper
 ====================================================
 
 | The details below are for a simple middle name generator.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/elves/latest/
+| Demo app is at: `<https://gmc_ps.pyscriptapps.com/elves/latest/>`_
 
 .. image:: images/elves.png
     :scale: 50%

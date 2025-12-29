@@ -4,7 +4,7 @@ Temperature converter
 
 This builds a simple temperature converter.
 
-| Working app at: https://pc-temperature-converter-1.anvil.app
+| Working app at: `<https://pc-temperature-converter-1.anvil.app>`_
 
 .. image:: images/temperature/Temperature_converter1_layout.png
     :scale: 60%
@@ -14,7 +14,7 @@ This builds a simple temperature converter.
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -32,7 +32,7 @@ Settings
 #. Enter an App name. Temperature converter
 #. Enter an App title. Temperature converter
 #. Enter an App description. Converts temperatures
-#. Get a thermometer icon to upload such as: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Fahrenheit_Celsius_scales.svg/240px-Fahrenheit_Celsius_scales.svg.png 
+#. Get a thermometer icon to upload such as: `<https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Fahrenheit_Celsius_scales.svg/240px-Fahrenheit_Celsius_scales.svg.png>`_
 #. Click Change Image to upload an App logo.
 #. Close the settings tab.
 
@@ -68,7 +68,7 @@ Fahrenheit
 | In the properties panel: text section, set the **font_size** to 32.
 | In the properties panel: text section, set the **text_align** to **right**.
 
-| Drag and drop the *textbox* component onto card_1 to the right of the Fahrenheit label. 
+| Drag and drop the *textbox* component onto card_1 to the right of the Fahrenheit label.
 | A vertical blue line will indicate that you are in the right place to drop it.
 | In the properties panel: name section, set the **name** to **fahrenheit** (lower case).
 | In the properties panel: text section, set the **font_size** to 32.
@@ -90,9 +90,9 @@ Celsius
 | In the properties panel: text section, set the **font_size** to 32.
 | In the properties panel: text section, set the **text_align** to **right**.
 
-| Drag and drop the *text-box* component onto card_1 to the right of the Celsius label. 
+| Drag and drop the *text-box* component onto card_1 to the right of the Celsius label.
 | A vertical blue line will indicate that you are in the right place to drop it.
-| In the properties panel: name section, set the **name** to **celsius** (lower case). 
+| In the properties panel: name section, set the **name** to **celsius** (lower case).
 | In the properties panel: text section, set the **font_size** to 32.
 
 .. image:: images/temperature/Temperature_converter_Add_label_below.png
@@ -117,20 +117,20 @@ Convert button
 Code
 ------------------------------
 
-| See: https://reference.yourdictionary.com/resources/what-s-the-easiest-way-to-convert-fahrenheit-to-celsius.html
+| See: `<https://reference.yourdictionary.com/resources/what-s-the-easiest-way-to-convert-fahrenheit-to-celsius.html>`_
 
 | Edit the code, **convert_click**,  to calculate the temperature in Celsius.
 | The formula to use is: ``celsius = (fahrenheit - 32) / 1.8``
 | ``fahrenheit = self.fahrenheit.text`` can be used to get the Fahrenheit temperature.
-| ``if self.fahrenheit.text:`` evaluates to True if a number has been entered or False if the text-box is empty.  
+| ``if self.fahrenheit.text:`` evaluates to True if a number has been entered or False if the text-box is empty.
 | ``self.celsius.text = f'{celsius:.1f}'`` can be used to place the calculated value formatted to 1 decimal place.
-| Use a **try-except** block to catch any invalid numbers in the fahrenheit entry. 
+| Use a **try-except** block to catch any invalid numbers in the fahrenheit entry.
 | Form testing invalid entries, TypeErrors are produced, so ``except TypeError as error:`` is used to clear the celsius value via: ``self.celsius.text = None``.
 
 .. code-block:: python
 
   def convert_click(self, **event_args):
-      try: 
+      try:
         fahrenheit = self.fahrenheit.text
         celsius = (fahrenheit - 32) / 1.8
         self.celsius.text = f'{celsius:.1f}'
@@ -139,7 +139,7 @@ Code
 
 ----
 
-Final  Code 
+Final  Code
 --------------------
 
 | The full code is below.
@@ -157,9 +157,9 @@ Final  Code
         def __init__(self, **properties):
             # Set Form properties and Data Bindings.
             self.init_components(**properties)
-        
+
         def convert_click(self, **event_args):
-            try: 
+            try:
                 fahrenheit = self.fahrenheit.text
                 celsius = (fahrenheit - 32) / 1.8
                 self.celsius.text = f'{celcius:.1f}'

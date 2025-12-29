@@ -2,8 +2,8 @@
 Counter: floats
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
-| See: https://dafarry.github.io/tkinterbook/tkinter-events-and-bindings.htm
+| See: `<https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/>`_
+| See: `<https://dafarry.github.io/tkinterbook/tkinter-events-and-bindings.htm>`_
 
 ----
 

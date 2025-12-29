@@ -106,7 +106,7 @@ Creating and Positioning the OptionMenu
 
 2. **IntVar Initialization**:
 
-    See: https://python-course.eu/tkinter/variable-classes-in-tkinter.php
+    See: `<https://python-course.eu/tkinter/variable-classes-in-tkinter.php>`_
 
     .. code-block::
 

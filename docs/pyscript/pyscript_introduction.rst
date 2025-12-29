@@ -12,9 +12,9 @@ Introduction to pyscript
 Key references:
 ---------------------
 
-| Docs https://docs.pyscript.net/2024.11.1/
-| User guide: https://docs.pyscript.net/2024.11.1/user-guide/
-| Developer blog on latest update changes: https://jeff.glass/tags/pyscript/
+| Docs `<https://docs.pyscript.net/2024.11.1/>`_
+| User guide: `<https://docs.pyscript.net/2024.11.1/user-guide/>`_
+| Developer blog on latest update changes: `<https://jeff.glass/tags/pyscript/>`_
 
 ----
 
@@ -22,7 +22,7 @@ Sign up
 ----------
 
 | Sign up is free.
-| Go to https://pyscript.com/ and sign up.
+| Go to `<https://pyscript.com/ and sign up>`_.
 
 ----
 
@@ -49,7 +49,7 @@ Project files
 | The **pyscript.toml** file is used to configure the project.
 | e.g specifying python modules via ``packages = ["numpy", "pandas"]``. It can be empty.
 | For using comments and more complicated configurations use a toml file.
-| See: https://docs.pyscript.net/2024.11.1/user-guide/configuration/
+| See: `<https://docs.pyscript.net/2024.11.1/user-guide/configuration/>`_
 | Alternatively, a **pyscript.json** file can be used instead of the **pyscript.toml** file. An empty json file needs curly brackets as **{}**.
 
 | A **main.css** file is often added to customize the html element appearance.
@@ -59,7 +59,7 @@ Project files
 toml file
 --------------
 
-See: https://docs.pyscript.net/2024.11.1////user-guide/configuration/
+See: `<https://docs.pyscript.net/2024.11.1////user-guide/configuration/>`_
 
 e.g. toml file
 
@@ -79,7 +79,7 @@ e.g. toml file
 favicon.ico file
 -------------------
 
-For creating favicon.ico from a png file see: https://www.favicon.cc/?
+For creating favicon.ico from a png file see: `<https://www.favicon.cc/?>`_
 
 | The favicon.ico is placed in the files section in the pyscript editor so it shows in a browser tab.
 | The head reference to the favicon is **<link rel="icon" href="favicon.ico" type="image/x-icon">**.

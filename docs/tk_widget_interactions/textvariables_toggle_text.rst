@@ -2,7 +2,7 @@
 Label textvariable: toggle text
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
+| See: `<https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/>`_
 
 ----
 

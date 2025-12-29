@@ -14,8 +14,8 @@ See working app at: ********************
 References
 ------------------------------
 
-#. https://www.omnicalculator.com/math/fibonacci
-#. https://www.calculatorsoup.com/calculators/discretemathematics/fibonacci-calculator.php
+#. `<https://www.omnicalculator.com/math/fibonacci>`_
+#. `<https://www.calculatorsoup.com/calculators/discretemathematics/fibonacci-calculator.php>`_
 
 ----
 
@@ -36,7 +36,7 @@ Design
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -476,7 +476,7 @@ Final  Code
 
                 Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose form this list when generating each new number in the Fibonacci sequence.
 
-                Working app at: https://pc-Fibonacci-random-multipliers.anvil.app
+                Working app at: `<https://pc-Fibonacci-random-multipliers.anvil.app>`_
 
                 .. code-block:: python
 

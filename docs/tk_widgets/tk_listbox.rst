@@ -2,7 +2,7 @@
 tk Listbox
 ====================================================
 
-| See: https://www.geeksforgeeks.org/-tkinter-listbox-widget/
+| See: `<https://www.geeksforgeeks.org/-tkinter-listbox-widget/>`_
 
 ----
 

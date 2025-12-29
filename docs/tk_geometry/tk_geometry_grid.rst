@@ -3,10 +3,10 @@ tk geometry grid
 ====================================================
 
 | The grid geometry manager allows you to arrange widgets within a root.
-| See: https://tkdocs.com/tutorial/grid.html
-| grid: see https://www.youtube.com/watch?v=IJ-iVnN09-8
-| grid: see https://www.pythontutorial.net/tkinter/tkinter-grid/
-| Layouts: https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa
+| See: `<https://tkdocs.com/tutorial/grid.html>`_
+| grid: see `<https://www.youtube.com/watch?v=IJ-iVnN09-8>`_
+| grid: see `<https://www.pythontutorial.net/tkinter/tkinter-grid/>`_
+| Layouts: `<https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa>`_
 
 ----
 

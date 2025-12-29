@@ -109,12 +109,12 @@ Define the Conversion Function
 
 | Create a function called `convert_pounds_to_kgs()` that performs the conversion and updates the result in the `output_text` widget.
 | ``convert_pounds_to_kgs()`` uses a try and except block to catch errors due to non numeric entries.
-| See: https://www.w3schools.com/python/python_try_except.asp
+| See: `<https://www.w3schools.com/python/python_try_except.asp>`_
 | The delete method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``c_text.delete(1.0, 'end')``
 | ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
 | The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` in ``output_text.insert(1.0, f'{kilograms:.2f}')``
 | ``output_text.insert(1.0, f'{kilograms:.2f}')`` uses ``:.2f`` to format the celsius float to 2 decimal places.
-| For string formatting see: https://www.w3schools.com/python/ref_string_format.asp
+| For string formatting see: `<https://www.w3schools.com/python/ref_string_format.asp>`_
 
 .. code-block:: python
 

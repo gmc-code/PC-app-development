@@ -6,7 +6,7 @@ tk variables
 | These variables are instances of `StringVar`, `IntVar`, `DoubleVar`, or `BooleanVar`.
 | They allow you to link the widget's value to a variable that can be updated and accessed programmatically.
 
-| See: https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/
+| See: `<https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/>`_
 
 ----
 

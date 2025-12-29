@@ -5,8 +5,8 @@ tkinter geometry Hello World
 
 | The geometry managers allows you to arrange widgets within a root.
 | The Hello World example below has 3 versions which use the pack, grid and place geometry managers.
-| See: https://tkdocs.com/tutorial/grid.html
-| See: https://www.geeksforgeeks.org/python-pack-method-in-tkinter/?ref=lbp
+| See: `<https://tkdocs.com/tutorial/grid.html>`_
+| See: `<https://www.geeksforgeeks.org/python-pack-method-in-tkinter/?ref=lbp>`_
 
 ----
 

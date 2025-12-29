@@ -142,7 +142,7 @@ Calculating the cost based on selection.
                 order_cost = cost * quantity
                 order_cost_var.set(f"Order cost: ${order_cost}")
 
-    - See: https://www.w3schools.com/python/python_booleans.asp
+    - See: `<https://www.w3schools.com/python/python_booleans.asp>`_
     - The `if pizza and size:` condition checks if both a pizza type and size have been selected. Both are True if their variables have been set.
     - `cost = prices[pizza][size]` retrieves the cost of the selected pizza type and size from the `prices` dictionary.
     - `cost_display_var.set(f"Cost per pizza: ${cost}")` updates the `cost_display_var` with the cost of a single pizza.

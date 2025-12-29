@@ -4,7 +4,7 @@ Force components
 
 This app calculates the horizontal and vertical components of a force at a given angle.
 
-| Working app at: https://pc-force-components.anvil.app
+| Working app at: `<https://pc-force-components.anvil.app>`_
 
 .. image:: images/forces/force_components.png
 
@@ -18,7 +18,7 @@ This app calculates the horizontal and vertical components of a force at a given
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 

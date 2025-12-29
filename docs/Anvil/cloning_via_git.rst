@@ -15,7 +15,7 @@ Cloning an app via github
 - In the following **Choose account dialog** that follows, click **Public Repository** and **MIT licence**.
 - In the following **Choose name dialog** that follows, type a suitable name for the GitHub repository.
 - In the browser, log in at GitHub and navigate to the newly saved GitHub repository, open it and copy its url.
-- In Anvil, go to https://anvil.works/build. Under **Create a new app**, click **Clone form Github**.
+- In Anvil, go to `<https://anvil.works/build>`_. Under **Create a new app**, click **Clone form Github**.
 - In the **Clone app from git** window that follows, paste in the copied github url.
 - Under Authentication, in the same window, choose **Github Account**. Click **CLone App*.
 
@@ -28,7 +28,7 @@ Cloning an earlier version of an app in Anvil
 
 **1. Open the Anvil Editor and Load Your App**
 
-- Go to [Anvil's website](https://anvil.works).
+- Go to [Anvil's website](`<https://anvil.works>`_).
 - Log in to your account.
 - Open the app you want to work with.
 
@@ -54,7 +54,7 @@ Cloning an earlier version of an app in Anvil
 
   1. **Use Git to Clone the Selected Version**
 
-     - Ensure you have Git installed on your local machine. If not, [download and install Git](https://git-scm.com/).
+     - Ensure you have Git installed on your local machine. If not, [download and install Git](`<https://git-scm.com/>`_).
      - Open a terminal or command prompt.
      - Navigate to the folder where you want to clone the app:
 
@@ -66,7 +66,7 @@ Cloning an earlier version of an app in Anvil
 
     .. code-block:: terminal
 
-       git clone https://your-anvil-app.git
+       git clone `<https://your-anvil-app.git>`_
 
 
   2. **Push to the New App's Repository**:
@@ -80,7 +80,7 @@ Cloning an earlier version of an app in Anvil
 
     .. code-block:: terminal
 
-       git remote set-url origin https://new-anvil-app.git
+       git remote set-url origin `<https://new-anvil-app.git>`_
 
      - Push the cloned version to the new app:
 

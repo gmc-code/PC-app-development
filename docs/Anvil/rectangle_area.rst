@@ -4,7 +4,7 @@ Rectangle area
 
 This app calculates the area of a rectangle, given the length and width.
 
-| Working app at: https://pc-rectangle-area.anvil.app
+| Working app at: `<https://pc-rectangle-area.anvil.app>`_
 
 .. image:: images/area/rectangle_area.png
     :scale: 60
@@ -18,7 +18,7 @@ This app calculates the area of a rectangle, given the length and width.
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 

@@ -3,7 +3,7 @@ Reindeer
 ====================================================
 
 | The details below are for a guessing game for the names of santa's reindeers.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/reindeer/latest/
+| Demo app is at: `<https://gmc_ps.pyscriptapps.com/reindeer/latest/>`_
 
 .. image:: images/reindeer/reindeer_guess.png
     :scale: 100%

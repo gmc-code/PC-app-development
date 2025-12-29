@@ -2,7 +2,7 @@
 tk Entry
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-entry-widget/
+| See: `<https://www.geeksforgeeks.org/python-tkinter-entry-widget/>`_
 
 ----
 

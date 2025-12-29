@@ -11,7 +11,7 @@ premiers = {
     "Hawthorn": 13,
     "Geelong": 10,
     "Sydney Swans": 5,  # Linked to South Melbourne
-    "Brisbane Lions": 4,  # Linked to Fitzroy
+    "Brisbane Lions": 5,  # Linked to Fitzroy
     "West Coast Eagles": 4,
     "North Melbourne": 4,
     "Western Bulldogs": 2,
@@ -25,6 +25,17 @@ premiers = {
     "South Melbourne": 3,
 }
 
+# --------------------------------------------------
+# UI helpers
+# --------------------------------------------------
+def center_window(window):
+    window.update_idletasks()
+    width = window.winfo_width()
+    height = window.winfo_height()
+    x = (window.winfo_screenwidth() // 2) - (width // 2)
+    y = (window.winfo_screenheight() // 2) - (height // 2)
+    y = y if y < 50 else 30
+    window.geometry(f"{width}x{height}+{x}+{y}")
 
 class QuizGame:
 
@@ -38,9 +49,11 @@ class QuizGame:
 
         # Set the window size to 600x800 pixels
         self.root.geometry("600x800")
+        # Make the window not resizable
+        root.resizable(False, False)
+        # Center the window
+        center_window(root)
 
-        # Make the window resizable
-        self.root.resizable(True, True)
 
         # Long text stored in a variable
         welcome_text = (
@@ -70,7 +83,7 @@ class QuizGame:
         self.question_frame.pack(pady=10, padx=10, fill="x")
 
         self.question_label = tk.Label(self.question_frame, text="Question:", font=("Helvetica", 14))
-        self.question_label.pack(anchor="w")
+        self.question_label.pack(padx=10, anchor="w")
 
         self.team_label = tk.Label(self.question_frame, text="", font=("Helvetica", 16))
         self.team_label.pack(pady=10)

@@ -3,7 +3,7 @@ Temperature converter
 ====================================================
 
 | The details below are for a simple Temperature converter.
-| Demo app is at: https://gmc_ps.pyscriptapps.com/temp-converter/latest/
+| Demo app is at: `<https://gmc_ps.pyscriptapps.com/temp-converter/latest/>`_
 
 .. image:: images/temp_converter/temp_conversion.png
     :scale: 100%

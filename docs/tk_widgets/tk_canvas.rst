@@ -2,5 +2,5 @@
 tk Canvas
 ====================================================
 
-| See: https://www.geeksforgeeks.org/python-tkinter-canvas-widget/
+| See: `<https://www.geeksforgeeks.org/python-tkinter-canvas-widget/>`_
 

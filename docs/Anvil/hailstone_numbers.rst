@@ -4,17 +4,17 @@ Hailstone numbers
 
 A sequence is called a hailstone sequence because the values typically rise and fall, somewhat analogously to a hailstone inside a cloud.
 
-See working app at: https://pc-hailstone-numbers.anvil.app
+See working app at: `<https://pc-hailstone-numbers.anvil.app>`_
 
 ----
 
 References
 ------------------------------
 
-#. https://www.omnicalculator.com/math/collatz-conjecture
-#. https://www.dcode.fr/collatz-conjecture
-#. https://goodcalculators.com/collatz-conjecture-calculator/
-#. https://en.wikipedia.org/wiki/Collatz_conjecture
+#. `<https://www.omnicalculator.com/math/collatz-conjecture>`_
+#. `<https://www.dcode.fr/collatz-conjecture>`_
+#. `<https://goodcalculators.com/collatz-conjecture-calculator/>`_
+#. `<https://en.wikipedia.org/wiki/Collatz_conjecture>`_
 
 ----
 
@@ -35,7 +35,7 @@ Design
 Get started
 ------------------------------
 
-#. Go to: https://anvil.works/new-build
+#. Go to: `<https://anvil.works/new-build>`_
 #. Click: Blank App.
 #. Choose: Material Design
 
@@ -489,7 +489,7 @@ Final  Code
 
                 Advanced: Create a list of multipliers to replace the 3 multiplier. Add a textbox to enable the user to enter the multiplier. Restrict the values to 1, 3, 5, 7 or 9. e.g **3, 5** or **1, 3, 7**. Randomly choose from this list when generating each new number in the hailstone sequence.
 
-                Working app at: https://pc-hailstone-random-multipliers.anvil.app
+                Working app at: `<https://pc-hailstone-random-multipliers.anvil.app>`_
 
                 .. code-block:: python
 
