@@ -23,6 +23,7 @@ App Theme
     :scale: 80%
 
 ----
+
 Assets
 -----------
 
@@ -69,7 +70,7 @@ The initial components are shown below.
 | Set its text property to "Get reply".
 | Set its role to tonal-button.
 | Set its font size to 24.
-| Set its width to 300, with x set to 0, and y set to 240.
+| Set its width to 300, with x set to 0, and y set to 200.
 | In its events property, set click to be "get_joke_reply_click".
 
 | Add a text label. Name it (self.)joke.
@@ -80,7 +81,7 @@ The initial components are shown below.
 | Add a text label. Name it (self.)joke_reply.
 | Set its foreground to theme:On Secondary.
 | Set its font size to 20.
-| Set its width to 300, with x set to 0, and y set to 295.
+| Set its width to 300, with x set to 0, and y set to 255.
 
 
 ----
@@ -133,7 +134,7 @@ Create a new database table and name it "jokes".
     file_path = 'christmas_jokes.txt'
 
     # Replace with your Anvil Uplink key
-    ANVIL_UPLINK_KEY = "server_EKBBYU5E64L4T7F2G6IDEW7W-K5NOBNJ7B7QL7PF4"
+    ANVIL_UPLINK_KEY = "server_EK....................................F4"
 
 
     # Connect to the Anvil server
@@ -185,11 +186,12 @@ Create a new database table and name it "jokes".
 
 ----
 
-Client Code
-------------
+Client Code first version
+----------------------------
 
 | Place the code below in the Form1 code.
 | Run the code to check that it works.
+| This code makes a call to the server for each new joke.
 
 .. code-block:: python
 
@@ -247,5 +249,95 @@ Code Notes
 
 5. Accessing Rows:  ``random_joke['joke'], random_joke['reply']``. Each row is dictionary-like.
 
+----
+
+Client Code final version
+----------------------------
+
+| Place the code below in the Form1 code.
+| Run the code to check that it works.
+| This code makes one call to the server to get all the jokes.
+| It shuffles all the jokes and after all have been shown, reshuffles them.
+| This guarantees no repeats until all jokes have been shown.
+
+.. code-block:: python
+
+    from ._anvil_designer import Form1Template
+    from anvil import *
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+    import anvil.server
+    import random
+
+
+    class Form1(Form1Template):
+        def __init__(self, **properties):
+            self.init_components(**properties)
+
+            # Load all jokes into memory ONCE
+            self.all_jokes = list(app_tables.jokes.search())
+
+            # Create a shuffled deck of jokes
+            self.shuffle_jokes()
+
+            # Index of the next joke in the deck
+            self.deck_index = 0
+
+            # Current joke
+            self.current_joke = None
+            self.current_reply = None
+
+            # Preloaded next joke
+            self.next_joke = None
+            self.next_reply = None
+
+            # Preload and show first joke
+            self.preload_next_joke()
+            self.show_next_joke()
+
+        # -----------------------------
+        # SHUFFLE THE JOKES (no repeats)
+        # -----------------------------
+        def shuffle_jokes(self):
+            self.joke_deck = self.all_jokes[:]   # copy
+            random.shuffle(self.joke_deck)
+            self.deck_index = 0
+
+        # -----------------------------
+        # PRELOAD NEXT JOKE (from deck)
+        # -----------------------------
+        def preload_next_joke(self):
+            # If we've reached the end, reshuffle
+            if self.deck_index >= len(self.joke_deck):
+                self.shuffle_jokes()
+
+            row = self.joke_deck[self.deck_index]
+            self.deck_index += 1
+
+            self.next_joke = row['joke']
+            self.next_reply = row['reply']
+
+        # -----------------------------
+        # SHOW THE PRELOADED JOKE
+        # -----------------------------
+        def show_next_joke(self):
+            self.current_joke = self.next_joke
+            self.current_reply = self.next_reply
+
+            self.joke.text = self.current_joke
+            self.joke_reply.text = ""
+
+            # Preload the next one immediately
+            self.preload_next_joke()
+
+        # -----------------------------
+        # BUTTON HANDLERS
+        # -----------------------------
+        def get_joke_click(self, **event_args):
+            self.show_next_joke()
+
+        def get_joke_reply_click(self, **event_args):
+            self.joke_reply.text = self.current_reply
 
 

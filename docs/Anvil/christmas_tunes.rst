@@ -20,10 +20,8 @@ App Theme
 | In the Choose Theme window choose Material Design 3.
 | Set the python environment to the latest version.
 
-.. image::  images/christmas_jokes/python_version.png
-    :scale: 80%
-
 ----
+
 Assets
 -----------
 
@@ -35,6 +33,8 @@ Assets
 
 .. image:: images/christmas_jokes/assets.png
     :scale: 100%
+
+----
 
 Components
 ----------------

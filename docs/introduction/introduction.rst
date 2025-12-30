@@ -33,9 +33,10 @@ Key Tkinter references:
 -------------------------
 
 | TkDocs: `<http://www.tkdocs.com/>`_
-| python: `<https://docs.python.org/3.13/library/tk.html>`_
-| python: `<https://docs.python.org/3.13/library/tkinter.ttk.html>`_
-| Tkinter 8.5 reference: `<https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html>`_
+| python: `<https://docs.python.org/3.14/library/tk.html>`_
+| python: `<https://docs.python.org/3.14/library/tkinter.ttk.html>`_
+| Tk Refs `<https://tkdocs.com/pyref/index.html>`_
+| Tutorial `<https://tkdocs.com/tutorial/index.html>`_
 
 ----
 
