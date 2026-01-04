@@ -88,7 +88,7 @@ Info form
 | The markup text for Form1 info text is shown below.
 
 .. literalinclude:: pythonfiles/breathe/info.txt
-   :language: text
+   :language: markup
    :linenos:
 
 
@@ -111,8 +111,8 @@ Sounds form
 
 | The python code for Sounds is shown below.
 
-.. literalinclude:: pythonfiles/breathe/info.txt
-   :language: text
+.. literalinclude:: pythonfiles/breathe/sounds.py
+   :language: python
    :linenos:
 
 ----
@@ -134,7 +134,7 @@ Settings form
 | The python code for Settings is shown below.
 
 .. literalinclude:: pythonfiles/breathe/settings.py
-   :language: text
+   :language: python
    :linenos:
 
 ----
@@ -156,7 +156,7 @@ Sliders form
 | The python code for Settings is shown below.
 
 .. literalinclude:: pythonfiles/breathe/settings.py
-   :language: text
+   :language: python
    :linenos:
 
 ----
@@ -168,7 +168,7 @@ breathing_settings module
 | The python code for breathing_settings is shown below.
 
 .. literalinclude:: pythonfiles/breathe/breathing_settings.py
-   :language: text
+   :language: python
    :linenos:
 
 ----
@@ -180,7 +180,7 @@ voice_bootstrap module
 | The python code for voice_bootstrap is shown below.
 
 .. literalinclude:: pythonfiles/breathe/voice_bootstrap.py
-   :language: text
+   :language: python
    :linenos:
 
 
@@ -208,8 +208,4 @@ Custom css
    :language: css
    :linenos:
 
-----
-
-Notes
---------------
 
