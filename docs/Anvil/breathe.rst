@@ -150,12 +150,12 @@ Sliders form
 | Use an XY panel to place the labels, dropdown and buttons precisely.
 | The buttons have custom roles and css to modify their appearance.
 
-.. image:: images/breathe/settings.png
+.. image:: images/breathe/sliders.png
     :scale: 100%
 
-| The python code for Settings is shown below.
+| The python code for Sliders is shown below.
 
-.. literalinclude:: pythonfiles/breathe/settings.py
+.. literalinclude:: pythonfiles/breathe/sliders.py
    :language: python
    :linenos:
 
