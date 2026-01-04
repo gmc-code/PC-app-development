@@ -77,7 +77,6 @@ From1
 
 ----
 
-
 Info form
 ----------------
 
@@ -86,11 +85,105 @@ Info form
 .. image:: images/breathe/info.png
     :scale: 100%
 
-| The markup text for Form1 is shown below.
+| The markup text for Form1 info text is shown below.
 
 .. literalinclude:: pythonfiles/breathe/info.txt
    :language: text
    :linenos:
+
+
+----
+
+Sounds form
+----------------
+
+| Use the sounds form to set speech voice on windows. On iphones, go so system settings to set voice.
+| Set the voice rate to suit your device.
+| Breathing phase sounds can only work on windows devices and Firefox browser on iphone or ipad.
+| Choose whether to speak the inhale and exhale prompts and the breathing counts.
+
+| The design view of Sounds form is shown below.
+| Use an XY panel to place the labels, dropdown and switches precisely.
+| The switches have custom css to modify their appearance from the anvil extras default.
+
+.. image:: images/breathe/sounds.png
+    :scale: 100%
+
+| The python code for Sounds is shown below.
+
+.. literalinclude:: pythonfiles/breathe/info.txt
+   :language: text
+   :linenos:
+
+----
+
+
+Settings form
+----------------
+
+| Use the settings form to set the number of breathing cycles and the durations of the inhale, hold and exhale phases.
+
+| The design view of Settings form is shown below.
+| Use an XY panel to place the labels, dropdown and buttons precisely.
+| The buttons and the dropdown have click event handlers as shown in the python below.
+| The buttons have custom roles and css to modify their appearance.
+
+.. image:: images/breathe/settings.png
+    :scale: 100%
+
+| The python code for Settings is shown below.
+
+.. literalinclude:: pythonfiles/breathe/settings.py
+   :language: text
+   :linenos:
+
+----
+
+
+Sliders form
+----------------
+
+| Use the sliders form to set the manually adjust the the durations of the inhale, hold and exhale phases.
+| Use the sliders form to start, pause and stop the breathing slider animations.
+
+| The design view of Sliders form is shown below.
+| Use an XY panel to place the labels, dropdown and buttons precisely.
+| The buttons have custom roles and css to modify their appearance.
+
+.. image:: images/breathe/settings.png
+    :scale: 100%
+
+| The python code for Settings is shown below.
+
+.. literalinclude:: pythonfiles/breathe/settings.py
+   :language: text
+   :linenos:
+
+----
+
+breathing_settings module
+-------------------------------
+
+| Use breathing_settings module to store and retrieve the breathing settings for the app.
+| The python code for breathing_settings is shown below.
+
+.. literalinclude:: pythonfiles/breathe/breathing_settings.py
+   :language: text
+   :linenos:
+
+----
+
+voice_bootstrap module
+-------------------------------
+
+| Use voice_bootstrap module to set the voice and rate for speech.
+| The python code for voice_bootstrap is shown below.
+
+.. literalinclude:: pythonfiles/breathe/voice_bootstrap.py
+   :language: text
+   :linenos:
+
+
 
 ----
 
@@ -115,4 +208,8 @@ Custom css
    :language: css
    :linenos:
 
+----
+
+Notes
+--------------
 
