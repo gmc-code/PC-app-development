@@ -85,10 +85,10 @@ Info form
 .. image:: images/breathe/info.png
     :scale: 100%
 
-| The markup text for Form1 info text is shown below.
+| The markdown text for the info text is shown below.
 
-.. literalinclude:: pythonfiles/breathe/info.txt
-   :language: markup
+.. literalinclude:: pythonfiles/breathe/info.md
+   :language: markdown
    :linenos:
 
 
