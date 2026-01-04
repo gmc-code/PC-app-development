@@ -56,7 +56,7 @@ Title
 Column panel
 ~~~~~~~~~~~~~~~~~~~
 
-| Drag and drop a *c*olumn panel** component onto the form.
+| Drag and drop a **column panel** component onto the form.
 
 ----
 

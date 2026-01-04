@@ -1,0 +1,175 @@
+/* -------------------------------
+GMC added  slider colour and handle
+---------------------------------*/
+/* Slim, round handle */
+.noUi-horizontal .noUi-handle {
+    width: 10px !important;      /* thin */
+    /* height: 26px !important; */
+    right: -5px !important;      /* half of width */
+    /* top: -4px !important; */
+
+    border-radius: 999px !important;  /* fully round */
+    border: 1px solid #90CAF9 !important;
+
+    background: linear-gradient(
+        to bottom,
+        #E3F2FD,
+        #BBDEFB
+    ) !important;
+
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.25) !important;
+}
+
+/* -------------------------------
+GMC added  switch  width
+might only keep the important, but left rest their in case want to modify more features
+---------------------------------*/
+
+.ae-switch label .ae-switch-lever {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 56px !important;
+    height: 20px !important;
+    background-color: rgba(0,0,0,0.38);
+    border-radius: 15px;
+    margin-right: 10px;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    margin: 0 16px;
+}
+
+.ae-switch label input[type=checkbox]:checked+.ae-switch-lever:after, .ae-switch label input[type=checkbox]:checked+.ae-switch-lever:before {
+    left: 48px !important;
+}
+
+.ae-switch label .ae-switch-lever:after, .ae-switch label .ae-switch-lever:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    left: 0;
+    top: -5px !important;
+    -webkit-transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+    transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+    transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, transform 0.1s ease;
+    transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, transform 0.1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+}
+/* -------------------------------
+1) Calm / Relaxation (Blue)
+---------------------------------*/
+.anvil-role-calm-btn > .btn {
+    background-color: #57b0eb;
+    color: #ffffff;
+
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.anvil-role-calm-deep-btn > .btn {
+    background-color: #1b8eda;
+    color: #ffffff;
+
+
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+/* -------------------------------
+2) Focus / Attention / Control (Green)
+---------------------------------*/
+.anvil-role-focus-btn > .btn {
+    background-color: #2fcc35;
+    color: #ffffff;
+
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.anvil-role-focus-light-btn > .btn {
+    background-color: #56d85b;
+    color: #ffffff;
+
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+/* -------------------------------
+3) Sleep / Deep Calm / Therapeutic (Purple)
+---------------------------------*/
+.anvil-role-sleep-btn > .btn {
+    background-color: #bf58ea;
+    color: #ffffff;
+
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.anvil-role-sleep-therapeutic-btn > .btn {
+    background-color:  #ae2be4;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+/* -------------------------------
+4) Energise / Rapid Alertness (Bright Orange)
+---------------------------------*/
+.anvil-role-energise-btn > .btn {
+    background-color: #F39C12; /* bright orange */
+    color: #ffffff;             /* white text */
+
+    font-size: 14px;
+    padding: 6px 1px !important;
+    min-height: 0 !important;
+    line-height: 1.2;
+    text-transform: none;
+}
+
+.anvil-role-calm-btn > .btn:hover,
+.anvil-role-calm-deep-btn > .btn:hover,
+.anvil-role-focus-btn > .btn:hover,
+.anvil-role-focus-light-btn > .btn:hover,
+.anvil-role-sleep-btn > .btn:hover,
+.anvil-role-sleep-therapeutic-btn > .btn:hover,
+.anvil-role-energise-btn > .btn:hover {
+    filter: brightness(1.35);
+    color: #0000ff;
+}
+
+
+
+/*
+see https://anvil.works/articles/using-css#applying-css-via-python
+adding styles for btn role in title bar
+*/
+
+.anvil-role-title-btn .btn {
+    padding: 0px 0px;
+    margins: 0px 0px;
+}
+
+
+

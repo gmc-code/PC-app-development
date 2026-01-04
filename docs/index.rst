@@ -160,6 +160,7 @@ PC-app-development
     Anvil/rock_paper_scissors.rst
     Anvil/christmas_jokes.rst
     Anvil/christmas_tunes.rst
+    Anvil/breathe.rst
 
     .. Anvil/days_calculator.rst
     ..
