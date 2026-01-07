@@ -140,21 +140,21 @@ Example usage
   (controls border style)
 
 - **Orient constants**: ``HORIZONTAL``, ``VERTICAL``
-  (used by widgets such as ``Scale``)
+  (used by widgets such as `Scale` and `Scrollbar`)
 
 - **Wrap constants**: ``WORD``, ``CHAR``
-  (controls text wrapping in ``Text`` widgets)
+  (controls text wrapping in `Text` widgets)
 
 - **State constants**: ``NORMAL``, ``DISABLED``
   (controls widget interactivity)
 
 - **Special text positions**: ``END``, ``INSERT``
-  (used when inserting text into widgets such as ``Text``)
+  (used when inserting text into widgets such as `Text` and `Entry`)
 
 | Each constant is demonstrated using a small widget placed inside a labelled frame, arranged in a multi-column grid for easy comparison.
 
 
-.. image:: images/button_config_initial.png
+.. image:: images/tk_constants.png
     :scale: 100%
 
 .. literalinclude:: python/tk_constants.py
