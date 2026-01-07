@@ -71,7 +71,7 @@ Options for the `pack()` geometry manager
     | `anchor_string` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
     | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
     | The `anchor` option specifies the position of the widget within its allocated space.
-    | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
+    | Example: widget.pack(anchor='nw') positions the widget at the top-left corner of its allocated space.
 
 Example: To create labels anchored at different positions:
 
