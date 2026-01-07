@@ -153,74 +153,95 @@ Example usage
 
 ----
 
-SYntax
+Syntax
 ---------
 
-.. py:data:: anchor=<tk.ANCHOR_CONSTANT>
+.. py:data:: anchor=<tk.ANCHOR_CONSTANT or "anchor_string">
 
     | Controls internal alignment of text or content inside a widget.
-    | Valid values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, ``tk.NE``, ``tk.NW``,
+    | Formal values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, ``tk.NE``, ``tk.NW``,
       ``tk.SE``, ``tk.SW``, ``tk.CENTER``.
-    | Example: ``Label(root, text="Left", anchor=tk.W)``
+    | Informal string values: ``"n"``, ``"s"``, ``"e"``, ``"w"``, ``"ne"``, ``"nw"``,
+      ``"se"``, ``"sw"``, ``"center"``.
+    | Example (formal): ``Label(root, anchor=tk.W)``
+    | Example (informal): ``Label(root, anchor="w")``
 
 
-.. py:data:: sticky=<tk.STICKY_CONSTANT>
+.. py:data:: sticky=<tk.STICKY_CONSTANT or "sticky_string">
 
     | Controls how a widget expands to fill its grid cell.
-    | Valid values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, or combinations such as ``"NS"``, ``"EW"``, ``"NSEW"``.
-    | Example: ``frame.grid(row=0, column=0, sticky=tk.NSEW)``
+    | Formal values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, ``tk.NSEW``.
+    | Informal string values: ``"n"``, ``"s"``, ``"e"``, ``"w"``, ``"ns"``, ``"ew"``,
+      ``"nsew"``.
+    | Example (formal): ``frame.grid(sticky=tk.NSEW)``
+    | Example (informal): ``frame.grid(sticky="nsew")``
 
 
-.. py:data:: side=<tk.SIDE_CONSTANT>
+.. py:data:: side=<tk.SIDE_CONSTANT or "side_string">
 
     | Controls which side of the parent a widget is packed against.
-    | Valid values: ``tk.LEFT``, ``tk.RIGHT``, ``tk.TOP``, ``tk.BOTTOM``.
-    | Example: ``button.pack(side=tk.LEFT)``
+    | Formal values: ``tk.LEFT``, ``tk.RIGHT``, ``tk.TOP``, ``tk.BOTTOM``.
+    | Informal string values: ``"left"``, ``"right"``, ``"top"``, ``"bottom"``.
+    | Example (formal): ``button.pack(side=tk.LEFT)``
+    | Example (informal): ``button.pack(side="left")``
 
 
-.. py:data:: fill=<tk.FILL_CONSTANT>
+.. py:data:: fill=<tk.FILL_CONSTANT or "fill_string">
 
     | Controls how a widget expands when packed.
-    | Valid values: ``tk.X``, ``tk.Y``, ``tk.BOTH``, ``tk.NONE``.
-    | Example: ``button.pack(fill=tk.X)``
+    | Formal values: ``tk.X``, ``tk.Y``, ``tk.BOTH``, ``tk.NONE``.
+    | Informal string values: ``"x"``, ``"y"``, ``"both"``, ``"none"``.
+    | Example (formal): ``button.pack(fill=tk.X)``
+    | Example (informal): ``button.pack(fill="x")``
 
 
-.. py:data:: relief=<tk.RELIEF_CONSTANT>
+.. py:data:: relief=<tk.RELIEF_CONSTANT or "relief_string">
 
     | Controls the 3D border style of a widget.
-    | Valid values: ``tk.FLAT``, ``tk.RAISED``, ``tk.SUNKEN``, ``tk.GROOVE``,
+    | Formal values: ``tk.FLAT``, ``tk.RAISED``, ``tk.SUNKEN``, ``tk.GROOVE``,
       ``tk.RIDGE``, ``tk.SOLID``.
-    | Example: ``Frame(root, relief=tk.RIDGE)``
+    | Informal string values: ``"flat"``, ``"raised"``, ``"sunken"``, ``"groove"``,
+      ``"ridge"``, ``"solid"``.
+    | Example (formal): ``Frame(root, relief=tk.RIDGE)``
+    | Example (informal): ``Frame(root, relief="ridge")``
 
 
-.. py:data:: orient=<tk.ORIENT_CONSTANT>
+.. py:data:: orient=<tk.ORIENT_CONSTANT or "orient_string">
 
     | Controls orientation of directional widgets such as ``Scale`` or ``Scrollbar``.
-    | Valid values: ``tk.HORIZONTAL``, ``tk.VERTICAL``.
-    | Example: ``Scale(root, orient=tk.VERTICAL)``
+    | Formal values: ``tk.HORIZONTAL``, ``tk.VERTICAL``.
+    | Informal string values: ``"horizontal"``, ``"vertical"``.
+    | Example (formal): ``Scale(root, orient=tk.VERTICAL)``
+    | Example (informal): ``Scale(root, orient="vertical")``
 
 
-.. py:data:: wrap=<tk.WRAP_CONSTANT>
+.. py:data:: wrap=<tk.WRAP_CONSTANT or "wrap_string">
 
     | Controls text wrapping behavior in ``Text`` widgets.
-    | Valid values: ``tk.WORD``, ``tk.CHAR``, ``tk.NONE``.
-    | Example: ``Text(root, wrap=tk.WORD)``
+    | Formal values: ``tk.WORD``, ``tk.CHAR``, ``tk.NONE``.
+    | Informal string values: ``"word"``, ``"char"``, ``"none"``.
+    | Example (formal): ``Text(root, wrap=tk.WORD)``
+    | Example (informal): ``Text(root, wrap="word")``
 
 
-.. py:data:: state=<tk.STATE_CONSTANT>
+.. py:data:: state=<tk.STATE_CONSTANT or "state_string">
 
     | Controls widget interactivity.
-    | Valid values: ``tk.NORMAL``, ``tk.DISABLED``, ``tk.ACTIVE`` (some widgets),
+    | Formal values: ``tk.NORMAL``, ``tk.DISABLED``, ``tk.ACTIVE`` (some widgets),
       ``tk.READONLY`` (Entry only).
-    | Example: ``Entry(root, state=tk.DISABLED)``
+    | Informal string values: ``"normal"``, ``"disabled"``, ``"active"``,
+      ``"readonly"``.
+    | Example (formal): ``Entry(root, state=tk.DISABLED)``
+    | Example (informal): ``Entry(root, state="disabled")``
 
 
-.. py:data:: index=<tk.TEXT_INDEX>
+.. py:data:: index=<tk.TEXT_INDEX or "index_string">
 
     | Special text positions used when inserting or deleting text.
-    | Valid values: ``tk.END``, ``tk.INSERT``, or explicit positions like ``"1.0"``.
-    | Example: ``text.insert(tk.END, "Hello")``
-
+    | Formal values: ``tk.END``, ``tk.INSERT``.
+    | Informal string values: ``"end"``, ``"insert"``, or explicit positions like ``"1.0"``.
+    | Example (formal): ``text.insert(tk.END, "Hello")``
+    | Example (informal): ``text.insert("end", "Hello")``
 
 ----
 
