@@ -8,13 +8,15 @@ Importing tkinter themed widgets
 | See: Tkinter Themes - python tutorials. `<https://python-tutorials.in/tkinter-themes/>`_.
 | See: How to Change Tkinter Theme from One to Another - Python Tutorial. `<https://www.pythontutorial.net/tkinter/tkinter-theme/>`_.
 
+----
 
 **Classic Tk Widgets**:
 ----------------------------
 
    - These widgets were introduced in 1991 and are part of the original Tkinter library.
    - They have a consistent appearance across platforms but lack the native look and feel.
-   - Examples include buttons, labels, entry fields, and scrollbars.
+
+----
 
 **Themed Tk Widgets (ttk)**:
 -----------------------------------
@@ -23,7 +25,8 @@ Importing tkinter themed widgets
    - They aim to separate widget behavior from appearance through a styling system.
    - Themed widgets adapt to the native look and feel of the platform where the program runs.
    - They are imported from the `tkinter.ttk` module.
-   - Examples of themed widgets include buttons, checkbuttons, entry fields, and more.
+
+----
 
 **Advantages of Using Themed Widgets**:
 -------------------------------------------------
@@ -32,55 +35,46 @@ Importing tkinter themed widgets
    - **Native Look & Feel**: They provide a native look on different platforms.
    - **Simplified State-Specific Behavior**: ttk widgets simplify state-specific widget behavior.
 
-**Common Themed Widgets**:
+----
+
+**Themed Widgets**:
 ----------------------------------
 
-   - Button
-   - Checkbutton
-   - Entry
-   - Frame
-   - Label
-   - LabelFrame
-   - Menubutton
-   - PanedWindow
-   - Radiobutton
-   - Scale
-   - Scrollbar
-   - Spinbox
+- **Button:** Themed push button (`ttk.Button`)
+- **Checkbutton:** Themed checkbox (`ttk.Checkbutton`)
+- **Radiobutton:** Themed radio button (`ttk.Radiobutton`)
+- **Label:** Text or image display (`ttk.Label`)
+- **Entry:** Single-line text input (`ttk.Entry`)
+- **Frame:** Container widget (`ttk.Frame`)
+- **Labelframe:** Frame with a label border (`ttk.Labelframe`)
+- **Menubutton:** Button that shows a menu (`ttk.Menubutton`)
+- **Panedwindow:** Resizable panes/sash container (`ttk.Panedwindow`)
+- **Scale:** Slider control (`ttk.Scale`)
+- **Scrollbar:** Scrollbar for list, text, canvas, etc. (`ttk.Scrollbar`)
+- **Spinbox:** Numeric/text spinner control (`ttk.Spinbox`)
 
-1. **New ttk Widgets**:
-------------------------------
-
-   - Combobox
-   - Notebook
-   - Progressbar
-   - Separator
-   - Sizegrip
-   - Treeview
-
+- **Combobox:** Drop-down selection + optional text entry (`ttk.Combobox`)
+- **Notebook:** Tabbed interface (`ttk.Notebook`)
+- **Progressbar:** Progress indicator (`ttk.Progressbar`)
+- **Separator:** Visual separator line (`ttk.Separator`)
+- **Sizegrip:** Resize handle, usually in a window corner (`ttk.Sizegrip`)
+- **Treeview:** Hierarchical and tabular data display (`ttk.Treeview`)
 
 ----
 
-Import themed widgets module
-----------------------------------------
+Comparison of Classic Tk Widgets and Themed Tk Widgets
+------------------------------------------------------------
 
-.. py:function:: from tkinter import ttk
+.. image::images/ttk_widgets_v_tk.png
+    :scale: 100%
+    :alt: Comparison of Classic Tk Widgets and Themed Tk Widgets
 
-    | This imports the themed module.
-    | Refer to themed widgets like this: ttk.Label
+New Themed Tk Widgets
+------------------------------------------------------------
 
-| The code below used a standard tk widget and the themed widget.
+.. image::images/ttk_widgets_onlypng
+    :scale: 100%
+    :alt: New Themed Tk Widgets
 
-.. code-block:: python
-
-    import tkinter as tk
-    from tkinter import ttk
-
-    root = tk.Tk()
-
-    tk.Label(root, text='Classic Label').pack()
-    ttk.Label(root, text='Themed Label').pack()
-
-    root.mainloop()
 
 

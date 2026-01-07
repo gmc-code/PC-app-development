@@ -59,7 +59,7 @@ PC-app-development
     :caption: Themed widgets
     :numbered:
 
-    tk_basics/ttk_import.rst
+    tk_basics/ttk_introduction.rst
 
 
 
@@ -159,11 +159,11 @@ PC-app-development
     Anvil/displacement_calculator.rst
     Anvil/rock_paper_scissors.rst
     Anvil/christmas_jokes.rst
-    Anvil/christmas_tunes.rst
     Anvil/breathe.rst
 
     .. Anvil/days_calculator.rst
-    ..
+    .. Anvil/christmas_tunes.rst
+
 
 
 .. toctree::
