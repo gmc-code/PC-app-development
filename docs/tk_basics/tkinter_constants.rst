@@ -115,3 +115,48 @@ Canvas state
 - tk.HIDDEN='hidden'
 
 
+----
+
+Example usage
+-----------------
+
+| This script displays a visual grid demonstrating the most commonly used ``tkinter`` constants. Each constant is shown inside its own grid cell, together with a small widget that visually illustrates how the constant behaves.
+| The grid includes demonstrations of:
+
+- **Anchor constants**: ``N``, ``S``, ``E``, ``W``, ``CENTER``
+  (controls text alignment inside a widget)
+
+- **Sticky constants**: ``N``, ``S``, ``E``, ``W``, ``NSEW``
+  (controls how widgets stretch inside a grid cell)
+
+- **Side constants**: ``LEFT``, ``RIGHT``, ``TOP``, ``BOTTOM``
+  (controls packing direction)
+
+- **Fill constants**: ``X``, ``Y``, ``BOTH``
+  (controls how widgets expand when packed)
+
+- **Relief constants**: ``RAISED``, ``SUNKEN``, ``RIDGE``, ``GROOVE``,
+  ``SOLID``, ``FLAT``
+  (controls border style)
+
+- **Orient constants**: ``HORIZONTAL``, ``VERTICAL``
+  (used by widgets such as ``Scale``)
+
+- **Wrap constants**: ``WORD``, ``CHAR``
+  (controls text wrapping in ``Text`` widgets)
+
+- **State constants**: ``NORMAL``, ``DISABLED``
+  (controls widget interactivity)
+
+- **Special text positions**: ``END``, ``INSERT``
+  (used when inserting text into widgets such as ``Text``)
+
+| Each constant is demonstrated using a small widget placed inside a labelled frame, arranged in a multi-column grid for easy comparison.
+
+
+.. image:: images/button_config_initial.png
+    :scale: 100%
+
+.. literalinclude:: python/tk_constants.py
+   :language: python
+   :linenos:
