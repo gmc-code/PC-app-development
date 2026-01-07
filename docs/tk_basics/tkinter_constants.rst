@@ -151,6 +151,79 @@ Example usage
 - **Special text positions**: ``END``, ``INSERT``
   (used when inserting text into widgets such as `Text` and `Entry`)
 
+----
+
+SYntax
+---------
+
+.. py:data:: anchor=<tk.ANCHOR_CONSTANT>
+
+    | Controls internal alignment of text or content inside a widget.
+    | Valid values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, ``tk.NE``, ``tk.NW``,
+      ``tk.SE``, ``tk.SW``, ``tk.CENTER``.
+    | Example: ``Label(root, text="Left", anchor=tk.W)``
+
+
+.. py:data:: sticky=<tk.STICKY_CONSTANT>
+
+    | Controls how a widget expands to fill its grid cell.
+    | Valid values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, or combinations such as ``"NS"``, ``"EW"``, ``"NSEW"``.
+    | Example: ``frame.grid(row=0, column=0, sticky=tk.NSEW)``
+
+
+.. py:data:: side=<tk.SIDE_CONSTANT>
+
+    | Controls which side of the parent a widget is packed against.
+    | Valid values: ``tk.LEFT``, ``tk.RIGHT``, ``tk.TOP``, ``tk.BOTTOM``.
+    | Example: ``button.pack(side=tk.LEFT)``
+
+
+.. py:data:: fill=<tk.FILL_CONSTANT>
+
+    | Controls how a widget expands when packed.
+    | Valid values: ``tk.X``, ``tk.Y``, ``tk.BOTH``, ``tk.NONE``.
+    | Example: ``button.pack(fill=tk.X)``
+
+
+.. py:data:: relief=<tk.RELIEF_CONSTANT>
+
+    | Controls the 3D border style of a widget.
+    | Valid values: ``tk.FLAT``, ``tk.RAISED``, ``tk.SUNKEN``, ``tk.GROOVE``,
+      ``tk.RIDGE``, ``tk.SOLID``.
+    | Example: ``Frame(root, relief=tk.RIDGE)``
+
+
+.. py:data:: orient=<tk.ORIENT_CONSTANT>
+
+    | Controls orientation of directional widgets such as ``Scale`` or ``Scrollbar``.
+    | Valid values: ``tk.HORIZONTAL``, ``tk.VERTICAL``.
+    | Example: ``Scale(root, orient=tk.VERTICAL)``
+
+
+.. py:data:: wrap=<tk.WRAP_CONSTANT>
+
+    | Controls text wrapping behavior in ``Text`` widgets.
+    | Valid values: ``tk.WORD``, ``tk.CHAR``, ``tk.NONE``.
+    | Example: ``Text(root, wrap=tk.WORD)``
+
+
+.. py:data:: state=<tk.STATE_CONSTANT>
+
+    | Controls widget interactivity.
+    | Valid values: ``tk.NORMAL``, ``tk.DISABLED``, ``tk.ACTIVE`` (some widgets),
+      ``tk.READONLY`` (Entry only).
+    | Example: ``Entry(root, state=tk.DISABLED)``
+
+
+.. py:data:: index=<tk.TEXT_INDEX>
+
+    | Special text positions used when inserting or deleting text.
+    | Valid values: ``tk.END``, ``tk.INSERT``, or explicit positions like ``"1.0"``.
+    | Example: ``text.insert(tk.END, "Hello")``
+
+
+----
+
 | Each constant is demonstrated using a small widget placed inside a labelled frame, arranged in a multi-column grid for easy comparison.
 
 
