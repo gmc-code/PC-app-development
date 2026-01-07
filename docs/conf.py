@@ -86,6 +86,8 @@ html_theme_options = {
     'titles_only': True  # False so page subheadings are in the nav.
 }
 
+smartquotes = False
+
 # -- RTDs logos -------------------------------
 html_favicon = "_static/favicon.ico"
 html_logo = "_static/logo_navyblue.png"
