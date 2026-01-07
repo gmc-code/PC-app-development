@@ -155,7 +155,7 @@ Example usage
 
 
 .. image:: images/tk_constants.png
-    :scale: 100%
+    :scale: 75%
 
 .. literalinclude:: python/tk_constants.py
    :language: python
