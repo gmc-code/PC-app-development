@@ -60,7 +60,7 @@ PC-app-development
     :numbered:
 
     tk_basics/ttk_introduction.rst
-
+    ttk_geometry/ttk_geometry_pack.rst
 
 
 .. toctree::
