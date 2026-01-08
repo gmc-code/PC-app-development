@@ -65,14 +65,16 @@ Importing tkinter themed widgets
 Comparison of Classic Tk Widgets and Themed Tk Widgets
 ------------------------------------------------------------
 
-.. image::images/ttk_widgets_v_tk.png
+.. image:: images/ttk_widgets_v_tk.png
     :scale: 100%
     :alt: Comparison of Classic Tk Widgets and Themed Tk Widgets
+
+----
 
 New Themed Tk Widgets
 ------------------------------------------------------------
 
-.. image::images/ttk_widgets_onlypng
+.. image:: images/ttk_widgets_only.png
     :scale: 100%
     :alt: New Themed Tk Widgets
 
