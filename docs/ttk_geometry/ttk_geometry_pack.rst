@@ -35,6 +35,7 @@ Options for the `pack()` geometry manager
     | The `ipadx` value is an integer, x. The `ipady` value is an integer, y.
     | These options control the **internal** padding (in pixels) along the x and y axes.
     | Example: widget.pack(ipadx=10) adds 10px internal padding on each side.
+    | Note: for ttk widgets, the text is left aligned by default, so ``anchor="center"`` has been added to the Label creation in the example below.
 
 
 .. py:function:: widget.pack(padx=x, pady=y)
@@ -54,11 +55,15 @@ Options for the `pack()` geometry manager
 
     root = tk.Tk()
 
-    label1 = ttk.Label(root, text="Red")
+    style = ttk.Style()
+    style.configure("Red.TLabel", background="red", foreground="white")
+    style.configure("Purple.TLabel", background="purple", foreground="white")
+
+    label1 = ttk.Label(root, text="Red", style="Red.TLabel", anchor="center")
     label1.pack(ipadx=30, ipady=6)
 
-    label2 = ttk.Label(root, text="Purple")
-    label2.pack(pady=20, ipadx=8, ipady=12)
+    label2 = ttk.Label(root, text="Purple", style="Purple.TLabel", anchor="center")
+    label2.pack(pady=20, ipadx=8, ipady=20)
 
     root.mainloop()
 
@@ -87,13 +92,18 @@ Example: Labels anchored at different positions:
     root.title("pack anchor")
     root.geometry('250x150')
 
-    label1 = ttk.Label(root, text="Top-Left")
+    style = ttk.Style()
+    style.configure("Blue.TLabel", background="lightblue")
+    style.configure("Green.TLabel", background="lightgreen")
+    style.configure("Pink.TLabel", background="lightpink")
+
+    label1 = ttk.Label(root, text="Top-Left", style="Blue.TLabel")
     label1.pack(anchor='nw')
 
-    label2 = ttk.Label(root, text="Center")
+    label2 = ttk.Label(root, text="Center", style="Green.TLabel")
     label2.pack(anchor='center')
 
-    label3 = ttk.Label(root, text="Bottom-Right")
+    label3 = ttk.Label(root, text="Bottom-Right", style="Pink.TLabel")
     label3.pack(anchor='se')
 
     root.mainloop()
@@ -108,7 +118,7 @@ Example: Labels anchored at different positions:
     | Valid values: `left`, `right`, `top`, `bottom`.
     | e.g. widget.pack(side="left")
 
-Example: Buttons positioned on different sides of a frame:
+Example: To create four labels positioned on different sides of a frame:
 
 .. image:: images/pack_side.png
     :scale: 100%
@@ -122,17 +132,20 @@ Example: Buttons positioned on different sides of a frame:
     root.title("pack side")
     root.geometry("250x150")
 
-    button1 = ttk.Button(text="Left")
-    button1.pack(side="left")
+    style = ttk.Style()
+    style.configure("Side.TLabel", background="#dddddd")
 
-    button2 = ttk.Button(text="Top")
-    button2.pack(side="top")
+    label1 = ttk.Label(text="Left", style="Side.TLabel")
+    label1.pack(side="left")
 
-    button3 = ttk.Button(text="Right")
-    button3.pack(side="right")
+    label2 = ttk.Label(text="Top", style="Side.TLabel")
+    label2.pack(side="top")
 
-    button4 = ttk.Button(text="Bottom")
-    button4.pack(side="bottom")
+    label3 = ttk.Label(text="Right", style="Side.TLabel")
+    label3.pack(side="right")
+
+    label4 = ttk.Label(text="Bottom", style="Side.TLabel")
+    label4.pack(side="bottom")
 
     root.mainloop()
 
@@ -172,7 +185,10 @@ Example: Use `expand=True` so fill options are visible.
     root.title("pack fill x")
     root.geometry("250x150")
 
-    label = ttk.Label(root, text="Expanding Label")
+    style = ttk.Style()
+    style.configure("Expand.TLabel", background="lightblue")
+
+    label = ttk.Label(root, text="Expanding Label", style="Expand.TLabel")
     label.pack(expand=True, fill='x')
 
     root.mainloop()
