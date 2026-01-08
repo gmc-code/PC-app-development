@@ -2,7 +2,8 @@
 tk geometry pack
 ====================================================
 
-| The pack geometry manager allows you to arrange widgets within a root.
+| The pack geometry manager allows you to arrange widgets within a parent object, usually a window or frame.
+| It organizes widgets in blocks before placing them in the parent widget.
 | See: `<https://www.pythontutorial.net/tkinter/tkinter-pack/>`_
 
 | Layouts: `<https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa>`_
@@ -16,6 +17,7 @@ pack
 
 | Pack is responsive to window size changes.
 | By default, the pack geometry manager places widgets vertically from top to bottom.
+| A widget can be packed inside any container widget, including the root window (`tk.Tk`), toplevel windows (`tk.Toplevel`), frames (`tk.Frame`, `ttk.Frame`, `tk.LabelFrame`, `ttk.LabelFrame`), notebook tabs (`ttk.Notebook` frames), paned‑window panes (`tk.PanedWindow`, `ttk.PanedWindow`), canvases using `create_window`, and any custom scrollable or embedded frame acting as a container.
 
 .. py:function:: widget.pack()
 
