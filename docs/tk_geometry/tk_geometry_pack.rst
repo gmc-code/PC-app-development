@@ -4,7 +4,6 @@ tk geometry pack
 
 | The pack geometry manager allows you to arrange widgets within a root.
 | See: `<https://www.pythontutorial.net/tkinter/tkinter-pack/>`_
-| See: `<https://www.geeksforgeeks.org/python-pack-method-in-tkinter/?ref=lbp>`_
 
 | Layouts: `<https://www.youtube.com/watch?v=i577cFu8eBI&list=PLpMixYKO4EXflJFPhTvZOVAbs7lBdEBSa>`_
 | Pack: see `<https://www.youtube.com/watch?v=rbW1iJO1psk>`_

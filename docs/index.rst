@@ -59,7 +59,7 @@ PC-app-development
     :caption: Themed widgets
     :numbered:
 
-    tk_basics/ttk_introduction.rst
+    ttk_widgets/ttk_introduction.rst
     ttk_geometry/ttk_geometry_pack.rst
 
 
