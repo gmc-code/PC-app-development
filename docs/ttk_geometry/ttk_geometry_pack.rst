@@ -170,8 +170,11 @@ Example: To create four labels positioned on different sides of a frame:
 
     | The `fill_string` value is `None`, `x`, `y`, or `both`.
     | The `fill` option specifies how the widget should fill the available space.
+    | * ``fill='x'`` works, because pack always gives the widget the full width of its container.
+    | * ``fill='y'`` does not appear to work with `expand=False`, because the label receives only its natural height. There is no extra vertical space to fill.
+    | * ``fill='both'`` behaves the same way: horizontal fill works, vertical fill does not unless `expand=True`.
 
-Example: Use `expand=True` so fill options are visible.
+Example: Use `expand=True` so fill options are visible for the y direction as well as the x direction.
 
 .. image:: images/pack_fill_x.png
     :scale: 100%

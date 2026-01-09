@@ -151,8 +151,20 @@ Example: To create labels anchored at different positions:
 
     | The `fill_string` value is `None`, `x`, `y`, or `both`.
     | The `fill` option specifies how the widget should fill the available space.
+    | * ``fill='x'`` works, because pack always gives the widget the full width of its container.
+    | * ``fill='y'`` does not appear to work with `expand=False`, because the label receives only its natural height. There is no extra vertical space to fill.
+    | * ``fill='both'`` behaves the same way: horizontal fill works, vertical fill does not unless `expand=True`.
 
-Example: Use `expand=True` so fill options are shown.
+Examples below use `expand=False.
+
+.. image:: images/pack_fill_x_not_expand.png
+    :scale: 100%
+
+.. image:: images/pack_fill_y_no_expand.png
+    :scale: 100%
+
+
+Example: Use `expand=True` so fill options are visible for the y direction as well as the x direction.
 
 .. image:: images/pack_fill_x.png
     :scale: 100%
@@ -169,7 +181,7 @@ Example: Use `expand=True` so fill options are shown.
     root.title("pack fill x")
     root.geometry("250x150")
 
-    label = tk.Label(root, text="Expanding Label", bg="lightblue")
+    label = tk.Label(root, text="Expanding fill x", bg="lightblue")
     label.pack(expand=True, fill='x')
 
     root.mainloop()

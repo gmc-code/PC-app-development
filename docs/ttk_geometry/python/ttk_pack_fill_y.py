@@ -9,6 +9,6 @@ style = ttk.Style()
 style.configure("Expand.TLabel", background="lightblue")
 
 label = ttk.Label(root, text="Expanding Label", style="Expand.TLabel")
-label.pack(expand=True, fill='y')
+label.pack(fill='y')
 
 root.mainloop()
