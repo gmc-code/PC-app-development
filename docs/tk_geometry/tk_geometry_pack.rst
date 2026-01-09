@@ -157,10 +157,10 @@ Example: To create labels anchored at different positions:
 
 Examples below use `expand=False.
 
-.. image:: images/pack_fill_x_not_expand.png
+.. image:: images/pack_fill_x_not_expanding.png
     :scale: 100%
 
-.. image:: images/pack_fill_y_no_expand.png
+.. image:: images/pack_fill_x_not_expanding.png
     :scale: 100%
 
 
