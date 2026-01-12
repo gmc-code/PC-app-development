@@ -3,7 +3,7 @@ Add Customer Label and Entry Widget
 =========================================================
 
 .. image:: images/pizza_2.png
-    :scale: 50%
+    :scale: 50
 
 - **Objective**: Add label and entry widget for customer name input.
 - **Content**:

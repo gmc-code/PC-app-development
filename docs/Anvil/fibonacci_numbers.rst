@@ -29,7 +29,7 @@ Design
 | Add a text area to display the fibonacci numbers.
 
 .. image:: images/Fibonacci/Fibonacci.png
-    :scale: 60%
+    :scale: 60
 
 ----
 
@@ -144,7 +144,7 @@ Error field
 | In the properties panel: icon section, set the **icon** to **fa:exclamation-triangle**.
 
 .. image:: images/Fibonacci/Fibonacci_error.png
-    :scale: 60%
+    :scale: 60
 
 ----
 

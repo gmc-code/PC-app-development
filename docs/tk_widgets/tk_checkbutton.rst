@@ -23,7 +23,7 @@ Using check buttons
 ---------------------------
 
 .. image:: images/check_buttons.png
-    :scale: 100%
+    :scale: 100
 
 | This code demonstrates the creation of check boxes (check buttons).
 | The zip function is used to efficiently loop through 2 lists together.
@@ -100,7 +100,7 @@ Using check buttons
     #. Modify the code to have 4 check boxes, one under another.
 
         .. image:: images/check_buttons_question.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

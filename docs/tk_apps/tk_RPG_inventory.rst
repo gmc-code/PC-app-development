@@ -117,7 +117,7 @@ Python tkinter version
 -------------------------
 
 .. image:: images/tk_inventory.png
-    :scale: 67%
+    :scale: 67
 
 This program simulates a shop game where the player can visit different stores, view items for sale, and buy items using their available gold.
 

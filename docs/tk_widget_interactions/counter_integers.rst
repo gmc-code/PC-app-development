@@ -8,7 +8,7 @@ Counter: integers
 ----
 
 .. image:: images/increment_integer.png
-    :scale: 100%
+    :scale: 100
 
 ----
 

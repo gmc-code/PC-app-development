@@ -27,7 +27,7 @@ Entry example
 | The font and width are the options used in the entry widget below.
 
 .. image:: images/entry.png
-    :scale: 100%
+    :scale: 100
 
 .. code-block:: python
 
@@ -53,7 +53,7 @@ Entry example
     #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font (size 20, normal weight, roman slant), a background color of `#fafafa`, a foreground color of `#2f2f2f`, a border width of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5.
 
         .. image:: images/entry_question.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

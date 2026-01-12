@@ -3,7 +3,7 @@ Add Orders
 ================================================
 
 .. image:: images/pizza_6.png
-    :scale: 67%
+    :scale: 67
 
 - **Objective**: Add functionality to add orders.
 - **Content**:

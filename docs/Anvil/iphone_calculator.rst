@@ -8,7 +8,7 @@ iPhone Calculator
 | Working app at: `<https://pc-iphone-calculator.anvil.app>`_
 
 .. image:: images/calculator/calculator.png
-    :scale: 60%
+    :scale: 60
 
 ----
 
@@ -26,7 +26,7 @@ References
 #. Button syntax: `<https://anvil.works/docs/api/anvil#Button>`_
 
 .. image:: images/calculator/Calculator-icon.png
-    :scale: 60%
+    :scale: 60
 
 ----
 
@@ -64,7 +64,7 @@ Build first part of interface
 #. In the properties panel: appearance section, set the background to grey: ``#eee``.
 
 .. image:: images/calculator/Calculator_interface1.png
-    :scale: 60%
+    :scale: 60
 
 ----
 

@@ -30,7 +30,7 @@ Text widget example
 ---------------------------------------------
 
 .. image:: images/text.png
-        :scale: 100%
+        :scale: 100
 
 | The code below sets some widget options at creation.
 | It also uses **.config()** to add other custom options.
@@ -74,7 +74,7 @@ Text widget example
      #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
 
         .. image:: images/text_question.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

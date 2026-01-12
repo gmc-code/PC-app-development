@@ -8,7 +8,7 @@ Counter: floats
 ----
 
 .. image:: images/increment_float.png
-    :scale: 100%
+    :scale: 100
 
 ----
 

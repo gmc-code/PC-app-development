@@ -23,19 +23,19 @@ Design
 | Here is the design for the 4 panels.
 
 .. image:: images/dates/DC_duration.PNG
-    :scale: 60%
+    :scale: 60
 
 
 .. image:: images/dates/DC_age.PNG
-    :scale: 60%
+    :scale: 60
 
 
 .. image:: images/dates/DC_birthday.PNG
-    :scale: 60%
+    :scale: 60
 
 
 .. image:: images/dates/DC_future.PNG
-    :scale: 60%
+    :scale: 60
 
 
 Get started

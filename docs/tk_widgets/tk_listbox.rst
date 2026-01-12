@@ -24,7 +24,7 @@ Using a listbox widget
 ----------------------------
 
 .. image:: images/listbox.png
-    :scale: 75%
+    :scale: 75
 
 This code creates a simple Tkinter GUI application that allows a user to select from a list.
 

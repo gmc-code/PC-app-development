@@ -6,7 +6,7 @@ Login form task
 
 
 .. image:: images/tk_login.png
-    :scale: 67%
+    :scale: 67
 
 | This code outputs a message box in response to attempts to login.
 | It displays a window with Label, Entry and Button widgets.

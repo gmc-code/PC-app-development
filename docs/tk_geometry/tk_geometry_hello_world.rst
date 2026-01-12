@@ -21,7 +21,7 @@ Hello World - pack
 | Below is a sample Hello World using the pack layout.
 
 .. image:: images/hello_world_pack.png
-    :scale: 67%
+    :scale: 67
 
 .. code-block:: python
 
@@ -92,7 +92,7 @@ Hello World - grid
 | Below is a sample Hello World using grid layout.
 
 .. image:: images/hello_world_grid.png
-    :scale: 67%
+    :scale: 67
 
 .. code-block:: python
 
@@ -142,7 +142,7 @@ Hello World - place
 
 
 .. image:: images/hello_world_place.png
-    :scale: 67%
+    :scale: 67
 
 .. code-block:: python
 

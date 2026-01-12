@@ -3,7 +3,7 @@ Fahrenheit to Celsius
 ====================================================
 
 .. image:: images/tk_temperature_converter.png
-    :scale: 67%
+    :scale: 67
 
 | This code converts Fahrenheit to Celsius temperatures.
 | This code creates a simple GUI application using the Tkinter library.
@@ -56,7 +56,7 @@ Position the Widgets
 Design the grid positions:
 
 .. image:: images/f_to_c_grid.png
-    :scale: 100%
+    :scale: 100
 
 Now, place the widgets on the window using the grid layout.
 

@@ -6,7 +6,7 @@ Reindeer
 | Demo app is at: `<https://gmc_ps.pyscriptapps.com/reindeer/latest/>`_
 
 .. image:: images/reindeer/reindeer_guess.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -47,7 +47,7 @@ Files
 Add an image folder and add images of each reindeer.
 
 .. image:: images/reindeer/reindeer_files.png
-    :scale: 100%
+    :scale: 100
 
 The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 

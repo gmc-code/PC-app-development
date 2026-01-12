@@ -7,7 +7,7 @@ Modify via radiobutton
 ----
 
 .. image:: images/modify_via_radiobutton.png
-    :scale: 100%
+    :scale: 100
 
 ----
 

@@ -8,7 +8,7 @@ Feedback Form
 | Working app at: `<https://pc-feedback-form.anvil.app>`_
 
 .. image:: images/feedback/Feedback_Form.png
-    :scale: 70%
+    :scale: 70
 
 References
 ------------------------------
@@ -54,7 +54,7 @@ Build first part of interface
 | Drag and drop three *label* components onto card_1 below the Feedback Form label, one below the other.
 
 .. image:: images/feedback/Feedback_Form_Add_label_below.png
-    :scale: 60%
+    :scale: 60
 
 | A horizontal blue line will indicate that you are in the right place to drop it.
 | In the properties panel: set their text to ``Name:``, ``Email:`` and ``Feedback:``.
@@ -62,7 +62,7 @@ Build first part of interface
 | Drag and drop a *text box* component onto card_1 to the right of the Name label.
 
 .. image:: images/feedback/Feedback_Form_add_text_box.png
-    :scale: 80%
+    :scale: 80
 
 | In the properties panel: set the name to ``name_box``.
 | In the properties panel: set the placeholder to ``Name here``.
@@ -81,7 +81,7 @@ Build first part of interface
 | In the properties panel: set the role to ``primary-colour``.
 
 .. image:: images/feedback/Feedback_Form.png
-    :scale: 80%
+    :scale: 80
 
 ----
 
@@ -92,22 +92,22 @@ Build Data Table
 | Under default database, click ``Add Table``.
 
 .. image:: images/feedback/Feedback_Form_add_data_table.png
-    :scale: 80%
+    :scale: 80
 
 | On the top right, name the table ``feeedback``.
 
 .. image:: images/feedback/Feedback_Form_Data_Table_Name.png
-    :scale: 100%
+    :scale: 100
 
 | The permissions are set to allow search and edit by server modules.
 
 .. image:: images/feedback/Feedback_Form_Data_Table_Permissions.png
-    :scale: 80%
+    :scale: 80
 
 | Click on the ``+ New Column`` button.
 
 .. image:: images/feedback/Feedback_Form_Data_Table_Add_Column.png
-    :scale: 100%
+    :scale: 100
 
 | Choose ``Add Text Column``.
 | Change the column name from Column0 to ``name``.
@@ -125,7 +125,7 @@ Build Data Table
 | Change the column name from Column3 to ``created_on``.
 
 .. image:: images/feedback/Feedback_Form_Data_Table_columns.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -136,7 +136,7 @@ Build the Server Code
 | Under Server Code, click ``Add Server Module``.
 
 .. image:: images/feedback/Feedback_Form_Add_Server_Module.png
-    :scale: 100%
+    :scale: 100
 
 | Enter the code to add a data table row.
 | Import the datetime module so the created_on value can be gotten.

@@ -5,7 +5,7 @@ Breathe
 | This app provides timers for breath training.
 
 .. image:: images/breathe/sliders.png
-    :scale: 100%
+    :scale: 100
 
 
 ----
@@ -30,7 +30,7 @@ Settings
 The anvil extras components will now be available in the toolbox.
 
 .. image:: images/breathe/anvil_extras.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -44,7 +44,7 @@ Assets
 | The mp3 files are short 1 seconds long sound files for the inhale and exhale sounds.
 
 .. image:: images/breathe/breathe_structure.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -64,7 +64,7 @@ From1
 | The components are links with icons set and click event handlers added.
 
 .. image:: images/breathe/Form1.png
-    :scale: 100%
+    :scale: 100
 
 | The python code for Form1 is shown below.
 | The import of the sound module is to load voices for windows users.
@@ -83,7 +83,7 @@ Info form
 | The design view of Info form is shown below.
 
 .. image:: images/breathe/info.png
-    :scale: 100%
+    :scale: 100
 
 | The markdown text for the info text is shown below.
 
@@ -107,7 +107,7 @@ Sounds form
 | The switches have custom css to modify their appearance from the anvil extras default.
 
 .. image:: images/breathe/sounds.png
-    :scale: 100%
+    :scale: 100
 
 | The python code for Sounds is shown below.
 
@@ -129,7 +129,7 @@ Settings form
 | The buttons have custom roles and css to modify their appearance.
 
 .. image:: images/breathe/settings.png
-    :scale: 100%
+    :scale: 100
 
 | The python code for Settings is shown below.
 
@@ -151,7 +151,7 @@ Sliders form
 | The buttons have custom roles and css to modify their appearance.
 
 .. image:: images/breathe/sliders.png
-    :scale: 100%
+    :scale: 100
 
 | The python code for Sliders is shown below.
 
@@ -195,7 +195,7 @@ Theme: Roles
 | An example is shown below.
 
 .. image:: images/breathe/add_roles.png
-    :scale: 100%
+    :scale: 100
 
 
 Custom css

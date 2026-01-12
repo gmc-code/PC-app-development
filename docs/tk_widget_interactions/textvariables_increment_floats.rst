@@ -10,7 +10,7 @@ Increment label float via buttons
 ---------------------------------------
 
 .. image:: images/increment_float.png
-    :scale: 100%
+    :scale: 100
 
 The code creates a Tkinter GUI application to manage a float value with increment, decrement, and reset functionality:
 

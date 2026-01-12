@@ -60,7 +60,7 @@ Window title
     root.mainloop()
 
 .. image:: images/window_title.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -119,7 +119,7 @@ Background color
     root.mainloop()
 
 .. image:: images/window_bg_color.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -486,7 +486,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.iconbitmap("my_icon.ico")``
 
 .. image:: images/window_icon.png
-    :scale: 100%
+    :scale: 100
 
 .. py:attribute:: maxsize
 

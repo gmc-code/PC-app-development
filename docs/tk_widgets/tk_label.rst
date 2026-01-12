@@ -49,7 +49,7 @@ Text example
     root.mainloop()
 
 .. image:: images/label_text.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -91,7 +91,7 @@ font example
 
 
 .. image:: images/label_font.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -136,7 +136,7 @@ This code below uses a font object to style text in a Tkinter Label.
     root.mainloop()
 
 .. image:: images/label_font_custom.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -173,7 +173,7 @@ fg example
     root.mainloop()
 
 .. image:: images/label_fg.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -210,7 +210,7 @@ bg example
     root.mainloop()
 
 .. image:: images/label_bg.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -248,7 +248,7 @@ padding example
     root.mainloop()
 
 .. image:: images/label_padding.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -310,10 +310,10 @@ Anchor example
 
 
 .. image:: images/label_anchor.png
-    :scale: 50%
+    :scale: 50
 
 .. image:: images/label_anchors.png
-    :scale: 67%
+    :scale: 67
 
 ----
 
@@ -358,10 +358,10 @@ border example
     root.mainloop()
 
 .. image:: images/label_border.png
-    :scale: 67%
+    :scale: 67
 
 .. image:: images/label_borders.png
-    :scale: 67%
+    :scale: 67
 
 ----
 
@@ -377,7 +377,7 @@ border example
       - Ensure the Label widget is packed with padding of 20 pixels on all sides.
 
         .. image:: images/label_question.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

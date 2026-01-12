@@ -47,14 +47,14 @@ Example code
       initial
       ^^^
       .. image:: images/button_config_initial.png
-        :scale: 100%
+        :scale: 100
 
    .. grid-item-card::
 
       changed by config
       ^^^
       .. image:: images/button_config.png
-        :scale: 100%
+        :scale: 100
 
 
 |

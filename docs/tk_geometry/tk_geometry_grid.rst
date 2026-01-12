@@ -97,10 +97,11 @@ Example code
 -------------
 
 .. image:: images/grid_grid.png
-    :scale: 50%
+    :scale: 50
 
 .. image:: images/grid.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. code-block:: python
 

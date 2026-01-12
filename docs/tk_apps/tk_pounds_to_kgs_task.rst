@@ -3,7 +3,7 @@ Pounds to kgs task
 ====================================================
 
 .. image:: images/tk_pounds_to_kgs.png
-    :scale: 67%
+    :scale: 67
 
 
 | Write code that converts pounds to kgs.

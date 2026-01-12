@@ -38,7 +38,7 @@ Sample OptionMenu
 --------------------
 
 .. image:: images/option_menu.png
-    :scale: 67%
+    :scale: 67
 
 .. code-block:: python
 
@@ -85,7 +85,7 @@ Sample OptionMenu
     #. Modify the code above to change the OptionMenu options to ["Mango", "Pineapple", "Grapes", "Orange", "Strawberry"]. The OptionMenu widget's background (bg) is set to "light yellow" and the text color (fg) is set to "blue". The active background (activebackground) is set to "orange" and the active text color (activeforeground) is set to "red". The menu's background (bg) is set to "light pink" and the text color (fg) is set to "purple". The active background (activebackground) is set to "yellow" and the active text color (activeforeground) is set to "green".
 
     .. image:: images/option_menu_question.png
-        :scale: 67%
+        :scale: 67
 
     .. dropdown::
         :icon: codescan

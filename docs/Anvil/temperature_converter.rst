@@ -7,7 +7,7 @@ This builds a simple temperature converter.
 | Working app at: `<https://pc-temperature-converter-1.anvil.app>`_
 
 .. image:: images/temperature/Temperature_converter1_layout.png
-    :scale: 60%
+    :scale: 60
 
 ----
 
@@ -26,7 +26,7 @@ Settings
 | Enter the settings for the app.
 
 .. image:: images/temperature/Temperature_converter1_settings.png
-    :scale: 80%
+    :scale: 80
 
 #. Click on the cog icon to show the settings tab.
 #. Enter an App name. Temperature converter
@@ -37,7 +37,7 @@ Settings
 #. Close the settings tab.
 
 .. image:: images/temperature/Fahrenheit_Celsius_scales.png
-    :scale: 10%
+    :scale: 10
 
 ----
 
@@ -76,7 +76,7 @@ Fahrenheit
 | This restricts user input to numbers.
 
 .. image:: images/temperature/Temperature_converter_Add_textbox_to_right.png
-    :scale: 60%
+    :scale: 60
 
 ----
 
@@ -96,7 +96,7 @@ Celsius
 | In the properties panel: text section, set the **font_size** to 32.
 
 .. image:: images/temperature/Temperature_converter_Add_label_below.png
-    :scale: 60%
+    :scale: 60
 
 ----
 

@@ -20,21 +20,21 @@ tk messagebox
       showinfo
       ^^^
       .. image:: images/messagebox_showinfo.png
-        :scale: 100%
+        :scale: 100
 
    .. grid-item-card::
 
       showwarning
       ^^^
       .. image:: images/messagebox_showwarning.png
-        :scale: 100%
+        :scale: 100
 
    .. grid-item-card::
 
       showerror
       ^^^
       .. image:: images/messagebox_showerror.png
-        :scale: 100%
+        :scale: 100
 
 
 
@@ -48,14 +48,14 @@ tk messagebox
       askquestion
       ^^^
       .. image:: images/messagebox_askquestion.png
-        :scale: 100%
+        :scale: 100
 
    .. grid-item-card::
 
       askokcancel
       ^^^
       .. image:: images/messagebox_askokcancel.png
-        :scale: 100%
+        :scale: 100
 
 .. grid:: 2
    :gutter: 0
@@ -67,14 +67,14 @@ tk messagebox
       askyesno
       ^^^
       .. image:: images/messagebox_askyesno.png
-        :scale: 100%
+        :scale: 100
 
    .. grid-item-card::
 
       askretrycancel
       ^^^
       .. image:: images/messagebox_askretrycancel.png
-        :scale: 100%
+        :scale: 100
 
 
 | The code below shows each messagebox type.

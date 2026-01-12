@@ -3,7 +3,7 @@ Add Radio Buttons for Pizza Types
 =============================================================
 
 .. image:: images/pizza_3.png
-    :scale: 50%
+    :scale: 50
 
 - **Objective**: Add radio buttons for selecting pizza types.
 - **Content**:

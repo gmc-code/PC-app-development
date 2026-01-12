@@ -6,7 +6,7 @@ Cloning an app via github
 ----------------------------
 
 .. image:: images/save_to_github.png
-    :scale: 60%
+    :scale: 60
 
 - In the Anvil app editor, click the **Version History**.
 - On the right, click **Save app to GitHub**.

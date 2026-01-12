@@ -5,7 +5,7 @@ Rock paper scissors
 | This app is a computer versus human game of rock paper scissors.
 
 .. image:: images/rps/RPS.png
-    :scale: 100%
+    :scale: 100
 
 | Try it out at: `<https://pc-rps.anvil.app>`_
 
@@ -28,7 +28,7 @@ Assets
 | Add coloured images for each of rock, paper and scissors to represent a tie, a win and a loss.
 
 .. image:: images/rps/rps_assets.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -38,7 +38,7 @@ Components
 The required components are shown below.
 
 .. image:: images/rps/rps_components.png
-    :scale: 100%
+    :scale: 100
 
 | Delete the initial components in the Form1.
 | Add an XYPanel to the content_panel. Set this width to 320 and height to 400.

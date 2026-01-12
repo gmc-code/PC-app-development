@@ -3,7 +3,7 @@ Pounds to kgs
 ====================================================
 
 .. image:: images/tk_pounds_to_kgs.png
-    :scale: 67%
+    :scale: 67
 
 
 | This code converts pounds to kgs.
@@ -89,7 +89,7 @@ Place Widgets in the Window
 Design the grid positions:
 
 .. image:: images/lbs_to_kgs_grid.png
-    :scale: 100%
+    :scale: 100
 
 Position the widgets using the `grid()` method:
 

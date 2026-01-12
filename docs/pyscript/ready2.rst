@@ -6,7 +6,7 @@ Santa's helper
 | Demo app is at: `<https://gmc_ps.pyscriptapps.com/elves/latest/>`_
 
 .. image:: images/elves.png
-    :scale: 50%
+    :scale: 50
 
 ----
 

@@ -5,7 +5,7 @@ Login form
 | See: `<https://www.youtube.com/watch?v=MeMCBdnhvQs&list=PLs3IFJPw3G9KL3huzPS7g-0PCbS7Auc7I&index=5>`_
 
 .. image:: images/tk_login.png
-    :scale: 67%
+    :scale: 67
 
 | This code outputs a message box in response to attempts to login.
 | It displays a window with Label, Entry and Button widgets.

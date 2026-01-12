@@ -3,7 +3,7 @@ Inches to cm
 ====================================================
 
 .. image:: images/tk_inches_to_cm_converter.png
-    :scale: 67%
+    :scale: 67
 
 | This code converts inches to cm.
 | This code creates a simple GUI application using the Tkinter library.
@@ -54,7 +54,7 @@ Place Widgets in the Window
 Design the grid positions:
 
 .. image:: images/inches_to_cm_grid.png
-    :scale: 100%
+    :scale: 100
 
 Position the widgets using the `grid()` method:
 

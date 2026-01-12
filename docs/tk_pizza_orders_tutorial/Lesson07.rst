@@ -3,7 +3,7 @@ Display Orders
 ================================================
 
 .. image:: images/pizza_7.png
-    :scale: 67%
+    :scale: 67
 
 - **Objective**: Display the list of orders.
 - **Content**:

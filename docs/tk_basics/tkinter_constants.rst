@@ -188,7 +188,7 @@ Syntax
 
 
 .. image:: images/tk_constants.png
-    :scale: 75%
+    :scale: 75
 
 .. literalinclude:: python/tk_constants.py
    :language: python

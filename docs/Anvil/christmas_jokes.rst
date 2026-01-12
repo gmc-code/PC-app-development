@@ -6,7 +6,7 @@ Christmas Jokes
 | It uses a data table created by python using an uplink.
 
 .. image:: images/christmas_jokes/christmas_jokes.png
-    :scale: 100%
+    :scale: 100
 
 
 ----
@@ -20,7 +20,7 @@ App Theme
 | Set the python environment to the latest version.
 
 .. image::  images/christmas_jokes/python_version.png
-    :scale: 80%
+    :scale: 80
 
 ----
 
@@ -34,7 +34,7 @@ Assets
 | santa_joke.png is the image shown in the assets below.
 
 .. image:: images/christmas_jokes/assets.png
-    :scale: 100%
+    :scale: 100
 
 Components
 ----------------
@@ -42,14 +42,14 @@ Components
 The initial components are shown below.
 
 .. image:: images/christmas_jokes/initial_components.png
-    :scale: 100%
+    :scale: 100
 
 | Delete the navbar_links FlowPanel.
 | Add the components below.
 | The final components are shown below.
 
 .. image:: images/christmas_jokes/final_components.png
-    :scale: 100%
+    :scale: 100
 
 | Add an XYPanel to the content_panel. Set this width to 320 and height to 400.
 | Add an image, then 2 buttons and 2 labels to the XYPanel.
@@ -92,33 +92,33 @@ Table of jokes
 Create a new database table and name it "jokes".
 
 .. image::  images/christmas_jokes/add_new_table.png
-    :scale: 100%
+    :scale: 100
 
 
 | Set Client code access to search this table.
 | Server code should be set to search, edit and delete.
 
 .. image::  images/christmas_jokes/jokes_table.png
-    :scale: 60%
+    :scale: 60
 
 | Add 2 New Columns.
 | Name them "joke" and "reply".
 | Set their column type to text in the **Add a Column** window.
 
 .. image::  images/christmas_jokes/add_a_column.png
-    :scale: 100%
+    :scale: 100
 
 | Enable the Uplink in the Anvil IDE using these steps.
 | Click the + button in the sidebar menu and select Uplink.
 | Click Enable Server Uplink.
 
 .. image::  images/christmas_jokes/enable_server_uplink.png
-    :scale: 100%
+    :scale: 100
 
 | Copy the Server Uplink key and paste into a python script on your local machine.
 
 .. image::  images/christmas_jokes/server_uplink.png
-    :scale: 100%
+    :scale: 100
 
 | Run this code on your local machine. Make sure to have pasted in your server uplink key for ANVIL_UPLINK_KEY.
 | Adjust the file path to the jokes file: ``file_path = 'christmas_jokes.txt'``
@@ -181,7 +181,7 @@ Create a new database table and name it "jokes".
 | The jokes table will now be filled with jokes.
 
 .. image::  images/christmas_jokes/uplink_table.png
-    :scale: 100%
+    :scale: 100
 
 
 ----

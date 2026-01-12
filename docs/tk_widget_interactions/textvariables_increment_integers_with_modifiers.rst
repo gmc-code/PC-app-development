@@ -10,7 +10,7 @@ Increment label integer via buttons with modifiers
 -------------------------------------------------------
 
 .. image:: images/increment_integer.png
-    :scale: 100%
+    :scale: 100
 
 | The code creates a Tkinter GUI application to manage an integer value with customizable increment, decrement, and reset functionality:
 

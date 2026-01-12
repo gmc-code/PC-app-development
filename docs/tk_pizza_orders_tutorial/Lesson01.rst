@@ -4,7 +4,7 @@ Create a window
 
 
 .. image:: images/pizza_1.png
-    :scale: 50%
+    :scale: 50
 
 - **Objective**: Set up the basic Tkinter root.
 - **Content**:

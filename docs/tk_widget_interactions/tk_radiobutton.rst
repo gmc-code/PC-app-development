@@ -24,7 +24,7 @@ Using radio buttons
 ---------------------------
 
 .. image:: images/radio_buttons.png
-    :scale: 100%
+    :scale: 100
 
 This code demonstrates the use of option buttons (radio buttons) and a text widget to display the selected option.
 

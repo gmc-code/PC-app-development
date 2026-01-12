@@ -47,7 +47,9 @@ Options for the `pack()` geometry manager
 
 
 .. image:: images/pack_ipad.png
-    :scale: 100%
+    :scale: 100
+    :align: center
+    :align: center
 
 .. code-block:: python
 
@@ -80,8 +82,9 @@ Options for the `pack()` geometry manager
 | Examples below show labels with different external padding values inside frames to visualize the padding effect.
 
 .. image:: images/pack_pad.png
-    :scale: 100%
-
+    :scale: 100
+    :align: center
+    :align: center
 
 .. code-block:: python
 
@@ -127,7 +130,8 @@ Options for the `pack()` geometry manager
 Example: To create labels anchored at different positions:
 
 .. image:: images/pack_anchor.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. code-block:: python
 
@@ -164,7 +168,8 @@ Example: To create labels anchored at different positions:
 | Example: To create four buttons positioned on different sides of a frame:
 
 .. image:: images/pack_side.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. code-block:: python
 
@@ -215,19 +220,23 @@ Example: To create labels anchored at different positions:
 Examples below use `expand=False.
 
 .. image:: images/pack_fill_x_not_expanding.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. image:: images/pack_fill_x_not_expanding.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 
 Example: Use `expand=True` so fill options are visible for the y direction as well as the x direction.
 
 .. image:: images/pack_fill_x.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. image:: images/pack_fill_y.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 
 .. code-block:: python

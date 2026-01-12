@@ -33,14 +33,14 @@ Sample button
       initial
       ^^^
       .. image:: images/button_simple.png
-        :scale: 100%
+        :scale: 100
 
    .. grid-item-card::
 
       pressed
       ^^^
       .. image:: images/button_simple_pressed.png
-        :scale: 100%
+        :scale: 100
 
 | The code below causes the button to change colour when clicked.
 
@@ -76,7 +76,7 @@ Sample button
     #. Modify the code above to change the window title to "Button question," set the window size to 350x400, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border of 3, a height of 2, a hand-shaped cursor on hover, a raised border style when pressed, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
 
     .. image:: images/button_question.png
-        :scale: 67%
+        :scale: 67
 
     .. dropdown::
         :icon: codescan

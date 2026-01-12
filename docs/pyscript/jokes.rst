@@ -6,7 +6,7 @@ Jokes
 | Demo app is at: `<https://gmc_ps.pyscriptapps.com/jokes/latest/>`_
 
 .. image:: images/jokes/jokes_app.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -16,7 +16,7 @@ Files
 The files used are listed below.
 
 .. image:: images/jokes/files.png
-    :scale: 100%
+    :scale: 100
 
 The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 

@@ -6,7 +6,7 @@ Christmas Jokes
 | Demo app is at: `<https://gmc_ps.pyscriptapps.com/christmas-jokes-3/latest/>`_
 
 .. image:: images/christmas_jokes/santa_jokes_app.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -16,7 +16,7 @@ Files
 The files used are listed below.
 
 .. image:: images/christmas_jokes/files.png
-    :scale: 100%
+    :scale: 100
 
 | The json file of jokes is not required but has been left here as a backup of the jokes used.
 
@@ -25,7 +25,7 @@ The files used are listed below.
 | The festive.png is referenced in the css to make a background image.
 
 .. image:: images/christmas_jokes/festive.png
-    :scale: 50%
+    :scale: 50
 
 ----
 

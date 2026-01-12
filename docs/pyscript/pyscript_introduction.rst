@@ -32,7 +32,7 @@ New project
 | To start a new project, on the dashboard, click the new project (plus) button.
 
 .. image:: images/new_project.png
-    :scale: 50%
+    :scale: 50
 
 ----
 
@@ -42,7 +42,7 @@ Project files
 | Making a new project in pyscript starts with 3 files.
 
 .. image:: images/new_project_files.png
-    :scale: 50%
+    :scale: 50
 
 | The **index.html** file is served to your browser. It has the interface elements and links to python code.
 | The **main.py** is for python code that defines how your application works.

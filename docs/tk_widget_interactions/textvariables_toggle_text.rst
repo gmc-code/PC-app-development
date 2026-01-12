@@ -10,10 +10,10 @@ Toggle text via button
 ----------------------------
 
 .. image:: images/toggle_text_1.png
-    :scale: 67%
+    :scale: 67
 
 .. image:: images/toggle_text_2.png
-    :scale: 67%
+    :scale: 67
 
 
 | The code below creates a Tkinter GUI application that toggles text on a label when a button is clicked:
@@ -137,10 +137,10 @@ Code
 
     #. Write code to reverse a string entered by a user into an entry field, using an input_var and an output_var.
         .. image:: images/reverse_string.png
-            :scale: 67%
+            :scale: 67
     #. Modify the previous answer to insert a random palindrome if the entry string is blank.
         .. image:: images/reverse_string_palindromes.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

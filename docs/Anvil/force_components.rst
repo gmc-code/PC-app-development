@@ -7,6 +7,7 @@ This app calculates the horizontal and vertical components of a force at a given
 | Working app at: `<https://pc-force-components.anvil.app>`_
 
 .. image:: images/forces/force_components.png
+    :scale: 100
 
 | Use the image above to build the interface, using textboxes for the inputs and labels for other text fields.
 | Use a XYpanel for the diagram region, so that the text labels can be placed over the force diagram.

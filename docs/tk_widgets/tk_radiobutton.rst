@@ -23,7 +23,7 @@ Using radio buttons
 ---------------------------
 
 .. image:: images/radio_buttons.png
-    :scale: 100%
+    :scale: 100
 
 | This code create one group of radio buttons in a frame and a second group in root window below the frame.
 | To group radio buttons together set the variable option to be the same for each widget. e.g. ``variable=option_grp1_var``.
@@ -90,7 +90,7 @@ Using radio buttons
     #. Modify the code to have 4 radio buttons one under another.
 
         .. image:: images/radio_buttons_question.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

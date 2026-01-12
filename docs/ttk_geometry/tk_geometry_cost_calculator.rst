@@ -16,7 +16,8 @@ Cost Calculator - pack
     | By default, widgets are stacked vertically from the top of the container.
 
 .. image:: images/calc_pack.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 | Below is a sample cost calculator using the pack layout.
 | The calculate_price() function computes the total price based on the user input for price per item and number of items.
@@ -88,7 +89,8 @@ Cost Calculator - grid
 | ``calculate_button.grid(row=2, column=0, columnspan=2, ipadx=70)`` uses ipadx to stretch the button.
 
 .. image:: images/calc_grid.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. code-block:: python
 
@@ -148,7 +150,8 @@ Cost Calculator - place
 | ``calculate_button.place(x=0, y=60, width=230)`` uses a width of 230 to stretch out the button.
 
 .. image:: images/calc_place.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. code-block:: python
 

@@ -118,7 +118,7 @@ Python tk game
 -------------------------
 
 .. image:: images/tk_AFL_premiers.png
-    :scale: 80%
+    :scale: 80
 
 This Python script creates a graphical quiz game using the `tkinter` library. Below is a summary of its key components:
 
@@ -296,7 +296,7 @@ Code:
     #. Modify the code to create a quiz on capitals of countries.
 
         .. image:: images/tk_country_capitals.png
-            :scale: 80%
+            :scale: 80
 
     .. dropdown::
         :icon: codescan

@@ -7,7 +7,7 @@ Modify via checkbox
 ----
 
 .. image:: images/toggle_via_checkbox.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -126,7 +126,7 @@ cget method for text
     #. Modify the code to toggle the case as well as colour using ``text=label.cget("text").upper()``.
 
         .. image:: images/toggle_text_via_checkbox.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan
@@ -191,7 +191,7 @@ Binary
     #. Modify the code to toggle the number 9 with its binary version (as well as colour).
 
         .. image:: images/toggle_binary_via_checkbox.png
-            :scale: 67%
+            :scale: 67
 
     .. dropdown::
         :icon: codescan

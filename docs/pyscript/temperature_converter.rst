@@ -6,7 +6,7 @@ Temperature converter
 | Demo app is at: `<https://gmc_ps.pyscriptapps.com/temp-converter/latest/>`_
 
 .. image:: images/temp_converter/temp_conversion.png
-    :scale: 100%
+    :scale: 100
 
 ----
 
@@ -16,7 +16,7 @@ Files
 The files used are listed below.
 
 .. image:: images/temp_converter/files.png
-    :scale: 100%
+    :scale: 100
 
 The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 

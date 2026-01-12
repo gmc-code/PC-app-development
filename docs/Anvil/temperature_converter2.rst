@@ -7,7 +7,7 @@ This enhances the temperature converter.
 | Working app at: `<https://pc-temperature-converter-2.anvil.app>`_
 
 .. image:: images/temperature/Temperature_converter2_layout.png
-    :scale: 60%
+    :scale: 60
 
 ----
 
@@ -60,7 +60,7 @@ Change Convert button to an icon button
 | So the icon for button **FtoC** is now **fa:arrow-down**.
 
 .. image:: images/temperature/Temperature_converter_icon_selection.png
-    :scale: 100%
+    :scale: 100
 
 | In the properties panel: icon section, set the icon_align to left_edge.
 | Click and drag this convert button (now a down arrow) to the right of the fahrenheit temperature.

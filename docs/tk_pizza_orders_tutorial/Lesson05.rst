@@ -3,7 +3,7 @@ Add Costs
 =========================================================
 
 .. image:: images/pizza_5.png
-    :scale: 67%
+    :scale: 67
 
 - **Objective**: Add costs.
 - **Content**:

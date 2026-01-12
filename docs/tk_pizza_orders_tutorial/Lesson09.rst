@@ -3,7 +3,7 @@ Final Touches and Styling
 ==================================================
 
 .. image:: images/pizza_9.png
-    :scale: 67%
+    :scale: 67
 
 - **Objective**: Add final touches and improve the GUI styling.
 - **Content**:

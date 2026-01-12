@@ -3,7 +3,7 @@ Add Radio Buttons and OptionMenu
 ==============================================================
 
 .. image:: images/pizza_4.png
-    :scale: 67%
+    :scale: 67
 
 - **Objective**: Add radio buttons for selecting pizza sizes and the OptionMenu for quantity.
 - **Content**:

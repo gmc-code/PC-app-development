@@ -49,7 +49,8 @@ Sample code
 --------------
 
 .. image:: images/place.png
-    :scale: 100%
+    :scale: 100
+    :align: center
 
 .. code-block:: python
 

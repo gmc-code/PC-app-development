@@ -5,7 +5,7 @@ Superheroes
 | Demo app is at: `<https://gmc_ps.pyscriptapps.com/superheroes/latest/>`_
 
 .. image:: images/superheroes/superhero.png
-    :scale: 100%
+    :scale: 100
 
 | The appearance is controlled via custom css.
 | The user interactions with the interface are controlled via python.
@@ -18,7 +18,7 @@ Files
 The files used are listed below..
 
 .. image:: images/superheroes/files.png
-    :scale: 100%
+    :scale: 100
 
 The favicon.ico is optional. It shows as a small icon in the browser tab when the app is run.
 

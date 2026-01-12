@@ -12,7 +12,7 @@ Multi Temperature converter
 | See gif to see it in action.
 
 .. image:: images/temperature/multi_temp_in_action.gif
-    :scale: 100%
+    :scale: 100
 
 ----
 

@@ -3,7 +3,7 @@ Name and age
 ====================================================
 
 .. image:: images/tk_name_age.png
-    :scale: 67%
+    :scale: 67
 
 | This code outputs the user name and age in sentence form.
 | This code creates a simple GUI application using the Tkinter library.
@@ -82,7 +82,7 @@ Grid Placement of widgets on the window:
 Design the grid positions:
 
 .. image:: images/name_age_grid.png
-    :scale: 100%
+    :scale: 100
 
 - Use the `grid` method to place the widgets in rows and columns in the root.
 - The `row` and `column` parameters determine the position of each widget.

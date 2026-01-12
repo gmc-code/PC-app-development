@@ -3,7 +3,7 @@ Deleting Orders
 ================================================
 
 .. image:: images/pizza_8.png
-    :scale: 67%
+    :scale: 67
 
 - **Objective**: Add functionality to delete orders.
 - **Content**:
