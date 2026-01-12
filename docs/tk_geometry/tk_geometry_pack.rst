@@ -49,7 +49,7 @@ Options for the `pack()` geometry manager
 .. image:: images/pack_ipad.png
     :scale: 100
     :align: center
-    :align: center
+
 
 .. code-block:: python
 
@@ -84,7 +84,7 @@ Options for the `pack()` geometry manager
 .. image:: images/pack_pad.png
     :scale: 100
     :align: center
-    :align: center
+
 
 .. code-block:: python
 
