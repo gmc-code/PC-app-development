@@ -26,7 +26,7 @@ main = ttk.Frame(root, padding=12)
 main.pack(fill="both", expand=True)
 
 # Title
-ttk.Label(main, text="TTK‑Only Widgets",
+ttk.Label(main, text="TTK-Only Widgets",
           font=("Segoe UI", 14, "bold")).grid(row=0, column=0, columnspan=4, pady=(0,12))
 
 # Combobox

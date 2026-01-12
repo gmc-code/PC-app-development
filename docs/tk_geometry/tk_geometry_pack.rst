@@ -17,7 +17,7 @@ pack
 
 | Pack is responsive to window size changes.
 | By default, the pack geometry manager places widgets vertically from top to bottom.
-| A widget can be packed inside any container widget, including the root window (`tk.Tk`), toplevel windows (`tk.Toplevel`), frames (`tk.Frame`, `ttk.Frame`, `tk.LabelFrame`, `ttk.LabelFrame`), notebook tabs (`ttk.Notebook` frames), paned‑window panes (`tk.PanedWindow`, `ttk.PanedWindow`), canvases using `create_window`, and any custom scrollable or embedded frame acting as a container.
+| A widget can be packed inside any container widget, including the root window (`tk.Tk`), toplevel windows (`tk.Toplevel`), frames (`tk.Frame`, `ttk.Frame`, `tk.LabelFrame`, `ttk.LabelFrame`), notebook tabs (`ttk.Notebook` frames), paned-window panes (`tk.PanedWindow`, `ttk.PanedWindow`), canvases using `create_window`, and any custom scrollable or embedded frame acting as a container.
 
 .. py:function:: widget.pack()
 
@@ -29,8 +29,8 @@ pack
 Options for the `pack()` geometry manager
 -----------------------------------------------
 
-**padding**
-~~~~~~~~~~~~~
+**padding: internal**
+~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: widget.pack(ipadx=x, ipady=y)
 
@@ -39,14 +39,7 @@ Options for the `pack()` geometry manager
     | Example: widget.pack(ipadx=10) has internal padding of 10 in the x direction on each side of the widget.
 
 
-.. py:function:: widget.pack(padx=x, pady=y)
-
-    | The `padx` value is an integer, x. The `pady` value is an integer, y.
-    | These options control the **external** padding (in pixels) along the x and y axes, respectively.
-    | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
-
-
-.. image:: images/pack_padding.png
+.. image:: images/pack_ipad.png
     :scale: 100%
 
 .. code-block:: python
@@ -55,14 +48,64 @@ Options for the `pack()` geometry manager
 
     root = tk.Tk()
 
-    label1 = tk.Label(root, text="Red", bg="red", fg="white")
-    label1.pack(ipadx=30, ipady=6)
 
-    label2 = tk.Label(root, text="Purple", bg="purple", fg="white")
-    label2.pack(pady=20, ipadx=8, ipady=12)
+    label1 = tk.Label(root, text="ipadx=10, ipady=5", bg="red", fg="white")
+    label1.pack(ipadx=10, ipady=5)
+    label2 = tk.Label(root, text="ipadx=20, ipady=10", bg="purple", fg="white")
+    label2.pack(ipadx=20, ipady=10)
+    label3 = tk.Label(root, text="ipadx=30, ipady=20", bg="blue", fg="white")
+    label3.pack(ipadx=30, ipady=20)
+
 
     root.mainloop()
 
+----
+
+**padding: external**
+~~~~~~~~~~~~~~~~~~~~~
+
+.. py:function:: widget.pack(padx=x, pady=y)
+
+    | The `padx` value is an integer, x. The `pady` value is an integer, y.
+    | These options control the **external** padding (in pixels) along the x and y axes, respectively.
+    | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
+
+| Examples below show labels with different external padding values inside frames to visualize the padding effect.
+
+.. image:: images/pack_pad.png
+    :scale: 100%
+
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+
+    # --- Block 1 ---
+    frame1 = tk.Frame(root, bd=1, relief="solid")
+    frame1.pack(pady=1)
+
+    label1 = tk.Label(frame1, text="padx=10, pady=5", bg="red", fg="white")
+    label1.pack(padx=10, pady=5)
+
+    # --- Block 2 ---
+    frame2 = tk.Frame(root, bd=1, relief="solid")
+    frame2.pack(pady=1)
+
+    label2 = tk.Label(frame2, text="padx=20, pady=10", bg="purple", fg="white")
+    label2.pack(padx=20, pady=10)
+
+    # --- Block 3 ---
+    frame3 = tk.Frame(root, bd=1, relief="solid")
+    frame3.pack(pady=1)
+
+    label3 = tk.Label(frame3, text="padx=30, pady=20", bg="blue", fg="white")
+    label3.pack(padx=30, pady=20)
+
+    root.mainloop()
+
+----
 
 **Anchor**
 ~~~~~~~~~~~~~~~~~~
@@ -98,6 +141,7 @@ Example: To create labels anchored at different positions:
 
     root.mainloop()
 
+----
 
 **Side**
 ~~~~~~~~~~~
@@ -107,6 +151,8 @@ Example: To create labels anchored at different positions:
     | The `side_string` option determines the position of the widget within its parent container.
     | It can take values like `left`, `right`, `top`, or `bottom`.
     | e.g. widget.pack(side="left")
+    | The `side` option specifies which side of the parent widget the child widget should be packed against.
+    | Packing on the left creates a vertical strip along the left edge of the window.
 
 | Example: To create four buttons positioned on different sides of a frame:
 
@@ -135,6 +181,8 @@ Example: To create labels anchored at different positions:
 
     root.mainloop()
 
+----
+
 **Expand**
 ~~~~~~~~~~~~~~~~
 
@@ -143,6 +191,8 @@ Example: To create labels anchored at different positions:
     | The `boolean` value is `True` or `False`.
     | e.g. `widget.pack(expand=True)` to make a widget expand when the frame is resized
     | The `expand` option allows a widget to expand if the user resizes the frame.
+
+----
 
 **Fill**
 ~~~~~~~~~~~~~~~
@@ -186,3 +236,32 @@ Example: Use `expand=True` so fill options are visible for the y direction as we
 
     root.mainloop()
 
+----
+
+.. admonition:: Tasks
+
+    #. Make an example where all the different pack options are used together.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Make an example where all the different pack options are used together.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.title("pack all options")
+                    root.geometry("300x200")
+
+                    label = tk.Label(root, text="All pack options", bg="lightblue")
+                    label.pack(side="left", anchor="center", expand=True, fill="both", padx=10, pady=10, ipadx=5, ipady=5)
+
+                    root.mainloop()

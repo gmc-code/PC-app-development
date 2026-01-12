@@ -1,18 +1,13 @@
 import tkinter as tk
 
 root = tk.Tk()
-root.title('Tkinter Pack Layout')
-root.geometry('300x200')
+root.title("pack all options")
+root.geometry("300x200")
 
-label1 = tk.Label(master=root, text='x', bg='red', fg='black')
-label2 = tk.Label(master=root, text='y', bg='light green', fg='black')
-label3 = tk.Label(master=root, text='none', bg='light blue', fg='black')
-label4 = tk.Label(master=root, text='both', bg='yellow', fg='black')
+label = tk.Label(root, text="All pack options", bg="lightblue")
+label.pack(side="left", fill="y", ipadx=15, ipady=5)
 
-label1.pack(side='top', expand=False, fill="x")
-label2.pack(side='top', expand=False, fill="y")
-label3.pack(side='top', expand=False, fill="none")
-label4.pack(side='top', expand=False, fill="both")
-
+# label2 = tk.Label(root, text="All pack options", bg="lightblue")
+# label2.pack(side="right", ipadx=15, ipady=5)
 
 root.mainloop()
