@@ -18,6 +18,11 @@ pack
 | Pack is responsive to window size changes.
 | By default, the pack geometry manager places widgets vertically from top to bottom.
 | A widget can be packed inside any container widget, including the root window (`tk.Tk`), toplevel windows (`tk.Toplevel`), frames (`tk.Frame`, `ttk.Frame`, `tk.LabelFrame`, `ttk.LabelFrame`), notebook tabs (`ttk.Notebook` frames), paned-window panes (`tk.PanedWindow`, `ttk.PanedWindow`), canvases using `create_window`, and any custom scrollable or embedded frame acting as a container.
+| Pack allocates space based on several factors:
+    - The widget's requested size based on its content.
+    - The use of side options (left, right, top, bottom) which places widgets in a “strip” along one side.
+    - The use of expand to increase the allocated area.
+    - The use of fill to specify how the widget should fill the allocated area.
 
 .. py:function:: widget.pack()
 
@@ -25,6 +30,7 @@ pack
     | e.g. widget.pack()
 
 ----
+
 
 Options for the `pack()` geometry manager
 -----------------------------------------------
