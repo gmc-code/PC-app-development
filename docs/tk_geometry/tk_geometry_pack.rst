@@ -36,7 +36,6 @@ pack
 Options for the `pack()` geometry manager
 -----------------------------------------------
 
-
 **Side**
 ~~~~~~~~~~~
 
@@ -46,7 +45,7 @@ Options for the `pack()` geometry manager
     | It can take values like `left`, `right`, `top`, or `bottom`.
     | e.g. widget.pack(side="left")
     | The `side` option specifies which side of the parent widget the child widget should be packed against.
-    | Packing on the left creates a vertical strip along the left edge of the window.
+    | e.g. Packing on the left creates a vertical strip along the left edge of the window.
 
 | Example: To create four buttons positioned on different sides of a frame:
 
@@ -62,17 +61,17 @@ Options for the `pack()` geometry manager
     root.title("pack side")
     root.geometry("250x150")
 
-    button1 = tk.Button(text="Left")
-    button1.pack(side="left")
+    button1 = tk.Button(text="1 Top", bg="lightgreen")
+    button1.pack(side="top")
 
-    button2 = tk.Button(text="Top")
-    button2.pack(side="top")
+    button2 = tk.Button(text="2 Bottom", bg="khaki")
+    button2.pack(side="bottom")
 
-    button3 = tk.Button(text="Right")
-    button3.pack(side="right")
+    button3 = tk.Button(text="3 Left", bg="lightblue")
+    button3.pack(side="left")
 
-    button4 = tk.Button(text="Bottom")
-    button4.pack(side="bottom")
+    button4 = tk.Button(text="4 Right", bg="lightcoral")
+    button4.pack(side="right")
 
     root.mainloop()
 

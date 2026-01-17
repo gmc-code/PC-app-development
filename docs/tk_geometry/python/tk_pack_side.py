@@ -7,7 +7,7 @@ root.geometry("250x150")
 button1 = tk.Button(text="1 Top", bg="lightgreen")
 button1.pack(side="top")
 
-button2 = tk.Button(text="2Bottom", bg="khaki")
+button2 = tk.Button(text="2 Bottom", bg="khaki")
 button2.pack(side="bottom")
 
 button3 = tk.Button(text="3 Left", bg="lightblue")
