@@ -75,6 +75,42 @@ Options for the `pack()` geometry manager
 
     root.mainloop()
 
+
+.. admonition:: Tasks
+
+    #. Change the example above to pack the the top and bottom buttons at the top and the left and right buttons at the left.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Change the example above to pack the the top and bottom buttons at the top and the left and right buttons at the left.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.title("pack side Q")
+                    root.geometry("250x150")
+
+                    button1 = tk.Button(text="1 Top", bg="lightgreen")
+                    button2 = tk.Button(text="2 Bottom", bg="khaki")
+                    button3 = tk.Button(text="3 Left", bg="lightblue")
+                    button4 = tk.Button(text="4 Right", bg="lightcoral")
+
+                    button1.pack(side="top")
+                    button2.pack(side="top")
+                    button3.pack(side="left")
+                    button4.pack(side="left")
+
+                    root.mainloop()
+
 ----
 
 **Expand**
@@ -95,9 +131,9 @@ Options for the `pack()` geometry manager
 
     | The `fill_string` value is `None`, `x`, `y`, or `both`.
     | The `fill` option specifies how the widget should fill the available space.
-    | * ``fill='x'`` works, because pack always gives the widget the full width of its container.
-    | * ``fill='y'`` does not appear to work with `expand=False`, because the label receives only its natural height. There is no extra vertical space to fill.
-    | * ``fill='both'`` behaves the same way: horizontal fill works, vertical fill does not unless `expand=True`.
+    | `fill='x'` works, because pack always gives the widget the full width of its container.
+    | `fill='y'` does not appear to work with `expand=False`, because the label receives only its natural height. There is no extra vertical space to fill. Vertical fill does work when `expand=True`.
+    | `fill='both'` behaves the same way: horizontal fill works, vertical fill does not unless `expand=True`.
 
 Examples below use `expand=False.
 
@@ -105,21 +141,43 @@ Examples below use `expand=False.
     :scale: 100
     :align: center
 
-.. image:: images/pack_fill_x_not_expanding.png
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.title("pack fill x")
+    root.geometry("250x150")
+
+    label = tk.Label(root, text="Not Expanding fill x", bg="lightblue")
+    label.pack(expand=False, fill='x')
+
+    root.mainloop()
+
+
+.. image:: images/pack_fill_y_not_expanding.png
     :scale: 100
     :align: center
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.title("pack fill y")
+    root.geometry("250x150")
+
+    label = tk.Label(root, text="Not Expanding fill y", bg="lightblue")
+    label.pack(expand=False, fill='y')
+
+    root.mainloop()
 
 
 Example: Use `expand=True` so fill options are visible for the y direction as well as the x direction.
 
-.. image:: images/pack_fill_x.png
+.. image:: images/pack_fill_x_expanding.png
     :scale: 100
     :align: center
-
-.. image:: images/pack_fill_y.png
-    :scale: 100
-    :align: center
-
 
 .. code-block:: python
 
@@ -131,6 +189,25 @@ Example: Use `expand=True` so fill options are visible for the y direction as we
 
     label = tk.Label(root, text="Expanding fill x", bg="lightblue")
     label.pack(expand=True, fill='x')
+
+    root.mainloop()
+
+
+.. image:: images/pack_fill_y_expanding.png
+    :scale: 100
+    :align: center
+
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.title("pack fill y")
+    root.geometry("250x150")
+
+    label = tk.Label(root, text="Expanding fill y", bg="lightblue")
+    label.pack(expand=True, fill='y')
 
     root.mainloop()
 
