@@ -36,42 +36,6 @@ pack
 Options for the `pack()` geometry manager
 -----------------------------------------------
 
-**Anchor**
-~~~~~~~~~~~~~~~~~~
-
-.. py:function:: widget.pack(anchor=anchor_string)
-
-    | `anchor_string` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
-    | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
-    | The `anchor` option specifies the position of the widget within its allocated space.
-    | Example: widget.pack(anchor='nw') positions the widget at the top-left corner of its allocated space.
-
-Example: To create labels anchored at different positions:
-
-.. image:: images/pack_anchor.png
-    :scale: 100
-    :align: center
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-    root.title("pack anchor")
-    root.geometry('250x150')
-
-    label1 = tk.Label(root, text="anchor=w", bg="lightblue")
-    label1.pack(anchor='w')
-
-    label2 = tk.Label(root, text="anchor=center", bg="lightgreen")
-    label2.pack(anchor='center')
-
-    label3 = tk.Label(root, text="anchor=e", bg="lightpink")
-    label3.pack(anchor='e')
-
-    root.mainloop()
-
-----
 
 **Side**
 ~~~~~~~~~~~
@@ -168,6 +132,43 @@ Example: Use `expand=True` so fill options are visible for the y direction as we
 
     label = tk.Label(root, text="Expanding fill x", bg="lightblue")
     label.pack(expand=True, fill='x')
+
+    root.mainloop()
+
+----
+
+**Anchor**
+~~~~~~~~~~~~~~~~~~
+
+.. py:function:: widget.pack(anchor=anchor_string)
+
+    | `anchor_string` can take values "n", "s", "e", "w", "ne", "nw", "se", "sw", "center".
+    | eg. `'nw'` (top-left), `'center'`, or `'se'` (bottom-right)
+    | The `anchor` option specifies the position of the widget within its allocated space.
+    | Example: widget.pack(anchor='w') positions the widget at the left of its allocated space.
+
+Example: In the example below, the allocated space is larger than the widget itself, being the full width of the window, so the anchor option controls where within that space the widget is placed.
+
+.. image:: images/pack_anchor.png
+    :scale: 100
+    :align: center
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.title("pack anchor")
+    root.geometry('250x150')
+
+    label1 = tk.Label(root, text="anchor=w", bg="lightblue")
+    label1.pack(anchor='w')
+
+    label2 = tk.Label(root, text="anchor=center", bg="lightgreen")
+    label2.pack(anchor='center')
+
+    label3 = tk.Label(root, text="anchor=e", bg="lightpink")
+    label3.pack(anchor='e')
 
     root.mainloop()
 
