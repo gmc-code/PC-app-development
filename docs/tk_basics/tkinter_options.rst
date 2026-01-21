@@ -2,7 +2,7 @@
 tkinter options
 ====================================================
 
-Setting Options
+Setting Options for tk widgets
 ----------------------------------------
 
 | Options control things like the color and border width of a widget.
@@ -30,7 +30,7 @@ After object creation
 
 .. code-block:: python
 
-    button_1.config(fg="green", bg="yellow", font=("Arial", 24))
+    button_2.config(fg="green", bg="yellow", font=("Arial", 24))
 
 ----
 
