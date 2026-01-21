@@ -80,6 +80,11 @@ Options for the `pack()` geometry manager
 
     #. Change the example above to pack the the top and bottom buttons at the top and the left and right buttons at the left.
 
+        .. image:: images/pack_side_Q.png
+            :scale: 100
+            :align: center
+
+
     .. dropdown::
         :icon: codescan
         :color: primary
