@@ -78,7 +78,7 @@ Options for the `pack()` geometry manager
 
 .. admonition:: Tasks
 
-    #. Change the example above to pack the the top and bottom buttons at the top and the left and right buttons at the left.
+    #. Change the example above to pack the top and bottom buttons at the top and the left and right buttons at the left.
 
         .. image:: images/pack_side_Q.png
             :scale: 100
@@ -94,7 +94,7 @@ Options for the `pack()` geometry manager
 
             .. tab-item:: Q1
 
-                Change the example above to pack the the top and bottom buttons at the top and the left and right buttons at the left.
+                Change the example above to pack the top and bottom buttons at the top and the left and right buttons at the left.
 
                 .. code-block:: python
 
@@ -140,7 +140,12 @@ Options for the `pack()` geometry manager
     | `fill='y'` does not appear to work with `expand=False`, because the label receives only its natural height. There is no extra vertical space to fill. Vertical fill does work when `expand=True`.
     | `fill='both'` behaves the same way: horizontal fill works, vertical fill does not unless `expand=True`.
 
-Examples below use `expand=False.
+
+
+expand=False, fill='x'
+***************************
+
+Examples below use `expand=False`.
 
 .. image:: images/pack_fill_x_not_expanding.png
     :scale: 100
@@ -159,6 +164,8 @@ Examples below use `expand=False.
 
     root.mainloop()
 
+expand=False, fill='y'
+***************************
 
 .. image:: images/pack_fill_y_not_expanding.png
     :scale: 100
@@ -177,6 +184,8 @@ Examples below use `expand=False.
 
     root.mainloop()
 
+expand=True, fill='x'
+***************************
 
 Example: Use `expand=True` so fill options are visible for the y direction as well as the x direction.
 
@@ -197,6 +206,8 @@ Example: Use `expand=True` so fill options are visible for the y direction as we
 
     root.mainloop()
 
+expand=True, fill='y'
+***************************
 
 .. image:: images/pack_fill_y_expanding.png
     :scale: 100
@@ -215,6 +226,40 @@ Example: Use `expand=True` so fill options are visible for the y direction as we
     label.pack(expand=True, fill='y')
 
     root.mainloop()
+
+
+.. admonition:: Tasks
+
+    #. Change the example above to pack the label widget as shown in the picture.
+
+        .. image:: images/pack_fill_both_expanding.png
+            :scale: 100
+            :align: center
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Change the example above to pack the label widget as shown in the picture.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.title("pack fill both expand")
+                    root.geometry("250x150")
+
+                    label = tk.Label(root, text="Expanding fill both", bg="lightblue")
+                    label.pack(expand=True, fill='both')
+
+                    root.mainloop()
 
 ----
 

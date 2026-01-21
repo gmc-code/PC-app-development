@@ -1,7 +1,7 @@
 import tkinter as tk
 
 root = tk.Tk()
-root.title("pack fill x")
+root.title("pack fill x expand")
 root.geometry("250x150")
 
 label = tk.Label(root, text="Expanding fill x", bg="lightblue")
