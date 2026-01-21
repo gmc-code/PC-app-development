@@ -320,6 +320,10 @@ Example: In the example below, the allocated space is larger than the widget its
 
 
 | In the example below, three frames of fixed size contain labels positioned using different anchor options. The frames do not resize to fit the labels because `pack_propagate(False)` is used.
+| Each frame is packed side by side using `side="left"`.
+| Within each frame, the label is packed with `expand=True` so that it can use the full space of the frame, and the `anchor` option positions the label within that space.
+
+
 
 .. image:: images/pack_anchor_framed_c.png
     :scale: 100
@@ -362,7 +366,7 @@ Example: In the example below, the allocated space is larger than the widget its
 
 .. admonition:: Tasks
 
-    #. Complete the code below to match the image shown.
+    #. Complete the code below by adding the anchor values to match the image shown.
 
         .. image:: images/pack_anchor_frames_all.png
             :scale: 100
@@ -471,7 +475,7 @@ Example: In the example below, the allocated space is larger than the widget its
 
             .. tab-item:: Q1
 
-                Change the example above to pack the label widget as shown in the picture.
+                Complete the code below by adding the anchor values to match the image shown.
 
                 .. code-block:: python
 
