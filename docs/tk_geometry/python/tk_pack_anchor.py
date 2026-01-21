@@ -14,4 +14,3 @@ label3 = tk.Label(root, text="anchor=e", bg="lightpink")
 label3.pack(anchor='e')
 
 root.mainloop()
-
