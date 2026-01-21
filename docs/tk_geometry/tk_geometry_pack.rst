@@ -674,7 +674,7 @@ Example: In the example below, the allocated space is larger than the widget its
 
                 .. code-block:: text
 
-                    Button 4: ipadx=10
-                    Button 6: ipady=10
+                    Button 4: ipady=10
+                    Button 6: ipadx=10
                     Button 8: padx=10, pady=10
 
