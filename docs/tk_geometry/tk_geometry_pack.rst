@@ -614,6 +614,8 @@ Example: In the example below, the allocated space is larger than the widget its
     | Example: widget.pack(padx=10) has external padding of 10 in the x direction on each side of the widget.
 
 | The example below show labels with different external padding values inside frames to visualize the padding effect.
+| Each frame shrinks to fit the size of its label plus the specified external padding.
+
 
 .. image:: images/pack_pad.png
     :scale: 100
