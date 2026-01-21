@@ -26,7 +26,7 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: tk geometry
+    :caption: geometry
     :numbered:
 
     tk_geometry/tk_geometry_pack.rst
@@ -60,7 +60,6 @@ PC-app-development
     :numbered:
 
     ttk_widgets/ttk_introduction.rst
-    ttk_geometry/ttk_geometry_pack.rst
 
 
 .. toctree::
