@@ -298,30 +298,6 @@ Example: In the example below, the allocated space is larger than the widget its
 
     root.mainloop()
 
-Example: In the example below, the widgets are set to expand to fill the available space, so the anchor option controls where within that expanded space the widget is placed. This allows the vertical positioning to be seen.
-
-.. image:: images/pack_anchor.png
-    :scale: 100
-    :align: center
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-    root.title("pack anchor expand")
-    root.geometry('250x150')
-
-    label1 = tk.Label(root, text="anchor=sw", bg="lightblue")
-    label1.pack(expand=True, anchor='sw')
-
-    label2 = tk.Label(root, text="anchor=center", bg="lightgreen")
-    label2.pack(expand=True, anchor='center')
-
-    label3 = tk.Label(root, text="anchor=ne", bg="lightpink")
-    label3.pack(expand=True, anchor='ne')
-
-    root.mainloop()
 
 ----
 
