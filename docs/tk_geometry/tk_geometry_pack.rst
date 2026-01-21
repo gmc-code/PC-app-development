@@ -653,7 +653,11 @@ Example: In the example below, the allocated space is larger than the widget its
 
 .. admonition:: Tasks
 
-    #. Make an example where all the different pack options are used together.
+    #. Examine the image and determine the padding applied ot buttons 4, 6, 8.
+
+        .. image:: images/pack_padding_Q.png
+            :scale: 100
+            :align: center
 
     .. dropdown::
         :icon: codescan
@@ -664,17 +668,11 @@ Example: In the example below, the allocated space is larger than the widget its
 
             .. tab-item:: Q1
 
-                Make an example where all the different pack options are used together.
+                Examine the image and determine the padding applied to buttons 4, 6, 8.
 
-                .. code-block:: python
+                .. code-block:: text
 
-                    import tkinter as tk
+                    Button 4: ipadx=10
+                    Button 6: ipady=10
+                    Button 8: padx=10, pady=10
 
-                    root = tk.Tk()
-                    root.title("pack all options")
-                    root.geometry("300x200")
-
-                    label = tk.Label(root, text="All pack options", bg="lightblue")
-                    label.pack(side="left", anchor="center", expand=True, fill="both", padx=10, pady=10, ipadx=5, ipady=5)
-
-                    root.mainloop()
