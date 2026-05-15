@@ -21,7 +21,7 @@ tkinter basic window
     import tkinter as tk
 
     root = tk.Tk()
-    root.title("pack side")
+    root.title("basic window")
     root.geometry("250x150")
 
 
