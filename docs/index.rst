@@ -20,7 +20,6 @@ PC-app-development
     tk_basics/tkinter_introduction.rst
     tk_basics/tkinter_import.rst
     tk_basics/tkinter_window.rst
-    tk_basics/tk_root.rst
     tk_basics/tkinter_options.rst
     tk_basics/tkinter_constants.rst
 
