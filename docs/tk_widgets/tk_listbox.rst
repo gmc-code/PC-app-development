@@ -65,42 +65,42 @@ Listbox methods
 
 Tkinter's `Listbox` widget provides several methods to help you work with selected items. Here are some key methods:
 
-1. **`curselection()`**: Returns a tuple of indices of the selected items.
+1. `curselection()`: Returns a tuple of indices of the selected items.
 
    selected_indices = listbox.curselection()
 
 
-2. **`get(index)`**: Retrieves the item at the specified index.
+2. `get(index)`: Retrieves the item at the specified index.
 
    item = listbox.get(index)
 
 
-3. **`selection_set(first, last=None)`**: Selects items from the `first` index to the `last` index. If `last` is not specified, only the item at `first` is selected.
+3. `selection_set(first, last=None)`: Selects items from the `first` index to the `last` index. If `last` is not specified, only the item at `first` is selected.
 
    listbox.selection_set(0, 2)  # Selects items from index 0 to 2
 
 
-4. **`selection_clear(first, last=None)`**: Deselects items from the `first` index to the `last` index. If `last` is not specified, only the item at `first` is deselected.
+4. `selection_clear(first, last=None)`: Deselects items from the `first` index to the `last` index. If `last` is not specified, only the item at `first` is deselected.
 
    listbox.selection_clear(0, 2)  # Deselects items from index 0 to 2
 
 
-5. **`selection_includes(index)`**: Returns `True` if the item at the specified index is selected.
+5. `selection_includes(index)`: Returns `True` if the item at the specified index is selected.
 
    is_selected = listbox.selection_includes(index)
 
 
-6. **`size()`**: Returns the number of items in the listbox.
+6. `size()`: Returns the number of items in the listbox.
 
    num_items = listbox.size()
 
 
-7. **`activate(index)`**: Sets the active item to the specified index.
+7. `activate(index)`: Sets the active item to the specified index.
 
    listbox.activate(index)
 
 
-8. **`see(index)`**: Scrolls the listbox to make the item at the specified index visible.
+8. `see(index)`: Scrolls the listbox to make the item at the specified index visible.
 
    listbox.see(index)
 
