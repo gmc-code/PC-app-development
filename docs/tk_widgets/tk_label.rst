@@ -269,12 +269,12 @@ Anchor
     | Default: 0
     | Example: ``label_widget = tk.Label(root, height=2)``
 
-    .. py:attribute:: width
+.. py:attribute:: width
 
-        | Syntax: ``label_widget = tk.Label(parent, width=value)``
-        | Description: Sets the width of the label in number of characters.
-        | Default: 0
-        | Example: ``label_widget = tk.Label(root, width=20)``
+    | Syntax: ``label_widget = tk.Label(parent, width=value)``
+    | Description: Sets the width of the label in number of characters.
+    | Default: 0
+    | Example: ``label_widget = tk.Label(root, width=20)``
 
 
 Anchor example
