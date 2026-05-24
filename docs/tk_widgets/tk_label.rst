@@ -262,6 +262,14 @@ Anchor
     | Default: center
     | Example: ``label_widget = tk.Label(root, anchor="center")``
 
+
+.. image:: images/label_anchors.png
+    :scale: 67
+
+
+Height and width
+-------------------
+
 .. py:attribute:: height
 
     | Syntax: ``label_widget = tk.Label(parent, height=value)``
@@ -312,8 +320,6 @@ Anchor example
 .. image:: images/label_anchor.png
     :scale: 50
 
-.. image:: images/label_anchors.png
-    :scale: 67
 
 ----
 
