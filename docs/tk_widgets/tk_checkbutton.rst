@@ -46,6 +46,7 @@ Using check buttons
     options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3"]
 
     for option in options_grp1:
+        # default value is 0
         var = tk.IntVar()
 
         if option == "Checkbox 1":

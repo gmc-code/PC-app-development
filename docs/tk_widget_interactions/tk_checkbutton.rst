@@ -58,6 +58,7 @@ This code demonstrates the creation of check boxes (check buttons) and a text wi
     # Create a list to hold the IntVar for each checkbutton
     option_vars = []
     for _ in options:
+        # default value is 0
         option_vars.append(tk.IntVar())
 
     # Create and pack the checkbuttons
@@ -73,6 +74,7 @@ This code demonstrates the creation of check boxes (check buttons) and a text wi
 
     # Run the main event loop
     root.mainloop()
+
 
 For loops
 ~~~~~~~~~~~~~~~
