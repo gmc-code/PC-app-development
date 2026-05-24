@@ -11,8 +11,9 @@ name_entry.pack(pady=20)  # Add some padding to the top
 
 # Insert text into the Entry widget
 name_entry.insert(0, "type name here ...")
-# Automatically remove focus from Entry
-root.focus_set()
+# add focus to Entry
+name_entry.focus_set()
+# root.focus_set()
 
 # Run the main event loop
 root.mainloop()

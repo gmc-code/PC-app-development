@@ -22,19 +22,9 @@ Usage
 Using check buttons
 ---------------------------
 
-.. image:: images/check_buttons.png
+.. image:: images/checkboxes.png
     :scale: 100
 
-| This code demonstrates the creation of check boxes (check buttons).
-| The zip function is used to efficiently loop through 2 lists together.
-
-.. py:function:: for item1, item2 in zip(list1, list2)
-
-    - The `zip` function pairs each element from `list1` with the corresponding element from `list2`.
-    - In each iteration of the loop, item1 is an element from `list1` and `item2` is the corresponding element from `list2`.
-
-
-| State Management: option_vars1 is a list that holds IntVar objects. Each IntVar is associated with a checkbutton and is used to track whether the checkbutton is selected (1) or not selected (0). While those values are not used to do anything in the code below, they have been set up in preparation for doing so.
 
 .. code-block:: python
 
@@ -53,44 +43,23 @@ Using check buttons
     fontStyle = font.Font(family="Lucida Grande", size=18)
 
     # Define the options for group 1
-    options_grp1 = ["Option 1", "Option 2", "Option 3"]
+    options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3"]
 
-    # Create a list to hold the IntVar for each checkbutton
-    option_vars1 = []
     for option in options_grp1:
         var = tk.IntVar()
-        option_vars1.append(var)
-        # Preselect "Option 1"
-        if option == "Option 1":
+
+        if option == "Checkbox 1":
             var.set(1)
 
-    # Create and pack the checkbuttons for group 1
-    for option, var in zip(options_grp1, option_vars1):
-        button = tk.Checkbutton(frame1, text=option, variable=var, indicatoron=0,
-                                bg="white", fg="black", font=fontStyle, padx=10, pady=5)
-        button.pack(anchor="nw", side="left", padx=5, pady=5)
-
-
-    # Define the options for group 2
-    options_grp2 = ["Option 4", "Option 5", "Option 6"]
-
-    # Create a list to hold the IntVar for each checkbutton
-    option_vars2 = []
-    for option in options_grp2:
-        var = tk.IntVar()
-        option_vars2.append(var)
-        # Preselect "Option 4"
-        if option == "Option 4":
-            var.set(1)
-
-    # Create and pack the checkbuttons for group 2
-    for option, var in zip(options_grp2, option_vars2):
-        button = tk.Checkbutton(root, text=option, variable=var, indicatoron=1,
-                                bg="white", fg="black", font=fontStyle, padx=10, pady=5)
+        button = tk.Checkbutton(
+            frame1, text=option, variable=var, indicatoron=1,
+            bg="white", fg="black", font=fontStyle, padx=10, pady=5
+        )
         button.pack(anchor="nw", side="left", padx=5, pady=5)
 
     # Run the main event loop
     root.mainloop()
+
 
 ----
 
@@ -99,7 +68,7 @@ Using check buttons
 
     #. Modify the code to have 4 check boxes, one under another.
 
-        .. image:: images/check_buttons_question.png
+        .. image:: images/checkboxes_vertically.png
             :scale: 67
 
     .. dropdown::
@@ -132,27 +101,23 @@ Using check buttons
                     fontStyle = font.Font(family="Lucida Grande", size=18)
 
                     # Define the options for group 1
-                    options_grp1 = ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3", "Checkbox 4"]
 
-                    # Create a list to hold the IntVar for each checkbutton
-                    option_vars1 = []
                     for option in options_grp1:
                         var = tk.IntVar()
-                        option_vars1.append(var)
-                        # Preselect "Option 1"
-                        if option == "Option 1":
+
+                        if option == "Checkbox 1":
                             var.set(1)
 
-                    # Create and pack the checkbuttons for group 1
-                    for option, var in zip(options_grp1, option_vars1):
-                        button = tk.Checkbutton(frame1, text=option, variable=var, indicatoron=0,
-                                                bg="white", fg="black", font=fontStyle, padx=10, pady=5)
+                        button = tk.Checkbutton(
+                            frame1, text=option, variable=var, indicatoron=1,
+                            bg="white", fg="black", font=fontStyle, padx=10, pady=5
+                        )
                         button.pack(anchor="nw", side="top", padx=5, pady=5)
 
 
                     # Run the main event loop
                     root.mainloop()
-
 
 ----
 

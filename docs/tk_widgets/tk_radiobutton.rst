@@ -33,7 +33,7 @@ Using radio buttons
 | The `indicatoron` option is set to `0` to make the radio buttons look like regular buttons.
 | The `indicatoron` option is set to `1` to make the radio buttons look like radio buttons.
 
-| A for loop is used to create each group of radio buttons since they have the dame formatting options apart from the text and value options which are taken care of by the loop variable, `option`.
+| A for loop is used to create each group of radio buttons since they have the same formatting options apart from the text and value options which are taken care of by the loop variable, `option`.
 
 .. code-block:: python
 
@@ -75,7 +75,8 @@ Using radio buttons
     # Create and pack the radio buttons
     for option in options_grp2:
         button = tk.Radiobutton(root, text=option, value=option, variable=option_grp2_var,
-                                bg="white", fg="black", font=fontStyle, indicatoron=1, padx=10, pady=5)
+                                bg="white", fg="black", font=fontStyle,
+                                indicatoron=1, padx=10, pady=5)
         button.pack(anchor="nw", side="left", padx=5, pady=5)
     option_grp2_var.set("Option 4")
 
@@ -129,7 +130,8 @@ Using radio buttons
                     # Create and pack the radio buttons
                     for option in options:
                         button = tk.Radiobutton(frame, text=option, value=option, variable=option_var,
-                                                bg="white", fg="black", font=fontStyle, indicatoron=1, padx=10, pady=5)
+                                                bg="white", fg="black", font=fontStyle,
+                                                 indicatoron=1, padx=10, pady=5)
                         button.pack(anchor="nw", side="top", padx=5, pady=5)
                     option_var.set("Option 1")
 
