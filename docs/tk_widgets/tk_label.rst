@@ -264,7 +264,7 @@ Anchor
 
 
 .. image:: images/label_anchors.png
-    :scale: 100
+    :scale: 67
 
 
 Height and width
@@ -318,7 +318,7 @@ Anchor example
 
 
 .. image:: images/label_anchor.png
-    :scale: 100
+    :scale: 67
 
 
 ----
@@ -341,7 +341,7 @@ Border
    - Example: To create a solid border with a width of 1 pixels, use `relief="solid"` and `borderwidth=1`.
 
 .. image:: images/label_borders.png
-    :scale: 100
+    :scale: 67
 
 
 border example
