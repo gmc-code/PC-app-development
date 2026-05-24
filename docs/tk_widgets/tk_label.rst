@@ -264,7 +264,7 @@ Anchor
 
 
 .. image:: images/label_anchors.png
-    :scale: 67
+    :scale: 100
 
 
 Height and width
@@ -318,7 +318,7 @@ Anchor example
 
 
 .. image:: images/label_anchor.png
-    :scale: 50
+    :scale: 100
 
 
 ----
@@ -339,6 +339,9 @@ Border
    - Default Value: "flat" (no border)
    - Description: Specifies the border style and width for the label.
    - Example: To create a solid border with a width of 1 pixels, use `relief="solid"` and `borderwidth=1`.
+
+.. image:: images/label_borders.png
+    :scale: 100
 
 
 border example
@@ -364,10 +367,8 @@ border example
     root.mainloop()
 
 .. image:: images/label_border.png
-    :scale: 67
+    :scale: 100
 
-.. image:: images/label_borders.png
-    :scale: 67
 
 ----
 
