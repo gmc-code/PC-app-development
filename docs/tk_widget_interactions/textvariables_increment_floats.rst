@@ -87,7 +87,7 @@ Code features
    - ``label = tk.Label(root, textvariable=double_var, font=("Helvetica", 16))``: Creates a label in the ``root`` root.
    - The ``textvariable`` parameter is linked to ``double_var``, so the label text displays ``double_var``'s value.
 
-3. **Definethe Functions**:
+3. **Define the Functions**:
 
    - These functions use ``.get()`` and ``.set()`` methods on the variable  ``int_var``.
    - ``def increment_value()``: Defines a function to increment ``double_var``'s value by 0.1.
