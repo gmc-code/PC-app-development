@@ -28,30 +28,26 @@ Creating and Positioning Radio Buttons for Pizza Type
 
 .. code-block:: python
 
-    # Pizza Type (Radio buttons)
-    pizza_label = tk.Label(root, text="Pizza Type:")
-    pizza_label.grid(row=1, column=0, padx=10, pady=5, sticky="ne")
+    # Pizza type
+    tk.Label(root, text="Pizza Type:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
     pizza_var = tk.StringVar(root)
     pizza_var.set("Margherita")
-
     pizza_frame = tk.Frame(root)
     pizza_frame.grid(row=1, column=1, padx=10, pady=5, sticky="w")
-    for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie"]:
-        radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza)
-        radio_button.pack(anchor="w")
+    for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie", "BBQ Chicken"]:
+        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza).pack(anchor="w")
 
 
 1. **Label Creation**:
 
     .. code-block::
 
-        pizza_label = tk.Label(root, text="Pizza Type:")
-        pizza_label.grid(row=1, column=0, padx=10, pady=5, sticky="ne")
+      tk.Label(root, text="Pizza Type:").grid(row=1, column=0, padx=10, pady=5, sticky="e")
 
    - This line creates a label widget with the text "Pizza Type:".
    - The `grid` method places the label in the second row (`row=1`), first column (`column=0`) of the grid layout.
    - `padx` and `pady` add padding around the label for better spacing.
-   - `sticky="ne"` aligns the label to the northeast (top-right) of its grid cell.
+   - `sticky="e"` aligns the label to the east (right side) of its grid cell.
 
 
 2. **StringVar Initialization**:
@@ -63,10 +59,7 @@ Creating and Positioning Radio Buttons for Pizza Type
 
    - `pizza_var` is a `StringVar` object that holds the value of the selected pizza type.
    - `pizza_var.set("Margherita")` sets the default value to "Margherita".
-   -
-| Tkinter variables (StringVar, IntVar, etc.) aren't normal Python strings; they are special objects linked to Tkinter's internal engine.
-| By passing root, ``tk.StringVar(root)``, you are saying, "This variable belongs to this specific window."
-| If that window is ever closed or destroyed, the memory used by that variable is safely cleaned up along with it.
+
 
 3. **Frame Creation**:
 
@@ -84,9 +77,8 @@ Creating and Positioning Radio Buttons for Pizza Type
 
     .. code-block::
 
-        for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie"]:
-            radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza)
-            radio_button.pack(anchor="w")
+        for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie", "BBQ Chicken"]:
+            tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza).pack(anchor="w")
 
    - This loop creates a radio button for each pizza type in the list.
    - Each `Radiobutton` is placed inside `pizza_frame`.

@@ -20,12 +20,10 @@ Adding Labels
 .. code-block:: python
 
     # Customer name
-    customer_label = tk.Label(root, text="Customer Name:")
-    customer_label.grid(row=0, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(root, text="Customer Name:").grid(row=0, column=0, padx=10, pady=5)
 
-
-- ``customer_label = tk.Label(root, text="Customer Name:")``: Creates a label widget with the text "Customer Name:".
-- ``customer_label.grid(row=0, column=0, padx=10, pady=5, sticky="e")``: Positions the label in the grid layout at row 0, column 0, with padding of 10 pixels horizontally and 5 pixels vertically.
+- ``tk.Label(root, text="Customer Name:")``: Creates a label widget with the text "Customer Name:".
+- ``.grid(row=0, column=0, padx=10, pady=5)``: Positions the label in the grid layout at row 0, column 0, with padding of 10 pixels horizontally and 5 pixels vertically.
 
 ----
 
@@ -34,11 +32,11 @@ Adding Entry Widgets
 
 .. code-block:: python
 
-    customer_entry = tk.Entry(root, width=20)
-    customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=3, sticky="w")
+    customer_entry = tk.Entry(root)
+    customer_entry.grid(row=0, column=1, padx=10, pady=5)
 
-- ``customer_entry = tk.Entry(root, width=20)``: Creates an entry widget for text input.
-- ``.grid(row=0, column=1, padx=10, pady=5, ipady=3, sticky="w")``: Positions the entry widget in the grid layout at row 0, column 1, with padding.
+- ``customer_entry = tk.Entry(root)``: Creates an entry widget for text input.
+- ``.grid(row=0, column=1, padx=10, pady=5)``: Positions the entry widget in the grid layout at row 0, column 1, with padding.
 
 ----
 
