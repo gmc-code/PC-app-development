@@ -20,8 +20,8 @@ Creating an Add Order Button
 .. code-block:: python
 
     # Add order button
-    add_button = tk.Button(root, text="Add Order", command=add_order)
-    add_button.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w")
+    add_button = tk.Button(root, text="Add Order", command=add_order,width=15)
+    add_button.grid(row=6, column=1, padx=10, pady=15, ipady=5, sticky="w")
 
 - ``tk.Button(root, text="Add Order", command=add_order, bg=button_bg, fg=button_fg)``: Creates a button with the text "Add Order" and assigns the ``add_order`` function to be called when the button is clicked.
 - ``.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w")``: Positions the button in the grid layout.
@@ -43,7 +43,7 @@ Writing the ``add_order`` Function
 
 .. code-block:: python
 
-    # orders
+    # Orders tracking list
     orders = []
 
 
@@ -52,6 +52,7 @@ Writing the ``add_order`` Function
 .. code-block:: python
 
     def add_order():
+        """Validates input and adds the current selection to the order list."""
         customer = customer_entry.get()
         pizza = pizza_var.get()
         size = size_var.get()
@@ -59,13 +60,12 @@ Writing the ``add_order`` Function
 
         if not customer:
             messagebox.showerror("Input Error", "Please enter the customer name.")
-            customer_entry.config(bg="red")
-            return
+            customer_entry.config(bg="pink")
         else:
             customer_entry.config(bg="white")
+            orders.append((customer, pizza, size, quantity))
+            quantity_var.set(0)  # Reset quantity to default
 
-        orders.append((customer, pizza, size, quantity))
-        quantity_var.set("1")
 
 
 - ``add_order``: Function to add an order to the list.
@@ -75,5 +75,5 @@ Writing the ``add_order`` Function
 - ``quantity = quantity_var.get()``: Retrieves the selected quantity string as an integer.
 - ``messagebox.showerror("Input Error", "Please enter the customer name.")``: Displays an error message if the customer name is not entered.
 - ``orders.append((customer, pizza, size, quantity))``: Adds the order to the list of orders.
-- ``quantity_var.set("1")``: Resets the quantity to 1.
+- ``quantity_var.set("0")``: Resets the quantity to 0.
 

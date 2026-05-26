@@ -10,8 +10,9 @@ Create a window
 - **Content**:
 
   - Introduction to Tkinter.
-  - Creating a basic root.
+  - Creating a basic root (window).
   - Adding a title and configuring the window size.
+  - Placing commented sections for the different parts of the code.
 
 Introduction to Tkinter
 --------------------------------
@@ -28,11 +29,19 @@ Creating a Basic Window
 
     import tkinter as tk
 
+    # 1. DATA DICTIONARIES
+
+    # 2. CONSTANTS & STYLES
+
+    # 3. DEFINITIONS / FUNCTIONS
+
+    # 4. TKINTER WIDGETS
     # Create the main window
     root = tk.Tk()
     root.title("Pizza Ordering System")
     root.geometry("900x600")
 
+    # 5. Main code
     # Run the application
     root.mainloop()
 

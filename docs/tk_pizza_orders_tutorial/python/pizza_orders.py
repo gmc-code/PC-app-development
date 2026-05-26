@@ -51,12 +51,11 @@ def add_order():
     if not customer:
         messagebox.showerror("Input Error", "Please enter the customer name.")
         customer_entry.config(bg="pink")
-        return
-
-    customer_entry.config(bg=WHITE_BG)
-    orders.append((customer, pizza, size, quantity))
-    quantity_var.set(1)  # Reset quantity to default
-    update_order_list()
+    else:
+        customer_entry.config(bg=WHITE_BG)
+        orders.append((customer, pizza, size, quantity))
+        quantity_var.set(0)  # Reset quantity to default
+        update_order_list()
 
 
 def delete_selected_pizza():
@@ -131,7 +130,8 @@ for pizza in prices.keys():
 # Pizza Size (Radio buttons)
 pizza_label = tk.Label(root, text="Pizza Size:", font=LABEL_FONT, bg=BG_COLOR)
 pizza_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
-size_var = tk.StringVar(root, value="Small")
+size_var = tk.StringVar(root)
+size_var.set("Small")
 size_var.trace_add("write", update_costs)
 
 size_frame = tk.Frame(root, bg=BG_COLOR)
@@ -143,7 +143,8 @@ for size in ["Small", "Medium", "Large"]:
 # Quantity (Dropdown Menu)
 quanitity_label = tk.Label(root, text="Quantity:", font=LABEL_FONT, bg=BG_COLOR)
 quanitity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
-quantity_var = tk.IntVar(root, value=1)
+quantity_var = tk.IntVar(root)
+quantity_var.set(1)
 quantity_var.trace_add("write", update_costs)
 
 quantity_menu = tk.OptionMenu(root, quantity_var, 1, 2, 3, 4, 5)
@@ -151,11 +152,14 @@ quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 quantity_menu.config(bg=BLUE_BG, activebackground=BLUE_BG)
 
 # Dynamic Price Displays
-cost_display_var = tk.StringVar(root, value="Cost per pizza: $5")
+# Cost per pizza display
+cost_display_var = tk.StringVar(root)
+cost_display_var.set("Cost per pizza: $5")
 cost_label = tk.Label(root, textvariable=cost_display_var, font=LABEL_FONT, bg=BG_COLOR)
 cost_label.grid(row=4, column=1, padx=10, pady=5, sticky="w")
-
-order_cost_var = tk.StringVar(root, value="Order cost: $5")
+# order cost display
+order_cost_var = tk.StringVar(root)
+order_cost_var.set("Order cost: $0")
 order_cost_label = tk.Label(root, textvariable=order_cost_var, font=LABEL_FONT, bg=BG_COLOR)
 order_cost_label.grid(row=5, column=1, padx=10, pady=5, sticky="w")
 
@@ -176,11 +180,11 @@ order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, stick
 delete_pizza_button = tk.Button(root, text="Delete Selected", command=delete_selected_pizza, font=BUTTON_FONT, bg=RED_BG, activebackground=RED_BG)
 delete_pizza_button.grid(row=6, column=2, padx=10, pady=15, ipady=5, sticky="w")
 
-# Action Button: Cancel All
+# Action Button: Cancel All Orders
 cancel_order_button = tk.Button(root, text="Cancel All Orders", command=cancel_order, font=BUTTON_FONT,bg=RED_BG, activebackground=RED_BG)
 cancel_order_button.grid(row=6, column=3, padx=10, pady=15, ipady=5, sticky="e")
 
-
+# 5. Main code
 # Initialize price calculations display on startup
 update_costs()
 

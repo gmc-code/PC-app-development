@@ -63,7 +63,8 @@ Creating and Positioning Radio Buttons for Pizza Type
 
    - `pizza_var` is a `StringVar` object that holds the value of the selected pizza type.
    - `pizza_var.set("Margherita")` sets the default value to "Margherita".
-   -
+   - This means that when the GUI is first displayed, "Margherita" will be the pre-selected option.
+
 | Tkinter variables (StringVar, IntVar, etc.) aren't normal Python strings; they are special objects linked to Tkinter's internal engine.
 | By passing root, ``tk.StringVar(root)``, you are saying, "This variable belongs to this specific window."
 | If that window is ever closed or destroyed, the memory used by that variable is safely cleaned up along with it.
@@ -94,42 +95,4 @@ Creating and Positioning Radio Buttons for Pizza Type
    - `variable=pizza_var` links the radio button to the `pizza_var` variable.
    - `value=pizza` sets the value of `pizza_var` when the radio button is selected.
    - `pack(anchor="w")` arranges the radio buttons vertically, aligned to the left.
-
-----
-
-Using StringVar to Manage Radio Button Values
-----------------------------------------------------------------
-
-See: `<https://python-course.eu/tkinter/variable-classes-in-tkinter.php>`_
-
-1. **StringVar Initialization**:
-
-    .. code-block::
-
-        pizza_var = tk.StringVar(root)
-
-    - ``tk.StringVar`` is a class in the ``tkinter`` module that provides a way to manage the value of a widget, such as a label or entry, as a string.
-    - ``pizza_var`` is an instance of ``StringVar``.
-    - This variable will hold the value of the selected pizza type and can be used to retrieve or update the value dynamically.
-
-
-2. **Setting the Default Value**:
-
-    .. code-block::
-
-        pizza_var.set("Margherita")
-
-    - The ``set`` method initializes the ``StringVar`` with a default value, in this case, "Margherita".
-    - This means that when the GUI is first displayed, "Margherita" will be the pre-selected option.
-
-
-3. **Why Use StringVar?**
-
-   - **Dynamic Updates**: ``StringVar`` allows the value to be updated dynamically. When the user selects a different pizza type, ``pizza_var`` will automatically update to reflect the new selection.
-   - **Data Binding**: Widgets like ``Radiobutton`` can be bound to ``StringVar``, enabling them to share and update the same value.
-   - **Ease of Access**: You can easily retrieve the current value of ``pizza_var`` using the ``get`` method, which is helpful for processing user input.
-
-    .. code-block::
-
-        selected_pizza = pizza_var.get()
 

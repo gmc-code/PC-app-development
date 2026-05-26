@@ -3,6 +3,8 @@ Modify via radiobutton
 ====================================================
 
 | See: `<https://www.geeksforgeeks.org/python-setting-and-retrieving-values-of-tkinter-variable/>`_
+| See: `<https://dafarry.github.io/tkinterbook/tkinter-events-and-bindings.htm>`_
+| See: `<https://python-course.eu/tkinter/variable-classes-in-tkinter.php>`_
 
 ----
 

@@ -1,6 +1,6 @@
-==============================================================
-Add Radio Buttons and OptionMenu
-==============================================================
+================================================================
+Add Radio Buttons for pizza sizes and OptionMenu for quantity
+================================================================
 
 .. image:: images/pizza_4.png
     :scale: 67
@@ -21,26 +21,31 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 
 .. code-block:: python
 
-    # Pizza size
-    tk.Label(root, text="Pizza Size:").grid(row=2, column=0, padx=10, pady=5, sticky="e")
+    # Pizza Size (Radio buttons)
+    pizza_label = tk.Label(root, text="Pizza Size:")
+    pizza_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
     size_var = tk.StringVar(root)
     size_var.set("Small")
+
     size_frame = tk.Frame(root)
     size_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
     for size in ["Small", "Medium", "Large"]:
-        tk.Radiobutton(size_frame, text=size, variable=size_var, value=size).pack(anchor="w")
+        radio_button = tk.Radiobutton(size_frame, text=size, variable=size_var, value=size)
+        radio_button.pack(anchor="w")
+
 
 
 1. **Label Creation**:
 
     .. code-block::
 
-        tk.Label(root, text="Pizza Size:").grid(row=2, column=0, padx=10, pady=5, sticky="e")
+        pizza_label = tk.Label(root, text="Pizza Size:")
+        pizza_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
 
     - This line creates a label widget with the text "Pizza Size:".
     - The `grid` method places the label in the third row (`row=2`), first column (`column=0`) of the grid layout.
     - `padx` and `pady` add padding around the label for better spacing.
-    - `sticky="e"` aligns the label to the east (right side) of its grid cell.
+    - `sticky="ne"` aligns the label to the northeast (top-right) of its grid cell.
 
 2. **StringVar Initialization**:
 
@@ -63,12 +68,14 @@ Creating and Positioning Radio Buttons for Pizza Sizes
     - The `grid` method places the frame in the third row (`row=2`), second column (`column=1`) of the grid layout.
     - `sticky="w"` aligns the frame to the west (left side) of its grid cell.
 
+
 4. **Radio Buttons Creation**:
 
     .. code-block::
 
         for size in ["Small", "Medium", "Large"]:
-            tk.Radiobutton(size_frame, text=size, variable=size_var, value=size).pack(anchor="w")
+                radio_button = tk.Radiobutton(size_frame, text=size, variable=size_var, value=size)
+                radio_button.pack(anchor="w")
 
     - This loop creates a radio button for each pizza size in the list.
     - Each `Radiobutton` is placed inside `size_frame`.
@@ -89,15 +96,16 @@ Creating and Positioning the OptionMenu
     # Quantity
     tk.Label(root, text="Quantity:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
     quantity_var = tk.IntVar(root)
-    quantity_var.set("1")
-    quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
+    quantity_var.set(0)
+    quantity_menu = tk.OptionMenu(root, quantity_var, 0,1, 2, 3, 4, 5)
     quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
 1. **Label Creation**:
 
     .. code-block::
 
-        tk.Label(root, text="Quantity:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
+        quanitity_label = tk.Label(root, text="Quantity:")
+        quanitity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
     - This line creates a label widget with the text "Quantity:".
     - The `grid` method places the label in the fourth row (`row=3`), first column (`column=0`) of the grid layout.
@@ -111,21 +119,21 @@ Creating and Positioning the OptionMenu
     .. code-block::
 
         quantity_var = tk.IntVar(root)
-        quantity_var.set("1")
+        quantity_var.set(0)
 
     - `quantity_var` is a `IntVar` object that holds the value of the selected quantity, as an integer.
-    - `quantity_var.set("1")` sets the default value to "1".
+    - `quantity_var.set(0)` sets the default value to 0.
 
 3. **OptionMenu Creation**:
 
     .. code-block::
 
-        quantity_menu = tk.OptionMenu(root, quantity_var, "1", "2", "3", "4", "5")
+        quantity_menu = tk.OptionMenu(root, quantity_var, 0, 1, 2, 3, 4, 5)
         quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
     - This creates an `OptionMenu` widget for selecting a quantity.
     - The `OptionMenu` is associated with the `root` window and linked to the `quantity_var` variable.
-    - The options available in the menu are "1", "2", "3", "4", and "5".
+    - The options available in the menu are 0, 1, 2, 3, 4, and 5.
     - The `grid` method places the `OptionMenu` in the fourth row (`row=3`), second column (`column=1`) of the grid layout.
     - `padx` and `pady` add padding around the menu for better spacing.
     - `sticky="w"` aligns the menu to the west (left side) of its grid cell.
