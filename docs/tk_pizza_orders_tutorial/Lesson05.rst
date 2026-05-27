@@ -46,7 +46,7 @@ Cost per pizza display
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
-| This code sets up a label to display the cost per pizza. The displayed text is managed by a `StringVar` named `cost_display_var`, which is initialized to "Cost per pizza: $0". The label is placed in the grid layout and aligned to the left, and it updates dynamically based on the value of `cost_display_var`.
+| This code sets up a label to display the cost per pizza. The displayed text is managed by a `StringVar` named `cost_display_var`, which is initialized to "Cost per pizza: $8". The label is placed in the grid layout and aligned to the left, and it updates dynamically based on the value of `cost_display_var`.
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ Order cost display
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
-| This code sets up a label to display the total order cost. The displayed text is managed by a `StringVar` named `order_cost_var`, which is initialized to "Order cost: $0". The label is placed in the grid layout and aligned to the left, ensuring it updates dynamically based on the value of `order_cost_var`.
+| This code sets up a label to display the total order cost. The displayed text is managed by a `StringVar` named `order_cost_var`, which is initialized to "Order cost: $8". The label is placed in the grid layout and aligned to the left, ensuring it updates dynamically based on the value of `order_cost_var`.
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ Order cost display
 
 
 - ``order_cost_var = tk.StringVar(root)``: Creates a StringVar to hold the order cost.
-- ``order_cost_var.set("Order cost: $8")``:  initializes the `StringVar` with the default text "Order cost: $0", and so sets the initial value of the order cost display.
+- ``order_cost_var.set("Order cost: $8")``:  initializes the `StringVar` with the default text "Order cost: $8", and so sets the initial value of the order cost display.
 - ``tk.Label(root, textvariable=order_cost_var)``: Creates a label that displays the order cost, the value of `order_cost_var`.
 - The `textvariable` parameter links the label to the `order_cost_var` variable, so any changes to `order_cost_var` will automatically update the label's text.
 - The `grid` method places the label in the sixth row (`row=5`), second column (`column=1`) of the grid layout.

@@ -2,24 +2,22 @@
 Extensions
 ==================================================
 
-- **Objective**: Extend the pizza ordering system.
-- **Content**:
-
-  - Extend the pizza ordering system.
-
 | These are some starting suggestions for extending the pizza ordering system.
 | Careful planning for how these who fit into the system is needed as well as the creation of new code to integrate them.
+
+----
+Limiting Customer Name Length
+--------------------------------
+
+| Add code to limit the length of the customer name input to a maximum of 20 characters.
+| This can be done by adding a validation function that checks the length of the input and prevents further input if the limit is exceeded.
 
 ----
 
 Add customer mobile
 --------------------------------
 
-.. code-block:: python
-
-    tk.Label(root, text="Mobile:").grid(row=1, column=0, padx=10, pady=5)
-    address_entry = tk.Entry(root)
-    address_entry.grid(row=1, column=1, padx=10, pady=5)
+| Add a label and entry widget for customer mobile number.
 
 ----
 
@@ -44,44 +42,11 @@ Add descriptions
 Add crust type
 -------------------------------------------------------
 
-- Creating radio buttons for crust types:
-
-.. code-block:: python
-
-    tk.Label(root, text="Crust type:").grid(row=5, column=0, padx=10, pady=5, sticky="e")
-    crust_var = tk.StringVar(root)
-    crust_var.set("Thin")
-    crust_frame = tk.Frame(root)
-    crust_frame.grid(row=5, column=1, padx=10, pady=5, sticky="w")
-    for crust in ["Thin", "Thick", "Stuffed"]:
-        tk.Radiobutton(crust_frame, text=crust, variable=crust_var, value=crust).pack(anchor="w")
+Create controls for crust types:"Thin", "Thick", "Crispy", "Gluten-Free".
 
 ----
 
 Add drinks
 --------------------------------
 
-.. code-block:: python
-
-    tk.Label(root, text="Drink:").grid(row=5, column=0, padx=10, pady=5, sticky="e")
-    drink_var = tk.StringVar(root)
-    drink_var.set("Coke")
-    drink_frame = tk.Frame(root)
-    drink_frame.grid(row=5, column=1, padx=10, pady=5, sticky="w")
-    for drink in ["Coke", "Pepsi", "Orange", "Lemonade", "Water"]:
-        tk.Radiobutton(drink_frame, text=drink, variable=drink_var, value=drink).pack(anchor="w")
-
-
-.. code-block:: python
-
-    drink_quantity_var = tk.IntVar(root)
-    drink_quantity_var.set("1")
-    drink_quantity_menu = tk.OptionMenu(root, drink_quantity_var, *[str(i) for i in range(1, 11)])
-    drink_quantity_menu.grid(row=6, column=1, padx=10, pady=5, sticky="w")
-
-
-.. code-block:: python
-
-   drink_cost_var = tk.StringVar(root)
-   drink_cost_var.set("Cost per drink: $0")
-   tk.Label(root, textvariable=drink_cost_var).grid(row=6, column=1, padx=10, pady=5, sticky="w")
+Create controls for common soft drinks.
