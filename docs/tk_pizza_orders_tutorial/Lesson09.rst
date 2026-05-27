@@ -18,7 +18,7 @@ Final Touches and Styling
 Updating Pizza type to use prices dictionary
 ------------------------------------------------------
 
-| Place the following code in Section "1. DATA DICTIONARIES".
+| Place the following code in Section "1. DATA DICTIONARIES & LISTS".
 
 .. code-block:: python
 

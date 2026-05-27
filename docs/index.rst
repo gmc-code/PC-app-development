@@ -84,9 +84,7 @@ PC-app-development
 
     tk_widget_interactions/entry_validation_numbers.rst
 
-    .. tk_widget_interactions/tk_widget_interactions.rst
-    .. tk_widget_interactions/entry_validation_numbers.rst
-
+    .. tk_widget_interactions/tk_widget_interactions.rsr
     ..tk_widget_interactions/tk_button_methods.rst
 
 .. toctree::

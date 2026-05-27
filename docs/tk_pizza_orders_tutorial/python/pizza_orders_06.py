@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-# 1. DATA DICTIONARIES
+# 1. DATA DICTIONARIES & LISTS
 # options with size
 prices = {
     "Margherita": {"Small": 5, "Medium": 7, "Large": 10},
@@ -45,7 +45,7 @@ def add_order():
 
 
 
-
+# 4. TKINTER WIDGETS
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")

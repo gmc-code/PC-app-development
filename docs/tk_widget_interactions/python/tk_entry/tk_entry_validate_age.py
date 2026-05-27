@@ -7,7 +7,10 @@ def validate_age(new_text):
     if new_text.isdigit():
         age = int(new_text)
         # Only allow if the number is between 0 and 120
-        return 0 <= age <= 120
+        if 0 <= age <= 120:
+            return True
+        else:
+            return False
     else:
         return False   # Reject letters
 

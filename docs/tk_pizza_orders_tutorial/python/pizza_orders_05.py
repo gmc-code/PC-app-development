@@ -1,13 +1,31 @@
 import tkinter as tk
 
-# 1. DATA DICTIONARIES
+# 1. DATA DICTIONARIES & LISTS
 # options with size
 prices = {
-    "Margherita": {"Small": 5, "Medium": 7, "Large": 10},
-    "Pepperoni": {"Small": 6, "Medium": 8, "Large": 11},
-    "Hawaiian": {"Small": 6, "Medium": 8, "Large": 11},
-    "Veggie": {"Small": 5, "Medium": 7, "Large": 10}
+    "Margherita": {
+        "Small": 5,
+        "Medium": 7,
+        "Large": 10
+    },
+    "Pepperoni": {
+        "Small": 6,
+        "Medium": 8,
+        "Large": 11
+    },
+    "Hawaiian": {
+        "Small": 6,
+        "Medium": 8,
+        "Large": 11
+    },
+    "Veggie": {
+        "Small": 5,
+        "Medium": 7,
+        "Large": 10
+    }
 }
+
+# 2. CONSTANTS & STYLES
 
 # 3. DEFINITIONS / FUNCTIONS
 def update_costs(*args):
@@ -24,6 +42,7 @@ def update_costs(*args):
 
 
 
+# 4. TKINTER WIDGETS
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")

@@ -50,7 +50,7 @@ This script only allows the user to type numbers. If they press a letter key, no
 
 .. admonition:: Tasks
 
-    #. Modify the validation rules so that the entry box accepts numbers, but limits the entry to a maximum age of 120.
+    #. Modify the validation rules so that a user can type a number, but limits the entry to a maximum of 2 digits total.
 
     .. dropdown::
         :icon: codescan
@@ -60,6 +60,44 @@ This script only allows the user to type numbers. If they press a letter key, no
         .. tab-set::
 
             .. tab-item:: Task 1 Solution
+
+                We use ``len(new_text)`` to ensure the user cannot type more than 2 characters.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    def validate_two_digits(new_text):
+                        if new_text == "":
+                            return True  # Allow deleting text completely
+                        # Check if it is a number AND has 2 or fewer digits
+                        if new_text.isdigit() and len(new_text) <= 2:
+                            return True
+                        else:
+                            return False  # Reject letters or a 3rd digit
+
+                    root = tk.Tk()
+                    root.title("2-Digit Validator")
+                    root.geometry("400x200")
+
+                    vcmd = (root.register(validate_two_digits), '%P')
+
+                    entry = tk.Entry(root, font=("Arial", 20), validate='key', validatecommand=vcmd)
+                    entry.pack(pady=40)
+
+                    root.mainloop()
+
+
+    #. Modify the validation rules so that the entry box accepts numbers, but limits the entry to a maximum age of 120.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Task 2 Solution
 
                 We can convert ``new_text`` into an integer using ``int()`` to check if it fits within our 0-120 range.
 
@@ -73,7 +111,10 @@ This script only allows the user to type numbers. If they press a letter key, no
                         if new_text.isdigit():
                             age = int(new_text)
                             # Only allow if the number is between 0 and 120
-                            return 0 <= age <= 120
+                            if 0 <= age <= 120:
+                                return True
+                            else:
+                                return False
                         else:
                             return False   # Reject letters
 
@@ -88,8 +129,7 @@ This script only allows the user to type numbers. If they press a letter key, no
 
                     root.mainloop()
 
-
-    #. Modify the validation rules so that a user can type a phone number, but can type a maximum of 10 digits total.
+    #. Modify the validation rules so that the entry box only accepts numbers from -9 to +9.
 
     .. dropdown::
         :icon: codescan
@@ -98,28 +138,33 @@ This script only allows the user to type numbers. If they press a letter key, no
 
         .. tab-set::
 
-            .. tab-item:: Task 2 Solution
+            .. tab-item:: Task 3 Solution
 
-                We use ``len(new_text)`` to check how many characters have been typed so far.
+                We allow the user to type a single ``-`` or ``+`` sign first, and then check if the total value is between -9 and +9.
 
                 .. code-block:: python
 
                     import tkinter as tk
 
-                    def validate_phone(new_text):
+                    def validate_range(new_text):
                         if new_text == "":
+                            return True  # Allow deleting text completely
+                        # Allow just a minus or plus sign so the user can start typing
+                        if new_text in ["-", "+"]:
                             return True
-                        # Check if it is a number AND has 10 or fewer digits
-                        if new_text.isdigit() and len(new_text) <= 10:
-                            return True
-                        else:
-                            return False
+                        # Check if the text is a valid number
+                        try:
+                            num = int(new_text)
+                            # Only allow if the number is between -9 and +9
+                            return -9 <= num <= 9
+                        except ValueError:
+                            return False  # Reject letters or invalid symbols
 
                     root = tk.Tk()
-                    root.title("Phone Validator (Max 10 Digits)")
+                    root.title("Single Digit Validator (-9 to +9)")
                     root.geometry("400x200")
 
-                    vcmd = (root.register(validate_phone), '%P')
+                    vcmd = (root.register(validate_range), '%P')
 
                     entry = tk.Entry(root, font=("Arial", 20), validate='key', validatecommand=vcmd)
                     entry.pack(pady=40)

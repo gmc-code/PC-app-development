@@ -1,6 +1,6 @@
 import tkinter as tk
 
-# 1. DATA DICTIONARIES
+# 1. DATA DICTIONARIES & LISTS
 
 # 2. CONSTANTS & STYLES
 
