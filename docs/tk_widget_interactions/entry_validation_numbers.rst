@@ -50,7 +50,7 @@ This script only allows the user to type numbers. If they press a letter key, no
 
 .. admonition:: Tasks
 
-    #. Modify the validation rules so that a user can type a number, but limits the entry to a maximum of 2 digits total.
+    1. Modify the validation rules so that a user can type a number, but limits the entry to a maximum of 2 digits total.
 
     .. dropdown::
         :icon: codescan
@@ -88,7 +88,7 @@ This script only allows the user to type numbers. If they press a letter key, no
                     root.mainloop()
 
 
-    #. Modify the validation rules so that the entry box accepts numbers, but limits the entry to a maximum age of 120.
+    2. Modify the validation rules so that the entry box accepts numbers, but limits the entry to a maximum age of 120.
 
     .. dropdown::
         :icon: codescan
@@ -129,7 +129,7 @@ This script only allows the user to type numbers. If they press a letter key, no
 
                     root.mainloop()
 
-    #. Modify the validation rules so that the entry box only accepts numbers from -9 to +9.
+    3. Modify the validation rules so that the entry box only accepts numbers from -9 to +9.
 
     .. dropdown::
         :icon: codescan
