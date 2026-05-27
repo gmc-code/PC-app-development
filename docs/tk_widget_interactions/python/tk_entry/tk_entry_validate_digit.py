@@ -1,17 +1,21 @@
 import tkinter as tk
 
-def validate_input(new_value):
-    # Check if the new value is numeric
-    return new_value.isdigit() or new_value == ""
+def check_number(new_text):
+    # Allow the box to be empty, OR check if the new text is a number
+    if new_text == "" or new_text.isdigit():
+        return True   # True means "allow the change"
+    else:
+        return False  # False means "reject the keystroke"
 
 root = tk.Tk()
-root.title("Validate Entry Example")
-root.geometry("500x300")  # Set window size
+root.title("Numbers Only")
+root.geometry("400x200")
 
-# Register the validation function
-vcmd = (root.register(validate_input), '%P')
+# Register our validation function with Tkinter
+vcmd = (root.register(check_number), '%P')
 
-entry = tk.Entry(root, font=("Arial",24), validate='key', validatecommand=vcmd)
-entry.pack(pady=10)
+# Create the entry box with validation turned on
+entry = tk.Entry(root, font=("Arial", 20), validate='key', validatecommand=vcmd)
+entry.pack(pady=40)
 
 root.mainloop()

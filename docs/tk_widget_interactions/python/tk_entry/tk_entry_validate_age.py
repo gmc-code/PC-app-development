@@ -1,13 +1,15 @@
 import tkinter as tk
 
 
-def validate_age(new_value):
-    if new_value.isdigit():
-        age = int(new_value)
-        return 0 <= age <= 120  # Returns True if within range, otherwise False
+def validate_age(new_text):
+    if new_text == "":
+        return True  # Allow deleting text completely
+    if new_text.isdigit():
+        age = int(new_text)
+        # Only allow if the number is between 0 and 120
+        return 0 <= age <= 120
     else:
-        return new_value == ""  # Returns True if empty, otherwise False
-
+        return False   # Reject letters
 
 root = tk.Tk()
 root.title("Age Validation Example")

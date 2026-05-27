@@ -9,7 +9,8 @@ The ``tk.Entry`` widget creates a text box that allows users to type in informat
 Validating Input (Numbers Only)
 --------------------------------
 
-Sometimes you want to force the user to type *only* numbers (for example, when asking for an age). We can block letters from being typed entirely.
+| Sometimes you want to force the user to type *only* numbers (for example, when asking for an age).
+| We can block letters from being typed entirely.
 
 To do this, we use two special settings:
 * ``validate='key'``: Checks the text every single time a key is pressed.
@@ -68,14 +69,13 @@ This script only allows the user to type numbers. If they press a letter key, no
 
                     def validate_age(new_text):
                         if new_text == "":
-                            return True # Allow deleting text completely
-
+                            return True  # Allow deleting text completely
                         if new_text.isdigit():
                             age = int(new_text)
                             # Only allow if the number is between 0 and 120
                             return 0 <= age <= 120
-
-                        return False # Reject letters
+                        else:
+                            return False   # Reject letters
 
                     root = tk.Tk()
                     root.title("Age Validator (0-120)")
@@ -109,12 +109,11 @@ This script only allows the user to type numbers. If they press a letter key, no
                     def validate_phone(new_text):
                         if new_text == "":
                             return True
-
                         # Check if it is a number AND has 10 or fewer digits
                         if new_text.isdigit() and len(new_text) <= 10:
                             return True
-
-                        return False
+                        else:
+                            return False
 
                     root = tk.Tk()
                     root.title("Phone Validator (Max 10 Digits)")
