@@ -155,7 +155,7 @@ Adding font and colour settings to tkinter widgets
     # Orders list
     orders_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
-    order_list.config(font=ORDER_FONT, bg=LIST_BG)
+    order_list.config(font=ORDER_FONT, bg=LIST_BG, activestyle="none", highlightthickness=0, selectbackground="#d3d3d3", selectforeground="#000000")
 
 
 .. code-block:: python

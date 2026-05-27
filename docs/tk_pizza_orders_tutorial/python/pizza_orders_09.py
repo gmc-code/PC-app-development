@@ -20,12 +20,14 @@ orders = []
 
 
 # 2. CONSTANTS & STYLES
-# Fonts
-LABEL_FONT = ("Helvetica", 12)
-ENTRY_FONT = ("Helvetica", 14)
-ORDER_FONT = ("Helvetica", 12)
-RADIO_FONT = ("Helvetica", 12)
-BUTTON_FONT = ("Helvetica", 14)  # Adjusted slightly for clean layout grid scaling
+# Fonts - Adding "normal" explicitly stops the OS from making them chunky
+# 2. CONSTANTS & STYLES
+# Segoe UI renders much thinner and more elegant at larger sizes
+LABEL_FONT = ("Segoe UI", 14, "normal")
+ENTRY_FONT = ("Segoe UI", 16, "normal")  # Large, sleek, and crisp!
+ORDER_FONT = ("Segoe UI", 13, "normal")
+RADIO_FONT = ("Segoe UI", 13, "normal")
+BUTTON_FONT = ("Segoe UI", 14, "normal")
 
 # Colors
 BG_COLOR = "#f0f0f0"       # Light gray background
@@ -111,7 +113,7 @@ def cancel_order():
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")
-root.geometry("900x600")
+root.geometry("900x700")
 root.configure(bg=BG_COLOR)
 
 # --- LEFT SIDE: SELECTIONS ---
@@ -207,7 +209,8 @@ orders_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
 order_list = tk.Listbox(root, width=45, height=12)
 order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
-order_list.config(font=ORDER_FONT, bg=LIST_BG, activestyle="none", highlightthickness=0)
+order_list.config(font=ORDER_FONT, bg=LIST_BG, activestyle="none", highlightthickness=0, selectbackground="#d3d3d3", selectforeground="#000000")
+
 
 # Action Button: Delete Selected
 delete_pizza_button = tk.Button(root, text="Delete Selected", command=delete_selected_pizza)

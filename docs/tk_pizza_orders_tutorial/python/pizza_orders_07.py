@@ -66,7 +66,7 @@ def update_order_list():
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")
-root.geometry("900x600")
+root.geometry("900x700")
 
 # Customer Name
 customer_label = tk.Label(root, text="Customer Name:")

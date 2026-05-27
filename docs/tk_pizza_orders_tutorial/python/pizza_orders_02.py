@@ -10,7 +10,7 @@ import tkinter as tk
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")
-root.geometry("900x600")
+root.geometry("900x700")
 
 # --- LEFT SIDE: INPUT CONTROLS ---
 

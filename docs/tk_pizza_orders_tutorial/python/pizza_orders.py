@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
 
-# 1. DATA DICTIONARIES
-# 4 options with 3 sizes each
+
+# 1. DATA DICTIONARIES & LISTS
+# options with size
 prices = {
     "Margherita": {"Small": 8, "Medium": 12, "Large": 15},
     "Veggie": {"Small": 9, "Medium": 12, "Large": 16},
@@ -14,28 +15,28 @@ prices = {
     "Meat Lovers": {"Small": 11, "Medium": 15, "Large": 19}
 }
 
-
 # Orders tracking list
 orders = []
 
 
 # 2. CONSTANTS & STYLES
-# Fonts
-LABEL_FONT = ("Helvetica", 12)
-ENTRY_FONT = ("Helvetica", 14)
-ORDER_FONT = ("Helvetica", 12)
-RADIO_FONT = ("Helvetica", 12)
-BUTTON_FONT = ("Helvetica", 18)
+# Fonts - Adding "normal" explicitly stops the OS from making them chunky
+# 2. CONSTANTS & STYLES
+# Segoe UI renders much thinner and more elegant at larger sizes
+LABEL_FONT = ("Segoe UI", 14, "normal")
+ENTRY_FONT = ("Segoe UI", 16, "normal")  # Large, sleek, and crisp!
+ORDER_FONT = ("Segoe UI", 13, "normal")
+RADIO_FONT = ("Segoe UI", 13, "normal")
+BUTTON_FONT = ("Segoe UI", 14, "normal")
 
 # Colors
 BG_COLOR = "#f0f0f0"       # Light gray background
-ENTRY_BG = "#ffffff"  # Entry box background
-LIST_BG = "#ffffff"       # Entry box background
-TOTAL_BG = "#c0f0c0"          # total highlights
-ADD_BG = "#c0f0c0"          # Add button
-DELETE_BG = "#ffdae0"         # Delete / Cancel buttons
-QUANTITY_BG = "#93ccea"        # Quantity background
-
+ENTRY_BG = "#ffffff"       # Entry box background
+LIST_BG = "#ffffff"        # Listbox background
+TOTAL_BG = "#c0f0c0"       # Total highlights
+ADD_BG = "#c0f0c0"         # Add button
+DELETE_BG = "#ffdae0"      # Delete / Cancel buttons
+QUANTITY_BG = "#93ccea"    # Quantity background
 
 
 # 3. DEFINITIONS / FUNCTIONS
@@ -68,9 +69,6 @@ def add_order():
         update_order_list()
 
 
-
-
-
 def update_order_list():
     """Refreshes the listbox display and recalculates total cost."""
     order_list.delete(0, tk.END)
@@ -85,7 +83,9 @@ def update_order_list():
     if orders:
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
         # Color code the very last row (Total Cost line)
-        order_list.itemconfig(tk.END, {"bg": TOTAL_BG})
+        # Get the index number of the very last item we just added
+        last_row_index = tk.END
+        order_list.itemconfig(last_row_index, bg=TOTAL_BG)
 
 
 def delete_selected_pizza():
@@ -109,52 +109,65 @@ def cancel_order():
     update_order_list()
 
 
-
 # 4. TKINTER WIDGETS
 # Create the main window
 root = tk.Tk()
 root.title("Pizza Ordering System")
-root.geometry("900x600")
+root.geometry("900x700")
 root.configure(bg=BG_COLOR)
 
-# --- LEFT SIDE: INPUT CONTROLS ---
+# --- LEFT SIDE: SELECTIONS ---
 
 # Customer Name
-customer_label = tk.Label(root, text="Customer Name:", font=LABEL_FONT, bg=BG_COLOR)
+customer_label = tk.Label(root, text="Customer Name:")
 customer_label.grid(row=0, column=0, padx=10, pady=5, sticky="e")
+customer_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
-customer_entry = tk.Entry(root, width=20, font=ENTRY_FONT, bg=ENTRY_BG)
+customer_entry = tk.Entry(root, width=20)
 customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=3, sticky="w")
+customer_entry.config(font=ENTRY_FONT, bg=ENTRY_BG)
 
 # Pizza Type (Radio buttons)
-pizza_label = tk.Label(root, text="Pizza Type:", font=LABEL_FONT, bg=BG_COLOR)
+pizza_label = tk.Label(root, text="Pizza Type:")
 pizza_label.grid(row=1, column=0, padx=10, pady=5, sticky="ne")
+pizza_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
 pizza_var = tk.StringVar(root)
 pizza_var.set("Margherita")
 pizza_var.trace_add("write", update_costs)
 
-pizza_frame = tk.Frame(root, bg=BG_COLOR)
+pizza_frame = tk.Frame(root)
 pizza_frame.grid(row=1, column=1, padx=10, pady=5, sticky="w")
+pizza_frame.config(bg=BG_COLOR)
+
 for pizza in prices.keys():
-    radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, font=RADIO_FONT, bg=BG_COLOR)
+    radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza)
     radio_button.pack(anchor="w")
+    radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
 
 # Pizza Size (Radio buttons)
-pizza_label = tk.Label(root, text="Pizza Size:", font=LABEL_FONT, bg=BG_COLOR)
-pizza_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
+size_label = tk.Label(root, text="Pizza Size:")
+size_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
+size_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
 size_var = tk.StringVar(root)
 size_var.set("Small")
 size_var.trace_add("write", update_costs)
 
-size_frame = tk.Frame(root, bg=BG_COLOR)
+size_frame = tk.Frame(root)
 size_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
+size_frame.config(bg=BG_COLOR)
+
 for size in ["Small", "Medium", "Large"]:
-    radio_button = tk.Radiobutton(size_frame, text=size, variable=size_var, value=size, font=RADIO_FONT, bg=BG_COLOR)
+    radio_button = tk.Radiobutton(size_frame, text=size, variable=size_var, value=size)
     radio_button.pack(anchor="w")
+    radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
 
 # Quantity (Dropdown Menu)
-quanitity_label = tk.Label(root, text="Quantity:", font=LABEL_FONT, bg=BG_COLOR)
-quanitity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
+quantity_label = tk.Label(root, text="Quantity:")
+quantity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
+quantity_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
 quantity_var = tk.IntVar(root)
 quantity_var.set(1)
 quantity_var.trace_add("write", update_costs)
@@ -168,38 +181,48 @@ quantity_menu["menu"].config(bg=QUANTITY_BG)  # for menu items
 # Cost per pizza display
 cost_display_var = tk.StringVar(root)
 cost_display_var.set("Cost per pizza: $8")
-cost_label = tk.Label(root, textvariable=cost_display_var, font=LABEL_FONT, bg=BG_COLOR)
+
+cost_label = tk.Label(root, textvariable=cost_display_var)
 cost_label.grid(row=4, column=1, padx=10, pady=5, sticky="w")
+cost_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
 # order cost display
 order_cost_var = tk.StringVar(root)
 order_cost_var.set("Order cost: $8")
-order_cost_label = tk.Label(root, textvariable=order_cost_var, font=LABEL_FONT, bg=BG_COLOR)
+
+order_cost_label = tk.Label(root, textvariable=order_cost_var)
 order_cost_label.grid(row=5, column=1, padx=10, pady=5, sticky="w")
+order_cost_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
 # Action Button: Add Order
-add_button = tk.Button(root, text="Add Order", command=add_order, font=BUTTON_FONT,bg=ADD_BG, activebackground=ADD_BG, width=15)
+add_button = tk.Button(root, text="Add Order", command=add_order, width=15)
 add_button.grid(row=6, column=1, padx=10, pady=15, ipady=5, sticky="w")
+add_button.config(font=BUTTON_FONT, bg=ADD_BG)
 
 
 # --- RIGHT SIDE: ORDER DISPLAY & MANAGEMENT ---
 
 # Order List Label & Listbox
-orders_label = tk.Label(root, text="Current Orders:", font=LABEL_FONT, bg=BG_COLOR)
+orders_label = tk.Label(root, text="Current Orders:")
 orders_label.grid(row=0, column=2, padx=10, pady=5, sticky="w")
-order_list = tk.Listbox(root, font=ORDER_FONT, width=45, height=12, bg=LIST_BG)
+orders_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
+order_list = tk.Listbox(root, width=45, height=12)
 order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
+order_list.config(font=ORDER_FONT, bg=LIST_BG, activestyle="none", highlightthickness=0, selectbackground="#d3d3d3", selectforeground="#000000")
+
 
 # Action Button: Delete Selected
-delete_pizza_button = tk.Button(root, text="Delete Selected", command=delete_selected_pizza, font=BUTTON_FONT, bg=DELETE_BG, activebackground=DELETE_BG)
+delete_pizza_button = tk.Button(root, text="Delete Selected", command=delete_selected_pizza)
 delete_pizza_button.grid(row=6, column=2, padx=10, pady=15, ipady=5, sticky="w")
+delete_pizza_button.config(font=BUTTON_FONT, bg=DELETE_BG)
 
 # Action Button: Cancel All Orders
-cancel_order_button = tk.Button(root, text="Cancel All Orders", command=cancel_order, font=BUTTON_FONT,bg=DELETE_BG, activebackground=DELETE_BG)
+cancel_order_button = tk.Button(root, text="Cancel All Orders", command=cancel_order)
 cancel_order_button.grid(row=6, column=3, padx=10, pady=15, ipady=5, sticky="e")
+cancel_order_button.config(font=BUTTON_FONT, bg=DELETE_BG)
 
-# 5. Main code
-# Initialize price calculations display on startup
-update_costs()
 
-# Run application
+# 5. MAIN CODE
+# Run the application
 root.mainloop()
