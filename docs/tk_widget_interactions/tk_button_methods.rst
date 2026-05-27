@@ -1,7 +1,9 @@
-tk Button Widget: Key Methods
+==================================
+Button Methods
 ==================================
 
-The Tkinter `Button` widget includes essential methods for configuring its appearance, setting actions, and managing its behavior. Below is a curated list of the most commonly used methods.
+| The Tkinter `Button` widget includes essential methods for configuring its appearance, setting actions, and managing its behavior.
+| Below is a list of the most commonly used methods.
 
 
 config (or configure)

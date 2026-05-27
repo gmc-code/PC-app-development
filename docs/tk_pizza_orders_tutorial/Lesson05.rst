@@ -42,6 +42,7 @@ Adding Cost Display Fields
 Cost per pizza display
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
 | This code sets up a label to display the cost per pizza. The displayed text is managed by a `StringVar` named `cost_display_var`, which is initialized to "Cost per pizza: $0". The label is placed in the grid layout and aligned to the left, and it updates dynamically based on the value of `cost_display_var`.
 
 .. code-block:: python
@@ -64,6 +65,7 @@ Cost per pizza display
 Order cost display
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
 | This code sets up a label to display the total order cost. The displayed text is managed by a `StringVar` named `order_cost_var`, which is initialized to "Order cost: $0". The label is placed in the grid layout and aligned to the left, ensuring it updates dynamically based on the value of `order_cost_var`.
 
 .. code-block:: python

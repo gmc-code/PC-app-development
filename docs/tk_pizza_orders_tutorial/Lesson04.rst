@@ -17,6 +17,8 @@ Add Radio Buttons for pizza sizes and OptionMenu for quantity
 Creating and Positioning Radio Buttons for Pizza Sizes
 -------------------------------------------------------
 
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+
 | This code sets up a GUI for selecting a pizza size using radio buttons. The selected pizza size is stored in the `size_var` variable. The `pack` method ensures that the radio buttons are neatly aligned within the `size_frame`, making the GUI intuitive and easy to use.
 
 .. code-block:: python
@@ -89,16 +91,24 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 Creating and Positioning the OptionMenu
 --------------------------------------------
 
-| This code sets up a GUI for selecting a quantity using an `OptionMenu`. OptionMenu is a dropdown menu that allows users to select one option from a list of quantities of pizzas. The selected quantity is stored in the `quantity_var` variable. The `grid` method ensures that the label and the `OptionMenu` are neatly aligned within the grid layout.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+| This code sets up a GUI for selecting a quantity using an `OptionMenu`.
+| OptionMenu is a dropdown menu that allows users to select one option from a list of quantities of pizzas.
+| The selected quantity is stored in the `quantity_var` variable.
+| The `grid` method ensures that the label and the `OptionMenu` are neatly aligned within the grid layout.
 
 .. code-block:: python
 
-    # Quantity
-    tk.Label(root, text="Quantity:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
+    # Quantity (Dropdown Menu)
+    quanitity_label = tk.Label(root, text="Quantity:")
+    quanitity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
     quantity_var = tk.IntVar(root)
     quantity_var.set(0)
-    quantity_menu = tk.OptionMenu(root, quantity_var, 0,1, 2, 3, 4, 5)
+
+    quantity_menu = tk.OptionMenu(root, quantity_var, 0, 1, 2, 3, 4, 5)
     quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
+
+
 
 1. **Label Creation**:
 

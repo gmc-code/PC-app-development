@@ -8,18 +8,17 @@ Deleting Orders
 - **Objective**: Add functionality to delete orders.
 - **Content**:
 
-  - Creating a delete order section.
+  - Creating a delete order button.
+  - Creating a cancel order button.
   - Writing the `delete_selected_pizza` function.
-  - Writing the `select_order` Function
-  - Binding the `select_order` Function to the listbox
   - Writing the `cancel_order` Function
 
 ----
 
-Creating a Delete Order Section
+Creating a Delete Order Button
 ------------------------------------
 
-| Add the following code to below the other widegt code to create buttons for deleting the selected pizza and canceling the whole order.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
 
 .. code-block:: python
 
@@ -30,6 +29,13 @@ Creating a Delete Order Section
 
 - ``delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza)``: Creates a button labeled "Delete Selected Pizza" and sets the command to `delete_selected_pizza`, which will be executed when the button is clicked.
 - ``delete_pizza_button.grid(row=6, column=2, padx=10,  pady=5, ipadx=20, ipady=10,sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds external padding around the button: 10 pixels on the x-axis (`padx`),and 5 pixels on the y-axis (`ipady`), and 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and aligns the button to the west (left) side of the cell (`sticky="w"`).
+
+----
+
+Creating a Cancel Order Button
+--------------------------------
+
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS" to create buttons for cancelling the whole order.
 
 .. code-block:: python
 
@@ -49,22 +55,23 @@ Writing the **delete_selected_pizza** Function
 
     # Delete selected pizza
     def delete_selected_pizza():
+        """Removes the selected item from the order list."""
         order_selection = order_list.curselection()
         if not order_selection:
             messagebox.showerror("Input Error", "Please select a pizza to delete.")
-            return
-        order_index = order_selection[0]
-        if order_index == order_list.size() - 1:
-            messagebox.showerror("Input Error",
-                                "Cannot delete the total cost line.")
-            return
-        del orders[order_index]
-        update_order_list()
+        else:
+            order_index = order_selection[0]
+            # Block deleting the dynamic total line
+            if order_index == order_list.size() - 1:
+                messagebox.showerror("Input Error", "Cannot delete the total cost line.")
+            else:
+                del orders[order_index]
+                update_order_list()
 
 
 
 - ``order_selection = order_list.curselection()``: Gets the index of the selected item in the Listbox as a tuple like (0,) for line 0, or (1, ) for line 1 or (0, 1, 2) for lines 0 to 2.
-- ``if not order_selection: messagebox.showerror("Input Error", "Please select a pizza to delete.")``: Shows an error message if no pizza is selected.
+- ``messagebox.showerror("Input Error", "Please select a pizza to delete.")``: Shows an error message if no pizza is selected.
 - ``order_index = order_selection[0]`` gets the selected line number from the tuple at index 0.
 - ``if order_index == order_list.size() - 1: messagebox.showerror("Input Error", "Cannot delete the total cost line.")``: Shows an error message if the selected item is the total cost line.
 - ``del orders[order_index]``: Deletes the selected order from the orders list.

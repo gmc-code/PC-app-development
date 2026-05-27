@@ -95,7 +95,7 @@ Code example
 
 3. **Stopping the Repeating Action**:
 
-   - **Purpose**: `stop_action` is called when the mouse button is released, canceling any repeating actions with `root.after_cancel()`.
+   - **Purpose**: `stop_action` is called when the mouse button is released, cancelling any repeating actions with `root.after_cancel()`.
    - **Syntax**: `root.after_cancel(job_id)`
    - This code, ``if "increment_job" in globals()``, checks if `increment_job` is defined (using `globals()`), then cancels the ongoing `after` job, stopping the repeat.
 

@@ -24,7 +24,10 @@ Introduction to Radio Buttons
 Creating and Positioning Radio Buttons for Pizza Type
 ----------------------------------------------------------------
 
-| This code creates a label and a set of radio buttons for selecting a pizza type. The selected pizza type is stored in a `StringVar` named `pizza_var`, which is initialized to "Margherita". The radio buttons are placed vertically inside a frame and aligned to the left.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS"
+| This code creates a label and a set of radio buttons for selecting a pizza type.
+| The selected pizza type is stored in a `StringVar` named `pizza_var`, which is initialized to "Margherita".
+| The radio buttons are placed vertically inside a frame and aligned to the left.
 
 .. code-block:: python
 

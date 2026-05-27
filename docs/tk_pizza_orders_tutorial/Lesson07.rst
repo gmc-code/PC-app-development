@@ -17,7 +17,7 @@ Display Orders
 Adding a Listbox Widget to Display Orders
 ------------------------------------------
 
-| Add the following code to below the other widegt code to create a Listbox widget for displaying orders.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS" to create a Listbox widget for displaying orders.
 
 .. code-block:: python
 

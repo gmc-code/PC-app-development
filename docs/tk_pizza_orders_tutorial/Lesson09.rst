@@ -8,10 +8,48 @@ Final Touches and Styling
 - **Objective**: Add final touches and improve the GUI styling.
 - **Content**:
 
+  - Updating Pizza type to use prices dictionary
   - Adding Font and colour variables
   - Adding font and colour settings to tkinter widgets
-  - Updating Pizza type to use prices dictionary
   - Final testing.
+
+----
+
+Updating Pizza type to use prices dictionary
+------------------------------------------------------
+
+| Place the following code in Section "1. DATA DICTIONARIES".
+
+.. code-block:: python
+
+    # Define the prices for each pizza size
+    prices = {
+        "Margherita": {"Small": 5, "Medium": 7, "Large": 10},
+        "Pepperoni": {"Small": 6, "Medium": 8, "Large": 11},
+        "Hawaiian": {"Small": 6, "Medium": 8, "Large": 11},
+        "Veggie": {"Small": 5, "Medium": 7, "Large": 10},
+        "BBQ Chicken": {"Small": 7, "Medium": 9, "Large": 12},
+        "Meat Lovers": {"Small": 7, "Medium": 9, "Large": 12},
+        "Capriciossa": {"Small": 6, "Medium": 8, "Large": 11},
+        "Mexican": {"Small": 6, "Medium": 8, "Large": 11},
+    }
+
+
+| Adjust "# Pizza type" code section to use keys from the prices dictionary instead of manual entries.
+| This allows updating the pizza dictionary to flow through to the pizza options.
+
+| Replace ``["Margherita", "Pepperoni", "Hawaiian", "Veggie"]`` with ``prices.keys()``.
+
+
+.. code-block:: python
+
+    for pizza in prices.keys():
+        radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza)
+        radio_button.pack(anchor="w")
+
+| Test these code changes by adding to the prices dictionary.
+
+
 
 ----
 
@@ -229,37 +267,6 @@ Improving the customer_entry width
 
 ----
 
-Updating Pizza type to use prices dictionary
-------------------------------------------------------
-
-| Adjust "# Pizza type" code section to use keys from the prices dictionary instead of manual entries.
-| This allows updating the pizza dictionary to flow through to the pizza options.
-
-| Replace ``["Margherita", "Pepperoni", "Hawaiian", "Veggie", "BBQ Chicken"]`` with ``prices.keys()``.
-
-
-.. code-block:: python
-
-    for pizza in prices.keys():
-        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
-
-| Test these code changes by adding to the prices dictionary.
-
-.. code-block:: python
-
-    # Define the prices for each pizza size
-    prices = {
-        "Margherita": {"Small": 5, "Medium": 7, "Large": 10},
-        "Pepperoni": {"Small": 6, "Medium": 8, "Large": 11},
-        "Hawaiian": {"Small": 6, "Medium": 8, "Large": 11},
-        "Veggie": {"Small": 5, "Medium": 7, "Large": 10},
-        "BBQ Chicken": {"Small": 7, "Medium": 9, "Large": 12},
-        "Meat Lovers": {"Small": 7, "Medium": 9, "Large": 12},
-        "Capriciossa": {"Small": 6, "Medium": 8, "Large": 11},
-        "Mexican": {"Small": 6, "Medium": 8, "Large": 11},
-    }
-
-----
 
 Final Testing
 -----------------------------------------

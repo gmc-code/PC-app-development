@@ -82,9 +82,12 @@ PC-app-development
     tk_widget_interactions/modify_via_checkbox.rst
     tk_widget_interactions/modify_via_radiobutton.rst
 
-    .. tk_widget_interactions/tk_widget_interactions.rst
+    tk_widget_interactions/entry_validation_numbers.rst
 
-    tk_widget_interactions/tk_button_methods.rst
+    .. tk_widget_interactions/tk_widget_interactions.rst
+    .. tk_widget_interactions/entry_validation_numbers.rst
+
+    ..tk_widget_interactions/tk_button_methods.rst
 
 .. toctree::
     :maxdepth: 2
@@ -122,13 +125,6 @@ PC-app-development
     tk_pizza_orders_tutorial/Lesson09.rst
     tk_pizza_orders_tutorial/Lesson10.rst
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Tkinter project
-    :numbered:
-
-    .. tkinter_project/project_starters.rst
 
 
 .. toctree::

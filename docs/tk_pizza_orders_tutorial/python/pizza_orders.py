@@ -58,28 +58,7 @@ def add_order():
         update_order_list()
 
 
-def delete_selected_pizza():
-    """Removes the selected item from the order list."""
-    order_selection = order_list.curselection()
-    if not order_selection:
-        messagebox.showerror("Input Error", "Please select a pizza to delete.")
-        return
 
-    order_index = order_selection[0]
-
-    # Block deleting the dynamic total line
-    if order_index == order_list.size() - 1:
-        messagebox.showerror("Input Error", "Cannot delete the total cost line.")
-        return
-
-    del orders[order_index]
-    update_order_list()
-
-
-def cancel_order():
-    """Clears all orders."""
-    orders.clear()
-    update_order_list()
 
 
 def update_order_list():
@@ -97,6 +76,28 @@ def update_order_list():
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
         # Color code the very last row (Total Cost line)
         order_list.itemconfig(tk.END, {"bg": GREEN_BG})
+
+
+def delete_selected_pizza():
+    """Removes the selected item from the order list."""
+    order_selection = order_list.curselection()
+    if not order_selection:
+        messagebox.showerror("Input Error", "Please select a pizza to delete.")
+    else:
+        order_index = order_selection[0]
+        # Block deleting the dynamic total line
+        if order_index == order_list.size() - 1:
+            messagebox.showerror("Input Error", "Cannot delete the total cost line.")
+        else:
+            del orders[order_index]
+            update_order_list()
+
+
+def cancel_order():
+    """Clears all orders."""
+    orders.clear()
+    update_order_list()
+
 
 
 # 4. TKINTER WIDGETS

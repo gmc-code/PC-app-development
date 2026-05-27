@@ -17,6 +17,8 @@ Add Customer Label and Entry Widget
 Adding Labels
 --------------------------------
 
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+
 .. code-block:: python
 
     # Customer name
@@ -31,6 +33,8 @@ Adding Labels
 
 Adding Entry Widgets
 --------------------------------
+
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
 
 .. code-block:: python
 

@@ -17,6 +17,8 @@ Add Orders
 Creating an Add Order Button
 ------------------------------------
 
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS" to create an add order button.
+
 .. code-block:: python
 
     # Add order button
