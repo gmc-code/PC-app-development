@@ -12,6 +12,8 @@ root = tk.Tk()
 root.title("Pizza Ordering System")
 root.geometry("900x600")
 
-# 5. Main code
+
+
+# 5. MAIN CODE
 # Run the application
 root.mainloop()

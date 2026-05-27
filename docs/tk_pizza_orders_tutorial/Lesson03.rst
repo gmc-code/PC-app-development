@@ -34,11 +34,13 @@ Creating and Positioning Radio Buttons for Pizza Type
     # Pizza Type (Radio buttons)
     pizza_label = tk.Label(root, text="Pizza Type:")
     pizza_label.grid(row=1, column=0, padx=10, pady=5, sticky="ne")
+
     pizza_var = tk.StringVar(root)
     pizza_var.set("Margherita")
 
     pizza_frame = tk.Frame(root)
     pizza_frame.grid(row=1, column=1, padx=10, pady=5, sticky="w")
+
     for pizza in ["Margherita", "Pepperoni", "Hawaiian", "Veggie"]:
         radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza)
         radio_button.pack(anchor="w")

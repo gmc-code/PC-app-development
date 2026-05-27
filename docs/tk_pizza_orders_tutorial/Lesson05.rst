@@ -18,21 +18,24 @@ Add Costs
 Define prices for pizzas
 ------------------------------
 
-| ``prices`` is a nested dictionary that stores the prices of different pizza types based on their sizes. The outer dictionary keys are the names of the pizzas (e.g., "Margherita", "Pepperoni"), and each key maps to another dictionary. The inner dictionaries have keys representing the sizes of the pizzas ("Small", "Medium", "Large") and values representing the corresponding prices. For example, a small Margherita pizza costs 5 dollars, while a large BBQ Chicken pizza costs 12 dollars.
+| Place the following code in Section "1. DATA DICTIONARIES & LISTS".
+| ``prices`` is a nested dictionary that stores the prices of different pizza types based on their sizes.
+| The outer dictionary keys are the names of the pizzas (e.g., "Margherita", "Pepperoni"), and each key maps to another dictionary.
+| The inner dictionaries have keys representing the sizes of the pizzas ("Small", "Medium", "Large") and values representing the corresponding prices.
+| For example, a small Margherita pizza costs 8 dollars.
 
 .. code-block:: python
 
     # Define the prices for each pizza size
     prices = {
-        "Margherita": {"Small": 5, "Medium": 7, "Large": 10},
-        "Pepperoni": {"Small": 6, "Medium": 8, "Large": 11},
-        "Hawaiian": {"Small": 6, "Medium": 8, "Large": 11},
-        "Veggie": {"Small": 5, "Medium": 7, "Large": 10}
+        "Margherita": {"Small": 8, "Medium": 12, "Large": 15},
+        "Pepperoni": {"Small": 9, "Medium": 13, "Large": 17},
+        "Hawaiian": {"Small": 10, "Medium": 14, "Large": 18},
+        "Veggie": {"Small": 9, "Medium": 12, "Large": 16}
     }
 
-
 | The cost of a particular pizza, pizza_type, of size, pizza_size, is retrieved by accessing ``prices[pizza_type][pizza_size]``.
-| e.g. ``prices["Margherita"]["Medium"]`` would return 7, which is the cost of a medium Margherita pizza.
+| e.g. ``prices["Margherita"]["Small"]`` would return 8, which is the cost of a small Margherita pizza.
 
 ----
 
@@ -49,12 +52,13 @@ Cost per pizza display
 
     # Cost per pizza display
     cost_display_var = tk.StringVar(root)
-    cost_display_var.set("Cost per pizza: $5")
+    cost_display_var.set("Cost per pizza: $8")
+
     cost_label = tk.Label(root, textvariable=cost_display_var)
     cost_label.grid(row=4, column=1, padx=10, pady=5, sticky="w")
 
 - ``cost_display_var = tk.StringVar(root)``: Creates a StringVar to hold the cost per pizza.
-- ``cost_display_var.set("Cost per pizza: $5")``: initializes the `StringVar` with the default text "Cost per pizza: $5", and so sets the initial value of the cost display.
+- ``cost_display_var.set("Cost per pizza: $8")``: initializes the `StringVar` with the default text "Cost per pizza: $8", and so sets the initial value of the cost display.
 - ``tk.Label(root, textvariable=cost_display_var)``: Creates a label that displays the cost per pizza, the value of `cost_display_var`.
 - The `grid` method, ``.grid(row=4, column=1, padx=10, pady=5, sticky="w")``, places the label in the fifth row (`row=4`), second column (`column=1`) of the grid layout.
 - `padx` and `pady` add padding around the label for better spacing.
@@ -72,13 +76,14 @@ Order cost display
 
     # order cost display
     order_cost_var = tk.StringVar(root)
-    order_cost_var.set("Order cost: $5")
+    order_cost_var.set("Order cost: $8")
+
     order_cost_label = tk.Label(root, textvariable=order_cost_var)
     order_cost_label.grid(row=5, column=1, padx=10, pady=5, sticky="w")
 
 
 - ``order_cost_var = tk.StringVar(root)``: Creates a StringVar to hold the order cost.
-- ``order_cost_var.set("Order cost: $0")``:  initializes the `StringVar` with the default text "Order cost: $0", and so sets the initial value of the order cost display.
+- ``order_cost_var.set("Order cost: $8")``:  initializes the `StringVar` with the default text "Order cost: $0", and so sets the initial value of the order cost display.
 - ``tk.Label(root, textvariable=order_cost_var)``: Creates a label that displays the order cost, the value of `order_cost_var`.
 - The `textvariable` parameter links the label to the `order_cost_var` variable, so any changes to `order_cost_var` will automatically update the label's text.
 - The `grid` method places the label in the sixth row (`row=5`), second column (`column=1`) of the grid layout.
@@ -90,6 +95,7 @@ Order cost display
 Calculating the cost based on selection.
 -------------------------------------------------
 
+| Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
 | Use ``update_costs`` to calculate the cost of a pizza and the order cost.
 | This function updates the displayed cost per pizza and the total order cost based on the selected pizza type, size, and quantity.
 | It retrieves the necessary values from the corresponding pizza type `StringVar` variable and size `StringVar` variable and quantity `IntVar` variable, calculates the costs using the `prices` dictionary, and updates the display variables accordingly.

@@ -17,7 +17,8 @@ Add Orders
 Creating an Add Order Button
 ------------------------------------
 
-| Place the following code below the other widget code in Section "4. TKINTER WIDGETS" to create an add order button.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+| This code creates a button labeled "Add Order" that, when clicked, will call the `add_order` function to process the current order details.
 
 .. code-block:: python
 
@@ -30,15 +31,22 @@ Creating an Add Order Button
 
 ----
 
-Writing the ``add_order`` Function
+Importing messagebox
 ---------------------------------------
 
 | Add an import line for the messsagebox that is needed if no customer name is entered.
+
 
 .. code-block:: python
 
     from tkinter import messagebox
 
+----
+
+Adding an Orders List
+---------------------------------------
+
+| Place the following code below the code in Section "# 1. DATA DICTIONARIES & LISTS".
 | Add a list variable, orders, to keep track of orders.
 | Orders will be added as tuples of (customer, pizza, size, quantity).
 | Place this near the top of the code under the dictionaries or constants, before the definitions.
@@ -48,8 +56,17 @@ Writing the ``add_order`` Function
     # Orders tracking list
     orders = []
 
+----
 
-| Add the add_order function to add an order to the orders list.
+Writing the ``add_order`` Function
+---------------------------------------
+
+| Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
+| This function, `add_order`, is responsible for validating input and adding the current selection to the order list.
+| It retrieves the customer name, pizza type, size, and quantity from the respective widgets.
+| If the customer name is not entered, it shows an error message and highlights the entry field.
+| If the input is valid, it adds the order to the list and resets the quantity to 0.
+
 
 .. code-block:: python
 
@@ -66,7 +83,7 @@ Writing the ``add_order`` Function
         else:
             customer_entry.config(bg="white")
             orders.append((customer, pizza, size, quantity))
-            quantity_var.set(0)  # Reset quantity to default
+            quantity_var.set(1)  # Reset quantity to default
 
 
 

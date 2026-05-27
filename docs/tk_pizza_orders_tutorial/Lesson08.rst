@@ -19,6 +19,7 @@ Creating a Delete Order Button
 ------------------------------------
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+| This code creates a button labeled "Delete Selected" that, when clicked, will call the `delete_selected_pizza` function to remove the selected pizza from the order list.
 
 .. code-block:: python
 
@@ -35,7 +36,8 @@ Creating a Delete Order Button
 Creating a Cancel Order Button
 --------------------------------
 
-| Place the following code below the other widget code in Section "4. TKINTER WIDGETS" to create buttons for cancelling the whole order.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+| This code creates a button labeled "Cancel All Orders" that, when clicked, will call the `cancel_order` function to remove all orders from the order list.
 
 .. code-block:: python
 
@@ -50,6 +52,14 @@ Creating a Cancel Order Button
 
 Writing the **delete_selected_pizza** Function
 ------------------------------------------------
+
+| Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
+| This function, `delete_selected_pizza`, is responsible for removing the selected pizza from the order list.
+| It first checks if an item is selected in the `order_list` Listbox.
+| If no item is selected, it shows an error message.
+| If an item is selected, it checks if the selected item is the total cost line (the last line in the Listbox) and prevents deletion if it is.
+| Otherwise, it deletes the selected order from the `orders` list and updates the displayed order list.
+
 
 .. code-block:: python
 
@@ -80,6 +90,11 @@ Writing the **delete_selected_pizza** Function
 
 Writing the **cancel_order** Function
 ------------------------------------------------
+
+| Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
+| This function, `cancel_order`, is responsible for clearing all orders from the order list.
+| It clears the `orders` list and then calls `update_order_list()` to refresh the displayed order list, effectively removing all orders from the display.
+
 
 .. code-block:: python
 

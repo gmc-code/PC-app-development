@@ -8,6 +8,7 @@ Final Touches and Styling
 - **Objective**: Add final touches and improve the GUI styling.
 - **Content**:
 
+  - Expand Pizza prices dictionary
   - Updating Pizza type to use prices dictionary
   - Adding Font and colour variables
   - Adding font and colour settings to tkinter widgets
@@ -15,7 +16,7 @@ Final Touches and Styling
 
 ----
 
-Updating Pizza type to use prices dictionary
+Expanding Pizza prices dictionary
 ------------------------------------------------------
 
 | Place the following code in Section "1. DATA DICTIONARIES & LISTS".
@@ -24,30 +25,31 @@ Updating Pizza type to use prices dictionary
 
     # Define the prices for each pizza size
     prices = {
-        "Margherita": {"Small": 5, "Medium": 7, "Large": 10},
-        "Pepperoni": {"Small": 6, "Medium": 8, "Large": 11},
-        "Hawaiian": {"Small": 6, "Medium": 8, "Large": 11},
-        "Veggie": {"Small": 5, "Medium": 7, "Large": 10},
-        "BBQ Chicken": {"Small": 7, "Medium": 9, "Large": 12},
-        "Meat Lovers": {"Small": 7, "Medium": 9, "Large": 12},
-        "Capriciossa": {"Small": 6, "Medium": 8, "Large": 11},
-        "Mexican": {"Small": 6, "Medium": 8, "Large": 11},
+        "Margherita": {"Small": 8, "Medium": 12, "Large": 15},
+        "Veggie": {"Small": 9, "Medium": 12, "Large": 16},
+        "Pepperoni": {"Small": 9, "Medium": 13, "Large": 17},
+        "Hawaiian": {"Small": 10, "Medium": 14, "Large": 18},
+        "Capriciossa": {"Small": 10, "Medium": 14, "Large": 18},
+        "Mexican": {"Small": 10, "Medium": 14, "Large": 18},
+        "BBQ Chicken": {"Small": 11, "Medium": 15, "Large": 19},
+        "Meat Lovers": {"Small": 11, "Medium": 15, "Large": 19}
     }
 
+----
 
-| Adjust "# Pizza type" code section to use keys from the prices dictionary instead of manual entries.
+Updating Pizza type to use prices dictionary
+------------------------------------------------------
+
+| Adjust the "# Pizza type" code section in "# 4. TKINTER WIDGETS" to use keys from the prices dictionary instead of manual entries.
 | This allows updating the pizza dictionary to flow through to the pizza options.
 
 | Replace ``["Margherita", "Pepperoni", "Hawaiian", "Veggie"]`` with ``prices.keys()``.
 
-
 .. code-block:: python
 
     for pizza in prices.keys():
-        radio_button = tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza)
-        radio_button.pack(anchor="w")
 
-| Test these code changes by adding to the prices dictionary.
+| Test these code changes.
 
 
 
@@ -56,113 +58,117 @@ Updating Pizza type to use prices dictionary
 Adding Font and colour variables
 --------------------------------
 
-| Add this code at the top of the file under the prices dictionary.
-| This allows the variables to be used to adjust colouring in the various functions, not just the tkinter objects code lines.
+| Place the following code in Section "2. CONSTANTS & STYLES".
+| Using variables for fonts and colors allows for easy adjustments to the overall look of the application in one place.
+
 
 .. code-block:: python
 
-    # Style configurations
+    # Fonts
     LABEL_FONT = ("Helvetica", 12)
     ENTRY_FONT = ("Helvetica", 14)
     ORDER_FONT = ("Helvetica", 12)
-    ENTRY_BG = "#ffffff"  # white
-    TEXT_BG = "#f0f0f0"  # Very light gray
-    TEXT_FG = "#000000"  # black
+    RADIO_FONT = ("Helvetica", 12)
+    BUTTON_FONT = ("Helvetica", 18)
 
-    QUANTITY_BG = "#93ccea"  # Very soft blue
-    QUANTITY_HOVER_BG = "#53aede"  # soft blue
+    # Colors
+    BG_COLOR = "#f0f0f0"       # Light gray background
+    ENTRY_BG = "#ffffff"       # Entry box background
+    LIST_BG = "#ffffff"        # Listbox background
+    TOTAL_BG = "#c0f0c0"       # Total highlights
+    ADD_BG = "#c0f0c0"         # Add button
+    DELETE_BG = "#ffdae0"      # Delete / Cancel buttons
+    QUANTITY_BG = "#93ccea"    # Quantity background
 
-    ORDER_LIST_TOTAL_BG = "#c0f0c0"  # Very soft lime green
-    ORDER_LIST_TOTAL_SELECTED_BG = "#5bd85b"  # moderate lime green
-
-    ADD_BUTTON_BG = "#c0f0c0"  # Very soft lime green
-    ADD_BUTTON_FG = "#000000"  # black
-    ADD_BUTTON_HOVER_BG = "#5bd85b"  # moderate lime green
-
-    DELETE_BUTTON_BG = "#ffdae0"  # very pale red
-    DELETE_BUTTON_FG= "#000000"  # black
-    DELETE_BUTTON_HOVER_BG = "#ffc1cb"  # very pale red
 
 ----
 
 Adding font and colour settings to tkinter widgets
 ----------------------------------------------------
 
-| Add or adjust the code below for font and colour settings in each section for each widget.
+| Add the following code lines to the relevant widget code sections in "4. TKINTER WIDGETS" to apply the font and color settings defined in the constants section.
+| The code snippets go after the widget creation code for each widget type (e.g., after creating labels, entries, buttons, etc.) to configure their appearance using the defined constants.
+
 
 .. code-block:: python
 
     # Create the main window
-    root.configure(bg=TEXT_BG)
+    root.configure(bg=BG_COLOR)
 
 .. code-block:: python
 
     # Customer name
-    tk.Label(root, text="Customer Name:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=0, padx=10, pady=5, sticky="e")
-    customer_entry = tk.Entry(root, font=ENTRY_FONT, bg=ENTRY_BG)
+    customer_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
+    customer_entry.config(font=ENTRY_FONT, bg=ENTRY_BG)
+
 
 .. code-block:: python
 
     # Pizza type
-    tk.Label(root, text="Pizza Type:", font=LABEL_FONT, bg=TEXT_BG).grid(row=1, column=0, padx=10, pady=5, sticky="e")
+    pizza_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
-    pizza_frame = tk.Frame(root, bg=TEXT_BG)
+    pizza_frame.config(bg=BG_COLOR)
 
-    for pizza in prices.keys():
-        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
+    radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
+
 
 .. code-block:: python
 
     # Pizza size
-    tk.Label(root, text="Pizza Size:", font=LABEL_FONT, bg=TEXT_BG).grid(row=2, column=0, padx=10, pady=5, sticky="e")
+    size_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
-    size_frame = tk.Frame(root, bg=TEXT_BG)
+    size_frame.config(bg=BG_COLOR)
 
-    for pizza in prices.keys():
-        tk.Radiobutton(pizza_frame, text=pizza, variable=pizza_var, value=pizza, bg=TEXT_BG).pack(anchor="w")
+    radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
+
 
 .. code-block:: python
 
     # Quantity
-    tk.Label(root, text="Quantity:", font=LABEL_FONT, bg=TEXT_BG).grid(row=3, column=0, padx=10, pady=5, sticky="e")
+    quantity_label.config(font=LABEL_FONT, bg=BG_COLOR)
 
-    quantity_menu.config(bg=QUANTITY_BG, fg=TEXT_FG, activebackground=QUANTITY_HOVER_BG, activeforeground=TEXT_FG)  # for menu button
+    quantity_menu.config(bg=QUANTITY_BG, activebackground=QUANTITY_BG)
+    quantity_menu["menu"].config(bg=QUANTITY_BG)  # for menu items
 
-    quantity_menu["menu"].config(bg=QUANTITY_BG, fg=TEXT_FG)  # for menu items
 
 .. code-block:: python
 
     # Cost per pizza display
-    tk.Label(root, textvariable=cost_display_var, font=LABEL_FONT, bg=TEXT_BG).grid(row=4, column=1, padx=10, pady=5, sticky="w")
+    cost_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
 
 .. code-block:: python
 
     # Order cost display
-    tk.Label(root, textvariable=order_cost_var, font=ORDER_FONT, bg=TEXT_BG).grid(row=5, column=1, padx=10, pady=5, sticky="w")
+    order_cost_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
 
 .. code-block:: python
 
     # Add order button
-    add_button = tk.Button(root, text="Add Order", command=add_order, bg=ADD_BUTTON_BG,
-                             fg=ADD_BUTTON_FG, activebackground=ADD_BUTTON_HOVER_BG)
+    add_button.config(font=BUTTON_FONT, bg=ADD_BG)
+
 
 .. code-block:: python
 
     # Orders list
-    tk.Label(root, text="Orders:", font=LABEL_FONT, bg=TEXT_BG).grid(row=0, column=2, padx=10, pady=5, sticky="w")
-    order_list = tk.Listbox(root, width=50, bg=ENTRY_BG)
+    orders_label.config(font=LABEL_FONT, bg=BG_COLOR)
+
+    order_list.config(font=ORDER_FONT, bg=LIST_BG)
+
 
 .. code-block:: python
 
     # Delete selected pizza button
-    delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza, bg=DELETE_BUTTON_BG,
-                                     fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
+    delete_pizza_button.config(font=BUTTON_FONT, bg=DELETE_BG)
+
 
 .. code-block:: python
 
     # Cancel whole order button
-    cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order, bg=DELETE_BUTTON_BG,
-                                     fg=DELETE_BUTTON_FG, activebackground=DELETE_BUTTON_HOVER_BG)
+    cancel_order_button.config(font=BUTTON_FONT, bg=DELETE_BG)
+
 
 ----
 
@@ -184,92 +190,16 @@ Adding color to the Orders list total
             order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza} - ${cost}")
         if orders:
             order_list.insert(tk.END, f"Total cost: ${total_cost}")
-            # add color to last line of order list for total
-            order_list.itemconfig(order_list.size() - 1, {"bg": ORDER_LIST_TOTAL_BG, "selectbackground": ORDER_LIST_TOTAL_SELECTED_BG})
+            # Color code the very last row (Total Cost line)
+            # Get the index number of the very last item we just added
+            last_row_index = tk.END
+            order_list.itemconfig(last_row_index, bg=TOTAL_BG)
+
 
 ----
-
-Adding hover color to buttons
----------------------------------------
-
-| The **Add Order**, **Delete Selected Pizza** and **Cancel Orders** buttons require special code to change colour on hovering.
-
-**Add Order** button changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Function to change color on hover
-    def on_enter_add(event):
-        add_button.config(bg=ADD_BUTTON_HOVER_BG)
-
-
-    def on_leave_add(event):
-        add_button.config(bg=ADD_BUTTON_BG)
-
-.. code-block:: python
-
-    # Bind the hover events
-    add_button.bind("<Enter>", on_enter_add)
-    add_button.bind("<Leave>", on_leave_add)
-
-**Delete Selected Pizza** button changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Function to change color on hover
-    def on_enter_delete(event):
-        delete_pizza_button.config(bg=DELETE_BUTTON_HOVER_BG)
-
-
-    def on_leave_delete(event):
-        delete_pizza_button.config(bg=DELETE_BUTTON_BG)
-
-.. code-block:: python
-
-    # Bind the hover events
-    delete_pizza_button.bind("<Enter>", on_enter_delete)
-    delete_pizza_button.bind("<Leave>", on_leave_delete)
-
-**Cancel Orders** button changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Function to change color on hover
-    def on_enter_cancel(event):
-        cancel_order_button.config(bg=DELETE_BUTTON_HOVER_BG)
-
-
-    def on_leave_cancel(event):
-        cancel_order_button.config(bg=DELETE_BUTTON_BG)
-
-
-.. code-block:: python
-
-    # Bind the hover events
-    cancel_order_button.bind("<Enter>", on_enter_cancel)
-    cancel_order_button.bind("<Leave>", on_leave_cancel)
-
-----
-
-Improving the customer_entry width
------------------------------------------------------
-
-- Adjust the width to set a wider customer entry field.
-- Add internal vertical padding using `ipady`.
-
-.. code-block:: python
-
-    customer_entry = tk.Entry(root, font=ENTRY_FONT, bg=ENTRY_BG, width=20)
-    customer_entry.grid(row=0, column=1, padx=10, pady=5, ipady=5)
-
-----
-
 
 Final Testing
 -----------------------------------------
 
-- Test the application to ensure all features work as expected.
+Test the application to ensure all features work as expected.
 

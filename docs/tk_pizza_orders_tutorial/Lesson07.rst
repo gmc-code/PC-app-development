@@ -17,7 +17,8 @@ Display Orders
 Adding a Listbox Widget to Display Orders
 ------------------------------------------
 
-| Place the following code below the other widget code in Section "4. TKINTER WIDGETS" to create a Listbox widget for displaying orders.
+| Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
+| This code creates a Listbox widget for displaying orders.
 
 .. code-block:: python
 
@@ -26,6 +27,7 @@ Adding a Listbox Widget to Display Orders
     # Order List Label & Listbox
     orders_label = tk.Label(root, text="Current Orders:")
     orders_label.grid(row=0, column=2, padx=10, pady=5, sticky="w")
+
     order_list = tk.Listbox(root, width=45, height=12)
     order_list.grid(row=1, column=2, rowspan=5, columnspan=2, padx=10, pady=5, sticky="nsew")
 
@@ -40,6 +42,11 @@ Adding a Listbox Widget to Display Orders
 
 Display the orders as a list
 ----------------------------------
+
+| Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
+| This function, `update_order_list`, is responsible for displaying the current list of orders in the `order_list` Listbox widget.
+| It first clears the Listbox, then iterates through the `orders` list, calculating the cost for each order and inserting a formatted string into the Listbox.
+| Finally, it calculates and displays the total cost of all orders at the end of the Listbox.
 
 .. code-block:: python
 
@@ -65,8 +72,11 @@ Display the orders as a list
 Updating the Orders List Dynamically
 --------------------------------------------
 
+| Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
+| This code updates the orders list dynamically when an order is added.
+
 - Call ``update_order_list()`` whenever an order is added.
-- Add the code line below to the bottomo of the ``else`` block inadd_order()
+- Add the code line below to the bottom of the ``else`` block inadd_order()
 
 .. code-block:: python
 

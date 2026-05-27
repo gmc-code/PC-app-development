@@ -18,19 +18,22 @@ Creating and Positioning Radio Buttons for Pizza Sizes
 -------------------------------------------------------
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
-
-| This code sets up a GUI for selecting a pizza size using radio buttons. The selected pizza size is stored in the `size_var` variable. The `pack` method ensures that the radio buttons are neatly aligned within the `size_frame`, making the GUI intuitive and easy to use.
+| This code sets up a GUI for selecting a pizza size using radio buttons.
+| The selected pizza size is stored in the `size_var` variable.
+| The `pack` method ensures that the radio buttons are neatly aligned within the `size_frame`, making the GUI intuitive and easy to use.
 
 .. code-block:: python
 
     # Pizza Size (Radio buttons)
-    pizza_label = tk.Label(root, text="Pizza Size:")
-    pizza_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
+    size_label = tk.Label(root, text="Pizza Size:")
+    size_label.grid(row=2, column=0, padx=10, pady=5, sticky="ne")
+
     size_var = tk.StringVar(root)
     size_var.set("Small")
 
     size_frame = tk.Frame(root)
     size_frame.grid(row=2, column=1, padx=10, pady=5, sticky="w")
+
     for size in ["Small", "Medium", "Large"]:
         radio_button = tk.Radiobutton(size_frame, text=size, variable=size_var, value=size)
         radio_button.pack(anchor="w")
@@ -103,9 +106,9 @@ Creating and Positioning the OptionMenu
     quanitity_label = tk.Label(root, text="Quantity:")
     quanitity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
     quantity_var = tk.IntVar(root)
-    quantity_var.set(0)
+    quantity_var.set(1)
 
-    quantity_menu = tk.OptionMenu(root, quantity_var, 0, 1, 2, 3, 4, 5)
+    quantity_menu = tk.OptionMenu(root, quantity_var, 1, 2, 3, 4, 5, 6)
     quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
 
@@ -129,21 +132,21 @@ Creating and Positioning the OptionMenu
     .. code-block::
 
         quantity_var = tk.IntVar(root)
-        quantity_var.set(0)
+        quantity_var.set(1)
 
     - `quantity_var` is a `IntVar` object that holds the value of the selected quantity, as an integer.
-    - `quantity_var.set(0)` sets the default value to 0.
+    - `quantity_var.set(1)` sets the default value to 1.
 
 3. **OptionMenu Creation**:
 
     .. code-block::
 
-        quantity_menu = tk.OptionMenu(root, quantity_var, 0, 1, 2, 3, 4, 5)
+        quantity_menu = tk.OptionMenu(root, quantity_var, 1, 2, 3, 4, 5, 6)
         quantity_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")
 
     - This creates an `OptionMenu` widget for selecting a quantity.
     - The `OptionMenu` is associated with the `root` window and linked to the `quantity_var` variable.
-    - The options available in the menu are 0, 1, 2, 3, 4, and 5.
+    - The options available in the menu are 1, 2, 3, 4, 5 and 6.
     - The `grid` method places the `OptionMenu` in the fourth row (`row=3`), second column (`column=1`) of the grid layout.
     - `padx` and `pady` add padding around the menu for better spacing.
     - `sticky="w"` aligns the menu to the west (left side) of its grid cell.
