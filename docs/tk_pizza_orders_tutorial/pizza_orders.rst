@@ -4,7 +4,7 @@ Pizza orders
 
 Final result:
 
-.. image:: images/pizza_orders.png
+.. image:: images/pizza_9.png
     :scale: 67
 
 Grid planning:
