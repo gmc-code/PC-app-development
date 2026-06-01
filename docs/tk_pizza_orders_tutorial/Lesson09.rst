@@ -175,25 +175,16 @@ Adding font and colour settings to tkinter widgets
 Adding color to the Orders list total
 ---------------------------------------
 
-| Adjust the padding, alignment, and size of widgets to create a more polished look.
+| Adjust the color of the very last row (Total Cost line) by modifying the last if block in the update_order_list function.
 
 .. code-block:: python
 
-    # Display orders
-    def update_order_list():
-        order_list.delete(0, tk.END)
-        total_cost = 0
-        for order in orders:
-            customer, pizza, size, quantity = order
-            cost = prices[pizza][size] * quantity
-            total_cost += cost
-            order_list.insert(tk.END, f"{customer} - {quantity} {size} {pizza} - ${cost}")
-        if orders:
-            order_list.insert(tk.END, f"Total cost: ${total_cost}")
-            # Color code the very last row (Total Cost line)
-            # Get the index number of the very last item we just added
-            last_row_index = tk.END
-            order_list.itemconfig(last_row_index, bg=TOTAL_BG)
+    if orders:
+        order_list.insert(tk.END, f"Total cost: ${total_cost}")
+        # Color code the very last row (Total Cost line)
+        # Get the index number of the very last item we just added
+        last_row_index = tk.END
+        order_list.itemconfig(last_row_index, bg=TOTAL_BG)
 
 
 ----
