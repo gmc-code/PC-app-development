@@ -76,7 +76,7 @@ Updating the Orders List Dynamically
 | This code updates the orders list dynamically when an order is added.
 
 - Call ``update_order_list()`` whenever an order is added.
-- Add the code line below to the bottom of the ``else`` block inadd_order()
+- Add the code line below to the bottom of the ``else`` block in ``add_order()``.
 
 .. code-block:: python
 
