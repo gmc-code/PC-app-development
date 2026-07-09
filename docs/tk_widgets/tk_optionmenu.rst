@@ -2,6 +2,7 @@
 tk Optionmenu
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.OptionMenu>`_
 | See: `<https://www.geeksforgeeks.org/tkinter-optionmenu-widget/>`_
 
 ----

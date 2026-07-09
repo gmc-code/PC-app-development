@@ -2,6 +2,7 @@
 tk Radiobutton
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Radiobutton>`_
 | See: `<https://www.geeksforgeeks.org/radiobutton-in-tkinter-python/>`_
 
 ----
@@ -61,7 +62,8 @@ Using radio buttons
     # Create and pack the radio buttons
     for option in options_grp1:
         button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
-                                bg="white", fg="black", font=fontStyle, indicatoron=1, padx=10, pady=5)
+                                bg="white", fg="black", font=fontStyle,
+                                indicatoron=1, padx=10, pady=5)
         button.pack(anchor="nw", side="left", padx=5, pady=5)
     option_grp1_var.set("Option 1")
 

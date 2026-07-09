@@ -10,7 +10,8 @@ Usage
 ---------------
 
 | The `tkinter.Entry` widget provides an input field.
-| To create an entry widget the general syntax is (assuming import via "import tkinter as tk")
+| To create an entry widget the general syntax is
+| (assuming import via "import tkinter as tk")
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
 
@@ -213,6 +214,7 @@ Numeric validation
 
                     root.mainloop()
 
+----
 
 Phone number validation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -286,7 +288,8 @@ Phone number validation
 
 ----
 
-EMail validation
+Email validation
+-------------------------------
 
 .. code-block:: python
 

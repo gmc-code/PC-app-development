@@ -2,6 +2,7 @@
 tk Entry
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Entry>`_
 | See: `<https://www.geeksforgeeks.org/python-tkinter-entry-widget/>`_
 
 ----

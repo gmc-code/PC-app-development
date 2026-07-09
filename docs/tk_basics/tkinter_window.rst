@@ -6,10 +6,11 @@ tkinter basic window
 ----------------------------------------
 
 - The code creates a basic window using tkinter.
-- The window is created by instantiating the `Tk` class from the `tkinter` module.
-- The `title` method sets the title of the window to "pack side".
+- The window is created by making an object from the Tk class, `tk.Tk()`.
+- The `title` method sets the title of the window to "basic window.
 - The `geometry` method sets the size of the window to 250 pixels wide and 150 pixels tall.
 - The `mainloop` method starts the event loop, which keeps the window open and responsive to user interactions until it is closed.
+
 - This is a fundamental structure for creating a GUI application with tkinter.
 - The code is straightforward and serves as a starting point for building more complex GUI applications using tkinter.
 - The window will appear with the specified title and size, and it will remain open until the user closes it.

@@ -2,6 +2,7 @@
 tk Label
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Label>`_
 | See: `<https://www.geeksforgeeks.org/python-tkinter-label/>`_
 
 ----

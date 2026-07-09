@@ -23,7 +23,7 @@ Text widget with text altered by buttons
 ---------------------------------------------
 
 .. image:: images/text_and_buttons.png
-        :scale: 100
+    :scale: 100
 
 .. code-block:: python
 

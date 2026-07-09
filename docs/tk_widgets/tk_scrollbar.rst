@@ -2,6 +2,7 @@
 tk Scrollbar
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Scrollbar>`_
 | See: `<https://www.geeksforgeeks.org/python-tkinter-scrollbar/>`_
 
 -

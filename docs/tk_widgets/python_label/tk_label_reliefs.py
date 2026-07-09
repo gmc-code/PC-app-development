@@ -23,10 +23,13 @@ def create_label_row(text, relief):
     label_bd12.pack(side=tk.LEFT, padx=5)
 
 # Create rows for each relief type
+# "flat", "raised", "sunken", "solid", "ridge", "groove"
 create_label_row("FLAT", tk.FLAT)
 create_label_row("RAISED", tk.RAISED)
 create_label_row("SUNKEN", tk.SUNKEN)
-create_label_row("GROOVE", tk.GROOVE)
+create_label_row("SOLID", tk.SOLID)
 create_label_row("RIDGE", tk.RIDGE)
+create_label_row("GROOVE", tk.GROOVE)
+
 
 root.mainloop()

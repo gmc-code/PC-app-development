@@ -2,6 +2,7 @@
 tk Checkbutton
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Checkbutton>`_
 | See: `<https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/>`_
 
 ----

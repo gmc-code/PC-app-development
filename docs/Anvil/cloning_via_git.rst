@@ -64,7 +64,7 @@ Cloning an earlier version of an app in Anvil
 
      - Run the Git clone command for you copied:
 
-    .. code-block:: terminal
+    .. code-block:: bash
 
        git clone `<https://your-anvil-app.git>`_
 
@@ -72,19 +72,19 @@ Cloning an earlier version of an app in Anvil
   2. **Push to the New App's Repository**:
      - After cloning, navigate into the cloned repository:
 
-    .. code-block:: terminal
+    .. code-block:: bash
 
        cd your-anvil-app
 
      - Update the remote repository to the newly created app:
 
-    .. code-block:: terminal
+    .. code-block:: bash
 
        git remote set-url origin `<https://new-anvil-app.git>`_
 
      - Push the cloned version to the new app:
 
-    .. code-block:: terminal
+    .. code-block:: bash
 
        git push -u origin main
 

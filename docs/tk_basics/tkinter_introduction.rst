@@ -14,8 +14,8 @@ Key references:
 | Tk Docs http://www.tkdocs.com/>`_
 | Tk Refs `<https://tkdocs.com/pyref/index.html>`_
 | Tutorial `<https://tkdocs.com/tutorial/index.html>`_
-| `<https://docs.python.org/3.14/library/tk.html>`_
-| `<https://docs.python.org/3.14/library/tkinter.ttk.html>`_
+| `<https://docs.python.org/3/library/tk.html>`_
+| `<https://docs.python.org/3/library/tkinter.ttk.html>`_
 
 
 | Python Tutorial `<https://www.pythontutorial.net/tkinter/>`_

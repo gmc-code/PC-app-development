@@ -2,6 +2,7 @@
 tk messagebox
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.messagebox.html#module-tkinter.messagebox>`_
 | See: `<https://www.geeksforgeeks.org/python-tkinter-messagebox-widget/>`_
 
 ----

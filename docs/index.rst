@@ -21,6 +21,7 @@ PC-app-development
     tk_basics/tkinter_import.rst
     tk_basics/tkinter_window.rst
     tk_basics/tkinter_options.rst
+    tk_basics/tk_custom_font.rst
     tk_basics/tkinter_constants.rst
 
 
@@ -41,6 +42,8 @@ PC-app-development
     :caption: tk widgets
     :numbered:
 
+    tk_widgets/tk_frame.rst
+
     tk_widgets/tk_label.rst
     tk_widgets/tk_entry.rst
     tk_widgets/tk_text.rst
@@ -60,7 +63,19 @@ PC-app-development
     :numbered:
 
     ttk_widgets/ttk_introduction.rst
+    ttk_widgets/ttk_themes.rst
+    ttk_widgets/ttk_label.rst
 
+    ttk_widgets/ttk_entry.rst
+    ttk_widgets/ttk_button.rst
+
+    tk_widgets/tk_button.rst
+
+    ttk_widgets/ttk_radiobutton.rst
+    ttk_widgets/ttk_checkbutton.rst
+    ttk_widgets/ttk_menubutton.rst
+
+    ttk_widgets/ttk_frame.rst
 
 .. toctree::
     :maxdepth: 2
@@ -82,6 +97,7 @@ PC-app-development
     tk_widget_interactions/modify_via_checkbox.rst
     tk_widget_interactions/modify_via_radiobutton.rst
 
+    tk_widget_interactions/entry_validation.rst
     tk_widget_interactions/entry_validation_numbers.rst
 
     .. tk_widget_interactions/tk_widget_interactions.rsr

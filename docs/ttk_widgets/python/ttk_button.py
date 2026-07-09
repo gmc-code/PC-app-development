@@ -1,22 +1,37 @@
 import tkinter as tk
 from tkinter import ttk
 
-# Create the tkinter window
 root = tk.Tk()
-root.title('ttk button')
-root.geometry("800x400")
-root.resizable(True, True)
+root.title("ttk.Button Widget Example")
+root.geometry("300x150")
 
-# Set the theme to 'alt'
+# 1. Create a Style object
 style = ttk.Style()
-style.theme_use('alt')
+# Force a theme that uses manual engine shading instead of OS native graphics
+style.theme_use('clam')
 
-# Configure the TButton style
-style.configure('TButton', font=('Helvetica', 36), background='red', foreground='white', width=20, borderwidth=1, focusthickness=3, focuscolor='none')
+# 2. Configure a custom style layout for TButton
+style.configure(
+    "Custom.TButton",
+    font=("Arial", 12),
+    width=15,
+    padding=(10, 5) # horizontal, vertical
+)
 
-# Create a ttk Button
-button = ttk.Button(root, text='Custom Button')
-button.place(x=100, y=100)  # Adjust the position as needed
+# Note: Modern ttk uses dynamic maps for states like active/pressed
+style.map(
+    "Custom.TButton",
+    foreground=[("pressed", "white"), ("active", "black")],
+    background=[("pressed", "#0d6efd"), ("active", "#9eb6da")]
+)
 
-# Start the tkinter event loop
+# 3. Apply the custom style to the ttk.Button
+button = ttk.Button(
+    root,
+    text="Button",
+    style="Custom.TButton"
+)
+
+button.pack(padx=20, pady=20)
+
 root.mainloop()

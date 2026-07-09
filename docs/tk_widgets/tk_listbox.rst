@@ -2,6 +2,7 @@
 tk Listbox
 ====================================================
 
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Listbox>`_
 | See: `<https://www.geeksforgeeks.org/-tkinter-listbox-widget/>`_
 
 ----
