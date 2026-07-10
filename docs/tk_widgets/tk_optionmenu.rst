@@ -11,7 +11,8 @@ Usage
 ---------------
 
 | The `tkinter.OptionMenu` widget provides a dropdown menu for selecting one option from a predefined list.
-| To create an OptionMenu widget, the general syntax is (assuming import via "import tkinter as tk"):
+| To create an OptionMenu widget, the general syntax is
+| (assuming import via "import tkinter as tk"):
 
 .. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values)
 
@@ -19,7 +20,18 @@ Usage
     | variable is a `tk.StringVar` that holds the currently selected value.
     | \*values are the options to be displayed in the dropdown menu, passed as separate arguments.
 
+| The StringVar stores the currently selected option.
+| Whenever the user selects a different option from the dropdown menu, the value of the StringVar is updated automatically.
+| Unlike a Button, the OptionMenu automatically updates the associated StringVar whenever a different menu item is selected.
+| Likewise, calling set() on the StringVar changes the selected option shown in the OptionMenu.
+
 | The OptionMenu consists of a main button and a dropdown menu.
+| An OptionMenu is made up of two widgets:
+
+ - the button that displays the current selection
+ - the dropdown Menu containing the available options
+
+| Because these are separate widgets, they are configured separately.
 | Both can be configured using the config method:
 
 .. py:function:: option_menu_widget.config(option=value)
@@ -31,6 +43,28 @@ Usage
 .. py:function:: option_menu_widget["menu"].config(option=value)
 
     | Similarly, multiple option=value pairs can be passed to customize the menu's behavior or appearance.
+
+
+----
+
+Full constructor
+----------------------
+
+| The full constructor adds an optional ``command`` argument.
+
+.. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values, command=my_function)
+
+    | parent is the window or frame object.
+    | variable is a `tk.StringVar` that holds the currently selected value.
+    | \*values are the options to be displayed in the dropdown menu, passed as separate arguments.
+    | command is an optional function that is called whenever the selected option changes.
+    | e.g. option_menu = tk.OptionMenu(root, variable, "Apple", "Banana", "Cherry", command=my_function)
+
+.. note::
+
+    Although ``OptionMenu()`` accepts a ``command`` argument, it is **not**
+    a configuration option of the widget. Therefore ``command`` does not
+    appear in the output of ``option_menu_widget.keys()``.
 
 
 ----
@@ -60,15 +94,14 @@ Sample OptionMenu
     # Set the default value for the OptionMenu
     fruit_var.set(fruits[0])
 
-    # Define the font style
-    fontStyle1 = font.Font(family="Arial", size=16, weight="bold")
-    # Define the font style
-    fontStyle2 = font.Font(family="Arial", size=14, weight="normal")
+    # Define the font styles
+    font_style1 = ("Arial", 16, "bold")
+    font_style2 = ("Arial", 14)
 
     # Create the OptionMenu widget
     option_menu = tk.OptionMenu(root, fruit_var, *fruits)
-    option_menu.config(font=fontStyle1, bg="light green", fg="black", activebackground="dark green", activeforeground="white")
-    option_menu["menu"].config(font=fontStyle2, bg="light blue", fg="black", activebackground="dark blue", activeforeground="white")
+    option_menu.config(font=font_style1, bg="light green", fg="black", activebackground="dark green", activeforeground="white")
+    option_menu["menu"].config(font=font_style2, bg="light blue", fg="black", activebackground="dark blue", activeforeground="white")
     option_menu.pack(pady=10, padx=10)
 
     # Run the main event loop
@@ -119,18 +152,31 @@ Sample OptionMenu
                     fruit_var.set(fruits[0])
 
                     # Define the font style
-                    fontStyle1 = font.Font(family="Arial", size=16, weight="bold")
-                    # Define the font style
-                    fontStyle2 = font.Font(family="Arial", size=14, weight="normal")
+                    font_style1 = ("Arial", 16, "bold")
+                    font_style2 = ("Arial", 14)
 
                     # Create the OptionMenu widget
                     option_menu = tk.OptionMenu(root, fruit_var, *fruits)
-                    option_menu.config(font=fontStyle1, bg="light yellow", fg="blue", activebackground="orange", activeforeground="red")
-                    option_menu["menu"].config(font=fontStyle2, bg="light pink", fg="purple", activebackground="yellow", activeforeground="green")
+                    option_menu.config(font=font_style1, bg="light yellow", fg="blue", activebackground="orange", activeforeground="red")
+                    option_menu["menu"].config(font=font_style2, bg="light pink", fg="purple", activebackground="yellow", activeforeground="green")
                     option_menu.pack(pady=10, padx=10)
 
                     # Run the main event loop
                     root.mainloop()
+
+----
+
+Methods
+----------------
+
+.. py:function:: variable.get()
+
+    | Returns the currently selected option.
+
+.. py:function:: variable.set(value)
+
+    | Changes the selected option to ``value``.
+    | ``value`` should match one of the options supplied when the OptionMenu was created.
 
 
 ----
@@ -363,7 +409,7 @@ Parameter syntax
 Default options
 -----------------------
 
-| Code to get the defaults for each button option is below.
+| Code to get the defaults for each optionmenu option is below.
 
 .. code-block:: python
 
@@ -371,9 +417,11 @@ Default options
 
     root = tk.Tk()
 
-    button = tk.Button(root)
-    button_options = button.keys()
+    variable = tk.StringVar(value="One")
+    option_menu = tk.OptionMenu(root, variable, "One", "Two")
 
-    for option in button_options:
-        print(f"{option}: {button.cget(option)}")  # cget retrieves the current value of the option
+    for option in option_menu.keys():
+        print(f"{option}: {option_menu.cget(option)}")
+
+
 

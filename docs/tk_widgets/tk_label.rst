@@ -10,8 +10,8 @@ tk Label
 Usage
 ---------------
 
-| The `tkinter.Label` widget provides a text label.
-| To create a label widget the general syntax is (assuming import via "import tkinter as tk"):
+| The `tkinter.Label` widget displays text or an image in a window or frame.
+| To create a Label widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: label_widget  = tk.Label(parent, option=value)
 
@@ -25,7 +25,7 @@ Text
 
 .. py:function:: label_widget  = tk.Label(parent, text=text_string)
 
-    | `text_string` is text to display in the label widget.
+    | `text_string` is text to display in the Label widget.
     | e.g. label = tk.Label(root, text="label text")
 
 Text example
@@ -40,7 +40,7 @@ Text example
     root.geometry("300x200")  # Set window size
     root.title("Label text")  # Set window title
 
-    # Create the label widget
+    # Create the Label widget
     label = tk.Label(root, text="label text")
 
     # Pack the label into the window
@@ -61,12 +61,12 @@ Font
 
    - font_type is a font name. e.g "Arial"
    - font_size is the size of the font.  eg. 12
-   - font_style can be bold, italic, underline or a space separated combination
+   - font_style can be "bold", "italic", "underline" or a space separated combination
    - Default Value: System-dependent (usually a default font)
    - Description: Specifies the font family, size, and style for the label text.
    - Example: To use a 12-point Arial font, use `font=("Arial", 12)`.
    - Example: To use a bold 12-point Arial font, use `font=("Arial", 12, "bold")`.
-   - Example: To use a bold underlines 12-point Arial font, use `font=("Arial", 12, "bold underline")`.
+   - Example: To use a bold underlined 12-point Arial font, use `font=("Arial", 12, "bold underline")`.
 
 
 font example
@@ -81,7 +81,7 @@ font example
     root.geometry("300x200")  # Set window size
     root.title("Label font")  # Set window title
 
-    # Create the label widget with options
+    # Create the Label widget with options
     label = tk.Label(root, text="label text", font=("Arial", 24))
 
     # Pack the label into the window
@@ -92,51 +92,6 @@ font example
 
 
 .. image:: images/label_font.png
-    :scale: 100
-
-----
-
-Custom Font
-------------
-
-| **font.Font** is a constructor from the ``tkinter.font`` module that is used to create a new font object.
-| **from tkinter import font** is required.
-
-.. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
-
-    **Parameters**
-
-      - **family=v_family** Specifies the font family to use. e.g. **family="Comic Sans MS"**
-      - **size=v_size** Sets the font size in points.e.g. **size=20**:
-      - **weight=v_weight** Sets the font weight. e.g. **weight="bold"**. e.g. **weight="normal"**.
-      - **slant=v_slant** Makes the font italic or normal. e.g **slant="italic"**. Other possible values include "roman" (normal, upright text).
-
-
-custom font example
-~~~~~~~~~~~~~~~~~~~~~
-
-This code below uses a font object to style text in a Tkinter Label.
-
-.. code-block:: python
-
-    import tkinter as tk
-    from tkinter import font
-
-    # Create the main window
-    root = tk.Tk()
-    root.title("Label Custom Font")
-
-    # Define the custom font
-    custom_font = font.Font(family="Comic Sans MS", size=20, weight="bold", slant="italic")
-
-    # Create a Label widget using the custom font
-    label = tk.Label(root, text="This is a label widget.", font=custom_font)
-    label.pack(padx=20, pady=20)
-
-    # Run the Tkinter event loop
-    root.mainloop()
-
-.. image:: images/label_font_custom.png
     :scale: 100
 
 ----
@@ -164,7 +119,7 @@ fg example
     root.geometry("300x200")  # Set window size
     root.title("Label fg")  # Set window title
 
-    # Create the label widget with options
+    # Create the Label widget with options
     label = tk.Label(root, text="label text", font=("Arial", 24), fg="blue")
 
     # Pack the label into the window
@@ -201,7 +156,7 @@ bg example
     root.geometry("300x200")  # Set window size
     root.title("Label bg")  # Set window title
 
-    # Create the label widget with options
+    # Create the Label widget with options
     label = tk.Label(root, text="label text", font=("Arial", 24), fg="blue", bg="lightyellow")
 
     # Pack the label into the window
@@ -238,8 +193,8 @@ padding example
     root.geometry("300x200")  # Set window size
     root.title("Label padding]")  # Set window title
 
-    # Create the label widget with options
-    label = tk.Label(text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
+    # Create the Label widget with options
+    label = tk.Label(root, text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
                     padx=60, pady=20)
 
     # Pack the label into the window
@@ -300,14 +255,14 @@ Anchor example
     root.geometry("500x200")  # Set window size
     root.title("Label anchor")  # Set window title
 
-    # Create the label widget with options
+    # Create the Label widget with options
     label = tk.Label(text="anchor nw", font=("Arial", 24), fg="blue", bg="lightyellow",
                     width=20, height=2, anchor="nw")
 
     # Pack the label into the window
     label.pack(pady=5)
 
-    # Create the label widget with options
+    # Create the Label widget with options
     label_2 = tk.Label(text="anchor nw padded", font=("Arial", 24), fg="purple", bg="lightgreen",
                     width=20, height=2, anchor="nw", padx=20, pady=10)
 
@@ -339,7 +294,7 @@ Border
    - border_style is one of "flat", "raised", "sunken", "solid", "ridge", "groove"
    - Default Value: "flat" (no border)
    - Description: Specifies the border style and width for the label.
-   - Example: To create a solid border with a width of 1 pixels, use `relief="solid"` and `borderwidth=1`.
+   - Example: To create a solid border with a width of 1 pixel, use `relief="solid"` and `borderwidth=1`.
 
 .. image:: images/label_borders.png
     :scale: 67
@@ -357,8 +312,8 @@ border example
     root.geometry("300x200")  # Set window size
     root.title("Label border")  # Set window title
 
-    # Create the label widget with options
-    label = tk.Label(text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
+    # Create the Label widget with options
+    label = tk.Label(root, text="label text", font=("Arial", 24), fg="blue", bg="lightyellow",
                     padx=60, pady=20, relief="solid", borderwidth=1)
 
     # Pack the label into the window
@@ -379,9 +334,9 @@ border example
 
       - The window should have a title "Formatted Label Example" and a size of 500x300 pixels.
       - Use the "Comic Sans MS" font with a size of 20, bold weight, and italic slant for the Label widget.
-      - The Label widget should display the text "This is a label widget." with a pale mauve background (`#e0b0ff`) and purple text color.
-      - Add a raised border with a width of 2 pixels, padding of 10 pixels on all sides, and anchor the text to the northwest.
-      - Set the width of the Label widget to 300 and the height to 2.
+      - The Label widget should display the text "This is a Label widget." with a pale mauve background (`#e0b0ff`) and purple text color.
+      - Add a raised border with a borderwidth of 2 pixels, padding of 10 pixels on all sides, and anchor the text to the northwest.
+      - Set the width of the Label widget to 30 characters and the height to 2 lines.
       - Ensure the Label widget is packed with padding of 20 pixels on all sides.
 
         .. image:: images/label_question.png
@@ -401,7 +356,6 @@ border example
                 .. code-block:: python
 
                     import tkinter as tk
-                    from tkinter import font
 
                     # Create the main window
                     root = tk.Tk()
@@ -409,12 +363,12 @@ border example
                     root.geometry("500x300")
 
                     # Define the custom font
-                    custom_font = font.Font(family="Comic Sans MS", size=20, weight="bold", slant="italic")
+                    custom_font = ("Comic Sans MS", 20)
 
                     # Create the Label widget with the specified formatting, border, padding, and anchor options
-                    label = tk.Label(root, text="This is a label widget.", font=custom_font,
-                                    bg="#e0b0ff", fg="purple", bd=2, relief="raised",
-                                    padx=10, pady=10, anchor="nw", width=300, height=2)
+                    label = tk.Label(root, text="This is a Label widget.", font=custom_font,
+                                    bg="#e0b0ff", fg="purple", borderwidth=2, relief="raised",
+                                    padx=10, pady=10, anchor="nw", width=30, height=2)
                     label.pack(padx=20, pady=20)
 
                     # Run the Tkinter event loop
@@ -479,7 +433,7 @@ Options
     .. py:attribute:: compound
 
         | Syntax: ``label_widget = tk.Label(parent, compound="position")``
-        | Description: Specifies the relative position of the image and text. Controls how to combine text and image in the label. By default, if an image or bitmap is given, it is drawn instead of the text. If this option is set to CENTER, the text is drawn on top of the image. If this option is set to one of BOTTOM, LEFT, RIGHT, or TOP, the image is drawn besides the text (use BOTTOM to draw the image under the text, etc.).
+        | Description: Specifies the relative position of the image and text. Controls how to combine text and image in the label. By default, if an image or bitmap is given, it is drawn instead of the text. If this option is set to CENTER, the text is drawn on top of the image. If this option is set to one of BOTTOM, LEFT, RIGHT, or TOP, the image is drawn beside the text (use BOTTOM to draw the image under the text, etc.).
         | Default: none
         | Example: ``label_widget = tk.Label(root, compound="left")``
 
@@ -571,7 +525,7 @@ Options
     .. py:attribute:: relief
 
         | Syntax: ``label_widget = tk.Label(parent, relief="style")``
-        | Description: Sets the 3D effect of the label border. Possible values are FLAT, SUNKEN, RAISED, GROOVE, and RIDGE.
+        | Description: Sets the 3D effect of the label border. Possible values are FLAT, RAISED, SUNKEN, GROOVE, RIDGE and SOLID.
         | Default: flat
         | Example: ``label_widget = tk.Label(root, relief="raised")``
 
@@ -593,7 +547,7 @@ Options
 
         | Syntax: ``label_widget = tk.Label(parent, text="text")``
         | Description: Sets the text to be displayed in the label. The text can contain newlines. If the bitmap or image options are used, this option is ignored.
-        | Default: None
+        | Default: ""
         | Example: ``label_widget = tk.Label(root, text="Hello, World!")``
 
     .. py:attribute:: textvariable

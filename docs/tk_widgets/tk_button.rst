@@ -43,7 +43,8 @@ Sample button
       .. image:: images/button_simple_pressed.png
         :scale: 100
 
-| The code below causes the button to change colour when clicked.
+| The code below creates a button with customised colours. The button changes appearance while it is being pressed.
+| The button will not appear until it is placed in the window using a geometry manager such as ``pack()``, ``grid()`` or ``place()``.
 
 .. code-block:: python
 
@@ -51,6 +52,7 @@ Sample button
 
     root = tk.Tk()
     root.title("Button Widget Example")
+    root.geometry("350x100")
 
     # Creating a button with specified options
     button = tk.Button(
@@ -74,7 +76,7 @@ Sample button
 
 .. admonition:: Tasks
 
-    #. Modify the code above to change the window title to "Button question," set the window size to 350x400, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border of 3, a height of 2, a hand-shaped cursor on hover, a raised border style when pressed, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
+    #. Modify the code above to change the window title to "Button question," set the window size to 350x100, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border width of 3, a height of 2, a hand-shaped cursor on hover, a raised border style, a sunken border style on hovering over the button, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
 
     .. image:: images/button_question.png
         :scale: 67
@@ -88,7 +90,7 @@ Sample button
 
             .. tab-item:: Q1
 
-                Modify the code above to change the window title to "Button question," set the window size to 350x100, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border of 3, a height of 2, a hand-shaped cursor on hover, a raised border style when pressed, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
+                Modify the code above to change the window title to "Button question," set the window size to 350x100, set the button text to "Click Me", a light gray background, black text color, a black background when clicked, white text when clicked, Arial font size 14, centered text alignment, a border width of 3, a height of 2, a hand-shaped cursor on hover, a raised border style, a sunken border style on hovering over the button, horizontal inside padding of 10, vertical inside padding of 5, a width of 15, and text wrapping after 50 pixels, and adjust the pack method to add padding of 20 pixels on all sides.
 
                 .. code-block:: python
 
@@ -121,12 +123,12 @@ Sample button
                         bd=3,
                         # Set the height of the button
                         height=2,
-                        # Set the justification of the text within the button
-                        justify="center",
                         # Set the cursor that appears when hovering over the button
                         cursor="hand2",
-                        # Set the relief style of the button when it is pressed
-                        overrelief="raised",
+                        # Set the relief style of the button
+                        relief="raised",
+                        # Set the relief style of the button when hovering over the button
+                        overrelief="sunken",
                         # Set the padding around the text inside the button (horizontal)
                         padx=10,
                         # Set the padding around the text inside the button (vertical)
@@ -142,6 +144,22 @@ Sample button
 
                     root.mainloop()
 
+----
+
+Methods
+----------------
+
+.. py:function:: button_widget.invoke()
+
+    | Calls the button's ``command`` callback as though the button had been clicked.
+
+.. py:function:: button_widget.flash()
+
+    | Briefly flashes the button between its active and normal colours.
+
+.. py:function:: button_widget.config(option=value)
+
+    | Changes one or more button options after the button has been created.
 
 ----
 
@@ -202,7 +220,7 @@ Parameter syntax
     .. py:attribute:: command
 
         | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
-        | Description: Specifies the function to be called when the button is clicked.
+        | Description: Specifies the function to call when the button is clicked. Do not include parentheses after the function name.
         | Default: ``None``
         | Example: ``button_widget = tk.Button(root, command=on_click)``
 
@@ -319,7 +337,7 @@ Parameter syntax
     .. py:attribute:: overrelief
 
         | Syntax: ``button_widget = tk.Button(parent, overrelief="relief_type")``
-        | Description: Sets the relief style of the button when the mouse is over it. Common values are "raised", "sunken", "flat", "ridge", "solid", "groove".
+        | Description: Sets the border style while the mouse pointer is over the button. Common values are "raised", "sunken", "flat", "ridge", "solid", "groove".
         | Default: ``None``
         | Example: ``button_widget = tk.Button(root, overrelief="raised")``
 

@@ -27,13 +27,13 @@ button = tk.Button(
     # Set the border width of the button
     bd=3,
     # Set the height of the button
-    height=2,
-    # Set the justification of the text within the button
-    justify="center",
+    height=2
     # Set the cursor that appears when hovering over the button
     cursor="hand2",
-    # Set the relief style of the button when it is pressed
-    overrelief="raised",
+    # Set the relief style of the button
+    relief="raised",
+    # Set the relief style of the button when hovering over the button
+    overrelief="sunken",
     # Set the padding around the text inside the button (horizontal)
     padx=10,
     # Set the padding around the text inside the button (vertical)

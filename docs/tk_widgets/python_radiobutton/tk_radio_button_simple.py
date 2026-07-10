@@ -11,10 +11,10 @@ frame = tk.Frame(root, bg="light blue")
 frame.pack(anchor="nw", padx=10, pady=10)
 
 # Define a font style
-fontStyle = font.Font(family="Lucida Grande", size=18)
+font_style = ("Lucida Grande", 18)
 
 # Create a StringVar to hold the selected option
-option_grp1_var = tk.StringVar(value=None)  # No default value
+option_grp1_var = tk.StringVar(value="Option 1")   # default value
 
 # Define the options
 options_grp1 = ["Option 1", "Option 2", "Option 3"]
@@ -22,10 +22,10 @@ options_grp1 = ["Option 1", "Option 2", "Option 3"]
 # Create and pack the radio buttons
 for option in options_grp1:
     button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
-                            bg="white", fg="black", font=fontStyle,
+                            bg="white", fg="black", font=font_style,
                             indicatoron=1, padx=10, pady=5)
     button.pack(anchor="nw", side="left", padx=5, pady=5)
-option_grp1_var.set("Option 1")
+# option_grp1_var.set("Option 1")
 
 
 # Run the main event loop

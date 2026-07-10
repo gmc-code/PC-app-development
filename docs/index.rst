@@ -21,7 +21,7 @@ PC-app-development
     tk_basics/tkinter_import.rst
     tk_basics/tkinter_window.rst
     tk_basics/tkinter_options.rst
-    tk_basics/tk_custom_font.rst
+    tk_basics/tkinter_custom_font.rst
     tk_basics/tkinter_constants.rst
 
 
@@ -42,7 +42,9 @@ PC-app-development
     :caption: tk widgets
     :numbered:
 
+    tk_widgets/tk_widgets_intro.rst
     tk_widgets/tk_frame.rst
+    tk_widgets/tk_label_frame.rst
 
     tk_widgets/tk_label.rst
     tk_widgets/tk_entry.rst
@@ -53,8 +55,13 @@ PC-app-development
     tk_widgets/tk_checkbutton.rst
     tk_widgets/tk_optionmenu.rst
     tk_widgets/tk_listbox.rst
+
     tk_widgets/tk_messagebox.rst
 
+    tk_widgets/tk_menu.rst
+    tk_widgets/tk_spinbox.rst
+    tk_widgets/tk_scrollbar.rst
+    tk_widgets/tk_canvas.rst
 
 
 .. toctree::

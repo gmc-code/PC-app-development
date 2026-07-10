@@ -19,7 +19,7 @@ App Theme
 | In the Choose Theme window choose Material Design 3.
 | Set the python environment to the latest version.
 
-.. image::  images/christmas_jokes/python_version.png
+.. image:: images/christmas_jokes/python_version.png
     :scale: 80
 
 ----
@@ -91,33 +91,33 @@ Table of jokes
 
 Create a new database table and name it "jokes".
 
-.. image::  images/christmas_jokes/add_new_table.png
+.. image:: images/christmas_jokes/add_new_table.png
     :scale: 100
 
 
 | Set Client code access to search this table.
 | Server code should be set to search, edit and delete.
 
-.. image::  images/christmas_jokes/jokes_table.png
+.. image:: images/christmas_jokes/jokes_table.png
     :scale: 60
 
 | Add 2 New Columns.
 | Name them "joke" and "reply".
 | Set their column type to text in the **Add a Column** window.
 
-.. image::  images/christmas_jokes/add_a_column.png
+.. image:: images/christmas_jokes/add_a_column.png
     :scale: 100
 
 | Enable the Uplink in the Anvil IDE using these steps.
 | Click the + button in the sidebar menu and select Uplink.
 | Click Enable Server Uplink.
 
-.. image::  images/christmas_jokes/enable_server_uplink.png
+.. image:: images/christmas_jokes/enable_server_uplink.png
     :scale: 100
 
 | Copy the Server Uplink key and paste into a python script on your local machine.
 
-.. image::  images/christmas_jokes/server_uplink.png
+.. image:: images/christmas_jokes/server_uplink.png
     :scale: 100
 
 | Run this code on your local machine. Make sure to have pasted in your server uplink key for ANVIL_UPLINK_KEY.
@@ -180,7 +180,7 @@ Create a new database table and name it "jokes".
 
 | The jokes table will now be filled with jokes.
 
-.. image::  images/christmas_jokes/uplink_table.png
+.. image:: images/christmas_jokes/uplink_table.png
     :scale: 100
 
 

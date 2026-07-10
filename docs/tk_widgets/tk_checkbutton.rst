@@ -17,6 +17,8 @@ Usage
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
+    | Each checkbutton has its own ``IntVar`` because every checkbox stores its own checked state independently.
+    | Unlike radio buttons, checkbuttons should not share the same control variable.
 
 ----
 
@@ -30,7 +32,6 @@ Using check buttons
 .. code-block:: python
 
     import tkinter as tk
-    from tkinter import font
 
     # Create the main window
     root = tk.Tk()
@@ -41,26 +42,31 @@ Using check buttons
     frame1.pack(anchor="nw", padx=10, pady=10)
 
     # Define a font style
-    fontStyle = font.Font(family="Lucida Grande", size=18)
+    font_style = ("Lucida Grande", 18)
 
     # Define the options for group 1
     options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3"]
+    # Store each checkbox's IntVar using its label as the key.
+    variables = {}
 
     for option in options_grp1:
-        # default value is 0
-        var = tk.IntVar()
+        # Each checkbutton has its own IntVar.
+        # IntVar() defaults to 0 (unchecked).
+        variables[option] = tk.IntVar()
 
+        # Make the first checkbutton checked initially.
         if option == "Checkbox 1":
-            var.set(1)
+            variables[option].set(1)
 
         button = tk.Checkbutton(
-            frame1, text=option, variable=var, indicatoron=1,
-            bg="white", fg="black", font=fontStyle, padx=10, pady=5
+            frame1, text=option, variable=variables[option], indicatoron=1,
+            bg="white", fg="black", font=font_style, padx=10, pady=5
         )
-        button.pack(anchor="nw", side="left", padx=5, pady=5)
+        button.pack(anchor="nw", padx=5, pady=5)
 
     # Run the main event loop
     root.mainloop()
+
 
 
 ----
@@ -68,7 +74,7 @@ Using check buttons
 
 .. admonition:: Tasks
 
-    #. Modify the code to have 4 check boxes, one under another.
+    #. Modify the code so that it displays four checkbuttons arranged vertically.
 
         .. image:: images/checkboxes_vertically.png
             :scale: 67
@@ -82,12 +88,11 @@ Using check buttons
 
             .. tab-item:: Q1
 
-                Modify the code to have 4 check boxes, one under another.
+                Modify the code so that it displays four checkbuttons arranged vertically.
 
                 .. code-block:: python
 
                     import tkinter as tk
-                    from tkinter import font
 
                     # Create the main window
                     root = tk.Tk()
@@ -100,26 +105,77 @@ Using check buttons
                     frame1.pack(anchor="nw", padx=10, pady=10)
 
                     # Define a font style
-                    fontStyle = font.Font(family="Lucida Grande", size=18)
+                    font_style = ("Lucida Grande", 18)
 
                     # Define the options for group 1
                     options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3", "Checkbox 4"]
+                    # Store each checkbox's IntVar using its label as the key.
+                    variables = {}
 
                     for option in options_grp1:
-                        var = tk.IntVar()
+                        # Each checkbutton has its own IntVar.
+                        # IntVar() defaults to 0 (unchecked).
+                        variables[option] = tk.IntVar()
 
+                        # Make the first checkbutton checked initially.
                         if option == "Checkbox 1":
-                            var.set(1)
+                            variables[option].set(1)
 
                         button = tk.Checkbutton(
-                            frame1, text=option, variable=var, indicatoron=1,
-                            bg="white", fg="black", font=fontStyle, padx=10, pady=5
+                            frame1, text=option, variable=variables[option], indicatoron=1,
+                            bg="white", fg="black", font=font_style, padx=10, pady=5
                         )
-                        button.pack(anchor="nw", side="top", padx=5, pady=5)
+                        button.pack(anchor="w", padx=5, pady=5)    # defaults to side="top"
 
 
                     # Run the main event loop
                     root.mainloop()
+
+----
+
+Methods
+----------------------
+
+.. py:function:: checkbutton_widget.select()
+
+    | Selects the checkbutton.
+    | Sets the associated control variable to the ``onvalue``.
+
+.. py:function:: checkbutton_widget.deselect()
+
+    | Deselects the checkbutton.
+    | Sets the associated control variable to the ``offvalue``.
+
+.. py:function:: checkbutton_widget.toggle()
+
+    | Toggles the state of the checkbutton.
+    | If the checkbutton is selected it becomes deselected, and vice versa.
+
+.. py:function:: checkbutton_widget.flash()
+
+    | Briefly flashes the checkbutton several times.
+    | Useful for drawing the user's attention to the widget.
+
+.. py:function:: checkbutton_widget.invoke()
+
+    | Simulates the user clicking the checkbutton.
+    | Toggles the state and calls the function specified by the ``command`` option, if one exists.
+    | Returns the value returned by the callback function.
+
+----
+
+Control variable methods
+----------------------------
+
+.. py:function:: variable.get()
+
+    | Returns the current value of the associated control variable.
+
+.. py:function:: variable.set(value)
+
+    | Sets the value of the associated control variable.
+    | If ``value`` equals the ``onvalue``, the checkbutton becomes selected.
+    | If ``value`` equals the ``offvalue``, the checkbutton becomes deselected.
 
 ----
 
@@ -155,6 +211,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, anchor="w")``
 
     .. py:attribute:: background
+    .. py:attribute:: bg
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, background="color")``
         | Description: Sets the background color of the checkbutton.
@@ -167,13 +224,6 @@ Parameter syntax
         | Description: Sets the border width of the checkbutton.
         | Default: 2
         | Example: ``checkbutton_widget = tk.Checkbutton(root, bd=5)``
-
-    .. py:attribute:: bg
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, bg="color")``
-        | Description: Sets the background color of the checkbutton.
-        | Default: SystemButtonFace
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, bg="lightyellow")``
 
     .. py:attribute:: bitmap
 
@@ -217,6 +267,7 @@ Parameter syntax
         | Default: SystemDisabledText
         | Example: ``checkbutton_widget = tk.Checkbutton(root, disabledforeground="gray")``
 
+    .. py:attribute:: foreground
     .. py:attribute:: fg
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, fg="color")``
@@ -269,7 +320,9 @@ Parameter syntax
     .. py:attribute:: indicatoron
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, indicatoron=1)``
-        | Description: Specifies whether to show the indicator (true or false).
+        | Description: Displays a traditional checkbox when set to 1. Set to 0 to display the widget as a regular toggle button.
+        | Set ``indicatoron=1`` to display a traditional checkbox.
+        | Set ``indicatoron=0`` to make the checkbutton appear as a regular button that stays pressed when selected.
         | Default: 1
         | Example: ``checkbutton_widget = tk.Checkbutton(root, indicatoron=0)``
 
@@ -346,14 +399,14 @@ Parameter syntax
     .. py:attribute:: state
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, state="state_type")``
-        | Description: Sets the state of the checkbutton. Options include `normal`, `disabled`, or `active`.
+        | Description: Sets the state of the checkbutton. Options include `normal` or `disabled`.
         | Default: normal
         | Example: ``checkbutton_widget = tk.Checkbutton(root, state="disabled")``
 
     .. py:attribute:: takefocus
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, takefocus=1)``
-        | Description: Allows the checkbutton to take focus on click.
+        | Description: Allows the checkbutton to receive keyboard focus using the Tab key.
         | Default: None
         | Example: ``checkbutton_widget = tk.Checkbutton(root, takefocus=1)``
 
@@ -396,7 +449,7 @@ Parameter syntax
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, variable=control_variable)``
         | Description: Associates the checkbutton with a control variable (e.g., `IntVar`, `StringVar`).
-        | Default: !checkbutton-1
+        | Default: An internal Tcl variable created automatically.
         | Example: ``checkbutton_widget = tk.Checkbutton(root, variable=my_var)``
 
     .. py:attribute:: width

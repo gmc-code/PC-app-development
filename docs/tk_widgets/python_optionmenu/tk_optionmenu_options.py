@@ -1,29 +1,12 @@
 import tkinter as tk
 
-# Create the main window
 root = tk.Tk()
 
-# Define a variable to hold the selected option
-selected_option = tk.StringVar(root)
+variable = tk.StringVar(value="One")
+option_menu = tk.OptionMenu(root, variable, "One", "Two")
 
-# Define the options for the OptionMenu
-options = ["Option 1", "Option 2", "Option 3"]
-
-# Set the default value for the OptionMenu
-selected_option.set(options[0])
-
-# Create the OptionMenu widget
-widget = tk.OptionMenu(root, selected_option, *options)
-
-# Pack the widget into the window
-widget.pack()
-
-# Retrieve and print the current configuration options of the widget
-widget_options = widget.keys()
-for option in widget_options:
-    print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
-
-
+for option in option_menu.keys():
+    print(f"{option}: {option_menu.cget(option)}")
 
 
 '''
@@ -55,7 +38,7 @@ relief: raised
 compound: none
 state: normal
 takefocus: 0
-text: Option 1
+text:
 textvariable: PY_VAR0
 underline: -1
 width: 0

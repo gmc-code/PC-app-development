@@ -1,30 +1,27 @@
 import tkinter as tk
 
-
 root = tk.Tk()
 root.title("Text Widget Example")
+root.geometry("300x200")
 
 # Create a Text widget
-text = tk.Text(root, height=6, width=40, wrap="word", font=("Helvetica", 12))
+text = tk.Text(root, height=6, width=40, wrap="word", font=("Arial", 12))
 text.pack(padx=10, pady=10)
 
 # Insert initial content
-text.insert(
-    "1.0", "Welcome to \nthe Text Widget!\nIt has multiline text.")
+text.insert("1.0", "Welcome to \nthe Text Widget!\nIt has multiline text.")
 
 # Customize options
 text.config(
     bg="#fafafa",  # Background color
     fg="blue",  # Text color
-    bd=1,  # Border width
+    borderwidth=1,  # Border width
     relief="solid",  # Border style
-    insertbackground="blue",  # Insertion cursor color
+    insertbackground="red",  # Insertion cursor color
+    selectbackground="red",  # Selection background color
     state="normal",  # Enable editing (use "disabled" to disable)
-    highlightthickness=1,
-    highlightcolor="blue",
     padx=10,
-    pady=10,
-    yscrollcommand="True",
+    pady=10
 )
 
 root.mainloop()

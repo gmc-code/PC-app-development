@@ -3,6 +3,7 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title("Button Widget Example")
+root.geometry("350x100")
 
 # Creating a button with specified options
 button = tk.Button(

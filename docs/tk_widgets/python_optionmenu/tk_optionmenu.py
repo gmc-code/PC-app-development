@@ -16,14 +16,13 @@ fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
 fruit_var.set(fruits[0])
 
 # Define the font style
-fontStyle1 = font.Font(family="Arial", size=16, weight="bold")
-# Define the font style
-fontStyle2 = font.Font(family="Arial", size=14, weight="normal")
+font_style1 = ("Arial", 16, "bold")
+font_style2 = ("Arial", 14)
 
 # Create the OptionMenu widget
 option_menu = tk.OptionMenu(root, fruit_var, *fruits)
-option_menu.config(font=fontStyle1, bg="light green", fg="black", activebackground="dark green", activeforeground="white")
-option_menu["menu"].config(font=fontStyle2, bg="light blue", fg="black", activebackground="dark blue", activeforeground="white")
+option_menu.config(font=font_style1, bg="light green", fg="black", activebackground="dark green", activeforeground="white")
+option_menu["menu"].config(font=font_style2, bg="light blue", fg="black", activebackground="dark blue", activeforeground="white")
 option_menu.pack(pady=10, padx=10)
 
 # Run the main event loop

@@ -210,8 +210,8 @@ The custom css is below.
         max-width: 600px;
         margin: 50px auto;
         padding: 20px;
-    /*     background-color: #ffffff; /* White background */ */
-        border: 1px solid #dee2e6; /* Bootstrap border color */
+        /*     background-color: #ffffff;
+        border: 1px solid #dee2e6; */
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }

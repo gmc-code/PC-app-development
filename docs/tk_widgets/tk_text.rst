@@ -18,7 +18,7 @@ Usage
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
 
-| Options can also be added after widget creation.
+| Options can also be changed or added anew after widget creation.
 
 .. py:function:: text_widget.config(option=value)
 
@@ -40,11 +40,13 @@ Text widget example
 
     import tkinter as tk
 
+
     root = tk.Tk()
     root.title("Text Widget Example")
+    root.geometry("300x200")
 
     # Create a Text widget
-    text = tk.Text(root, height=6, width=40, wrap="word", font=("Helvetica", 12))
+    text = tk.Text(root, height=6, width=40, wrap="word", font=("Arial", 12))
     text.pack(padx=10, pady=10)
 
     # Insert initial content
@@ -55,15 +57,13 @@ Text widget example
     text.config(
         bg="#fafafa",  # Background color
         fg="blue",  # Text color
-        bd=1,  # Border width
+        borderwidth=1,  # Border width
         relief="solid",  # Border style
-        insertbackground="blue",  # Insertion cursor color
+        insertbackground="red",  # Insertion cursor color
+        selectbackground="red",   # Selection background color
         state="normal",  # Enable editing (use "disabled" to disable)
-        highlightthickness=1,
-        highlightcolor="blue",
         padx=10,
-        pady=10,
-        yscrollcommand="True",
+        pady=10
     )
 
     root.mainloop()
@@ -72,7 +72,7 @@ Text widget example
 
 .. admonition:: Tasks
 
-     #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
+     #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a background selection color of purple, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
 
         .. image:: images/text_question.png
             :scale: 67
@@ -86,7 +86,7 @@ Text widget example
 
             .. tab-item:: Q1
 
-                Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
+                Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a background selection color of purple, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
 
                 .. code-block:: python
 
@@ -96,7 +96,7 @@ Text widget example
                     root.title("Text Widget Questions")
 
                     # Create a Text widget
-                    text = tk.Text(root, height=6, width=40, wrap="word", font=("Helvetica", 12))
+                    text = tk.Text(root, height=6, width=40, wrap="word", font=("Arial", 12))
                     text.pack(padx=10, pady=10)
 
                     # Insert initial content
@@ -107,19 +107,62 @@ Text widget example
                     text.config(
                         bg="light yellow",  # Background color
                         fg="dark green",  # Text color
-                        bd=2,  # Border width
+                        borderwidth=2,  # Border width
                         relief="groove",  # Border style
-                        insertbackground="dark green",  # Insertion cursor color
+                        insertbackground="red",  # Insertion cursor color
+                        selectbackground="purple",   # Selection background color
                         state="disabled",  # Disable editing
-                        highlightthickness=1,
-                        highlightcolor="dark green",
                         padx=10,
-                        pady=10,
-                        yscrollcommand="True",
+                        pady=10
                     )
 
                     root.mainloop()
 
+----
+
+Methods
+----------------------
+
+| Insert text using ``text_widget.insert("1.0", "text")``.
+| Retrieve all text using ``text = text_widget.get("1.0", tk.END)``.
+| Delete all text using ``text_widget.delete("1.0", tk.END)``.
+| Scroll to the end using ``text_widget.see(tk.END)``.
+| Configure a tag for text using ``text_widget.tag_configure("red", foreground="red")``.
+
+| Text widget positions use the format "line.character".
+| For example, "1.0" is the first character on the first line.
+| The integer before the decimal represents the line number (1-indexed), and the integer after represents the character column (0-indexed).
+
+.. py:function:: text_widget.tag_configure(tag_name, option=value)
+
+    | Configures the appearance of the specified text tag.
+    | Use ``text_widget.tag_configure("red", foreground="red")`` to create a tag to be used to display tagged text in red.
+    | Multiple options can be specified, for example ``text_widget.tag_configure("heading", font=("Arial", 16, "bold"), foreground="red")``.
+
+.. py:function:: text_widget.insert(index, text, *tags)
+
+    | Inserts ``text`` at the specified ``index``.
+    | Use ``text_widget.insert("1.0", "Hello")`` to insert text at the beginning of the Text widget.
+    | Use ``text_widget.insert(tk.END, "Hello")`` to append text to the end of the existing text.
+    | ``*tags`` are zero or more tag names to apply to the inserted text. For multiple tages, quote them as a tuple.
+    | Use ``text_widget.insert(tk.END, "Error", "red")`` to insert text using the ``red`` tag.
+    | If ``index`` is outside the valid range, Tk adjusts it to the nearest valid position.
+
+.. py:function:: text_widget.get(start, end)
+
+    | Retrieves the text between ``start`` and ``end``.
+    | Use ``text_widget.get("1.0", tk.END)`` to retrieve all text.
+
+.. py:function:: text_widget.delete(start, end)
+
+    | Deletes the text between ``start`` and ``end``.
+    | Use ``text_widget.delete("1.0", tk.END)`` to clear the widget.
+
+.. py:function:: text_widget.see(index)
+
+    | Scrolls the Text widget so that the specified ``index`` is visible.
+    | Use ``text_widget.see(tk.END)`` to scroll to the end of the text.
+    | Commonly used after inserting text so the most recently added text is visible.
 
 ----
 
@@ -141,25 +184,20 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, autoseparators=1)``
 
     .. py:attribute:: background
+    .. py:attribute:: bg
 
         | Syntax: ``text_widget = tk.Text(parent, background="color")``
         | Description: Sets the background color of the text widget.
         | Default: SystemWindow
         | Example: ``text_widget = tk.Text(root, background="lightyellow")``
 
+    .. py:attribute:: borderwidth
     .. py:attribute:: bd
 
-        | Syntax: ``text_widget = tk.Text(parent, bd=border_width)``
+        | Syntax: ``text_widget = tk.Text(parent, borderwidth=border_width)``
         | Description: Sets the border width of the text widget.
         | Default: 1
-        | Example: ``text_widget = tk.Text(root, bd=2)``
-
-    .. py:attribute:: bg
-
-        | Syntax: ``text_widget = tk.Text(parent, bg="color")``
-        | Description: Sets the background color of the text widget.
-        | Default: SystemWindow
-        | Example: ``text_widget = tk.Text(root, bg="lightyellow")``
+        | Example: ``text_widget = tk.Text(root, borderwidth=2)``
 
     .. py:attribute:: blockcursor
 
@@ -168,13 +206,6 @@ Parameter syntax
         | Default: 0
         | Example: ``text_widget = tk.Text(root, blockcursor=1)``
 
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``text_widget = tk.Text(parent, borderwidth=width)``
-        | Description: Sets the width of the border around the text widget.
-        | Default: 1
-        | Example: ``text_widget = tk.Text(root, borderwidth=2)``
-
     .. py:attribute:: cursor
 
         | Syntax: ``text_widget = tk.Text(parent, cursor="cursor_type")``
@@ -182,26 +213,12 @@ Parameter syntax
         | Default: xterm
         | Example: ``text_widget = tk.Text(root, cursor="hand2")``
 
-    .. py:attribute:: endline
-
-        | Syntax: ``text_widget = tk.Text(parent, endline="")``
-        | Description: Sets the endline character for new lines.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, endline="\n")``
-
     .. py:attribute:: exportselection
 
         | Syntax: ``text_widget = tk.Text(parent, exportselection=1)``
         | Description: Allows the text selection to be copied to the clipboard.
         | Default: 1
         | Example: ``text_widget = tk.Text(root, exportselection=1)``
-
-    .. py:attribute:: fg
-
-        | Syntax: ``text_widget = tk.Text(parent, fg="color")``
-        | Description: Sets the foreground color (text color) of the text widget.
-        | Default: SystemWindowText
-        | Example: ``text_widget = tk.Text(root, fg="black")``
 
     .. py:attribute:: font
 
@@ -211,6 +228,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, font=("Arial", 12, "italic"))``
 
     .. py:attribute:: foreground
+    .. py:attribute:: fg
 
         | Syntax: ``text_widget = tk.Text(parent, foreground="color")``
         | Description: Sets the foreground color (text color) of the text widget.
@@ -346,9 +364,11 @@ Parameter syntax
     .. py:attribute:: setgrid
 
         | Syntax: ``text_widget = tk.Text(parent, setgrid=0)``
-        | Description: Enables or disables grid lines in the text widget.
+        | Description: tells the window manager to resize the window in character-sized increments.
         | Default: 0
+        | ``setgrid=0`` tells the window manager to resize the window in pixel-sized increments.
         | Example: ``text_widget = tk.Text(root, setgrid=1)``
+        | ``setgrid=1`` tells the window manager to resize the window in character-sized increments. This means that the window will snap to sizes that fit an integer number of characters, which is particularly useful for text editors where you want to ensure the window size accommodates full lines or rows of text.
 
     .. py:attribute:: spacing1
 
@@ -371,17 +391,10 @@ Parameter syntax
         | Default: 0
         | Example: ``text_widget = tk.Text(root, spacing3=5)``
 
-    .. py:attribute:: startline
-
-        | Syntax: ``text_widget = tk.Text(parent, startline="")``
-        | Description: Sets the starting line number for text.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, startline=1)``
-
     .. py:attribute:: state
 
         | Syntax: ``text_widget = tk.Text(parent, state="state_type")``
-        | Description: Sets the state of the text widget. Options include `normal`, `disabled`, or `hidden`.
+        | Description: Sets the state of the text widget. Options include `normal` or `disabled`.
         | Default: normal
         | Example: ``text_widget = tk.Text(root, state="disabled")``
 
@@ -440,3 +453,4 @@ Parameter syntax
         | Description: Configures the command for vertical scrolling.
         | Default: None
         | Example: ``text_widget = tk.Text(root, yscrollcommand=my_yscroll_command)``
+

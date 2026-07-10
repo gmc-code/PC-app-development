@@ -50,7 +50,7 @@ This code demonstrates the creation of check boxes (check buttons) and a text wi
     frame.pack(padx=10, pady=10, fill="both", expand=True)
 
     # Define a font style
-    fontStyle = font.Font(family="Lucida Grande", size=18)
+    font_style = ("Lucida Grande", 18)
 
     # Define the options
     options = ["Option 1", "Option 2", "Option 3"]
@@ -64,12 +64,12 @@ This code demonstrates the creation of check boxes (check buttons) and a text wi
     # Create and pack the checkbuttons
     for i in range(len(options)):
         button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i],
-                                 command=display_options, bg="white", fg="black", font=fontStyle, padx=10, pady=5)
+                                 command=display_options, bg="white", fg="black", font=font_style, padx=10, pady=5)
         button.pack(side="left", padx=5, pady=5)
 
     # Create a text widget to display the selected options
     text_widget = tk.Text(root, height=2, width=40, bg="white", fg="black",
-                            font=fontStyle, bd=2, relief="solid")
+                            font=font_style, bd=2, relief="solid")
     text_widget.pack(padx=10, pady=10)
 
     # Run the main event loop
@@ -100,7 +100,7 @@ These loops help create and manage the checkbuttons and their states, as well as
        for i in range(len(options)):
            button = tk.Checkbutton(frame, text=options[i], variable=option_vars[i],
                                     command=display_options, bg="white", fg="black",
-                                    font=fontStyle, padx=10, pady=5)
+                                    font=font_style, padx=10, pady=5)
            button.pack(side="left", padx=5, pady=5)
 
    - This loop iterates over the indices of the `options` list using `range(len(options))`.

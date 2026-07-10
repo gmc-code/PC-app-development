@@ -63,7 +63,7 @@ This code demonstrates the use of option buttons (radio buttons) and a text widg
     frame.pack(padx=10, pady=10, fill="both", expand=True)
 
     # Define a font style
-    fontStyle = font.Font(family="Lucida Grande", size=18)
+    font_style = ("Lucida Grande", 18)
 
     # Create a StringVar to hold the selected option
     option_var = tk.StringVar(value=None)  # No default value
@@ -75,12 +75,12 @@ This code demonstrates the use of option buttons (radio buttons) and a text widg
     for option in options:
         button = tk.Radiobutton(frame, text=option, variable=option_var, value=option,
                                  command=display_option, bg="white", fg="black",
-                                font=fontStyle, indicatoron=0, padx=10, pady=5)
+                                font=font_style, indicatoron=0, padx=10, pady=5)
         button.pack(side="left", padx=5, pady=5)
 
     # Create a text widget to display the selected option
     text_widget = tk.Text(root, height=2, width=30, bg="white", fg="black",
-                            font=fontStyle, bd=2, relief="solid")
+                            font=font_style, bd=2, relief="solid")
     text_widget.pack(padx=10, pady=10)
 
     # Run the main event loop

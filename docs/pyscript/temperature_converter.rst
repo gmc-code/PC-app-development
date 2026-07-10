@@ -52,7 +52,7 @@ index.html
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
         <!-- favicon to appear in browser tab -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.2/core.css">
@@ -69,7 +69,7 @@ index.html
         <h1>Temperature Converter</h1>
         </div>
         <!-- Use a container to wrap the content -->
-    <div class="container
+    <div class="container">
         <!-- Use a card class for the temperatures -->
         <div class="card">
             <div class="form-group">
@@ -80,9 +80,10 @@ index.html
             <div class="form-group">
                 <label for="c_temp" class="cel">Celsius</label>
                 <!-- Use a form-control class for the input -->
-                <input id="c_temp" class="form-control cel" type="number" min="-273" max="3414"placeholder="0">
+                <input id="c_temp" class="form-control cel" type="number" min="-273" max="3414" placeholder="0">
             </div>
         </div>
+    </div>
     <!-- Include your custom script -->
     <script type="py" src="./main.py" config="./pyscript.toml"></script>
     </body>

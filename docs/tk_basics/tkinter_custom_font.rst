@@ -82,6 +82,7 @@ This code below uses a font object to style text in a Tkinter Label.
 
     # Create the main window
     root = tk.Tk()
+    root.geometry("300x200")  # Set window size
     root.title("Label Custom Font")
 
     # Define the custom font

@@ -3,6 +3,7 @@ from tkinter import font
 
 # Create the main window
 root = tk.Tk()
+root.geometry("400x200")  # Set window size
 root.title("Label Custom Font")
 
 # Define the custom font

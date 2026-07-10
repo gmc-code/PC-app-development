@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import scrolledtext
+
 
 # Create the main window
 root = tk.Tk()

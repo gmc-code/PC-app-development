@@ -1,3 +1,14 @@
+# Configuration file for the Sphinx documentation builder.
+# see https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+import os
+import sys
+import sphinx_rtd_theme
+
+# Ensure custom extension path is available
+sys.path.append(os.path.abspath("./_ext"))
+
+
 # -- Project information -----------------------------------------------------
 
 project = 'PC-app-development'
@@ -17,7 +28,14 @@ extensions = [
     'sphinx_togglebutton',
     'sphinx_design',
     "sphinx_new_tab_link",
+    "classifying.classifying",  # custom directive
+    "ordering.ordering",  # custom directive
+    "gapfill.gapfill",  # custom directive
+    "cloze.cloze",  # custom directive
+    "multichoice.multichoice",  # custom directive
 ]
+
+#
 
 # for copybutton to allow use of :class: no-copybutton  in code blocks
 # copybutton_selector = "div:not(.no-copybutton) > div.highlight > pre"
@@ -61,6 +79,9 @@ html_title = "PC-app-development"
 
 # Use custom css
 html_css_files = ["css/custom.css"]
+
+# Custom JS
+html_js_files = []
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -271,6 +292,6 @@ latex_toplevel_sectioning = 'chapter'
 
 # for manual can use report
 latex_documents = [
-    (master_doc, 'PC-app-development.tex', 'PC-app-development',
-     'GMC', 'manual'),
+    (master_doc, 'PC-app-development.tex', 'PC-app-development', 'GMC',
+     'manual'),
 ]

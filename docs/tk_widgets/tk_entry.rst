@@ -10,15 +10,16 @@ tk Entry
 Usage
 ---------------
 
-| The `tkinter.Entry` widget provides an single line input field.
-| The Entry widget is great for simple, single-line inputs like usernames or passwords, while the Text widget is better for larger text inputs, such as comments or descriptions.
+| The `tkinter.Entry` widget provides a single-line input field.
+| The Entry widget is great for simple, single-line inputs such as usernames or passwords.
+| Use a Text widget for longer text such as comments or descriptions.
 | To create an entry widget the general syntax is (assuming import via "import tkinter as tk")
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
 
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
-
+    | The Entry widget is initially empty.
 
 ----
 
@@ -41,7 +42,7 @@ Entry example
 
 
     # Create the entry widget for input
-    name_entry = tk.Entry(root, font=('calibre', 24, 'normal'), width=20)
+    name_entry = tk.Entry(root, font=('Arial', 24), width=20)
     name_entry.pack(pady=20)  # Add some padding to the top
 
     # Run the main event loop
@@ -51,10 +52,16 @@ Entry example
 
 .. admonition:: Tasks
 
-    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font (size 20, normal weight, roman slant), a background color of `#fafafa`, a foreground color of `#2f2f2f`, a border width of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5.
+    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font size 20, a background color of `#fafafa`, a foreground color of `#2f2f2f`, a borderwidth of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5.
 
         .. image:: images/entry_question.png
             :scale: 67
+
+    #. Create a Tkinter application with a window size of 400x300 containing a **password Entry** widget. Use the `Comic Sans MS` font size 20, a background color of `#fafafa`, a foreground color of `#2f2f2f`, a borderwidth of 2 with a sunken relief style, left-aligned text, a width of 20 characters, and display `*` characters instead of the typed password. Display the widget with padding of 20 in both directions and internal y padding of 5.
+
+        .. image:: images/entry_question2.png
+            :scale: 67
+
 
     .. dropdown::
         :icon: codescan
@@ -70,7 +77,6 @@ Entry example
                 .. code-block:: python
 
                     import tkinter as tk
-                    from tkinter import font
 
                     # Create the main window
                     root = tk.Tk()
@@ -78,16 +84,93 @@ Entry example
                     root.geometry("400x300")
 
                     # Define the custom font
-                    custom_font = font.Font(family="Comic Sans MS", size=20, weight="normal", slant="roman")
+                    custom_font=("Comic Sans MS", 20)
 
                     # First Entry widget
-                    entry = tk.Entry(root, font=custom_font, bg="#fafafa", fg="#2f2f2f", bd=2, relief="sunken", justify="left", width=20)
-                    # ipadx does not move the left justification, so is omitted.
+                    entry = tk.Entry(
+                        root,
+                        font=custom_font,
+                        bg="#fafafa",
+                        fg="#2f2f2f",
+                        borderwidth=2,
+                        relief="sunken",
+                        justify="left",
+                        width=20
+                    )
                     entry.pack(padx=20, pady=20, ipady=5)
-
 
                     # Run the Tkinter event loop
                     root.mainloop()
+
+
+            .. tab-item:: Q2
+
+                Create a Tkinter window with a password Entry widget.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.title("Password Entry Example")
+                    root.geometry("400x300")
+
+                    # Define the custom font
+                    custom_font = ("Comic Sans MS", 20)
+
+                    # Create the password Entry widget
+                    entry = tk.Entry(
+                        root,
+                        font=custom_font,
+                        bg="#fafafa",
+                        fg="#2f2f2f",
+                        borderwidth=2,
+                        relief="sunken",
+                        justify="left",
+                        width=20,
+                        show="*"
+                    )
+                    entry.pack(padx=20, pady=20, ipady=5)
+
+                    # Run the Tkinter event loop
+                    root.mainloop()
+
+----
+
+Entry methods
+----------------------------------------------------
+
+| Retrieve the text using ``text = entry_widget.get()``.
+| Clear the text using ``entry_widget.delete(0, tk.END)``.
+| Insert text using ``entry_widget.insert(0, "text")``.
+| Give the Entry widget keyboard focus using ``entry_widget.focus_set()``.
+| Select all text using ``entry_widget.select_range(0, tk.END)``.
+
+.. py:function:: text = entry_widget.get()
+
+    | Retrieves the current text from the Entry widget.
+    | Returns the text as a string.
+
+.. py:function:: entry_widget.delete(first, last=None)
+
+    | Deletes characters from the Entry widget.
+    | Use ``entry_widget.delete(0, tk.END)`` to clear all text.
+
+.. py:function:: entry_widget.insert(index, text)
+
+    | Inserts ``text`` at the specified ``index``.
+    | Use ``entry_widget.insert(0, "text")`` to insert text at the beginning.
+
+.. py:function:: entry_widget.focus_set()
+
+    | Gives the Entry widget keyboard focus.
+    | The insertion cursor is placed in the widget ready for typing.
+
+.. py:function:: entry_widget.select_range(start, end)
+
+    | Selects the text between ``start`` and ``end``.
+    | Use ``entry_widget.select_range(0, tk.END)`` to select all text.
 
 
 ----
@@ -113,10 +196,10 @@ Option details
     .. py:attribute:: bd
     .. py:attribute:: borderwidth
 
-        | Syntax: ``entry_widget = tk.Entry(parent, bd=width)``
+        | Syntax: ``entry_widget = tk.Entry(parent, borderwidth=width)``
         | Description: Sets the width of the border around the entry field.
         | Default: ``2``
-        | Example: ``entry_widget = tk.Entry(root, bd=5)``
+        | Example: ``entry_widget = tk.Entry(root, borderwidth=5)``
 
     .. py:attribute:: cursor
 
@@ -229,6 +312,7 @@ Option details
 
         | Syntax: ``entry_widget = tk.Entry(parent, justify="alignment")``
         | Description: Specifies how the text is aligned within the entry field.
+        | It doesn't change where insertion starts.
         | Default: ``left``
         | Example: ``entry_widget = tk.Entry(root, justify="center")``
         | Possible values include:
@@ -250,12 +334,13 @@ Option details
             - **"sunken"**
             - **"groove"**
             - **"ridge"**
+            - **"solid"**
 
     .. py:attribute:: show
 
         | Syntax: ``entry_widget = tk.Entry(parent, show="character")``
         | Description: Masks characters, often used for passwords.
-        | Default: ``None``
+        | Default: ``""``
         | Example: ``entry_widget = tk.Entry(root, show="*")``
 
     .. py:attribute:: state
@@ -293,10 +378,11 @@ Option details
         | Possible values include:
 
             - **"none"**: No validation.
-            - **"focus"**: Validation occurs when the entry loses focus.
+            - **"focus"**: Validation occurs when the widget gains or loses focus.
             - **"focusin"**: Validation occurs when the entry gains focus.
             - **"focusout"**: Validation occurs when the entry loses focus.
             - **"key"**: Validation occurs on every keystroke.
+            - **"all"**: Validation occurs on every keystroke and when the entry loses or gains focus.
 
     .. py:attribute:: width
 

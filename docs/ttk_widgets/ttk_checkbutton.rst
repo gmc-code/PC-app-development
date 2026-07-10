@@ -40,7 +40,7 @@ Using check buttons
     frame1.pack(anchor="nw", padx=10, pady=10)
 
     # Define a font style
-    fontStyle = font.Font(family="Lucida Grande", size=18)
+    font_style = ("Lucida Grande", 18)
 
     # Define the options for group 1
     options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3"]
@@ -54,7 +54,7 @@ Using check buttons
 
         button = tk.Checkbutton(
             frame1, text=option, variable=var, indicatoron=1,
-            bg="white", fg="black", font=fontStyle, padx=10, pady=5
+            bg="white", fg="black", font=font_style, padx=10, pady=5
         )
         button.pack(anchor="nw", side="left", padx=5, pady=5)
 
@@ -99,7 +99,7 @@ Using check buttons
                     frame1.pack(anchor="nw", padx=10, pady=10)
 
                     # Define a font style
-                    fontStyle = font.Font(family="Lucida Grande", size=18)
+                    font_style = ("Lucida Grande", 18)
 
                     # Define the options for group 1
                     options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3", "Checkbox 4"]
@@ -112,7 +112,7 @@ Using check buttons
 
                         button = tk.Checkbutton(
                             frame1, text=option, variable=var, indicatoron=1,
-                            bg="white", fg="black", font=fontStyle, padx=10, pady=5
+                            bg="white", fg="black", font=font_style, padx=10, pady=5
                         )
                         button.pack(anchor="nw", side="top", padx=5, pady=5)
 

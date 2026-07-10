@@ -10,6 +10,7 @@ style = ttk.Style()
 # Force a theme that uses manual engine shading instead of OS native graphics
 style.theme_use('clam')
 
+
 # 2. Configure a custom style layout for TButton
 style.configure(
     "Custom.TButton",

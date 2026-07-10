@@ -10,13 +10,16 @@ tk Radiobutton
 Usage
 ---------------
 
-| The `tkinter.Radiobutton` widget provides a Radio button.
-| To create a Radio button widget the general syntax is (assuming import via "import tkinter as tk"):
+| The `tkinter.Radiobutton` widget provides a radio button that allows the user to select one option from a group of choices.
+| To create a Radio button widget the general syntax is
+| (assuming import via "import tkinter as tk"):
 
-.. py:function:: button_widget = tk.Radiobutton(parent, option=value)
+.. py:function:: radiobutton_widget = tk.Radiobutton(parent, option=value)
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
+    | Each radio button should have a unique ``value``.
+    | When the button is selected, this value is stored in the shared ``variable``.
 
 ----
 
@@ -26,13 +29,20 @@ Using radio buttons
 .. image:: images/radio_buttons.png
     :scale: 100
 
-| This code create one group of radio buttons in a frame and a second group in root window below the frame.
-| To group radio buttons together set the variable option to be the same for each widget. e.g. ``variable=option_grp1_var``.
-| All radio buttons in the same group should share this variable to ensure only one can be selected at a time.
+| This code creates one group of radio buttons in a frame and a second group in root window below the frame.
+
+| Each radio button in a group has its own ``value``.
+| All radio buttons in the group share the same ``variable``.
+| Selecting a radio button stores its ``value`` in the shared ``variable``.
+
+| To group radio buttons together, set the variable option to the same StringVar (or IntVar) for each radio button. e.g. ``variable=option_grp1_var``.
+| A ``StringVar`` is commonly used when the radio button values are strings.
+| An ``IntVar`` is commonly used when the values are integers.
+| All radio buttons in the group must share the same control variable so only one option can be selected at a time.
 | To preselect the first radio button in the group use: ``option_grp1_var.set("Option 1")``.
 
-| The `indicatoron` option is set to `0` to make the radio buttons look like regular buttons.
-| The `indicatoron` option is set to `1` to make the radio buttons look like radio buttons.
+| Set the `indicatoron` option to `0`, to display the widget as a regular push button instead of a circular radio button.
+| Set the `indicatoron` option to `1`, to make the radio buttons look like radio buttons.
 
 | A for loop is used to create each group of radio buttons since they have the same formatting options apart from the text and value options which are taken care of by the loop variable, `option`.
 
@@ -51,10 +61,10 @@ Using radio buttons
     frame.pack(anchor="nw", padx=10, pady=10)
 
     # Define a font style
-    fontStyle = font.Font(family="Lucida Grande", size=18)
+    font_style = ("Lucida Grande", 18)
 
     # Create a StringVar to hold the selected option
-    option_grp1_var = tk.StringVar(value=None)  # No default value
+    option_grp1_var = tk.StringVar(value="Option 1")  # Set a default value for the variable
 
     # Define the options
     options_grp1 = ["Option 1", "Option 2", "Option 3"]
@@ -62,10 +72,9 @@ Using radio buttons
     # Create and pack the radio buttons
     for option in options_grp1:
         button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
-                                bg="white", fg="black", font=fontStyle,
+                                bg="white", fg="black", font=font_style,
                                 indicatoron=1, padx=10, pady=5)
         button.pack(anchor="nw", side="left", padx=5, pady=5)
-    option_grp1_var.set("Option 1")
 
     # Run the main event loop
     root.mainloop()
@@ -75,7 +84,7 @@ Using radio buttons
 
 .. admonition:: Tasks
 
-    #. Modify the code to have 4 radio buttons one under another.
+    #. Modify the code to display four radio buttons vertically, one beneath the other.
 
         .. image:: images/radio_buttons_question.png
             :scale: 67
@@ -89,7 +98,7 @@ Using radio buttons
 
             .. tab-item:: Q1
 
-                Modify the code to have 4 radio buttons one under another.
+                Modify the code to display four radio buttons vertically, one beneath the other.
 
                 .. code-block:: python
 
@@ -106,10 +115,10 @@ Using radio buttons
                     frame.pack(anchor="nw", padx=10, pady=10)
 
                     # Define a font style
-                    fontStyle = font.Font(family="Lucida Grande", size=18)
+                    font_style = ("Lucida Grande", 18)
 
                     # Create a StringVar to hold the selected option
-                    option_var = tk.StringVar(value=None)  # No default value
+                    option_var = tk.StringVar(value="Option 1")  # set a default value
 
                     # Define the options
                     options = ["Option 1", "Option 2", "Option 3", "Option 4"]
@@ -117,14 +126,61 @@ Using radio buttons
                     # Create and pack the radio buttons
                     for option in options:
                         button = tk.Radiobutton(frame, text=option, value=option, variable=option_var,
-                                                bg="white", fg="black", font=fontStyle,
-                                                 indicatoron=1, padx=10, pady=5)
+                                                bg="white", fg="black", font=font_style,
+                                                indicatoron=1, padx=10, pady=5)
                         button.pack(anchor="nw", side="top", padx=5, pady=5)
-                    option_var.set("Option 1")
 
                     # Run the main event loop
                     root.mainloop()
 
+
+----
+
+Methods
+----------------
+
+Methods
+----------------------
+
+.. py:function:: radiobutton_widget.select()
+
+    | Selects the radiobutton.
+    | Sets the associated control variable to this radiobutton's ``value``.
+
+.. py:function:: radiobutton_widget.deselect()
+
+    | Deselects the radiobutton.
+    | Sets the associated control variable to an empty value.
+    | This is mainly useful when no radiobutton in the group should be selected.
+
+.. py:function:: radiobutton_widget.flash()
+
+    | Briefly flashes the radiobutton several times.
+    | Useful for drawing the user's attention to the widget.
+
+.. py:function:: radiobutton_widget.invoke()
+
+    | Simulates the user selecting the radiobutton.
+    | Sets the associated control variable to the radiobutton's ``value`` and calls the function specified by the ``command`` option, if one exists.
+    | Returns the value returned by the callback function.
+
+.. py:function:: radiobutton_widget.config(option=value)
+
+    | Changes one or more widget options after creation.
+
+----
+
+Control variable methods
+----------------------------
+
+.. py:function:: variable.get()
+
+    | Returns the currently selected value.
+
+.. py:function:: variable.set(value)
+
+    | Selects the radiobutton whose ``value`` matches ``value``.
+    | If no radiobutton has a matching value, none of the radiobuttons are selected.
 
 
 ----
@@ -198,7 +254,7 @@ Parameter syntax
     .. py:attribute:: command
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, command=function)``
-        | Description: Specifies a function to be called when the radiobutton is selected.
+        | Description: Specifies a function to be called when the radiobutton is selected. Do not include parentheses after the function name.
         | Default: None
         | Example: ``radiobutton_widget = tk.Radiobutton(root, command=my_function)``
 
@@ -282,7 +338,7 @@ Parameter syntax
     .. py:attribute:: indicatoron
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, indicatoron=1)``
-        | Description: Specifies whether to show the indicator (true or false).
+        | Description: Determines whether the circular radio button indicator is shown. Set to 0 to display the widget as a push button.
         | Default: 1
         | Example: ``radiobutton_widget = tk.Radiobutton(root, indicatoron=0)``
 
@@ -394,14 +450,14 @@ Parameter syntax
     .. py:attribute:: value
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, value=radio_value)``
-        | Description: Sets the value associated with this radiobutton when selected.
+        | Description: Specifies the value assigned to the shared control variable when this radio button is selected.
         | Default: None
         | Example: ``radiobutton_widget = tk.Radiobutton(root, value=1)``
 
     .. py:attribute:: variable
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, variable=control_variable)``
-        | Description: Associates the radiobutton with a control variable (e.g., `IntVar`, `StringVar`).
+        | Description: Specifies the shared control variable (such as StringVar or IntVar) used to determine which radio button in the group is selected.
         | Default: None
         | Example: ``radiobutton_widget = tk.Radiobutton(root, variable=my_var)``
 

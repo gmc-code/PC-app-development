@@ -101,11 +101,11 @@ Output Areas:
         <section class="jokes">
             <h1>Jokes</h1>
             <div>
-                <button id="get_joke"">Get a new Joke</button>
+                <button id="get_joke">Get a new Joke</button>
             </div>
             <div id="joke"></div>
             <div>
-                <button id="get_joke_answer"">Get Reply</button>
+                <button id="get_joke_answer">Get Reply</button>
             </div>
             <div id="joke_answer"></div>
             <script type="py" src="./main.py" config="./pyscript.toml"></script>

@@ -50,7 +50,7 @@ Using radio buttons
     frame.pack(anchor="nw", padx=10, pady=10)
 
     # Define a font style
-    fontStyle = font.Font(family="Lucida Grande", size=18)
+    font_style = ("Lucida Grande", 18)
 
     # Create a StringVar to hold the selected option
     option_grp1_var = tk.StringVar(value=None)  # No default value
@@ -61,7 +61,7 @@ Using radio buttons
     # Create and pack the radio buttons
     for option in options_grp1:
         button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
-                                bg="white", fg="black", font=fontStyle, indicatoron=1, padx=10, pady=5)
+                                bg="white", fg="black", font=font_style, indicatoron=1, padx=10, pady=5)
         button.pack(anchor="nw", side="left", padx=5, pady=5)
     option_grp1_var.set("Option 1")
 
@@ -104,7 +104,7 @@ Using radio buttons
                     frame.pack(anchor="nw", padx=10, pady=10)
 
                     # Define a font style
-                    fontStyle = font.Font(family="Lucida Grande", size=18)
+                    font_style = ("Lucida Grande", 18)
 
                     # Create a StringVar to hold the selected option
                     option_var = tk.StringVar(value=None)  # No default value
@@ -115,7 +115,7 @@ Using radio buttons
                     # Create and pack the radio buttons
                     for option in options:
                         button = tk.Radiobutton(frame, text=option, value=option, variable=option_var,
-                                                bg="white", fg="black", font=fontStyle,
+                                                bg="white", fg="black", font=font_style,
                                                  indicatoron=1, padx=10, pady=5)
                         button.pack(anchor="nw", side="top", padx=5, pady=5)
                     option_var.set("Option 1")

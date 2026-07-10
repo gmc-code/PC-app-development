@@ -1,15 +1,17 @@
 import tkinter as tk
 
-# Create the main window
-root = tk.Tk()
-root.geometry("400x400")  # Set window size
-root.title("Listbox Example")  # Set window title
 
 # Function to get the selected item from the listbox and display it in the label
 def get_selection():
     selected_indices = listbox.curselection()
     selected_items = [listbox.get(i) for i in selected_indices]
     output_label.config(text=f"Selected items:\n{', '.join(selected_items)}")
+
+
+# Create the main window
+root = tk.Tk()
+root.geometry("400x400")  # Set window size
+root.title("Listbox Example")  # Set window title
 
 # Create the listbox widget
 listbox = tk.Listbox(root, selectmode=tk.MULTIPLE, font=('calibre', 14, 'normal'), width=30, height=7)

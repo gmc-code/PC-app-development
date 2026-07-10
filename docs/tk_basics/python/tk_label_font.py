@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Create the main window
 root = tk.Tk()
-root.geometry("300x200")  # Set window size
+root.geometry("400x200")  # Set window size
 root.title("Label font")  # Set window title
 
 # Create the label widget with options
