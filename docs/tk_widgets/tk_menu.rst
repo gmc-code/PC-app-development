@@ -84,7 +84,7 @@ Sample Menu
         * Insert a separator between **Open** and **Exit**.
         * Disable the tear-off feature.
 
-        .. image:: images/tk_menu_question.png
+        .. image:: images/menu_question.png
             :scale: 70
 
     .. dropdown::
