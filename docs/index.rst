@@ -76,8 +76,6 @@ PC-app-development
     ttk_widgets/ttk_entry.rst
     ttk_widgets/ttk_button.rst
 
-    tk_widgets/tk_button.rst
-
     ttk_widgets/ttk_radiobutton.rst
     ttk_widgets/ttk_checkbutton.rst
     ttk_widgets/ttk_menubutton.rst

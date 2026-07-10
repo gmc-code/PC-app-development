@@ -137,9 +137,6 @@ Using radio buttons
 ----
 
 Methods
-----------------
-
-Methods
 ----------------------
 
 .. py:function:: radiobutton_widget.select()

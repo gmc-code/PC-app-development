@@ -7,27 +7,47 @@ tk Menu
 
 ----
 
-Usage
--------------
+====================================================
+tk Menu
+====================================================
 
-| The `tkinter.Menu` widget is used to create top-level menus, pull-down menus, and pop-up (context) menus.
+| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Menu>`_
+| See: `<https://www.geeksforgeeks.org/python-menu-widget-in-tkinter/>`_
+
+----
+
+Overview
+------------
+
+| The ``tk.Menu`` widget creates menus in a Tkinter application.
+| It can be used to create:
+
+    | * a menu bar attached to the main application window,
+    | * pull-down submenus,
+    | * shortcut (context) menus that appear when the user right-clicks.
+
 | To create a menu widget, the general syntax is
 | (assuming import via "import tkinter as tk"):
 
+
 .. py:function:: menu_widget = tk.Menu(parent, option=value)
 
+    | * ``parent`` is the parent window or another ``Menu`` widget.
+    | * ``option=value`` specifies one or more configuration options.
 
-| `parent` is the window or frame object.
-| Options can be passed as parameters separated by commas.
+| Menus are normally attached to a ``tk.Tk`` window using  ``root.config(menu=menubar)`
 
+| Submenus are attached to another ``Menu`` using ``add_cascade()``.
 
-
-| A `Menu` widget is typically used in conjunction with a `tk.Tk` root window as a menu bar, or as a standalone component for submenus.
 
 ---
 
 Sample Menu
 ----------------------
+
+.. image:: images/menu.png
+    :scale: 100
+
 
 | The code below creates a simple file menu with an "Exit" command.
 
@@ -49,9 +69,60 @@ Sample Menu
     menubar.add_cascade(label="File", menu=file_menu)
 
     # 3. Add commands to the "File" submenu
-    file_menu.add_command(label="Exit", command=root.quit)
+    file_menu.add_command(label="Exit", command=root.destroy)
 
     root.mainloop()
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to create the menu shown below.
+
+        * Add a **File** menu to the menu bar.
+        * Add the menu commands **New**, **Open**, and **Exit**.
+        * Insert a separator between **Open** and **Exit**.
+        * Disable the tear-off feature.
+
+        .. image:: images/tk_menu_question.png
+            :scale: 70
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code so it creates the menu shown above.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.title("Menu Question")
+                    root.geometry("300x200")
+
+                    # Create the menu bar
+                    menubar = tk.Menu(root)
+                    root.config(menu=menubar)
+
+                    # Create the File menu
+                    file_menu = tk.Menu(menubar, tearoff=0)
+
+                    # Add the File menu to the menu bar
+                    menubar.add_cascade(label="File", menu=file_menu)
+
+                    # Add menu commands
+                    file_menu.add_command(label="New")
+                    file_menu.add_command(label="Open")
+                    file_menu.add_separator()
+                    file_menu.add_command(label="Exit", command=root.destroy)
+
+                    root.mainloop()
 
 
 ----
@@ -61,30 +132,35 @@ Common Menu Methods
 
 .. py:function:: menu_widget.add_command(label=text, command=function)
 
-
-    | Adds a new command button to the menu.
-
-
-
-.. py:function:: menu_widget.add_cascade(label=text, menu=submenu)
-
-
-    | Adds a new submenu to the menu.
-
-
-
-.. py:function:: menu_widget.add_separator()
-
-
-    | Adds a horizontal line separator to the menu.
-
-
+    | Adds a command item to the menu.
 
 .. py:function:: menu_widget.add_checkbutton(label=text, variable=tk_var)
 
+    | Adds a checkbutton menu item.
 
-    | Adds a checkbutton item to the menu.
+.. py:function:: menu_widget.add_radiobutton(label=text, variable=tk_var, value=value)
 
+    | Adds a radio button menu item.
+
+.. py:function:: menu_widget.add_separator()
+
+    | Adds a horizontal separator.
+
+.. py:function:: menu_widget.add_cascade(label=text, menu=submenu)
+
+    | Attaches a submenu to the menu.
+
+.. py:function:: menu_widget.post(x, y)
+
+    | Displays the menu as a popup at the specified screen coordinates.
+
+.. py:function:: menu_widget.entryconfig(index, option=value)
+
+    | Changes the configuration of an existing menu item.
+
+.. py:function:: menu_widget.delete(index1, index2=None)
+
+    | Removes one or more menu items.
 
 
 ---
@@ -130,16 +206,20 @@ Parameter syntax
         | Description: Whether the menu can be "torn off" into a separate window.
         | Default: 1
 
+.. note::
 
+    ``tearoff=0`` disables the dashed line that allows a menu to be
+    detached into its own window. Most modern applications set this
+    option to ``0``.
 
 ----
 
-## Default options
+Default options
+------------------------
 
 | Code to get the defaults for each menu option is below.
 
 .. code-block:: python
-
 
     import tkinter as tk
 
