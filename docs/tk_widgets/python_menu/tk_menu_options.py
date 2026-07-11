@@ -1,12 +1,13 @@
 import tkinter as tk
 
 root = tk.Tk()
-menu = tk.Menu(root)
 
-for option in menu.keys():
-    print(f"{option}: {menu.cget(option)}")
+widget = tk.Menu(root)
+widget_options = widget.keys()
 
-# root.mainloop()
+for option in widget_options:
+    print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
 
 
 

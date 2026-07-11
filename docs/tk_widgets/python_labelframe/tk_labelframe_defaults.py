@@ -2,11 +2,11 @@ import tkinter as tk
 
 root = tk.Tk()
 
-labelframe = tk.LabelFrame(root)
-labelframe_options = labelframe.keys()
+widget = tk.Labelframe(root)
+widget_options = widget.keys()
 
-for option in labelframe_options:
-    print(f"{option}: {labelframe.cget(option)}")
+for option in widget_options:
+    print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
 
 
 '''

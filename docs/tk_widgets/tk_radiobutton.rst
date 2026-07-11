@@ -471,3 +471,24 @@ Parameter syntax
         | Description: Sets the maximum line length for text in pixels.
         | Default: 0 (no wrapping)
         | Example: ``radiobutton_widget = tk.Radiobutton(root, wraplength=100)``
+
+----
+
+Default options
+------------------------
+
+| Code to display the default value for each ``Radiobutton`` option is shown below.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+
+    widget = tk.Radiobutton(root)
+    widget_options = widget.keys()
+
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
+

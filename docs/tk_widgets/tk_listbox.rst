@@ -481,6 +481,26 @@ Option details
         | e.g. listbox = tk.Listbox(root, listvariable=items)
 
 
+----
+
+Default options
+------------------------
+
+| Code to display the default value for each ``Listbox`` option is shown below.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+
+    widget = tk.Listbox(root)
+    widget_options = widget.keys()
+
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
+
 
 
 

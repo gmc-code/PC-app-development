@@ -59,6 +59,64 @@ root.mainloop()
 
 ----
 
+.. admonition:: Tasks
+
+    #. Modify the code so that it creates a ``Frame`` with the following settings:
+
+        * Set the background colour to ``light blue``.
+        * Set the border width to 4 pixels.
+        * Use a ``ridge`` border style.
+        * Set the frame size to 220 pixels wide and 120 pixels high.
+        * Add internal padding of 15 pixels horizontally and vertically.
+        * Display the frame with 30 pixels of external padding.
+
+        .. image:: images/frame_question.png
+            :scale: 67
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code so that it creates a ``Frame`` with the required settings.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.title("Frame Question")
+                    root.geometry("350x250")
+
+                    # Create the Frame
+                    frame = tk.Frame(
+                        root,
+                        bg="light blue",
+                        bd=4,
+                        relief="ridge",
+                        width=220,
+                        height=120,
+                        padx=15,
+                        pady=15
+                    )
+
+                    # Display the Frame
+                    frame.pack(
+                        padx=30,
+                        pady=30
+                    )
+
+                    # Run the main event loop
+                    root.mainloop()
+
+
+----
+
 Parameter syntax
 ----------------------
 
@@ -152,10 +210,12 @@ Parameter syntax
 
 ----
 
-Default options
------------------------
+----
 
-| Code to get the defaults for each frame option is below.
+Default options
+------------------------
+
+| Code to display the default value for each ``Frame`` option is shown below.
 
 .. code-block:: python
 
@@ -163,11 +223,10 @@ Default options
 
     root = tk.Tk()
 
-    frame = tk.Frame(root)
-    frame_options = frame.keys()
+    widget = tk.Frame(root)
+    widget_options = widget.keys()
 
-    for option in frame_options:
-        print(f"{option}: {frame.cget(option)}")
-
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
 
 

@@ -440,9 +440,12 @@ Default options
 
     root = tk.Tk()
 
-    button = tk.Button(root)
-    button_options = button.keys()
+    widget = tk.Button(root)
+    widget_options = widget.keys()
 
-    for option in button_options:
-        print(f"{option}: {button.cget(option)}")  # cget retrieves the current value of the option
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
+
+
 

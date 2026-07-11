@@ -25,7 +25,6 @@ Explanation:
 
 - The `command` option is used to bind a function to the widget.
 - Do NOT use parentheses `()` after the function name.
-- Writing `command=my_function()` will execute the function immediately.
 
 ----
 

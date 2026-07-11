@@ -1,15 +1,6 @@
-====================================================
+==========================
 tk Menu
-====================================================
-
-| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Menu>`_
-| See: `<https://www.geeksforgeeks.org/python-menu-widget-in-tkinter/>`_
-
-----
-
-====================================================
-tk Menu
-====================================================
+==========================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Menu>`_
 | See: `<https://www.geeksforgeeks.org/python-menu-widget-in-tkinter/>`_
@@ -32,7 +23,7 @@ Overview
 
 .. py:function:: menu_widget = tk.Menu(parent, option=value)
 
-    | * ``parent`` is the parent window or another ``Menu`` widget.
+    | * ``parent`` is the parent window or another ``Menu`` widget (or a menubutton widget).
     | * ``option=value`` specifies one or more configuration options.
 
 | Menus are normally attached to a ``tk.Tk`` window using  ``root.config(menu=menubar)`
@@ -217,17 +208,18 @@ Parameter syntax
 Default options
 ------------------------
 
-| Code to get the defaults for each menu option is below.
+| Code to display the default value for each ``Menu`` option is shown below.
 
 .. code-block:: python
 
     import tkinter as tk
 
     root = tk.Tk()
-    menu = tk.Menu(root)
 
-    for option in menu.keys():
-        print(f"{option}: {menu.cget(option)}")
+    widget = tk.Menu(root)
+    widget_options = widget.keys()
 
-    root.mainloop()
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
 

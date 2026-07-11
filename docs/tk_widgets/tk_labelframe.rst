@@ -55,6 +55,64 @@ Sample LabelFrame
 
 ----
 
+.. admonition:: Tasks
+
+    #. Modify the code so that it creates a ``LabelFrame`` to contain user preferences.
+
+        * Set the title of the ``LabelFrame`` to **"User Settings"**.
+        * Use an Arial font size 12 for the label.
+        * Add internal padding of 15 pixels horizontally and vertically.
+        * Set the border width to 3.
+        * Use a ``groove`` border style.
+        * Make the ``LabelFrame`` fill the window.
+
+        .. image:: images/labelframe_question.png
+            :scale: 100
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code so that it creates a ``LabelFrame`` with the required settings.
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    # Create the main window
+                    root = tk.Tk()
+                    root.title("LabelFrame Question")
+                    root.geometry("320x220")
+
+                    # Create the LabelFrame
+                    settings = tk.LabelFrame(
+                        root,
+                        text="User Settings",
+                        font=("Arial", 12),
+                        padx=15,
+                        pady=15,
+                        bd=3,
+                        relief="groove"
+                    )
+
+                    # Display the LabelFrame
+                    settings.pack(
+                        padx=20,
+                        pady=20,
+                        fill="both",
+                        expand=True
+                    )
+
+                    # Run the main event loop
+                    root.mainloop()
+
+----
+
 When to use a LabelFrame
 ------------------------
 
@@ -215,9 +273,9 @@ Parameter syntax
 ----
 
 Default options
------------------------
+------------------------
 
-| Code to display the default values for each LabelFrame option is shown below.
+| Code to display the default value for each ``Labelframe`` option is shown below.
 
 .. code-block:: python
 
@@ -225,13 +283,11 @@ Default options
 
     root = tk.Tk()
 
-    labelframe = tk.LabelFrame(root)
-    labelframe_options = labelframe.keys()
+    widget = tk.Labelframe(root)
+    widget_options = widget.keys()
 
-    for option in labelframe_options:
-        print(f"{option}: {labelframe.cget(option)}")
-
-
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
 
 
 

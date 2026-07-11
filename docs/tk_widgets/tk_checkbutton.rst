@@ -465,3 +465,23 @@ Parameter syntax
         | Description: Sets the line length for text wrapping in the checkbutton.
         | Default: 0 (no wrapping)
         | Example: ``checkbutton_widget = tk.Checkbutton(root, wraplength=100)``
+
+----
+
+Default options
+------------------------
+
+| Code to display the default value for each ``Checkbutton`` option is shown below.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+
+    widget = tk.Checkbutton(root)
+    widget_options = widget.keys()
+
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+

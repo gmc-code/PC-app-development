@@ -23,6 +23,8 @@ PC-app-development
     tk_basics/tkinter_options.rst
     tk_basics/tkinter_custom_font.rst
     tk_basics/tkinter_constants.rst
+    tk_messagebox/tk_messagebox.rst
+
 
 
 .. toctree::
@@ -43,25 +45,27 @@ PC-app-development
     :numbered:
 
     tk_widgets/tk_widgets_intro.rst
-    tk_widgets/tk_frame.rst
-    tk_widgets/tk_label_frame.rst
 
-    tk_widgets/tk_label.rst
-    tk_widgets/tk_entry.rst
-    tk_widgets/tk_text.rst
     tk_widgets/tk_button.rst
-
-    tk_widgets/tk_radiobutton.rst
-    tk_widgets/tk_checkbutton.rst
-    tk_widgets/tk_optionmenu.rst
-    tk_widgets/tk_listbox.rst
-
-    tk_widgets/tk_messagebox.rst
-
-    tk_widgets/tk_menu.rst
-    tk_widgets/tk_spinbox.rst
-    tk_widgets/tk_scrollbar.rst
     tk_widgets/tk_canvas.rst
+    tk_widgets/tk_checkbutton.rst
+    tk_widgets/tk_entry.rst
+    tk_widgets/tk_frame.rst
+    tk_widgets/tk_label.rst
+    tk_widgets/tk_label_frame.rst
+    tk_widgets/tk_listbox.rst
+    tk_widgets/tk_menu.rst
+    tk_widgets/tk_menubutton.rst
+    tk_widgets/tk_message.rst
+    tk_widgets/tk_optionmenu.rst
+    tk_widgets/tk_panedwindow.rst
+    tk_widgets/tk_radiobutton.rst
+    tk_widgets/tk_scale.rst
+    tk_widgets/tk_scrollbar.rst
+    tk_widgets/tk_spinbox.rst
+    tk_widgets/tk_text.rst
+    tk_widgets/tk_toplevel.rst
+
 
 
 .. toctree::

@@ -454,3 +454,23 @@ Parameter syntax
         | Default: None
         | Example: ``text_widget = tk.Text(root, yscrollcommand=my_yscroll_command)``
 
+----
+
+Default options
+------------------------
+
+| Code to display the default value for each ``Text`` option is shown below.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+
+    widget = tk.Text(root)
+    widget_options = widget.keys()
+
+    for option in widget_options:
+        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+
+
