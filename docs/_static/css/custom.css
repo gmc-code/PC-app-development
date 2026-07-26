@@ -242,6 +242,16 @@ div.highlight-default div.highlight {
     background: #eef5ff;
 }
 
+/* override side menu padding */
+.wy-menu-vertical a {
+    padding: .08em 1.618em;
+}
+
+.wy-menu-vertical li.current a {
+    padding: .08em 2.427em;
+}
+
+
 /** to override table padding from 8 and 16 */
 
 .rst-content table.docutils td, .rst-content table.docutils th, .rst-content table.field-list td, .rst-content table.field-list th, .wy-table td, .wy-table th {

@@ -1,5 +1,5 @@
 ====================================================
-tk variables
+tk Variable Binding
 ====================================================
 
 | In Tkinter, several widgets can have a variable associated with them.

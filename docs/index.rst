@@ -86,31 +86,43 @@ PC-app-development
 
     ttk_widgets/ttk_frame.rst
 
+
 .. toctree::
     :maxdepth: 2
     :caption: tk widgets interactions
     :numbered:
 
-    tk_widget_interactions/tk_variables.rst
-    tk_widget_interactions/tk_command_binding.rst
+    tk_widget_interactions/commands.rst
 
-    tk_widget_interactions/textvariables_toggle_text.rst
-    tk_widget_interactions/textvariables_increment_integers.rst
-    tk_widget_interactions/textvariables_increment_floats.rst
-    tk_widget_interactions/textvariables_increment_integers_with_modifiers.rst
 
-    tk_widget_interactions/counter_integers.rst
-    tk_widget_interactions/counter_floats.rst
-    tk_widget_interactions/counter_integers_modifiers.rst
 
-    tk_widget_interactions/modify_via_checkbox.rst
-    tk_widget_interactions/modify_via_radiobutton.rst
 
-    tk_widget_interactions/entry_validation.rst
-    tk_widget_interactions/entry_validation_numbers.rst
+.. toctree::
+    :maxdepth: 2
+    :caption: tk widgets interactions2
+    :numbered:
 
-    .. tk_widget_interactions/tk_widget_interactions.rsr
-    ..tk_widget_interactions/tk_button_methods.rst
+    tk_widget_interactions2/tk_variables.rst
+    tk_widget_interactions2/tk_command_binding.rst
+
+    tk_widget_interactions2/textvariables_toggle_text.rst
+    tk_widget_interactions2/textvariables_increment_integers.rst
+    tk_widget_interactions2/textvariables_increment_floats.rst
+    tk_widget_interactions2/textvariables_increment_integers_with_modifiers.rst
+
+    tk_widget_interactions2/counter_integers.rst
+    tk_widget_interactions2/counter_floats.rst
+    tk_widget_interactions2/counter_integers_modifiers.rst
+
+    tk_widget_interactions2/modify_via_checkbox.rst
+    tk_widget_interactions2/modify_via_radiobutton.rst
+
+    tk_widget_interactions2/entry_validation.rst
+    tk_widget_interactions2/entry_validation_numbers.rst
+
+    .. tk_widget_interactions2/tk_widget_interactions.rsr
+    .. tk_widget_interactions2/tk_button_methods.rst
+
 
 .. toctree::
     :maxdepth: 2
