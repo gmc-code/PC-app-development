@@ -35,7 +35,9 @@ class ClozeDirective(SphinxDirective):
         node['theme'] = f"theme-{theme_val}"
 
         auto_distract = 'auto-distract' in self.options
-        gap_pattern = re.compile(r'\*?(\*?)\[([^\]]+)\]\1\*?')
+
+        # Updated regex to match @@ content @@ safely without breaking python lists [...]
+        gap_pattern = re.compile(r'@@([^@]+)@@')
 
         # Extract all potential words from the sentence context to use as distractors
         # We strip away syntax tokens and find unique words longer than 2 characters
@@ -46,17 +48,11 @@ class ClozeDirective(SphinxDirective):
         word_bank_items = []
         gap_counter = 0
 
-        inner_pattern = re.compile(r'\[([^\]]+)\]')
-
         def extract_words(match):
             nonlocal gap_counter
             gap_counter += 1
 
-            inner_match = inner_pattern.search(match.group(0))
-            if not inner_match:
-                return match.group(0)
-
-            raw_content = inner_match.group(1).strip('*').strip()
+            raw_content = match.group(1).strip()
 
             # SUPPORT MULTIPLE SEPARATORS: matches |, /, \, or ,
             if re.search(r'[|/\\,]', raw_content):
@@ -75,8 +71,8 @@ class ClozeDirective(SphinxDirective):
                     for item in shuffled_pool:
                         if added_count >= 1:  # Add up to 1 distractors from the sentence
                             break
-                        # Enforce strict casing mismatch checks and make sure it's not already in the bank
-                        if item.lower() != raw_content.lower() and item.lower() not in [w.lower() for w in word_bank_items]:
+                        # Enforce strict casing checks without converting to lowercase
+                        if item != raw_content and item not in word_bank_items:
                             word_bank_items.append(item)
                             added_count += 1
 
@@ -94,7 +90,7 @@ class ClozeDirective(SphinxDirective):
             raw_content = match.group(1).strip()
 
             final_correct = raw_content
-            drop_zone_html = f'<span class="cloze-wrapper"><span class="cloze-dropzone" data-gap-id="{gap_counter}" data-correct="{html.escape(final_correct.lower())}">Drop here</span><span class="cloze-inline-feedback"></span></span>'
+            drop_zone_html = f'<span class="cloze-wrapper"><span class="cloze-dropzone" data-gap-id="{gap_counter}" data-correct="{html.escape(final_correct)}">Drop here</span><span class="cloze-inline-feedback"></span></span>'
             return drop_zone_html
 
         escaped_text = html.escape(cleaned_text)
@@ -109,7 +105,7 @@ class ClozeDirective(SphinxDirective):
         bank_html = '<div class="cloze-wordbank-title">Word Bank (Drag items below):</div>'
         bank_html += '<div class="cloze-wordbank-tray">'
         for word in word_bank_items:
-            bank_html += f'<div class="cloze-draggable" draggable="true" data-word="{html.escape(word.lower())}">{html.escape(word)}</div>'
+            bank_html += f'<div class="cloze-draggable" draggable="true" data-word="{html.escape(word)}">{html.escape(word)}</div>'
         bank_html += '</div><hr class="cloze-divider">'
 
         control_panel_html = '''
@@ -138,7 +134,7 @@ def setup(app):
     app.add_css_file("cloze.css")
 
     return {
-        "version": "4.0",
+        "version": "4.1",
         "parallel_read_safe": True,
         "parallel_write_safe": True
     }
