@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let draggedElement = null
 
   blocks.forEach(block => {
+    // Look directly inside the current cloze block for its dedicated code container
+    const completedCodeBlock = block.querySelector(".cloze-completed-code")
+
     const draggables = block.querySelectorAll(".cloze-draggable")
     const dropzones = block.querySelectorAll(".cloze-dropzone")
     const bank = block.querySelector(".cloze-wordbank-tray")
@@ -54,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 1. Setup Draggable & Clickable Word Items ---
     draggables.forEach(draggable => {
-      // Drag Events
       draggable.addEventListener("dragstart", (e) => {
         clearSelection()
         draggedElement = draggable
@@ -67,11 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         draggedElement = null
       })
 
-      // Click-to-Select Event
       draggable.addEventListener("click", (e) => {
         e.stopPropagation()
 
-        // Deselect if clicking the currently selected item
         if (activeSelection === draggable) {
           clearSelection()
           return
@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
         placeInZone(zone, draggedElement)
       })
 
-      // Click-to-Place Event
       zone.addEventListener("click", (e) => {
         if (activeSelection && !zone.classList.contains("disabled")) {
           e.stopPropagation()
@@ -109,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
 
-      // Double Click to Remove Item back to Tray
       zone.addEventListener("dblclick", (e) => {
         e.stopPropagation()
         if (zone.classList.contains("disabled")) return
@@ -130,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         draggedElement.style.display = "inline-block"
       })
 
-      // Click-to-Place back into bank tray
       bank.addEventListener("click", () => {
         if (activeSelection) {
           activeSelection.style.display = "inline-block"
@@ -139,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    // Clear selections when clicking outside interactive targets
     block.addEventListener("click", () => {
       clearSelection()
     })
@@ -155,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
           zone.classList.add("disabled")
           const token = zone.querySelector(".cloze-dropped-token")
 
-          // REMOVED .toLowerCase() to preserve case sensitivity
           const expected = zone.dataset.correct ? zone.dataset.correct.trim() : ""
           const actual = token ? token.dataset.word.trim() : ""
 
@@ -189,8 +184,14 @@ document.addEventListener("DOMContentLoaded", () => {
           if (percent >= 0.8) scoreBadge.classList.add("high")
           else if (percent >= 0.5) scoreBadge.classList.add("medium")
           else scoreBadge.classList.add("low")
+
+          // Reveal code block ONLY if 100% score is achieved in THIS specific block
+          if (completedCodeBlock) {
+            completedCodeBlock.style.display = (percent === 1) ? "block" : "none"
+          }
         }
 
+        // Visually disable the score button after scoring
         btnScore.disabled = true
       })
     }
@@ -200,6 +201,11 @@ document.addEventListener("DOMContentLoaded", () => {
       btnReset.addEventListener("click", () => {
         clearSelection()
         if (scoreBadge) scoreBadge.style.display = "none"
+
+        // Hide completed code block on reset for this specific block
+        if (completedCodeBlock) {
+          completedCodeBlock.style.display = "none"
+        }
 
         dropzones.forEach(zone => {
           zone.innerHTML = "Drop here"
@@ -218,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           d.classList.remove("selected")
         })
 
+        // Re-enable the score button when resetting
         if (btnScore) btnScore.disabled = false
       })
     }

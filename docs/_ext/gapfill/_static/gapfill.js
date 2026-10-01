@@ -6,13 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function initBlock(block) {
     block.querySelectorAll(".gapfill-dropdown").forEach(select => {
       const options = Array.from(select.options)
-      const placeholder = options.shift() // Save the "-- Choose --" element
+      const placeholder = options.shift()
 
-      // Sort option elements cleanly based on text values
       options.sort((a, b) => a.text.localeCompare(b.text, undefined, { sensitivity: 'base' }))
 
       select.innerHTML = ""
-      select.add(placeholder) // Restore placeholder at the top
+      select.add(placeholder)
       options.forEach(opt => select.add(opt))
     })
 
@@ -27,12 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
       input.disabled = false
       input.classList.remove("correct", "incorrect")
     })
+
+    // Re-enable score button on reset
+    const scoreBtn = block.querySelector(".gapfill-btn-score")
+    if (scoreBtn) {
+      scoreBtn.disabled = false
+    }
   }
 
   // Initial Run
   blocks.forEach(b => initBlock(b))
 
-  // Build Unified Control Panel Toolbar for each block instead of globally to prevent collisions
+  // Build Control Panel Toolbar for each block
   blocks.forEach(block => {
     const panel = document.createElement("div")
     panel.className = "gapfill-global-panel"
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnScore = document.createElement("button")
     btnScore.type = "button"
     btnScore.className = "gapfill-btn-score"
-    btnScore.textContent = "Check Answers"
+    btnScore.textContent = "Check"
 
     const btnReset = document.createElement("button")
     btnReset.type = "button"
@@ -63,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let correctGaps = 0
 
       inputs.forEach(input => {
-        // FIXED: Removed .toLowerCase() tracking to enforce strict case-sensitivity
         const val = input.value.trim()
         const expectedValue = input.dataset.correct
 
@@ -77,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
           correctGaps++
         } else {
           input.classList.add("incorrect")
-          // Display the exact correct string solution preserving case parameters
           feedbackBadge.textContent = ` ✕ (Ans: ${expectedValue})`
           feedbackBadge.className = "gapfill-inline-feedback text-incorrect"
         }
@@ -94,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (percent >= 0.5) scoreBadge.classList.add("medium")
       else scoreBadge.classList.add("low")
 
-      // Disable Check button after execution
+      // Disable Check button visually & functionally
       btnScore.disabled = true
     })
 
@@ -104,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
       scoreBadge.textContent = ""
       scoreBadge.style.display = "none"
       scoreBadge.className = "gapfill-output"
-      btnScore.disabled = false
     })
   })
 });
