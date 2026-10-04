@@ -28,11 +28,21 @@ extensions = [
     'sphinx_togglebutton',
     'sphinx_design',
     "sphinx_new_tab_link",
-    "classifying.classifying",  # custom directive
-    "ordering.ordering",  # custom directive
-    "gapfill.gapfill",  # custom directive
-    "cloze.cloze",  # custom directive
+    "speak_role",
+    "mcqgroup.mcqgroup",  # custom directive
+    "clozegroup.clozegroup",  # custom directive
+    "quizgroup",  # custom directive
     "multichoice.multichoice",  # custom directive
+    "cloze.cloze",  # custom directive
+    "gapfill.gapfill",  # custom directive
+    "classifying.classifying",  # custom directive
+    "fillin.fillin",  # custom directive
+    "ordering.ordering",  # custom directive
+    "wordordering.wordordering",  # custom directive
+    "textselect.textselect",  # custom directive
+    "wordjumble.wordjumble",  # custom directive
+    "labels.labels",  # custom directive
+    "structuredquestion.structuredquestion",  # custom directive
 ]
 
 #
