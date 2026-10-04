@@ -240,8 +240,7 @@ Inches to Centimeters Test Table
 ----
 
 Inches to cm Converter - Multiple Choice Quiz
-====================================================
-
+------------------------------------------------
 
 .. mcqgroup::
     :nav_position: both
@@ -339,4 +338,74 @@ Inches to cm Converter - Multiple Choice Quiz
         [x] Starts the Tkinter event loop to keep the window open and responsive | Correct. root.mainloop() listens for events (like button clicks) and keeps the application running.
         [ ] Imports all necessary GUI components automatically | Incorrect. Imports are handled at the top of the file.
         [ ] Resets the window layout back to its default state | Incorrect. mainloop() runs the GUI event handling cycle.
+
+----
+
+Inches to cm Converter - Cloze Code Quiz
+----------------------------------------------
+
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 3
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Complete the code to import Tkinter with the standard alias and set the background color of the main application window.
+
+        import tkinter as @@tk | tkinter | Tk@@
+
+        root = tk.Tk()
+        root.title("Inches to cm Converter")
+        root.geometry("550x300")
+        root.@@configure | set | config_bg@@(bg="#ffffff")
+
+        root.mainloop()
+
+    .. cloze::
+        :instructions: Select the correct parameters to set the height of the Text widget to one line and stretch the button across two grid columns.
+
+        inches_label = tk.Label(root, text="inches")
+        inches_entry = tk.Entry(root, width=10)
+        cm_text = tk.Text(root, @@height=1 | lines=1 | size=1@@, width=10)
+
+        inches_label.grid(row=0, column=0, sticky="e")
+        convert_button.grid(row=1, column=0, @@columnspan=2 | colspan=2 | row-span=2@@)
+
+    .. cloze::
+        :instructions: Fill in the missing foreground color option and constant variable reference to format the label and window layout.
+
+        WINDOW_BG_COLOR = "#ffffff"
+        INPUT_FG_COLOR = "#0d6efd"
+        FONT_STYLE = ("Arial", 32)
+
+        inches_label = tk.Label(root, text="inches", bg=WINDOW_BG_COLOR, @@fg=INPUT_FG_COLOR | color=INPUT_FG_COLOR | textcolor=INPUT_FG_COLOR@@, font=FONT_STYLE)
+        root.configure(bg=@@WINDOW_BG_COLOR | "WINDOW_BG_COLOR" | #ffffff@@)
+
+    .. cloze::
+        :instructions: Choose the correct methods and formatting specifiers to retrieve input from the entry widget and output centimeters rounded to 2 decimal places.
+
+        def convert_inches_to_cm():
+            try:
+                inches = float(inches_entry.@@get() | read() | value()@@)
+                cm = inches * 2.54
+                cm_text.delete(1.0, "end")
+                cm_text.insert(1.0, f"{cm:@@.2f | 2f | %2f@@}")
+            except ValueError:
+                cm_text.insert(1.0, "Invalid input.")
+
+    .. cloze::
+        :instructions: Select the exception type caught when input conversion fails, and the button option that binds the conversion callback function.
+
+        def convert_inches_to_cm():
+            try:
+                inches = float(inches_entry.get())
+            except @@ValueError | TypeError | Exception@@:
+                cm_text.delete(1.0, "end")
+                cm_text.insert(1.0, "Invalid input.")
+
+        convert_button = tk.Button(root, text="Convert", @@command=convert_inches_to_cm | onClick=convert_inches_to_cm | action=convert_inches_to_cm@@)
+
+
 
