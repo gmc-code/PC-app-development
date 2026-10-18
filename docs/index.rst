@@ -37,6 +37,10 @@ PC-app-development
     tk_geometry/tk_geometry_place.rst
     tk_geometry/tk_geometry_hello_world.rst
     tk_geometry/tk_geometry_cost_calculator.rst
+    tk_geometry/tk_grid.rst
+    tk_geometry/tk_pack.rst
+    tk_geometry/tk_place.rst
+
 
 
 .. toctree::
@@ -79,6 +83,7 @@ PC-app-development
 
     ttk_widgets/ttk_entry.rst
     ttk_widgets/ttk_button.rst
+    ttk_widgets/ttk_button1.rst
 
     ttk_widgets/ttk_radiobutton.rst
     ttk_widgets/ttk_checkbutton.rst
