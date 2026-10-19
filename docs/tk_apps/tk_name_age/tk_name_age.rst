@@ -2,7 +2,7 @@
 Name and age
 ====================================================
 
-.. image:: images/tk_name_age.png
+.. image:: tk_name_age.png
     :scale: 67
 
 | This code outputs the user name and age in sentence form.
@@ -81,7 +81,7 @@ Grid Placement of widgets on the window:
 
 Design the grid positions:
 
-.. image:: images/name_age_grid.png
+.. image:: name_age_grid.png
     :scale: 100
 
 - Use the `grid` method to place the widgets in rows and columns in the root.

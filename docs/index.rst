@@ -134,11 +134,11 @@ PC-app-development
     :caption: tk apps
     :numbered:
 
-    tk_apps/tk_inches_to_cm.rst
-    tk_apps/tk_temperature_converter.rst
-    tk_apps/tk_pounds_to_kgs.rst
-    tk_apps/tk_name_age.rst
-    tk_apps/tk_insult_generator.rst
+    tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
+    tk_apps/tk_temperature_converter/tk_temperature_converter.rst
+    tk_apps/tk_lbs_to_kgs/tk_lbs_to_kgs.rst
+    tk_apps/tk_name_age/tk_name_age.rst
+    tk_apps/tk_insult_generator/tk_insult_generator.rst
 
     tk_quiz_apps/tk_afl_premiers.rst
 
@@ -148,11 +148,11 @@ PC-app-development
     :caption: tk apps 2
     :numbered:
 
-    tk_apps/tk_login.rst
-    tk_apps/tk_login_custom_messagebox.rst
-    tk_apps/tk_RPG_inventory.rst
-    tk_apps/tk_pizza_cost_1.rst
-    tk_apps/tk_pizza_cost_3.rst
+    tk_apps/tk_login/tk_login.rst
+    tk_apps/tk_login_custom_messagebox/tk_login_custom_messagebox.rst
+    tk_apps/tk_RPG_inventory/tk_RPG_inventory.rst
+    tk_apps/tk_pizza_cost_1/tk_pizza_cost_1.rst
+    tk_apps/tk_pizza_cost_3/tk_pizza_cost_3.rst
 
 
 .. toctree::
@@ -203,8 +203,6 @@ PC-app-development
     Anvil/christmas_jokes.rst
     Anvil/breathe.rst
 
-    .. Anvil/days_calculator.rst
-    .. Anvil/christmas_tunes.rst
 
 
 
@@ -237,5 +235,41 @@ PC-app-development
     pyscript/reindeer.rst
     pyscript/jokes.rst
     pyscript/christmas_jokes.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: in dev
+    :numbered:
+    :hidden:
+
+    Anvil/days_calculator.rst
+    Anvil/christmas_tunes.rst
+    Anvil/cloning_via_git.rst
+    tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
+    tk_apps/tk_lbs_to_kgs/tk_pounds_to_kgs.rst
+    tk_apps/tk_login/tk_login_custom_messagebox.rst
+    tk_apps/tk_RPS1/tk_rock_paper_scissors.rst
+    tk_apps/tk_RPS2/tk_rock_paper_scissors_v2.rst
+    tk_basics/tk_window.rst
+    tk_widget_interactions/non_commands.rst
+    tk_widget_interactions2/tk_button_methods.rst
+    tk_widget_interactions2/tk_checkbutton.rst
+    tk_widget_interactions2/tk_event_binding.rst
+    tk_widget_interactions2/tk_radiobutton.rst
+    tk_widget_interactions2/tk_text_usage.rst
+    tk_widget_interactions2/tk_variable_binding.rst
+    tk_widgets/tk_labelframe.rst
+    tk_widgets/tk_widget_quizzes/classifying.rst
+    tk_widgets/tk_widget_quizzes/cloze.rst
+    tk_widgets/tk_widget_quizzes/gapfill.rst
+    tk_widgets/tk_widget_quizzes/lessons_cloze.rst
+    tk_widgets/tk_widget_quizzes/lessons_gapfill.rst
+    tk_widgets/tk_widget_quizzes/multichoice.rst
+    tk_widgets/tk_widget_quizzes/ordering.rst
+    tk_widgets/tk_widget_quizzes/scroll_text_ordering.rst
+    tk_widgets/tk_widget_quizzes/scroll_text_quiz.rst
+    ttk_widgets/ttk_scrollbar.rst
+    ttk_widgets/ttk_spinbox.rst
 
 

@@ -2,7 +2,7 @@
 Pizza cost: three pizzas
 ====================================================
 
-.. image:: images/tk_pizza_cost_3.png
+.. image:: tk_pizza_cost_3.png
     :scale: 67
 
 | This code works out the total cost of an order of up to three kinds of pizza.
@@ -162,7 +162,7 @@ Show the total: Label
 
 Design the grid positions:
 
-.. image:: images/pizza_3_grid.png
+.. image:: pizza_3_grid.png
     :scale: 100
 
 ----

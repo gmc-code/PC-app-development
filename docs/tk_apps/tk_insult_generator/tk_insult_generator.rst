@@ -2,7 +2,7 @@
 Insult generator (tkinter)
 ====================================================
 
-.. image:: images/insults/tk_insult_generator.png
+.. image:: tk_insult_generator.png
     :scale: 67
 
 | This app generates a random insult, in either a Shakespearean or a modern style.
@@ -195,7 +195,7 @@ Place the widgets in the window
 
 Design the grid positions:
 
-.. image:: images/insults/insult_grid.png
+.. image:: insult_grid.png
     :scale: 100
 
 .. code-block:: python

@@ -2,7 +2,7 @@
 Inches to cm
 ====================================================
 
-.. image:: images/tk_inches_to_cm_converter.png
+.. image:: tk_inches_to_cm_converter.png
     :scale: 67
 
 | This code converts inches to cm.
@@ -55,7 +55,7 @@ Place Widgets in the Window
 
 Design the grid positions:
 
-.. image:: images/inches_to_cm_grid.png
+.. image:: inches_to_cm_grid.png
     :scale: 100
 
 Position the widgets using the `grid()` method:

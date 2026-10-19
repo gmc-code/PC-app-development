@@ -2,7 +2,7 @@
 Pizza cost
 ====================================================
 
-.. image:: images/tk_pizza_cost_1.png
+.. image:: tk_pizza_cost_1.png
     :scale: 67
 
 | This code works out the cost of a pizza order.
@@ -133,7 +133,7 @@ Show the price: Label
 
 Design the grid positions:
 
-.. image:: images/pizza_1_grid.png
+.. image:: pizza_1_grid.png
     :scale: 100
 
 | All three widgets are in row 0, in columns 0, 1 and 2.
