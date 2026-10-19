@@ -136,15 +136,13 @@ PC-app-development
 
     tk_apps/tk_inches_to_cm.rst
     tk_apps/tk_temperature_converter.rst
-    tk_apps/tk_pounds_to_kgs_task.rst
     tk_apps/tk_pounds_to_kgs.rst
-    tk_apps/tk_name_age_task.rst
     tk_apps/tk_name_age.rst
-    tk_apps/tk_login_task.rst
     tk_apps/tk_login.rst
     tk_apps/tk_login_custom_messagebox.rst
 
     tk_quiz_apps/tk_afl_premiers.rst
+
     tk_apps/tk_RPG_inventory.rst
 
     tk_apps/tk_pizza_cost_1.rst
