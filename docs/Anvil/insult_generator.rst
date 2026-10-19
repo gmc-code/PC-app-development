@@ -1,5 +1,5 @@
 ====================================================
-Insult generator
+Anvil Insult generator
 ====================================================
 
 This app generates a random insult.

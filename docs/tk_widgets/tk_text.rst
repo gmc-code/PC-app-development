@@ -166,6 +166,230 @@ Methods
 
 ----
 
+Text method examples
+----------------------
+
+insert and see example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``insert(tk.END, "text")`` adds text to the end. Use ``"\n"`` to start a new line.
+| ``see(tk.END)`` scrolls down so the newest line is visible.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    count = 0
+
+
+    def add_line():
+        global count
+        count = count + 1
+        log_text.insert(tk.END, f"Line {count}\n")  # Add to the end
+        log_text.see(tk.END)  # Scroll to show the newest line
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("Text insert")
+
+    log_text = tk.Text(root, height=6, width=25, font=("Arial", 12))
+    log_text.pack(pady=10)
+
+    button = tk.Button(root, text="Add line", font=("Arial", 14), command=add_line)
+    button.pack()
+
+    root.mainloop()
+
+get example
+~~~~~~~~~~~~~~~~~~
+
+| ``get("1.0", tk.END)`` reads all the text. The Text widget always adds an extra newline at the end.
+| Use ``get("1.0", "end-1c")`` ("end minus one character") to read the text without that extra newline.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def count_words():
+        writing = story_text.get("1.0", "end-1c")  # All text, no extra newline
+        words = len(writing.split())
+        result_label.config(text=f"Words: {words}")
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("Text get")
+
+    story_text = tk.Text(root, height=6, width=30, wrap="word", font=("Arial", 12))
+    story_text.pack(pady=10)
+
+    button = tk.Button(root, text="Count words", font=("Arial", 14), command=count_words)
+    button.pack()
+
+    result_label = tk.Label(root, text="Words: 0", font=("Arial", 14))
+    result_label.pack(pady=5)
+
+    root.mainloop()
+
+delete example
+~~~~~~~~~~~~~~~~~~
+
+| ``delete("1.0", tk.END)`` clears all the text.
+| ``delete("1.0", "2.0")`` deletes just the first line (from the start of line 1 to the start of line 2).
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def clear_all():
+        notes_text.delete("1.0", tk.END)
+
+
+    def delete_first_line():
+        notes_text.delete("1.0", "2.0")
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("Text delete")
+
+    notes_text = tk.Text(root, height=5, width=25, font=("Arial", 12))
+    notes_text.insert("1.0", "First line\nSecond line\nThird line")
+    notes_text.pack(pady=10)
+
+    first_button = tk.Button(root, text="Delete first line", command=delete_first_line)
+    first_button.pack(pady=5)
+
+    clear_button = tk.Button(root, text="Clear all", command=clear_all)
+    clear_button.pack()
+
+    root.mainloop()
+
+Read-only output example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| A Text widget is often used to show results that the user should not edit.
+| Text cannot be inserted while ``state="disabled"``, so set ``state="normal"`` first, insert, then set ``state="disabled"`` again.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_times_table():
+        output_text.config(state="normal")  # Unlock
+        output_text.delete("1.0", tk.END)
+        for n in range(1, 11):
+            output_text.insert(tk.END, f"{n} x 7 = {n * 7}\n")
+        output_text.config(state="disabled")  # Lock again
+
+
+    root = tk.Tk()
+    root.geometry("300x300")
+    root.title("Text read-only")
+
+    button = tk.Button(root, text="Show 7 times table", font=("Arial", 14),
+                       command=show_times_table)
+    button.pack(pady=10)
+
+    output_text = tk.Text(root, height=10, width=20, font=("Arial", 12), state="disabled")
+    output_text.pack()
+
+    root.mainloop()
+
+tag example
+~~~~~~~~~~~~~~~~~~
+
+| ``tag_configure()`` creates a named style, e.g. "heading" or "red".
+| Add the tag name after the text in ``insert()`` to use that style.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Text tags")
+
+    results_text = tk.Text(root, height=6, width=30, font=("Arial", 12))
+    results_text.pack(pady=10)
+
+    # Create the styles
+    results_text.tag_configure("heading", font=("Arial", 14, "bold"))
+    results_text.tag_configure("right", foreground="green")
+    results_text.tag_configure("wrong", foreground="red")
+
+    # Insert text using the styles
+    results_text.insert(tk.END, "Quiz results\n", "heading")
+    results_text.insert(tk.END, "Q1: correct\n", "right")
+    results_text.insert(tk.END, "Q2: incorrect\n", "wrong")
+    results_text.insert(tk.END, "Q3: correct\n", "right")
+
+    root.mainloop()
+
+Scrollbar example
+~~~~~~~~~~~~~~~~~~~~~~
+
+| A Scrollbar lets the user scroll through text that does not fit in the widget.
+| ``yscrollcommand`` and the scrollbar ``command`` link the two widgets so they move together.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Text scrollbar")
+
+    scrollbar = tk.Scrollbar(root)
+    scrollbar.pack(side="right", fill="y")
+
+    long_text = tk.Text(root, height=8, width=30, font=("Arial", 12),
+                        yscrollcommand=scrollbar.set)
+    long_text.pack(side="left", padx=10, pady=10)
+
+    scrollbar.config(command=long_text.yview)
+
+    for n in range(1, 51):
+        long_text.insert(tk.END, f"Line {n}\n")
+
+    root.mainloop()
+
+undo example
+~~~~~~~~~~~~~~~~~~
+
+| ``undo=True`` turns on undo, so Ctrl+Z undoes typing and Ctrl+Y redoes it.
+| ``edit_undo()`` and ``edit_redo()`` do the same thing from a button.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def undo():
+        try:
+            edit_text.edit_undo()
+        except tk.TclError:
+            pass  # Nothing left to undo
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Text undo")
+
+    edit_text = tk.Text(root, height=5, width=30, font=("Arial", 12), undo=True)
+    edit_text.pack(pady=10)
+
+    undo_button = tk.Button(root, text="Undo", font=("Arial", 14), command=undo)
+    undo_button.pack()
+
+    root.mainloop()
+
+----
+
 Parameter syntax
 ----------------------
 

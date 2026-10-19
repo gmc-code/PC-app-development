@@ -376,6 +376,161 @@ border example
 
 ----
 
+Changing a label while the program runs
+-------------------------------------------
+
+| Labels are often used to show results, so a program usually needs to change the label text after the label has been created.
+| The most commonly used methods are:
+
+.. py:function:: label_widget.config(option=value)
+
+    | Changes one or more options after the label has been created.
+    | e.g. ``label.config(text="Done!", fg="green")``
+
+.. py:function:: label_widget.cget(option)
+
+    | Returns the current value of an option.
+    | e.g. ``current_text = label.cget("text")``
+
+.. py:function:: label_widget["option"] = value
+
+    | A shorter way to change a single option.
+    | e.g. ``label["text"] = "Done!"``
+
+config example
+~~~~~~~~~~~~~~~~~~
+
+| The label text and colour change when the button is clicked.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_message():
+        # Change the text and colour of the existing label
+        message_label.config(text="Button clicked!", fg="green")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Label config")
+
+    message_label = tk.Label(root, text="Waiting...", font=("Arial", 18), fg="red")
+    message_label.pack(pady=20)
+
+    button = tk.Button(root, text="Click me", font=("Arial", 14), command=show_message)
+    button.pack()
+
+    root.mainloop()
+
+cget example
+~~~~~~~~~~~~~~~~~~
+
+| ``cget("text")`` reads what the label is currently showing.
+| The text is always a string, so ``int()`` is used to turn it into a number before adding 1.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def add_one():
+        count = int(count_label.cget("text"))  # Read the current text as a number
+        count_label.config(text=count + 1)     # Show the new number
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Label cget")
+
+    count_label = tk.Label(root, text="0", font=("Arial", 36))
+    count_label.pack(pady=20)
+
+    button = tk.Button(root, text="Add 1", font=("Arial", 14), command=add_one)
+    button.pack()
+
+    root.mainloop()
+
+textvariable example
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+| A ``StringVar`` is a special Tkinter variable that holds text.
+| When a label uses ``textvariable``, the label updates automatically whenever the variable is changed with ``.set()``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def win_points():
+        score_text.set("Score: 10")  # The label updates automatically
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Label textvariable")
+
+    score_text = tk.StringVar(value="Score: 0")
+
+    score_label = tk.Label(root, textvariable=score_text, font=("Arial", 24))
+    score_label.pack(pady=20)
+
+    button = tk.Button(root, text="Win points", font=("Arial", 14), command=win_points)
+    button.pack()
+
+    root.mainloop()
+
+wraplength and justify example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``wraplength`` sets how wide (in pixels) a line can be before the text wraps onto the next line.
+| ``justify`` lines up the wrapped lines on the "left", "center" or "right".
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Label wrapping")
+
+    label = tk.Label(
+        root,
+        text="This is a long sentence that wraps onto several lines inside the label.",
+        font=("Arial", 14),
+        bg="lightyellow",
+        wraplength=200,  # Wrap lines longer than 200 pixels
+        justify="left",  # Line up the wrapped lines on the left
+    )
+    label.pack(pady=20)
+
+    root.mainloop()
+
+image example
+~~~~~~~~~~~~~~~~~~
+
+| A label can show a .png or .gif picture using ``tk.PhotoImage``.
+| The image file (here ``logo.png``) must be saved in the same folder as the Python file.
+| ``compound="top"`` shows the image above the text. Leave out ``compound`` to show only the image.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("Label image")
+
+    logo = tk.PhotoImage(file="logo.png")  # Load the picture
+
+    image_label = tk.Label(root, image=logo, text="Our logo", compound="top", font=("Arial", 14))
+    image_label.pack(pady=20)
+
+    root.mainloop()
+
+----
+
 Options
 --------------
 

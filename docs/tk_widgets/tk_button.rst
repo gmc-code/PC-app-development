@@ -163,6 +163,187 @@ Methods
 
 ----
 
+Button examples
+----------------------
+
+command example
+~~~~~~~~~~~~~~~~~~
+
+| ``command`` is the name of the function to run when the button is clicked.
+| Write the function name **without** brackets: ``command=add_one``, not ``command=add_one()``.
+| With brackets the function runs once when the button is created instead of when it is clicked.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    clicks = 0
+
+
+    def add_one():
+        global clicks  # Allow the function to change the clicks variable
+        clicks = clicks + 1
+        count_label.config(text=f"Clicks: {clicks}")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Button command")
+
+    count_label = tk.Label(root, text="Clicks: 0", font=("Arial", 20))
+    count_label.pack(pady=20)
+
+    button = tk.Button(root, text="Click me", font=("Arial", 14), command=add_one)
+    button.pack()
+
+    root.mainloop()
+
+Changing the button with config
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``config()`` changes a button after it has been created, e.g. its text or colour.
+| ``cget("text")`` reads the current button text.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def toggle():
+        if light_button.cget("text") == "Turn ON":
+            light_button.config(text="Turn OFF", bg="yellow")
+        else:
+            light_button.config(text="Turn ON", bg="lightgray")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Button config")
+
+    light_button = tk.Button(root, text="Turn ON", bg="lightgray", font=("Arial", 16),
+                             width=10, command=toggle)
+    light_button.pack(pady=40)
+
+    root.mainloop()
+
+state example
+~~~~~~~~~~~~~~~~~~
+
+| ``state="disabled"`` greys out a button so it cannot be clicked.
+| ``state="normal"`` makes it clickable again.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def submit():
+        submit_button.config(state="disabled")  # Can only submit once
+        result_label.config(text="Submitted!")
+
+
+    def reset():
+        submit_button.config(state="normal")  # Clickable again
+        result_label.config(text="")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Button state")
+
+    submit_button = tk.Button(root, text="Submit", font=("Arial", 14), command=submit)
+    submit_button.pack(pady=10)
+
+    reset_button = tk.Button(root, text="Reset", font=("Arial", 14), command=reset)
+    reset_button.pack()
+
+    result_label = tk.Label(root, text="", font=("Arial", 16))
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+Passing a value with lambda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``command`` cannot have brackets, so it cannot pass a value to the function directly.
+| Wrap the call in ``lambda:`` so the function and its value only run when the button is clicked.
+| This lets several buttons share one function.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def change_colour(colour):
+        root.config(bg=colour)
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Button lambda")
+
+    red_button = tk.Button(root, text="Red", width=8, command=lambda: change_colour("red"))
+    red_button.pack(pady=5)
+
+    green_button = tk.Button(root, text="Green", width=8, command=lambda: change_colour("green"))
+    green_button.pack(pady=5)
+
+    blue_button = tk.Button(root, text="Blue", width=8, command=lambda: change_colour("blue"))
+    blue_button.pack(pady=5)
+
+    root.mainloop()
+
+Quit button example
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``root.destroy`` closes the window, so it can be used as the command of a Quit button.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Quit button")
+
+    quit_button = tk.Button(root, text="Quit", font=("Arial", 14), bg="salmon",
+                            command=root.destroy)
+    quit_button.pack(pady=40)
+
+    root.mainloop()
+
+invoke example
+~~~~~~~~~~~~~~~~~~
+
+| ``invoke()`` runs the button's command from code, just as if it had been clicked.
+| Here the Enter key "presses" the button.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def greet():
+        result_label.config(text="Hello!")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Button invoke")
+
+    greet_button = tk.Button(root, text="Greet", font=("Arial", 14), command=greet)
+    greet_button.pack(pady=20)
+
+    result_label = tk.Label(root, text="Press Enter or click", font=("Arial", 16))
+    result_label.pack()
+
+    # Pressing Enter anywhere in the window invokes the button
+    root.bind("<Return>", lambda event: greet_button.invoke())
+
+    root.mainloop()
+
+----
+
 Parameter syntax
 ----------------------
 

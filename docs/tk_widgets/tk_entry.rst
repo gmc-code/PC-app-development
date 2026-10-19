@@ -175,6 +175,257 @@ Entry methods
 
 ----
 
+Entry method examples
+----------------------------------------------------
+
+get example
+~~~~~~~~~~~~~~~~~~
+
+| ``get()`` reads what the user has typed. The result is always a string.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def say_hello():
+        name = name_entry.get()  # Read the typed text
+        result_label.config(text=f"Hello, {name}!")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Entry get")
+
+    name_entry = tk.Entry(root, font=("Arial", 16), width=15)
+    name_entry.pack(pady=10)
+
+    button = tk.Button(root, text="Say hello", font=("Arial", 14), command=say_hello)
+    button.pack()
+
+    result_label = tk.Label(root, text="", font=("Arial", 16))
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+Numbers from an Entry
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``get()`` returns text, so use ``float()`` or ``int()`` to turn it into a number before doing any maths.
+| ``try`` and ``except ValueError`` stop the program from crashing if the user types something that is not a number.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def convert():
+        try:
+            inches = float(inches_entry.get())  # Text -> number
+            cm = inches * 2.54
+            result_label.config(text=f"{cm:.2f} cm", fg="black")
+        except ValueError:
+            result_label.config(text="Please enter a number", fg="red")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Inches to cm")
+
+    inches_entry = tk.Entry(root, font=("Arial", 16), width=10)
+    inches_entry.pack(pady=10)
+
+    button = tk.Button(root, text="Convert", font=("Arial", 14), command=convert)
+    button.pack()
+
+    result_label = tk.Label(root, text="", font=("Arial", 16))
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+insert and delete example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``insert(0, "text")`` puts text into the Entry, e.g. a starting value.
+| ``delete(0, tk.END)`` removes everything from the first character (0) to the end.
+| To replace the text, delete first and then insert.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def clear():
+        word_entry.delete(0, tk.END)  # Remove all text
+
+
+    def reset():
+        word_entry.delete(0, tk.END)  # Remove all text ...
+        word_entry.insert(0, "hello")  # ... then put the starting text back
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Entry insert and delete")
+
+    word_entry = tk.Entry(root, font=("Arial", 16), width=15)
+    word_entry.insert(0, "hello")  # Starting text
+    word_entry.pack(pady=10)
+
+    clear_button = tk.Button(root, text="Clear", font=("Arial", 14), command=clear)
+    clear_button.pack(pady=5)
+
+    reset_button = tk.Button(root, text="Reset", font=("Arial", 14), command=reset)
+    reset_button.pack(pady=5)
+
+    root.mainloop()
+
+focus_set and select_range example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``focus_set()`` puts the typing cursor in the Entry so the user can type straight away without clicking.
+| ``select_range(0, tk.END)`` highlights all the text, so the next thing typed replaces it.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def check_answer():
+        if answer_entry.get() == "12":
+            result_label.config(text="Correct!", fg="green")
+        else:
+            result_label.config(text="Try again", fg="red")
+            answer_entry.focus_set()  # Put the cursor back in the Entry
+            answer_entry.select_range(0, tk.END)  # Highlight the wrong answer
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Entry focus")
+
+    question_label = tk.Label(root, text="What is 3 x 4?", font=("Arial", 16))
+    question_label.pack(pady=5)
+
+    answer_entry = tk.Entry(root, font=("Arial", 16), width=10)
+    answer_entry.pack(pady=5)
+    answer_entry.focus_set()  # Ready to type as soon as the window opens
+
+    button = tk.Button(root, text="Check", font=("Arial", 14), command=check_answer)
+    button.pack(pady=5)
+
+    result_label = tk.Label(root, text="", font=("Arial", 16))
+    result_label.pack()
+
+    root.mainloop()
+
+Using the Enter key
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``bind("<Return>", function)`` runs a function when the Enter key is pressed in the Entry.
+| A function called by ``bind`` is given an ``event`` value, so the function needs an ``event`` parameter.
+| Using ``event=None`` lets the same function also be used by a button.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def double_it(event=None):
+        try:
+            number = float(number_entry.get())
+            result_label.config(text=f"Double: {number * 2}")
+        except ValueError:
+            result_label.config(text="Please enter a number")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Entry Enter key")
+
+    number_entry = tk.Entry(root, font=("Arial", 16), width=10)
+    number_entry.pack(pady=10)
+    number_entry.bind("<Return>", double_it)  # Press Enter to run double_it
+
+    button = tk.Button(root, text="Double", font=("Arial", 14), command=double_it)
+    button.pack()
+
+    result_label = tk.Label(root, text="", font=("Arial", 16))
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+textvariable example
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| A ``StringVar`` can be linked to an Entry with ``textvariable``.
+| ``.get()`` on the variable reads the Entry text and ``.set()`` changes it.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def shout():
+        message.set(message.get().upper())  # Read, change, and put back
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Entry textvariable")
+
+    message = tk.StringVar(value="hello there")
+
+    message_entry = tk.Entry(root, textvariable=message, font=("Arial", 16), width=15)
+    message_entry.pack(pady=10)
+
+    button = tk.Button(root, text="Shout", font=("Arial", 14), command=shout)
+    button.pack()
+
+    root.mainloop()
+
+state example
+~~~~~~~~~~~~~~~~~~
+
+| ``state="readonly"`` shows text that can be selected and copied but not changed. It is useful for showing an answer.
+| ``state="disabled"`` greys the Entry out completely.
+| A program cannot ``insert`` or ``delete`` while the Entry is readonly or disabled, so set ``state="normal"`` first, change the text, then set the state back.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def calculate():
+        try:
+            side = float(side_entry.get())
+            area = side * side
+        except ValueError:
+            area = "?"
+        area_entry.config(state="normal")  # Unlock
+        area_entry.delete(0, tk.END)
+        area_entry.insert(0, area)
+        area_entry.config(state="readonly")  # Lock again
+
+
+    root = tk.Tk()
+    root.geometry("300x220")
+    root.title("Entry state")
+
+    tk.Label(root, text="Side length", font=("Arial", 14)).pack()
+    side_entry = tk.Entry(root, font=("Arial", 16), width=10)
+    side_entry.pack(pady=5)
+
+    button = tk.Button(root, text="Area of square", font=("Arial", 14), command=calculate)
+    button.pack(pady=5)
+
+    area_entry = tk.Entry(root, font=("Arial", 16), width=10, state="readonly")
+    area_entry.pack(pady=5)
+
+    root.mainloop()
+
+----
+
 Option details
 --------------------
 

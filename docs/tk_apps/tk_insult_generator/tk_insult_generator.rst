@@ -1,5 +1,5 @@
 ====================================================
-Insult generator (tkinter)
+Insult generator
 ====================================================
 
 .. image:: tk_insult_generator.png
