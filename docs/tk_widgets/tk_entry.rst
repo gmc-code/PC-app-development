@@ -3,65 +3,599 @@ tk Entry
 ====================================================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Entry>`_
-| See: `<https://www.geeksforgeeks.org/python-tkinter-entry-widget/>`_
 
 ----
 
-Usage
----------------
+What is an Entry?
+-------------------
 
-| The `tkinter.Entry` widget provides a single-line input field.
-| The Entry widget is great for simple, single-line inputs such as usernames or passwords.
-| Use a Text widget for longer text such as comments or descriptions.
-| To create an entry widget the general syntax is (assuming import via "import tkinter as tk")
-
-.. py:function:: entry_widget  = tk.Entry(parent, option=value)
-
-    | `parent` is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-    | The Entry widget is initially empty.
+| An **Entry** is a box the user can type into.
+| It holds **one line** of text, so it is good for short answers like a name, a password or a number.
+| For several lines of text, use a **Text** widget instead.
 
 ----
 
-Entry example
-----------------------------------------------------
+Making an Entry
+-------------------
 
-| The font and width are the options used in the entry widget below.
+| Every Entry is made in two steps:
 
-.. image:: images/entry.png
-    :scale: 100
+#. **Create** the entry with ``tk.Entry(...)``.
+#. **Place** the entry in the window with ``.pack()``.
+
+| An Entry starts empty. Run the code below and click in the box to type.
+
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first entry")    # Words in the title bar
+
+    entry = tk.Entry(root)          # 1. Create the entry
+    entry.pack(pady=20)             # 2. Place it in the window, 20 pixels from the top
+
+    root.mainloop()                 # Keep the window open
+
+| An Entry has no words next to it, so the user will not know what to type.
+| Put a **Label** above it as an instruction:
 
 .. code-block:: python
 
     import tkinter as tk
 
-    # Create the main window
     root = tk.Tk()
-    root.geometry("500x300")  # Set window size
-    root.title("Entry Example")  # Set window title
+    root.geometry("300x200")
+    root.title("Entry with a label")
 
+    name_label = tk.Label(root, text="Type your name:")
+    name_label.pack(pady=5)
 
-    # Create the entry widget for input
-    name_entry = tk.Entry(root, font=('Arial', 24), width=20)
-    name_entry.pack(pady=20)  # Add some padding to the top
+    name_entry = tk.Entry(root)
+    name_entry.pack()
 
-    # Run the main event loop
     root.mainloop()
+
+----
+
+Entry options
+-------------------
+
+| Options are written as ``option=value`` inside ``tk.Entry( )``, separated by commas.
+
+font
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the style and size of the letters the user types.
+| **How to write it:** ``font=("font name", size)`` or ``font=("font name", size, "style")``
+| A bigger font also makes the box taller.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("font")
+
+    entry = tk.Entry(root, font=("Arial", 24))
+    entry.pack(pady=20)
+
+    root.mainloop()
+
+width
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets how wide the box is, measured in **characters** (letters).
+| **How to write it:** ``width=10``
+| If you leave it out, the box is 20 characters wide. The user can still type more than fits; the text scrolls sideways.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("width")
+
+    short_entry = tk.Entry(root, width=5)
+    short_entry.pack(pady=10)
+
+    long_entry = tk.Entry(root, width=40)
+    long_entry.pack(pady=10)
+
+    root.mainloop()
+
+fg and bg (colours)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``fg`` sets the colour of the typed letters. ``bg`` sets the colour of the box.
+| **How to write them:** ``fg="colour"``, ``bg="colour"``
+| Use a colour name such as ``"navy"`` or a hex code such as ``"#ffffcc"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("fg and bg")
+
+    entry = tk.Entry(root, font=("Arial", 18), fg="navy", bg="lightyellow")
+    entry.pack(pady=20)
+
+    root.mainloop()
+
+justify
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** lines up the typed text on the left, in the centre, or on the right of the box.
+| **How to write it:** ``justify="center"``
+| **Values:** ``"left"`` (the default), ``"center"``, ``"right"``. Numbers often look best on the ``"right"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("justify")
+
+    left_entry = tk.Entry(root, font=("Arial", 16), justify="left")
+    left_entry.pack(pady=5)
+
+    centre_entry = tk.Entry(root, font=("Arial", 16), justify="center")
+    centre_entry.pack(pady=5)
+
+    right_entry = tk.Entry(root, font=("Arial", 16), justify="right")
+    right_entry.pack(pady=5)
+
+    root.mainloop()
+
+show
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** hides what the user types by showing another character instead. Used for **passwords**.
+| **How to write it:** ``show="*"``
+| ``get()`` still reads the real letters that were typed.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("show")
+
+    password_label = tk.Label(root, text="Password:")
+    password_label.pack(pady=5)
+
+    password_entry = tk.Entry(root, font=("Arial", 16), show="*")
+    password_entry.pack()
+
+    root.mainloop()
+
+relief and borderwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** change the border around the box.
+| ``relief`` is the border style. ``borderwidth`` is how thick it is in pixels.
+| **How to write them:** ``relief="solid", borderwidth=2``
+| **Styles:** ``"sunken"`` (the usual look), ``"solid"``, ``"flat"``, ``"raised"``, ``"groove"``, ``"ridge"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("relief")
+
+    entry = tk.Entry(root, font=("Arial", 16), relief="solid", borderwidth=2)
+    entry.pack(pady=20)
+
+    root.mainloop()
+
+state
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** controls whether the user can type in the box.
+| **How to write it:** ``state="readonly"``
+| **Values:**
+
+- ``"normal"`` - the user can type (the default).
+- ``"readonly"`` - the user can see and copy the text but cannot change it. Good for showing an answer.
+- ``"disabled"`` - the box is greyed out and cannot be used.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("state")
+
+    normal_entry = tk.Entry(root, state="normal")
+    normal_entry.pack(pady=5)
+
+    readonly_entry = tk.Entry(root, state="readonly")
+    readonly_entry.pack(pady=5)
+
+    disabled_entry = tk.Entry(root, state="disabled")
+    disabled_entry.pack(pady=5)
+
+    root.mainloop()
+
+textvariable
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** links the entry to a **StringVar**, a special Tkinter variable that stores text.
+| Whatever is typed in the box is stored in the StringVar, and changing the StringVar changes the box.
+| **How to write it:** ``answer = tk.StringVar()`` then ``textvariable=answer``
+| Read the text with ``answer.get()``. Change it with ``answer.set("new text")``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def make_capitals():
+        word.set(word.get().upper())    # Read the word, make it CAPITALS, put it back
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("textvariable")
+
+    word = tk.StringVar(value="hello")
+
+    entry = tk.Entry(root, textvariable=word, font=("Arial", 16))
+    entry.pack(pady=20)
+
+    button = tk.Button(root, text="CAPITALS", command=make_capitals)
+    button.pack()
+
+    root.mainloop()
+
+----
+
+Entry methods
+-------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot, e.g. ``entry.get()``.
+
+get
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** reads what the user has typed.
+| **How to write it:** ``text = entry.get()``
+| ``get()`` is usually used inside a function that runs when a button is clicked.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def say_hello():
+        name = name_entry.get()                     # Read the typed name
+        answer_label.config(text="Hello " + name)   # Show it on the label
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("get")
+
+    name_entry = tk.Entry(root, font=("Arial", 16))
+    name_entry.pack(pady=10)
+
+    hello_button = tk.Button(root, text="Say hello", command=say_hello)
+    hello_button.pack()
+
+    answer_label = tk.Label(root, text="", font=("Arial", 16))
+    answer_label.pack(pady=10)
+
+    root.mainloop()
+
+Getting a number
+~~~~~~~~~~~~~~~~~~
+
+| ``get()`` always gives back a **string** (text), even if the user typed a number.
+| Text cannot be used in maths, so turn it into a number first:
+
+- ``int(entry.get())`` for whole numbers, e.g. ``7``
+- ``float(entry.get())`` for decimal numbers, e.g. ``2.5``
+
+| If the user types something that is not a number, Python shows a ``ValueError``.
+| ``try`` and ``except`` catch the error and show a friendly message instead of crashing.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def double_it():
+        try:
+            number = float(number_entry.get())          # Text -> number
+            answer_label.config(text=number * 2)
+        except ValueError:
+            answer_label.config(text="Please type a number")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Getting a number")
+
+    number_entry = tk.Entry(root, font=("Arial", 16), width=10)
+    number_entry.pack(pady=10)
+
+    double_button = tk.Button(root, text="Double it", command=double_it)
+    double_button.pack()
+
+    answer_label = tk.Label(root, text="", font=("Arial", 16))
+    answer_label.pack(pady=10)
+
+    root.mainloop()
+
+delete
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** removes text from the box.
+| **How to write it:** ``entry.delete(0, tk.END)``
+| ``0`` means the first character and ``tk.END`` means the end, so this clears **everything**.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def clear():
+        entry.delete(0, tk.END)     # Remove all the text
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("delete")
+
+    entry = tk.Entry(root, font=("Arial", 16))
+    entry.pack(pady=20)
+
+    clear_button = tk.Button(root, text="Clear", command=clear)
+    clear_button.pack()
+
+    root.mainloop()
+
+insert
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** puts text into the box from your code.
+| **How to write it:** ``entry.insert(0, "text")``
+| ``0`` puts the text at the start. Use ``tk.END`` to add it to the end instead.
+| To **replace** the text, ``delete`` it first and then ``insert``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def fill_in():
+        entry.delete(0, tk.END)         # Clear the box first
+        entry.insert(0, "Parade")       # Then put in the new text
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("insert")
+
+    entry = tk.Entry(root, font=("Arial", 16))
+    entry.insert(0, "Type here")        # Starting text
+    entry.pack(pady=20)
+
+    fill_button = tk.Button(root, text="Fill in", command=fill_in)
+    fill_button.pack()
+
+    root.mainloop()
+
+focus_set
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** puts the flashing typing cursor in the box, so the user can type straight away without clicking.
+| **How to write it:** ``entry.focus_set()``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("focus_set")
+
+    first_entry = tk.Entry(root, font=("Arial", 16))
+    first_entry.pack(pady=10)
+
+    second_entry = tk.Entry(root, font=("Arial", 16))
+    second_entry.pack(pady=10)
+
+    second_entry.focus_set()        # The cursor starts in the second box
+
+    root.mainloop()
+
+select_range
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** highlights (selects) text in the box. Whatever the user types next replaces the highlighted text.
+| **How to write it:** ``entry.select_range(0, tk.END)`` highlights everything.
+| It is often used with ``focus_set()`` to let the user quickly retype a wrong answer.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def check():
+        if answer_entry.get() == "12":
+            result_label.config(text="Correct!", fg="green")
+        else:
+            result_label.config(text="Try again", fg="red")
+            answer_entry.focus_set()                    # Cursor back in the box
+            answer_entry.select_range(0, tk.END)        # Highlight the wrong answer
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("select_range")
+
+    question_label = tk.Label(root, text="What is 3 x 4?", font=("Arial", 16))
+    question_label.pack(pady=5)
+
+    answer_entry = tk.Entry(root, font=("Arial", 16), width=5)
+    answer_entry.pack()
+
+    check_button = tk.Button(root, text="Check", command=check)
+    check_button.pack(pady=5)
+
+    result_label = tk.Label(root, text="", font=("Arial", 16))
+    result_label.pack()
+
+    root.mainloop()
+
+bind (pressing Enter)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What it does:** runs a function when a key is pressed in the box.
+| **How to write it:** ``entry.bind("<Return>", function_name)``
+| ``"<Return>"`` is the Enter key.
+| A function run by ``bind`` is given extra information about the key press, so the function needs a parameter called ``event``.
+| Writing ``event=None`` lets the same function work for a button too.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def say_hello(event=None):
+        answer_label.config(text="Hello " + name_entry.get())
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("bind")
+
+    name_entry = tk.Entry(root, font=("Arial", 16))
+    name_entry.pack(pady=10)
+    name_entry.bind("<Return>", say_hello)      # Press Enter to run say_hello
+
+    hello_button = tk.Button(root, text="Say hello", command=say_hello)
+    hello_button.pack()
+
+    answer_label = tk.Label(root, text="", font=("Arial", 16))
+    answer_label.pack(pady=10)
+
+    root.mainloop()
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes one or more options **after** the entry has been made.
+| **How to write it:** ``entry.config(option=value)``
+| A program cannot ``insert`` or ``delete`` while the state is ``"readonly"``, so change it to ``"normal"`` first, then back again.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_answer():
+        answer_entry.config(state="normal")         # Unlock the box
+        answer_entry.delete(0, tk.END)
+        answer_entry.insert(0, "Canberra")
+        answer_entry.config(state="readonly")       # Lock it again
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("config")
+
+    question_label = tk.Label(root, text="Capital of Australia?", font=("Arial", 14))
+    question_label.pack(pady=5)
+
+    answer_entry = tk.Entry(root, font=("Arial", 16), state="readonly")
+    answer_entry.pack()
+
+    show_button = tk.Button(root, text="Show answer", command=show_answer)
+    show_button.pack(pady=10)
+
+    root.mainloop()
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``font``
+      - Font name, size and style
+      - ``font=("Arial", 16)``
+    * - ``width``
+      - Width of the box in characters
+      - ``width=10``
+    * - ``fg``
+      - Colour of the typed letters
+      - ``fg="navy"``
+    * - ``bg``
+      - Colour of the box
+      - ``bg="lightyellow"``
+    * - ``justify``
+      - Line up the text left, centre or right
+      - ``justify="center"``
+    * - ``show``
+      - Hide typing (passwords)
+      - ``show="*"``
+    * - ``relief``, ``borderwidth``
+      - Border style and thickness
+      - ``relief="solid", borderwidth=2``
+    * - ``state``
+      - Allow or stop typing
+      - ``state="readonly"``
+    * - ``textvariable``
+      - Link the box to a StringVar
+      - ``textvariable=word``
+    * - ``get()``
+      - Read the typed text
+      - ``name = entry.get()``
+    * - ``delete()``
+      - Clear the box
+      - ``entry.delete(0, tk.END)``
+    * - ``insert()``
+      - Put text in the box
+      - ``entry.insert(0, "hi")``
+    * - ``focus_set()``
+      - Put the cursor in the box
+      - ``entry.focus_set()``
+    * - ``select_range()``
+      - Highlight the text
+      - ``entry.select_range(0, tk.END)``
+    * - ``bind()``
+      - Run a function when a key is pressed
+      - ``entry.bind("<Return>", go)``
+    * - ``config()``
+      - Change options later
+      - ``entry.config(bg="pink")``
 
 ----
 
 .. admonition:: Tasks
 
-    #. Create a Tkinter application with a window size of 400x300, an `Entry` widget using the `Comic Sans MS` font size 20, a background color of `#fafafa`, a foreground color of `#2f2f2f`, a borderwidth of 2 with a sunken relief style, left-aligned text, and a width of 20 characters, with the widget displayed inside the window using padding of 20 in both directions and internal y padding of 5.
-
-        .. image:: images/entry_question.png
-            :scale: 67
-
-    #. Create a Tkinter application with a window size of 400x300 containing a **password Entry** widget. Use the `Comic Sans MS` font size 20, a background color of `#fafafa`, a foreground color of `#2f2f2f`, a borderwidth of 2 with a sunken relief style, left-aligned text, a width of 20 characters, and display `*` characters instead of the typed password. Display the widget with padding of 20 in both directions and internal y padding of 5.
-
-        .. image:: images/entry_question2.png
-            :scale: 67
-
+    #. Make a window titled "Sign in" that is 300x200. Add a label "Username:" and an Entry below it using Arial size 16, with a light blue background.
+    #. Add a label "Password:" and a password Entry that shows ``"*"`` instead of the letters typed.
+    #. Make an Entry and a button labelled "Clear". When the button is clicked, the Entry is emptied.
+    #. Make an Entry where the user types their age, and a button labelled "Next year". When it is clicked, a label shows how old they will be next year. Use ``try`` and ``except`` so the program does not crash if a word is typed.
 
     .. dropdown::
         :icon: codescan
@@ -72,600 +606,98 @@ Entry example
 
             .. tab-item:: Q1
 
-                Create a Tkinter window with an entry widget.
-
                 .. code-block:: python
 
                     import tkinter as tk
 
-                    # Create the main window
                     root = tk.Tk()
-                    root.title("Entry Alphabet Example")
-                    root.geometry("400x300")
+                    root.geometry("300x200")
+                    root.title("Sign in")
 
-                    # Define the custom font
-                    custom_font=("Comic Sans MS", 20)
+                    user_label = tk.Label(root, text="Username:")
+                    user_label.pack()
 
-                    # First Entry widget
-                    entry = tk.Entry(
-                        root,
-                        font=custom_font,
-                        bg="#fafafa",
-                        fg="#2f2f2f",
-                        borderwidth=2,
-                        relief="sunken",
-                        justify="left",
-                        width=20
-                    )
-                    entry.pack(padx=20, pady=20, ipady=5)
+                    user_entry = tk.Entry(root, font=("Arial", 16), bg="lightblue")
+                    user_entry.pack()
 
-                    # Run the Tkinter event loop
                     root.mainloop()
-
 
             .. tab-item:: Q2
 
-                Create a Tkinter window with a password Entry widget.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Sign in")
+
+                    user_label = tk.Label(root, text="Username:")
+                    user_label.pack()
+
+                    user_entry = tk.Entry(root, font=("Arial", 16), bg="lightblue")
+                    user_entry.pack()
+
+                    password_label = tk.Label(root, text="Password:")
+                    password_label.pack()
+
+                    password_entry = tk.Entry(root, font=("Arial", 16), bg="lightblue", show="*")
+                    password_entry.pack()
+
+                    root.mainloop()
+
+            .. tab-item:: Q3
 
                 .. code-block:: python
 
                     import tkinter as tk
 
-                    # Create the main window
+
+                    def clear():
+                        entry.delete(0, tk.END)
+
+
                     root = tk.Tk()
-                    root.title("Password Entry Example")
-                    root.geometry("400x300")
+                    root.geometry("300x200")
+                    root.title("Clear")
 
-                    # Define the custom font
-                    custom_font = ("Comic Sans MS", 20)
+                    entry = tk.Entry(root, font=("Arial", 16))
+                    entry.pack(pady=20)
 
-                    # Create the password Entry widget
-                    entry = tk.Entry(
-                        root,
-                        font=custom_font,
-                        bg="#fafafa",
-                        fg="#2f2f2f",
-                        borderwidth=2,
-                        relief="sunken",
-                        justify="left",
-                        width=20,
-                        show="*"
-                    )
-                    entry.pack(padx=20, pady=20, ipady=5)
+                    clear_button = tk.Button(root, text="Clear", command=clear)
+                    clear_button.pack()
 
-                    # Run the Tkinter event loop
                     root.mainloop()
 
-----
+            .. tab-item:: Q4
 
-Entry methods
-----------------------------------------------------
+                .. code-block:: python
 
-| Retrieve the text using ``text = entry_widget.get()``.
-| Clear the text using ``entry_widget.delete(0, tk.END)``.
-| Insert text using ``entry_widget.insert(0, "text")``.
-| Give the Entry widget keyboard focus using ``entry_widget.focus_set()``.
-| Select all text using ``entry_widget.select_range(0, tk.END)``.
+                    import tkinter as tk
 
-.. py:function:: text = entry_widget.get()
 
-    | Retrieves the current text from the Entry widget.
-    | Returns the text as a string.
+                    def next_year():
+                        try:
+                            age = int(age_entry.get())
+                            answer_label.config(text=f"Next year you will be {age + 1}")
+                        except ValueError:
+                            answer_label.config(text="Please type a whole number")
 
-.. py:function:: entry_widget.delete(first, last=None)
 
-    | Deletes characters from the Entry widget.
-    | Use ``entry_widget.delete(0, tk.END)`` to clear all text.
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Age")
 
-.. py:function:: entry_widget.insert(index, text)
+                    age_label = tk.Label(root, text="How old are you?")
+                    age_label.pack(pady=5)
 
-    | Inserts ``text`` at the specified ``index``.
-    | Use ``entry_widget.insert(0, "text")`` to insert text at the beginning.
+                    age_entry = tk.Entry(root, font=("Arial", 16), width=5)
+                    age_entry.pack()
 
-.. py:function:: entry_widget.focus_set()
+                    next_button = tk.Button(root, text="Next year", command=next_year)
+                    next_button.pack(pady=5)
 
-    | Gives the Entry widget keyboard focus.
-    | The insertion cursor is placed in the widget ready for typing.
+                    answer_label = tk.Label(root, text="", font=("Arial", 14))
+                    answer_label.pack()
 
-.. py:function:: entry_widget.select_range(start, end)
-
-    | Selects the text between ``start`` and ``end``.
-    | Use ``entry_widget.select_range(0, tk.END)`` to select all text.
-
-
-----
-
-Entry method examples
-----------------------------------------------------
-
-get example
-~~~~~~~~~~~~~~~~~~
-
-| ``get()`` reads what the user has typed. The result is always a string.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def say_hello():
-        name = name_entry.get()  # Read the typed text
-        result_label.config(text=f"Hello, {name}!")
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Entry get")
-
-    name_entry = tk.Entry(root, font=("Arial", 16), width=15)
-    name_entry.pack(pady=10)
-
-    button = tk.Button(root, text="Say hello", font=("Arial", 14), command=say_hello)
-    button.pack()
-
-    result_label = tk.Label(root, text="", font=("Arial", 16))
-    result_label.pack(pady=10)
-
-    root.mainloop()
-
-Numbers from an Entry
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| ``get()`` returns text, so use ``float()`` or ``int()`` to turn it into a number before doing any maths.
-| ``try`` and ``except ValueError`` stop the program from crashing if the user types something that is not a number.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def convert():
-        try:
-            inches = float(inches_entry.get())  # Text -> number
-            cm = inches * 2.54
-            result_label.config(text=f"{cm:.2f} cm", fg="black")
-        except ValueError:
-            result_label.config(text="Please enter a number", fg="red")
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Inches to cm")
-
-    inches_entry = tk.Entry(root, font=("Arial", 16), width=10)
-    inches_entry.pack(pady=10)
-
-    button = tk.Button(root, text="Convert", font=("Arial", 14), command=convert)
-    button.pack()
-
-    result_label = tk.Label(root, text="", font=("Arial", 16))
-    result_label.pack(pady=10)
-
-    root.mainloop()
-
-insert and delete example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| ``insert(0, "text")`` puts text into the Entry, e.g. a starting value.
-| ``delete(0, tk.END)`` removes everything from the first character (0) to the end.
-| To replace the text, delete first and then insert.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def clear():
-        word_entry.delete(0, tk.END)  # Remove all text
-
-
-    def reset():
-        word_entry.delete(0, tk.END)  # Remove all text ...
-        word_entry.insert(0, "hello")  # ... then put the starting text back
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Entry insert and delete")
-
-    word_entry = tk.Entry(root, font=("Arial", 16), width=15)
-    word_entry.insert(0, "hello")  # Starting text
-    word_entry.pack(pady=10)
-
-    clear_button = tk.Button(root, text="Clear", font=("Arial", 14), command=clear)
-    clear_button.pack(pady=5)
-
-    reset_button = tk.Button(root, text="Reset", font=("Arial", 14), command=reset)
-    reset_button.pack(pady=5)
-
-    root.mainloop()
-
-focus_set and select_range example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| ``focus_set()`` puts the typing cursor in the Entry so the user can type straight away without clicking.
-| ``select_range(0, tk.END)`` highlights all the text, so the next thing typed replaces it.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def check_answer():
-        if answer_entry.get() == "12":
-            result_label.config(text="Correct!", fg="green")
-        else:
-            result_label.config(text="Try again", fg="red")
-            answer_entry.focus_set()  # Put the cursor back in the Entry
-            answer_entry.select_range(0, tk.END)  # Highlight the wrong answer
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Entry focus")
-
-    question_label = tk.Label(root, text="What is 3 x 4?", font=("Arial", 16))
-    question_label.pack(pady=5)
-
-    answer_entry = tk.Entry(root, font=("Arial", 16), width=10)
-    answer_entry.pack(pady=5)
-    answer_entry.focus_set()  # Ready to type as soon as the window opens
-
-    button = tk.Button(root, text="Check", font=("Arial", 14), command=check_answer)
-    button.pack(pady=5)
-
-    result_label = tk.Label(root, text="", font=("Arial", 16))
-    result_label.pack()
-
-    root.mainloop()
-
-Using the Enter key
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-| ``bind("<Return>", function)`` runs a function when the Enter key is pressed in the Entry.
-| A function called by ``bind`` is given an ``event`` value, so the function needs an ``event`` parameter.
-| Using ``event=None`` lets the same function also be used by a button.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def double_it(event=None):
-        try:
-            number = float(number_entry.get())
-            result_label.config(text=f"Double: {number * 2}")
-        except ValueError:
-            result_label.config(text="Please enter a number")
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Entry Enter key")
-
-    number_entry = tk.Entry(root, font=("Arial", 16), width=10)
-    number_entry.pack(pady=10)
-    number_entry.bind("<Return>", double_it)  # Press Enter to run double_it
-
-    button = tk.Button(root, text="Double", font=("Arial", 14), command=double_it)
-    button.pack()
-
-    result_label = tk.Label(root, text="", font=("Arial", 16))
-    result_label.pack(pady=10)
-
-    root.mainloop()
-
-textvariable example
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| A ``StringVar`` can be linked to an Entry with ``textvariable``.
-| ``.get()`` on the variable reads the Entry text and ``.set()`` changes it.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def shout():
-        message.set(message.get().upper())  # Read, change, and put back
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Entry textvariable")
-
-    message = tk.StringVar(value="hello there")
-
-    message_entry = tk.Entry(root, textvariable=message, font=("Arial", 16), width=15)
-    message_entry.pack(pady=10)
-
-    button = tk.Button(root, text="Shout", font=("Arial", 14), command=shout)
-    button.pack()
-
-    root.mainloop()
-
-state example
-~~~~~~~~~~~~~~~~~~
-
-| ``state="readonly"`` shows text that can be selected and copied but not changed. It is useful for showing an answer.
-| ``state="disabled"`` greys the Entry out completely.
-| A program cannot ``insert`` or ``delete`` while the Entry is readonly or disabled, so set ``state="normal"`` first, change the text, then set the state back.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def calculate():
-        try:
-            side = float(side_entry.get())
-            area = side * side
-        except ValueError:
-            area = "?"
-        area_entry.config(state="normal")  # Unlock
-        area_entry.delete(0, tk.END)
-        area_entry.insert(0, area)
-        area_entry.config(state="readonly")  # Lock again
-
-
-    root = tk.Tk()
-    root.geometry("300x220")
-    root.title("Entry state")
-
-    tk.Label(root, text="Side length", font=("Arial", 14)).pack()
-    side_entry = tk.Entry(root, font=("Arial", 16), width=10)
-    side_entry.pack(pady=5)
-
-    button = tk.Button(root, text="Area of square", font=("Arial", 14), command=calculate)
-    button.pack(pady=5)
-
-    area_entry = tk.Entry(root, font=("Arial", 16), width=10, state="readonly")
-    area_entry.pack(pady=5)
-
-    root.mainloop()
-
-----
-
-Option details
---------------------
-
-.. py:function:: entry_widget = tk.Entry(parent, option=value)
-
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-    **Parameters:**
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``entry_widget = tk.Entry(parent, bg="color")``
-        | Description: Sets the background color of the entry field.
-        | Default: SystemWindow RGB: (255, 255, 255)
-        | Example: ``entry_widget = tk.Entry(root, bg="lightgrey")``
-
-    .. py:attribute:: bd
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``entry_widget = tk.Entry(parent, borderwidth=width)``
-        | Description: Sets the width of the border around the entry field.
-        | Default: ``2``
-        | Example: ``entry_widget = tk.Entry(root, borderwidth=5)``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``entry_widget = tk.Entry(parent, cursor="cursor_type")``
-        | Description: Changes the cursor when hovering over the entry field.
-        | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(root, cursor="xterm")``
-        | Possible values include:
-
-            - **"arrow"**: Standard arrow cursor.
-            - **"xterm"**: I-beam cursor for text selection.
-            - **"hand2"**: Hand cursor.
-            - **"cross"**: Crosshair cursor.
-            - **"plus"**: Plus sign cursor.
-            - **"wait"**: Hourglass cursor.
-
-    .. py:attribute:: disabledbackground
-
-        | Syntax: ``entry_widget = tk.Entry(parent, disabledbackground="color")``
-        | Description: Sets the background color when the entry is disabled.
-        | Default: SystemDisabled RGB: (240, 240, 240)
-        | Example: ``entry_widget = tk.Entry(root, disabledbackground="lightgrey")``
-
-    .. py:attribute:: disabledforeground
-
-        | Syntax: ``entry_widget = tk.Entry(parent, disabledforeground="color")``
-        | Description: Sets the text color when the entry is disabled.
-        | Default: SystemDisabledText RGB: (109, 109, 109)
-        | Example: ``entry_widget = tk.Entry(root, disabledforeground="darkgrey")``
-
-    .. py:attribute:: exportselection
-
-        | Syntax: ``entry_widget = tk.Entry(parent, exportselection=boolean)``
-        | Description: Determines if the text selection is exported to the clipboard.
-        | Default: ``1``
-        | Example: ``entry_widget = tk.Entry(root, exportselection=False)``
-
-    .. py:attribute:: font
-
-        | Syntax: ``entry_widget = tk.Entry(parent, font=("font_name", size))``
-        | Description: Sets the font type and size of the entry text.
-        | Default: System font and size
-        | Example: ``entry_widget = tk.Entry(root, font=("Arial", 12))``
-
-    .. py:attribute:: foreground
-    .. py:attribute:: fg
-
-        | Syntax: ``entry_widget = tk.Entry(parent, fg="color")``
-        | Description: Sets the text color of the entry field.
-        | Default: SystemWindowText RGB: (0, 0, 0)
-        | Example: ``entry_widget = tk.Entry(root, fg="blue")``
-
-    .. py:attribute:: highlightbackground
-
-        | Syntax: ``entry_widget = tk.Entry(parent, highlightbackground="color")``
-        | Description: Sets the color of the highlight when the entry does not have focus.
-        | Default: SystemButtonFace RGB: (240, 240, 240)
-        | Example: ``entry_widget = tk.Entry(root, highlightbackground="grey")``
-
-    .. py:attribute:: highlightcolor
-
-        | Syntax: ``entry_widget = tk.Entry(parent, highlightcolor="color")``
-        | Description: Sets the color of the highlight when the entry has focus.
-        | Default: SystemHighlight RGB: (100, 100, 100)
-        | Example: ``entry_widget = tk.Entry(root, highlightcolor="blue")``
-
-    .. py:attribute:: highlightthickness
-
-        | Syntax: ``entry_widget = tk.Entry(parent, highlightthickness=thickness)``
-        | Description: Sets the thickness of the focus highlight border.
-        | Default: ``1``
-        | Example: ``entry_widget = tk.Entry(root, highlightthickness=2)``
-
-    .. py:attribute:: insertbackground
-
-        | Syntax: ``entry_widget = tk.Entry(parent, insertbackground="color")``
-        | Description: Sets the color of the insertion cursor (caret).
-        | Default: SystemWindowText RGB: (0, 0, 0)
-        | Example: ``entry_widget = tk.Entry(root, insertbackground="red")``
-
-    .. py:attribute:: insertborderwidth
-
-        | Syntax: ``entry_widget = tk.Entry(parent, insertborderwidth=width)``
-        | Description: Sets the width of the insertion cursor's border.
-        | Default: ``0``
-        | Example: ``entry_widget = tk.Entry(root, insertborderwidth=1)``
-
-    .. py:attribute:: insertofftime
-
-        | Syntax: ``entry_widget = tk.Entry(parent, insertofftime=milliseconds)``
-        | Description: Sets the time the insertion cursor is off per blink in milliseconds.
-        | Default: ``300``
-        | Example: ``entry_widget = tk.Entry(root, insertofftime=500)``
-
-    .. py:attribute:: insertontime
-
-        | Syntax: ``entry_widget = tk.Entry(parent, insertontime=milliseconds)``
-        | Description: Sets the time the insertion cursor is on per blink in milliseconds.
-        | Default: ``600``
-        | Example: ``entry_widget = tk.Entry(root, insertontime=500)``
-
-    .. py:attribute:: insertwidth
-
-        | Syntax: ``entry_widget = tk.Entry(parent, insertwidth=width)``
-        | Description: Sets the width of the insertion cursor.
-        | Default: ``2``
-        | Example: ``entry_widget = tk.Entry(root, insertwidth=3)``
-
-    .. py:attribute:: justify
-
-        | Syntax: ``entry_widget = tk.Entry(parent, justify="alignment")``
-        | Description: Specifies how the text is aligned within the entry field.
-        | It doesn't change where insertion starts.
-        | Default: ``left``
-        | Example: ``entry_widget = tk.Entry(root, justify="center")``
-        | Possible values include:
-
-            - **"left"**: Aligns text to the left.
-            - **"center"**: Centers text within the field.
-            - **"right"**: Aligns text to the right.
-
-    .. py:attribute:: relief
-
-        | Syntax: ``entry_widget = tk.Entry(parent, relief="relief_type")``
-        | Description: Sets the border style of the entry field.
-        | Default: ``flat``
-        | Example: ``entry_widget = tk.Entry(root, relief="sunken")``
-        | Possible values include:
-
-            - **"flat"**
-            - **"raised"**
-            - **"sunken"**
-            - **"groove"**
-            - **"ridge"**
-            - **"solid"**
-
-    .. py:attribute:: show
-
-        | Syntax: ``entry_widget = tk.Entry(parent, show="character")``
-        | Description: Masks characters, often used for passwords.
-        | Default: ``""``
-        | Example: ``entry_widget = tk.Entry(root, show="*")``
-
-    .. py:attribute:: state
-
-        | Syntax: ``entry_widget = tk.Entry(parent, state="state")``
-        | Description: Sets the state of the entry field.
-        | Default: ``normal``
-        | Example: ``entry_widget = tk.Entry(root, state="disabled")``
-        | Possible values include:
-
-            - **"normal"**
-            - **"disabled"**
-            - **"readonly"**
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``entry_widget = tk.Entry(parent, takefocus=boolean)``
-        | Description: Determines if the entry field can receive focus via keyboard navigation.
-        | Default: ``1``
-        | Example: ``entry_widget = tk.Entry(root, takefocus=False)``
-
-    .. py:attribute:: textvariable
-
-        | Syntax: ``entry_widget = tk.Entry(parent, textvariable=variable)``
-        | Description: Associates a Tkinter variable (usually a StringVar) with the entry text.
-        | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(root, textvariable=my_var)``
-
-    .. py:attribute:: validate
-
-        | Syntax: ``entry_widget = tk.Entry(parent, validate="validation_type")``
-        | Description: Sets the type of validation to apply to the entry field.
-        | Default: ``none``
-        | Example: ``entry_widget = tk.Entry(root, validate="focusout")``
-        | Possible values include:
-
-            - **"none"**: No validation.
-            - **"focus"**: Validation occurs when the widget gains or loses focus.
-            - **"focusin"**: Validation occurs when the entry gains focus.
-            - **"focusout"**: Validation occurs when the entry loses focus.
-            - **"key"**: Validation occurs on every keystroke.
-            - **"all"**: Validation occurs on every keystroke and when the entry loses or gains focus.
-
-    .. py:attribute:: width
-
-        | Syntax: ``entry_widget = tk.Entry(parent, width=characters)``
-        | Description: Sets the width of the entry field in characters.
-        | Default: ``20``
-        | Example: ``entry_widget = tk.Entry(root, width=30)``
-
-    .. py:attribute:: xscrollcommand
-
-        | Syntax: ``entry_widget = tk.Entry(parent, xscrollcommand=scroll_function)``
-        | Description: Specifies a function for horizontal scrolling.
-        | Default: ``None``
-        | Example: ``entry_widget = tk.Entry(root, xscrollcommand=my_scroll_function)``
-
-
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``Entry`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.Entry(root)
-    widget_options = widget.keys()
-
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
-
+                    root.mainloop()

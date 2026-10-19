@@ -3,79 +3,564 @@ tk Text
 ====================================================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Text>`_
-| See: `<https://www.geeksforgeeks.org/python-tkinter-text-widget/>`_
 
 ----
 
-Usage
----------------
+What is a Text widget?
+-------------------------
 
-| The `tkinter.Text` widget provides a versatile multi-line text area that you can use for various purposes such as comments or descriptions
-| To create a multi-line text widget the general syntax is (assuming import via "import tkinter as tk"):
-
-.. py:function:: text_widget  = tk.Text(parent, option=value)
-
-    | `parent` is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-| Options can also be changed or added anew after widget creation.
-
-.. py:function:: text_widget.config(option=value)
-
-    | text_widget is the Text widget object.
-    | Options can be passed as parameters separated by commas.
+| A **Text** widget is a big box that holds **many lines** of text.
+| The user can type in it, like a small word processor, and the program can write in it too.
+| Use it for longer writing such as a story or comments, or for showing a list of results.
+| For a short, one-line answer, use an **Entry** instead.
 
 ----
 
-Text widget example
----------------------------------------------
+Making a Text widget
+-------------------------
 
-.. image:: images/text.png
-        :scale: 100
+| Every Text widget is made in two steps:
 
-| The code below sets some widget options at creation.
-| It also uses **.config()** to add other custom options.
+#. **Create** the box with ``tk.Text(...)``.
+#. **Place** the box in the window with ``.pack()``.
+
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first Text")     # Words in the title bar
+
+    text_box = tk.Text(root, width=30, height=6)    # 1. Create the box
+    text_box.pack(pady=10)                          # 2. Place it in the window
+
+    root.mainloop()                 # Keep the window open
+
+| Click in the box and type. Press Enter to start a new line.
+
+----
+
+Positions in a Text widget
+-----------------------------
+
+| Many Text methods need to know **where** in the box to work. A position is written as a string: ``"line.character"``
+
+- **Lines** are counted from **1**.
+- **Characters** on each line are counted from **0**.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 30 70
+
+    * - Position
+      - Meaning
+    * - ``"1.0"``
+      - Line 1, character 0: the very start of the box
+    * - ``"2.0"``
+      - The start of line 2
+    * - ``"1.5"``
+      - Line 1, after the first 5 characters
+    * - ``tk.END``
+      - The very end of all the text
+    * - ``"end-1c"``
+      - The end, minus 1 character (see ``get`` below)
+
+----
+
+Text options
+-------------------
+
+| Options are written as ``option=value`` inside ``tk.Text( )``, separated by commas.
+
+width and height
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** set the size of the box.
+| ``width`` is measured in **characters** (letters), and ``height`` in **lines**.
+| **How to write them:** ``width=30``, ``height=6``
+| If you leave them out, the box is 80 characters wide and 24 lines high, which is very big.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("width and height")
+
+    small_box = tk.Text(root, width=20, height=3)
+    small_box.pack(pady=10)
+
+    root.mainloop()
+
+font
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the style and size of all the letters in the box.
+| **How to write it:** ``font=("font name", size)`` or ``font=("font name", size, "style")``
+| A bigger font makes the box bigger too, because width and height are counted in letters and lines.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("350x200")
+    root.title("font")
+
+    text_box = tk.Text(root, width=25, height=4, font=("Comic Sans MS", 14))
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+fg and bg (colours)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``fg`` sets the colour of the letters. ``bg`` sets the colour of the box.
+| **How to write them:** ``fg="colour"``, ``bg="colour"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("fg and bg")
+
+    text_box = tk.Text(root, width=30, height=6, fg="white", bg="black")
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+insertbackground and selectbackground
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:**
+| ``insertbackground`` sets the colour of the flashing typing cursor.
+| ``selectbackground`` sets the colour of the highlight when text is selected with the mouse.
+| **How to write them:** ``insertbackground="colour"``, ``selectbackground="colour"``
+| These are useful with a dark ``bg``, where the normal black cursor is hard to see.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("cursor colours")
+
+    text_box = tk.Text(root, width=30, height=6, fg="white", bg="black",
+                       insertbackground="white", selectbackground="purple")
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+wrap
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** decides what happens when a line is too long for the box.
+| **How to write it:** ``wrap="word"``
+| **Values:**
+
+- ``"char"`` - wraps in the middle of a word (the default).
+- ``"word"`` - wraps between words, like a word processor. This is usually the best choice.
+- ``"none"`` - does not wrap; the line keeps going off the side.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("wrap")
+
+    text_box = tk.Text(root, width=25, height=5, wrap="word")
+    text_box.insert("1.0", "This sentence is too long for one line, so it wraps between words.")
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+padx and pady
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** add empty space between the edge of the box and the text, so it is not squashed against the border.
+| **How to write them:** ``padx=10``, ``pady=10`` (measured in pixels)
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("padx and pady")
+
+    text_box = tk.Text(root, width=25, height=4, padx=15, pady=15)
+    text_box.insert("1.0", "There is space\naround this text.")
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+relief and borderwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** change the border around the box.
+| ``relief`` is the border style. ``borderwidth`` is how thick it is in pixels.
+| **How to write them:** ``relief="solid", borderwidth=2``
+| **Styles:** ``"sunken"`` (the default), ``"solid"``, ``"flat"``, ``"raised"``, ``"groove"``, ``"ridge"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("relief")
+
+    text_box = tk.Text(root, width=30, height=6, relief="solid", borderwidth=2)
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+state
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** controls whether the user can type in the box.
+| **How to write it:** ``state="disabled"``
+| **Values:** ``"normal"`` (can type, the default) and ``"disabled"`` (cannot type; good for showing results).
+| While a box is ``"disabled"``, your code cannot change it either. See the **config** method below for how to get around this.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("state")
+
+    text_box = tk.Text(root, width=30, height=6)
+    text_box.insert("1.0", "You can read this,\nbut you cannot change it.")
+    text_box.config(state="disabled")       # Lock the box after putting text in
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+undo
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** turns on undo, so **Ctrl+Z** undoes typing and **Ctrl+Y** redoes it.
+| **How to write it:** ``undo=True``
+| Undo is off unless you turn it on.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("undo")
+
+    text_box = tk.Text(root, width=30, height=6, undo=True)
+    text_box.pack(pady=10)
+
+    root.mainloop()
+
+----
+
+Text methods
+-------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot, e.g. ``text_box.insert(...)``.
+
+insert
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** puts text into the box from your code.
+| **How to write it:** ``text_box.insert(position, "text")``
+| ``text_box.insert("1.0", "Hi")`` puts text at the **start**.
+| ``text_box.insert(tk.END, "Hi")`` adds text to the **end**. This is the one you will use most.
+| Add ``"\n"`` at the end of the text so the next insert starts on a new line.
 
 .. code-block:: python
 
     import tkinter as tk
 
 
+    def add_line():
+        text_box.insert(tk.END, "Another line\n")
+
+
     root = tk.Tk()
-    root.title("Text Widget Example")
+    root.geometry("300x250")
+    root.title("insert")
+
+    text_box = tk.Text(root, width=30, height=6)
+    text_box.insert("1.0", "First line\n")       # Starting text
+    text_box.pack(pady=10)
+
+    add_button = tk.Button(root, text="Add a line", command=add_line)
+    add_button.pack()
+
+    root.mainloop()
+
+get
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** reads text from the box.
+| **How to write it:** ``writing = text_box.get("1.0", "end-1c")``
+| This reads from the start (``"1.0"``) to the end. The Text widget always adds a hidden new line at the end,
+  so ``"end-1c"`` ("end minus 1 character") leaves it out.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def count_words():
+        writing = text_box.get("1.0", "end-1c")     # Read everything that was typed
+        words = len(writing.split())                # Split into words and count them
+        count_label.config(text=f"Words: {words}")
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("get")
+
+    text_box = tk.Text(root, width=30, height=6, wrap="word")
+    text_box.pack(pady=10)
+
+    count_button = tk.Button(root, text="Count words", command=count_words)
+    count_button.pack()
+
+    count_label = tk.Label(root, text="Words: 0", font=("Arial", 14))
+    count_label.pack(pady=5)
+
+    root.mainloop()
+
+delete
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** removes text from the box.
+| **How to write it:** ``text_box.delete("1.0", tk.END)`` clears **everything**.
+| ``text_box.delete("1.0", "2.0")`` deletes only the first line (from the start of line 1 to the start of line 2).
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def clear():
+        text_box.delete("1.0", tk.END)
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("delete")
+
+    text_box = tk.Text(root, width=30, height=6)
+    text_box.insert("1.0", "Line 1\nLine 2\nLine 3")
+    text_box.pack(pady=10)
+
+    clear_button = tk.Button(root, text="Clear", command=clear)
+    clear_button.pack()
+
+    root.mainloop()
+
+see
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** scrolls the box so a position can be seen.
+| **How to write it:** ``text_box.see(tk.END)`` scrolls to the bottom.
+| Use it after ``insert`` so the newest line is always visible, even when the box is full.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def add_line():
+        text_box.insert(tk.END, "New line\n")
+        text_box.see(tk.END)        # Scroll down to show the new line
+
+
+    root = tk.Tk()
     root.geometry("300x200")
+    root.title("see")
 
-    # Create a Text widget
-    text = tk.Text(root, height=6, width=40, wrap="word", font=("Arial", 12))
-    text.pack(padx=10, pady=10)
+    text_box = tk.Text(root, width=30, height=4)
+    text_box.pack(pady=10)
 
-    # Insert initial content
-    text.insert(
-        "1.0", "Welcome to \nthe Text Widget!\nIt has multiline text.")
+    add_button = tk.Button(root, text="Add a line (click lots!)", command=add_line)
+    add_button.pack()
 
-    # Customize options
-    text.config(
-        bg="#fafafa",  # Background color
-        fg="blue",  # Text color
-        borderwidth=1,  # Border width
-        relief="solid",  # Border style
-        insertbackground="red",  # Insertion cursor color
-        selectbackground="red",   # Selection background color
-        state="normal",  # Enable editing (use "disabled" to disable)
-        padx=10,
-        pady=10
-    )
+    root.mainloop()
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes one or more options **after** the box has been made.
+| **How to write it:** ``text_box.config(option=value)``
+| A common use is a **read-only results box**. Your code cannot insert while the box is ``"disabled"``, so:
+
+#. ``config(state="normal")`` to unlock it,
+#. ``insert`` the text,
+#. ``config(state="disabled")`` to lock it again.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_table():
+        results_box.config(state="normal")          # 1. Unlock
+        results_box.delete("1.0", tk.END)
+        for number in range(1, 11):
+            results_box.insert(tk.END, f"{number} x 5 = {number * 5}\n")    # 2. Insert
+        results_box.config(state="disabled")        # 3. Lock again
+
+
+    root = tk.Tk()
+    root.geometry("300x300")
+    root.title("config")
+
+    table_button = tk.Button(root, text="Show the 5 times table", command=show_table)
+    table_button.pack(pady=10)
+
+    results_box = tk.Text(root, width=20, height=10, state="disabled")
+    results_box.pack()
+
+    root.mainloop()
+
+tag_configure (coloured text)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What it does:** makes a named style, called a **tag**, so some text can look different from the rest.
+| **How to write it:** ``text_box.tag_configure("name", option=value)``
+| Then add the tag name at the end of ``insert``: ``text_box.insert(tk.END, "text", "name")``
+| Tags can use ``foreground`` (letter colour), ``background`` and ``font``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("tags")
+
+    text_box = tk.Text(root, width=30, height=6, font=("Arial", 12))
+    text_box.pack(pady=10)
+
+    # Make the styles
+    text_box.tag_configure("title", font=("Arial", 14, "bold"))
+    text_box.tag_configure("right", foreground="green")
+    text_box.tag_configure("wrong", foreground="red")
+
+    # Use the styles
+    text_box.insert(tk.END, "Quiz results\n", "title")
+    text_box.insert(tk.END, "Question 1: correct\n", "right")
+    text_box.insert(tk.END, "Question 2: wrong\n", "wrong")
+
+    root.mainloop()
+
+Adding a scrollbar
+~~~~~~~~~~~~~~~~~~~~~~
+
+| A Text widget can scroll with the mouse wheel, but a **Scrollbar** shows the user there is more text.
+| The scrollbar and the box must be linked both ways:
+
+- ``yscrollcommand=scrollbar.set`` tells the scrollbar when the text moves.
+- ``scrollbar.config(command=text_box.yview)`` tells the text to move when the scrollbar is dragged.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("scrollbar")
+
+    scrollbar = tk.Scrollbar(root)
+    scrollbar.pack(side="right", fill="y")      # Scrollbar down the right side
+
+    text_box = tk.Text(root, width=30, height=8, yscrollcommand=scrollbar.set)
+    text_box.pack(side="left", padx=10, pady=10)
+
+    scrollbar.config(command=text_box.yview)
+
+    for number in range(1, 51):
+        text_box.insert(tk.END, f"Line {number}\n")
 
     root.mainloop()
 
 ----
 
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``width``, ``height``
+      - Size in characters and lines
+      - ``width=30, height=6``
+    * - ``font``
+      - Font name, size and style
+      - ``font=("Arial", 12)``
+    * - ``fg``, ``bg``
+      - Letter colour and box colour
+      - ``fg="white", bg="black"``
+    * - ``insertbackground``
+      - Colour of the typing cursor
+      - ``insertbackground="white"``
+    * - ``selectbackground``
+      - Colour of the highlight
+      - ``selectbackground="purple"``
+    * - ``wrap``
+      - How long lines wrap
+      - ``wrap="word"``
+    * - ``padx``, ``pady``
+      - Space between the edge and the text
+      - ``padx=10, pady=10``
+    * - ``relief``, ``borderwidth``
+      - Border style and thickness
+      - ``relief="solid", borderwidth=2``
+    * - ``state``
+      - Allow or stop typing
+      - ``state="disabled"``
+    * - ``undo``
+      - Turn on Ctrl+Z
+      - ``undo=True``
+    * - ``insert()``
+      - Put text in the box
+      - ``text_box.insert(tk.END, "Hi\n")``
+    * - ``get()``
+      - Read the text
+      - ``text_box.get("1.0", "end-1c")``
+    * - ``delete()``
+      - Remove text
+      - ``text_box.delete("1.0", tk.END)``
+    * - ``see()``
+      - Scroll to a position
+      - ``text_box.see(tk.END)``
+    * - ``config()``
+      - Change options later
+      - ``text_box.config(state="normal")``
+    * - ``tag_configure()``
+      - Make a style for some text
+      - ``text_box.tag_configure("red", foreground="red")``
+
+----
+
 .. admonition:: Tasks
 
-     #. Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a background selection color of purple, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
-
-        .. image:: images/text_question.png
-            :scale: 67
+    #. Make a window titled "Diary" that is 400x300. Add a Text widget 40 characters wide and 10 lines high that wraps between words, with a light yellow background and Arial size 12.
+    #. Add a "Clear" button below your diary that deletes all the text.
+    #. Add a "Count letters" button and a label. When clicked, the label shows how many characters have been typed. (Hint: ``len()`` counts the characters in a string.)
+    #. Make a read-only Text box and a button labelled "Countdown". When clicked, the box shows the numbers 10 down to 1, each on its own line, then "Blast off!" in red.
 
     .. dropdown::
         :icon: codescan
@@ -86,615 +571,97 @@ Text widget example
 
             .. tab-item:: Q1
 
-                Modify the given Tkinter code to change the following options to use a background color of light yellow, a text color of dark green, a background selection color of purple, a border width of 2, a border style of "groove" and disabled state so it can't be edited.
-
                 .. code-block:: python
 
                     import tkinter as tk
 
                     root = tk.Tk()
-                    root.title("Text Widget Questions")
+                    root.geometry("400x300")
+                    root.title("Diary")
 
-                    # Create a Text widget
-                    text = tk.Text(root, height=6, width=40, wrap="word", font=("Arial", 12))
-                    text.pack(padx=10, pady=10)
-
-                    # Insert initial content
-                    text.insert(
-                        "1.0", "Welcome to \nthe Text Widget!\nIt has multiline text.")
-
-                    # Customize options
-                    text.config(
-                        bg="light yellow",  # Background color
-                        fg="dark green",  # Text color
-                        borderwidth=2,  # Border width
-                        relief="groove",  # Border style
-                        insertbackground="red",  # Insertion cursor color
-                        selectbackground="purple",   # Selection background color
-                        state="disabled",  # Disable editing
-                        padx=10,
-                        pady=10
-                    )
+                    diary_box = tk.Text(root, width=40, height=10, wrap="word",
+                                        bg="lightyellow", font=("Arial", 12))
+                    diary_box.pack(pady=10)
 
                     root.mainloop()
 
-----
+            .. tab-item:: Q2
 
-Methods
-----------------------
+                .. code-block:: python
 
-| Insert text using ``text_widget.insert("1.0", "text")``.
-| Retrieve all text using ``text = text_widget.get("1.0", tk.END)``.
-| Delete all text using ``text_widget.delete("1.0", tk.END)``.
-| Scroll to the end using ``text_widget.see(tk.END)``.
-| Configure a tag for text using ``text_widget.tag_configure("red", foreground="red")``.
+                    import tkinter as tk
 
-| Text widget positions use the format "line.character".
-| For example, "1.0" is the first character on the first line.
-| The integer before the decimal represents the line number (1-indexed), and the integer after represents the character column (0-indexed).
 
-.. py:function:: text_widget.tag_configure(tag_name, option=value)
+                    def clear():
+                        diary_box.delete("1.0", tk.END)
 
-    | Configures the appearance of the specified text tag.
-    | Use ``text_widget.tag_configure("red", foreground="red")`` to create a tag to be used to display tagged text in red.
-    | Multiple options can be specified, for example ``text_widget.tag_configure("heading", font=("Arial", 16, "bold"), foreground="red")``.
 
-.. py:function:: text_widget.insert(index, text, *tags)
+                    root = tk.Tk()
+                    root.geometry("400x300")
+                    root.title("Diary")
 
-    | Inserts ``text`` at the specified ``index``.
-    | Use ``text_widget.insert("1.0", "Hello")`` to insert text at the beginning of the Text widget.
-    | Use ``text_widget.insert(tk.END, "Hello")`` to append text to the end of the existing text.
-    | ``*tags`` are zero or more tag names to apply to the inserted text. For multiple tages, quote them as a tuple.
-    | Use ``text_widget.insert(tk.END, "Error", "red")`` to insert text using the ``red`` tag.
-    | If ``index`` is outside the valid range, Tk adjusts it to the nearest valid position.
+                    diary_box = tk.Text(root, width=40, height=10, wrap="word",
+                                        bg="lightyellow", font=("Arial", 12))
+                    diary_box.pack(pady=10)
 
-.. py:function:: text_widget.get(start, end)
+                    clear_button = tk.Button(root, text="Clear", command=clear)
+                    clear_button.pack()
 
-    | Retrieves the text between ``start`` and ``end``.
-    | Use ``text_widget.get("1.0", tk.END)`` to retrieve all text.
+                    root.mainloop()
 
-.. py:function:: text_widget.delete(start, end)
+            .. tab-item:: Q3
 
-    | Deletes the text between ``start`` and ``end``.
-    | Use ``text_widget.delete("1.0", tk.END)`` to clear the widget.
+                .. code-block:: python
 
-.. py:function:: text_widget.see(index)
+                    import tkinter as tk
 
-    | Scrolls the Text widget so that the specified ``index`` is visible.
-    | Use ``text_widget.see(tk.END)`` to scroll to the end of the text.
-    | Commonly used after inserting text so the most recently added text is visible.
 
-----
+                    def count_letters():
+                        writing = diary_box.get("1.0", "end-1c")
+                        count_label.config(text=f"Characters: {len(writing)}")
 
-Text method examples
-----------------------
 
-insert and see example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    root = tk.Tk()
+                    root.geometry("400x300")
+                    root.title("Diary")
 
-| ``insert(tk.END, "text")`` adds text to the end. Use ``"\n"`` to start a new line.
-| ``see(tk.END)`` scrolls down so the newest line is visible.
+                    diary_box = tk.Text(root, width=40, height=10, wrap="word",
+                                        bg="lightyellow", font=("Arial", 12))
+                    diary_box.pack(pady=10)
 
-.. code-block:: python
+                    count_button = tk.Button(root, text="Count letters", command=count_letters)
+                    count_button.pack()
 
-    import tkinter as tk
+                    count_label = tk.Label(root, text="Characters: 0")
+                    count_label.pack()
 
-    count = 0
+                    root.mainloop()
 
+            .. tab-item:: Q4
 
-    def add_line():
-        global count
-        count = count + 1
-        log_text.insert(tk.END, f"Line {count}\n")  # Add to the end
-        log_text.see(tk.END)  # Scroll to show the newest line
+                .. code-block:: python
 
+                    import tkinter as tk
 
-    root = tk.Tk()
-    root.geometry("300x250")
-    root.title("Text insert")
 
-    log_text = tk.Text(root, height=6, width=25, font=("Arial", 12))
-    log_text.pack(pady=10)
+                    def countdown():
+                        output_box.config(state="normal")
+                        output_box.delete("1.0", tk.END)
+                        for number in range(10, 0, -1):
+                            output_box.insert(tk.END, f"{number}\n")
+                        output_box.insert(tk.END, "Blast off!", "red")
+                        output_box.config(state="disabled")
 
-    button = tk.Button(root, text="Add line", font=("Arial", 14), command=add_line)
-    button.pack()
 
-    root.mainloop()
+                    root = tk.Tk()
+                    root.geometry("300x300")
+                    root.title("Countdown")
 
-get example
-~~~~~~~~~~~~~~~~~~
+                    countdown_button = tk.Button(root, text="Countdown", command=countdown)
+                    countdown_button.pack(pady=10)
 
-| ``get("1.0", tk.END)`` reads all the text. The Text widget always adds an extra newline at the end.
-| Use ``get("1.0", "end-1c")`` ("end minus one character") to read the text without that extra newline.
+                    output_box = tk.Text(root, width=15, height=11, state="disabled")
+                    output_box.tag_configure("red", foreground="red")
+                    output_box.pack()
 
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def count_words():
-        writing = story_text.get("1.0", "end-1c")  # All text, no extra newline
-        words = len(writing.split())
-        result_label.config(text=f"Words: {words}")
-
-
-    root = tk.Tk()
-    root.geometry("300x250")
-    root.title("Text get")
-
-    story_text = tk.Text(root, height=6, width=30, wrap="word", font=("Arial", 12))
-    story_text.pack(pady=10)
-
-    button = tk.Button(root, text="Count words", font=("Arial", 14), command=count_words)
-    button.pack()
-
-    result_label = tk.Label(root, text="Words: 0", font=("Arial", 14))
-    result_label.pack(pady=5)
-
-    root.mainloop()
-
-delete example
-~~~~~~~~~~~~~~~~~~
-
-| ``delete("1.0", tk.END)`` clears all the text.
-| ``delete("1.0", "2.0")`` deletes just the first line (from the start of line 1 to the start of line 2).
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def clear_all():
-        notes_text.delete("1.0", tk.END)
-
-
-    def delete_first_line():
-        notes_text.delete("1.0", "2.0")
-
-
-    root = tk.Tk()
-    root.geometry("300x250")
-    root.title("Text delete")
-
-    notes_text = tk.Text(root, height=5, width=25, font=("Arial", 12))
-    notes_text.insert("1.0", "First line\nSecond line\nThird line")
-    notes_text.pack(pady=10)
-
-    first_button = tk.Button(root, text="Delete first line", command=delete_first_line)
-    first_button.pack(pady=5)
-
-    clear_button = tk.Button(root, text="Clear all", command=clear_all)
-    clear_button.pack()
-
-    root.mainloop()
-
-Read-only output example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| A Text widget is often used to show results that the user should not edit.
-| Text cannot be inserted while ``state="disabled"``, so set ``state="normal"`` first, insert, then set ``state="disabled"`` again.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def show_times_table():
-        output_text.config(state="normal")  # Unlock
-        output_text.delete("1.0", tk.END)
-        for n in range(1, 11):
-            output_text.insert(tk.END, f"{n} x 7 = {n * 7}\n")
-        output_text.config(state="disabled")  # Lock again
-
-
-    root = tk.Tk()
-    root.geometry("300x300")
-    root.title("Text read-only")
-
-    button = tk.Button(root, text="Show 7 times table", font=("Arial", 14),
-                       command=show_times_table)
-    button.pack(pady=10)
-
-    output_text = tk.Text(root, height=10, width=20, font=("Arial", 12), state="disabled")
-    output_text.pack()
-
-    root.mainloop()
-
-tag example
-~~~~~~~~~~~~~~~~~~
-
-| ``tag_configure()`` creates a named style, e.g. "heading" or "red".
-| Add the tag name after the text in ``insert()`` to use that style.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Text tags")
-
-    results_text = tk.Text(root, height=6, width=30, font=("Arial", 12))
-    results_text.pack(pady=10)
-
-    # Create the styles
-    results_text.tag_configure("heading", font=("Arial", 14, "bold"))
-    results_text.tag_configure("right", foreground="green")
-    results_text.tag_configure("wrong", foreground="red")
-
-    # Insert text using the styles
-    results_text.insert(tk.END, "Quiz results\n", "heading")
-    results_text.insert(tk.END, "Q1: correct\n", "right")
-    results_text.insert(tk.END, "Q2: incorrect\n", "wrong")
-    results_text.insert(tk.END, "Q3: correct\n", "right")
-
-    root.mainloop()
-
-Scrollbar example
-~~~~~~~~~~~~~~~~~~~~~~
-
-| A Scrollbar lets the user scroll through text that does not fit in the widget.
-| ``yscrollcommand`` and the scrollbar ``command`` link the two widgets so they move together.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Text scrollbar")
-
-    scrollbar = tk.Scrollbar(root)
-    scrollbar.pack(side="right", fill="y")
-
-    long_text = tk.Text(root, height=8, width=30, font=("Arial", 12),
-                        yscrollcommand=scrollbar.set)
-    long_text.pack(side="left", padx=10, pady=10)
-
-    scrollbar.config(command=long_text.yview)
-
-    for n in range(1, 51):
-        long_text.insert(tk.END, f"Line {n}\n")
-
-    root.mainloop()
-
-undo example
-~~~~~~~~~~~~~~~~~~
-
-| ``undo=True`` turns on undo, so Ctrl+Z undoes typing and Ctrl+Y redoes it.
-| ``edit_undo()`` and ``edit_redo()`` do the same thing from a button.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-
-    def undo():
-        try:
-            edit_text.edit_undo()
-        except tk.TclError:
-            pass  # Nothing left to undo
-
-
-    root = tk.Tk()
-    root.geometry("300x200")
-    root.title("Text undo")
-
-    edit_text = tk.Text(root, height=5, width=30, font=("Arial", 12), undo=True)
-    edit_text.pack(pady=10)
-
-    undo_button = tk.Button(root, text="Undo", font=("Arial", 14), command=undo)
-    undo_button.pack()
-
-    root.mainloop()
-
-----
-
-Parameter syntax
-----------------------
-
- .. py:function:: text_widget = tk.Text(parent, option=value)
-
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-    **Parameters:**
-
-    .. py:attribute:: autoseparators
-
-        | Syntax: ``text_widget = tk.Text(parent, autoseparators=1)``
-        | Description: Enables automatic separator insertion when typing.
-        | Default: 1
-        | Example: ``text_widget = tk.Text(root, autoseparators=1)``
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``text_widget = tk.Text(parent, background="color")``
-        | Description: Sets the background color of the text widget.
-        | Default: SystemWindow
-        | Example: ``text_widget = tk.Text(root, background="lightyellow")``
-
-    .. py:attribute:: borderwidth
-    .. py:attribute:: bd
-
-        | Syntax: ``text_widget = tk.Text(parent, borderwidth=border_width)``
-        | Description: Sets the border width of the text widget.
-        | Default: 1
-        | Example: ``text_widget = tk.Text(root, borderwidth=2)``
-
-    .. py:attribute:: blockcursor
-
-        | Syntax: ``text_widget = tk.Text(parent, blockcursor=0)``
-        | Description: Sets the cursor style; a block or normal cursor.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, blockcursor=1)``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``text_widget = tk.Text(parent, cursor="cursor_type")``
-        | Description: Sets the mouse cursor when hovering over the text widget.
-        | Default: xterm
-        | Example: ``text_widget = tk.Text(root, cursor="hand2")``
-
-    .. py:attribute:: exportselection
-
-        | Syntax: ``text_widget = tk.Text(parent, exportselection=1)``
-        | Description: Allows the text selection to be copied to the clipboard.
-        | Default: 1
-        | Example: ``text_widget = tk.Text(root, exportselection=1)``
-
-    .. py:attribute:: font
-
-        | Syntax: ``text_widget = tk.Text(parent, font=("font_name", size, "style"))``
-        | Description: Specifies the font type, size, and style for the text.
-        | Default: TkFixedFont
-        | Example: ``text_widget = tk.Text(root, font=("Arial", 12, "italic"))``
-
-    .. py:attribute:: foreground
-    .. py:attribute:: fg
-
-        | Syntax: ``text_widget = tk.Text(parent, foreground="color")``
-        | Description: Sets the foreground color (text color) of the text widget.
-        | Default: SystemWindowText
-        | Example: ``text_widget = tk.Text(root, foreground="black")``
-
-    .. py:attribute:: height
-
-        | Syntax: ``text_widget = tk.Text(parent, height=height_value)``
-        | Description: Sets the height of the text widget in lines.
-        | Default: 24
-        | Example: ``text_widget = tk.Text(root, height=10)``
-
-    .. py:attribute:: highlightbackground
-
-        | Syntax: ``text_widget = tk.Text(parent, highlightbackground="color")``
-        | Description: Sets the background color when the text widget does not have focus.
-        | Default: SystemButtonFace
-        | Example: ``text_widget = tk.Text(root, highlightbackground="gray")``
-
-    .. py:attribute:: highlightcolor
-
-        | Syntax: ``text_widget = tk.Text(parent, highlightcolor="color")``
-        | Description: Sets the color of the highlight when the text widget has focus.
-        | Default: SystemWindowFrame
-        | Example: ``text_widget = tk.Text(root, highlightcolor="blue")``
-
-    .. py:attribute:: highlightthickness
-
-        | Syntax: ``text_widget = tk.Text(parent, highlightthickness=thickness)``
-        | Description: Sets the thickness of the highlight border.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, highlightthickness=2)``
-
-    .. py:attribute:: inactiveselectbackground
-
-        | Syntax: ``text_widget = tk.Text(parent, inactiveselectbackground="color")``
-        | Description: Sets the background color for selected text when the widget is inactive.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, inactiveselectbackground="lightgray")``
-
-    .. py:attribute:: insertbackground
-
-        | Syntax: ``text_widget = tk.Text(parent, insertbackground="color")``
-        | Description: Sets the color of the insertion cursor (caret).
-        | Default: SystemWindowText
-        | Example: ``text_widget = tk.Text(root, insertbackground="red")``
-
-    .. py:attribute:: insertborderwidth
-
-        | Syntax: ``text_widget = tk.Text(parent, insertborderwidth=width)``
-        | Description: Sets the width of the border around the insertion cursor.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, insertborderwidth=2)``
-
-    .. py:attribute:: insertofftime
-
-        | Syntax: ``text_widget = tk.Text(parent, insertofftime=milliseconds)``
-        | Description: Sets the time the cursor stays off (in milliseconds).
-        | Default: 300
-        | Example: ``text_widget = tk.Text(root, insertofftime=500)``
-
-    .. py:attribute:: insertontime
-
-        | Syntax: ``text_widget = tk.Text(parent, insertontime=milliseconds)``
-        | Description: Sets the time the cursor stays on (in milliseconds).
-        | Default: 600
-        | Example: ``text_widget = tk.Text(root, insertontime=800)``
-
-    .. py:attribute:: insertunfocussed
-
-        | Syntax: ``text_widget = tk.Text(parent, insertunfocussed="style")``
-        | Description: Sets the style of the cursor when the widget is unfocused.
-        | Default: none
-        | Example: ``text_widget = tk.Text(root, insertunfocussed="underline")``
-
-    .. py:attribute:: insertwidth
-
-        | Syntax: ``text_widget = tk.Text(parent, insertwidth=width)``
-        | Description: Sets the width of the insertion cursor.
-        | Default: 2
-        | Example: ``text_widget = tk.Text(root, insertwidth=5)``
-
-    .. py:attribute:: maxundo
-
-        | Syntax: ``text_widget = tk.Text(parent, maxundo=number)``
-        | Description: Sets the maximum number of undo operations.
-        | Default: 0 (unlimited)
-        | Example: ``text_widget = tk.Text(root, maxundo=100)``
-
-    .. py:attribute:: padx
-
-        | Syntax: ``text_widget = tk.Text(parent, padx=padding_value)``
-        | Description: Sets the horizontal padding within the text widget.
-        | Default: 1
-        | Example: ``text_widget = tk.Text(root, padx=10)``
-
-    .. py:attribute:: pady
-
-        | Syntax: ``text_widget = tk.Text(parent, pady=padding_value)``
-        | Description: Sets the vertical padding within the text widget.
-        | Default: 1
-        | Example: ``text_widget = tk.Text(root, pady=10)``
-
-    .. py:attribute:: relief
-
-        | Syntax: ``text_widget = tk.Text(parent, relief="style")``
-        | Description: Sets the border style of the text widget. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
-        | Default: sunken
-        | Example: ``text_widget = tk.Text(root, relief="flat")``
-
-    .. py:attribute:: selectbackground
-
-        | Syntax: ``text_widget = tk.Text(parent, selectbackground="color")``
-        | Description: Sets the background color of the selected text.
-        | Default: SystemHighlight
-        | Example: ``text_widget = tk.Text(root, selectbackground="lightblue")``
-
-    .. py:attribute:: selectborderwidth
-
-        | Syntax: ``text_widget = tk.Text(parent, selectborderwidth=width)``
-        | Description: Sets the border width of the selection.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, selectborderwidth=1)``
-
-    .. py:attribute:: selectforeground
-
-        | Syntax: ``text_widget = tk.Text(parent, selectforeground="color")``
-        | Description: Sets the text color of the selected text.
-        | Default: SystemHighlightText
-        | Example: ``text_widget = tk.Text(root, selectforeground="white")``
-
-    .. py:attribute:: setgrid
-
-        | Syntax: ``text_widget = tk.Text(parent, setgrid=0)``
-        | Description: tells the window manager to resize the window in character-sized increments.
-        | Default: 0
-        | ``setgrid=0`` tells the window manager to resize the window in pixel-sized increments.
-        | Example: ``text_widget = tk.Text(root, setgrid=1)``
-        | ``setgrid=1`` tells the window manager to resize the window in character-sized increments. This means that the window will snap to sizes that fit an integer number of characters, which is particularly useful for text editors where you want to ensure the window size accommodates full lines or rows of text.
-
-    .. py:attribute:: spacing1
-
-        | Syntax: ``text_widget = tk.Text(parent, spacing1=spacing_value)``
-        | Description: Sets the spacing before paragraphs.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, spacing1=5)``
-
-    .. py:attribute:: spacing2
-
-        | Syntax: ``text_widget = tk.Text(parent, spacing2=spacing_value)``
-        | Description: Sets the spacing between lines.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, spacing2=3)``
-
-    .. py:attribute:: spacing3
-
-        | Syntax: ``text_widget = tk.Text(parent, spacing3=spacing_value)``
-        | Description: Sets the spacing after paragraphs.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, spacing3=5)``
-
-    .. py:attribute:: state
-
-        | Syntax: ``text_widget = tk.Text(parent, state="state_type")``
-        | Description: Sets the state of the text widget. Options include `normal` or `disabled`.
-        | Default: normal
-        | Example: ``text_widget = tk.Text(root, state="disabled")``
-
-    .. py:attribute:: tabs
-
-        | Syntax: ``text_widget = tk.Text(parent, tabs=tab_stops)``
-        | Description: Sets tab stops for the text widget.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, tabs=4)``
-
-    .. py:attribute:: tabstyle
-
-        | Syntax: ``text_widget = tk.Text(parent, tabstyle="style")``
-        | Description: Specifies the style for tab stops. Options include `tabular`.
-        | Default: tabular
-        | Example: ``text_widget = tk.Text(root, tabstyle="tabular")``
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``text_widget = tk.Text(parent, takefocus=1)``
-        | Description: Allows the text widget to take focus on click.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, takefocus=1)``
-
-    .. py:attribute:: undo
-
-        | Syntax: ``text_widget = tk.Text(parent, undo=0)``
-        | Description: Enables the undo feature for the text widget.
-        | Default: 0
-        | Example: ``text_widget = tk.Text(root, undo=1)``
-
-    .. py:attribute:: width
-
-        | Syntax: ``text_widget = tk.Text(parent, width=width_value)``
-        | Description: Sets the width of the text widget in characters.
-        | Default: 80
-        | Example: ``text_widget = tk.Text(root, width=50)``
-
-    .. py:attribute:: wrap
-
-        | Syntax: ``text_widget = tk.Text(parent, wrap="mode")``
-        | Description: Sets the text wrapping mode. Options are `none`, `char`, or `word`.
-        | Default: char
-        | Example: ``text_widget = tk.Text(root, wrap="word")``
-
-    .. py:attribute:: xscrollcommand
-
-        | Syntax: ``text_widget = tk.Text(parent, xscrollcommand=command)``
-        | Description: Configures the command for horizontal scrolling.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, xscrollcommand=my_xscroll_command)``
-
-    .. py:attribute:: yscrollcommand
-
-        | Syntax: ``text_widget = tk.Text(parent, yscrollcommand=command)``
-        | Description: Configures the command for vertical scrolling.
-        | Default: None
-        | Example: ``text_widget = tk.Text(root, yscrollcommand=my_yscroll_command)``
-
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``Text`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.Text(root)
-    widget_options = widget.keys()
-
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
-
-
+                    root.mainloop()
