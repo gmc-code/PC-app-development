@@ -147,6 +147,9 @@ PC-app-development
     tk_quiz_apps/tk_afl_premiers.rst
     tk_apps/tk_RPG_inventory.rst
 
+    tk_apps/tk_pizza_cost_1.rst
+    tk_apps/tk_pizza_cost_3.rst
+
 
 .. toctree::
     :maxdepth: 2

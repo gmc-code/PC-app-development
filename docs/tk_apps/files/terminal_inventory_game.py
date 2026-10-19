@@ -1,5 +1,3 @@
-import random
-
 # Define the shops with more diverse items
 blacksmith = {
     'name': 'Blacksmith',
@@ -54,8 +52,9 @@ for store in stores:
 for store in stores:
     while True:
         # Input box to show what you can buy
-        print(f"Welcome to {store['name']}! What do you want to buy (type 'exit' to leave):")
         print(display_inventory(store))
+        print(f"Welcome to {store['name']}! Type the number of the item you want to buy (or 'exit' to leave):")
+
         buy_item = input().lower()
         if buy_item == 'exit':
             break

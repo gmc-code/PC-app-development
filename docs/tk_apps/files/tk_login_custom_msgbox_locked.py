@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 # Constants
 BG_COLOR = "#333333"  # dark grey
 FG_COLOR = "#FFFFFF"   # white
@@ -11,14 +12,18 @@ PASSWORD = "123"
 
 def custom_messagebox(title, message, parent):
     """Custom messagebox aligned over the parent widget and disabling the parent root."""
-    # Disable parent window while the messagebox is active
-    parent.attributes('-disabled', True)
+    # Lock the parent window (Windows only; other systems rely on grab_set)
+    try:
+        parent.attributes('-disabled', True)
+    except tk.TclError:
+        pass
 
     top = tk.Toplevel(parent)  # Create a new top-level window
     top.title(title)
     top.configure(bg=BG_COLOR)
+    top.resizable(False, False)
     top.transient(parent)  # Keep it on top of the parent
-    top.grab_set()  # Make it modal (block input to the parent)
+    top.attributes('-topmost', True)  # Always stay in front of every other window
 
     # Center the top-level window over the parent
     parent_x = parent.winfo_rootx()
@@ -36,20 +41,31 @@ def custom_messagebox(title, message, parent):
 
     # Callback to close the messagebox and re-enable the parent window
     def on_close():
-        parent.attributes('-disabled', False)  # Re-enable the parent window
-        top.destroy()  # Destroy the messagebox
+        try:
+            parent.attributes('-disabled', False)  # Unlock the parent first
+        except tk.TclError:
+            pass
+        top.destroy()
+        parent.focus_force()  # Bring the main window back to the front
 
     # Bind the close button of the messagebox to the on_close function
     top.protocol("WM_DELETE_WINDOW", on_close)
+    top.bind("<Return>", lambda event: on_close())
 
     # Create widgets inside the custom messagebox
-    message_label = tk.Label(top, text=message, bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    message_label = tk.Label(
+        top, text=message, bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
     ok_button = tk.Button(top, text="OK", bg=FG_BUTTON_COLOR,
-                            fg=FG_COLOR, font=FONT_STYLE, command=on_close)
+                          fg=FG_COLOR, font=FONT_STYLE, command=on_close)
 
     # Layout the widgets
     message_label.pack(expand=True, pady=20)
     ok_button.pack(pady=10)
+
+    # Make it modal once it is on screen
+    top.wait_visibility()
+    top.grab_set()
+    ok_button.focus_set()
 
 
 def login():
@@ -69,15 +85,20 @@ root.configure(bg=BG_COLOR)
 
 # Create frame widget for other widgets
 frame = tk.Frame(root, bg=BG_COLOR)
-frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
+# Centering the frame inside the window
+frame.place(relx=0.5, rely=0.5, anchor='center')
 
 # Create widgets inside the frame
-login_label = tk.Label(frame, text="Login", bg=BG_COLOR, fg=FG_BUTTON_COLOR, font=FONT_STYLE)
-username_label = tk.Label(frame, text="Username", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-password_label = tk.Label(frame, text="Password", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+login_label = tk.Label(frame, text="Login", bg=BG_COLOR,
+                       fg=FG_BUTTON_COLOR, font=FONT_STYLE)
+username_label = tk.Label(frame, text="Username",
+                          bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+password_label = tk.Label(frame, text="Password",
+                          bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 username_entry = tk.Entry(frame, font=FONT_STYLE)
 password_entry = tk.Entry(frame, show="*", font=FONT_STYLE)
-login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=login)
+login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR,
+                         fg=FG_COLOR, font=FONT_STYLE, command=login)
 
 # Place widgets in the frame using grid layout
 login_label.grid(row=0, column=0, columnspan=2, sticky="news", pady=20)

@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 # Constants
 BG_COLOR = "#333333"  # dark grey
 FG_COLOR = "#FFFFFF"   # white
@@ -15,7 +16,7 @@ def custom_messagebox(title, message, parent):
     top.title(title)
     top.configure(bg=BG_COLOR)
     top.transient(parent)  # Keep it on top of the parent
-    top.grab_set()  # Make it modal (block input to the parent)
+    top.attributes('-topmost', True)  # Always stay in front of every other window
 
     # Center the top-level window over the parent
     parent_x = parent.winfo_rootx()
@@ -32,12 +33,19 @@ def custom_messagebox(title, message, parent):
     top.geometry(f"{top_width}x{top_height}+{x}+{y}")
 
     # Create widgets inside the custom messagebox
-    message_label = tk.Label(top, text=message, bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-    ok_button = tk.Button(top, text="OK", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=top.destroy)
+    message_label = tk.Label(
+        top, text=message, bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+    ok_button = tk.Button(top, text="OK", bg=FG_BUTTON_COLOR,
+                          fg=FG_COLOR, font=FONT_STYLE, command=top.destroy)
 
     # Layout the widgets
     message_label.pack(expand=True, pady=20)
     ok_button.pack(pady=10)
+
+    # Make it modal once it is on screen
+    top.wait_visibility()
+    top.grab_set()
+
 
 
 def login():
@@ -57,15 +65,20 @@ root.configure(bg=BG_COLOR)
 
 # Create frame widget for other widgets
 frame = tk.Frame(root, bg=BG_COLOR)
-frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
+# Centering the frame inside the window
+frame.place(relx=0.5, rely=0.5, anchor='center')
 
 # Create widgets inside the frame
-login_label = tk.Label(frame, text="Login", bg=BG_COLOR, fg=FG_BUTTON_COLOR, font=FONT_STYLE)
-username_label = tk.Label(frame, text="Username", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-password_label = tk.Label(frame, text="Password", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+login_label = tk.Label(frame, text="Login", bg=BG_COLOR,
+                       fg=FG_BUTTON_COLOR, font=FONT_STYLE)
+username_label = tk.Label(frame, text="Username",
+                          bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+password_label = tk.Label(frame, text="Password",
+                          bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 username_entry = tk.Entry(frame, font=FONT_STYLE)
 password_entry = tk.Entry(frame, show="*", font=FONT_STYLE)
-login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=login)
+login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR,
+                         fg=FG_COLOR, font=FONT_STYLE, command=login)
 
 # Place widgets in the frame using grid layout
 login_label.grid(row=0, column=0, columnspan=2, sticky="news", pady=20)

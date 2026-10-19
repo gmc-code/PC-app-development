@@ -41,13 +41,6 @@ cart = {}
 purse = 1000
 
 
-def deselect_others(store_name, selected_index):
-    """Ensure only one item can be selected per store."""
-    for i, var in enumerate(selected_items[store_name]):
-        if i != selected_index:
-            var.set(False)
-
-
 def create_deselect_command(store_name, index):
     """Creates a command to deselect other checkboxes in the same store."""
 

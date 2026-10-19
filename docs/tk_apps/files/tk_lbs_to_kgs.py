@@ -40,7 +40,7 @@ root.configure(bg=WINDOW_BG_COLOR)
 # Create widgets
 input_label = tk.Label(root, text="Pounds", bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR, font=FONT_STYLE)
 input_entry = tk.Entry(root, width=10, bg=INPUT_BG_COLOR, fg=INPUT_FG_COLOR,
-highlightcolor=INPUT_FG_COLOR, highlightbackground=INPUT_FG_COLOR, highlightthickness=2, font=FONT_STYLE)
+highlightcolor=INPUT_FG_COLOR, highlightbackground=INPUT_FG_COLOR, highlightthickness=1, font=FONT_STYLE)
 output_label = tk.Label(root, text="Kgs", bg=OUTPUT_BG_COLOR, fg=OUTPUT_FG_COLOR, font=FONT_STYLE)
 output_text = tk.Text(root, height=1, width=10, fg=OUTPUT_FG_COLOR, highlightcolor=OUTPUT_FG_COLOR,
                      highlightbackground=OUTPUT_FG_COLOR, highlightthickness=1, font=FONT_STYLE)

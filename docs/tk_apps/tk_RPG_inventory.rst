@@ -9,7 +9,7 @@ This Python script implements some code for buying inventory in an RPG game.
 
 1. **Define Shops**:
 
-   Three shop dictionaries are defined (`blacksmith`, `alchemy_shop`, and `general_store`), each with a variety of items and their prices.
+   Three shop dictionaries are defined (`blacksmith`, `alchemy_shop`, and `general_store`). Each has a `'name'` and an `'items'` dictionary of items and their prices.
 
 2. **Initialize Variables**:
 
@@ -17,15 +17,16 @@ This Python script implements some code for buying inventory in an RPG game.
 
 3. **Display Initial Inventory**:
 
-   The initial inventory of each shop is printed so the user knows what they can buy.
+   The initial inventory of each shop is printed as a numbered list so the user knows what they can buy.
 
 4. **Shopping**:
 
    - The player visits each shop one by one:
-   - The available items in the current shop are displayed.
-   - The player can type the name of an item to buy it or type 'exit' to leave the shop.
-   - If the player buys an item, the item's price is deducted from the purse, and the item is added to the cart.
-   - If the player doesn't have enough gold or types an invalid item, they are prompted accordingly.
+   - The available items in the current shop are displayed with a number for each item.
+   - The player types the number of an item to buy it, or types 'exit' to leave the shop.
+   - If the player buys an item, the item's price is deducted from the purse, the item is moved from the shop to the cart, and the player moves on to the next shop.
+   - If the player doesn't have enough gold, they are told and can choose again.
+   - If the player types anything else, they are told the selection is invalid and leave the shop.
 
 5. **Display Final Inventory and Purchases**:
 
@@ -35,29 +36,39 @@ Code:
 
 .. code-block:: python
 
-    import random
-
     # Define the shops with more diverse items
-    blacksmith = {'name': 'Blacksmith',
-                'sword': 150,
-                'shield': 100,
-                'armor': 300,
-                'helmet': 75,
-                'boots': 50}
+    blacksmith = {
+        'name': 'Blacksmith',
+        'items': {
+            'sword': 150,
+            'shield': 100,
+            'armor': 300,
+            'helmet': 75,
+            'boots': 50
+        }
+    }
 
-    alchemy_shop = {'name': 'Alchemy Shop',
-                    'health potion': 50,
-                    'mana potion': 60,
-                    'strength potion': 120,
-                    'invisibility potion': 200,
-                    'antidote': 30}
+    alchemy_shop = {
+        'name': 'Alchemy Shop',
+        'items': {
+            'health potion': 50,
+            'mana potion': 60,
+            'strength potion': 120,
+            'invisibility potion': 200,
+            'antidote': 30
+        }
+    }
 
-    general_store = {'name': 'General Store',
-                    'rope': 10,
-                    'torch': 5,
-                    'rations': 20,
-                    'water flask': 15,
-                    'map': 25}
+    general_store = {
+        'name': 'General Store',
+        'items': {
+            'rope': 10,
+            'torch': 5,
+            'rations': 20,
+            'water flask': 15,
+            'map': 25
+        }
+    }
 
     stores = [blacksmith, alchemy_shop, general_store]
 
@@ -65,38 +76,43 @@ Code:
     cart = {}
     purse = 1000
 
-    # Function to display the inventory of a store
+    # Function to display the inventory of a store with item numbers
     def display_inventory(store):
-        return ', '.join([f'{item} ({price} gold)' for item, price in store.items() if item != 'name'])
+        items = [f"{i+1} {item} ({price} gold)" for i, (item, price) in enumerate(store['items'].items())]
+        return '\n'.join(items)
 
     # Print initial inventory
     print("Initial Inventory:")
     for store in stores:
-        print(f"{store['name']}: {display_inventory(store)}")
+        print(f"{store['name']}:\n{display_inventory(store)}\n")
 
     # Loop through stores
     for store in stores:
         while True:
             # Input box to show what you can buy
-            buy_item = input(f"Welcome to {store['name']}! What do you want to buy (type 'exit' to leave): ").lower()
+            print(display_inventory(store))
+            print(f"Welcome to {store['name']}! Type the number of the item you want to buy (or 'exit' to leave):")
+
+            buy_item = input().lower()
             if buy_item == 'exit':
                 break
-            if buy_item in store:
-                if purse >= store[buy_item]:
-                    purse -= store[buy_item]
-                    cart[buy_item] = store.pop(buy_item)
-                    print(f"You bought {buy_item} for {cart[buy_item]} gold. You have {purse} gold left.")
+            if buy_item.isdigit() and 1 <= int(buy_item) <= len(store['items']):
+                item_name = list(store['items'].keys())[int(buy_item) - 1]
+                if purse >= store['items'][item_name]:
+                    purse -= store['items'][item_name]
+                    cart[item_name] = store['items'].pop(item_name)
+                    print(f"You bought {item_name} for {cart[item_name]} gold. You have {purse} gold left.")
                     break
                 else:
                     print("You don't have enough gold for that item.")
             else:
-                print("Item not found. Exiting store.")
+                print("Invalid selection. Exiting store.")
                 break
 
     # Print final inventory and purchases
     print("\nFinal Inventory:")
     for store in stores:
-        print(f"{store['name']}: {display_inventory(store)}")
+        print(f"{store['name']}:\n{display_inventory(store)}\n")
 
     print("\nItems Purchased:")
     for item, price in cart.items():
@@ -139,16 +155,17 @@ This program simulates a shop game where the player can visit different stores, 
 
 4. **Functions**:
 
-   - **deselect_others**: Ensures only one item is selected from a store by deselecting other checkboxes in the same store.
    - **create_deselect_command**: Creates a function that ensures only one item can be selected per store by deselecting other checkboxes when one is selected.
    - **update_store**: Updates the store display to reflect current available items and their selection states.
-   - **buy_items**: Handles the purchasing of selected items, updates the player's gold, and removes purchased items from the store's inventory and displays a summary of the items purchased, total cost, and remaining gold.
+   - **buy_items**: Handles the purchasing of selected items, updates the player's gold, and removes purchased items from the store's inventory.
+   - **update_inventory_display**: Shows the items purchased and the remaining gold in the inventory text box.
 
 5. **Tkinter Widgets**:
 
    - **Checkbuttons**: Used to select items from stores.
-   - **Buttons**: "Buy Item" to purchase the selected items and "End Game" to display a summary of purchases.
-   - **Labels**: Display the current store name, item prices, and player's gold.
+   - **Button**: "Buy Items" to purchase the selected items.
+   - **Labels**: Display the store names and the player's gold.
+   - **Text**: Displays the items purchased and the remaining gold.
 
 Key Syntax to use
 ~~~~~~~~~~~~~~~~~~~~~
@@ -157,7 +174,7 @@ Key Syntax to use
 
     | Syntax: ``enumerate(iterable, start=0)``
     | Description: Adds a counter to an iterable, returning it as an enumerate object, which can be used to iterate with both the index and the element.
-    | Default: ``start=0``, so if ofter omitted.
+    | Default: ``start=0``, so it is often omitted.
     | Example: ``for index, value in enumerate(['a', 'b', 'c']): print(index, value) # Outputs: 0 a, 1 b, 2 c``
 
 .. py:function:: value1 != value2
@@ -218,12 +235,6 @@ Code:
     # Create an empty shopping cart and set initial gold
     cart = {}
     purse = 1000
-
-    def deselect_others(store_name, selected_index):
-        """Ensure only one item can be selected per store."""
-        for i, var in enumerate(selected_items[store_name]):
-            if i != selected_index:
-                var.set(False)
 
     def create_deselect_command(store_name, index):
         """Creates a command to deselect other checkboxes in the same store."""
@@ -353,19 +364,14 @@ Functions in more detail
 
 These functions work together to create an interactive shopping experience where users can select items from different stores, purchase them, and see their remaining gold and purchased items.
 
-1. **deselect_others(store_name, selected_index)**:
+1. **create_deselect_command(store_name, index)**:
 
-    - This function ensures that only one item can be selected per store.
-    - It iterates through all the items in the specified store (`store_name`).
-    - If the current item's index (`i`) is not the same as the `selected_index`, it sets the corresponding BooleanVar to `False`, effectively deselecting it.
-
-2. **create_deselect_command(store_name, index)**:
-
-    - This function creates a command to deselect other checkboxes in the same store.
-    - It returns a function (`deselect_others`) that, when called, will deselect all other items in the specified store except the one at the given `index`.
+    - This function creates a command to deselect other checkboxes in the same store, so only one item can be selected per store.
+    - It defines an inner function (`deselect_others`) that iterates through the store's BooleanVars and sets every one except the one at `index` to `False`.
+    - It returns `deselect_others`, which runs whenever that checkbox is clicked.
     - `deselect_command = create_deselect_command(store["name"], index)` avoids the use of parameters in `command=deselect_command` for the Checkbox creation.
 
-3. **update_store()**:
+2. **update_store()**:
 
     - This function refreshes the store frames and creates checkboxes for each item.
     - It iterates through each store and its corresponding frame.
@@ -373,14 +379,14 @@ These functions work together to create an interactive shopping experience where
     - It creates a label for the store with a background color matching the frame.
     - For each item in the store, it creates a checkbox with a command to deselect other checkboxes in the same store.
 
-4. **update_inventory_display()**:
+3. **update_inventory_display()**:
 
     - This function updates the inventory display to show the current cart and remaining gold.
     - It clears the existing content in the `inventory_text` widget.
     - It inserts the purchased items and their prices into the `inventory_text`.
     - It also displays the remaining gold.
 
-5. **buy_items()**:
+4. **buy_items()**:
 
     - This function handles the purchase of selected items and updates the store and inventory.
     - It iterates through each store and checks if an item has been selected.
@@ -388,3 +394,165 @@ These functions work together to create an interactive shopping experience where
     - After processing all items, it removes the bought items from the store's inventory.
     - It then calls `update_store()` to refresh the store display and `update_inventory_display()` to update the inventory display with the purchased items.
 
+----
+
+
+RPG Inventory - Multiple Choice Quiz
+------------------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 5
+
+    .. multichoice::
+
+        In the terminal version, what does cart[item_name] = store['items'].pop(item_name) do?
+
+        [ ] Copies the item into the cart and leaves it in the store | Incorrect. pop() removes the item from the store.
+        [x] Removes the item from the store and adds it to the cart with its price | Correct. pop() removes the key and returns its value (the price), which is stored in the cart.
+        [ ] Deletes the whole store | Incorrect. Only one item is removed from the store's items.
+        [ ] Adds 1 to the item's price | Incorrect. pop() does not change the price.
+
+    .. multichoice::
+
+        What does purse -= store['items'][item_name] do?
+
+        [ ] Adds the price to the purse | Incorrect. += would add.
+        [x] Subtracts the item's price from the gold in the purse | Correct. purse -= x is short for purse = purse - x.
+        [ ] Checks whether the purse has enough gold | Incorrect. That check is if purse >= store['items'][item_name]:
+        [ ] Removes the item from the store | Incorrect. store['items'].pop() removes the item.
+
+    .. multichoice::
+
+        Why does the terminal version use int(buy_item) - 1 to find the item the player chose?
+
+        [ ] To give the player a discount of 1 gold | Incorrect. It changes the position, not the price.
+        [x] The items are numbered from 1 for the player, but list positions start at 0 | Correct. Item 1 is at index 0 of list(store['items'].keys()).
+        [ ] To stop the player buying the last item | Incorrect. Every item can still be chosen.
+        [ ] Because input() always adds 1 to the number | Incorrect. input() returns exactly what was typed, as a string.
+
+    .. multichoice::
+
+        What does buy_item.isdigit() and 1 <= int(buy_item) <= len(store['items']) check?
+
+        [ ] That the player has enough gold | Incorrect. The gold is checked afterwards with purse >= ...
+        [ ] That the player typed exit | Incorrect. exit is checked on the line before.
+        [x] That the player typed a whole number that matches one of the shop's item numbers | Correct. isdigit() checks it is a number, and the comparison checks it is between 1 and the number of items.
+        [ ] That the item name is spelt correctly | Incorrect. In this version the player types a number, not a name.
+
+    .. multichoice::
+
+        What does enumerate(['a', 'b', 'c']) give you in a for loop?
+
+        [ ] a, b, c | Incorrect. enumerate also gives a counter.
+        [x] (0, 'a'), (1, 'b'), (2, 'c') | Correct. enumerate adds an index starting at 0 to each item.
+        [ ] (1, 'a'), (2, 'b'), (3, 'c') | Incorrect. The default start is 0.
+        [ ] 3 | Incorrect. len() would give 3.
+
+    .. multichoice::
+
+        What is each tk.BooleanVar used for in the tkinter version?
+
+        [ ] Storing the price of an item | Incorrect. Prices are stored in the store dictionaries.
+        [x] Storing whether an item's Checkbutton is ticked (True) or not (False) | Correct. Each Checkbutton is linked to a BooleanVar with variable=var.
+        [ ] Counting the gold left | Incorrect. purse stores the gold.
+        [ ] Storing the store's colour | Incorrect. store_colors stores the colours.
+
+    .. multichoice::
+
+        What does create_deselect_command(store_name, index) return?
+
+        [ ] True or False | Incorrect. It returns a function, not a Boolean.
+        [ ] The index of the selected item | Incorrect. It returns the inner function.
+        [x] An inner function that the Checkbutton can run later as its command | Correct. The inner function remembers store_name and index, so command= needs no arguments.
+        [ ] Nothing | Incorrect. It ends with return deselect_others.
+
+    .. multichoice::
+
+        Why does buy_items() start with global purse?
+
+        [x] So the function can change the purse variable defined outside it | Correct. Without global, purse -= price would cause an UnboundLocalError.
+        [ ] To make purse a constant | Incorrect. global does not make a variable constant.
+        [ ] To print the purse | Incorrect. global does not print anything.
+        [ ] To create a new purse with 1000 gold | Incorrect. It uses the existing purse variable.
+
+    .. multichoice::
+
+        What does purse_label.config(text=f"Gold: {purse}") do?
+
+        [ ] Creates a new label | Incorrect. config() changes a label that already exists.
+        [x] Updates the label's text to show the new amount of gold | Correct. config() changes options of an existing widget.
+        [ ] Subtracts gold from the purse | Incorrect. It only changes what is displayed.
+        [ ] Deletes the label | Incorrect. destroy() would delete it.
+
+    .. multichoice::
+
+        Why does update_store() destroy every widget in each store frame before creating new ones?
+
+        [ ] To close the game | Incorrect. Only the widgets inside the store frames are destroyed.
+        [x] So the store is redrawn without the items that have been bought | Correct. The old checkboxes are removed and new ones are created for the remaining items.
+        [ ] To reset the gold to 1000 | Incorrect. update_store() does not change the purse.
+        [ ] To change the store colours | Incorrect. The colours stay the same.
+
+----
+
+RPG Inventory - Cloze Code Quiz
+-------------------------------------
+
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 3
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Complete the terminal version's check that the player typed a valid item number.
+
+        if buy_item.@@isdigit | isnumber | isint@@() and 1 <= int(buy_item) <= @@len | max | sum@@(store['items']):
+            item_name = list(store['items'].keys())[int(buy_item) @@- 1 | + 1 | * 1@@]
+
+    .. cloze::
+        :instructions: Check the player can afford the item, pay for it and move it from the store to the cart.
+
+        if purse @@>= | <= | <@@ store['items'][item_name]:
+            purse @@-= | += | =@@ store['items'][item_name]
+            cart[item_name] = store['items'].@@pop | get | remove@@(item_name)
+
+    .. cloze::
+        :instructions: Complete the inner function that deselects the other checkboxes in a store.
+
+        def create_deselect_command(store_name, index):
+            def deselect_others():
+                for i, var in @@enumerate | range | zip@@(selected_items[store_name]):
+                    if i @@!= | == | <@@ index:
+                        var.set(False)
+            return @@deselect_others | deselect_others() | index@@
+
+    .. cloze::
+        :instructions: Link each Checkbutton to its BooleanVar and its deselect command.
+
+        var = tk.@@BooleanVar | StringVar | IntVar@@(value=False)
+        item_check = tk.Checkbutton(
+            frame,
+            text=f"{item} ({price} gold)",
+            @@variable=var | variable=var.get() | value=var@@,
+            command=deselect_command,
+        )
+
+    .. cloze::
+        :instructions: Let buy_items() change the purse, check each checkbox and update the gold label.
+
+        def buy_items():
+            @@global | local | nonlocal@@ purse
+            for store in stores:
+                store_name = store["name"]
+                for i, (item, price) in enumerate(store["items"].items()):
+                    if selected_items[store_name][i].@@get | set | value@@():
+                        if purse >= price:
+                            purse -= price
+                            cart[item] = price
+                            purse_label.@@config | update | text@@(text=f"Gold: {purse}")

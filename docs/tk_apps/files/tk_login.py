@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 # Constants
 BG_COLOR = "#333333"  # dark grey
-FG_COLOR = "#FFFFFF"   # white
+FG_COLOR = "#FFFFFF"  # white
 FG_BUTTON_COLOR = "#FF3399"  # bright pink
 FONT_STYLE = ("Arial", 24)
 USERNAME = "johns"
@@ -27,15 +27,19 @@ root.configure(bg=BG_COLOR)
 
 #  create frame widget for other widgets
 frame = tk.Frame(root, bg=BG_COLOR)
-frame.place(relx=0.5, rely=0.5, anchor='center')  # Centering the frame inside the window
+frame.place(relx=0.5, rely=0.5, anchor="center")
 
 #  create widgets in frame
-login_label = tk.Label(frame, text="Login", bg=BG_COLOR, fg=FG_BUTTON_COLOR, font=FONT_STYLE)
-username_label = tk.Label(frame, text="Username", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
-password_label = tk.Label(frame, text="Password", bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+login_label = tk.Label(frame, text="Login", bg=BG_COLOR,
+                       fg=FG_BUTTON_COLOR, font=FONT_STYLE)
+username_label = tk.Label(frame, text="Username",
+                          bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
+password_label = tk.Label(frame, text="Password",
+                          bg=BG_COLOR, fg=FG_COLOR, font=FONT_STYLE)
 username_entry = tk.Entry(frame, font=FONT_STYLE)
 password_entry = tk.Entry(frame, show="*", font=FONT_STYLE)
-login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR, fg=FG_COLOR, font=FONT_STYLE, command=login)
+login_button = tk.Button(frame, text="Login", bg=FG_BUTTON_COLOR,
+                         fg=FG_COLOR, font=FONT_STYLE, command=login)
 
 
 # place widgets in frame
