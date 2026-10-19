@@ -153,6 +153,10 @@ PC-app-development
     tk_apps/tk_RPG_inventory/tk_RPG_inventory.rst
     tk_apps/tk_pizza_cost_1/tk_pizza_cost_1.rst
     tk_apps/tk_pizza_cost_3/tk_pizza_cost_3.rst
+    tk_apps/tk_RPS1/tk_rock_paper_scissors.rst
+    tk_apps/tk_RPS2/tk_rock_paper_scissors_v2.rst
+    tk_apps/tk_RPS3/tk_rock_paper_scissors_v3.rst
+
 
 
 .. toctree::
