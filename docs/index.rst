@@ -16,6 +16,7 @@ PC-app-development
     :maxdepth: 2
     :caption: Tkinter basics
     :numbered:
+    :hidden:
 
     tk_basics/tkinter_introduction.rst
     tk_basics/tkinter_import.rst
@@ -31,6 +32,7 @@ PC-app-development
     :maxdepth: 2
     :caption: geometry
     :numbered:
+    :hidden:
 
     tk_geometry/tk_geometry_pack.rst
     tk_geometry/tk_geometry_grid.rst
@@ -76,6 +78,8 @@ PC-app-development
     :maxdepth: 2
     :caption: Themed widgets
     :numbered:
+    :hidden:
+
 
     ttk_widgets/ttk_introduction.rst
     ttk_widgets/ttk_themes.rst
@@ -163,6 +167,7 @@ PC-app-development
     :maxdepth: 2
     :caption: tk pizza orders tutorial
     :numbered:
+    :hidden:
 
     tk_pizza_orders_tutorial/pizza_orders.rst
     tk_pizza_orders_tutorial/Lesson01.rst
