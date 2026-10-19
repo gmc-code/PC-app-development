@@ -3,81 +3,469 @@ tk Checkbutton
 ====================================================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Checkbutton>`_
-| See: `<https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/>`_
 
 ----
 
-Usage
----------------
+What is a Checkbutton?
+-------------------------
 
-| The `tkinter.Checkbutton` widget provides a checkbutton (checkbox).
-| To create a checkbutton widget, the general syntax is (assuming import via "import tkinter as tk"):
-
-.. py:function:: checkbutton_widget = tk.Checkbutton(parent, option=value)
-
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-    | Each checkbutton has its own ``IntVar`` because every checkbox stores its own checked state independently.
-    | Unlike radio buttons, checkbuttons should not share the same control variable.
+| A **Checkbutton** is a small tick box with words next to it.
+| The user clicks it to tick it, and clicks again to untick it.
+| Use checkbuttons when the user can choose **any number** of options, e.g. pizza toppings.
+| To choose **only one** option from a group, use **Radiobuttons** instead.
 
 ----
 
-Using check buttons
----------------------------
+Making a Checkbutton
+-------------------------
 
-.. image:: images/checkboxes.png
-    :scale: 100
+| A checkbutton needs a **variable** to remember whether it is ticked.
+| An ``IntVar`` is a Tkinter variable that stores a whole number: **1** when ticked and **0** when not ticked.
 
+#. **Create** the variable with ``tk.IntVar()``.
+#. **Create** the checkbutton with ``tk.Checkbutton(...)`` and link it to the variable.
+#. **Place** the checkbutton in the window with ``.pack()``.
+
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first checkbutton")
+
+    cheese = tk.IntVar()            # 1. Variable: 1 = ticked, 0 = not ticked
+
+    cheese_check = tk.Checkbutton(root, text="Cheese", variable=cheese)   # 2. Create it
+    cheese_check.pack(pady=20)      # 3. Place it in the window
+
+    root.mainloop()                 # Keep the window open
+
+| Each checkbutton needs its **own** variable.
+
+----
+
+Checkbutton options
+-----------------------
+
+| Options are written as ``option=value`` inside ``tk.Checkbutton( )``, separated by commas.
+
+text
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the words next to the tick box.
+| **How to write it:** ``text="your words"``
 
 .. code-block:: python
 
     import tkinter as tk
 
-    # Create the main window
     root = tk.Tk()
-    root.title("Checkbutton Example")
+    root.geometry("300x200")
+    root.title("text")
 
-    # Create a frame with a background color
-    frame1 = tk.Frame(root, bg="light blue")
-    frame1.pack(anchor="nw", padx=10, pady=10)
+    agree = tk.IntVar()
 
-    # Define a font style
-    font_style = ("Lucida Grande", 18)
+    agree_check = tk.Checkbutton(root, text="I agree to the rules", variable=agree)
+    agree_check.pack(pady=20)
 
-    # Define the options for group 1
-    options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3"]
-    # Store each checkbox's IntVar using its label as the key.
-    variables = {}
-
-    for option in options_grp1:
-        # Each checkbutton has its own IntVar.
-        # IntVar() defaults to 0 (unchecked).
-        variables[option] = tk.IntVar()
-
-        # Make the first checkbutton checked initially.
-        if option == "Checkbox 1":
-            variables[option].set(1)
-
-        button = tk.Checkbutton(
-            frame1, text=option, variable=variables[option], indicatoron=1,
-            bg="white", fg="black", font=font_style, padx=10, pady=5
-        )
-        button.pack(anchor="nw", padx=5, pady=5)
-
-    # Run the main event loop
     root.mainloop()
 
+variable
+~~~~~~~~~~~~~~~~~~
 
+| **What it does:** links the checkbutton to a variable that remembers if it is ticked.
+| **How to write it:** ``variable=name_of_variable``
+| Read the variable with ``.get()``: it gives **1** if ticked, **0** if not.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def check():
+        if homework.get() == 1:
+            result_label.config(text="Well done!")
+        else:
+            result_label.config(text="Better get started...")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("variable")
+
+    homework = tk.IntVar()
+
+    homework_check = tk.Checkbutton(root, text="Homework done", variable=homework)
+    homework_check.pack(pady=10)
+
+    check_button = tk.Button(root, text="Check", command=check)
+    check_button.pack()
+
+    result_label = tk.Label(root, text="")
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+onvalue and offvalue
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** choose what the variable stores when the box is ticked (``onvalue``) and unticked (``offvalue``).
+| **How to write them:** ``onvalue="Yes", offvalue="No"``
+| To store words instead of numbers, use a ``tk.StringVar()`` as the variable.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show():
+        result_label.config(text="Sauce: " + sauce.get())
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("onvalue and offvalue")
+
+    sauce = tk.StringVar(value="No")
+
+    sauce_check = tk.Checkbutton(root, text="Tomato sauce", variable=sauce,
+                                 onvalue="Yes", offvalue="No", command=show)
+    sauce_check.pack(pady=20)
+
+    result_label = tk.Label(root, text="Sauce: No")
+    result_label.pack()
+
+    root.mainloop()
+
+command
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** chooses a function to run **every time** the box is ticked or unticked.
+| **How to write it:** ``command=function_name`` (no brackets)
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def change_colour():
+        if dark.get() == 1:
+            root.config(bg="black")
+        else:
+            root.config(bg="white")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("command")
+    root.config(bg="white")
+
+    dark = tk.IntVar()
+
+    dark_check = tk.Checkbutton(root, text="Dark mode", variable=dark, command=change_colour)
+    dark_check.pack(pady=20)
+
+    root.mainloop()
+
+font, fg and bg
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``font`` sets the style and size of the words, ``fg`` sets the colour of the words and ``bg`` sets the background colour.
+| **How to write them:** ``font=("Arial", 16)``, ``fg="blue"``, ``bg="lightyellow"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("font, fg and bg")
+
+    music = tk.IntVar()
+
+    music_check = tk.Checkbutton(root, text="Play music", variable=music,
+                                 font=("Arial", 16), fg="blue", bg="lightyellow")
+    music_check.pack(pady=20)
+
+    root.mainloop()
+
+selectcolor
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the colour **inside** the tick box.
+| **How to write it:** ``selectcolor="colour"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("selectcolor")
+
+    sport = tk.IntVar()
+
+    sport_check = tk.Checkbutton(root, text="Sport", variable=sport,
+                                 font=("Arial", 16), selectcolor="lightgreen")
+    sport_check.pack(pady=20)
+
+    root.mainloop()
+
+anchor and width
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``width`` sets how wide the checkbutton is (in characters). ``anchor="w"`` lines it up on the **left**.
+| Using the same ``width`` and ``anchor="w"`` on every checkbutton makes a neat list with the boxes lined up.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("anchor and width")
+
+    ham = tk.IntVar()
+    pineapple = tk.IntVar()
+    mushrooms = tk.IntVar()
+
+    ham_check = tk.Checkbutton(root, text="Ham", variable=ham, width=15, anchor="w")
+    ham_check.pack()
+
+    pineapple_check = tk.Checkbutton(root, text="Pineapple", variable=pineapple, width=15, anchor="w")
+    pineapple_check.pack()
+
+    mushrooms_check = tk.Checkbutton(root, text="Mushrooms", variable=mushrooms, width=15, anchor="w")
+    mushrooms_check.pack()
+
+    root.mainloop()
+
+state
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** turns the checkbutton on or off.
+| **How to write it:** ``state="disabled"``
+| **Values:** ``"normal"`` (can be clicked, the default) and ``"disabled"`` (greyed out).
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("state")
+
+    free = tk.IntVar()
+    sold_out = tk.IntVar()
+
+    free_check = tk.Checkbutton(root, text="Chips", variable=free)
+    free_check.pack(pady=5)
+
+    sold_out_check = tk.Checkbutton(root, text="Ice cream (sold out)", variable=sold_out,
+                                    state="disabled")
+    sold_out_check.pack(pady=5)
+
+    root.mainloop()
 
 ----
 
+Checkbutton methods
+-----------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot.
+
+get and set (the variable)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``variable.get()`` reads the value. ``variable.set(1)`` ticks the box from your code, and ``variable.set(0)`` unticks it.
+| **How to write them:** ``ticked = cheese.get()``, ``cheese.set(1)``
+| ``set`` is useful for having a box ticked when the program starts.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("get and set")
+
+    sound = tk.IntVar()
+    sound.set(1)            # Start with the box ticked
+
+    sound_check = tk.Checkbutton(root, text="Sound on", variable=sound)
+    sound_check.pack(pady=20)
+
+    root.mainloop()
+
+select, deselect and toggle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:**
+| ``select()`` ticks the box.
+| ``deselect()`` unticks the box.
+| ``toggle()`` swaps it: ticked becomes unticked, and unticked becomes ticked.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def tick_all():
+        for box in all_boxes:
+            box.select()
+
+
+    def clear_all():
+        for box in all_boxes:
+            box.deselect()
+
+
+    root = tk.Tk()
+    root.geometry("300x220")
+    root.title("select and deselect")
+
+    red = tk.IntVar()
+    green = tk.IntVar()
+    blue = tk.IntVar()
+
+    red_check = tk.Checkbutton(root, text="Red", variable=red)
+    red_check.pack()
+    green_check = tk.Checkbutton(root, text="Green", variable=green)
+    green_check.pack()
+    blue_check = tk.Checkbutton(root, text="Blue", variable=blue)
+    blue_check.pack()
+
+    all_boxes = [red_check, green_check, blue_check]
+
+    tick_button = tk.Button(root, text="Tick all", command=tick_all)
+    tick_button.pack(pady=5)
+
+    clear_button = tk.Button(root, text="Clear all", command=clear_all)
+    clear_button.pack()
+
+    root.mainloop()
+
+Counting ticked boxes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Because a ticked box stores **1** and an unticked box stores **0**, adding the variables together counts how many are ticked.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def count():
+        total = cheese.get() + ham.get() + olives.get()
+        result_label.config(text=f"Toppings: {total}   Price: ${10 + total * 2}")
+
+
+    root = tk.Tk()
+    root.geometry("300x220")
+    root.title("Pizza")
+
+    cheese = tk.IntVar()
+    ham = tk.IntVar()
+    olives = tk.IntVar()
+
+    tk.Checkbutton(root, text="Cheese", variable=cheese, command=count).pack()
+    tk.Checkbutton(root, text="Ham", variable=ham, command=count).pack()
+    tk.Checkbutton(root, text="Olives", variable=olives, command=count).pack()
+
+    result_label = tk.Label(root, text="Toppings: 0   Price: $10", font=("Arial", 14))
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+| ``tk.Checkbutton(...).pack()`` creates and places a widget in one line. Only do this when you never need to use the widget's name again.
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes options **after** the checkbutton has been made.
+| **How to write it:** ``check.config(option=value)``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def lock():
+        rules_check.config(state="disabled", text="Rules accepted")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("config")
+
+    rules = tk.IntVar()
+
+    rules_check = tk.Checkbutton(root, text="Accept the rules", variable=rules, command=lock)
+    rules_check.pack(pady=20)
+
+    root.mainloop()
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``text``
+      - Words next to the box
+      - ``text="Cheese"``
+    * - ``variable``
+      - Variable that remembers ticked (1) or not (0)
+      - ``variable=cheese``
+    * - ``onvalue``, ``offvalue``
+      - What the variable stores when ticked / unticked
+      - ``onvalue="Yes", offvalue="No"``
+    * - ``command``
+      - Function to run when clicked
+      - ``command=update``
+    * - ``font``, ``fg``, ``bg``
+      - Font, word colour, background colour
+      - ``font=("Arial", 14)``
+    * - ``selectcolor``
+      - Colour inside the box
+      - ``selectcolor="lightgreen"``
+    * - ``width``, ``anchor``
+      - Width, and where it sits
+      - ``width=15, anchor="w"``
+    * - ``state``
+      - Turn it on or off
+      - ``state="disabled"``
+    * - ``variable.get()``
+      - Read the value
+      - ``cheese.get()``
+    * - ``variable.set()``
+      - Tick (1) or untick (0) from code
+      - ``cheese.set(1)``
+    * - ``select()``, ``deselect()``
+      - Tick or untick the box
+      - ``cheese_check.select()``
+    * - ``toggle()``
+      - Swap ticked and unticked
+      - ``cheese_check.toggle()``
+    * - ``config()``
+      - Change options later
+      - ``cheese_check.config(state="disabled")``
+
+----
 
 .. admonition:: Tasks
 
-    #. Modify the code so that it displays four checkbuttons arranged vertically.
-
-        .. image:: images/checkboxes_vertically.png
-            :scale: 67
+    #. Make a window titled "Hobbies" that is 300x200. Add three checkbuttons: "Sport", "Music" and "Art", each with its own ``IntVar``.
+    #. Make the "Music" checkbutton start ticked by using ``set``.
+    #. Add a button labelled "How many?" and a label. When clicked, the label shows how many hobbies are ticked.
+    #. Make a checkbutton "Big text". Use ``command`` so that when it is ticked a label's font changes to size 30, and when it is unticked it goes back to size 12.
 
     .. dropdown::
         :icon: codescan
@@ -88,400 +476,111 @@ Using check buttons
 
             .. tab-item:: Q1
 
-                Modify the code so that it displays four checkbuttons arranged vertically.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Hobbies")
+
+                    sport = tk.IntVar()
+                    music = tk.IntVar()
+                    art = tk.IntVar()
+
+                    sport_check = tk.Checkbutton(root, text="Sport", variable=sport)
+                    sport_check.pack()
+                    music_check = tk.Checkbutton(root, text="Music", variable=music)
+                    music_check.pack()
+                    art_check = tk.Checkbutton(root, text="Art", variable=art)
+                    art_check.pack()
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
 
                 .. code-block:: python
 
                     import tkinter as tk
 
-                    # Create the main window
                     root = tk.Tk()
-                    root.title("Checkbutton Question")
-                    # Set the size of the window
-                    root.geometry("350x300")
+                    root.geometry("300x200")
+                    root.title("Hobbies")
 
-                    # Create a frame with a background color
-                    frame1 = tk.Frame(root, bg="light blue")
-                    frame1.pack(anchor="nw", padx=10, pady=10)
+                    sport = tk.IntVar()
+                    music = tk.IntVar()
+                    art = tk.IntVar()
+                    music.set(1)
 
-                    # Define a font style
-                    font_style = ("Lucida Grande", 18)
+                    sport_check = tk.Checkbutton(root, text="Sport", variable=sport)
+                    sport_check.pack()
+                    music_check = tk.Checkbutton(root, text="Music", variable=music)
+                    music_check.pack()
+                    art_check = tk.Checkbutton(root, text="Art", variable=art)
+                    art_check.pack()
 
-                    # Define the options for group 1
-                    options_grp1 = ["Checkbox 1", "Checkbox 2", "Checkbox 3", "Checkbox 4"]
-                    # Store each checkbox's IntVar using its label as the key.
-                    variables = {}
-
-                    for option in options_grp1:
-                        # Each checkbutton has its own IntVar.
-                        # IntVar() defaults to 0 (unchecked).
-                        variables[option] = tk.IntVar()
-
-                        # Make the first checkbutton checked initially.
-                        if option == "Checkbox 1":
-                            variables[option].set(1)
-
-                        button = tk.Checkbutton(
-                            frame1, text=option, variable=variables[option], indicatoron=1,
-                            bg="white", fg="black", font=font_style, padx=10, pady=5
-                        )
-                        button.pack(anchor="w", padx=5, pady=5)    # defaults to side="top"
-
-
-                    # Run the main event loop
                     root.mainloop()
 
-----
+            .. tab-item:: Q3
 
-Methods
-----------------------
+                .. code-block:: python
 
-.. py:function:: checkbutton_widget.select()
+                    import tkinter as tk
 
-    | Selects the checkbutton.
-    | Sets the associated control variable to the ``onvalue``.
 
-.. py:function:: checkbutton_widget.deselect()
+                    def how_many():
+                        total = sport.get() + music.get() + art.get()
+                        count_label.config(text=f"Hobbies ticked: {total}")
 
-    | Deselects the checkbutton.
-    | Sets the associated control variable to the ``offvalue``.
 
-.. py:function:: checkbutton_widget.toggle()
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Hobbies")
 
-    | Toggles the state of the checkbutton.
-    | If the checkbutton is selected it becomes deselected, and vice versa.
+                    sport = tk.IntVar()
+                    music = tk.IntVar()
+                    art = tk.IntVar()
+                    music.set(1)
 
-.. py:function:: checkbutton_widget.flash()
+                    sport_check = tk.Checkbutton(root, text="Sport", variable=sport)
+                    sport_check.pack()
+                    music_check = tk.Checkbutton(root, text="Music", variable=music)
+                    music_check.pack()
+                    art_check = tk.Checkbutton(root, text="Art", variable=art)
+                    art_check.pack()
 
-    | Briefly flashes the checkbutton several times.
-    | Useful for drawing the user's attention to the widget.
+                    count_button = tk.Button(root, text="How many?", command=how_many)
+                    count_button.pack(pady=5)
 
-.. py:function:: checkbutton_widget.invoke()
+                    count_label = tk.Label(root, text="")
+                    count_label.pack()
 
-    | Simulates the user clicking the checkbutton.
-    | Toggles the state and calls the function specified by the ``command`` option, if one exists.
-    | Returns the value returned by the callback function.
+                    root.mainloop()
 
-----
+            .. tab-item:: Q4
 
-Control variable methods
-----------------------------
+                .. code-block:: python
 
-.. py:function:: variable.get()
+                    import tkinter as tk
 
-    | Returns the current value of the associated control variable.
 
-.. py:function:: variable.set(value)
+                    def change_size():
+                        if big.get() == 1:
+                            word_label.config(font=("Arial", 30))
+                        else:
+                            word_label.config(font=("Arial", 12))
 
-    | Sets the value of the associated control variable.
-    | If ``value`` equals the ``onvalue``, the checkbutton becomes selected.
-    | If ``value`` equals the ``offvalue``, the checkbutton becomes deselected.
 
-----
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Big text")
 
-Parameter syntax
-----------------------
+                    big = tk.IntVar()
 
-.. py:function:: checkbutton_widget = tk.Checkbutton(parent, option=value)
+                    big_check = tk.Checkbutton(root, text="Big text", variable=big, command=change_size)
+                    big_check.pack(pady=10)
 
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
+                    word_label = tk.Label(root, text="Hello", font=("Arial", 12))
+                    word_label.pack()
 
-    **Parameters:**
-
-    .. py:attribute:: activebackground
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, activebackground="color")``
-        | Description: Sets the background color of the checkbutton when it is active.
-        | Default: SystemButtonFace
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, activebackground="lightblue")``
-
-    .. py:attribute:: activeforeground
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, activeforeground="color")``
-        | Description: Sets the foreground color of the checkbutton when it is active.
-        | Default: SystemWindowText
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, activeforeground="blue")``
-
-    .. py:attribute:: anchor
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, anchor="position")``
-        | Description: Sets the anchor position for the text and indicator.
-        | Default: center
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, anchor="w")``
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, background="color")``
-        | Description: Sets the background color of the checkbutton.
-        | Default: SystemButtonFace
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, background="lightyellow")``
-
-    .. py:attribute:: bd
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, bd=border_width)``
-        | Description: Sets the border width of the checkbutton.
-        | Default: 2
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, bd=5)``
-
-    .. py:attribute:: bitmap
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, bitmap="bitmap_name")``
-        | Description: Sets a bitmap image to be displayed on the checkbutton.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, bitmap="error")``
-
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, borderwidth=width)``
-        | Description: Sets the width of the border around the checkbutton.
-        | Default: 2
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, borderwidth=3)``
-
-    .. py:attribute:: command
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, command=function)``
-        | Description: Specifies a function to be called when the checkbutton is toggled.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, command=my_function)``
-
-    .. py:attribute:: compound
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, compound="position")``
-        | Description: Specifies how to display the image and text (if both are set).
-        | Default: none
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, compound="left")``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, cursor="cursor_type")``
-        | Description: Sets the mouse cursor when hovering over the checkbutton.
-        | Default: arrow
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, cursor="hand2")``
-
-    .. py:attribute:: disabledforeground
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, disabledforeground="color")``
-        | Description: Sets the foreground color when the checkbutton is disabled.
-        | Default: SystemDisabledText
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, disabledforeground="gray")``
-
-    .. py:attribute:: foreground
-    .. py:attribute:: fg
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, fg="color")``
-        | Description: Sets the foreground color of the checkbutton (text color).
-        | Default: SystemWindowText
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, fg="black")``
-
-    .. py:attribute:: font
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, font=("font_name", size, "style"))``
-        | Description: Specifies the font type, size, and style for the text of the checkbutton.
-        | Default: TkDefaultFont
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, font=("Arial", 12, "bold"))``
-
-    .. py:attribute:: height
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, height=value)``
-        | Description: Sets the height of the checkbutton.
-        | Default: 0 (automatically determined)
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, height=2)``
-
-    .. py:attribute:: highlightbackground
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, highlightbackground="color")``
-        | Description: Sets the background color of the checkbutton when it does not have focus.
-        | Default: SystemButtonFace
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, highlightbackground="gray")``
-
-    .. py:attribute:: highlightcolor
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, highlightcolor="color")``
-        | Description: Sets the color of the highlight when the checkbutton has focus.
-        | Default: SystemWindowFrame
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, highlightcolor="blue")``
-
-    .. py:attribute:: highlightthickness
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, highlightthickness=thickness)``
-        | Description: Sets the thickness of the highlight border.
-        | Default: 1
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, highlightthickness=2)``
-
-    .. py:attribute:: image
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, image="image_name")``
-        | Description: Sets an image to be displayed on the checkbutton.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, image=my_image)``
-
-    .. py:attribute:: indicatoron
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, indicatoron=1)``
-        | Description: Displays a traditional checkbox when set to 1. Set to 0 to display the widget as a regular toggle button.
-        | Set ``indicatoron=1`` to display a traditional checkbox.
-        | Set ``indicatoron=0`` to make the checkbutton appear as a regular button that stays pressed when selected.
-        | Default: 1
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, indicatoron=0)``
-
-    .. py:attribute:: justify
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, justify="position")``
-        | Description: Sets the justification of the text (left, center, right).
-        | Default: center
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, justify="right")``
-
-    .. py:attribute:: offrelief
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, offrelief="style")``
-        | Description: Sets the relief style for the indicator when off.
-        | Default: raised
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, offrelief="flat")``
-
-    .. py:attribute:: offvalue
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, offvalue=value)``
-        | Description: Sets the value associated with the checkbutton when it is not checked.
-        | Default: 0
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, offvalue=0)``
-
-    .. py:attribute:: onvalue
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, onvalue=value)``
-        | Description: Sets the value associated with the checkbutton when it is checked.
-        | Default: 1
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, onvalue=1)``
-
-    .. py:attribute:: overrelief
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, overrelief="style")``
-        | Description: Sets the relief style for the indicator when hovered over.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, overrelief="sunken")``
-
-    .. py:attribute:: padx
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, padx=padding_value)``
-        | Description: Sets the horizontal padding within the checkbutton.
-        | Default: 1
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, padx=10)``
-
-    .. py:attribute:: pady
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, pady=padding_value)``
-        | Description: Sets the vertical padding within the checkbutton.
-        | Default: 1
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, pady=10)``
-
-    .. py:attribute:: relief
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, relief="style")``
-        | Description: Sets the border style of the checkbutton. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
-        | Default: flat
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, relief="raised")``
-
-    .. py:attribute:: selectcolor
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, selectcolor="color")``
-        | Description: Sets the color of the indicator when the checkbutton is selected.
-        | Default: SystemWindow
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, selectcolor="lightgreen")``
-
-    .. py:attribute:: selectimage
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, selectimage="image_name")``
-        | Description: Sets an image to be displayed when the checkbutton is selected.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, selectimage=my_selected_image)``
-
-    .. py:attribute:: state
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, state="state_type")``
-        | Description: Sets the state of the checkbutton. Options include `normal` or `disabled`.
-        | Default: normal
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, state="disabled")``
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, takefocus=1)``
-        | Description: Allows the checkbutton to receive keyboard focus using the Tab key.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, takefocus=1)``
-
-    .. py:attribute:: text
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, text="label")``
-        | Description: Sets the text label for the checkbutton.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, text="Option 1")``
-
-    .. py:attribute:: textvariable
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, textvariable=variable)``
-        | Description: Associates a variable with the text of the checkbutton.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, textvariable=my_text_var)``
-
-    .. py:attribute:: tristateimage
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, tristateimage="image_name")``
-        | Description: Sets an image to be displayed when the checkbutton is in a tri-state mode.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, tristateimage=my_tristate_image)``
-
-    .. py:attribute:: tristatevalue
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, tristatevalue=value)``
-        | Description: Sets the value associated with the checkbutton in a tri-state mode.
-        | Default: None
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, tristatevalue=2)``
-
-    .. py:attribute:: underline
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, underline=index)``
-        | Description: Specifies the index of the character to underline in the text.
-        | Default: -1 (no underline)
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, underline=0)``
-
-    .. py:attribute:: variable
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, variable=control_variable)``
-        | Description: Associates the checkbutton with a control variable (e.g., `IntVar`, `StringVar`).
-        | Default: An internal Tcl variable created automatically.
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, variable=my_var)``
-
-    .. py:attribute:: width
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, width=width_value)``
-        | Description: Sets the width of the checkbutton.
-        | Default: 0 (automatically determined)
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, width=30)``
-
-    .. py:attribute:: wraplength
-
-        | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, wraplength=length)``
-        | Description: Sets the line length for text wrapping in the checkbutton.
-        | Default: 0 (no wrapping)
-        | Example: ``checkbutton_widget = tk.Checkbutton(root, wraplength=100)``
-
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``Checkbutton`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.Checkbutton(root)
-    widget_options = widget.keys()
-
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
-
+                    root.mainloop()

@@ -1,125 +1,382 @@
 ====================================================
-tk Optionmenu
+tk OptionMenu
 ====================================================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.OptionMenu>`_
-| See: `<https://www.geeksforgeeks.org/tkinter-optionmenu-widget/>`_
 
 ----
 
-Usage
----------------
+What is an OptionMenu?
+-------------------------
 
-| The `tkinter.OptionMenu` widget provides a dropdown menu for selecting one option from a predefined list.
-| To create an OptionMenu widget, the general syntax is
-| (assuming import via "import tkinter as tk"):
-
-.. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values)
-
-    | parent is the window or frame object.
-    | variable is a `tk.StringVar` that holds the currently selected value.
-    | \*values are the options to be displayed in the dropdown menu, passed as separate arguments.
-
-| The StringVar stores the currently selected option.
-| Whenever the user selects a different option from the dropdown menu, the value of the StringVar is updated automatically.
-| Unlike a Button, the OptionMenu automatically updates the associated StringVar whenever a different menu item is selected.
-| Likewise, calling set() on the StringVar changes the selected option shown in the OptionMenu.
-
-| The OptionMenu consists of a main button and a dropdown menu.
-| An OptionMenu is made up of two widgets:
-
- - the button that displays the current selection
- - the dropdown Menu containing the available options
-
-| Because these are separate widgets, they are configured separately.
-| Both can be configured using the config method:
-
-.. py:function:: option_menu_widget.config(option=value)
-
-    | Allows you to set one or more option=value pairs to customize the widget.
-
-| To configure the dropdown menu itself, access the menu directly:
-
-.. py:function:: option_menu_widget["menu"].config(option=value)
-
-    | Similarly, multiple option=value pairs can be passed to customize the menu's behavior or appearance.
-
+| An **OptionMenu** is a drop-down list. It shows one choice. Clicking it opens a list of all the choices.
+| Use an OptionMenu when the user picks **one** item from a list, but you want to save space in the window, e.g. choosing a country or a year level.
 
 ----
 
-Full constructor
-----------------------
+Making an OptionMenu
+-------------------------
 
-| The full constructor adds an optional ``command`` argument.
+| An OptionMenu needs a **variable** to remember the chosen item.
 
-.. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values, command=my_function)
+#. **Create** a ``tk.StringVar()`` and set the starting choice.
+#. **Create** the OptionMenu with ``tk.OptionMenu(root, variable, choice1, choice2, ...)``.
+#. **Place** it in the window with ``.pack()``.
 
-    | parent is the window or frame object.
-    | variable is a `tk.StringVar` that holds the currently selected value.
-    | \*values are the options to be displayed in the dropdown menu, passed as separate arguments.
-    | command is an optional function that is called whenever the selected option changes.
-    | e.g. option_menu = tk.OptionMenu(root, variable, "Apple", "Banana", "Cherry", command=my_function)
+.. code-block:: python
 
-.. note::
+    import tkinter as tk            # Load the tkinter library
 
-    Although ``OptionMenu()`` accepts a ``command`` argument, it is **not**
-    a configuration option of the widget. Therefore ``command`` does not
-    appear in the output of ``option_menu_widget.keys()``.
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first OptionMenu")
 
+    flavour = tk.StringVar(value="Vanilla")     # 1. Variable with the starting choice
+
+    flavour_menu = tk.OptionMenu(root, flavour, "Vanilla", "Chocolate", "Strawberry")   # 2. Create
+    flavour_menu.pack(pady=20)                  # 3. Place it in the window
+
+    root.mainloop()                 # Keep the window open
+
+| The OptionMenu is different from other widgets: the **variable** and the **choices** are written straight after ``root``, not as ``option=value``.
 
 ----
 
-Sample OptionMenu
---------------------
+Using a Python list of choices
+---------------------------------
 
-.. image:: images/option_menu.png
-    :scale: 67
+| If the choices are in a Python list, put a ``*`` in front of the list name.
+| The ``*`` "unpacks" the list, so each item becomes a separate choice.
 
 .. code-block:: python
 
     import tkinter as tk
-    from tkinter import font
 
-    # Create the main window
     root = tk.Tk()
-    root.title("Fruit Selector")
     root.geometry("300x200")
+    root.title("List of choices")
 
-    # Define a variable to hold the selected option
-    fruit_var = tk.StringVar(root)
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
-    # Define the options for the OptionMenu
-    fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+    day = tk.StringVar(value=days[0])           # Start on the first item in the list
 
-    # Set the default value for the OptionMenu
-    fruit_var.set(fruits[0])
+    day_menu = tk.OptionMenu(root, day, *days)
+    day_menu.pack(pady=20)
 
-    # Define the font styles
-    font_style1 = ("Arial", 16, "bold")
-    font_style2 = ("Arial", 14)
-
-    # Create the OptionMenu widget
-    option_menu = tk.OptionMenu(root, fruit_var, *fruits)
-    option_menu.config(font=font_style1, bg="light green", fg="black", activebackground="dark green", activeforeground="white")
-    option_menu["menu"].config(font=font_style2, bg="light blue", fg="black", activebackground="dark blue", activeforeground="white")
-    option_menu.pack(pady=10, padx=10)
-
-    # Run the main event loop
     root.mainloop()
 
+----
 
-| ``*fruits``: The asterisk (`*`) is used to unpack the list `fruits` into individual arguments.
-| This means that each item in the `fruits` list is passed as a separate argument to the `OptionMenu`.
-| For example, if `fruits = ["Apple", "Banana", "Cherry"]`, the `*fruits` will be equivalent to passing `"Apple", "Banana", "Cherry"` as separate arguments.
+OptionMenu options
+---------------------
+
+command
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** runs a function as soon as the user picks a choice.
+| **How to write it:** add ``command=function_name`` at the **end**, after the choices.
+| The OptionMenu sends the chosen item to the function, so the function needs a **parameter** to receive it.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def change_colour(choice):
+        root.config(bg=choice)
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("command")
+
+    colour = tk.StringVar(value="white")
+
+    colour_menu = tk.OptionMenu(root, colour, "white", "pink", "lightblue", "lightgreen",
+                                command=change_colour)
+    colour_menu.pack(pady=20)
+
+    root.mainloop()
+
+Changing the look with config
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Other options **cannot** go inside ``tk.OptionMenu( )``. Use ``.config()`` after it has been made.
+| Useful options:
+
+- ``font`` - style and size of the words.
+- ``width`` - width in characters.
+- ``fg`` and ``bg`` - word colour and background colour.
+- ``activebackground`` - colour when the mouse is over it.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("config")
+
+    size = tk.StringVar(value="Medium")
+
+    size_menu = tk.OptionMenu(root, size, "Small", "Medium", "Large")
+    size_menu.config(font=("Arial", 16), width=10, bg="lightyellow", activebackground="gold")
+    size_menu.pack(pady=20)
+
+    root.mainloop()
+
+Changing the drop-down list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| The list that drops down is a separate **Menu**. Reach it with ``option_menu["menu"]``.
+| Use ``.config()`` on it to change the font and colours of the list.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("drop-down list")
+
+    animal = tk.StringVar(value="Koala")
+
+    animal_menu = tk.OptionMenu(root, animal, "Koala", "Kangaroo", "Wombat", "Emu")
+    animal_menu.config(font=("Arial", 16))
+    animal_menu["menu"].config(font=("Arial", 16), bg="lightgreen")     # The list that drops down
+    animal_menu.pack(pady=20)
+
+    root.mainloop()
+
+state
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** turns the OptionMenu on or off.
+| **How to write it:** ``option_menu.config(state="disabled")``
+| **Values:** ``"normal"`` (the default) and ``"disabled"`` (greyed out).
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def lock():
+        year_menu.config(state="disabled")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("state")
+
+    year = tk.StringVar(value="Year 7")
+
+    year_menu = tk.OptionMenu(root, year, "Year 7", "Year 8", "Year 9")
+    year_menu.pack(pady=10)
+
+    lock_button = tk.Button(root, text="Lock my choice", command=lock)
+    lock_button.pack()
+
+    root.mainloop()
+
+----
+
+OptionMenu methods
+---------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot.
+
+get (the variable)
+~~~~~~~~~~~~~~~~~~~~~
+
+| **What it does:** reads the chosen item.
+| **How to write it:** ``choice = variable.get()``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show():
+        result_label.config(text="You picked " + pet.get())
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("get")
+
+    pet = tk.StringVar(value="Dog")
+
+    pet_menu = tk.OptionMenu(root, pet, "Dog", "Cat", "Rabbit")
+    pet_menu.pack(pady=10)
+
+    show_button = tk.Button(root, text="Show", command=show)
+    show_button.pack()
+
+    result_label = tk.Label(root, text="")
+    result_label.pack(pady=10)
+
+    root.mainloop()
+
+set (the variable)
+~~~~~~~~~~~~~~~~~~~~~
+
+| **What it does:** chooses an item from your code.
+| **How to write it:** ``variable.set("choice")``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def reset():
+        team.set("Red")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("set")
+
+    team = tk.StringVar(value="Red")
+
+    team_menu = tk.OptionMenu(root, team, "Red", "Blue", "Green", "Yellow")
+    team_menu.pack(pady=10)
+
+    reset_button = tk.Button(root, text="Reset", command=reset)
+    reset_button.pack()
+
+    root.mainloop()
+
+Using the choice in a calculation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| A **dictionary** can link each choice to a number. Use the chosen item to look up its number.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    prices = {"Small": 3, "Medium": 4, "Large": 5}
+
+
+    def show_price(choice):
+        price_label.config(text=f"Price: ${prices[choice]}")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Drink sizes")
+
+    size = tk.StringVar(value="Small")
+
+    size_menu = tk.OptionMenu(root, size, *prices, command=show_price)
+    size_menu.pack(pady=10)
+
+    price_label = tk.Label(root, text="Price: $3", font=("Arial", 16))
+    price_label.pack()
+
+    root.mainloop()
+
+| ``*prices`` unpacks the **keys** of the dictionary: "Small", "Medium" and "Large".
+
+Changing the choices while the program runs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| To change the list of choices:
+
+#. ``menu.delete(0, "end")`` removes all the old choices.
+#. ``menu.add_command(label=..., command=...)`` adds each new choice.
+
+| ``lambda item=item: food.set(item)`` makes each choice set the variable to its own word when clicked.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_fruit():
+        change_choices(["Apple", "Banana", "Mango"])
+
+
+    def show_vegetables():
+        change_choices(["Carrot", "Pea", "Potato"])
+
+
+    def change_choices(new_choices):
+        menu = food_menu["menu"]
+        menu.delete(0, "end")                   # 1. Remove the old choices
+        for item in new_choices:                # 2. Add the new ones
+            menu.add_command(label=item, command=lambda item=item: food.set(item))
+        food.set(new_choices[0])                # Show the first new choice
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("Changing choices")
+
+    food = tk.StringVar(value="Apple")
+
+    food_menu = tk.OptionMenu(root, food, "Apple", "Banana", "Mango")
+    food_menu.pack(pady=10)
+
+    fruit_button = tk.Button(root, text="Fruit", command=show_fruit)
+    fruit_button.pack(pady=2)
+
+    veg_button = tk.Button(root, text="Vegetables", command=show_vegetables)
+    veg_button.pack(pady=2)
+
+    root.mainloop()
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``tk.OptionMenu(root, var, ...)``
+      - Make the drop-down list
+      - ``tk.OptionMenu(root, size, "S", "M")``
+    * - ``*list``
+      - Use every item in a Python list
+      - ``tk.OptionMenu(root, day, *days)``
+    * - ``command``
+      - Function to run when a choice is picked
+      - ``command=show_price``
+    * - ``config(font=...)``
+      - Font of the button
+      - ``menu.config(font=("Arial", 14))``
+    * - ``config(width=...)``
+      - Width in characters
+      - ``menu.config(width=10)``
+    * - ``config(bg=...)``
+      - Background colour
+      - ``menu.config(bg="lightyellow")``
+    * - ``["menu"].config()``
+      - Change the list that drops down
+      - ``menu["menu"].config(bg="pink")``
+    * - ``config(state=...)``
+      - Turn it on or off
+      - ``menu.config(state="disabled")``
+    * - ``variable.get()``
+      - Read the chosen item
+      - ``size.get()``
+    * - ``variable.set()``
+      - Choose an item from code
+      - ``size.set("Large")``
 
 ----
 
 .. admonition:: Tasks
 
-    #. Modify the code above to change the OptionMenu options to ["Mango", "Pineapple", "Grapes", "Orange", "Strawberry"]. The OptionMenu widget's background (bg) is set to "light yellow" and the text color (fg) is set to "blue". The active background (activebackground) is set to "orange" and the active text color (activeforeground) is set to "red". The menu's background (bg) is set to "light pink" and the text color (fg) is set to "purple". The active background (activebackground) is set to "yellow" and the active text color (activeforeground) is set to "green".
-
-    .. image:: images/option_menu_question.png
-        :scale: 67
+    #. Make a window titled "Holidays" that is 300x200. Add an OptionMenu with the choices "Beach", "Snow", "City" and "Camping". Start on "Beach".
+    #. Change your OptionMenu to use Arial size 14, a width of 12 and a light blue background.
+    #. Make a Python list of five colours and use ``*`` to put them in an OptionMenu. Use ``command`` so the window background changes to the colour picked.
+    #. Make an OptionMenu with the choices "Year 7", "Year 8" and "Year 9", a "Show" button and a label. When clicked, the label shows "Welcome to" followed by the chosen year.
 
     .. dropdown::
         :icon: codescan
@@ -130,298 +387,87 @@ Sample OptionMenu
 
             .. tab-item:: Q1
 
-                Modify the code above to change the OptionMenu options.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Holidays")
+
+                    holiday = tk.StringVar(value="Beach")
+
+                    holiday_menu = tk.OptionMenu(root, holiday, "Beach", "Snow", "City", "Camping")
+                    holiday_menu.pack(pady=20)
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
 
                 .. code-block:: python
 
                     import tkinter as tk
-                    from tkinter import font
 
-                    # Create the main window
                     root = tk.Tk()
-                    root.title("Fruit Selector")
                     root.geometry("300x200")
+                    root.title("Holidays")
 
-                    # Define a variable to hold the selected option
-                    fruit_var = tk.StringVar(root)
+                    holiday = tk.StringVar(value="Beach")
 
-                    # Define the options for the OptionMenu
-                    fruits = ["Mango", "Pineapple", "Grapes", "Orange", "Strawberry"]
+                    holiday_menu = tk.OptionMenu(root, holiday, "Beach", "Snow", "City", "Camping")
+                    holiday_menu.config(font=("Arial", 14), width=12, bg="lightblue")
+                    holiday_menu.pack(pady=20)
 
-                    # Set the default value for the OptionMenu
-                    fruit_var.set(fruits[0])
-
-                    # Define the font style
-                    font_style1 = ("Arial", 16, "bold")
-                    font_style2 = ("Arial", 14)
-
-                    # Create the OptionMenu widget
-                    option_menu = tk.OptionMenu(root, fruit_var, *fruits)
-                    option_menu.config(font=font_style1, bg="light yellow", fg="blue", activebackground="orange", activeforeground="red")
-                    option_menu["menu"].config(font=font_style2, bg="light pink", fg="purple", activebackground="yellow", activeforeground="green")
-                    option_menu.pack(pady=10, padx=10)
-
-                    # Run the main event loop
                     root.mainloop()
 
-----
+            .. tab-item:: Q3
 
-Methods
-----------------
+                .. code-block:: python
 
-.. py:function:: variable.get()
+                    import tkinter as tk
 
-    | Returns the currently selected option.
 
-.. py:function:: variable.set(value)
+                    def change_colour(choice):
+                        root.config(bg=choice)
 
-    | Changes the selected option to ``value``.
-    | ``value`` should match one of the options supplied when the OptionMenu was created.
 
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Colours")
 
-----
+                    colours = ["white", "pink", "orange", "lightgreen", "skyblue"]
 
-Parameter syntax
-----------------------
+                    colour = tk.StringVar(value=colours[0])
 
-.. py:function:: option_menu_widget = tk.OptionMenu(parent, variable, *values)
+                    colour_menu = tk.OptionMenu(root, colour, *colours, command=change_colour)
+                    colour_menu.pack(pady=20)
 
-    | parent is the window or frame object where the OptionMenu will be placed.
-    | variable is a Tkinter variable (like `tk.StringVar`) that stores the current selection.
-    | values are the list of options that will appear in the menu.
+                    root.mainloop()
 
-    **Parameters:**
+            .. tab-item:: Q4
 
-    .. py:attribute:: activebackground
+                .. code-block:: python
 
-        | Syntax: ``option_menu_widget.config(activebackground="color")``
-        | Description: Background color of the selected item when active or hovered.
-        | Default: SystemButtonFace
-        | Example: ``option_menu_widget.config(activebackground="lightblue")``
+                    import tkinter as tk
 
-    .. py:attribute:: activeforeground
 
-        | Syntax: ``option_menu_widget.config(activeforeground="color")``
-        | Description: Text color of the selected item when active or hovered.
-        | Default: SystemButtonText
-        | Example: ``option_menu_widget.config(activeforeground="white")``
+                    def show():
+                        result_label.config(text="Welcome to " + year.get())
 
-    .. py:attribute:: anchor
 
-        | Syntax: ``option_menu_widget.config(anchor="position")``
-        | Description: Controls position of the text in the widget (e.g., "center", "w").
-        | Default: center
-        | Example: ``option_menu_widget.config(anchor="w")``
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Year level")
 
-    .. py:attribute:: background or bg
+                    year = tk.StringVar(value="Year 7")
 
-        | Syntax: ``option_menu_widget.config(bg="color")``
-        | Description: Background color of the menu.
-        | Default: SystemButtonFace
-        | Example: ``option_menu_widget.config(bg="white")``
+                    year_menu = tk.OptionMenu(root, year, "Year 7", "Year 8", "Year 9")
+                    year_menu.pack(pady=10)
 
-    .. py:attribute:: bd or borderwidth
+                    show_button = tk.Button(root, text="Show", command=show)
+                    show_button.pack()
 
-        | Syntax: ``option_menu_widget.config(bd=value)``
-        | Description: Border width of the widget in pixels.
-        | Default: 2
-        | Example: ``option_menu_widget.config(bd=4)``
+                    result_label = tk.Label(root, text="", font=("Arial", 14))
+                    result_label.pack(pady=10)
 
-    .. py:attribute:: bitmap
-
-        | Syntax: ``option_menu_widget.config(bitmap="bitmap")``
-        | Description: Specifies a bitmap to display in place of text.
-        | Default: None
-        | Example: ``option_menu_widget.config(bitmap="warning")``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``option_menu_widget.config(cursor="cursor_type")``
-        | Description: Changes the cursor when hovering over the menu.
-        | Default: None
-        | Example: ``option_menu_widget.config(cursor="hand2")``
-
-    .. py:attribute:: direction
-
-        | Syntax: ``option_menu_widget.config(direction="direction")``
-        | Description: Specifies where the menu opens relative to the widget.
-        | Default: below
-        | Example: ``option_menu_widget.config(direction="above")``
-
-    .. py:attribute:: disabledforeground
-
-        | Syntax: ``option_menu_widget.config(disabledforeground="color")``
-        | Description: Text color when the widget is disabled.
-        | Default: SystemDisabledText
-        | Example: ``option_menu_widget.config(disabledforeground="gray")``
-
-    .. py:attribute:: fg or foreground
-
-        | Syntax: ``option_menu_widget.config(fg="color")``
-        | Description: Text color in the menu.
-        | Default: SystemButtonText
-        | Example: ``option_menu_widget.config(fg="blue")``
-
-    .. py:attribute:: font
-
-        | Syntax: ``option_menu_widget.config(font=("FontName", size, style))``
-        | Description: Font of the text in the menu.
-        | Default: TkDefaultFont
-        | Example: ``option_menu_widget.config(font=("Arial", 12, "italic"))``
-
-    .. py:attribute:: height
-
-        | Syntax: ``option_menu_widget.config(height=value)``
-        | Description: Height of the menu in number of lines.
-        | Default: 0 (auto)
-        | Example: ``option_menu_widget.config(height=2)``
-
-    .. py:attribute:: highlightbackground
-
-        | Syntax: ``option_menu_widget.config(highlightbackground="color")``
-        | Description: Highlight color around the menu when it has focus.
-        | Default: SystemButtonFace
-        | Example: ``option_menu_widget.config(highlightbackground="orange")``
-
-    .. py:attribute:: highlightcolor
-
-        | Syntax: ``option_menu_widget.config(highlightcolor="color")``
-        | Description: Color of the highlight border when focused.
-        | Default: SystemWindowFrame
-        | Example: ``option_menu_widget.config(highlightcolor="red")``
-
-    .. py:attribute:: highlightthickness
-
-        | Syntax: ``option_menu_widget.config(highlightthickness=value)``
-        | Description: Thickness of the focus highlight border.
-        | Default: 2
-        | Example: ``option_menu_widget.config(highlightthickness=3)``
-
-    .. py:attribute:: image
-
-        | Syntax: ``option_menu_widget.config(image=image_object)``
-        | Description: Specifies an image to display in place of text.
-        | Default: None
-        | Example: ``option_menu_widget.config(image=my_image)``
-
-    .. py:attribute:: indicatoron
-
-        | Syntax: ``option_menu_widget.config(indicatoron=boolean)``
-        | Description: Displays or hides the indicator triangle.
-        | Default: 1 (on)
-        | Example: ``option_menu_widget.config(indicatoron=False)``
-
-    .. py:attribute:: justify
-
-        | Syntax: ``option_menu_widget.config(justify="alignment")``
-        | Description: Specifies text alignment (left, center, or right).
-        | Default: center
-        | Example: ``option_menu_widget.config(justify="left")``
-
-    .. py:attribute:: menu
-
-        | Syntax: ``option_menu_widget["menu"]``
-        | Description: Accesses the menu widget for customization.
-        | Default: .!optionmenu.menu
-        | Example: ``option_menu_widget["menu"].config(bg="lightgray")``
-
-    .. py:attribute:: padx
-
-        | Syntax: ``option_menu_widget.config(padx=value)``
-        | Description: Horizontal padding around the text.
-        | Default: 5
-        | Example: ``option_menu_widget.config(padx=10)``
-
-    .. py:attribute:: pady
-
-        | Syntax: ``option_menu_widget.config(pady=value)``
-        | Description: Vertical padding around the text.
-        | Default: 4
-        | Example: ``option_menu_widget.config(pady=8)``
-
-    .. py:attribute:: relief
-
-        | Syntax: ``option_menu_widget.config(relief="style")``
-        | Description: Specifies the border style (e.g., "raised", "sunken").
-        | Default: raised
-        | Example: ``option_menu_widget.config(relief="flat")``
-
-    .. py:attribute:: compound
-
-        | Syntax: ``option_menu_widget.config(compound="position")``
-        | Description: Specifies the position of text relative to an image.
-        | Default: none
-        | Example: ``option_menu_widget.config(compound="left")``
-
-    .. py:attribute:: state
-
-        | Syntax: ``option_menu_widget.config(state="state")``
-        | Description: Controls the widget’s state (e.g., "normal", "disabled").
-        | Default: normal
-        | Example: ``option_menu_widget.config(state="disabled")``
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``option_menu_widget.config(takefocus=boolean)``
-        | Description: Specifies whether the widget can take focus.
-        | Default: 0
-        | Example: ``option_menu_widget.config(takefocus=1)``
-
-    .. py:attribute:: text
-
-        | Syntax: ``option_menu_widget.config(text="text")``
-        | Description: Sets the default text for the menu.
-        | Default: Option 1
-        | Example: ``option_menu_widget.config(text="Select an option")``
-
-    .. py:attribute:: textvariable
-
-        | Syntax: ``option_menu_widget.config(textvariable=tk.StringVar)``
-        | Description: Variable linked to the displayed text.
-        | Default: PY_VAR0
-        | Example: ``option_menu_widget.config(textvariable=my_var)``
-
-    .. py:attribute:: underline
-
-        | Syntax: ``option_menu_widget.config(underline=index)``
-        | Description: Underlines the character at the specified index.
-        | Default: -1 (no underline)
-        | Example: ``option_menu_widget.config(underline=0)``
-
-    .. py:attribute:: width
-
-        | Syntax: ``option_menu_widget.config(width=value)``
-        | Description: Width of the menu in number of characters.
-        | Default: 0 (auto)
-        | Example: ``option_menu_widget.config(width=10)``
-
-    .. py:attribute:: wraplength
-
-        | Syntax: ``option_menu_widget.config(wraplength=value)``
-        | Description: Specifies the wrap width of the text in pixels.
-        | Default: 0 (no wrap)
-        | Example: ``option_menu_widget.config(wraplength=100)``
-
-
-
-----
-
-Default options
------------------------
-
-| Code to get the defaults for each optionmenu option is below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    variable = tk.StringVar(value="One")
-    option_menu = tk.OptionMenu(root, variable, "One", "Two")
-
-    for option in option_menu.keys():
-        print(f"{option}: {option_menu.cget(option)}")
-
-
-
+                    root.mainloop()

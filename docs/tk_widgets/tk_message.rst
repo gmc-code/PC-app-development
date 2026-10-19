@@ -2,67 +2,400 @@
 tk Message
 ====================================================
 
-| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Message>`_
-| See: `<https://www.geeksforgeeks.org/python-message-widget-in-tkinter/>`_
+| See: `<https://www.tcl-lang.org/man/tcl8.6/TkCmd/message.htm>`_
 
 ----
 
-Usage
----------------
+What is a Message?
+-------------------
 
-| The ``tkinter.Message`` widget displays multiple lines of read-only text.
-| Unlike a ``Label``, a ``Message`` widget automatically wraps its text to fit within a specified width.
-| It is suitable for displaying paragraphs or longer instructions.
-| To create a Message widget, the general syntax is (assuming import via ``import tkinter as tk``):
-
-.. py:function:: message_widget = tk.Message(parent, option=value)
-
-    | ``parent`` is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-    | The text is automatically wrapped according to the ``width`` option.
+| A **Message** shows text, like a **Label**, but it is made for **longer** text.
+| A Message wraps the words onto new lines **by itself**, so the text forms a neat block.
+| Use a Message for instructions, a story or a paragraph of information.
 
 ----
 
-Message example
-----------------------------------------------------
+Making a Message
+-------------------
 
-| The example below displays a paragraph of wrapped text.
+#. **Create** the message with ``tk.Message(...)``.
+#. **Place** it in the window with ``.pack()``.
 
-.. image:: images/message.png
-    :scale: 100
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first message")  # Words in the title bar
+
+    rules = tk.Message(root, text="Answer each question by clicking a button. "
+                                  "You get one point for each correct answer. "
+                                  "Good luck!")          # 1. Create the message
+    rules.pack(pady=10)                                  # 2. Place it in the window
+
+    root.mainloop()                 # Keep the window open
+
+| Long text can be split over several lines of code inside brackets. Python joins strings that sit next to each other, so remember the space at the end of each part.
+
+----
+
+Message options
+-------------------
+
+| Options are written as ``option=value`` inside ``tk.Message( )``, separated by commas.
+
+text
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the words shown in the message.
+| **How to write it:** ``text="your words"``
+| Use ``\n`` to start a new paragraph.
 
 .. code-block:: python
 
     import tkinter as tk
 
-    # Create the main window
     root = tk.Tk()
-    root.title("Message Example")
-    root.geometry("450x250")
+    root.geometry("300x200")
+    root.title("text")
 
-    # Create the Message widget
-    message = tk.Message(
-        root,
-        text="The Message widget automatically wraps long text so that it fits within the specified width.",
-        width=250,
-        font=("Arial", 16),
-        bg="#f8f8f8",
-        fg="navy"
-    )
+    note = tk.Message(root, text="Dear class,\nPlease bring your laptop on Friday.\nThanks!")
+    note.pack(pady=10)
 
-    message.pack(padx=20, pady=20)
-
-    # Run the main event loop
     root.mainloop()
+
+width
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets how wide the block of text can be, in **pixels**. The text wraps when it reaches this width.
+| **How to write it:** ``width=250``
+| Note: for a Message, width is in **pixels**, but for a Label it is in characters.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("350x250")
+    root.title("width")
+
+    text = "Koalas sleep for up to 20 hours a day and eat only gum leaves."
+
+    narrow = tk.Message(root, text=text, width=100, bg="lightblue")
+    narrow.pack(pady=5)
+
+    wide = tk.Message(root, text=text, width=300, bg="lightgreen")
+    wide.pack(pady=5)
+
+    root.mainloop()
+
+aspect
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** if ``width`` is not set, ``aspect`` chooses the shape of the text block.
+| It is the width compared with the height, times 100.
+
+- ``aspect=150`` (the default) makes a block a bit wider than it is tall.
+- ``aspect=400`` makes a wide, short block.
+- ``aspect=50`` makes a narrow, tall block.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("350x300")
+    root.title("aspect")
+
+    text = "The water cycle moves water from the ocean to the sky and back again."
+
+    tk.Message(root, text=text, aspect=400, bg="lightblue").pack(pady=5)
+    tk.Message(root, text=text, aspect=50, bg="lightgreen").pack(pady=5)
+
+    root.mainloop()
+
+| ``tk.Message(...).pack()`` creates and places a widget in one line. Only do this when you never need to use the widget's name again.
+
+font
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the style and size of the letters.
+| **How to write it:** ``font=("font name", size)`` or ``font=("font name", size, "style")``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("font")
+
+    quote = tk.Message(root, text="Science is a way of thinking.", width=250,
+                       font=("Georgia", 16, "italic"))
+    quote.pack(pady=20)
+
+    root.mainloop()
+
+fg and bg (colours)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``fg`` sets the colour of the words. ``bg`` sets the colour behind them.
+| **How to write them:** ``fg="colour"``, ``bg="colour"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("fg and bg")
+
+    warning = tk.Message(root, text="Warning: the oven is hot. Use oven mitts.", width=250,
+                         fg="white", bg="red", font=("Arial", 14))
+    warning.pack(pady=20)
+
+    root.mainloop()
+
+justify
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** lines up the wrapped lines on the left, in the centre or on the right.
+| **How to write it:** ``justify="center"``
+| **Values:** ``"left"`` (the default), ``"center"``, ``"right"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("justify")
+
+    poem = tk.Message(root, text="Roses are red,\nviolets are blue,\nPython is fun\nand Tkinter is too!",
+                      width=250, justify="center", font=("Arial", 14))
+    poem.pack(pady=10)
+
+    root.mainloop()
+
+padx and pady
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** add empty space around the text, **inside** the message.
+| **How to write them:** ``padx=20``, ``pady=10`` (pixels)
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("padx and pady")
+
+    tip = tk.Message(root, text="Tip: save your work often!", width=250,
+                     bg="lightyellow", padx=20, pady=20)
+    tip.pack(pady=20)
+
+    root.mainloop()
+
+relief and borderwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** draw a border around the message.
+| **How to write them:** ``relief="solid", borderwidth=2``
+| **Styles:** ``"flat"`` (the default), ``"solid"``, ``"raised"``, ``"sunken"``, ``"groove"``, ``"ridge"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("relief")
+
+    box = tk.Message(root, text="This message has a solid border around it.", width=200,
+                     relief="solid", borderwidth=2, padx=10, pady=10)
+    box.pack(pady=20)
+
+    root.mainloop()
+
+textvariable
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** links the message to a **StringVar**. When the variable changes, the message changes by itself.
+| **How to write it:** ``story = tk.StringVar(value="start text")`` then ``textvariable=story``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def next_page():
+        story.set("The dragon flew over the mountains, looking for somewhere to land.")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("textvariable")
+
+    story = tk.StringVar(value="Once upon a time, there was a small green dragon.")
+
+    page = tk.Message(root, textvariable=story, width=250, font=("Arial", 12))
+    page.pack(pady=10)
+
+    tk.Button(root, text="Next page", command=next_page).pack()
+
+    root.mainloop()
+
+----
+
+Message methods
+-------------------
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes options **after** the message has been made, e.g. to show new text.
+| **How to write it:** ``message.config(option=value)``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    facts = [
+        "The Sun is a star.",
+        "Light from the Sun takes about 8 minutes to reach Earth.",
+        "Jupiter is the largest planet in our solar system.",
+    ]
+    fact_number = 0
+
+
+    def next_fact():
+        global fact_number              # Allow the function to change fact_number
+        fact_number = (fact_number + 1) % len(facts)     # Go back to 0 after the last fact
+        fact_message.config(text=facts[fact_number])
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("config")
+
+    fact_message = tk.Message(root, text=facts[0], width=250, font=("Arial", 14))
+    fact_message.pack(pady=10)
+
+    tk.Button(root, text="Next fact", command=next_fact).pack()
+
+    root.mainloop()
+
+cget
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** reads the current value of an option, e.g. the text.
+| **How to write it:** ``words = message.cget("text")``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def count_words():
+        words = info.cget("text").split()
+        count_label.config(text=f"That message has {len(words)} words")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("cget")
+
+    info = tk.Message(root, text="Plants make their own food using sunlight, water and air.",
+                      width=250)
+    info.pack(pady=10)
+
+    tk.Button(root, text="Count words", command=count_words).pack()
+
+    count_label = tk.Label(root, text="")
+    count_label.pack(pady=5)
+
+    root.mainloop()
+
+----
+
+Message or Label?
+--------------------
+
+| A **Label** with ``wraplength`` can also wrap text. Both work. Use whichever is easier:
+
+.. list-table::
+    :header-rows: 1
+    :widths: 30 35 35
+
+    * -
+      - Message
+      - Label
+    * - Wraps text
+      - By itself
+      - Only if ``wraplength`` is set
+    * - ``width`` measured in
+      - Pixels
+      - Characters
+    * - Can show a picture
+      - No
+      - Yes
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``text``
+      - Words shown
+      - ``text="Hello"``
+    * - ``width``
+      - Width of the text block in pixels
+      - ``width=250``
+    * - ``aspect``
+      - Shape of the block if no width is set
+      - ``aspect=300``
+    * - ``font``
+      - Font name, size and style
+      - ``font=("Arial", 14)``
+    * - ``fg``, ``bg``
+      - Word colour, background colour
+      - ``fg="white", bg="red"``
+    * - ``justify``
+      - Line up the lines
+      - ``justify="center"``
+    * - ``padx``, ``pady``
+      - Space around the text
+      - ``padx=10, pady=10``
+    * - ``relief``, ``borderwidth``
+      - Border style and thickness
+      - ``relief="solid", borderwidth=2``
+    * - ``textvariable``
+      - Link to a StringVar
+      - ``textvariable=story``
+    * - ``config()``
+      - Change options later
+      - ``message.config(text="New")``
+    * - ``cget()``
+      - Read an option
+      - ``message.cget("text")``
 
 ----
 
 .. admonition:: Tasks
 
-    #. Create a Tkinter application with a window size of **450x250** containing a ``Message`` widget. Use the **Comic Sans MS** font at size **18**, a background colour of **#fff8dc**, a foreground colour of **darkgreen**, a width of **220** pixels, and display the widget using 20 pixels of padding on each side.
-
-        .. image:: images/message_question.png
-            :scale: 67
+    #. Make a window titled "Instructions" that is 300x200. Add a Message 250 pixels wide that explains how to play a game of your choice, in Arial size 12.
+    #. Give your Message a light yellow background, a solid border with a borderwidth of 1, and 10 pixels of padding.
+    #. Make a Message showing a four-line poem with each line centred. Use ``\n`` to start each new line.
+    #. Make a Message and a "Change" button. When clicked, use ``config`` to change the message text to a fun fact and its background to light green.
 
     .. dropdown::
         :icon: codescan
@@ -73,166 +406,78 @@ Message example
 
             .. tab-item:: Q1
 
-                Create the Message widget shown above.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Instructions")
+
+                    how_to = tk.Message(root, text="Roll the dice and move your piece. "
+                                                   "If you land on a ladder, climb up. "
+                                                   "If you land on a snake, slide down.",
+                                        width=250, font=("Arial", 12))
+                    how_to.pack(pady=10)
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
 
                 .. code-block:: python
 
                     import tkinter as tk
 
-                    # Create the main window
                     root = tk.Tk()
-                    root.title("Message Question")
-                    root.geometry("450x250")
+                    root.geometry("300x200")
+                    root.title("Instructions")
 
-                    message = tk.Message(
-                        root,
-                        text="The Message widget automatically wraps long text so that it fits inside the widget.",
-                        font=("Comic Sans MS", 18),
-                        bg="#fff8dc",
-                        fg="darkgreen",
-                        width=220
-                    )
-
-                    message.pack(padx=20, pady=20)
+                    how_to = tk.Message(root, text="Roll the dice and move your piece. "
+                                                   "If you land on a ladder, climb up. "
+                                                   "If you land on a snake, slide down.",
+                                        width=250, font=("Arial", 12), bg="lightyellow",
+                                        relief="solid", borderwidth=1, padx=10, pady=10)
+                    how_to.pack(pady=10)
 
                     root.mainloop()
 
-----
+            .. tab-item:: Q3
 
-Message methods
-----------------------------------------------------
+                .. code-block:: python
 
-| ``Message`` inherits most of its methods from the base ``Widget`` class.
-| It does not provide additional widget-specific methods.
-| Common methods include:
+                    import tkinter as tk
 
-.. py:function:: message_widget.config(option=value)
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Poem")
 
-    | Changes one or more configuration options.
+                    poem = tk.Message(root, text="Twinkle, twinkle, little star,\n"
+                                                 "How I wonder what you are!\n"
+                                                 "Up above the world so high,\n"
+                                                 "Like a diamond in the sky.",
+                                      width=250, justify="center")
+                    poem.pack(pady=10)
 
-.. py:function:: message_widget.cget(option)
+                    root.mainloop()
 
-    | Returns the current value of the specified option.
+            .. tab-item:: Q4
 
-.. py:function:: message_widget.destroy()
+                .. code-block:: python
 
-    | Removes the widget from the window.
-
-----
-
-Option details
---------------------
-
-.. py:function:: message_widget = tk.Message(parent, option=value)
-
-    | ``parent`` is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-    **Parameters:**
-
-    .. py:attribute:: anchor
-
-        | Syntax: ``message_widget = tk.Message(parent, anchor="position")``
-        | Description: Specifies where the text is positioned within the widget.
-        | Default: ``center``
-
-    .. py:attribute:: aspect
-
-        | Syntax: ``message_widget = tk.Message(parent, aspect=value)``
-        | Description: Specifies the desired aspect ratio (width to height) of the text layout.
-        | Default: ``150``
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``message_widget = tk.Message(parent, bg="color")``
-        | Description: Sets the background colour.
-        | Default: SystemButtonFace
-
-    .. py:attribute:: bd
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``message_widget = tk.Message(parent, borderwidth=value)``
-        | Description: Sets the width of the border.
-        | Default: ``2``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``message_widget = tk.Message(parent, cursor="cursor_type")``
-        | Description: Sets the mouse cursor when it is over the widget.
-
-    .. py:attribute:: font
-
-        | Syntax: ``message_widget = tk.Message(parent, font=("font_name", size, style))``
-        | Description: Sets the font used to display the text.
-
-    .. py:attribute:: foreground
-    .. py:attribute:: fg
-
-        | Syntax: ``message_widget = tk.Message(parent, fg="color")``
-        | Description: Sets the text colour.
-
-    .. py:attribute:: justify
-
-        | Syntax: ``message_widget = tk.Message(parent, justify="alignment")``
-        | Description: Specifies the alignment of multiple lines of text.
-        | Possible values include ``left``, ``center`` and ``right``.
-
-    .. py:attribute:: padx
-
-        | Syntax: ``message_widget = tk.Message(parent, padx=value)``
-        | Description: Sets the internal horizontal padding.
-
-    .. py:attribute:: pady
-
-        | Syntax: ``message_widget = tk.Message(parent, pady=value)``
-        | Description: Sets the internal vertical padding.
-
-    .. py:attribute:: relief
-
-        | Syntax: ``message_widget = tk.Message(parent, relief="style")``
-        | Description: Sets the border style.
-        | Default: ``flat``
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``message_widget = tk.Message(parent, takefocus=boolean)``
-        | Description: Determines whether the widget can receive keyboard focus.
-
-    .. py:attribute:: text
-
-        | Syntax: ``message_widget = tk.Message(parent, text="message")``
-        | Description: Specifies the text displayed by the widget.
-
-    .. py:attribute:: textvariable
-
-        | Syntax: ``message_widget = tk.Message(parent, textvariable=variable)``
-        | Description: Associates the displayed text with a Tkinter control variable.
-
-    .. py:attribute:: width
-
-        | Syntax: ``message_widget = tk.Message(parent, width=pixels)``
-        | Description: Specifies the width of the widget in pixels.
-        | The text is automatically wrapped to fit within this width.
+                    import tkinter as tk
 
 
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``Message`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.Message(root)
-    widget_options = widget.keys()
-
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+                    def change():
+                        fact.config(text="An octopus has three hearts!", bg="lightgreen")
 
 
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Fun fact")
+
+                    fact = tk.Message(root, text="Click the button for a fun fact.", width=250)
+                    fact.pack(pady=10)
+
+                    tk.Button(root, text="Change", command=change).pack()
+
+                    root.mainloop()

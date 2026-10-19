@@ -3,91 +3,460 @@ tk Radiobutton
 ====================================================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Radiobutton>`_
-| See: `<https://www.geeksforgeeks.org/radiobutton-in-tkinter-python/>`_
 
 ----
 
-Usage
----------------
+What is a Radiobutton?
+-------------------------
 
-| The `tkinter.Radiobutton` widget provides a radio button that allows the user to select one option from a group of choices.
-| To create a Radio button widget the general syntax is
-| (assuming import via "import tkinter as tk"):
-
-.. py:function:: radiobutton_widget = tk.Radiobutton(parent, option=value)
-
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-    | Each radio button should have a unique ``value``.
-    | When the button is selected, this value is stored in the shared ``variable``.
+| A **Radiobutton** is a small round button with words next to it.
+| Radiobuttons come in **groups**. The user can choose **only one** button in a group. Choosing another one un-chooses the first.
+| Use radiobuttons for questions with one answer, e.g. "Which year are you in?" or a multiple-choice quiz.
+| To let the user choose **many** options, use **Checkbuttons** instead.
 
 ----
 
-Using radio buttons
----------------------------
+Making a group of Radiobuttons
+---------------------------------
 
-.. image:: images/radio_buttons.png
-    :scale: 100
+| All the radiobuttons in a group share **one variable**. Each radiobutton has its own **value**.
+| When a radiobutton is chosen, its value is stored in the shared variable.
 
-| This code creates one group of radio buttons in a frame and a second group in root window below the frame.
+#. **Create** one variable with ``tk.StringVar()``.
+#. **Create** each radiobutton with the **same** ``variable`` and a **different** ``value``.
+#. **Place** each radiobutton with ``.pack()``.
 
-| Each radio button in a group has its own ``value``.
-| All radio buttons in the group share the same ``variable``.
-| Selecting a radio button stores its ``value`` in the shared ``variable``.
+.. code-block:: python
 
-| To group radio buttons together, set the variable option to the same StringVar (or IntVar) for each radio button. e.g. ``variable=option_grp1_var``.
-| A ``StringVar`` is commonly used when the radio button values are strings.
-| An ``IntVar`` is commonly used when the values are integers.
-| All radio buttons in the group must share the same control variable so only one option can be selected at a time.
-| To preselect the first radio button in the group use: ``option_grp1_var.set("Option 1")``.
+    import tkinter as tk            # Load the tkinter library
 
-| Set the `indicatoron` option to `0`, to display the widget as a regular push button instead of a circular radio button.
-| Set the `indicatoron` option to `1`, to make the radio buttons look like radio buttons.
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first radiobuttons")
 
-| A for loop is used to create each group of radio buttons since they have the same formatting options apart from the text and value options which are taken care of by the loop variable, `option`.
+    drink = tk.StringVar(value="Water")     # 1. One shared variable. "Water" is chosen at the start
+
+    water_radio = tk.Radiobutton(root, text="Water", variable=drink, value="Water")   # 2. Create
+    juice_radio = tk.Radiobutton(root, text="Juice", variable=drink, value="Juice")
+    milk_radio = tk.Radiobutton(root, text="Milk", variable=drink, value="Milk")
+
+    water_radio.pack()              # 3. Place them
+    juice_radio.pack()
+    milk_radio.pack()
+
+    root.mainloop()                 # Keep the window open
+
+| Click each one and notice that only one can be chosen at a time.
+
+----
+
+Radiobutton options
+-----------------------
+
+| Options are written as ``option=value`` inside ``tk.Radiobutton( )``, separated by commas.
+
+text
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the words next to the round button.
+| **How to write it:** ``text="your words"``
 
 .. code-block:: python
 
     import tkinter as tk
-    from tkinter import font
 
-
-    # Create the main window
     root = tk.Tk()
-    root.title("Option Buttons")
+    root.geometry("300x200")
+    root.title("text")
 
-    # Create a frame with a background color
-    frame = tk.Frame(root, bg="light blue")
-    frame.pack(anchor="nw", padx=10, pady=10)
+    answer = tk.StringVar(value="none")      # "none" matches no button, so nothing is chosen
 
-    # Define a font style
-    font_style = ("Lucida Grande", 18)
+    yes_radio = tk.Radiobutton(root, text="Yes, please", variable=answer, value="yes")
+    yes_radio.pack()
+    no_radio = tk.Radiobutton(root, text="No, thank you", variable=answer, value="no")
+    no_radio.pack()
 
-    # Create a StringVar to hold the selected option
-    option_grp1_var = tk.StringVar(value="Option 1")  # Set a default value for the variable
-
-    # Define the options
-    options_grp1 = ["Option 1", "Option 2", "Option 3"]
-
-    # Create and pack the radio buttons
-    for option in options_grp1:
-        button = tk.Radiobutton(frame, text=option, value=option, variable=option_grp1_var,
-                                bg="white", fg="black", font=font_style,
-                                indicatoron=1, padx=10, pady=5)
-        button.pack(anchor="nw", side="left", padx=5, pady=5)
-
-    # Run the main event loop
     root.mainloop()
 
+variable and value
+~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``variable`` is the shared variable for the group. ``value`` is what gets stored when **this** button is chosen.
+| **How to write them:** ``variable=year, value="Year 7"``
+| Read the chosen value with ``variable.get()``.
+| Use a ``tk.StringVar()`` for words or a ``tk.IntVar()`` for whole numbers.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show():
+        result_label.config(text="You chose " + year.get())
+
+
+    root = tk.Tk()
+    root.geometry("300x220")
+    root.title("variable and value")
+
+    year = tk.StringVar(value="Year 7")
+
+    tk.Radiobutton(root, text="Year 7", variable=year, value="Year 7").pack()
+    tk.Radiobutton(root, text="Year 8", variable=year, value="Year 8").pack()
+    tk.Radiobutton(root, text="Year 9", variable=year, value="Year 9").pack()
+
+    show_button = tk.Button(root, text="Show", command=show)
+    show_button.pack(pady=5)
+
+    result_label = tk.Label(root, text="")
+    result_label.pack()
+
+    root.mainloop()
+
+| ``tk.Radiobutton(...).pack()`` creates and places a widget in one line. Only do this when you never need to use the widget's name again.
+
+command
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** chooses a function to run as soon as the radiobutton is clicked.
+| **How to write it:** ``command=function_name`` (no brackets)
+| Give every radiobutton in the group the same command.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def change_colour():
+        root.config(bg=colour.get())     # Use the chosen value as the colour
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("command")
+
+    colour = tk.StringVar(value="white")
+
+    tk.Radiobutton(root, text="Red", variable=colour, value="red", command=change_colour).pack()
+    tk.Radiobutton(root, text="Green", variable=colour, value="green", command=change_colour).pack()
+    tk.Radiobutton(root, text="Blue", variable=colour, value="blue", command=change_colour).pack()
+
+    root.mainloop()
+
+font, fg and bg
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``font`` sets the style and size of the words, ``fg`` sets the colour of the words and ``bg`` sets the background colour.
+| **How to write them:** ``font=("Arial", 16)``, ``fg="purple"``, ``bg="lavender"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("font, fg and bg")
+
+    size = tk.StringVar(value="Small")
+
+    tk.Radiobutton(root, text="Small", variable=size, value="Small",
+                   font=("Arial", 16), fg="purple", bg="lavender").pack(pady=2)
+    tk.Radiobutton(root, text="Large", variable=size, value="Large",
+                   font=("Arial", 16), fg="purple", bg="lavender").pack(pady=2)
+
+    root.mainloop()
+
+selectcolor
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the colour inside the round button.
+| **How to write it:** ``selectcolor="colour"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("selectcolor")
+
+    pet = tk.StringVar(value="Dog")
+
+    tk.Radiobutton(root, text="Dog", variable=pet, value="Dog", selectcolor="yellow").pack()
+    tk.Radiobutton(root, text="Cat", variable=pet, value="Cat", selectcolor="yellow").pack()
+
+    root.mainloop()
+
+indicatoron
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** ``indicatoron=0`` hides the round button so each choice looks like a normal button. The chosen one stays pressed in.
+| **How to write it:** ``indicatoron=0``
+| Add ``width`` so all the buttons are the same size, and ``selectcolor`` to colour the chosen one.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("indicatoron")
+
+    level = tk.StringVar(value="Easy")
+
+    for choice in ["Easy", "Medium", "Hard"]:
+        tk.Radiobutton(root, text=choice, variable=level, value=choice,
+                       indicatoron=0, width=12, selectcolor="lightgreen").pack(pady=2)
+
+    root.mainloop()
+
+anchor and width
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``width`` sets how wide each radiobutton is (in characters). ``anchor="w"`` lines it up on the **left**.
+| Use the same ``width`` and ``anchor="w"`` on every radiobutton so the round buttons line up neatly.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("anchor and width")
+
+    sport = tk.StringVar(value="Soccer")
+
+    for choice in ["Soccer", "Netball", "Basketball", "Swimming"]:
+        tk.Radiobutton(root, text=choice, variable=sport, value=choice,
+                       width=15, anchor="w").pack()
+
+    root.mainloop()
+
+state
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** turns a radiobutton on or off.
+| **How to write it:** ``state="disabled"``
+| **Values:** ``"normal"`` (can be clicked, the default) and ``"disabled"`` (greyed out).
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("state")
+
+    seat = tk.StringVar(value="Window")
+
+    tk.Radiobutton(root, text="Window seat", variable=seat, value="Window").pack()
+    tk.Radiobutton(root, text="Aisle seat (full)", variable=seat, value="Aisle",
+                   state="disabled").pack()
+
+    root.mainloop()
+
+----
+
+Radiobutton methods
+-----------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot.
+
+get and set (the variable)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``variable.get()`` reads which value is chosen. ``variable.set(value)`` chooses a button from your code.
+| **How to write them:** ``choice = drink.get()``, ``drink.set("Milk")``
+| If the variable's value does not match any button, **no** button is chosen. ``drink.set("none")`` clears the group.
+| Do not use an empty string ``""`` for this: it makes every button look half-chosen.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def reset():
+        drink.set("none")       # Matches no button, so nothing is chosen
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("get and set")
+
+    drink = tk.StringVar()
+    drink.set("Juice")          # Start with Juice chosen
+
+    tk.Radiobutton(root, text="Water", variable=drink, value="Water").pack()
+    tk.Radiobutton(root, text="Juice", variable=drink, value="Juice").pack()
+    tk.Radiobutton(root, text="Milk", variable=drink, value="Milk").pack()
+
+    reset_button = tk.Button(root, text="Reset", command=reset)
+    reset_button.pack(pady=10)
+
+    root.mainloop()
+
+Checking a quiz answer
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Radiobuttons are great for multiple-choice questions. Compare ``variable.get()`` with the correct answer.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def check():
+        if answer.get() == "Mars":
+            result_label.config(text="Correct!", fg="green")
+        else:
+            result_label.config(text="Try again", fg="red")
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("Quiz")
+
+    question_label = tk.Label(root, text="Which planet is red?", font=("Arial", 14))
+    question_label.pack(pady=5)
+
+    answer = tk.StringVar(value="none")
+
+    for planet in ["Venus", "Mars", "Jupiter"]:
+        tk.Radiobutton(root, text=planet, variable=answer, value=planet).pack()
+
+    check_button = tk.Button(root, text="Check", command=check)
+    check_button.pack(pady=5)
+
+    result_label = tk.Label(root, text="", font=("Arial", 14))
+    result_label.pack()
+
+    root.mainloop()
+
+select and invoke
+~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:**
+| ``select()`` chooses this radiobutton (without running its command).
+| ``invoke()`` chooses this radiobutton **and** runs its command, just like a click.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show():
+        result_label.config(text="Size: " + size.get())
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("select and invoke")
+
+    size = tk.StringVar(value="none")
+
+    small_radio = tk.Radiobutton(root, text="Small", variable=size, value="Small", command=show)
+    small_radio.pack()
+    large_radio = tk.Radiobutton(root, text="Large", variable=size, value="Large", command=show)
+    large_radio.pack()
+
+    result_label = tk.Label(root, text="")
+    result_label.pack(pady=10)
+
+    large_radio.invoke()        # Choose "Large" and run show() at the start
+
+    root.mainloop()
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes options **after** the radiobutton has been made.
+| **How to write it:** ``radio.config(option=value)``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def lock_answer():
+        for radio in all_radios:
+            radio.config(state="disabled")      # No more changing the answer
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("config")
+
+    answer = tk.StringVar(value="none")
+
+    a_radio = tk.Radiobutton(root, text="A", variable=answer, value="A", command=lock_answer)
+    a_radio.pack()
+    b_radio = tk.Radiobutton(root, text="B", variable=answer, value="B", command=lock_answer)
+    b_radio.pack()
+
+    all_radios = [a_radio, b_radio]
+
+    root.mainloop()
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``text``
+      - Words next to the button
+      - ``text="Year 7"``
+    * - ``variable``
+      - Shared variable for the whole group
+      - ``variable=year``
+    * - ``value``
+      - What is stored when this button is chosen
+      - ``value="Year 7"``
+    * - ``command``
+      - Function to run when clicked
+      - ``command=show``
+    * - ``font``, ``fg``, ``bg``
+      - Font, word colour, background colour
+      - ``font=("Arial", 14)``
+    * - ``selectcolor``
+      - Colour inside the round button
+      - ``selectcolor="yellow"``
+    * - ``indicatoron``
+      - ``0`` makes it look like a normal button
+      - ``indicatoron=0``
+    * - ``width``, ``anchor``
+      - Width, and where it sits
+      - ``width=15, anchor="w"``
+    * - ``state``
+      - Turn it on or off
+      - ``state="disabled"``
+    * - ``variable.get()``
+      - Read the chosen value
+      - ``year.get()``
+    * - ``variable.set()``
+      - Choose a button from code
+      - ``year.set("Year 8")``
+    * - ``select()``
+      - Choose this button
+      - ``small_radio.select()``
+    * - ``invoke()``
+      - Choose this button and run its command
+      - ``small_radio.invoke()``
 
 ----
 
 .. admonition:: Tasks
 
-    #. Modify the code to display four radio buttons vertically, one beneath the other.
-
-        .. image:: images/radio_buttons_question.png
-            :scale: 67
+    #. Make a window titled "Transport" that is 300x200. Add a group of three radiobuttons: "Bus", "Car" and "Walk", sharing one ``StringVar``.
+    #. Make "Walk" chosen when the program starts.
+    #. Add a button labelled "Show" and a label. When clicked, the label shows "You travel by" followed by the chosen transport.
+    #. Make a multiple-choice question "What is 5 x 6?" with the choices 25, 30 and 35. Use ``command`` so the answer is checked as soon as a choice is clicked.
 
     .. dropdown::
         :icon: codescan
@@ -98,397 +467,106 @@ Using radio buttons
 
             .. tab-item:: Q1
 
-                Modify the code to display four radio buttons vertically, one beneath the other.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Transport")
+
+                    transport = tk.StringVar(value="none")
+
+                    bus_radio = tk.Radiobutton(root, text="Bus", variable=transport, value="Bus")
+                    bus_radio.pack()
+                    car_radio = tk.Radiobutton(root, text="Car", variable=transport, value="Car")
+                    car_radio.pack()
+                    walk_radio = tk.Radiobutton(root, text="Walk", variable=transport, value="Walk")
+                    walk_radio.pack()
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
 
                 .. code-block:: python
 
                     import tkinter as tk
-                    from tkinter import font
 
-                    # Create the main window
                     root = tk.Tk()
-                    root.title("Radio Buttons Question")
-                    root.geometry("300x300")
+                    root.geometry("300x200")
+                    root.title("Transport")
 
-                    # Create a frame with a background color
-                    frame = tk.Frame(root, bg="light blue")
-                    frame.pack(anchor="nw", padx=10, pady=10)
+                    transport = tk.StringVar(value="Walk")
 
-                    # Define a font style
-                    font_style = ("Lucida Grande", 18)
+                    bus_radio = tk.Radiobutton(root, text="Bus", variable=transport, value="Bus")
+                    bus_radio.pack()
+                    car_radio = tk.Radiobutton(root, text="Car", variable=transport, value="Car")
+                    car_radio.pack()
+                    walk_radio = tk.Radiobutton(root, text="Walk", variable=transport, value="Walk")
+                    walk_radio.pack()
 
-                    # Create a StringVar to hold the selected option
-                    option_var = tk.StringVar(value="Option 1")  # set a default value
-
-                    # Define the options
-                    options = ["Option 1", "Option 2", "Option 3", "Option 4"]
-
-                    # Create and pack the radio buttons
-                    for option in options:
-                        button = tk.Radiobutton(frame, text=option, value=option, variable=option_var,
-                                                bg="white", fg="black", font=font_style,
-                                                indicatoron=1, padx=10, pady=5)
-                        button.pack(anchor="nw", side="top", padx=5, pady=5)
-
-                    # Run the main event loop
                     root.mainloop()
 
+            .. tab-item:: Q3
 
-----
+                .. code-block:: python
 
-Methods
-----------------------
+                    import tkinter as tk
 
-.. py:function:: radiobutton_widget.select()
 
-    | Selects the radiobutton.
-    | Sets the associated control variable to this radiobutton's ``value``.
+                    def show():
+                        result_label.config(text="You travel by " + transport.get())
 
-.. py:function:: radiobutton_widget.deselect()
 
-    | Deselects the radiobutton.
-    | Sets the associated control variable to an empty value.
-    | This is mainly useful when no radiobutton in the group should be selected.
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Transport")
 
-.. py:function:: radiobutton_widget.flash()
+                    transport = tk.StringVar(value="Walk")
 
-    | Briefly flashes the radiobutton several times.
-    | Useful for drawing the user's attention to the widget.
+                    bus_radio = tk.Radiobutton(root, text="Bus", variable=transport, value="Bus")
+                    bus_radio.pack()
+                    car_radio = tk.Radiobutton(root, text="Car", variable=transport, value="Car")
+                    car_radio.pack()
+                    walk_radio = tk.Radiobutton(root, text="Walk", variable=transport, value="Walk")
+                    walk_radio.pack()
 
-.. py:function:: radiobutton_widget.invoke()
+                    show_button = tk.Button(root, text="Show", command=show)
+                    show_button.pack(pady=5)
 
-    | Simulates the user selecting the radiobutton.
-    | Sets the associated control variable to the radiobutton's ``value`` and calls the function specified by the ``command`` option, if one exists.
-    | Returns the value returned by the callback function.
+                    result_label = tk.Label(root, text="")
+                    result_label.pack()
 
-.. py:function:: radiobutton_widget.config(option=value)
+                    root.mainloop()
 
-    | Changes one or more widget options after creation.
+            .. tab-item:: Q4
 
-----
+                .. code-block:: python
 
-Control variable methods
-----------------------------
+                    import tkinter as tk
 
-.. py:function:: variable.get()
 
-    | Returns the currently selected value.
+                    def check():
+                        if answer.get() == 30:
+                            result_label.config(text="Correct!", fg="green")
+                        else:
+                            result_label.config(text="Try again", fg="red")
 
-.. py:function:: variable.set(value)
 
-    | Selects the radiobutton whose ``value`` matches ``value``.
-    | If no radiobutton has a matching value, none of the radiobuttons are selected.
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Quiz")
 
+                    question_label = tk.Label(root, text="What is 5 x 6?", font=("Arial", 14))
+                    question_label.pack()
 
-----
+                    answer = tk.IntVar(value=0)
 
-Parameter syntax
-----------------------
+                    for number in [25, 30, 35]:
+                        tk.Radiobutton(root, text=number, variable=answer, value=number,
+                                       command=check).pack()
 
-.. py:function:: radiobutton_widget = tk.Radiobutton(parent, option=value)
+                    result_label = tk.Label(root, text="", font=("Arial", 14))
+                    result_label.pack()
 
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-    **Parameters:**
-
-    .. py:attribute:: activebackground
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, activebackground="color")``
-        | Description: Sets the background color of the radiobutton when it is active.
-        | Default: SystemButtonFace
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, activebackground="lightblue")``
-
-    .. py:attribute:: activeforeground
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, activeforeground="color")``
-        | Description: Sets the foreground color of the radiobutton when it is active.
-        | Default: SystemWindowText
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, activeforeground="blue")``
-
-    .. py:attribute:: anchor
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, anchor="position")``
-        | Description: Sets the anchor position for the text and indicator.
-        | Default: center
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, anchor="w")``
-
-    .. py:attribute:: background
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, background="color")``
-        | Description: Sets the background color of the radiobutton.
-        | Default: SystemButtonFace
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, background="lightyellow")``
-
-    .. py:attribute:: bd
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, bd=border_width)``
-        | Description: Sets the border width of the radiobutton.
-        | Default: 2
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, bd=5)``
-
-    .. py:attribute:: bg
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, bg="color")``
-        | Description: Sets the background color of the radiobutton.
-        | Default: SystemButtonFace
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, bg="lightyellow")``
-
-    .. py:attribute:: bitmap
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, bitmap="bitmap_name")``
-        | Description: Sets a bitmap image to be displayed on the radiobutton.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, bitmap="error")``
-
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, borderwidth=width)``
-        | Description: Sets the width of the border around the radiobutton.
-        | Default: 2
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, borderwidth=3)``
-
-    .. py:attribute:: command
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, command=function)``
-        | Description: Specifies a function to be called when the radiobutton is selected. Do not include parentheses after the function name.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, command=my_function)``
-
-    .. py:attribute:: compound
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, compound="position")``
-        | Description: Specifies how to display the image and text (if both are set).
-        | Default: none
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, compound="left")``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, cursor="cursor_type")``
-        | Description: Sets the mouse cursor when hovering over the radiobutton.
-        | Default: arrow
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, cursor="hand2")``
-
-    .. py:attribute:: disabledforeground
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, disabledforeground="color")``
-        | Description: Sets the foreground color when the radiobutton is disabled.
-        | Default: SystemDisabledText
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, disabledforeground="gray")``
-
-    .. py:attribute:: fg
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, fg="color")``
-        | Description: Sets the foreground color of the radiobutton (text color).
-        | Default: SystemWindowText
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, fg="black")``
-
-    .. py:attribute:: font
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, font=("font_name", size, "style"))``
-        | Description: Specifies the font type, size, and style for the text of the radiobutton.
-        | Default: TkDefaultFont
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, font=("Arial", 12, "bold"))``
-
-    .. py:attribute:: foreground
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, foreground="color")``
-        | Description: Sets the foreground color of the radiobutton (text color).
-        | Default: SystemWindowText
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, foreground="black")``
-
-    .. py:attribute:: height
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, height=value)``
-        | Description: Sets the height of the radiobutton.
-        | Default: 0 (automatically determined)
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, height=2)``
-
-    .. py:attribute:: highlightbackground
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, highlightbackground="color")``
-        | Description: Sets the background color of the radiobutton when it does not have focus.
-        | Default: SystemButtonFace
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, highlightbackground="gray")``
-
-    .. py:attribute:: highlightcolor
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, highlightcolor="color")``
-        | Description: Sets the color of the highlight when the radiobutton has focus.
-        | Default: SystemWindowFrame
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, highlightcolor="blue")``
-
-    .. py:attribute:: highlightthickness
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, highlightthickness=thickness)``
-        | Description: Sets the thickness of the highlight border.
-        | Default: 1
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, highlightthickness=2)``
-
-    .. py:attribute:: image
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, image="image_name")``
-        | Description: Sets an image to be displayed on the radiobutton.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, image=my_image)``
-
-    .. py:attribute:: indicatoron
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, indicatoron=1)``
-        | Description: Determines whether the circular radio button indicator is shown. Set to 0 to display the widget as a push button.
-        | Default: 1
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, indicatoron=0)``
-
-    .. py:attribute:: justify
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, justify="position")``
-        | Description: Sets the justification of the text (left, center, right).
-        | Default: center
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, justify="right")``
-
-    .. py:attribute:: offrelief
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, offrelief="style")``
-        | Description: Sets the relief style for the indicator when off.
-        | Default: raised
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, offrelief="flat")``
-
-    .. py:attribute:: overrelief
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, overrelief="style")``
-        | Description: Sets the relief style for the indicator when hovered over.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, overrelief="sunken")``
-
-    .. py:attribute:: padx
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, padx=padding_value)``
-        | Description: Sets the horizontal padding within the radiobutton.
-        | Default: 1
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, padx=10)``
-
-    .. py:attribute:: pady
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, pady=padding_value)``
-        | Description: Sets the vertical padding within the radiobutton.
-        | Default: 1
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, pady=10)``
-
-    .. py:attribute:: relief
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, relief="style")``
-        | Description: Sets the border style of the radiobutton. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
-        | Default: flat
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, relief="raised")``
-
-    .. py:attribute:: selectcolor
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, selectcolor="color")``
-        | Description: Sets the color of the indicator when the radiobutton is selected.
-        | Default: SystemWindow
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, selectcolor="lightgreen")``
-
-    .. py:attribute:: selectimage
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, selectimage="image_name")``
-        | Description: Sets an image to be displayed when the radiobutton is selected.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, selectimage=my_selected_image)``
-
-    .. py:attribute:: state
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, state="state_type")``
-        | Description: Sets the state of the radiobutton. Options include `normal`, `disabled`, or `active`.
-        | Default: normal
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, state="disabled")``
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, takefocus=1)``
-        | Description: Allows the radiobutton to take focus on click.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, takefocus=1)``
-
-    .. py:attribute:: text
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, text="label")``
-        | Description: Sets the text label for the radiobutton.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, text="Option 1")``
-
-    .. py:attribute:: textvariable
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, textvariable=variable)``
-        | Description: Associates a variable with the text of the radiobutton.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, textvariable=my_text_var)``
-
-    .. py:attribute:: tristateimage
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, tristateimage="image_name")``
-        | Description: Sets an image to be displayed for a tristate radiobutton.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, tristateimage=my_tristate_image)``
-
-    .. py:attribute:: tristatevalue
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, tristatevalue=value)``
-        | Description: Sets the value for the tristate option of the radiobutton.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, tristatevalue=2)``
-
-    .. py:attribute:: underline
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, underline=index)``
-        | Description: Specifies the index of the character to underline in the text.
-        | Default: -1 (no underline)
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, underline=0)``
-
-    .. py:attribute:: value
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, value=radio_value)``
-        | Description: Specifies the value assigned to the shared control variable when this radio button is selected.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, value=1)``
-
-    .. py:attribute:: variable
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, variable=control_variable)``
-        | Description: Specifies the shared control variable (such as StringVar or IntVar) used to determine which radio button in the group is selected.
-        | Default: None
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, variable=my_var)``
-
-    .. py:attribute:: width
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, width=width_value)``
-        | Description: Sets the width of the radiobutton.
-        | Default: 0 (automatically determined)
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, width=30)``
-
-    .. py:attribute:: wraplength
-
-        | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, wraplength=pixel_value)``
-        | Description: Sets the maximum line length for text in pixels.
-        | Default: 0 (no wrapping)
-        | Example: ``radiobutton_widget = tk.Radiobutton(root, wraplength=100)``
-
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``Radiobutton`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.Radiobutton(root)
-    widget_options = widget.keys()
-
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
-
-
+                    root.mainloop()

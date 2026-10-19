@@ -6,88 +6,408 @@ tk PanedWindow
 
 ----
 
-Usage
----------------
+What is a PanedWindow?
+-------------------------
 
-| The `tkinter.PanedWindow` widget is a container that allows the user to resize child widgets by dragging a separator (sash).
-| It is useful for creating layouts where the user controls the relative size of sections of the window.
-| Paned windows can be arranged horizontally or vertically.
-| To create a paned window the general syntax is
-| (assuming import via "import tkinter as tk"):
-
-.. py:function:: panedwindow_widget = tk.PanedWindow(parent, option=value)
-
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-| Child widgets are added to a ``PanedWindow`` using the ``add()`` method.
+| A **PanedWindow** splits part of a window into two or more sections called **panes**.
+| Between the panes is a line called a **sash**. The user drags the sash to make one pane bigger and the other smaller.
+| You have seen this in apps like File Explorer, where you can drag the line between the folder list and the files.
 
 ----
 
-Sample PanedWindow
-----------------------------
+Making a PanedWindow
+-------------------------
 
-| The code below creates a horizontal ``PanedWindow`` containing two frames.
-| The user can drag the divider between the frames to resize them.
+| A PanedWindow is made differently from most widgets. Widgets go **into** it with ``.add()``, not ``.pack()``.
+
+#. **Create** the PanedWindow and **place** it with ``.pack()``.
+#. **Create** a widget for each pane, using the PanedWindow as the parent.
+#. **Add** each widget to the PanedWindow with ``.add(widget)``.
+
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first PanedWindow")
+
+    panes = tk.PanedWindow(root)                    # 1. Create the PanedWindow
+    panes.pack(fill="both", expand=True)            #    and fill the window
+
+    left_label = tk.Label(panes, text="Left", bg="lightblue")      # 2. Create the widgets
+    right_label = tk.Label(panes, text="Right", bg="lightgreen")
+
+    panes.add(left_label)                           # 3. Add them as panes
+    panes.add(right_label)
+
+    root.mainloop()                 # Keep the window open
+
+| Move the mouse over the line between the two colours, then drag it left and right.
+
+----
+
+PanedWindow options
+----------------------
+
+| Options are written as ``option=value`` inside ``tk.PanedWindow( )``, separated by commas.
+
+orient
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** chooses whether the panes sit side by side or one above the other.
+| **How to write it:** ``orient="vertical"``
+| **Values:** ``"horizontal"`` (side by side, the default) and ``"vertical"`` (top and bottom).
 
 .. code-block:: python
 
     import tkinter as tk
 
     root = tk.Tk()
-    root.title("PanedWindow Example")
-    root.geometry("500x300")
+    root.geometry("300x200")
+    root.title("orient")
 
-    # Create the PanedWindow
-    paned = tk.PanedWindow(
-        root,
-        orient="horizontal",
-        sashwidth=5,
-        bg="lightgray"
-    )
+    panes = tk.PanedWindow(root, orient="vertical")
+    panes.pack(fill="both", expand=True)
 
-    paned.pack(fill="both", expand=True)
-
-    # Create child frames
-    left_frame = tk.Frame(
-        paned,
-        bg="lightblue",
-        width=200,
-        height=200
-    )
-
-    right_frame = tk.Frame(
-        paned,
-        bg="lightgreen",
-        width=200,
-        height=200
-    )
-
-    # Add frames to the PanedWindow
-    paned.add(left_frame)
-    paned.add(right_frame)
+    panes.add(tk.Label(panes, text="Top", bg="pink"))
+    panes.add(tk.Label(panes, text="Bottom", bg="lightyellow"))
 
     root.mainloop()
 
+| ``panes.add(tk.Label(panes, ...))`` creates a label and adds it in one line.
 
-.. image:: images/panedwindow.png
-    :scale: 100
+sashwidth and sashrelief
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``sashwidth`` sets how thick the dragging line is, in pixels. ``sashrelief`` sets its border style.
+| **How to write them:** ``sashwidth=8, sashrelief="raised"``
+| A thicker sash is easier to find and drag.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("sashwidth")
+
+    panes = tk.PanedWindow(root, sashwidth=10, sashrelief="raised")
+    panes.pack(fill="both", expand=True)
+
+    panes.add(tk.Label(panes, text="Drag the", bg="lightblue"))
+    panes.add(tk.Label(panes, text="thick sash", bg="lightgreen"))
+
+    root.mainloop()
+
+bg
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the colour of the PanedWindow. This is the colour of the **sash**, because the panes cover the rest.
+| **How to write it:** ``bg="colour"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("bg")
+
+    panes = tk.PanedWindow(root, bg="red", sashwidth=6)
+    panes.pack(fill="both", expand=True)
+
+    panes.add(tk.Label(panes, text="Left", bg="white"))
+    panes.add(tk.Label(panes, text="Right", bg="white"))
+
+    root.mainloop()
+
+showhandle
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** ``showhandle=True`` draws a small square handle on the sash, showing the user where to grab it.
+| **How to write it:** ``showhandle=True``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("showhandle")
+
+    panes = tk.PanedWindow(root, showhandle=True, sashwidth=6)
+    panes.pack(fill="both", expand=True)
+
+    panes.add(tk.Label(panes, text="Left", bg="lightblue"))
+    panes.add(tk.Label(panes, text="Right", bg="lightgreen"))
+
+    root.mainloop()
+
+relief and borderwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** draw a border around the whole PanedWindow.
+| **How to write them:** ``relief="solid", borderwidth=2``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("relief")
+
+    panes = tk.PanedWindow(root, relief="solid", borderwidth=2)
+    panes.pack(fill="both", expand=True, padx=10, pady=10)
+
+    panes.add(tk.Label(panes, text="Left", bg="lightblue"))
+    panes.add(tk.Label(panes, text="Right", bg="lightgreen"))
+
+    root.mainloop()
+
+----
+
+PanedWindow methods
+----------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot, e.g. ``panes.add(...)``.
+
+add
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** puts a widget into the PanedWindow as a new pane.
+| **How to write it:** ``panes.add(widget)``
+| Panes appear in the order they are added. Any widget can be a pane, including a **Frame** full of other widgets.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("400x200")
+    root.title("add")
+
+    panes = tk.PanedWindow(root, sashwidth=5)
+    panes.pack(fill="both", expand=True)
+
+    # Pane 1: a list of topics
+    topic_list = tk.Listbox(panes)
+    for topic in ["Planets", "Stars", "Moons"]:
+        topic_list.insert(tk.END, topic)
+    panes.add(topic_list)
+
+    # Pane 2: a box for notes
+    notes_box = tk.Text(panes, wrap="word")
+    notes_box.insert("1.0", "Type your notes here")
+    panes.add(notes_box)
+
+    root.mainloop()
+
+add with minsize and width
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| ``add()`` can also have options for that pane:
+
+- ``width=150`` sets the starting width of the pane in pixels (use ``height`` for vertical panes).
+- ``minsize=80`` stops the user dragging the pane smaller than 80 pixels.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("400x200")
+    root.title("minsize")
+
+    panes = tk.PanedWindow(root, sashwidth=5)
+    panes.pack(fill="both", expand=True)
+
+    panes.add(tk.Label(panes, text="Menu", bg="lightblue"), width=100, minsize=80)
+    panes.add(tk.Label(panes, text="Main area", bg="white"), minsize=150)
+
+    root.mainloop()
+
+forget
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** removes a pane from the PanedWindow.
+| **How to write it:** ``panes.forget(widget)``
+| Use ``panes.add(widget)`` to put it back.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def hide_help():
+        panes.forget(help_label)
+
+
+    def show_help():
+        panes.add(help_label)
+
+
+    root = tk.Tk()
+    root.geometry("400x250")
+    root.title("forget")
+
+    panes = tk.PanedWindow(root, sashwidth=5)
+    panes.pack(fill="both", expand=True)
+
+    game_label = tk.Label(panes, text="Game area", bg="white")
+    help_label = tk.Label(panes, text="Help:\nUse the arrow keys", bg="lightyellow")
+    panes.add(game_label)
+    panes.add(help_label)
+
+    tk.Button(root, text="Hide help", command=hide_help).pack(side="left", padx=10, pady=5)
+    tk.Button(root, text="Show help", command=show_help).pack(side="left", padx=10, pady=5)
+
+    root.mainloop()
+
+panes
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** gives back a list of the panes, so you can count them.
+| **How to write it:** ``count = len(panes.panes())``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("panes")
+
+    panes = tk.PanedWindow(root)
+    panes.pack(fill="both", expand=True)
+
+    panes.add(tk.Label(panes, text="A", bg="pink"))
+    panes.add(tk.Label(panes, text="B", bg="lightblue"))
+    panes.add(tk.Label(panes, text="C", bg="lightgreen"))
+
+    count_label = tk.Label(root, text=f"Number of panes: {len(panes.panes())}")
+    count_label.pack()
+
+    root.mainloop()
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes options **after** the PanedWindow has been made.
+| **How to write it:** ``panes.config(option=value)``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def flip():
+        if panes.cget("orient") == "horizontal":
+            panes.config(orient="vertical")
+        else:
+            panes.config(orient="horizontal")
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("config")
+
+    panes = tk.PanedWindow(root, sashwidth=5)
+    panes.pack(fill="both", expand=True)
+
+    panes.add(tk.Label(panes, text="One", bg="lightblue"))
+    panes.add(tk.Label(panes, text="Two", bg="lightgreen"))
+
+    tk.Button(root, text="Flip", command=flip).pack(pady=5)
+
+    root.mainloop()
+
+----
+
+Panes inside panes
+---------------------
+
+| A PanedWindow can be added to another PanedWindow. This makes layouts like a code editor: a list on the left, and on the right a top pane and a bottom pane.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("400x250")
+    root.title("Panes inside panes")
+
+    outer = tk.PanedWindow(root, orient="horizontal", sashwidth=5)
+    outer.pack(fill="both", expand=True)
+
+    outer.add(tk.Label(outer, text="Files", bg="lightblue"), width=100)
+
+    inner = tk.PanedWindow(outer, orient="vertical", sashwidth=5)     # Inside "outer"
+    outer.add(inner)
+
+    inner.add(tk.Label(inner, text="Code", bg="white"), height=150)
+    inner.add(tk.Label(inner, text="Output", bg="black", fg="white"))
+
+    root.mainloop()
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``orient``
+      - Side by side or top and bottom
+      - ``orient="vertical"``
+    * - ``sashwidth``
+      - Thickness of the dragging line
+      - ``sashwidth=8``
+    * - ``sashrelief``
+      - Border style of the dragging line
+      - ``sashrelief="raised"``
+    * - ``bg``
+      - Colour of the sash
+      - ``bg="gray"``
+    * - ``showhandle``
+      - Show a handle on the sash
+      - ``showhandle=True``
+    * - ``relief``, ``borderwidth``
+      - Border around the whole widget
+      - ``relief="solid", borderwidth=2``
+    * - ``add()``
+      - Put a widget in as a pane
+      - ``panes.add(label)``
+    * - ``add(..., width=)``
+      - Starting size of the pane
+      - ``panes.add(label, width=100)``
+    * - ``add(..., minsize=)``
+      - Smallest size of the pane
+      - ``panes.add(label, minsize=80)``
+    * - ``forget()``
+      - Remove a pane
+      - ``panes.forget(label)``
+    * - ``panes()``
+      - List of the panes
+      - ``len(panes.panes())``
+    * - ``config()``
+      - Change options later
+      - ``panes.config(sashwidth=10)``
 
 ----
 
 .. admonition:: Tasks
 
-    #. Modify the code so that it creates a vertical ``PanedWindow`` containing three frames.
-
-        * Arrange the frames from top to bottom.
-        * Set the top frame background to light blue.
-        * Set the middle frame background to light yellow.
-        * Set the bottom frame background to light green.
-        * Add all three frames to the ``PanedWindow``.
-        * Set the minimum size of each pane to 50 pixels.
-
-        .. image:: images/panedwindow_question.png
-            :scale: 100
+    #. Make a window titled "Panes" that is 300x200. Add a PanedWindow that fills the window, with two labels side by side: "Left" on a yellow background and "Right" on an orange background.
+    #. Change your PanedWindow so the panes are top and bottom, and the sash is 10 pixels thick.
+    #. Make a PanedWindow with a Listbox of three animals in the left pane and a Text box in the right pane. The left pane should start 120 pixels wide.
+    #. Make a PanedWindow with three panes, "Red", "Green" and "Blue", each with that colour as the background. Use ``minsize`` so no pane can be dragged smaller than 50 pixels.
 
     .. dropdown::
         :icon: codescan
@@ -98,267 +418,82 @@ Sample PanedWindow
 
             .. tab-item:: Q1
 
-                Modify the code so that it creates a vertical ``PanedWindow`` containing three resizable frames.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Panes")
+
+                    panes = tk.PanedWindow(root)
+                    panes.pack(fill="both", expand=True)
+
+                    left_label = tk.Label(panes, text="Left", bg="yellow")
+                    right_label = tk.Label(panes, text="Right", bg="orange")
+                    panes.add(left_label)
+                    panes.add(right_label)
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
 
                 .. code-block:: python
 
                     import tkinter as tk
 
-                    # Create the main window
                     root = tk.Tk()
-                    root.title("PanedWindow Question")
-                    root.geometry("300x310")
+                    root.geometry("300x200")
+                    root.title("Panes")
 
-                    # Create the PanedWindow
-                    paned = tk.PanedWindow(
-                        root,
-                        orient="vertical",
-                        sashwidth=5
-                    )
+                    panes = tk.PanedWindow(root, orient="vertical", sashwidth=10)
+                    panes.pack(fill="both", expand=True)
 
-                    paned.pack(fill="both", expand=True)
+                    top_label = tk.Label(panes, text="Top", bg="yellow")
+                    bottom_label = tk.Label(panes, text="Bottom", bg="orange")
+                    panes.add(top_label)
+                    panes.add(bottom_label)
 
-                    # Create three frames
-                    top_frame = tk.Frame(
-                        paned,
-                        bg="light blue",
-                        width=300,
-                        height=100
-                    )
-
-                    middle_frame = tk.Frame(
-                        paned,
-                        bg="light yellow",
-                        width=300,
-                        height=100
-                    )
-
-                    bottom_frame = tk.Frame(
-                        paned,
-                        bg="light green",
-                        width=300,
-                        height=100
-                    )
-
-                    # Add frames to the PanedWindow
-                    paned.add(top_frame, minsize=50)
-                    paned.add(middle_frame, minsize=50)
-                    paned.add(bottom_frame, minsize=50)
-
-                    # Run the main event loop
                     root.mainloop()
 
-----
+            .. tab-item:: Q3
 
-Methods
-----------------------
+                .. code-block:: python
 
-.. py:function:: panedwindow_widget.add(child_widget, option=value)
+                    import tkinter as tk
 
-    | Adds a child widget to the PanedWindow.
-    | The child widget becomes one of the resizable sections.
-    |
-    | Example:
-    |
-    | ``paned.add(frame1)``
+                    root = tk.Tk()
+                    root.geometry("400x200")
+                    root.title("Animals")
 
+                    panes = tk.PanedWindow(root, sashwidth=5)
+                    panes.pack(fill="both", expand=True)
 
-.. py:function:: panedwindow_widget.remove(child_widget)
+                    animal_list = tk.Listbox(panes)
+                    for animal in ["Koala", "Wombat", "Platypus"]:
+                        animal_list.insert(tk.END, animal)
+                    panes.add(animal_list, width=120)
 
-    | Removes a child widget from the PanedWindow.
-    |
-    | Example:
-    |
-    | ``paned.remove(frame1)``
+                    notes_box = tk.Text(panes)
+                    panes.add(notes_box)
 
+                    root.mainloop()
 
-.. py:function:: panedwindow_widget.forget(child_widget)
+            .. tab-item:: Q4
 
-    | Removes a child widget from the PanedWindow.
-    | The widget is removed but not destroyed.
-    |
-    | Example:
-    |
-    | ``paned.forget(frame1)``
+                .. code-block:: python
 
+                    import tkinter as tk
 
-.. py:function:: panedwindow_widget.paneconfig(child_widget, option=value)
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("RGB")
 
-    | Changes the configuration options for a child widget inside the PanedWindow.
-    |
-    | Example:
-    |
-    | ``paned.paneconfig(frame1, minsize=100)``
+                    panes = tk.PanedWindow(root, sashwidth=5)
+                    panes.pack(fill="both", expand=True)
 
+                    for colour in ["Red", "Green", "Blue"]:
+                        panes.add(tk.Label(panes, text=colour, bg=colour.lower(), fg="white"),
+                                  minsize=50)
 
-.. py:function:: panedwindow_widget.paneconfigure(child_widget, option=value)
-
-    | Alternative name for ``paneconfig()``.
-    | Updates options for a specific child pane.
-
-
-.. py:function:: panedwindow_widget.panes()
-
-    | Returns a tuple containing the widgets managed by the PanedWindow.
-    |
-    | Example:
-    |
-    | ``print(paned.panes())``
-
-
-.. py:function:: panedwindow_widget.sash_coord(index)
-
-    | Returns the current x and y coordinates of a sash.
-    |
-    | Example:
-    |
-    | ``x, y = paned.sash_coord(0)``
-
-
-.. py:function:: panedwindow_widget.sash_place(index, x, y)
-
-    | Moves a sash to a specified position.
-    |
-    | Example:
-    |
-    | ``paned.sash_place(0, 150, 0)``
-
-
-----
-
-Parameter syntax
-----------------------
-
-| The main options are below.
-
-.. py:function:: panedwindow_widget = tk.PanedWindow(parent, option=value)
-
-    **Parameters:**
-
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, bg="color")``
-        | Description: Sets the background colour of the PanedWindow.
-        | Default: SystemButtonFace
-
-
-    .. py:attribute:: borderwidth
-    .. py:attribute:: bd
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, bd=width)``
-        | Description: Sets the width of the border around the PanedWindow.
-        | Default: ``2``
-
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, cursor="cursor_type")``
-        | Description: Sets the mouse cursor when hovering over the PanedWindow.
-
-
-    .. py:attribute:: handlepad
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, handlepad=value)``
-        | Description: Sets the distance between the sash and the resize handle.
-        | Default: ``8``
-
-
-    .. py:attribute:: handlesize
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, handlesize=value)``
-        | Description: Sets the size of the sash resize handle.
-        | Default: ``8``
-
-
-    .. py:attribute:: orient
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, orient="orientation")``
-        | Description: Sets the direction of the panes.
-        | Values:
-        |
-        | - ``"horizontal"``: panes arranged left to right.
-        | - ``"vertical"``: panes arranged top to bottom.
-        |
-        | Default: ``horizontal``
-
-
-    .. py:attribute:: relief
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, relief="style")``
-        | Description: Sets the border style.
-        | Values include ``flat``, ``raised``, ``sunken``, ``ridge``, ``solid`` and ``groove``.
-        | Default: ``raised``
-
-
-    .. py:attribute:: sashcursor
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, sashcursor="cursor_type")``
-        | Description: Sets the cursor displayed over the sash.
-        | Example:
-        |
-        | ``sashcursor="sb_h_double_arrow"``
-
-
-    .. py:attribute:: sashpad
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, sashpad=value)``
-        | Description: Sets padding around the sash.
-        | Default: ``0``
-
-
-    .. py:attribute:: sashrelief
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, sashrelief="style")``
-        | Description: Sets the relief style of the sash.
-        | Default: ``flat``
-
-
-    .. py:attribute:: sashwidth
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, sashwidth=value)``
-        | Description: Sets the width of the sash divider.
-        | Default: ``2``
-
-
-    .. py:attribute:: showhandle
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, showhandle=True)``
-        | Description: Displays the resize handle on the sash.
-        | Default: ``False``
-
-
-    .. py:attribute:: width
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, width=value)``
-        | Description: Sets the requested width of the PanedWindow.
-
-
-    .. py:attribute:: height
-
-        | Syntax: ``panedwindow_widget = tk.PanedWindow(parent, height=value)``
-        | Description: Sets the requested height of the PanedWindow.
-
-
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``PanedWindow`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.PanedWindow(root)
-
-    widget_options = widget.keys()
-
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")
-
-
+                    root.mainloop()

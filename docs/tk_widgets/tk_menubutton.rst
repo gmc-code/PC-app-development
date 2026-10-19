@@ -1,89 +1,421 @@
-==============================
+====================================================
 tk Menubutton
-==============================
+====================================================
 
-| See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Menubutton>`_
-| See: `<https://www.geeksforgeeks.org/python-tkinter-menubutton-widget/>`_
-
-----
-
-Overview
-------------
-
-| The ``tk.Menubutton`` widget creates a button that displays a menu when clicked.
-| It is useful for creating drop-down buttons, toolbar menus, and option selectors.
-| Unlike ``tk.Menu``, a ``Menubutton`` is a visible widget placed inside a window.
-
-| To create a Menubutton widget, the general syntax is
-| (assuming import via "import tkinter as tk"):
-
-.. py:function:: menubutton_widget = tk.Menubutton(parent, option=value)
-
-    | * ``parent`` is the window or frame object.
-    | * ``option=value`` specifies one or more configuration options.
-
-| A menu is attached to a Menubutton using ``menu=menu_widget``.
-
-.. py:function:: menu_widget = tk.Menu(parent, option=value)
-
-    | * ``parent`` is the menubutton widget.
-    | * ``option=value`` specifies one or more configuration options.
-
+| See: `<https://www.tcl-lang.org/man/tcl8.6/TkCmd/menubutton.htm>`_
 
 ----
 
-Sample Menubutton
+What is a Menubutton?
+------------------------
+
+| A **Menubutton** is a button that opens a drop-down **Menu** when it is clicked.
+| Unlike a menu bar, a Menubutton can be placed **anywhere** in the window, like any other widget.
+| Use it when you want a small drop-down list of commands or choices next to other widgets.
+
+----
+
+Making a Menubutton
 ----------------------
 
-.. image:: images/menubutton.png
-    :scale: 100
+| A Menubutton and its Menu are made together:
+
+#. **Create** the Menubutton with ``tk.Menubutton(root, text="...")``.
+#. **Create** a Menu that belongs to the Menubutton: ``tk.Menu(menubutton, tearoff=0)``.
+#. **Add** commands to the Menu.
+#. **Link** the Menu to the Menubutton with ``menubutton.config(menu=the_menu)``.
+#. **Place** the Menubutton with ``.pack()``.
+
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
 
 
-| The code below creates a Menubutton with a drop-down menu.
+    def say(word):
+        message_label.config(text=word)
+
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x200")        # Window size: 300 wide, 200 high
+    root.title("My first Menubutton")
+
+    greet_button = tk.Menubutton(root, text="Greetings", relief="raised")   # 1. Create it
+
+    greet_menu = tk.Menu(greet_button, tearoff=0)                           # 2. Its menu
+    greet_menu.add_command(label="Hello", command=lambda: say("Hello!"))    # 3. Add commands
+    greet_menu.add_command(label="Goodbye", command=lambda: say("Goodbye!"))
+
+    greet_button.config(menu=greet_menu)                                    # 4. Link them
+    greet_button.pack(pady=20)                                              # 5. Place it
+
+    message_label = tk.Label(root, text="", font=("Arial", 16))
+    message_label.pack()
+
+    root.mainloop()                 # Keep the window open
+
+| ``lambda:`` lets each command send different words to the same function. See the **Button** page for more about ``lambda``.
+
+----
+
+Menubutton options
+---------------------
+
+| Options are written as ``option=value`` inside ``tk.Menubutton( )``, separated by commas.
+
+text
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the words on the Menubutton.
+| **How to write it:** ``text="your words"``
 
 .. code-block:: python
 
     import tkinter as tk
 
     root = tk.Tk()
-    root.title("Menubutton Example")
     root.geometry("300x200")
+    root.title("text")
 
-    menubutton = tk.Menubutton(
-        root,
-        text="Options",
-        relief="raised"
-    )
+    options_button = tk.Menubutton(root, text="Options ▼", relief="raised")
+    options_menu = tk.Menu(options_button, tearoff=0)
+    options_menu.add_command(label="Settings")
+    options_menu.add_command(label="Help")
+    options_button.config(menu=options_menu)
+    options_button.pack(pady=20)
 
-    # Create the menu owned by the Menubutton
-    menu = tk.Menu(menubutton, tearoff=0)
+    root.mainloop()
 
-    menu.add_command(label="Option 1")
-    menu.add_command(label="Option 2")
-    menu.add_separator()
-    menu.add_command(label="Exit", command=root.destroy)
+| Adding ``▼`` to the words shows the user that a list will drop down.
 
-    # Attach the menu
-    menubutton.config(menu=menu)
+relief and borderwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    menubutton.pack(padx=20, pady=20)
+| **What they do:** set the border style and thickness.
+| **How to write them:** ``relief="raised", borderwidth=2``
+| A Menubutton is ``"flat"`` by default, so it looks like a label. ``relief="raised"`` makes it look like a button the user can click.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("relief")
+
+    flat_button = tk.Menubutton(root, text="Flat (default)")
+    flat_button.pack(pady=10)
+
+    raised_button = tk.Menubutton(root, text="Raised", relief="raised", borderwidth=2)
+    raised_button.pack(pady=10)
+
+    root.mainloop()
+
+font, fg and bg
+~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``font`` sets the style and size of the words. ``fg`` and ``bg`` set the word and background colours.
+| **How to write them:** ``font=("Arial", 14)``, ``fg="white"``, ``bg="green"``
+| These change the **button**. Give the Menu its own ``font``, ``fg`` and ``bg`` to change the drop-down list.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("font, fg and bg")
+
+    food_button = tk.Menubutton(root, text="Food ▼", relief="raised",
+                                font=("Arial", 14), fg="white", bg="green")
+    food_menu = tk.Menu(food_button, tearoff=0, font=("Arial", 14), bg="lightgreen")
+    food_menu.add_command(label="Pizza")
+    food_menu.add_command(label="Pasta")
+    food_button.config(menu=food_menu)
+    food_button.pack(pady=20)
+
+    root.mainloop()
+
+activebackground and activeforeground
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** set the colours of the Menubutton while the mouse is over it.
+| **How to write them:** ``activebackground="gold"``, ``activeforeground="black"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("active colours")
+
+    pick_button = tk.Menubutton(root, text="Hover over me", relief="raised", bg="lightgray",
+                                activebackground="gold", activeforeground="black")
+    pick_menu = tk.Menu(pick_button, tearoff=0)
+    pick_menu.add_command(label="One")
+    pick_menu.add_command(label="Two")
+    pick_button.config(menu=pick_menu)
+    pick_button.pack(pady=20)
+
+    root.mainloop()
+
+width, height, padx and pady
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``width`` and ``height`` set the size in characters and lines. ``padx`` and ``pady`` add space inside around the words.
+| **How to write them:** ``width=15``, ``height=2``, ``padx=10``, ``pady=5``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("size")
+
+    big_button = tk.Menubutton(root, text="Big menu", relief="raised",
+                               width=15, height=2, padx=10, pady=5)
+    big_menu = tk.Menu(big_button, tearoff=0)
+    big_menu.add_command(label="Item")
+    big_button.config(menu=big_menu)
+    big_button.pack(pady=20)
+
+    root.mainloop()
+
+direction
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** chooses where the menu appears when it opens.
+| **How to write it:** ``direction="above"``
+| **Values:** ``"below"`` (the default), ``"above"``, ``"left"``, ``"right"``.
+| ``"above"`` is useful for a Menubutton near the bottom of the window.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("direction")
+
+    up_button = tk.Menubutton(root, text="Opens upwards ▲", relief="raised", direction="above")
+    up_menu = tk.Menu(up_button, tearoff=0)
+    up_menu.add_command(label="First")
+    up_menu.add_command(label="Second")
+    up_button.config(menu=up_menu)
+    up_button.pack(side="bottom", pady=10)
+
+    root.mainloop()
+
+state
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** turns the Menubutton on or off.
+| **How to write it:** ``state="disabled"``
+| **Values:** ``"normal"`` (the default) and ``"disabled"`` (greyed out; the menu will not open).
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("state")
+
+    locked_button = tk.Menubutton(root, text="Locked ▼", relief="raised", state="disabled")
+    locked_menu = tk.Menu(locked_button, tearoff=0)
+    locked_menu.add_command(label="Secret")
+    locked_button.config(menu=locked_menu)
+    locked_button.pack(pady=20)
 
     root.mainloop()
 
 ----
 
+Menubutton methods
+---------------------
+
+| A Menubutton uses the **Menu** methods for the commands in its list. The most useful are below. See the **Menu** page for all of them.
+
+config
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes options **after** the Menubutton has been made, e.g. its words.
+| **How to write it:** ``menubutton.config(option=value)``
+| A common use is to show the user's choice on the Menubutton itself.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def choose(sport):
+        sport_button.config(text=sport + " ▼")
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("config")
+
+    sport_button = tk.Menubutton(root, text="Choose a sport ▼", relief="raised", width=18)
+    sport_menu = tk.Menu(sport_button, tearoff=0)
+    for sport in ["Cricket", "Netball", "Soccer", "Tennis"]:
+        sport_menu.add_command(label=sport, command=lambda sport=sport: choose(sport))
+    sport_button.config(menu=sport_menu)
+    sport_button.pack(pady=20)
+
+    root.mainloop()
+
+| ``lambda sport=sport:`` makes each command remember its own sport. Without ``sport=sport``, every command would use the **last** sport in the loop.
+
+add_checkbutton
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** adds items that can be ticked on and off. Each needs its own ``IntVar``.
+| **How to write it:** ``menu.add_checkbutton(label="words", variable=int_var)``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show():
+        chosen = []
+        if cheese.get() == 1:
+            chosen.append("cheese")
+        if ham.get() == 1:
+            chosen.append("ham")
+        if olives.get() == 1:
+            chosen.append("olives")
+        result_label.config(text="Toppings: " + ", ".join(chosen))
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("add_checkbutton")
+
+    cheese = tk.IntVar()
+    ham = tk.IntVar()
+    olives = tk.IntVar()
+
+    topping_button = tk.Menubutton(root, text="Toppings ▼", relief="raised")
+    topping_menu = tk.Menu(topping_button, tearoff=0)
+    topping_menu.add_checkbutton(label="Cheese", variable=cheese, command=show)
+    topping_menu.add_checkbutton(label="Ham", variable=ham, command=show)
+    topping_menu.add_checkbutton(label="Olives", variable=olives, command=show)
+    topping_button.config(menu=topping_menu)
+    topping_button.pack(pady=20)
+
+    result_label = tk.Label(root, text="Toppings: ")
+    result_label.pack()
+
+    root.mainloop()
+
+add_radiobutton
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** adds a group of items where only **one** can be chosen. They share one variable.
+| **How to write it:** ``menu.add_radiobutton(label="words", variable=string_var, value="value")``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show():
+        size_button.config(text="Size: " + size.get())
+
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("add_radiobutton")
+
+    size = tk.StringVar(value="Medium")
+
+    size_button = tk.Menubutton(root, text="Size: Medium", relief="raised", width=15)
+    size_menu = tk.Menu(size_button, tearoff=0)
+    for choice in ["Small", "Medium", "Large"]:
+        size_menu.add_radiobutton(label=choice, variable=size, value=choice, command=show)
+    size_button.config(menu=size_menu)
+    size_button.pack(pady=20)
+
+    root.mainloop()
+
+----
+
+Menubutton, OptionMenu or menu bar?
+---------------------------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 30 70
+
+    * - Widget
+      - Best for
+    * - Menu bar
+      - Commands for the whole app (File, Edit, Help) along the top of the window
+    * - Menubutton
+      - A drop-down list of **commands** placed anywhere in the window
+    * - OptionMenu
+      - Choosing **one value** from a list; it always shows the current choice
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``text``
+      - Words on the button
+      - ``text="Options ▼"``
+    * - ``menu``
+      - The Menu that drops down
+      - ``mb.config(menu=my_menu)``
+    * - ``relief``, ``borderwidth``
+      - Border style and thickness
+      - ``relief="raised"``
+    * - ``font``, ``fg``, ``bg``
+      - Font and colours of the button
+      - ``font=("Arial", 14)``
+    * - ``activebackground``
+      - Colour when the mouse is over it
+      - ``activebackground="gold"``
+    * - ``width``, ``height``
+      - Size in characters and lines
+      - ``width=15``
+    * - ``direction``
+      - Where the menu opens
+      - ``direction="above"``
+    * - ``state``
+      - Turn it on or off
+      - ``state="disabled"``
+    * - ``add_command()``
+      - Add a command to the menu
+      - ``my_menu.add_command(label="Hi")``
+    * - ``add_checkbutton()``
+      - Add a tick-on/tick-off item
+      - ``add_checkbutton(label="Ham", variable=ham)``
+    * - ``add_radiobutton()``
+      - Add a choose-one item
+      - ``add_radiobutton(label="S", variable=size, value="S")``
+    * - ``config()``
+      - Change options later
+      - ``mb.config(text="New")``
+
+----
+
 .. admonition:: Tasks
 
-    #. Modify the code to create the Menubutton shown below.
-
-        * Create a Menubutton labelled **Colours**.
-        * Add menu options **Red**, **Green**, and **Blue**.
-        * Add a separator before the final option.
-        * Add an **Exit** command that closes the window.
-        * Colour the **Red**, **Green**, and **Blue** options red, green, and blue respectively using the `entryconfig` method.
-
-        .. image:: images/menubutton_question.png
-            :scale: 100
+    #. Make a window titled "Pets" that is 300x200. Add a raised Menubutton with the words "Pets ▼" whose menu has the commands "Dog", "Cat" and "Fish".
+    #. Make each command change a label to show "You chose" and the pet.
+    #. Give your Menubutton a light blue background, Arial size 14 and a gold colour when the mouse is over it.
+    #. Make a Menubutton "Extras ▼" with two tick-on/tick-off items, "Sound" and "Music", each with its own ``IntVar``.
 
     .. dropdown::
         :icon: codescan
@@ -94,386 +426,100 @@ Sample Menubutton
 
             .. tab-item:: Q1
 
-                Modify the code so it creates the Menubutton shown above.
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Pets")
+
+                    pet_button = tk.Menubutton(root, text="Pets ▼", relief="raised")
+                    pet_menu = tk.Menu(pet_button, tearoff=0)
+                    pet_menu.add_command(label="Dog")
+                    pet_menu.add_command(label="Cat")
+                    pet_menu.add_command(label="Fish")
+                    pet_button.config(menu=pet_menu)
+                    pet_button.pack(pady=20)
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+
+                    def choose(pet):
+                        result_label.config(text="You chose " + pet)
+
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Pets")
+
+                    pet_button = tk.Menubutton(root, text="Pets ▼", relief="raised")
+                    pet_menu = tk.Menu(pet_button, tearoff=0)
+                    pet_menu.add_command(label="Dog", command=lambda: choose("Dog"))
+                    pet_menu.add_command(label="Cat", command=lambda: choose("Cat"))
+                    pet_menu.add_command(label="Fish", command=lambda: choose("Fish"))
+                    pet_button.config(menu=pet_menu)
+                    pet_button.pack(pady=20)
+
+                    result_label = tk.Label(root, text="", font=("Arial", 14))
+                    result_label.pack()
+
+                    root.mainloop()
+
+            .. tab-item:: Q3
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+
+                    def choose(pet):
+                        result_label.config(text="You chose " + pet)
+
+
+                    root = tk.Tk()
+                    root.geometry("300x200")
+                    root.title("Pets")
+
+                    pet_button = tk.Menubutton(root, text="Pets ▼", relief="raised",
+                                               bg="lightblue", font=("Arial", 14),
+                                               activebackground="gold")
+                    pet_menu = tk.Menu(pet_button, tearoff=0)
+                    pet_menu.add_command(label="Dog", command=lambda: choose("Dog"))
+                    pet_menu.add_command(label="Cat", command=lambda: choose("Cat"))
+                    pet_menu.add_command(label="Fish", command=lambda: choose("Fish"))
+                    pet_button.config(menu=pet_menu)
+                    pet_button.pack(pady=20)
+
+                    result_label = tk.Label(root, text="", font=("Arial", 14))
+                    result_label.pack()
+
+                    root.mainloop()
+
+            .. tab-item:: Q4
 
                 .. code-block:: python
 
                     import tkinter as tk
 
                     root = tk.Tk()
-                    root.title("Coloured Menubutton Example")
                     root.geometry("300x200")
+                    root.title("Extras")
 
-                    # Create the Menubutton
-                    menubutton = tk.Menubutton(
-                        root,
-                        text="Colours",
-                        relief="raised"
-                    )
+                    sound = tk.IntVar()
+                    music = tk.IntVar()
 
-                    # Create the menu
-                    colour_menu = tk.Menu(menubutton, tearoff=0)
-
-                    colour_menu.add_command(label="Red")
-                    colour_menu.add_command(label="Green")
-                    colour_menu.add_command(label="Blue")
-                    colour_menu.add_separator()
-                    colour_menu.add_command(label="Exit", command=root.destroy)
-
-                    # Colour individual menu entries
-                    colour_menu.entryconfig("Red", foreground="red")
-                    colour_menu.entryconfig("Green", foreground="green")
-                    colour_menu.entryconfig("Blue", foreground="blue")
-
-                    menubutton.config(menu=colour_menu)
-
-                    menubutton.pack(padx=20, pady=20)
+                    extras_button = tk.Menubutton(root, text="Extras ▼", relief="raised")
+                    extras_menu = tk.Menu(extras_button, tearoff=0)
+                    extras_menu.add_checkbutton(label="Sound", variable=sound)
+                    extras_menu.add_checkbutton(label="Music", variable=music)
+                    extras_button.config(menu=extras_menu)
+                    extras_button.pack(pady=20)
 
                     root.mainloop()
-
-
-----
-
-Common Menubutton Methods
----------------------------
-
-Menubutton methods
-----------------------------------------------------
-
-| ``Menubutton`` inherits many methods from the standard Tk widget class.
-| The drop-down menu behaviour is controlled by the attached ``Menu`` widget.
-| Menu entry methods are called on the associated ``Menu`` object, not the ``Menubutton`` itself.
-
-.. py:function:: menubutton_widget.config(option=value)
-
-    | Changes one or more ``Menubutton`` configuration options.
-    | Common options include ``text``, ``font``, ``bg``, ``fg``, ``relief``, ``direction`` and ``menu``.
-    | Example: ``menubutton_widget.config(text="Options")``
-
-
-.. py:function:: menubutton_widget.configure(option=value)
-
-    | Updates one or more ``Menubutton`` configuration options.
-    | This is an alternative name for ``config()``.
-    | Example: ``menubutton_widget.configure(bg="lightblue")``
-
-
-.. py:function:: value = menubutton_widget.cget(option)
-
-    | Returns the current value of a ``Menubutton`` configuration option.
-    | Example: ``colour = menubutton_widget.cget("text")``
-
-
-.. py:function:: menubutton_widget.flash()
-
-    | Flashes the ``Menubutton`` several times.
-    | Useful for drawing attention to the widget.
-    | The visual effect depends on the current widget style and theme.
-
-
-.. py:function:: result = menubutton_widget.invoke()
-
-    | Activates the ``Menubutton`` as if it had been clicked.
-    | Opens the associated menu.
-    | Returns the result of the associated command, if one exists.
-
-
-.. py:function:: menu_widget.entryconfig(index, option=value)
-
-    | Changes the configuration of an existing menu entry.
-    | This method is called on the attached ``Menu`` object.
-    | ``index`` can be a menu position number or the entry label.
-    |
-    | Example:
-    |
-    | ``colour_menu.entryconfig("Red", foreground="red")``
-    |
-    | Common options include:
-    |
-    | - ``foreground`` or ``fg``: changes the text colour.
-    | - ``background`` or ``bg``: changes the menu item background colour.
-    | - ``font``: changes the menu item font.
-    | - ``state``: enables or disables the menu item.
-    | - ``label``: changes the displayed text.
-
-
-.. py:function:: menu_widget.entryconfigure(index, option=value)
-
-    | Alternative name for ``entryconfig()``.
-    | Updates the configuration of an existing menu entry.
-    |
-    | Example:
-    |
-    | ``colour_menu.entryconfigure("Blue", state="disabled")``
-
-
-.. py:function:: menu_widget.add_command(label=text, command=function)
-
-    | Adds a normal command item to the menu.
-    |
-    | Example:
-    |
-    | ``colour_menu.add_command(label="Red")``
-
-
-.. py:function:: menu_widget.add_separator()
-
-    | Adds a horizontal separator line between menu entries.
-    |
-    | Example:
-    |
-    | ``colour_menu.add_separator()``
-
-
-.. py:function:: menu_widget.add_checkbutton(label=text, variable=tk_var)
-
-    | Adds a checkbutton item to the menu.
-    | The item stores an on/off state using a Tkinter control variable.
-    |
-    | Example:
-    |
-    | ``colour_menu.add_checkbutton(label="Show Grid", variable=show_grid)``
-
-
-.. py:function:: menu_widget.add_radiobutton(label=text, variable=tk_var, value=value)
-
-    | Adds a radio button item to the menu.
-    | Radio menu items normally share the same control variable.
-    |
-    | Example:
-    |
-    | ``colour_menu.add_radiobutton(label="Red", variable=colour, value="red")``
-
-
-.. py:function:: menu_widget.add_cascade(label=text, menu=submenu)
-
-    | Adds a submenu to the menu.
-    | Used to create nested menus.
-    |
-    | Example:
-    |
-    | ``main_menu.add_cascade(label="File", menu=file_menu)``
-
-
-.. py:function:: menu_widget.delete(index1, index2=None)
-
-    | Removes one or more menu entries.
-    |
-    | Example:
-    |
-    | ``colour_menu.delete(0)``
-
-
-.. py:function:: menu_widget.entrycget(index, option)
-
-    | Returns the current value of an option for a specific menu entry.
-    |
-    | Example:
-    |
-    | ``colour = colour_menu.entrycget("Red", "foreground")``
-
-
-.. py:function:: menu_widget.index(index)
-
-    | Returns the numerical position of a menu entry.
-    |
-    | Example:
-    |
-    | ``position = colour_menu.index("Blue")``
-
-
-.. py:function:: menu_widget.post(x, y)
-
-    | Displays the menu at a specific screen position.
-    | Commonly used to create custom popup menus.
-    |
-    | Example:
-    |
-    | ``colour_menu.post(100, 100)``
-
-
-.. py:function:: menu_widget.unpost()
-
-    | Removes a posted menu from the screen.
-    | Used after menus displayed manually with ``post()``.
-
-
-----
-
-Parameter syntax
-----------------------------
-
-.. py:function:: menubutton_widget = tk.Menubutton(parent, option=value)
-
-
-    **Parameters:**
-
-    .. py:attribute:: activebackground
-
-        | Syntax: ``menubutton_widget.config(activebackground="color")``
-        | Description: Background colour when the mouse is over the button.
-        | Default: SystemButtonFace
-
-
-    .. py:attribute:: activeforeground
-
-        | Syntax: ``menubutton_widget.config(activeforeground="color")``
-        | Description: Text colour when the mouse is over the button.
-        | Default: SystemButtonText
-
-
-    .. py:attribute:: anchor
-
-        | Syntax: ``menubutton_widget.config(anchor="position")``
-        | Description: Controls where the text is positioned inside the widget.
-        | Default: center
-
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``menubutton_widget.config(bg="color")``
-        | Description: Sets the background colour.
-        | Default: SystemButtonFace
-
-
-    .. py:attribute:: bd
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``menubutton_widget.config(borderwidth=value)``
-        | Description: Sets the border width.
-        | Default: 2
-
-
-    .. py:attribute:: compound
-
-        | Syntax: ``menubutton_widget.config(compound="position")``
-        | Description: Controls the position of text relative to an image.
-        | Default: none
-
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``menubutton_widget.config(cursor="cursor_type")``
-        | Description: Sets the mouse cursor.
-        | Example: ``cursor="hand2"``
-
-
-    .. py:attribute:: direction
-
-        | Syntax: ``menubutton_widget.config(direction="direction")``
-        | Description: Controls where the menu appears relative to the button.
-        | Possible values: ``above``, ``below``, ``left``, ``right``
-
-
-    .. py:attribute:: font
-
-        | Syntax: ``menubutton_widget.config(font=("Font", size))``
-        | Description: Sets the font used for the button text.
-
-
-    .. py:attribute:: foreground
-    .. py:attribute:: fg
-
-        | Syntax: ``menubutton_widget.config(fg="color")``
-        | Description: Sets the text colour.
-
-
-    .. py:attribute:: height
-
-        | Syntax: ``menubutton_widget.config(height=value)``
-        | Description: Sets the height of the widget.
-
-
-    .. py:attribute:: image
-
-        | Syntax: ``menubutton_widget.config(image=image_object)``
-        | Description: Displays an image on the button.
-
-
-    .. py:attribute:: indicatoron
-
-        | Syntax: ``menubutton_widget.config(indicatoron=boolean)``
-        | Description: Displays a small indicator arrow when enabled.
-        | Default: 1
-
-
-    .. py:attribute:: justify
-
-        | Syntax: ``menubutton_widget.config(justify="alignment")``
-        | Description: Controls multi-line text alignment.
-
-
-    .. py:attribute:: menu
-
-        | Syntax: ``menubutton_widget.config(menu=menu_widget)``
-        | Description: Attaches a Menu widget to the Menubutton.
-
-
-    .. py:attribute:: padx
-
-        | Syntax: ``menubutton_widget.config(padx=value)``
-        | Description: Sets horizontal internal padding.
-
-
-    .. py:attribute:: pady
-
-        | Syntax: ``menubutton_widget.config(pady=value)``
-        | Description: Sets vertical internal padding.
-
-
-    .. py:attribute:: relief
-
-        | Syntax: ``menubutton_widget.config(relief="style")``
-        | Description: Sets the border style.
-        | Default: raised
-
-
-    .. py:attribute:: state
-
-        | Syntax: ``menubutton_widget.config(state="state")``
-        | Description: Sets the widget state.
-        | Values: ``normal`` or ``disabled``
-
-
-    .. py:attribute:: text
-
-        | Syntax: ``menubutton_widget.config(text="label")``
-        | Description: Sets the displayed text.
-
-
-    .. py:attribute:: textvariable
-
-        | Syntax: ``menubutton_widget.config(textvariable=variable)``
-        | Description: Associates a Tkinter variable with the button text.
-
-
-    .. py:attribute:: underline
-
-        | Syntax: ``menubutton_widget.config(underline=index)``
-        | Description: Underlines the specified character in the text.
-
-
-    .. py:attribute:: width
-
-        | Syntax: ``menubutton_widget.config(width=value)``
-        | Description: Sets the width of the widget.
-
-
-----
-
-Default options
-------------------------
-
-| Code to display the default values for each ``Menubutton`` option is shown below.
-
-.. code-block:: python
-
-    import tkinter as tk
-
-    root = tk.Tk()
-
-    widget = tk.Menubutton(root)
-
-    for option in widget.keys():
-        print(f"{option}: {widget.cget(option)}")

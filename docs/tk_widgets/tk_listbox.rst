@@ -3,504 +3,645 @@ tk Listbox
 ====================================================
 
 | See: `<https://docs.python.org/3/library/tkinter.html#tkinter.Listbox>`_
-| See: `<https://www.geeksforgeeks.org/-tkinter-listbox-widget/>`_
 
 ----
 
-Usage
----------------
+What is a Listbox?
+-------------------
 
-| The `tkinter.Listbox` widget displays a list of text items from which the user can select one or more entries.
-| It is commonly used for item selection, file lists, option menus, and simple data browsing.
-| To create a listbox widget, the general syntax is (assuming import via "import tkinter as tk"):
+| A **Listbox** shows a list of words, one on each line.
+| The user clicks an item to choose (select) it.
+| Use a listbox for a list of choices, e.g. a list of countries, or to show a list the program builds, e.g. a shopping list.
 
-.. py:function:: listbox_widget = tk.Listbox(parent, option=value)
+----
 
-    | `parent` is the window or frame object.
-    | Widget configuration options are supplied as keyword arguments, comma separated.
-    | e.g. listbox_widget = tk.Listbox(root, height=10, width=50)
+Making a Listbox
+-------------------
 
-Selection modes
-----------------
+| Every Listbox is made in three steps:
 
-The ``selectmode`` option determines how users can select items in a ``Listbox``.
+#. **Create** the listbox with ``tk.Listbox(...)``.
+#. **Add** items with ``.insert(tk.END, "item")``. ``tk.END`` means "add it to the end of the list".
+#. **Place** the listbox in the window with ``.pack()``.
+
+.. code-block:: python
+
+    import tkinter as tk            # Load the tkinter library
+
+    root = tk.Tk()                  # Make the window
+    root.geometry("300x250")        # Window size: 300 wide, 250 high
+    root.title("My first listbox")  # Words in the title bar
+
+    fruit_list = tk.Listbox(root)           # 1. Create the listbox
+
+    fruit_list.insert(tk.END, "Apple")      # 2. Add items
+    fruit_list.insert(tk.END, "Banana")
+    fruit_list.insert(tk.END, "Cherry")
+
+    fruit_list.pack(pady=10)                # 3. Place it in the window
+
+    root.mainloop()                 # Keep the window open
+
+----
+
+Item numbers (indexes)
+-------------------------
+
+| Each item in a listbox has a number called an **index**. Like a Python list, counting starts at **0**.
 
 .. list-table::
     :header-rows: 1
-    :widths: 20 80
+    :widths: 30 70
 
-    * - Selection mode
-      - Description
-    * - ``tk.BROWSE``
-      - Default mode. Only one item can be selected at a time. Dragging the mouse moves the selection to the item under the pointer.
-    * - ``tk.SINGLE``
-      - Only one item can be selected at a time. Clicking an item selects it and deselects any previously selected item.
-    * - ``tk.MULTIPLE``
-      - Multiple items can be selected independently. Click each item to toggle its selection without affecting other selected items.
-    * - ``tk.EXTENDED``
-      - Allows multiple selections using standard keyboard and mouse combinations. Hold **Shift** to select a range of items or **Ctrl** (or **Command** on macOS) to select or deselect individual items.
-
-----
-
-Indices
-------------------
-
-| Listbox items are numbered from 0.
-
-| Index       | Meaning     |
-| ----------- | ----------- |
-| `0`         | First item  |
-| `1`         | Second item |
-| `tk.END`    | Last item   |
-| `tk.ACTIVE` | Active item |
-| `tk.ANCHOR` | Anchor item |
-
+    * - Index
+      - Item
+    * - ``0``
+      - Apple (the first item)
+    * - ``1``
+      - Banana
+    * - ``2``
+      - Cherry
+    * - ``tk.END``
+      - The end of the list
 
 ----
 
-Using a listbox widget
-----------------------------
+Listbox options
+-------------------
 
-.. image:: images/listbox.png
-    :scale: 75
+| Options are written as ``option=value`` inside ``tk.Listbox( )``, separated by commas.
 
-This code creates a simple Tkinter GUI application that allows a user to select from a list.
+height and width
+~~~~~~~~~~~~~~~~~~
 
-.. code-block:: python
-
-    import tkinter as tk  # Import the tkinter module for GUI creation.
-
-    def get_selection():  # Define a function to get selected items from the listbox.
-        selected_indices = listbox.curselection()  # Get indices of selected items.
-        selected_items = [listbox.get(i) for i in selected_indices]  # Retrieve selected items.
-        output_label.config(text=f"Selected items:\n{', '.join(selected_items)}")  # Display selected items in the label.
-
-
-    root = tk.Tk()  # Create the main root.
-    root.geometry("400x400")  # Set window size.
-    root.title("Listbox Example")  # Set window title.
-
-    listbox = tk.Listbox(root, selectmode=tk.MULTIPLE, font=('calibre', 14, 'normal'), width=30, height=7)  # Create a listbox widget.
-    listbox.pack(pady=10)  # Add padding to the top of the listbox.
-
-    items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]  # Define items to add to the listbox.
-    for item in items:
-        listbox.insert(tk.END, item)  # Insert items into the listbox.
-
-    submit_button = tk.Button(root, text="Submit", font=('calibre', 14, 'normal'), command=get_selection)  # Create a button to trigger the get_selection function.
-    submit_button.pack(pady=10)  # Add padding to the button.
-
-    output_label = tk.Label(root, text="", font=('calibre', 14, 'normal'), width=50, height=3,
-                             bd=2, highlightthickness=2, highlightbackground="gray")  # Create a label to display the output.
-    output_label.pack(pady=10, padx=10)  # Add padding around the label.
-
-    root.mainloop()  # Run the main event loop.
-
-
-----
-
-Listbox methods
----------------------
-
-Tkinter's `Listbox` widget provides several methods for adding, removing, selecting, and retrieving items.
-
-.. py:function:: curselection()
-
-    | Returns a tuple containing the indices of the selected items.
-    | e.g. ``selected_indices = listbox.curselection()``
-
-
-.. py:function:: get(first, last=None)
-
-    | Returns the item at the specified index. If both ``first`` and ``last`` are supplied, returns a tuple of items within the specified range.
-    | e.g. ``item = listbox.get(0)``
-    | e.g. ``items = listbox.get(0, tk.END)``
-
-
-.. py:function:: insert(index, *elements)
-
-    | Inserts one or more items at the specified index.
-    | e.g. ``listbox.insert(tk.END, "Apple")``
-    | e.g. ``listbox.insert(0, "First Item")``
-
-
-.. py:function:: delete(first, last=None)
-
-    | Removes one item or a range of items from the listbox.
-    | e.g. ``listbox.delete(0)``
-    | e.g. ``listbox.delete(0, tk.END)``
-
-
-.. py:function:: selection_set(first, last=None)
-
-    | Selects one item or a range of items.
-    | e.g. ``listbox.selection_set(0)``
-    | e.g. ``listbox.selection_set(0, 2)``
-
-
-.. py:function:: selection_clear(first, last=None)
-
-    | Clears the selection from one item or a range of items.
-    | e.g. ``listbox.selection_clear(0)``
-    | e.g. ``listbox.selection_clear(0, 2)``
-
-
-.. py:function:: selection_includes(index)
-
-    | Returns ``True`` if the specified item is currently selected.
-    | e.g. ``is_selected = listbox.selection_includes(3)``
-
-
-.. py:function:: size()
-
-    | Returns the total number of items in the listbox.
-    | e.g. ``num_items = listbox.size()``
-
-
-.. py:function:: activate(index)
-
-    | Sets the active item to the specified index.
-    | e.g. ``listbox.activate(4)``
-
-
-.. py:function:: see(index)
-
-    | Scrolls the listbox so the specified item is visible.
-    | e.g. ``listbox.see(tk.END)``
-
-
-.. py:function:: nearest(y)
-
-    | Returns the index of the item nearest the specified y-coordinate.
-    | e.g. ``index = listbox.nearest(event.y)``
-
-
-.. py:function:: bbox(index)
-
-    | Returns the bounding box ``(x, y, width, height)`` of the specified item, or ``None`` if the item is not visible.
-    | e.g. ``box = listbox.bbox(0)``
-
-
-.. py:function:: index(index)
-
-    | Returns the numerical index corresponding to the specified index expression.
-    | e.g. ``last = listbox.index(tk.END)``
-
-
-.. py:function:: itemconfig(index, option=value)
-
-    | Configures the display options for an individual item.
-    | e.g. ``listbox.itemconfig(0, fg="red")``
-    | e.g. ``listbox.itemconfig(2, bg="yellow")``
-
-----
-
-----
-
-Common tasks
-----------------
-
-**Add an item**
-
-.. code-block:: python
-
-    listbox.insert(tk.END, "New Item")
-
-**Insert an item at the beginning**
-
-.. code-block:: python
-
-    listbox.insert(0, "First Item")
-
-**Remove the selected items**
-
-.. code-block:: python
-
-    for index in reversed(listbox.curselection()):
-        listbox.delete(index)
-
-**Remove all items**
-
-.. code-block:: python
-
-    listbox.delete(0, tk.END)
-
-**Select all items**
-
-.. code-block:: python
-
-    listbox.selection_set(0, tk.END)
-
-**Clear the selection**
-
-.. code-block:: python
-
-    listbox.selection_clear(0, tk.END)
-
-**Get the selected item (single selection)**
-
-.. code-block:: python
-
-    index = listbox.curselection()[0]
-    item = listbox.get(index)
-
-**Get all selected items**
-
-.. code-block:: python
-
-    selected_items = [listbox.get(i) for i in listbox.curselection()]
-
-**Scroll to the last item**
-
-.. code-block:: python
-
-    listbox.see(tk.END)
-
-**Determine the number of items**
-
-.. code-block:: python
-
-    count = listbox.size()
-
-**Check whether an item is selected**
-
-.. code-block:: python
-
-    if listbox.selection_includes(3):
-        print("Item 3 is selected")
-
-----
-
-Option details
---------------------
-
-.. py:function:: listbox_widget = tk.Listbox(parent, option=value)
-
-    | parent is the window or frame object.
-    | Options can be passed as parameters separated by commas.
-
-    **Parameters:**
-
-    .. py:attribute:: activestyle
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, activestyle="underline")``
-        | Description: Sets the style of the active item.
-        | Default: underline
-        | Example: ``listbox_widget = tk.Listbox(root, activestyle="underline")``
-
-    .. py:attribute:: background
-    .. py:attribute:: bg
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, bg="color")``
-        | Description: Sets the background color of the listbox.
-        | Default: SystemWindow
-        | Example: ``listbox_widget = tk.Listbox(root, bg="SystemWindow")``
-
-    .. py:attribute:: bd
-    .. py:attribute:: borderwidth
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, bd=value)``
-        | Description: Sets the border width of the listbox.
-        | Default: 1
-        | Example: ``listbox_widget = tk.Listbox(root, bd=1)``
-
-    .. py:attribute:: cursor
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, cursor="cursor_type")``
-        | Description: Sets the cursor that appears when the mouse is over the listbox.
-        | Default: None
-        | Example: ``listbox_widget = tk.Listbox(root, cursor="arrow")``
-
-    .. py:attribute:: disabledforeground
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, disabledforeground="color")``
-        | Description: Sets the foreground color of the listbox when it is disabled.
-        | Default: SystemDisabledText
-        | Example: ``listbox_widget = tk.Listbox(root, disabledforeground="SystemDisabledText")``
-
-    .. py:attribute:: exportselection
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, exportselection=value)``
-        | Description: Controls whether the selection is exported to the clipboard.
-        | Default: 1
-        | Example: ``listbox_widget = tk.Listbox(root, exportselection=1)``
-        | On many platforms, exportselection=True causes the Listbox selection to be linked to the system's primary selection.
-        | Setting exportselection=False keeps the selection even when another widget gains focus.
-
-    .. py:attribute:: fg
-    .. py:attribute:: foreground
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, fg="color")``
-        | Description: Sets the foreground color of the listbox.
-        | Default: SystemButtonText
-        | Example: ``listbox_widget = tk.Listbox(root, fg="SystemButtonText")``
-
-    .. py:attribute:: font
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, font="font")``
-        | Description: Sets the font of the listbox text.
-        | Default: TkDefaultFont
-        | Example: ``listbox_widget = tk.Listbox(root, font="TkDefaultFont")``
-
-    .. py:attribute:: height
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, height=value)``
-        | Description: Sets the height of the listbox in number of lines.
-        | Default: 10
-        | Example: ``listbox_widget = tk.Listbox(root, height=10)``
-
-    .. py:attribute:: highlightbackground
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, highlightbackground="color")``
-        | Description: Sets the color of the focus highlight when the listbox does not have focus.
-        | Default: SystemButtonFace
-        | Example: ``listbox_widget = tk.Listbox(root, highlightbackground="SystemButtonFace")``
-
-    .. py:attribute:: highlightcolor
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, highlightcolor="color")``
-        | Description: Sets the color of the focus highlight when the listbox has focus.
-        | Default: SystemWindowFrame
-        | Example: ``listbox_widget = tk.Listbox(root, highlightcolor="SystemWindowFrame")``
-
-    .. py:attribute:: highlightthickness
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, highlightthickness=value)``
-        | Description: Sets the thickness of the focus highlight.
-        | Default: 1
-        | Example: ``listbox_widget = tk.Listbox(root, highlightthickness=1)``
-
-    .. py:attribute:: justify
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, justify="left")``
-        | Description: Sets the justification of the text within the listbox.
-        | Default: left
-        | Example: ``listbox_widget = tk.Listbox(root, justify="left")``
-
-    .. py:attribute:: relief
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, relief="style")``
-        | Description: Sets the 3D effect of the listbox border.
-        | Default: sunken
-        | Example: ``listbox_widget = tk.Listbox(root, relief="sunken")``
-
-    .. py:attribute:: selectbackground
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, selectbackground="color")``
-        | Description: Sets the background color of selected items.
-        | Default: SystemHighlight
-        | Example: ``listbox_widget = tk.Listbox(root, selectbackground="SystemHighlight")``
-
-    .. py:attribute:: selectborderwidth
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, selectborderwidth=value)``
-        | Description: Sets the width of the border around selected items.
-        | Default: 0
-        | Example: ``listbox_widget = tk.Listbox(root, selectborderwidth=0)``
-
-    .. py:attribute:: selectforeground
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, selectforeground="color")``
-        | Description: Sets the foreground color of selected items.
-        | Default: SystemHighlightText
-        | Example: ``listbox_widget = tk.Listbox(root, selectforeground="SystemHighlightText")``
-
-    .. py:attribute:: selectmode
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, selectmode=tk.BROWSE)``
-        | Description: Specifies how the user can select items in the listbox.
-        | Default: ``tk.BROWSE``
-        | Example: ``listbox_widget = tk.Listbox(root, selectmode=tk.MULTIPLE)``
-
-        **Selection modes:**
-
-        .. list-table::
-            :header-rows: 1
-            :widths: 20 80
-
-            * - Mode
-              - Description
-            * - ``tk.BROWSE``
-              - Default. Allows a single item to be selected. Dragging the mouse moves the selection to the item under the pointer.
-            * - ``tk.SINGLE``
-              - Allows only one item to be selected. Clicking an item selects it and deselects any previously selected item.
-            * - ``tk.MULTIPLE``
-              - Allows multiple items to be selected independently by clicking each item. Clicking an already selected item deselects it.
-            * - ``tk.EXTENDED``
-              - Allows multiple selections using standard keyboard and mouse combinations. Hold **Shift** to select a range of items or **Ctrl** (or **Command** on macOS) to select or deselect individual items.
-
-    .. py:attribute:: setgrid
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, setgrid=value)``
-        | Description: Controls whether the listbox is gridded.
-        | Default: 0
-        | Example: ``listbox_widget = tk.Listbox(root, setgrid=0)``
-
-    .. py:attribute:: state
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, state="state")``
-        | Description: Sets the state of the listbox (normal or disabled).
-        | Default: normal
-        | Example: ``listbox_widget = tk.Listbox(root, state="normal")``
-
-    .. py:attribute:: takefocus
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, takefocus=value)``
-        | Description: Controls whether the listbox accepts focus.
-        | Default: None
-        | Example: ``listbox_widget = tk.Listbox(root, takefocus=1)``
-
-    .. py:attribute:: width
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, width=value)``
-        | Description: Sets the width of the listbox in number of characters.
-        | Default: 20
-        | Example: ``listbox_widget = tk.Listbox(root, width=20)``
-
-    .. py:attribute:: xscrollcommand
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, xscrollcommand=callback)``
-        | Description: Sets the horizontal scroll command.
-        | Default: None
-        | Example: ``listbox_widget = tk.Listbox(root, xscrollcommand=scrollbar.set)``
-
-    .. py:attribute:: yscrollcommand
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, yscrollcommand=callback)``
-        | Description: Sets the vertical scroll command.
-        | Default: None
-        | Example: ``listbox_widget = tk.Listbox(root, yscrollcommand=scrollbar.set)``
-
-    .. py:attribute:: listvariable
-
-        | Syntax: ``listbox_widget = tk.Listbox(parent, listvariable=variable)``
-        | Description: Sets the variable associated with the listbox.
-        | Default: None
-        | Example: ``listbox_widget = tk.Listbox(root, listvariable=my_var)``
-        | e.g. items = tk.StringVar(value=("Red", "Green", "Blue"))
-        | e.g. listbox = tk.Listbox(root, listvariable=items)
-
-
-----
-
-Default options
-------------------------
-
-| Code to display the default value for each ``Listbox`` option is shown below.
+| **What they do:** ``height`` sets how many **lines** (items) show at once. ``width`` sets how wide it is in **characters**.
+| **How to write them:** ``height=5``, ``width=20``
+| If there are more items than the height, the user can scroll with the mouse wheel.
 
 .. code-block:: python
 
     import tkinter as tk
 
     root = tk.Tk()
+    root.geometry("300x200")
+    root.title("height and width")
 
-    widget = tk.Listbox(root)
-    widget_options = widget.keys()
+    number_list = tk.Listbox(root, height=4, width=15)
+    for number in range(1, 11):
+        number_list.insert(tk.END, f"Number {number}")
+    number_list.pack(pady=10)
 
-    for option in widget_options:
-        print(f"{option}: {widget.cget(option)}")  # cget retrieves the current value of the option
+    root.mainloop()
+
+font
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** sets the style and size of the words in the list.
+| **How to write it:** ``font=("font name", size)``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("font")
+
+    pet_list = tk.Listbox(root, font=("Arial", 16), height=4)
+    for pet in ["Dog", "Cat", "Fish", "Bird"]:
+        pet_list.insert(tk.END, pet)
+    pet_list.pack(pady=10)
+
+    root.mainloop()
+
+| A ``for`` loop is a quick way to add every item from a Python list.
+
+fg and bg (colours)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** ``fg`` sets the colour of the words. ``bg`` sets the colour of the box.
+| **How to write them:** ``fg="white", bg="darkblue"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("fg and bg")
+
+    planet_list = tk.Listbox(root, fg="white", bg="darkblue", height=5)
+    for planet in ["Mercury", "Venus", "Earth", "Mars"]:
+        planet_list.insert(tk.END, planet)
+    planet_list.pack(pady=10)
+
+    root.mainloop()
+
+selectbackground and selectforeground
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** set the colours of the **chosen** item. ``selectbackground`` is the highlight colour and ``selectforeground`` is the word colour.
+| **How to write them:** ``selectbackground="orange", selectforeground="black"``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("select colours")
+
+    team_list = tk.Listbox(root, selectbackground="orange", selectforeground="black", height=4)
+    for team in ["Red team", "Blue team", "Green team"]:
+        team_list.insert(tk.END, team)
+    team_list.pack(pady=10)
+
+    root.mainloop()
+
+selectmode
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** chooses how many items the user can select.
+| **How to write it:** ``selectmode="multiple"``
+| **Values:**
+
+- ``"browse"`` - one item at a time (the default).
+- ``"multiple"`` - click items to choose several; click again to un-choose.
+- ``"extended"`` - hold **Ctrl** or **Shift** while clicking to choose several, like in File Explorer.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("selectmode")
+
+    topping_list = tk.Listbox(root, selectmode="multiple", height=6)
+    for topping in ["Cheese", "Ham", "Pineapple", "Olives", "Mushrooms"]:
+        topping_list.insert(tk.END, topping)
+    topping_list.pack(pady=10)
+
+    root.mainloop()
+
+relief and borderwidth
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** change the border around the box.
+| **How to write them:** ``relief="solid", borderwidth=2``
+| **Styles:** ``"sunken"`` (the default), ``"solid"``, ``"flat"``, ``"raised"``, ``"groove"``, ``"ridge"``.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("relief")
+
+    day_list = tk.Listbox(root, relief="solid", borderwidth=2, height=5)
+    for day in ["Mon", "Tue", "Wed", "Thu", "Fri"]:
+        day_list.insert(tk.END, day)
+    day_list.pack(pady=10)
+
+    root.mainloop()
+
+----
+
+Listbox methods
+-------------------
+
+| A **method** is an action that a widget can do. Methods are written after a dot, e.g. ``listbox.insert(...)``.
+
+insert
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** adds an item to the list.
+| **How to write it:** ``listbox.insert(tk.END, "item")`` adds to the end. ``listbox.insert(0, "item")`` adds to the top.
+
+.. code-block:: python
+
+    import tkinter as tk
 
 
+    def add_item():
+        shopping_list.insert(tk.END, item_entry.get())     # Add what was typed
+        item_entry.delete(0, tk.END)                        # Clear the entry
 
 
+    root = tk.Tk()
+    root.geometry("300x300")
+    root.title("insert")
 
+    item_entry = tk.Entry(root)
+    item_entry.pack(pady=5)
+
+    add_button = tk.Button(root, text="Add to list", command=add_item)
+    add_button.pack()
+
+    shopping_list = tk.Listbox(root, height=8)
+    shopping_list.pack(pady=5)
+
+    root.mainloop()
+
+curselection
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** finds which item the user has chosen. It gives back the **index** (item number), not the words.
+| **How to write it:** ``chosen = listbox.curselection()``
+| The answer is a **tuple** of index numbers, e.g. ``(2,)``. Use ``chosen[0]`` to get the first one.
+| If nothing is chosen, the tuple is empty, ``()``.
+
+get
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** gives back the words of an item.
+| **How to write it:** ``words = listbox.get(index)``
+| ``curselection`` and ``get`` are used together: first find the index, then get the words.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_choice():
+        chosen = country_list.curselection()        # e.g. (2,)
+        if chosen:                                  # Check something is chosen
+            country = country_list.get(chosen[0])   # Get the words
+            result_label.config(text="You chose " + country)
+        else:
+            result_label.config(text="Please choose a country")
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("curselection and get")
+
+    country_list = tk.Listbox(root, height=5)
+    for country in ["Australia", "Japan", "Kenya", "Brazil", "Canada"]:
+        country_list.insert(tk.END, country)
+    country_list.pack(pady=5)
+
+    show_button = tk.Button(root, text="Show choice", command=show_choice)
+    show_button.pack()
+
+    result_label = tk.Label(root, text="")
+    result_label.pack(pady=5)
+
+    root.mainloop()
+
+Getting several choices
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| With ``selectmode="multiple"``, ``curselection()`` gives back every chosen index. Loop through them to get each item.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def order():
+        toppings = []
+        for index in topping_list.curselection():
+            toppings.append(topping_list.get(index))
+        result_label.config(text="Your toppings: " + ", ".join(toppings))
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("Several choices")
+
+    topping_list = tk.Listbox(root, selectmode="multiple", height=5)
+    for topping in ["Cheese", "Ham", "Pineapple", "Olives", "Mushrooms"]:
+        topping_list.insert(tk.END, topping)
+    topping_list.pack(pady=5)
+
+    order_button = tk.Button(root, text="Order", command=order)
+    order_button.pack()
+
+    result_label = tk.Label(root, text="", wraplength=250)
+    result_label.pack(pady=5)
+
+    root.mainloop()
+
+delete
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** removes items from the list.
+| **How to write it:**
+| ``listbox.delete(index)`` removes one item.
+| ``listbox.delete(0, tk.END)`` removes **every** item.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def delete_chosen():
+        chosen = job_list.curselection()
+        if chosen:
+            job_list.delete(chosen[0])
+
+
+    def clear_all():
+        job_list.delete(0, tk.END)
+
+
+    root = tk.Tk()
+    root.geometry("300x280")
+    root.title("delete")
+
+    job_list = tk.Listbox(root, height=5)
+    for job in ["Feed the dog", "Do homework", "Tidy room", "Practise piano"]:
+        job_list.insert(tk.END, job)
+    job_list.pack(pady=5)
+
+    done_button = tk.Button(root, text="Done (delete chosen)", command=delete_chosen)
+    done_button.pack(pady=2)
+
+    clear_button = tk.Button(root, text="Clear all", command=clear_all)
+    clear_button.pack(pady=2)
+
+    root.mainloop()
+
+size
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** counts how many items are in the list.
+| **How to write it:** ``count = listbox.size()``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("size")
+
+    name_list = tk.Listbox(root, height=5)
+    for name in ["Ava", "Ben", "Chloe", "Dev"]:
+        name_list.insert(tk.END, name)
+    name_list.pack(pady=5)
+
+    count_label = tk.Label(root, text=f"There are {name_list.size()} names")
+    count_label.pack()
+
+    root.mainloop()
+
+selection_set and selection_clear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What they do:** choose or un-choose items from your code.
+| ``listbox.selection_set(0)`` chooses the first item.
+| ``listbox.selection_clear(0, tk.END)`` un-chooses everything.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("selection_set")
+
+    size_list = tk.Listbox(root, height=3)
+    for size in ["Small", "Medium", "Large"]:
+        size_list.insert(tk.END, size)
+    size_list.selection_set(1)          # "Medium" is chosen at the start
+    size_list.pack(pady=10)
+
+    root.mainloop()
+
+bind (clicking an item)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| **What it does:** runs a function as soon as the user clicks an item, without needing a button.
+| **How to write it:** ``listbox.bind("<<ListboxSelect>>", function_name)``
+| The function needs an ``event`` parameter.
+
+.. code-block:: python
+
+    import tkinter as tk
+
+
+    def show_colour(event):
+        chosen = colour_list.curselection()
+        if chosen:
+            colour = colour_list.get(chosen[0])
+            colour_label.config(bg=colour, text=colour)
+
+
+    root = tk.Tk()
+    root.geometry("300x250")
+    root.title("bind")
+
+    colour_list = tk.Listbox(root, height=5)
+    for colour in ["red", "orange", "yellow", "green", "blue"]:
+        colour_list.insert(tk.END, colour)
+    colour_list.pack(pady=5)
+    colour_list.bind("<<ListboxSelect>>", show_colour)
+
+    colour_label = tk.Label(root, text="Click a colour", width=20, height=2)
+    colour_label.pack(pady=5)
+
+    root.mainloop()
+
+itemconfig
+~~~~~~~~~~~~~~~~~~
+
+| **What it does:** changes the colour of **one** item.
+| **How to write it:** ``listbox.itemconfig(index, fg="red", bg="yellow")``
+
+.. code-block:: python
+
+    import tkinter as tk
+
+    root = tk.Tk()
+    root.geometry("300x200")
+    root.title("itemconfig")
+
+    result_list = tk.Listbox(root, height=4)
+    for result in ["Maths: pass", "English: pass", "Science: fail"]:
+        result_list.insert(tk.END, result)
+    result_list.itemconfig(2, fg="red")        # Make item 2 red
+    result_list.pack(pady=10)
+
+    root.mainloop()
+
+----
+
+Quick reference
+-------------------
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option or method
+      - What it does
+      - Example
+    * - ``height``, ``width``
+      - Lines shown, width in characters
+      - ``height=5, width=20``
+    * - ``font``
+      - Font name and size
+      - ``font=("Arial", 14)``
+    * - ``fg``, ``bg``
+      - Word colour, box colour
+      - ``bg="lightyellow"``
+    * - ``selectbackground``
+      - Highlight colour of the chosen item
+      - ``selectbackground="orange"``
+    * - ``selectmode``
+      - Choose one or several items
+      - ``selectmode="multiple"``
+    * - ``relief``, ``borderwidth``
+      - Border style and thickness
+      - ``relief="solid", borderwidth=2``
+    * - ``insert()``
+      - Add an item
+      - ``listbox.insert(tk.END, "Apple")``
+    * - ``curselection()``
+      - Index numbers of chosen items
+      - ``chosen = listbox.curselection()``
+    * - ``get()``
+      - Words of an item
+      - ``listbox.get(chosen[0])``
+    * - ``delete()``
+      - Remove items
+      - ``listbox.delete(0, tk.END)``
+    * - ``size()``
+      - Count the items
+      - ``listbox.size()``
+    * - ``selection_set()``
+      - Choose an item from code
+      - ``listbox.selection_set(0)``
+    * - ``bind()``
+      - Run a function when an item is clicked
+      - ``listbox.bind("<<ListboxSelect>>", show)``
+    * - ``itemconfig()``
+      - Colour one item
+      - ``listbox.itemconfig(2, fg="red")``
+
+----
+
+.. admonition:: Tasks
+
+    #. Make a window titled "Sports" that is 300x250. Add a listbox with a height of 5 and Arial size 14, containing "Cricket", "Football", "Netball", "Swimming" and "Tennis". Use a ``for`` loop.
+    #. Add a button labelled "Choose" and a label. When clicked, the label shows the sport that was chosen.
+    #. Make an Entry, an "Add" button and a listbox. When the button is clicked, the text in the Entry is added to the end of the listbox.
+    #. Add a "Remove" button to your answer for Q3 that deletes the chosen item from the listbox.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+                    root = tk.Tk()
+                    root.geometry("300x250")
+                    root.title("Sports")
+
+                    sport_list = tk.Listbox(root, height=5, font=("Arial", 14))
+                    for sport in ["Cricket", "Football", "Netball", "Swimming", "Tennis"]:
+                        sport_list.insert(tk.END, sport)
+                    sport_list.pack(pady=5)
+
+                    root.mainloop()
+
+            .. tab-item:: Q2
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+
+                    def choose():
+                        chosen = sport_list.curselection()
+                        if chosen:
+                            result_label.config(text="You chose " + sport_list.get(chosen[0]))
+
+
+                    root = tk.Tk()
+                    root.geometry("300x250")
+                    root.title("Sports")
+
+                    sport_list = tk.Listbox(root, height=5, font=("Arial", 14))
+                    for sport in ["Cricket", "Football", "Netball", "Swimming", "Tennis"]:
+                        sport_list.insert(tk.END, sport)
+                    sport_list.pack(pady=5)
+
+                    choose_button = tk.Button(root, text="Choose", command=choose)
+                    choose_button.pack()
+
+                    result_label = tk.Label(root, text="")
+                    result_label.pack()
+
+                    root.mainloop()
+
+            .. tab-item:: Q3
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+
+                    def add():
+                        name_list.insert(tk.END, name_entry.get())
+
+
+                    root = tk.Tk()
+                    root.geometry("300x300")
+                    root.title("Names")
+
+                    name_entry = tk.Entry(root)
+                    name_entry.pack(pady=5)
+
+                    add_button = tk.Button(root, text="Add", command=add)
+                    add_button.pack()
+
+                    name_list = tk.Listbox(root, height=8)
+                    name_list.pack(pady=5)
+
+                    root.mainloop()
+
+            .. tab-item:: Q4
+
+                .. code-block:: python
+
+                    import tkinter as tk
+
+
+                    def add():
+                        name_list.insert(tk.END, name_entry.get())
+
+
+                    def remove():
+                        chosen = name_list.curselection()
+                        if chosen:
+                            name_list.delete(chosen[0])
+
+
+                    root = tk.Tk()
+                    root.geometry("300x320")
+                    root.title("Names")
+
+                    name_entry = tk.Entry(root)
+                    name_entry.pack(pady=5)
+
+                    add_button = tk.Button(root, text="Add", command=add)
+                    add_button.pack()
+
+                    name_list = tk.Listbox(root, height=8)
+                    name_list.pack(pady=5)
+
+                    remove_button = tk.Button(root, text="Remove", command=remove)
+                    remove_button.pack()
+
+                    root.mainloop()
