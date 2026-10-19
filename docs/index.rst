@@ -138,13 +138,19 @@ PC-app-development
     tk_apps/tk_temperature_converter.rst
     tk_apps/tk_pounds_to_kgs.rst
     tk_apps/tk_name_age.rst
-    tk_apps/tk_login.rst
-    tk_apps/tk_login_custom_messagebox.rst
+    tk_apps/tk_insult_generator.rst
 
     tk_quiz_apps/tk_afl_premiers.rst
 
-    tk_apps/tk_RPG_inventory.rst
 
+.. toctree::
+    :maxdepth: 2
+    :caption: tk apps 2
+    :numbered:
+
+    tk_apps/tk_login.rst
+    tk_apps/tk_login_custom_messagebox.rst
+    tk_apps/tk_RPG_inventory.rst
     tk_apps/tk_pizza_cost_1.rst
     tk_apps/tk_pizza_cost_3.rst
 
