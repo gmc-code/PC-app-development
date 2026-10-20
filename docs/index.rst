@@ -78,22 +78,29 @@ PC-app-development
     :maxdepth: 2
     :caption: Themed widgets
     :numbered:
-    :hidden:
 
 
-    ttk_widgets/ttk_introduction.rst
-    ttk_widgets/ttk_themes.rst
-    ttk_widgets/ttk_label.rst
+    ttkwidgets/ttk_intro.rst
 
-    ttk_widgets/ttk_entry.rst
-    ttk_widgets/ttk_button.rst
-    ttk_widgets/ttk_button1.rst
+    ttkwidgets/ttk_button.rst
+    ttkwidgets/ttk_checkbutton.rst
+    ttkwidgets/ttk_combobox.rst
+    ttkwidgets/ttk_entry.rst
+    ttkwidgets/ttk_frame.rst
+    ttkwidgets/ttk_label.rst
+    ttkwidgets/ttk_labelframe.rst
+    ttkwidgets/ttk_menubutton.rst
+    ttkwidgets/ttk_notebook.rst
+    ttkwidgets/ttk_panedwindow.rst
+    ttkwidgets/ttk_progressbar.rst
+    ttkwidgets/ttk_radiobutton.rst
+    ttkwidgets/ttk_scale.rst
+    ttkwidgets/ttk_scrollbar.rst
+    ttkwidgets/ttk_separator.rst
+    ttkwidgets/ttk_sizegrip.rst
+    ttkwidgets/ttk_spinbox.rst
+    ttkwidgets/ttk_treeview.rst
 
-    ttk_widgets/ttk_radiobutton.rst
-    ttk_widgets/ttk_checkbutton.rst
-    ttk_widgets/ttk_menubutton.rst
-
-    ttk_widgets/ttk_frame.rst
 
 
 .. toctree::
