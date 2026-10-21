@@ -2,7 +2,7 @@
 Rock paper scissors match play (tkinter)
 ====================================================
 
-.. image:: images/rps/tk_rock_paper_scissors_v3.png
+.. image:: tk_rock_paper_scissors_v3.png
     :scale: 67
 
 | This is version 3 of the tkinter rock paper scissors game. It adds **match play** to version 2.
@@ -313,7 +313,7 @@ Place the widgets in the window
 
 Design the grid positions:
 
-.. image:: images/rps/rps_v3_grid.png
+.. image:: rps_v3_grid.png
     :scale: 100
 
 .. code-block:: python
