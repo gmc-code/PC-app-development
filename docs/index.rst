@@ -45,6 +45,17 @@ PC-app-development
 
 
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: tk apps
+    :numbered:
+
+    tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
+    tk_apps/tk_list_editor/tk_list_editor.rst
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: tk widgets
@@ -140,13 +151,6 @@ PC-app-development
     .. tk_widget_interactions2/tk_widget_interactions.rsr
     .. tk_widget_interactions2/tk_button_methods.rst
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: tk apps
-    :numbered:
-
-    tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
 
 
 .. toctree::
