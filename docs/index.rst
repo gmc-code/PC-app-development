@@ -52,7 +52,7 @@ PC-app-development
     :numbered:
 
     tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
-    tk_apps/tk_list_editor/tk_list_editor.rst
+    .. tk_apps/tk_list_editor/tk_list_editor.rst
 
 
 
