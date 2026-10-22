@@ -35,6 +35,8 @@ The program is built in this order:
 
 | The **list** ``items`` holds the data. The **Listbox** only shows a copy of it.
 | This is why every function changes ``items`` and then calls ``show_list()``.
+| This page builds the window, widgets and layout **first**, so you can see the app, then writes the functions and connects them to the buttons.
+| In the finished program the functions still sit **above** the window, because a button's ``command=`` needs its function to exist already.
 
 ----
 
@@ -97,8 +99,87 @@ Store the items in a list
 
 ----
 
+Create the widgets
+-------------------------
+
+Add the widgets after ``root.configure(bg=BG_COLOR)`` and above ``root.mainloop()``.
+
+.. code-block:: python
+
+    # Create widgets
+    title_label = tk.Label(root, text="List Editor", bg=BG_COLOR,
+                           fg=TITLE_COLOR, font=TITLE_FONT)
+    instructions_label = tk.Label(root, text="Type an item or click one below.",
+                                  bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+    item_entry = tk.Entry(root, width=20, font=LIST_FONT)
+    add_button = tk.Button(root, text="Add", width=8, bg=PRIMARY_COLOR,
+                           fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    # exportselection=False keeps the selected item highlighted
+    # when the user clicks in the entry box to type
+    item_listbox = tk.Listbox(root, width=20, height=8, bg=LIST_BG_COLOR,
+                              fg=TEXT_COLOR, font=LIST_FONT,
+                              exportselection=False)
+    change_button = tk.Button(root, text="Change", width=8, bg=PRIMARY_COLOR,
+                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    remove_button = tk.Button(root, text="Remove", width=8, bg=SECONDARY_COLOR,
+                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    sort_button = tk.Button(root, text="Sort", width=8, bg=PRIMARY_COLOR,
+                            fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    clear_button = tk.Button(root, text="Clear", width=8, bg=SECONDARY_COLOR,
+                             fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    count_label = tk.Label(root, text="", bg=BG_COLOR, fg=TEXT_COLOR,
+                           font=FONT_STYLE)
+    message_label = tk.Label(root, text="", bg=BG_COLOR, fg=PRIMARY_COLOR,
+                             font=FONT_STYLE)
+
+- ``item_entry`` is an **Entry** widget: a one-line box the user can type in. ``width=20`` makes it about 20 characters wide.
+- ``item_listbox`` is a **Listbox**: a box that shows one item per line. ``height=8`` shows 8 lines.
+- ``exportselection=False`` is important. Without it, the Listbox loses its selection when the user clicks or highlights text in the Entry box, so **Change** and **Remove** would say "Select an item first."
+- ``count_label`` and ``message_label`` start with no text. The functions written later fill them in.
+- The buttons have no ``command=`` yet. They are connected to their functions at the end, once the functions have been written.
+
+----
+
+Place the widgets in the window
+---------------------------------------
+
+Design the grid positions:
+
+.. image:: list_editor_grid.png
+    :scale: 100
+
+.. code-block:: python
+
+    # Share spare width equally between the 2 columns to keep the widgets centred
+    root.columnconfigure(0, weight=1)
+    root.columnconfigure(1, weight=1)
+
+    # Place widgets in the window
+    title_label.grid(row=0, column=0, columnspan=2, pady=(20, 5))
+    instructions_label.grid(row=1, column=0, columnspan=2, pady=(0, 10))
+    item_entry.grid(row=2, column=0, padx=10, pady=5)
+    add_button.grid(row=2, column=1, padx=10, pady=5)
+    item_listbox.grid(row=3, column=0, rowspan=4, padx=10, pady=5)
+    change_button.grid(row=3, column=1, padx=10, pady=5)
+    remove_button.grid(row=4, column=1, padx=10, pady=5)
+    sort_button.grid(row=5, column=1, padx=10, pady=5)
+    clear_button.grid(row=6, column=1, padx=10, pady=5)
+    count_label.grid(row=7, column=0, columnspan=2, pady=(10, 0))
+    message_label.grid(row=8, column=0, columnspan=2, pady=5)
+
+- ``rowspan=4`` makes the Listbox stretch **down** across rows 3, 4, 5 and 6, so the four buttons sit beside it.
+- ``columnspan=2`` makes the title, instructions and the two bottom labels stretch **across** both columns.
+
+| Run the program now to see the whole layout. The Listbox is empty and the buttons do nothing yet.
+| The rest of the page writes the functions that make the app work.
+
+----
+
 Show the list in the Listbox
 -------------------------------------
+
+| Now that the window is built, the functions can be written.
+| Functions go near the **top** of the program: put this one after the list and before ``root = tk.Tk()``.
 
 .. code-block:: python
 
@@ -114,10 +195,22 @@ Show the list in the Listbox
 - ``len(items)`` is the number of items in the list. ``str()`` turns the number into a string so it can be joined to the label text.
 - Clearing the Listbox and filling it again means it always matches the list exactly.
 
+Call the function once at the bottom of the program, just above ``root.mainloop()``, so the starting items appear when the window opens:
+
+.. code-block:: python
+
+    # Show the starting list
+    show_list()
+
+- ``show_list()`` is written **above** the widgets but uses ``item_listbox`` and ``count_label``. This works because the function only **runs** when it is called at the bottom of the program, and by then the widgets exist.
+- Before this call was added, the Listbox was empty even though ``items`` held three items. A Listbox only shows lines that are inserted into it.
+
 ----
 
 Find the selected item
 -------------------------------
+
+The next functions go after ``show_list()``. This one finds which item is selected, so the other functions do not have to repeat that code.
 
 .. code-block:: python
 
@@ -232,31 +325,22 @@ Copy the clicked item into the Entry box
             item_entry.delete(0, tk.END)
             item_entry.insert(0, items[selection[0]])
 
-- This function is not run by a button. It is **bound** to the Listbox, so it runs when the user selects an item (see below).
+- This function is not run by a button. It is **bound** to the Listbox, so it runs when the user selects an item (see the next section).
 - A function run by ``bind()`` is given an ``event`` parameter with details about what happened. This function does not use it, but it must still be in the brackets.
 - ``item_entry.insert(0, ...)`` puts the selected item into the Entry box, so the user can edit it and click **Change**.
 
 ----
 
-Create the widgets
--------------------------
+Connect the buttons and the click event
+------------------------------------------------
+
+Add a ``command=`` to each button so it runs its function when clicked:
 
 .. code-block:: python
 
-    # Create widgets
-    title_label = tk.Label(root, text="List Editor", bg=BG_COLOR,
-                           fg=TITLE_COLOR, font=TITLE_FONT)
-    instructions_label = tk.Label(root, text="Type an item or click one below.",
-                                  bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
-    item_entry = tk.Entry(root, width=20, font=LIST_FONT)
     add_button = tk.Button(root, text="Add", width=8, bg=PRIMARY_COLOR,
                            fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
                            command=add_item)
-    # exportselection=False keeps the selected item highlighted
-    # when the user clicks in the entry box to type
-    item_listbox = tk.Listbox(root, width=20, height=8, bg=LIST_BG_COLOR,
-                              fg=TEXT_COLOR, font=LIST_FONT,
-                              exportselection=False)
     change_button = tk.Button(root, text="Change", width=8, bg=PRIMARY_COLOR,
                               fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
                               command=change_item)
@@ -269,56 +353,17 @@ Create the widgets
     clear_button = tk.Button(root, text="Clear", width=8, bg=SECONDARY_COLOR,
                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
                              command=clear_items)
-    count_label = tk.Label(root, text="", bg=BG_COLOR, fg=TEXT_COLOR,
-                           font=FONT_STYLE)
-    message_label = tk.Label(root, text="", bg=BG_COLOR, fg=PRIMARY_COLOR,
-                             font=FONT_STYLE)
+
+Then add this line straight after the widgets:
+
+.. code-block:: python
 
     # Run item_clicked() whenever the user selects an item in the listbox
     item_listbox.bind("<<ListboxSelect>>", item_clicked)
 
-- ``item_entry`` is an **Entry** widget: a one-line box the user can type in. ``width=20`` makes it about 20 characters wide.
-- ``item_listbox`` is a **Listbox**: a box that shows one item per line. ``height=8`` shows 8 lines.
-- ``exportselection=False`` is important. Without it, the Listbox loses its selection when the user clicks or highlights text in the Entry box, so **Change** and **Remove** would say "Select an item first."
-- ``count_label`` and ``message_label`` start with no text. The functions fill them in.
-- ``command=add_item`` connects each button to its function, with **no brackets**.
-- ``bind("<<ListboxSelect>>", item_clicked)`` runs ``item_clicked()`` every time the selection in the Listbox changes.
-
-----
-
-Place the widgets in the window
----------------------------------------
-
-Design the grid positions:
-
-.. image:: list_editor_grid.png
-    :scale: 100
-
-.. code-block:: python
-
-    # Share spare width equally between the 2 columns to keep the widgets centred
-    root.columnconfigure(0, weight=1)
-    root.columnconfigure(1, weight=1)
-
-    # Place widgets in the window
-    title_label.grid(row=0, column=0, columnspan=2, pady=(20, 5))
-    instructions_label.grid(row=1, column=0, columnspan=2, pady=(0, 10))
-    item_entry.grid(row=2, column=0, padx=10, pady=5)
-    add_button.grid(row=2, column=1, padx=10, pady=5)
-    item_listbox.grid(row=3, column=0, rowspan=4, padx=10, pady=5)
-    change_button.grid(row=3, column=1, padx=10, pady=5)
-    remove_button.grid(row=4, column=1, padx=10, pady=5)
-    sort_button.grid(row=5, column=1, padx=10, pady=5)
-    clear_button.grid(row=6, column=1, padx=10, pady=5)
-    count_label.grid(row=7, column=0, columnspan=2, pady=(10, 0))
-    message_label.grid(row=8, column=0, columnspan=2, pady=5)
-
-    # Show the starting list
-    show_list()
-
-- ``rowspan=4`` makes the Listbox stretch **down** across rows 3, 4, 5 and 6, so the four buttons sit beside it.
-- ``columnspan=2`` makes the title, instructions and the two bottom labels stretch **across** both columns.
-- ``show_list()`` is called once before ``root.mainloop()``, so the starting items appear when the window opens.
+- ``command=add_item`` connects the button to its function, with **no brackets**. With brackets, the function would run once, straight away, while the button is being created.
+- ``command=add_item`` only works if ``add_item()`` already exists when the button is created. That is why the functions sit **above** ``root = tk.Tk()`` in the program, even though they were written after the widgets.
+- ``bind("<<ListboxSelect>>", item_clicked)`` runs ``item_clicked()`` every time the selection in the Listbox changes. The function name is also written with **no brackets**.
 
 ----
 
