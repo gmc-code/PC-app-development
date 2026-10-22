@@ -1,5 +1,5 @@
 ====================================================
-Rock paper scissors match play (tkinter)
+Rock paper scissors 3 match play
 ====================================================
 
 .. image:: tk_rock_paper_scissors_v3.png

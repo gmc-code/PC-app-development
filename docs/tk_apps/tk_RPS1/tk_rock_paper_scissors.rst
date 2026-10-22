@@ -1,5 +1,5 @@
 ====================================================
-Rock paper scissors (tkinter)
+Rock paper scissors 1
 ====================================================
 
 .. image:: tk_rock_paper_scissors.png

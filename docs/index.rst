@@ -117,6 +117,7 @@ PC-app-development
     :maxdepth: 2
     :caption: tk widgets interactions2
     :numbered:
+    :hidden:
 
     tk_widget_interactions2/tk_variables.rst
     tk_widget_interactions2/tk_command_binding.rst
@@ -146,18 +147,20 @@ PC-app-development
     :numbered:
 
     tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
-    tk_apps/tk_temperature_converter/tk_temperature_converter.rst
-    tk_apps/tk_lbs_to_kgs/tk_lbs_to_kgs.rst
-    tk_apps/tk_name_age/tk_name_age.rst
-    tk_apps/tk_insult_generator/tk_insult_generator.rst
-
-    tk_quiz_apps/tk_afl_premiers.rst
 
 
 .. toctree::
     :maxdepth: 2
     :caption: tk apps 2
     :numbered:
+    :hidden:
+
+    tk_apps/tk_temperature_converter/tk_temperature_converter.rst
+    tk_apps/tk_lbs_to_kgs/tk_lbs_to_kgs.rst
+    tk_apps/tk_name_age/tk_name_age.rst
+    tk_apps/tk_insult_generator/tk_insult_generator.rst
+
+    tk_quiz_apps/tk_afl_premiers.rst
 
     tk_apps/tk_login/tk_login.rst
     tk_apps/tk_login_custom_messagebox/tk_login_custom_messagebox.rst
@@ -194,6 +197,7 @@ PC-app-development
     :maxdepth: 2
     :caption: Anvil use
     :numbered:
+    :hidden:
 
     Anvil/anvil_introduction.rst
     Anvil/first_steps.rst
@@ -203,6 +207,7 @@ PC-app-development
     :maxdepth: 2
     :caption: Anvil apps
     :numbered:
+    :hidden:
 
     Anvil/name_and_age.rst
     Anvil/hailstone_numbers.rst
@@ -220,12 +225,11 @@ PC-app-development
     Anvil/breathe.rst
 
 
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Anvil_youtube
     :numbered:
+    :hidden:
 
     Anvil/feedback_form.rst
     Anvil/iphone_calculator.rst
@@ -235,6 +239,7 @@ PC-app-development
     :maxdepth: 2
     :caption: pyscript use
     :numbered:
+    :hidden:
 
     pyscript/pyscript_introduction.rst
     pyscript/browser_elements.rst
@@ -244,6 +249,7 @@ PC-app-development
     :maxdepth: 2
     :caption: pyscript apps
     :numbered:
+    :hidden:
 
     pyscript/elves.rst
     pyscript/superheroes.rst

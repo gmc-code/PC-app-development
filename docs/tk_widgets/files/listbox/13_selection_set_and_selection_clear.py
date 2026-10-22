@@ -6,7 +6,7 @@ root = tk.Tk()
 root.geometry("300x200")
 root.title("selection_set")
 
-size_list = tk.Listbox(root, height=3)
+size_list = tk.Listbox(root, height=5)
 for size in ["Small", "Medium", "Large"]:
     size_list.insert(tk.END, size)
 size_list.selection_set(1)          # "Medium" is chosen at the start

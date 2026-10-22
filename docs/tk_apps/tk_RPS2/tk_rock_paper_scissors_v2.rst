@@ -1,5 +1,5 @@
 ====================================================
-Rock paper scissors with images (tkinter)
+Rock paper scissors 2 with images
 ====================================================
 
 .. image:: tk_rock_paper_scissors_v2.png

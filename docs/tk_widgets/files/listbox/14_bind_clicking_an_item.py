@@ -14,7 +14,7 @@ root = tk.Tk()
 root.geometry("300x250")
 root.title("bind")
 
-colour_list = tk.Listbox(root, height=5)
+colour_list = tk.Listbox(root, height=7)
 for colour in ["red", "orange", "yellow", "green", "blue"]:
     colour_list.insert(tk.END, colour)
 colour_list.pack(pady=5)
