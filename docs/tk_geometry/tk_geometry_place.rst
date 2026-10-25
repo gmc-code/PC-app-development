@@ -20,6 +20,7 @@ x and y coordinates of top left of widget
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: widget.place(x=x_coord, y=y_coord)
+    :no-index:
 
     | Use **place()** method to place a widget with its top left at the x and y coordinates.
     | e.g. widget.place(x=50, y=75)
@@ -29,6 +30,7 @@ width and height of widget
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: widget.place(x=x_coord, y=y_coord, width=widget_width, height=widget_height)
+    :no-index:
 
     | Use **place()** method to place a widget with its top left at the x and y coordinates.
     | Set the height and width of the widget: **width=widget_width**, **height=widget_height**.
@@ -38,6 +40,7 @@ widget anchor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: widget.place(x=x_coord, y=y_coord, anchor="nw")
+    :no-index:
 
     | The anchor parameter determines which part of the widget is positioned at the given coordinates.
     | The default value of the anchor is 'nw' for the top left of the widget at the specified coordinates.

@@ -101,35 +101,49 @@ root.geometry("520x480")
 root.configure(bg=BG_COLOR)
 
 # Create widgets
-title_label = tk.Label(root, text="List Editor", bg=BG_COLOR,
-                       fg=TITLE_COLOR, font=TITLE_FONT)
-instructions_label = tk.Label(root, text="Type an item or click one below.",
-                              bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+title_label = tk.Label(
+    root, text="List Editor",
+    bg=BG_COLOR, fg=TITLE_COLOR, font=TITLE_FONT)
+instructions_label = tk.Label(
+    root, text="Type an item or click one below.",
+    bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+
 item_entry = tk.Entry(root, width=20, font=LIST_FONT)
-add_button = tk.Button(root, text="Add", width=8, bg=PRIMARY_COLOR,
-                       fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                       command=add_item)
+
 # exportselection=False keeps the selected item highlighted
 # when the user clicks in the entry box to type
-item_listbox = tk.Listbox(root, width=20, height=8, bg=LIST_BG_COLOR,
-                          fg=TEXT_COLOR, font=LIST_FONT,
-                          exportselection=False)
-change_button = tk.Button(root, text="Change", width=8, bg=PRIMARY_COLOR,
-                          fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                          command=change_item)
-remove_button = tk.Button(root, text="Remove", width=8, bg=SECONDARY_COLOR,
-                          fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                          command=remove_item)
-sort_button = tk.Button(root, text="Sort", width=8, bg=PRIMARY_COLOR,
-                        fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                        command=sort_items)
-clear_button = tk.Button(root, text="Clear", width=8, bg=SECONDARY_COLOR,
-                         fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                         command=clear_items)
-count_label = tk.Label(root, text="", bg=BG_COLOR, fg=TEXT_COLOR,
-                       font=FONT_STYLE)
-message_label = tk.Label(root, text="", bg=BG_COLOR, fg=PRIMARY_COLOR,
-                         font=FONT_STYLE)
+item_listbox = tk.Listbox(
+    root, width=20, height=8,
+    bg=LIST_BG_COLOR, fg=TEXT_COLOR, font=LIST_FONT,
+    exportselection=False)
+
+add_button = tk.Button(
+    root, text="Add", width=8,
+    bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+    command=add_item)
+change_button = tk.Button(
+    root, text="Change", width=8,
+    bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+    command=change_item)
+remove_button = tk.Button(
+    root, text="Remove", width=8,
+    bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+    command=remove_item)
+sort_button = tk.Button(
+    root, text="Sort", width=8,
+    bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+    command=sort_items)
+clear_button = tk.Button(
+    root, text="Clear", width=8,
+    bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+    command=clear_items)
+
+count_label = tk.Label(
+    root, text="",
+    bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+message_label = tk.Label(
+    root, text="",
+    bg=BG_COLOR, fg=PRIMARY_COLOR, font=FONT_STYLE)
 
 # Run item_clicked() whenever the user selects an item in the listbox
 item_listbox.bind("<<ListboxSelect>>", item_clicked)

@@ -1,6 +1,6 @@
-===================================
+=====================================
 Python Tkinter Place Geometry Manager
-===================================
+=====================================
 
 | In Python's **Tkinter** library, the ``place()`` geometry manager allows you to position widgets using exact coordinates or relative positioning.
 | Unlike ``pack()`` or ``grid()``, which arrange widgets automatically in blocks or rows/columns, ``place()`` gives you total control over precise pixel locations.

@@ -283,34 +283,40 @@ Key syntax
 -----------------
 
 .. py:function:: random.choice(sequence)
+    :no-index:
 
     | Syntax: ``random.choice(CHOICES)``
     | Description: Returns one randomly chosen item from a list.
     | Example: ``random.choice(["Rock", "Paper", "Scissors"])  # could return "Paper"``
 
 .. py:function:: dictionary[key]
+    :no-index:
 
     | Syntax: ``RESULT_COLORS[user_result]``
     | Description: Gets the value stored for a key.
     | Example: ``RESULT_MESSAGES["Tie"]  # "It's a tie!"``
 
 .. py:function:: return value1, value2
+    :no-index:
 
     | Syntax: ``return "Lose", "Win"``
     | Description: Returns two values at once (as a tuple).
     | Unpacking: ``computer_result, user_result = determine_winner("Paper", "Rock")`` stores ``"Lose"`` in ``computer_result`` and ``"Win"`` in ``user_result``.
 
 .. py:function:: condition1 and condition2
+    :no-index:
 
     | Syntax: ``user == "Rock" and computer == "Scissors"``
     | Description: ``True`` only if **both** conditions are true.
 
 .. py:function:: condition1 or condition2
+    :no-index:
 
     | Syntax: ``(user == "Rock" and computer == "Scissors") or (user == "Paper" and computer == "Rock")``
     | Description: ``True`` if **at least one** condition is true. Brackets group each ``and`` check.
 
 .. py:function:: lambda: function(argument)
+    :no-index:
 
     | Syntax: ``command=lambda: play("Rock")``
     | Description: Creates a small function with no name. It lets a button call a function with an argument, without writing a separate click function.

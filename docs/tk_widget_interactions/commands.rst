@@ -6,10 +6,8 @@ tk command binding
 Overview
 ----------------------------------------------------
 
-| In Tkinter, **command binding** allows you to connect a widget (such as a
-button or slider) to a Python function.
-| When the user interacts with the
-widget (e.g., clicks a button), the linked function is executed.
+| In Tkinter, **command binding** allows you to connect a widget (such as a button or slider) to a Python function.
+| When the user interacts with the widget (e.g., clicks a button), the linked function is executed.
 | This is essential for making your GUI interactive.
 | This is best for buttons, menus, scales, spinboxes
 
@@ -108,6 +106,7 @@ Example 3: Checkbutton  Command Binding
 ----------------------------------------------------
 
 .. py:function:: tk.Checkbutton(..., command=function)
+    :no-index:
 
     | A Checkbutton calls the function whenever it is selected or deselected.
 
@@ -145,6 +144,7 @@ Example 3: Checkbutton  Command Binding
 
 
 .. py:function:: tk.Radiobutton(..., command=function)
+    :no-index:
 
     | A Radiobutton calls the function whenever a different option is selected.
 
@@ -185,6 +185,7 @@ Example 3: Checkbutton  Command Binding
 ----
 
 .. py:function:: tk.Scale(..., command=function)
+    :no-index:
 
     | A Scale passes the current slider value to the callback.
 
@@ -216,6 +217,7 @@ Example 3: Checkbutton  Command Binding
 ----
 
 .. py:function:: tk.Spinbox(..., command=function)
+    :no-index:
 
     | A Spinbox calls the function whenever the arrow buttons change the value.
 
@@ -246,6 +248,7 @@ Example 3: Checkbutton  Command Binding
 
 
 .. py:function:: tk.OptionMenu(..., command=function)
+    :no-index:
 
     | An OptionMenu passes the selected option to the callback.
 
@@ -281,6 +284,7 @@ Example 3: Checkbutton  Command Binding
 ----
 
 .. py:function:: tk.Menubutton(...)
+    :no-index:
 
     | A Menubutton uses the commands of its attached Menu.
 
@@ -311,6 +315,7 @@ Example 3: Checkbutton  Command Binding
 ----
 
 .. py:function:: tk.Scrollbar(..., command=widget.yview)
+    :no-index:
 
     | A Scrollbar usually controls another widget by calling one of its scrolling methods.
 

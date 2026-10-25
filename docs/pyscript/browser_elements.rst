@@ -72,6 +72,7 @@ when decorator in python
   - Mouseover Event: Triggers actions when the mouse hovers over an image.
 
 .. py:decorator:: @when(event_type, selector)
+ :no-index:
 
 	| The **event_type** should be the name of the browser event to handle as a string (e.g. "click", "input", "keypress", "change", "mouseover").
 	| The **selector** should be a string containing a valid selector to indicate the target elements in the DOM whose events of event_type are of interest.
@@ -86,6 +87,7 @@ Output to the browser window
 | Pyscript recommends using the display function to output to the browser window.
 
 .. py:function:: display(*values, target=None, append=True)
+    :no-index:
 
     \*values (list) - the list of objects to be displayed. Can be any of the following MIME types:: "text/plain", "text/html", "image/png", "image/jpeg", "image/svg+xml", "application/json" or "application/javascript"
 

@@ -14,11 +14,13 @@ Simple window
 | By convention, the main window in tKinter is referred to a root.
 
 .. py:function:: tkinter.Tk()
+    :no-index:
 
     | Create the main application root.
     | Common usage is **root = tk.Tk()**.
 
 .. py:function:: root.mainloop()
+    :no-index:
 
     | Runs an infinite loop that continuously processes events (such as button clicks, keypresses, and mouse movements) and updates the GUI accordingly.
     | While the main loop is active, any code after the mainloop() call will not execute until the window is closed.
@@ -42,6 +44,7 @@ Window title
 -----------------
 
 .. py:function:: root.title('window_title')
+    :no-index:
 
     | The method root.title() sets the title of the root.
     | The argument 'window_title' specifies the text that will appear in the title bar of the root.
@@ -68,6 +71,7 @@ Window size
 -----------------------------
 
 .. py:function:: root.geometry(widthxheight)
+    :no-index:
 
     | set the size of a tkinter window
     | width: The desired width of the window in pixels.
@@ -98,6 +102,7 @@ Background color
 | See: `<https://www.w3schools.com/colors/colors_names.asp>`_
 
 .. py:function:: root.configure(bg=color)
+    :no-index:
 
     | Sets the background color of the root.
     | `color` is a color name (e.g. "white"), hexadecimal value (e.g. "#FFFFFF").
@@ -132,6 +137,7 @@ Window size and position
 -----------------------------
 
 .. py:function:: root.geometry(widthxheight±x±y)
+    :no-index:
 
     | set the size and top left of a window
     | width: The desired width of the window in pixels.
@@ -140,10 +146,12 @@ Window size and position
     | y: The vertical position (+ for distance from the top edge of the screen; - from bottom) in pixels.
 
 .. py:function:: root.attributes('-topmost', True)
+    :no-index:
 
     | Use the root.attributes('-topmost', True) to make the window always stay on top.
 
 .. py:function:: root.resizable(width_boolean,height_boolean)
+    :no-index:
 
     | Determines whether the window can be resized by the user.
     | To create a fixed-size window, disable resizing by calling `root.resizable(False, False)`
@@ -176,10 +184,12 @@ Window centered
 -----------------------
 
 .. py:function:: root.winfo_screenwidth()
+    :no-index:
 
     | returns the width of the screen (or monitor) where the specified widget (usually a Tkinter window) is located.
 
 .. py:function:: root.winfo_screenheight()
+    :no-index:
 
     | returns the height of the screen (or monitor) where the specified widget (usually a Tkinter window) is located.
 
@@ -213,14 +223,17 @@ Window width and height
 --------------------------
 
 .. py:function:: root.winfo_width()
+    :no-index:
 
     | returns the width of the Tkinter root.
 
 .. py:function:: root.winfo_height()
+    :no-index:
 
     | returns the height of the Tkinter root.
 
 .. py:function:: update_idletasks()
+    :no-index:
 
     | The `update_idletasks()` method is used to process pending idle tasks in a Tkinter window without handling other events.
     | `update_idletasks()` focuses solely on idle tasks which typically involve geometry management and widget redrawing.
@@ -262,10 +275,12 @@ Min Max window size
 --------------------------
 
 .. py:function:: root.minsize(width, height)
+    :no-index:
 
     | Set the minimum size `(width, height)`.
 
 .. py:function:: root.maxsize()
+    :no-index:
 
     | Set the maximum size `(width, height)`.
 
@@ -296,6 +311,7 @@ Window options
 Here are the descriptions for each option in Tkinter's window options.
 
 .. py:attribute:: attributes
+    :no-index:
 
     | Syntax: ``root.attributes("-attribute", value)``
     | Description: Configures advanced window attributes, such as making the window always on top, transparent, or fullscreen.
@@ -305,6 +321,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | ``root.attributes("-alpha", 0.8)``  (Sets window transparency)
 
 .. py:attribute:: bg
+    :no-index:
 
     | Syntax: ``root.configure(bg="color")``
     | Description: Sets the background color of the root.
@@ -312,6 +329,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(bg="light yellow")``
 
 .. py:attribute:: bd
+    :no-index:
 
     | Syntax: ``root.configure(bd=value)``
     | Description: Sets the border width around the root.
@@ -319,6 +337,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(bd=5)``
 
 .. py:attribute:: colormap
+    :no-index:
 
     | Syntax: ``root.configure(colormap="new_colormap")``
     | Description: Specifies a different colormap for the window, useful for advanced color manipulation.
@@ -326,6 +345,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(colormap="new_map")``
 
 .. py:attribute:: container
+    :no-index:
 
     | Syntax: ``root.configure(container=boolean)``
     | Description: Specifies whether the window is a container. Containers can be used to embed other applications.
@@ -333,6 +353,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(container=True)``
 
 .. py:attribute:: cursor
+    :no-index:
 
     | Syntax: ``root.configure(cursor="cursor_type")``
     | Description: Changes the appearance of the mouse cursor when it is over the root.
@@ -444,6 +465,7 @@ Here are the descriptions for each option in Tkinter's window options.
     - ``"xterm"`` - Text cursor, often used for text input.
 
 .. py:attribute:: geometry
+    :no-index:
 
     | Syntax: ``root.geometry("widthxheight+X+Y")``
     | Description: Sets the dimensions and position of the window on the screen.
@@ -451,6 +473,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.geometry("800x600+100+50")``
 
 .. py:attribute:: height
+    :no-index:
 
     | Syntax: ``root.configure(height=value)``
     | Description: Sets the height of the root.
@@ -458,6 +481,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(height=400)``
 
 .. py:attribute:: highlightbackground
+    :no-index:
 
     | Syntax: ``root.configure(highlightbackground="color")``
     | Description: Sets the color of the highlight border when the window does not have focus.
@@ -465,6 +489,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(highlightbackground="gray")``
 
 .. py:attribute:: highlightcolor
+    :no-index:
 
     | Syntax: ``root.configure(highlightcolor="color")``
     | Description: Specifies the color of the highlight border when the window has focus.
@@ -472,6 +497,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(highlightcolor="blue")``
 
 .. py:attribute:: highlightthickness
+    :no-index:
 
     | Syntax: ``root.configure(highlightthickness=value)``
     | Description: Sets the thickness of the highlight border.
@@ -479,6 +505,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(highlightthickness=2)``
 
 .. py:attribute:: iconbitmap
+    :no-index:
 
     | Syntax: ``root.iconbitmap("path_to_icon.ico")``
     | Description: Sets the icon for the window, usually displayed in the title bar and taskbar.
@@ -489,6 +516,7 @@ Here are the descriptions for each option in Tkinter's window options.
     :scale: 100
 
 .. py:attribute:: maxsize
+    :no-index:
 
     | Syntax: ``root.maxsize(width, height)``
     | Description: Sets the maximum size of the root.
@@ -496,6 +524,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.maxsize(1200, 800)``
 
 .. py:attribute:: menu
+    :no-index:
 
     | Syntax: ``root.configure(menu=menu_widget)``
     | Description: Sets a menu widget as the menu for this root.
@@ -503,6 +532,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(menu=my_menu)``
 
 .. py:attribute:: minsize
+    :no-index:
 
     | Syntax: ``root.minsize(width, height)``
     | Description: Sets the minimum size of the root.
@@ -510,6 +540,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.minsize(300, 200)``
 
 .. py:attribute:: padx
+    :no-index:
 
     | Syntax: ``root.configure(padx=value)``
     | Description: Adds horizontal padding inside the root.
@@ -517,6 +548,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(padx=10)``
 
 .. py:attribute:: pady
+    :no-index:
 
     | Syntax: ``root.configure(pady=value)``
     | Description: Adds vertical padding inside the root.
@@ -524,6 +556,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(pady=10)``
 
 .. py:attribute:: relief
+    :no-index:
 
     | Syntax: ``root.configure(relief="style")``
     | Description: Defines the border style of the window (e.g., flat, raised, sunken, groove, ridge).
@@ -531,6 +564,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(relief="sunken")``
 
 .. py:attribute:: resizable
+    :no-index:
 
     | Syntax: ``root.resizable(width=True/False, height=True/False)``
     | Description: Controls whether the window can be resized horizontally or vertically.
@@ -538,6 +572,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.resizable(width=False, height=True)``
 
 .. py:attribute:: screen
+    :no-index:
 
     | Syntax: ``root.configure(screen="screen_name")``
     | Description: Specifies the screen on which the window should be displayed. This is useful in multi-monitor setups where you want to control which screen the window appears on.
@@ -545,6 +580,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(screen=":0.1")``
 
 .. py:attribute:: state
+    :no-index:
 
     | Syntax: ``root.state("state")``
     | Description: Sets the window's state to either normal, icon (minimized), or zoomed (maximized).
@@ -552,6 +588,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.state("zoomed")``
 
 .. py:attribute:: takefocus
+    :no-index:
 
     | Syntax: ``root.configure(takefocus=True/False)``
     | Description: Indicates whether the window can receive focus when tabbed to.
@@ -559,6 +596,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(takefocus=False)``
 
 .. py:attribute:: title
+    :no-index:
 
     | Syntax: ``root.title("title_text")``
     | Description: Sets the title of the window displayed in the title bar.
@@ -566,6 +604,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.title("My Application")``
 
 .. py:attribute:: use
+    :no-index:
 
     | Syntax: ``root.configure(use="window_id")``
     | Description: Embeds the Tkinter window inside another window specified by the window ID. This is useful for embedding Tkinter applications within other applications.
@@ -573,6 +612,7 @@ Here are the descriptions for each option in Tkinter's window options.
     | Example: ``root.configure(use="0x12345")``
 
 .. py:attribute:: width
+    :no-index:
 
     | Syntax: ``root.configure(width=value)``
     | Description: Sets the width of the root.
@@ -588,6 +628,7 @@ Window attributes
 Here are the descriptions for each setting in Tkinter's window attributes.
 
 .. py:attribute:: root.attributes
+    :no-index:
 
     | Syntax: ``root.attributes("-attribute", value)``
     | Description: Configures advanced window attributes, such as making the window always on top, transparent, or fullscreen.
@@ -597,6 +638,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | ``root.attributes("-alpha", 0.8)``  (Sets window transparency)
 
 .. py:attribute:: -alpha
+    :no-index:
 
     | Syntax: ``root.attributes("-alpha", value)``
     | Description: Sets the transparency level of the root. Values range from 0 (fully transparent) to 1 (fully opaque).
@@ -604,6 +646,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Example: ``root.attributes("-alpha", 0.8)``
 
 .. py:attribute:: -fullscreen
+    :no-index:
 
     | Syntax: ``root.attributes("-fullscreen", True/False)``
     | Description: Enables or disables fullscreen mode for the root.
@@ -611,6 +654,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Example: ``root.attributes("-fullscreen", True)``
 
 .. py:attribute:: -topmost
+    :no-index:
 
     | Syntax: ``root.attributes("-topmost", True/False)``
     | Description: Keeps the window on top of all other windows if set to True.
@@ -618,6 +662,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Example: ``root.attributes("-topmost", True)``
 
 .. py:attribute:: -disabled
+    :no-index:
 
     | Syntax: ``root.attributes("-disabled", True/False)``
     | Description: Disables user interaction with the window when set to True, making it unresponsive.
@@ -625,6 +670,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Example: ``root.attributes("-disabled", True)``
 
 .. py:attribute:: -toolwindow
+    :no-index:
 
     | Syntax: ``root.attributes("-toolwindow", True/False)``
     | Description: Configures the window to be displayed as a tool window with a smaller title bar (Windows only).
@@ -632,6 +678,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Example: ``root.attributes("-toolwindow", True)``
 
 .. py:attribute:: -transparentcolor
+    :no-index:
 
     | Syntax: ``root.attributes("-transparentcolor", "color")``
     | Description: Sets a specific color to be transparent in the window, creating a "cutout" effect for that color (Windows only).
@@ -639,6 +686,7 @@ Here are the descriptions for each setting in Tkinter's window attributes.
     | Example: ``root.attributes("-transparentcolor", "white")``
 
 .. py:attribute:: -zoomed
+    :no-index:
 
     | Syntax: ``root.attributes("-zoomed", True/False)``
     | Description: Opens the window in a maximized (zoomed) state if set to True (Windows only).

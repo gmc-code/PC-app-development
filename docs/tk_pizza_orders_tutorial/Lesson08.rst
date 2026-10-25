@@ -10,8 +10,8 @@ Deleting Orders
 
   - Creating a delete order button.
   - Creating a cancel order button.
-  - Writing the `delete_selected_pizza` function.
-  - Writing the `cancel_order` Function
+  - Writing the ``delete_selected_pizza`` function.
+  - Writing the ``cancel_order`` Function
 
 ----
 
@@ -19,17 +19,17 @@ Creating a Delete Order Button
 ------------------------------------
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
-| This code creates a button labeled "Delete Selected" that, when clicked, will call the `delete_selected_pizza` function to remove the selected pizza from the order list.
+| This code creates a button labelled "Delete Selected" that, when clicked, will call the ``delete_selected_pizza`` function to remove the selected pizza from the order list.
 
 .. code-block:: python
 
-   # Action Button: Delete Selected
+    # Action Button: Delete Selected
     delete_pizza_button = tk.Button(root, text="Delete Selected", command=delete_selected_pizza)
     delete_pizza_button.grid(row=6, column=2, padx=10, pady=15, ipady=5, sticky="w")
 
 
-- ``delete_pizza_button = tk.Button(root, text="Delete Selected Pizza", command=delete_selected_pizza)``: Creates a button labeled "Delete Selected Pizza" and sets the command to `delete_selected_pizza`, which will be executed when the button is clicked.
-- ``delete_pizza_button.grid(row=6, column=2, padx=10,  pady=5, ipadx=20, ipady=10,sticky="w")``: Places the button in the grid layout at row 6, column 2 and adds external padding around the button: 10 pixels on the x-axis (`padx`),and 5 pixels on the y-axis (`ipady`), and 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and aligns the button to the west (left) side of the cell (`sticky="w"`).
+- ``delete_pizza_button = tk.Button(root, text="Delete Selected", command=delete_selected_pizza)``: Creates a button labelled "Delete Selected" and sets the command to ``delete_selected_pizza``, which will be executed when the button is clicked.
+- ``delete_pizza_button.grid(row=6, column=2, padx=10, pady=15, ipady=5, sticky="w")``: Places the button in the grid layout at row 6, column 2, with 10 pixels of padding outside the button horizontally (``padx``), 15 pixels vertically (``pady``), 5 pixels of extra height inside the button (``ipady``), and aligns the button to the west (left) side of the cell (``sticky="w"``).
 
 ----
 
@@ -37,7 +37,7 @@ Creating a Cancel Order Button
 --------------------------------
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
-| This code creates a button labeled "Cancel All Orders" that, when clicked, will call the `cancel_order` function to remove all orders from the order list.
+| This code creates a button labelled "Cancel All Orders" that, when clicked, will call the ``cancel_order`` function to remove all orders from the order list.
 
 .. code-block:: python
 
@@ -45,8 +45,8 @@ Creating a Cancel Order Button
     cancel_order_button = tk.Button(root, text="Cancel All Orders", command=cancel_order)
     cancel_order_button.grid(row=6, column=3, padx=10, pady=15, ipady=5, sticky="e")
 
-- ``cancel_order_button = tk.Button(root, text="Cancel Orders", command=cancel_order)``: creates a button labeled "Cancel Orders", and sets the command to `cancel_order`, which will be executed when the button is clicked.
-- ``cancel_order_button.grid(row=6, column=3, padx=10, pady=5, ipadx=20, ipady=10, sticky="e")``: Places the button in the grid layout at row 6, column 3 and adds padding around the button: 10 pixels on the x-axis (`padx`), 20 pixels inside the button on the x-axis (`ipadx`), 10 pixels inside the button on the y-axis (`ipady`), and 5 pixels on the y-axis (`pady`)and aligns the button to the east (right) side of the cell (`sticky="e"`).
+- ``cancel_order_button = tk.Button(root, text="Cancel All Orders", command=cancel_order)``: Creates a button labelled "Cancel All Orders" and sets the command to ``cancel_order``, which will be executed when the button is clicked.
+- ``cancel_order_button.grid(row=6, column=3, padx=10, pady=15, ipady=5, sticky="e")``: Places the button in the grid layout at row 6, column 3, with 10 pixels of padding outside the button horizontally (``padx``), 15 pixels vertically (``pady``), 5 pixels of extra height inside the button (``ipady``), and aligns the button to the east (right) side of the cell (``sticky="e"``).
 
 ----
 
@@ -54,11 +54,11 @@ Writing the **delete_selected_pizza** Function
 ------------------------------------------------
 
 | Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
-| This function, `delete_selected_pizza`, is responsible for removing the selected pizza from the order list.
-| It first checks if an item is selected in the `order_list` Listbox.
+| This function, ``delete_selected_pizza``, is responsible for removing the selected pizza from the order list.
+| It first checks if an item is selected in the ``order_list`` Listbox.
 | If no item is selected, it shows an error message.
 | If an item is selected, it checks if the selected item is the total cost line (the last line in the Listbox) and prevents deletion if it is.
-| Otherwise, it deletes the selected order from the `orders` list and updates the displayed order list.
+| Otherwise, it deletes the selected order from the ``orders`` list and updates the displayed order list.
 
 
 .. code-block:: python
@@ -92,8 +92,8 @@ Writing the **cancel_order** Function
 ------------------------------------------------
 
 | Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
-| This function, `cancel_order`, is responsible for clearing all orders from the order list.
-| It clears the `orders` list and then calls `update_order_list()` to refresh the displayed order list, effectively removing all orders from the display.
+| This function, ``cancel_order``, is responsible for clearing all orders from the order list.
+| It clears the ``orders`` list and then calls ``update_order_list()`` to refresh the displayed order list, effectively removing all orders from the display.
 
 
 .. code-block:: python
@@ -104,5 +104,5 @@ Writing the **cancel_order** Function
         update_order_list()
 
 
-- ``orders.clear``: empties the list of orders.
+- ``orders.clear()``: empties the list of orders.
 - ``update_order_list()``: updates the displayed order, which in effect clears it.

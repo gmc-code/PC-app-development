@@ -349,36 +349,43 @@ Key syntax
 -----------------
 
 .. py:function:: global name
+    :no-index:
 
     | Syntax: ``global user_score, computer_score``
     | Description: The first line inside a function that needs to **change** a global variable. Reading a global variable does not need it.
 
 .. py:function:: tk.IntVar(value=number)
+    :no-index:
 
     | Syntax: ``target = tk.IntVar(value=3)``
     | Description: A Tkinter variable that holds a whole number. Read it with ``target.get()`` and change it with ``target.set(5)``. Create it after ``root = tk.Tk()``.
 
 .. py:function:: tk.Radiobutton(parent, text, variable, value, command)
+    :no-index:
 
     | Syntax: ``tk.Radiobutton(match_frame, text="3", variable=target, value=3, command=new_match)``
     | Description: One option in a group. Radio buttons that share a ``variable`` form a group, and only one can be selected. Clicking one stores its ``value`` in the variable.
 
 .. py:function:: tk.Frame(parent)
+    :no-index:
 
     | Syntax: ``match_frame = tk.Frame(root, bg=BG_COLOR)``
     | Description: An invisible container for other widgets. Widgets inside it are created with the frame as their parent.
 
 .. py:function:: widget.pack(side="left")
+    :no-index:
 
     | Syntax: ``first_to_label.pack(side="left", padx=5)``
     | Description: Places each widget to the right of the one packed before it. Do not mix ``pack()`` and ``grid()`` in the same container.
 
 .. py:function:: widget.config(state=...)
+    :no-index:
 
     | Syntax: ``new_match_button.config(state="normal")``
     | Description: ``"normal"`` lets the widget be used; ``"disabled"`` greys it out so clicking does nothing.
 
 .. py:function:: return
+    :no-index:
 
     | Syntax: ``return``
     | Description: Ends a function straight away. Any lines after it in the function are skipped.

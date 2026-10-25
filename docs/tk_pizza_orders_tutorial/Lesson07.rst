@@ -44,8 +44,8 @@ Display the orders as a list
 ----------------------------------
 
 | Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
-| This function, `update_order_list`, is responsible for displaying the current list of orders in the `order_list` Listbox widget.
-| It first clears the Listbox, then iterates through the `orders` list, calculating the cost for each order and inserting a formatted string into the Listbox.
+| This function, ``update_order_list``, is responsible for displaying the current list of orders in the ``order_list`` Listbox widget.
+| It first clears the Listbox, then iterates through the ``orders`` list, calculating the cost for each order and inserting a formatted string into the Listbox.
 | Finally, it calculates and displays the total cost of all orders at the end of the Listbox.
 
 .. code-block:: python

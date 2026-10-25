@@ -12,6 +12,7 @@ Simple Font
 -------------
 
 .. py:function:: label_widget  = tk.Label(parent, font=(font_type, font_size, font_style))
+   :no-index:
 
    - font_type is a font name. e.g "Arial"
    - font_size is the size of the font.  eg. 12
@@ -61,6 +62,7 @@ Custom Font
 | **from tkinter import font** is required.
 
 .. py:function:: custom_font = font.Font(family=v_family, size=v_size, weight=v_weight, slant=v_slant)
+    :no-index:
 
     **Parameters**
 

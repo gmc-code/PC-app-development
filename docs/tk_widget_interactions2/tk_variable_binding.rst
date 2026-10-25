@@ -88,6 +88,7 @@ Binding variables to widgets
 1. **Label**: Can display text that is linked to a variable.
 
 .. py:attribute:: textvariable
+   :no-index:
 
    label = tk.Label(root, textvariable=string_var)
 
@@ -95,6 +96,7 @@ Binding variables to widgets
 2. **Entry**: Can take user input and link it to a variable.
 
 .. py:attribute:: textvariable
+   :no-index:
 
    entry = tk.Entry(root, textvariable=string_var)
 
@@ -102,6 +104,7 @@ Binding variables to widgets
 3. **Checkbutton**: Can be linked to a variable to track its state (checked or unchecked).
 
 .. py:attribute:: variable
+   :no-index:
 
    checkbutton = tk.Checkbutton(root, variable=int_var)
 
@@ -109,6 +112,7 @@ Binding variables to widgets
 4. **Radiobutton**: Can be linked to a variable to track which radio button is selected.
 
 .. py:attribute:: variable
+   :no-index:
 
    radiobutton = tk.Radiobutton(root, variable=int_var, value=1)
 
@@ -116,6 +120,7 @@ Binding variables to widgets
 5. **Listbox**: Can be linked to a variable to track the selected item.
 
 .. py:attribute:: listvariable
+   :no-index:
 
    listbox = tk.Listbox(root, listvariable=string_var)
 
@@ -123,6 +128,7 @@ Binding variables to widgets
 6. **Spinbox**: Can be linked to a variable to track the current value.
 
 .. py:attribute:: textvariable
+   :no-index:
 
    spinbox = tk.Spinbox(root, textvariable=int_var)
 
@@ -130,6 +136,7 @@ Binding variables to widgets
 7. **Scale**: Can be linked to a variable to track the current value of the scale.
 
 .. py:attribute:: variable
+   :no-index:
 
    scale = tk.Scale(root, variable=double_var)
 

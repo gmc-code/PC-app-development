@@ -31,6 +31,7 @@ Required Syntax
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. py:class:: StringVar
+    :no-index:
 
     | Syntax: ``text_var = tk.StringVar()``
     | Description: Creates a Tkinter variable for holding string data.
@@ -38,6 +39,7 @@ Required Syntax
     | Example: ``text_var = tk.StringVar()``
 
 .. py:method:: set
+    :no-index:
 
     | Syntax: ``text_var.set("New Value")``
     | Description: Sets the value of the ``StringVar`` to the specified string.
@@ -45,6 +47,7 @@ Required Syntax
     | Example: ``text_var.set("Hello, World!")``
 
 .. py:method:: get
+    :no-index:
 
     | Syntax: ``current_value = text_var.get()``
     | Description: Retrieves the current value of the ``StringVar``.
@@ -52,6 +55,7 @@ Required Syntax
     | Example: ``current_value = text_var.get()``
 
 .. py:attribute:: textvariable
+    :no-index:
 
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text.  If the variable is changed, the label text is updated.
@@ -59,6 +63,7 @@ Required Syntax
     | Example: ``label_widget = tk.Label(root, textvariable=my_var)``
 
 .. py:attribute:: command
+    :no-index:
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.

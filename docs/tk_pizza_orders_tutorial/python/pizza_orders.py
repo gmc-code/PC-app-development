@@ -9,7 +9,7 @@ prices = {
     "Veggie": {"Small": 9, "Medium": 12, "Large": 16},
     "Pepperoni": {"Small": 9, "Medium": 13, "Large": 17},
     "Hawaiian": {"Small": 10, "Medium": 14, "Large": 18},
-    "Capriciossa": {"Small": 10, "Medium": 14, "Large": 18},
+    "Capricciosa": {"Small": 10, "Medium": 14, "Large": 18},
     "Mexican": {"Small": 10, "Medium": 14, "Large": 18},
     "BBQ Chicken": {"Small": 11, "Medium": 15, "Large": 19},
     "Meat Lovers": {"Small": 11, "Medium": 15, "Large": 19}
@@ -21,7 +21,6 @@ orders = []
 
 # 2. CONSTANTS & STYLES
 # Fonts - Adding "normal" explicitly stops the OS from making them chunky
-# 2. CONSTANTS & STYLES
 # Segoe UI renders much thinner and more elegant at larger sizes
 LABEL_FONT = ("Segoe UI", 14, "normal")
 ENTRY_FONT = ("Segoe UI", 16, "normal")  # Large, sleek, and crisp!
@@ -83,7 +82,7 @@ def update_order_list():
     if orders:
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
         # Color code the very last row (Total Cost line)
-        # Get the index number of the very last item we just added
+        # tk.END refers to the very last item we just added
         last_row_index = tk.END
         order_list.itemconfig(last_row_index, bg=TOTAL_BG)
 

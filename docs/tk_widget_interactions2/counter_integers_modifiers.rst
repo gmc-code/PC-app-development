@@ -16,6 +16,7 @@ Required Syntax
 -----------------------------------
 
 .. py:class:: IntVar
+    :no-index:
 
     | Syntax: ``int_var = tk.IntVar()``
     | Description: Creates a Tkinter variable for holding an integer.
@@ -23,6 +24,7 @@ Required Syntax
     | Example: ``int_var = tk.IntVar()``
 
 .. py:method:: get
+    :no-index:
 
     | Syntax: ``current_value = int_var.get()``
     | Description: Retrieves the current value of the `IntVar`.
@@ -30,6 +32,7 @@ Required Syntax
     | Example: ``current_value = int_var.get()``
 
 .. py:method:: set
+    :no-index:
 
     | Syntax: ``int_var.set(new_value)``
     | Description: Sets the value of the `IntVar` to the specified integer.
@@ -37,6 +40,7 @@ Required Syntax
     | Example: ``int_var.set(42)``
 
 .. py:attribute:: textvariable
+    :no-index:
 
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text. If the variable is changed, the label text is updated.
@@ -44,6 +48,7 @@ Required Syntax
     | Example: ``label_widget = tk.Label(root, textvariable=my_var)``
 
 .. py:attribute:: command
+    :no-index:
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.
@@ -51,6 +56,7 @@ Required Syntax
     | Example: ``button_widget = tk.Button(root, command=on_click)``
 
 .. py:attribute:: bind
+    :no-index:
 
     | Syntax: ``widget.bind("<Event>", handler_function)``
     | Description: Binds an event, such as a mouse click or key press, to a specific function.
@@ -58,6 +64,7 @@ Required Syntax
     | Example: ``button_increment.bind("<ButtonPress-1>", start_increment)``
 
 .. py:method:: after
+    :no-index:
 
     | Syntax: ``job_id = root.after(delay_ms, callback_function)``
     | Description: Schedules `callback_function` to be called after a delay specified in milliseconds. Returns a job ID, which can be used to cancel the scheduled function with `after_cancel()`.
@@ -65,6 +72,7 @@ Required Syntax
     | Example: ``job_id = root.after(1000, update_label)``
 
 .. py:method:: after_cancel
+    :no-index:
 
     | Syntax: ``root.after_cancel(job_id)``
     | Description: Cancels a scheduled callback function that was set up using `after()`. The `job_id` should be the identifier returned by `after()`.

@@ -2,7 +2,7 @@
 Pounds to kgs
 ====================================================
 
-.. image:: tk_pounds_to_kgs.png
+.. image:: tk_lbs_to_kgs.png
     :scale: 67
 
 

@@ -47,7 +47,7 @@ Settings
 #. Enter an App name. iPhone_Calculator
 #. Enter an App title. iPhone_Calculator
 #. Enter an App description. iPhone_Calculator using code to build the buttons
-#. Get a calculator icon to upload such as: `<https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png
+#. Get a calculator icon to upload such as: `<https://icons.iconarchive.com/icons/tristan-edwards/sevenesque/256/Calculator-icon.png>`_
 #. Click Change Image to upload an App logo.
 #. Close the settings tab.
 
@@ -96,10 +96,10 @@ Code for buttons step 1
 ------------------------------
 
 | Add code to the end of the init method to create buttons.
-| See Grid panel syntax: `<https://anvil.works/docs/api/anvil#GridPanel
+| See Grid panel syntax: `<https://anvil.works/docs/api/anvil#GridPanel>`_
 | The grid panel has rows specified by letters: A, B, C...
 | The grid panel has 12 columns specified by numbers: 0, 1, 2, ....11
-| See Button syntax: `<https://anvil.works/docs/api/anvil#Button
+| See Button syntax: `<https://anvil.works/docs/api/anvil#Button>`_
 
 | Use ``self.btn = {}`` to set up the button dictionary which will store each button object with the button text as the key.
 | Use ``gp = GridPanel()`` to set up an empty Grid panel to which the buttons will be added.
@@ -170,7 +170,7 @@ Code for buttons step 3
 
 | Replace the default values for the button colours with those
 | based on the text value, ``i in enumerate(chars)``.
-| See Colour hex values: `<https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185
+| See Colour hex values: `<https://www.w3schools.com/colors/colors_picker.asp?colorhex=85b185>`_
 
 .. code-block:: python
 
@@ -215,7 +215,7 @@ Code for buttons step 4
 Code for buttons click method
 ------------------------------
 
-| See: `<https://anvil.works/docs/client/components
+| See: `<https://anvil.works/docs/client/components>`_
 | Define a click method to determine what happens to the calculator text box.
 | Use the arguments: ``(self, **event_args)``.
 | ``event_args`` has an index ``['sender']`` from which the button text can be found using the tab.name property, which is set when the button was created.
@@ -225,7 +225,7 @@ Code for buttons click method
 | If the AC button, all clear, is pressed, clear the text box with: ``self.text_box_1.text = ""``.
 | If the C button, clear last entry, is pressed, clear the last character of the text box with: ``self.text_box_1.text = self.text_box_1.text[:-1]``.
 | When the ``=`` button is pressed, use the ``eval`` function to convert the expression in the text box to a value.
-| This needs to be placed in a try except block to handle cases in which the maths string can't be evaluated. e.g "4+/*3"
+| This needs to be placed in a try except block to handle cases in which the maths string can't be evaluated.
 
 
 .. code-block:: python
@@ -356,5 +356,5 @@ Final code
 
     #. The keyboard can also be used instead of the buttons. Try it out.
     #. Try adding some maths function buttons in another row. e.g. x^2 which squares the text box. e.g. sqrt which takes the square root.
-    #. Try adding some maths function buttons in another row by importing the maths library. See: `<https://docs.python.org/3/library/math.html
+    #. Try adding some maths function buttons in another row by importing the maths library. See: `<https://docs.python.org/3/library/math.html>`_
 

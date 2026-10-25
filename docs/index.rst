@@ -52,8 +52,8 @@ PC-app-development
     :numbered:
 
     tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
-    .. tk_apps/tk_list_editor/tk_list_editor.rst
-
+    tk_apps/tk_list_editor/tk_list_editor.rst
+    tk_apps/tk_dict_editor/tk_dict_editor.rst
 
 
 .. toctree::
@@ -69,7 +69,7 @@ PC-app-development
     tk_widgets/tk_entry.rst
     tk_widgets/tk_frame.rst
     tk_widgets/tk_label.rst
-    tk_widgets/tk_label_frame.rst
+    tk_widgets/tk_labelframe.rst
     tk_widgets/tk_listbox.rst
     tk_widgets/tk_menu.rst
     tk_widgets/tk_menubutton.rst
@@ -89,7 +89,7 @@ PC-app-development
     :maxdepth: 2
     :caption: Themed widgets
     :numbered:
-
+    :hidden:
 
     ttkwidgets/ttk_intro.rst
 
@@ -122,15 +122,12 @@ PC-app-development
     tk_widget_interactions/commands.rst
 
 
-
-
 .. toctree::
     :maxdepth: 2
     :caption: tk widgets interactions2
     :numbered:
-    :hidden:
 
-    tk_widget_interactions2/tk_variables.rst
+    tk_widget_interactions2/tk_variable_binding.rst
     tk_widget_interactions2/tk_command_binding.rst
 
     tk_widget_interactions2/textvariables_toggle_text.rst
@@ -148,9 +145,6 @@ PC-app-development
     tk_widget_interactions2/entry_validation.rst
     tk_widget_interactions2/entry_validation_numbers.rst
 
-    .. tk_widget_interactions2/tk_widget_interactions.rsr
-    .. tk_widget_interactions2/tk_button_methods.rst
-
 
 
 .. toctree::
@@ -167,7 +161,7 @@ PC-app-development
     tk_quiz_apps/tk_afl_premiers.rst
 
     tk_apps/tk_login/tk_login.rst
-    tk_apps/tk_login_custom_messagebox/tk_login_custom_messagebox.rst
+    tk_apps/tk_login/tk_login_custom_messagebox.rst
     tk_apps/tk_RPG_inventory/tk_RPG_inventory.rst
     tk_apps/tk_pizza_cost_1/tk_pizza_cost_1.rst
     tk_apps/tk_pizza_cost_3/tk_pizza_cost_3.rst
@@ -196,12 +190,29 @@ PC-app-development
     tk_pizza_orders_tutorial/Lesson10.rst
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: tk pizza orders tutorial
+    :numbered:
+    :hidden:
+
+    tk_icecream_orders_tutorial/icecream_orders.rst
+    tk_icecream_orders_tutorial/icecream_lesson01.rst
+    tk_icecream_orders_tutorial/icecream_lesson02.rst
+    tk_icecream_orders_tutorial/icecream_lesson03.rst
+    tk_icecream_orders_tutorial/icecream_lesson04.rst
+    tk_icecream_orders_tutorial/icecream_lesson05.rst
+    tk_icecream_orders_tutorial/icecream_lesson06.rst
+    tk_icecream_orders_tutorial/icecream_lesson07.rst
+    tk_icecream_orders_tutorial/icecream_lesson08.rst
+    tk_icecream_orders_tutorial/icecream_lesson09.rst
+
+
 
 .. toctree::
     :maxdepth: 2
     :caption: Anvil use
     :numbered:
-    :hidden:
 
     Anvil/anvil_introduction.rst
     Anvil/first_steps.rst
@@ -211,7 +222,6 @@ PC-app-development
     :maxdepth: 2
     :caption: Anvil apps
     :numbered:
-    :hidden:
 
     Anvil/name_and_age.rst
     Anvil/hailstone_numbers.rst
@@ -233,7 +243,6 @@ PC-app-development
     :maxdepth: 2
     :caption: Anvil_youtube
     :numbered:
-    :hidden:
 
     Anvil/feedback_form.rst
     Anvil/iphone_calculator.rst
@@ -243,7 +252,6 @@ PC-app-development
     :maxdepth: 2
     :caption: pyscript use
     :numbered:
-    :hidden:
 
     pyscript/pyscript_introduction.rst
     pyscript/browser_elements.rst
@@ -253,7 +261,6 @@ PC-app-development
     :maxdepth: 2
     :caption: pyscript apps
     :numbered:
-    :hidden:
 
     pyscript/elves.rst
     pyscript/superheroes.rst
@@ -266,36 +273,18 @@ PC-app-development
 .. toctree::
     :maxdepth: 2
     :caption: in dev
-    :numbered:
     :hidden:
 
     Anvil/days_calculator.rst
     Anvil/christmas_tunes.rst
     Anvil/cloning_via_git.rst
-    tk_apps/tk_inches_to_cm/tk_inches_to_cm.rst
-    tk_apps/tk_lbs_to_kgs/tk_pounds_to_kgs.rst
-    tk_apps/tk_login/tk_login_custom_messagebox.rst
-    tk_apps/tk_RPS1/tk_rock_paper_scissors.rst
-    tk_apps/tk_RPS2/tk_rock_paper_scissors_v2.rst
+
     tk_basics/tk_window.rst
-    tk_widget_interactions/non_commands.rst
+
     tk_widget_interactions2/tk_button_methods.rst
+    tk_widget_interactions/non_commands.rst
     tk_widget_interactions2/tk_checkbutton.rst
     tk_widget_interactions2/tk_event_binding.rst
     tk_widget_interactions2/tk_radiobutton.rst
     tk_widget_interactions2/tk_text_usage.rst
-    tk_widget_interactions2/tk_variable_binding.rst
-    tk_widgets/tk_labelframe.rst
-    tk_widgets/tk_widget_quizzes/classifying.rst
-    tk_widgets/tk_widget_quizzes/cloze.rst
-    tk_widgets/tk_widget_quizzes/gapfill.rst
-    tk_widgets/tk_widget_quizzes/lessons_cloze.rst
-    tk_widgets/tk_widget_quizzes/lessons_gapfill.rst
-    tk_widgets/tk_widget_quizzes/multichoice.rst
-    tk_widgets/tk_widget_quizzes/ordering.rst
-    tk_widgets/tk_widget_quizzes/scroll_text_ordering.rst
-    tk_widgets/tk_widget_quizzes/scroll_text_quiz.rst
-    ttk_widgets/ttk_scrollbar.rst
-    ttk_widgets/ttk_spinbox.rst
-
 

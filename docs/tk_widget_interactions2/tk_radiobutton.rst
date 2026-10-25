@@ -13,6 +13,7 @@ Usage
 | To create a Radio button widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: button_widget = tk.Radiobutton(parent, option=value)
+    :no-index:
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
@@ -93,6 +94,7 @@ Parameter syntax
 ----------------------
 
 .. py:function:: radiobutton_widget = tk.Radiobutton(parent, option=value)
+    :no-index:
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
@@ -100,6 +102,7 @@ Parameter syntax
     **Parameters:**
 
     .. py:attribute:: activebackground
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, activebackground="color")``
         | Description: Sets the background color of the radiobutton when it is active.
@@ -107,6 +110,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, activebackground="lightblue")``
 
     .. py:attribute:: activeforeground
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, activeforeground="color")``
         | Description: Sets the foreground color of the radiobutton when it is active.
@@ -114,6 +118,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, activeforeground="blue")``
 
     .. py:attribute:: anchor
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, anchor="position")``
         | Description: Sets the anchor position for the text and indicator.
@@ -121,6 +126,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, anchor="w")``
 
     .. py:attribute:: background
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, background="color")``
         | Description: Sets the background color of the radiobutton.
@@ -128,6 +134,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, background="lightyellow")``
 
     .. py:attribute:: bd
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, bd=border_width)``
         | Description: Sets the border width of the radiobutton.
@@ -135,6 +142,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, bd=5)``
 
     .. py:attribute:: bg
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, bg="color")``
         | Description: Sets the background color of the radiobutton.
@@ -142,6 +150,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, bg="lightyellow")``
 
     .. py:attribute:: bitmap
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, bitmap="bitmap_name")``
         | Description: Sets a bitmap image to be displayed on the radiobutton.
@@ -149,6 +158,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, bitmap="error")``
 
     .. py:attribute:: borderwidth
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, borderwidth=width)``
         | Description: Sets the width of the border around the radiobutton.
@@ -156,6 +166,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, borderwidth=3)``
 
     .. py:attribute:: command
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, command=function)``
         | Description: Specifies a function to be called when the radiobutton is selected.
@@ -163,6 +174,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, command=my_function)``
 
     .. py:attribute:: compound
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, compound="position")``
         | Description: Specifies how to display the image and text (if both are set).
@@ -170,6 +182,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, compound="left")``
 
     .. py:attribute:: cursor
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, cursor="cursor_type")``
         | Description: Sets the mouse cursor when hovering over the radiobutton.
@@ -177,6 +190,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, cursor="hand2")``
 
     .. py:attribute:: disabledforeground
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, disabledforeground="color")``
         | Description: Sets the foreground color when the radiobutton is disabled.
@@ -184,6 +198,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, disabledforeground="gray")``
 
     .. py:attribute:: fg
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, fg="color")``
         | Description: Sets the foreground color of the radiobutton (text color).
@@ -191,6 +206,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, fg="black")``
 
     .. py:attribute:: font
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, font=("font_name", size, "style"))``
         | Description: Specifies the font type, size, and style for the text of the radiobutton.
@@ -198,6 +214,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, font=("Arial", 12, "bold"))``
 
     .. py:attribute:: foreground
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, foreground="color")``
         | Description: Sets the foreground color of the radiobutton (text color).
@@ -205,6 +222,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, foreground="black")``
 
     .. py:attribute:: height
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, height=value)``
         | Description: Sets the height of the radiobutton.
@@ -212,6 +230,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, height=2)``
 
     .. py:attribute:: highlightbackground
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, highlightbackground="color")``
         | Description: Sets the background color of the radiobutton when it does not have focus.
@@ -219,6 +238,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, highlightbackground="gray")``
 
     .. py:attribute:: highlightcolor
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, highlightcolor="color")``
         | Description: Sets the color of the highlight when the radiobutton has focus.
@@ -226,6 +246,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, highlightcolor="blue")``
 
     .. py:attribute:: highlightthickness
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, highlightthickness=thickness)``
         | Description: Sets the thickness of the highlight border.
@@ -233,6 +254,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, highlightthickness=2)``
 
     .. py:attribute:: image
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, image="image_name")``
         | Description: Sets an image to be displayed on the radiobutton.
@@ -240,6 +262,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, image=my_image)``
 
     .. py:attribute:: indicatoron
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, indicatoron=1)``
         | Description: Specifies whether to show the indicator (true or false).
@@ -247,6 +270,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, indicatoron=0)``
 
     .. py:attribute:: justify
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, justify="position")``
         | Description: Sets the justification of the text (left, center, right).
@@ -254,6 +278,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, justify="right")``
 
     .. py:attribute:: offrelief
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, offrelief="style")``
         | Description: Sets the relief style for the indicator when off.
@@ -261,6 +286,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, offrelief="flat")``
 
     .. py:attribute:: overrelief
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, overrelief="style")``
         | Description: Sets the relief style for the indicator when hovered over.
@@ -268,6 +294,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, overrelief="sunken")``
 
     .. py:attribute:: padx
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, padx=padding_value)``
         | Description: Sets the horizontal padding within the radiobutton.
@@ -275,6 +302,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, padx=10)``
 
     .. py:attribute:: pady
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, pady=padding_value)``
         | Description: Sets the vertical padding within the radiobutton.
@@ -282,6 +310,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, pady=10)``
 
     .. py:attribute:: relief
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, relief="style")``
         | Description: Sets the border style of the radiobutton. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
@@ -289,6 +318,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, relief="raised")``
 
     .. py:attribute:: selectcolor
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, selectcolor="color")``
         | Description: Sets the color of the indicator when the radiobutton is selected.
@@ -296,6 +326,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, selectcolor="lightgreen")``
 
     .. py:attribute:: selectimage
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, selectimage="image_name")``
         | Description: Sets an image to be displayed when the radiobutton is selected.
@@ -303,6 +334,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, selectimage=my_selected_image)``
 
     .. py:attribute:: state
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, state="state_type")``
         | Description: Sets the state of the radiobutton. Options include `normal`, `disabled`, or `active`.
@@ -310,6 +342,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, state="disabled")``
 
     .. py:attribute:: takefocus
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, takefocus=1)``
         | Description: Allows the radiobutton to take focus on click.
@@ -317,6 +350,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, takefocus=1)``
 
     .. py:attribute:: text
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, text="label")``
         | Description: Sets the text label for the radiobutton.
@@ -324,6 +358,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, text="Option 1")``
 
     .. py:attribute:: textvariable
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, textvariable=variable)``
         | Description: Associates a variable with the text of the radiobutton.
@@ -331,6 +366,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, textvariable=my_text_var)``
 
     .. py:attribute:: tristateimage
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, tristateimage="image_name")``
         | Description: Sets an image to be displayed for a tristate radiobutton.
@@ -338,6 +374,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, tristateimage=my_tristate_image)``
 
     .. py:attribute:: tristatevalue
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, tristatevalue=value)``
         | Description: Sets the value for the tristate option of the radiobutton.
@@ -345,6 +382,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, tristatevalue=2)``
 
     .. py:attribute:: underline
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, underline=index)``
         | Description: Specifies the index of the character to underline in the text.
@@ -352,6 +390,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, underline=0)``
 
     .. py:attribute:: value
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, value=radio_value)``
         | Description: Sets the value associated with this radiobutton when selected.
@@ -359,6 +398,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, value=1)``
 
     .. py:attribute:: variable
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, variable=control_variable)``
         | Description: Associates the radiobutton with a control variable (e.g., `IntVar`, `StringVar`).
@@ -366,6 +406,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, variable=my_var)``
 
     .. py:attribute:: width
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, width=width_value)``
         | Description: Sets the width of the radiobutton.
@@ -373,6 +414,7 @@ Parameter syntax
         | Example: ``radiobutton_widget = tk.Radiobutton(root, width=30)``
 
     .. py:attribute:: wraplength
+        :no-index:
 
         | Syntax: ``radiobutton_widget = tk.Radiobutton(parent, wraplength=pixel_value)``
         | Description: Sets the maximum line length for text in pixels.

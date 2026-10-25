@@ -13,6 +13,7 @@ Usage
 | To create a multi-line text widget the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: text_widget  = tk.Text(parent, option=value)
+    :no-index:
 
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.
@@ -123,6 +124,7 @@ Parameter syntax
 ----------------------
 
  .. py:function:: text_widget = tk.Text(parent, option=value)
+    :no-index:
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
@@ -130,6 +132,7 @@ Parameter syntax
     **Parameters:**
 
     .. py:attribute:: autoseparators
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, autoseparators=1)``
         | Description: Enables automatic separator insertion when typing.
@@ -137,6 +140,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, autoseparators=1)``
 
     .. py:attribute:: background
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, background="color")``
         | Description: Sets the background color of the text widget.
@@ -144,6 +148,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, background="lightyellow")``
 
     .. py:attribute:: bd
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, bd=border_width)``
         | Description: Sets the border width of the text widget.
@@ -151,6 +156,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, bd=2)``
 
     .. py:attribute:: bg
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, bg="color")``
         | Description: Sets the background color of the text widget.
@@ -158,6 +164,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, bg="lightyellow")``
 
     .. py:attribute:: blockcursor
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, blockcursor=0)``
         | Description: Sets the cursor style; a block or normal cursor.
@@ -165,6 +172,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, blockcursor=1)``
 
     .. py:attribute:: borderwidth
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, borderwidth=width)``
         | Description: Sets the width of the border around the text widget.
@@ -172,6 +180,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, borderwidth=2)``
 
     .. py:attribute:: cursor
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, cursor="cursor_type")``
         | Description: Sets the mouse cursor when hovering over the text widget.
@@ -179,6 +188,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, cursor="hand2")``
 
     .. py:attribute:: endline
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, endline="")``
         | Description: Sets the endline character for new lines.
@@ -186,6 +196,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, endline="\n")``
 
     .. py:attribute:: exportselection
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, exportselection=1)``
         | Description: Allows the text selection to be copied to the clipboard.
@@ -193,6 +204,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, exportselection=1)``
 
     .. py:attribute:: fg
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, fg="color")``
         | Description: Sets the foreground color (text color) of the text widget.
@@ -200,6 +212,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, fg="black")``
 
     .. py:attribute:: font
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, font=("font_name", size, "style"))``
         | Description: Specifies the font type, size, and style for the text.
@@ -207,6 +220,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, font=("Arial", 12, "italic"))``
 
     .. py:attribute:: foreground
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, foreground="color")``
         | Description: Sets the foreground color (text color) of the text widget.
@@ -214,6 +228,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, foreground="black")``
 
     .. py:attribute:: height
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, height=height_value)``
         | Description: Sets the height of the text widget in lines.
@@ -221,6 +236,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, height=10)``
 
     .. py:attribute:: highlightbackground
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, highlightbackground="color")``
         | Description: Sets the background color when the text widget does not have focus.
@@ -228,6 +244,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, highlightbackground="gray")``
 
     .. py:attribute:: highlightcolor
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, highlightcolor="color")``
         | Description: Sets the color of the highlight when the text widget has focus.
@@ -235,6 +252,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, highlightcolor="blue")``
 
     .. py:attribute:: highlightthickness
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, highlightthickness=thickness)``
         | Description: Sets the thickness of the highlight border.
@@ -242,6 +260,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, highlightthickness=2)``
 
     .. py:attribute:: inactiveselectbackground
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, inactiveselectbackground="color")``
         | Description: Sets the background color for selected text when the widget is inactive.
@@ -249,6 +268,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, inactiveselectbackground="lightgray")``
 
     .. py:attribute:: insertbackground
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, insertbackground="color")``
         | Description: Sets the color of the insertion cursor (caret).
@@ -256,6 +276,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, insertbackground="red")``
 
     .. py:attribute:: insertborderwidth
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, insertborderwidth=width)``
         | Description: Sets the width of the border around the insertion cursor.
@@ -263,6 +284,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, insertborderwidth=2)``
 
     .. py:attribute:: insertofftime
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, insertofftime=milliseconds)``
         | Description: Sets the time the cursor stays off (in milliseconds).
@@ -270,6 +292,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, insertofftime=500)``
 
     .. py:attribute:: insertontime
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, insertontime=milliseconds)``
         | Description: Sets the time the cursor stays on (in milliseconds).
@@ -277,6 +300,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, insertontime=800)``
 
     .. py:attribute:: insertunfocussed
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, insertunfocussed="style")``
         | Description: Sets the style of the cursor when the widget is unfocused.
@@ -284,6 +308,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, insertunfocussed="underline")``
 
     .. py:attribute:: insertwidth
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, insertwidth=width)``
         | Description: Sets the width of the insertion cursor.
@@ -291,6 +316,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, insertwidth=5)``
 
     .. py:attribute:: maxundo
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, maxundo=number)``
         | Description: Sets the maximum number of undo operations.
@@ -298,6 +324,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, maxundo=100)``
 
     .. py:attribute:: padx
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, padx=padding_value)``
         | Description: Sets the horizontal padding within the text widget.
@@ -305,6 +332,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, padx=10)``
 
     .. py:attribute:: pady
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, pady=padding_value)``
         | Description: Sets the vertical padding within the text widget.
@@ -312,6 +340,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, pady=10)``
 
     .. py:attribute:: relief
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, relief="style")``
         | Description: Sets the border style of the text widget. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
@@ -319,6 +348,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, relief="flat")``
 
     .. py:attribute:: selectbackground
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, selectbackground="color")``
         | Description: Sets the background color of the selected text.
@@ -326,6 +356,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, selectbackground="lightblue")``
 
     .. py:attribute:: selectborderwidth
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, selectborderwidth=width)``
         | Description: Sets the border width of the selection.
@@ -333,6 +364,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, selectborderwidth=1)``
 
     .. py:attribute:: selectforeground
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, selectforeground="color")``
         | Description: Sets the text color of the selected text.
@@ -340,6 +372,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, selectforeground="white")``
 
     .. py:attribute:: setgrid
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, setgrid=0)``
         | Description: Enables or disables grid lines in the text widget.
@@ -347,6 +380,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, setgrid=1)``
 
     .. py:attribute:: spacing1
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, spacing1=spacing_value)``
         | Description: Sets the spacing before paragraphs.
@@ -354,6 +388,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, spacing1=5)``
 
     .. py:attribute:: spacing2
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, spacing2=spacing_value)``
         | Description: Sets the spacing between lines.
@@ -361,6 +396,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, spacing2=3)``
 
     .. py:attribute:: spacing3
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, spacing3=spacing_value)``
         | Description: Sets the spacing after paragraphs.
@@ -368,6 +404,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, spacing3=5)``
 
     .. py:attribute:: startline
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, startline="")``
         | Description: Sets the starting line number for text.
@@ -375,6 +412,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, startline=1)``
 
     .. py:attribute:: state
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, state="state_type")``
         | Description: Sets the state of the text widget. Options include `normal`, `disabled`, or `hidden`.
@@ -382,6 +420,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, state="disabled")``
 
     .. py:attribute:: tabs
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, tabs=tab_stops)``
         | Description: Sets tab stops for the text widget.
@@ -389,6 +428,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, tabs=4)``
 
     .. py:attribute:: tabstyle
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, tabstyle="style")``
         | Description: Specifies the style for tab stops. Options include `tabular`.
@@ -396,6 +436,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, tabstyle="tabular")``
 
     .. py:attribute:: takefocus
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, takefocus=1)``
         | Description: Allows the text widget to take focus on click.
@@ -403,6 +444,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, takefocus=1)``
 
     .. py:attribute:: undo
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, undo=0)``
         | Description: Enables the undo feature for the text widget.
@@ -410,6 +452,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, undo=1)``
 
     .. py:attribute:: width
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, width=width_value)``
         | Description: Sets the width of the text widget in characters.
@@ -417,6 +460,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, width=50)``
 
     .. py:attribute:: wrap
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, wrap="mode")``
         | Description: Sets the text wrapping mode. Options are `none`, `char`, or `word`.
@@ -424,6 +468,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, wrap="word")``
 
     .. py:attribute:: xscrollcommand
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, xscrollcommand=command)``
         | Description: Configures the command for horizontal scrolling.
@@ -431,6 +476,7 @@ Parameter syntax
         | Example: ``text_widget = tk.Text(root, xscrollcommand=my_xscroll_command)``
 
     .. py:attribute:: yscrollcommand
+        :no-index:
 
         | Syntax: ``text_widget = tk.Text(parent, yscrollcommand=command)``
         | Description: Configures the command for vertical scrolling.

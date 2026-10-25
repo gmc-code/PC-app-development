@@ -1,6 +1,6 @@
-==================================
+====================================
 Python Tkinter Pack Geometry Manager
-==================================
+====================================
 
 | In Python's **Tkinter** library, the ``pack()`` geometry manager organizes widgets in blocks before placing them in the parent container.
 | Rather than specifying exact pixel coordinates, ``pack()`` places widgets relative to one another along the sides of a container (top, bottom, left, right).

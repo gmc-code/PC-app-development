@@ -19,7 +19,7 @@ Final Touches and Styling
 Expanding Pizza prices dictionary
 ------------------------------------------------------
 
-| Place the following code in Section "1. DATA DICTIONARIES & LISTS".
+| Replace the existing ``prices`` dictionary in Section "1. DATA DICTIONARIES & LISTS" with the expanded version below.
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ Expanding Pizza prices dictionary
         "Veggie": {"Small": 9, "Medium": 12, "Large": 16},
         "Pepperoni": {"Small": 9, "Medium": 13, "Large": 17},
         "Hawaiian": {"Small": 10, "Medium": 14, "Large": 18},
-        "Capriciossa": {"Small": 10, "Medium": 14, "Large": 18},
+        "Capricciosa": {"Small": 10, "Medium": 14, "Large": 18},
         "Mexican": {"Small": 10, "Medium": 14, "Large": 18},
         "BBQ Chicken": {"Small": 11, "Medium": 15, "Large": 19},
         "Meat Lovers": {"Small": 11, "Medium": 15, "Large": 19}
@@ -59,17 +59,17 @@ Adding Font and colour variables
 --------------------------------
 
 | Place the following code in Section "2. CONSTANTS & STYLES".
-| Using variables for fonts and colors allows for easy adjustments to the overall look of the application in one place.
+| Using variables for fonts and colours allows for easy adjustments to the overall look of the application in one place.
 
 
 .. code-block:: python
 
-    # Fonts
-    LABEL_FONT = ("Helvetica", 12)
-    ENTRY_FONT = ("Helvetica", 14)
-    ORDER_FONT = ("Helvetica", 12)
-    RADIO_FONT = ("Helvetica", 12)
-    BUTTON_FONT = ("Helvetica", 18)
+    # Fonts - Adding "normal" explicitly stops the OS from making them chunky
+    LABEL_FONT = ("Segoe UI", 14, "normal")
+    ENTRY_FONT = ("Segoe UI", 16, "normal")
+    ORDER_FONT = ("Segoe UI", 13, "normal")
+    RADIO_FONT = ("Segoe UI", 13, "normal")
+    BUTTON_FONT = ("Segoe UI", 14, "normal")
 
     # Colors
     BG_COLOR = "#f0f0f0"       # Light gray background
@@ -86,8 +86,9 @@ Adding Font and colour variables
 Adding font and colour settings to tkinter widgets
 ----------------------------------------------------
 
-| Add the following code lines to the relevant widget code sections in "4. TKINTER WIDGETS" to apply the font and color settings defined in the constants section.
+| Add the following code lines to the relevant widget code sections in "4. TKINTER WIDGETS" to apply the font and colour settings defined in the constants section.
 | The code snippets go after the widget creation code for each widget type (e.g., after creating labels, entries, buttons, etc.) to configure their appearance using the defined constants.
+| For the radio buttons, the ``radio_button.config(...)`` line must go **inside** the ``for`` loop, directly below ``radio_button.pack(anchor="w")``, so that every radio button is styled, not just the last one.
 
 
 .. code-block:: python
@@ -110,7 +111,8 @@ Adding font and colour settings to tkinter widgets
 
     pizza_frame.config(bg=BG_COLOR)
 
-    radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
+    # inside the for loop, below radio_button.pack(anchor="w")
+        radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
 
 
 .. code-block:: python
@@ -120,7 +122,8 @@ Adding font and colour settings to tkinter widgets
 
     size_frame.config(bg=BG_COLOR)
 
-    radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
+    # inside the for loop, below radio_button.pack(anchor="w")
+        radio_button.config(font=RADIO_FONT, bg=BG_COLOR)
 
 
 .. code-block:: python
@@ -172,17 +175,17 @@ Adding font and colour settings to tkinter widgets
 
 ----
 
-Adding color to the Orders list total
+Adding colour to the Orders list total
 ---------------------------------------
 
-| Adjust the color of the very last row (Total Cost line) by modifying the last if block in the update_order_list function.
+| Adjust the colour of the very last row (Total Cost line) by modifying the last if block in the update_order_list function.
 
 .. code-block:: python
 
     if orders:
         order_list.insert(tk.END, f"Total cost: ${total_cost}")
         # Color code the very last row (Total Cost line)
-        # Get the index number of the very last item we just added
+        # tk.END refers to the very last item we just added
         last_row_index = tk.END
         order_list.itemconfig(last_row_index, bg=TOTAL_BG)
 

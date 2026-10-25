@@ -22,6 +22,7 @@ grid
 
 
 .. py:function:: widget.grid(row=index_r, column=index_c)
+    :no-index:
 
     | Use **grid()** method to position a widget on a grid at row index_r and column index_c.
     | e.g. widget.grid(row=0, column=0)
@@ -39,6 +40,7 @@ rowspan
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, rowspan=n)
+    :no-index:
 
     | Specify number of rows, **n**, for a widget to span across
     | e.g. grid(row=0, column=0, rowspan=2) to span the widget across 2 rows.
@@ -47,6 +49,7 @@ columnspan
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, columnspan=n)
+    :no-index:
 
     | Specify number of columns, **n**, for a widget to span across
     | e.g. grid(row=0, column=0, columnspan=2) to span the widget across 2 columns.
@@ -55,6 +58,7 @@ sticky
 ~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, sticky=direction)
+    :no-index:
 
     | Make the widget stick to the specified sides of the cell.
     | e.g. widget.grid(row=0, column=0, sticky="ew") to make it expand horizontally.
@@ -63,6 +67,7 @@ padx
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_padxc, padx=n)
+    :no-index:
 
     | Add horizontal padding, **n** pixels, on both sides of the widget.
     | e.g. widget.grid(row=0, column=0, padx=10) to add 10 pixels of space on the left and on the right of the widget.
@@ -71,6 +76,7 @@ pady
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, pady=n)
+    :no-index:
 
     | Add vertical padding, **n** pixels, above and below the widget.
     | e.g. widget.grid(row=0, column=0, pady=10) to add 10 pixels of space above and below the widget.
@@ -79,6 +85,7 @@ ipadx
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, ipadx=n)
+    :no-index:
 
     | Add horizontal internal padding, **n** pixels, on both sides of the widget.
     | e.g. widget.grid(row=0, column=0, ipadx=10) to grow the widget to the left and right, by 10 pixels each.
@@ -87,6 +94,7 @@ ipady
 ~~~~~~~~~~~~~
 
 .. py:function:: widget.grid(row=index_r, column=index_c, ipady=n)
+    :no-index:
 
     | Add vertical internal padding, **n** pixels, above and below the widget.
     | e.g. widget.grid(row=0, column=0, ipady=10) to grow the widget by 10 pixels above and below the widget.
@@ -149,6 +157,7 @@ columnconfigure and rowconfigure
 | Use the columnconfigure() and rowconfigure() methods to specify the weight of a column and a row of a grid.
 
 .. py:function:: widget.columnconfigure(column, option=value, ...)
+    :no-index:
 
     | Configure the column properties of a widget container, typically a `Frame` or `Grid`.
     | `widget`: The widget container (e.g., `Frame`, `Grid`) for which to configure the columns.
@@ -163,6 +172,7 @@ columnconfigure and rowconfigure
     -  e.g. `root.columnconfigure(1, weight=2, pad=10)`
 
 .. py:function:: widget.rowconfigure(row, option=value, ...)
+    :no-index:
 
     | Configure the row properties of a widget container, typically a `Frame` or `Grid`.
     | Specify options such as minimum size, weight, and stretching behavior for the row within the container.
@@ -173,6 +183,7 @@ grid related methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: widget.grid_bbox(column=None, row=None, col2=None, row2=None)
+    :no-index:
 
     | Returns a 4-tuple describing the bounding box of the widget area.
     | The first two numbers returned are the x and y coordinates of the upper left corner of the area, and the second two numbers are the width and height.
@@ -181,33 +192,40 @@ grid related methods
     | For example, widget.grid_bbox(0, 0, 1, 1) returns the bounding box of four cells, not one.
 
 .. py:function:: widget.grid_forget()
+    :no-index:
 
     | This makes the widget disappear from the screen. It still exists but isn't visible.
     | Use .grid() it to make it appear again, but without its grid options.
 
 .. py:function:: widget.grid_info()
+    :no-index:
 
     | Returns a dictionary whose keys are the widgets's option names, with the corresponding values of those options.
 
 .. py:function:: widget.grid_location(x, y)
+    :no-index:
 
     | Given a coordinates (x, y) relative to the containing widget, this method returns a tuple (col, row) describing what cell of the grid system contains that screen coordinate.
 
 .. py:function:: widget.grid_propagate()
+    :no-index:
 
     | Normally, all widgets propagate their dimensions, meaning that they adjust to fit the contents.
     | However, sometimes you want to force a widget to be a certain size, regardless of the size of its contents.
     | To do this, call widget.grid_propagate(0) where w is the widget whose size you want to force.
 
 .. py:function:: widget.grid_remove()
+    :no-index:
 
     | This method is like .grid_forget(), but its grid options are remembered, so if you .grid() it again, it will use the same grid configuration options.
 
 .. py:function:: widget.grid_size()
+    :no-index:
 
     | Returns a 2-tuple containing the number of columns and the number of rows, respectively, in the grid system.
 
 .. py:function:: widget.grid_slaves(row=None, column=None)
+    :no-index:
 
     | Returns a list of the widgets managed by the given widget.
     | If no arguments are provided, you will get a list of all the managed widgets.

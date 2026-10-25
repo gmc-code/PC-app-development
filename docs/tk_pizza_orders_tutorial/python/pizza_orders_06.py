@@ -92,8 +92,8 @@ for size in ["Small", "Medium", "Large"]:
 
 
 # Quantity (Dropdown Menu)
-quanitity_label = tk.Label(root, text="Quantity:")
-quanitity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
+quantity_label = tk.Label(root, text="Quantity:")
+quantity_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
 
 quantity_var = tk.IntVar(root)
 quantity_var.set(1)

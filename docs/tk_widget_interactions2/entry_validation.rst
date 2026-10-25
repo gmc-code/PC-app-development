@@ -14,6 +14,7 @@ Usage
 | (assuming import via "import tkinter as tk")
 
 .. py:function:: entry_widget  = tk.Entry(parent, option=value)
+    :no-index:
 
     | `parent` is the window or frame object.
     | Options can be passed as parameters separated by commas.

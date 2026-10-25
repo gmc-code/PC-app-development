@@ -13,6 +13,7 @@ Usage
 | To create a checkbutton widget, the general syntax is (assuming import via "import tkinter as tk"):
 
 .. py:function:: checkbutton_widget = tk.Checkbutton(parent, option=value)
+    :no-index:
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
@@ -131,6 +132,7 @@ Parameter syntax
 ----------------------
 
 .. py:function:: checkbutton_widget = tk.Checkbutton(parent, option=value)
+    :no-index:
 
     | parent is the window or frame object.
     | Options can be passed as parameters separated by commas.
@@ -138,6 +140,7 @@ Parameter syntax
     **Parameters:**
 
     .. py:attribute:: activebackground
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, activebackground="color")``
         | Description: Sets the background color of the checkbutton when it is active.
@@ -145,6 +148,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, activebackground="lightblue")``
 
     .. py:attribute:: activeforeground
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, activeforeground="color")``
         | Description: Sets the foreground color of the checkbutton when it is active.
@@ -152,6 +156,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, activeforeground="blue")``
 
     .. py:attribute:: anchor
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, anchor="position")``
         | Description: Sets the anchor position for the text and indicator.
@@ -159,6 +164,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, anchor="w")``
 
     .. py:attribute:: background
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, background="color")``
         | Description: Sets the background color of the checkbutton.
@@ -166,6 +172,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, background="lightyellow")``
 
     .. py:attribute:: bd
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, bd=border_width)``
         | Description: Sets the border width of the checkbutton.
@@ -173,6 +180,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, bd=5)``
 
     .. py:attribute:: bg
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, bg="color")``
         | Description: Sets the background color of the checkbutton.
@@ -180,6 +188,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, bg="lightyellow")``
 
     .. py:attribute:: bitmap
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, bitmap="bitmap_name")``
         | Description: Sets a bitmap image to be displayed on the checkbutton.
@@ -187,6 +196,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, bitmap="error")``
 
     .. py:attribute:: borderwidth
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, borderwidth=width)``
         | Description: Sets the width of the border around the checkbutton.
@@ -194,6 +204,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, borderwidth=3)``
 
     .. py:attribute:: command
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, command=function)``
         | Description: Specifies a function to be called when the checkbutton is toggled.
@@ -201,6 +212,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, command=my_function)``
 
     .. py:attribute:: compound
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, compound="position")``
         | Description: Specifies how to display the image and text (if both are set).
@@ -208,6 +220,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, compound="left")``
 
     .. py:attribute:: cursor
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, cursor="cursor_type")``
         | Description: Sets the mouse cursor when hovering over the checkbutton.
@@ -215,6 +228,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, cursor="hand2")``
 
     .. py:attribute:: disabledforeground
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, disabledforeground="color")``
         | Description: Sets the foreground color when the checkbutton is disabled.
@@ -222,6 +236,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, disabledforeground="gray")``
 
     .. py:attribute:: fg
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, fg="color")``
         | Description: Sets the foreground color of the checkbutton (text color).
@@ -229,6 +244,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, fg="black")``
 
     .. py:attribute:: font
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, font=("font_name", size, "style"))``
         | Description: Specifies the font type, size, and style for the text of the checkbutton.
@@ -236,6 +252,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, font=("Arial", 12, "bold"))``
 
     .. py:attribute:: height
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, height=value)``
         | Description: Sets the height of the checkbutton.
@@ -243,6 +260,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, height=2)``
 
     .. py:attribute:: highlightbackground
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, highlightbackground="color")``
         | Description: Sets the background color of the checkbutton when it does not have focus.
@@ -250,6 +268,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, highlightbackground="gray")``
 
     .. py:attribute:: highlightcolor
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, highlightcolor="color")``
         | Description: Sets the color of the highlight when the checkbutton has focus.
@@ -257,6 +276,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, highlightcolor="blue")``
 
     .. py:attribute:: highlightthickness
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, highlightthickness=thickness)``
         | Description: Sets the thickness of the highlight border.
@@ -264,6 +284,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, highlightthickness=2)``
 
     .. py:attribute:: image
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, image="image_name")``
         | Description: Sets an image to be displayed on the checkbutton.
@@ -271,6 +292,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, image=my_image)``
 
     .. py:attribute:: indicatoron
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, indicatoron=1)``
         | Description: Specifies whether to show the indicator (true or false).
@@ -278,6 +300,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, indicatoron=0)``
 
     .. py:attribute:: justify
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, justify="position")``
         | Description: Sets the justification of the text (left, center, right).
@@ -285,6 +308,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, justify="right")``
 
     .. py:attribute:: offrelief
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, offrelief="style")``
         | Description: Sets the relief style for the indicator when off.
@@ -292,6 +316,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, offrelief="flat")``
 
     .. py:attribute:: offvalue
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, offvalue=value)``
         | Description: Sets the value associated with the checkbutton when it is not checked.
@@ -299,6 +324,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, offvalue=0)``
 
     .. py:attribute:: onvalue
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, onvalue=value)``
         | Description: Sets the value associated with the checkbutton when it is checked.
@@ -306,6 +332,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, onvalue=1)``
 
     .. py:attribute:: overrelief
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, overrelief="style")``
         | Description: Sets the relief style for the indicator when hovered over.
@@ -313,6 +340,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, overrelief="sunken")``
 
     .. py:attribute:: padx
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, padx=padding_value)``
         | Description: Sets the horizontal padding within the checkbutton.
@@ -320,6 +348,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, padx=10)``
 
     .. py:attribute:: pady
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, pady=padding_value)``
         | Description: Sets the vertical padding within the checkbutton.
@@ -327,6 +356,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, pady=10)``
 
     .. py:attribute:: relief
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, relief="style")``
         | Description: Sets the border style of the checkbutton. Options include `flat`, `raised`, `sunken`, `groove`, `ridge`.
@@ -334,6 +364,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, relief="raised")``
 
     .. py:attribute:: selectcolor
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, selectcolor="color")``
         | Description: Sets the color of the indicator when the checkbutton is selected.
@@ -341,6 +372,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, selectcolor="lightgreen")``
 
     .. py:attribute:: selectimage
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, selectimage="image_name")``
         | Description: Sets an image to be displayed when the checkbutton is selected.
@@ -348,6 +380,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, selectimage=my_selected_image)``
 
     .. py:attribute:: state
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, state="state_type")``
         | Description: Sets the state of the checkbutton. Options include `normal`, `disabled`, or `active`.
@@ -355,6 +388,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, state="disabled")``
 
     .. py:attribute:: takefocus
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, takefocus=1)``
         | Description: Allows the checkbutton to take focus on click.
@@ -362,6 +396,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, takefocus=1)``
 
     .. py:attribute:: text
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, text="label")``
         | Description: Sets the text label for the checkbutton.
@@ -369,6 +404,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, text="Option 1")``
 
     .. py:attribute:: textvariable
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, textvariable=variable)``
         | Description: Associates a variable with the text of the checkbutton.
@@ -376,6 +412,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, textvariable=my_text_var)``
 
     .. py:attribute:: tristateimage
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, tristateimage="image_name")``
         | Description: Sets an image to be displayed when the checkbutton is in a tri-state mode.
@@ -383,6 +420,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, tristateimage=my_tristate_image)``
 
     .. py:attribute:: tristatevalue
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, tristatevalue=value)``
         | Description: Sets the value associated with the checkbutton in a tri-state mode.
@@ -390,6 +428,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, tristatevalue=2)``
 
     .. py:attribute:: underline
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, underline=index)``
         | Description: Specifies the index of the character to underline in the text.
@@ -397,6 +436,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, underline=0)``
 
     .. py:attribute:: variable
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, variable=control_variable)``
         | Description: Associates the checkbutton with a control variable (e.g., `IntVar`, `StringVar`).
@@ -404,6 +444,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, variable=my_var)``
 
     .. py:attribute:: width
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, width=width_value)``
         | Description: Sets the width of the checkbutton.
@@ -411,6 +452,7 @@ Parameter syntax
         | Example: ``checkbutton_widget = tk.Checkbutton(root, width=30)``
 
     .. py:attribute:: wraplength
+        :no-index:
 
         | Syntax: ``checkbutton_widget = tk.Checkbutton(parent, wraplength=length)``
         | Description: Sets the line length for text wrapping in the checkbutton.

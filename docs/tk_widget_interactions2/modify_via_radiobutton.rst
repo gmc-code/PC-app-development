@@ -17,6 +17,7 @@ Required Syntax
 -----------------------------------
 
 .. py:class:: StringVar
+    :no-index:
 
     | Syntax: ``text_var = tk.StringVar()``
     | Description: Creates a Tkinter variable for holding string data.
@@ -24,6 +25,7 @@ Required Syntax
     | Example: ``text_var = tk.StringVar()``
 
 .. py:method:: get
+    :no-index:
 
     | Syntax: ``current_value = text_var.get()``
     | Description: Retrieves the current value of the `StringVar`.
@@ -31,6 +33,7 @@ Required Syntax
     | Example: ``current_value = text_var.get()``
 
 .. py:method:: set
+    :no-index:
 
     | Syntax: ``text_var.set("New Value")``
     | Description: Sets the value of the `StringVar` to the specified string.
@@ -38,6 +41,7 @@ Required Syntax
     | Example: ``text_var.set("black")``
 
 .. py:attribute:: variable
+    :no-index:
 
     | Syntax: ``widget = tk.Radiobutton(parent, text="label", variable=variable, command=callback_function)``
     | Description: Associates a Tkinter variable with the Radiobutton state.
@@ -45,6 +49,7 @@ Required Syntax
     | Example: ``blue_radiobutton = tk.Radiobutton(root, text="Blue Label", variable=color_var, value="blue", command=set_label_color)``
 
 .. py:attribute:: command
+    :no-index:
 
     | Syntax: ``button_widget = tk.BuRadiobuttontton(parent, command=callback_function)``
     | Description: Specifies the function to be called when the Radiobutton is clicked.

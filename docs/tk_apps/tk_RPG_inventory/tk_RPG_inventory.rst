@@ -171,6 +171,7 @@ Key Syntax to use
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: enumerate(iterable, start=0)
+    :no-index:
 
     | Syntax: ``enumerate(iterable, start=0)``
     | Description: Adds a counter to an iterable, returning it as an enumerate object, which can be used to iterate with both the index and the element.
@@ -178,6 +179,7 @@ Key Syntax to use
     | Example: ``for index, value in enumerate(['a', 'b', 'c']): print(index, value) # Outputs: 0 a, 1 b, 2 c``
 
 .. py:function:: value1 != value2
+    :no-index:
 
     | Syntax: ``value1 != value2``
     | Description: Checks if two values are not equal. Returns ``True`` if ``value1`` and ``value2`` are not equal, otherwise returns ``False``.
@@ -185,6 +187,7 @@ Key Syntax to use
 
 
 .. py:function:: outer_function(parameter1, parameter2, ...)
+    :no-index:
 
     | Syntax:
 

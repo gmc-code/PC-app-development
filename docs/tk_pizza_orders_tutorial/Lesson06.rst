@@ -9,7 +9,7 @@ Add Orders
 - **Content**:
 
   - Creating an add order button.
-  - Writing the `add_order` function.
+  - Writing the ``add_order`` function.
   - Validating input and updating the order list.
 
 ----
@@ -18,23 +18,24 @@ Creating an Add Order Button
 ------------------------------------
 
 | Place the following code below the other widget code in Section "4. TKINTER WIDGETS".
-| This code creates a button labeled "Add Order" that, when clicked, will call the `add_order` function to process the current order details.
+| This code creates a button labelled "Add Order" that, when clicked, will call the ``add_order`` function to process the current order details.
 
 .. code-block:: python
 
     # Add order button
-    add_button = tk.Button(root, text="Add Order", command=add_order,width=15)
+    add_button = tk.Button(root, text="Add Order", command=add_order, width=15)
     add_button.grid(row=6, column=1, padx=10, pady=15, ipady=5, sticky="w")
 
-- ``tk.Button(root, text="Add Order", command=add_order, bg=button_bg, fg=button_fg)``: Creates a button with the text "Add Order" and assigns the ``add_order`` function to be called when the button is clicked.
-- ``.grid(row=6, column=1, padx=10, pady=10, ipadx=20, ipady=10, sticky="w")``: Positions the button in the grid layout.
+- ``tk.Button(root, text="Add Order", command=add_order, width=15)``: Creates a button with the text "Add Order", 15 characters wide, and assigns the ``add_order`` function to be called when the button is clicked.
+- ``.grid(row=6, column=1, padx=10, pady=15, ipady=5, sticky="w")``: Positions the button in the grid layout at row 6, column 1, with 10 pixels of padding outside the button horizontally (``padx``), 15 pixels vertically (``pady``), 5 pixels of extra height inside the button (``ipady``), aligned to the west (left) of its cell.
 
 ----
 
 Importing messagebox
 ---------------------------------------
 
-| Add an import line for the messsagebox that is needed if no customer name is entered.
+| Add an import line for the messagebox that is needed if no customer name is entered.
+| Place it at the top of the code, directly below ``import tkinter as tk``.
 
 
 .. code-block:: python
@@ -62,10 +63,10 @@ Writing the ``add_order`` Function
 ---------------------------------------
 
 | Place the following code in Section "3. DEFINITIONS / FUNCTIONS".
-| This function, `add_order`, is responsible for validating input and adding the current selection to the order list.
+| This function, ``add_order``, is responsible for validating input and adding the current selection to the order list.
 | It retrieves the customer name, pizza type, size, and quantity from the respective widgets.
 | If the customer name is not entered, it shows an error message and highlights the entry field.
-| If the input is valid, it adds the order to the list and resets the quantity to 0.
+| If the input is valid, it adds the order to the list and resets the quantity to 1.
 
 
 .. code-block:: python
@@ -91,8 +92,8 @@ Writing the ``add_order`` Function
 - ``customer = customer_entry.get()``: Retrieves the customer name from the entry widget.
 - ``pizza = pizza_var.get()``: Retrieves the selected pizza type.
 - ``size = size_var.get()``: Retrieves the selected pizza size.
-- ``quantity = quantity_var.get()``: Retrieves the selected quantity string as an integer.
+- ``quantity = quantity_var.get()``: Retrieves the selected quantity as an integer.
 - ``messagebox.showerror("Input Error", "Please enter the customer name.")``: Displays an error message if the customer name is not entered.
 - ``orders.append((customer, pizza, size, quantity))``: Adds the order to the list of orders.
-- ``quantity_var.set("0")``: Resets the quantity to 0.
+- ``quantity_var.set(1)``: Resets the quantity to the default of 1.
 

@@ -36,6 +36,7 @@ Required Syntax
 | In anticipation of varying the number of decimal places, the code below uses f-string formatting to 1 dp even though it is not needed for 1 dp.
 
 .. py:class:: DoubleVar
+    :no-index:
 
     | Syntax: ``double_var = tk.DoubleVar()``
     | Description: Creates a Tkinter variable for holding an float.
@@ -43,6 +44,7 @@ Required Syntax
     | Example: ``double_var = tk.DoubleVar()``
 
 .. py:method:: set
+    :no-index:
 
     | Syntax: ``double_var.set(new_value)``
     | Description: Sets the value of the ``DoubleVar`` to the specified float.
@@ -50,6 +52,7 @@ Required Syntax
     | Example: ``double_var.set(0.0)``
 
 .. py:method:: get
+    :no-index:
 
     | Syntax: ``current_value = double_var.get()``
     | Description: Retrieves the current value of the ``DoubleVar``.
@@ -57,6 +60,7 @@ Required Syntax
     | Example: ``current_value = double_var.get()``
 
 .. py:attribute:: textvariable
+    :no-index:
 
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text. If the variable is changed, the label text is updated.
@@ -64,6 +68,7 @@ Required Syntax
     | Example: ``label_widget = tk.Label(root, textvariable=my_var)``
 
 .. py:attribute:: command
+    :no-index:
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.

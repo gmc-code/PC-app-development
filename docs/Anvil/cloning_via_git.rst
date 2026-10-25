@@ -17,7 +17,7 @@ Cloning an app via github
 - In the browser, log in at GitHub and navigate to the newly saved GitHub repository, open it and copy its url.
 - In Anvil, go to `<https://anvil.works/build>`_. Under **Create a new app**, click **Clone form Github**.
 - In the **Clone app from git** window that follows, paste in the copied github url.
-- Under Authentication, in the same window, choose **Github Account**. Click **CLone App*.
+- Under Authentication, in the same window, choose **Github Account**. Click **CLone App**.
 
 
 

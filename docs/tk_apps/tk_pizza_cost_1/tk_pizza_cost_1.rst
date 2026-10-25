@@ -167,30 +167,35 @@ Key syntax
 -----------------
 
 .. py:function:: dictionary.get(key, default)
+    :no-index:
 
     | Syntax: ``pizza_prices.get(selected_pizza, 0)``
     | Description: Returns the value for ``key``. If the key is not in the dictionary, it returns ``default`` instead of causing a ``KeyError``.
     | Example: ``pizza_prices.get("Pepperoni", 0)  # 10.99``; ``pizza_prices.get("Hawaiian", 0)  # 0``
 
 .. py:function:: def function_name(*args)
+    :no-index:
 
     | Syntax: ``def calculate_total_cost(*args):``
     | Description: The ``*`` lets the function accept **any number** of arguments. They are collected into a tuple called ``args``.
     | Why it is needed here: the OptionMenu calls the function with **one** argument (the pizza that was chosen), but the Spinbox calls it with **no** arguments. ``*args`` lets the same function work for both. The function never uses ``args`` itself.
 
 .. py:function:: *iterable
+    :no-index:
 
     | Syntax: ``tk.OptionMenu(root, pizza_var, *pizza_prices.keys(), command=calculate_total_cost)``
     | Description: A ``*`` in front of a list or other iterable **unpacks** it, so each item is passed as a separate argument.
     | Example: ``*pizza_prices.keys()`` is the same as typing ``"Margherita", "Pepperoni", "Vegetarian", "Supreme"``.
 
 .. py:function:: tk.Spinbox(master, from_=1, to=10)
+    :no-index:
 
     | Syntax: ``tk.Spinbox(root, from_=1, to=10, width=5, command=calculate_total_cost)``
     | Description: A box holding a number, with up and down arrows to change it between ``from_`` and ``to``.
     | Note: ``from`` is a Python keyword (as in ``from tkinter import messagebox``), so Tkinter uses ``from_`` with an underscore instead.
 
 .. py:function:: widget.config(option=value)
+    :no-index:
 
     | Syntax: ``total_cost_label.config(text=f"Price: ${total_cost:.2f}")``
     | Description: Changes an option of a widget that already exists, such as its ``text`` or ``width``.
@@ -313,16 +318,16 @@ Pizza Cost - Multiple Choice Quiz
 
     .. multichoice::
 
-        Why does calculate_total_cost have *args in its definition?
+        Why does calculate_total_cost have ``*args`` in its definition?
 
-        [ ] To make the function run faster | Incorrect. *args is about the number of arguments, not speed.
-        [x] The OptionMenu passes one argument and the Spinbox passes none, so the function must accept any number | Correct. *args collects however many arguments are passed.
-        [ ] To multiply the arguments together | Incorrect. The * is not multiplication here.
-        [ ] Because every function needs *args | Incorrect. Most functions do not use *args.
+        [ ] To make the function run faster | Incorrect. ``*args`` is about the number of arguments, not speed.
+        [x] The OptionMenu passes one argument and the Spinbox passes none, so the function must accept any number | Correct. ``*args`` collects however many arguments are passed.
+        [ ] To multiply the arguments together | Incorrect. The ``*`` is not multiplication here.
+        [ ] Because every function needs ``*args`` | Incorrect. Most functions do not use ``*args``.
 
     .. multichoice::
 
-        What does the * do in *pizza_prices.keys()?
+        What does the * do in ``*pizza_prices.keys()?``
 
         [ ] Multiplies the prices | Incorrect. Here * is used for unpacking, not multiplication.
         [x] Unpacks the pizza names so each one is a separate option in the menu | Correct. It is the same as typing each name as a separate argument.
@@ -331,7 +336,7 @@ Pizza Cost - Multiple Choice Quiz
 
     .. multichoice::
 
-        Why does tk.Spinbox use from_ with an underscore?
+        Why does tk.Spinbox use ``from_`` with an underscore?
 
         [ ] It is a spelling mistake | Incorrect. It is deliberate.
         [x] from is a Python keyword, so it cannot be used as an argument name | Correct. from is used in statements like from tkinter import messagebox.

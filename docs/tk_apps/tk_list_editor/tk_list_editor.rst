@@ -107,31 +107,46 @@ Add the widgets after ``root.configure(bg=BG_COLOR)`` and above ``root.mainloop(
 .. code-block:: python
 
     # Create widgets
-    title_label = tk.Label(root, text="List Editor", bg=BG_COLOR,
-                           fg=TITLE_COLOR, font=TITLE_FONT)
-    instructions_label = tk.Label(root, text="Type an item or click one below.",
-                                  bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+    title_label = tk.Label(
+        root, text="List Editor",
+        bg=BG_COLOR, fg=TITLE_COLOR, font=TITLE_FONT)
+    instructions_label = tk.Label(
+        root, text="Type an item or click one below.",
+        bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+
     item_entry = tk.Entry(root, width=20, font=LIST_FONT)
-    add_button = tk.Button(root, text="Add", width=8, bg=PRIMARY_COLOR,
-                           fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+
     # exportselection=False keeps the selected item highlighted
     # when the user clicks in the entry box to type
-    item_listbox = tk.Listbox(root, width=20, height=8, bg=LIST_BG_COLOR,
-                              fg=TEXT_COLOR, font=LIST_FONT,
-                              exportselection=False)
-    change_button = tk.Button(root, text="Change", width=8, bg=PRIMARY_COLOR,
-                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
-    remove_button = tk.Button(root, text="Remove", width=8, bg=SECONDARY_COLOR,
-                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
-    sort_button = tk.Button(root, text="Sort", width=8, bg=PRIMARY_COLOR,
-                            fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
-    clear_button = tk.Button(root, text="Clear", width=8, bg=SECONDARY_COLOR,
-                             fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
-    count_label = tk.Label(root, text="", bg=BG_COLOR, fg=TEXT_COLOR,
-                           font=FONT_STYLE)
-    message_label = tk.Label(root, text="", bg=BG_COLOR, fg=PRIMARY_COLOR,
-                             font=FONT_STYLE)
+    item_listbox = tk.Listbox(
+        root, width=20, height=8,
+        bg=LIST_BG_COLOR, fg=TEXT_COLOR, font=LIST_FONT,
+        exportselection=False)
 
+    add_button = tk.Button(
+        root, text="Add", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    change_button = tk.Button(
+        root, text="Change", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    remove_button = tk.Button(
+        root, text="Remove", width=8,
+        bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    sort_button = tk.Button(
+        root, text="Sort", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+    clear_button = tk.Button(
+        root, text="Clear", width=8,
+        bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT)
+
+    count_label = tk.Label(
+        root, text="",
+        bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+    message_label = tk.Label(
+        root, text="",
+        bg=BG_COLOR, fg=PRIMARY_COLOR, font=FONT_STYLE)
+
+- Each widget is split over lines in the same way: first **what it shows** (text and size), then **how it looks** (colours and font), then any extra setting such as ``command=``. Python lets a line carry on until the bracket is closed.
 - ``item_entry`` is an **Entry** widget: a one-line box the user can type in. ``width=20`` makes it about 20 characters wide.
 - ``item_listbox`` is a **Listbox**: a box that shows one item per line. ``height=8`` shows 8 lines.
 - ``exportselection=False`` is important. Without it, the Listbox loses its selection when the user clicks or highlights text in the Entry box, so **Change** and **Remove** would say "Select an item first."
@@ -338,21 +353,26 @@ Add a ``command=`` to each button so it runs its function when clicked:
 
 .. code-block:: python
 
-    add_button = tk.Button(root, text="Add", width=8, bg=PRIMARY_COLOR,
-                           fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                           command=add_item)
-    change_button = tk.Button(root, text="Change", width=8, bg=PRIMARY_COLOR,
-                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                              command=change_item)
-    remove_button = tk.Button(root, text="Remove", width=8, bg=SECONDARY_COLOR,
-                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                              command=remove_item)
-    sort_button = tk.Button(root, text="Sort", width=8, bg=PRIMARY_COLOR,
-                            fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                            command=sort_items)
-    clear_button = tk.Button(root, text="Clear", width=8, bg=SECONDARY_COLOR,
-                             fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                             command=clear_items)
+    add_button = tk.Button(
+        root, text="Add", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=add_item)
+    change_button = tk.Button(
+        root, text="Change", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=change_item)
+    remove_button = tk.Button(
+        root, text="Remove", width=8,
+        bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=remove_item)
+    sort_button = tk.Button(
+        root, text="Sort", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=sort_items)
+    clear_button = tk.Button(
+        root, text="Clear", width=8,
+        bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=clear_items)
 
 Then add this line straight after the widgets:
 
@@ -371,58 +391,69 @@ Key syntax
 -----------------
 
 .. py:function:: list.append(item)
+    :no-index:
 
     | Syntax: ``items.append(new_item)``
     | Description: Adds an item to the end of the list.
     | Example: ``["a", "b"]`` becomes ``["a", "b", "c"]`` after ``.append("c")``
 
 .. py:function:: list[index] = value
+    :no-index:
 
     | Syntax: ``items[index] = new_item``
     | Description: Replaces the item at that index. Indexes start at 0.
     | Example: ``items[0] = "apricot"  # replaces the first item``
 
 .. py:function:: list.pop(index)
+    :no-index:
 
     | Syntax: ``removed = items.pop(index)``
     | Description: Removes the item at that index and returns it. ``items.pop()`` with no index removes the last item.
 
 .. py:function:: list.sort()
+    :no-index:
 
     | Syntax: ``items.sort()``
     | Description: Sorts the list in place, in alphabetical (or number) order. Capital letters come before lowercase letters.
 
 .. py:function:: list.clear()
+    :no-index:
 
     | Syntax: ``items.clear()``
     | Description: Removes every item, leaving an empty list.
 
 .. py:function:: len(list)
+    :no-index:
 
     | Syntax: ``len(items)``
     | Description: Returns the number of items in the list.
 
 .. py:function:: listbox.insert(index, text)
+    :no-index:
 
     | Syntax: ``item_listbox.insert(tk.END, item)``
     | Description: Adds a line to the Listbox. ``tk.END`` adds it at the bottom.
 
 .. py:function:: listbox.delete(first, last)
+    :no-index:
 
     | Syntax: ``item_listbox.delete(0, tk.END)``
     | Description: Removes lines from the Listbox. ``0, tk.END`` removes every line.
 
 .. py:function:: listbox.curselection()
+    :no-index:
 
     | Syntax: ``selection = item_listbox.curselection()``
     | Description: Returns a tuple of the selected line numbers, e.g. ``(2,)``, or ``()`` if nothing is selected.
 
 .. py:function:: widget.bind(event, function)
+    :no-index:
 
     | Syntax: ``item_listbox.bind("<<ListboxSelect>>", item_clicked)``
     | Description: Runs the function when the event happens. The function must have an ``event`` parameter.
 
 .. py:function:: widget.grid(rowspan=n)
+    :no-index:
 
     | Syntax: ``item_listbox.grid(row=3, column=0, rowspan=4)``
     | Description: Makes a widget stretch down across ``n`` rows. ``columnspan`` works the same way across columns.
@@ -537,35 +568,49 @@ Full code
     root.configure(bg=BG_COLOR)
 
     # Create widgets
-    title_label = tk.Label(root, text="List Editor", bg=BG_COLOR,
-                           fg=TITLE_COLOR, font=TITLE_FONT)
-    instructions_label = tk.Label(root, text="Type an item or click one below.",
-                                  bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+    title_label = tk.Label(
+        root, text="List Editor",
+        bg=BG_COLOR, fg=TITLE_COLOR, font=TITLE_FONT)
+    instructions_label = tk.Label(
+        root, text="Type an item or click one below.",
+        bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+
     item_entry = tk.Entry(root, width=20, font=LIST_FONT)
-    add_button = tk.Button(root, text="Add", width=8, bg=PRIMARY_COLOR,
-                           fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                           command=add_item)
+
     # exportselection=False keeps the selected item highlighted
     # when the user clicks in the entry box to type
-    item_listbox = tk.Listbox(root, width=20, height=8, bg=LIST_BG_COLOR,
-                              fg=TEXT_COLOR, font=LIST_FONT,
-                              exportselection=False)
-    change_button = tk.Button(root, text="Change", width=8, bg=PRIMARY_COLOR,
-                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                              command=change_item)
-    remove_button = tk.Button(root, text="Remove", width=8, bg=SECONDARY_COLOR,
-                              fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                              command=remove_item)
-    sort_button = tk.Button(root, text="Sort", width=8, bg=PRIMARY_COLOR,
-                            fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                            command=sort_items)
-    clear_button = tk.Button(root, text="Clear", width=8, bg=SECONDARY_COLOR,
-                             fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
-                             command=clear_items)
-    count_label = tk.Label(root, text="", bg=BG_COLOR, fg=TEXT_COLOR,
-                           font=FONT_STYLE)
-    message_label = tk.Label(root, text="", bg=BG_COLOR, fg=PRIMARY_COLOR,
-                             font=FONT_STYLE)
+    item_listbox = tk.Listbox(
+        root, width=20, height=8,
+        bg=LIST_BG_COLOR, fg=TEXT_COLOR, font=LIST_FONT,
+        exportselection=False)
+
+    add_button = tk.Button(
+        root, text="Add", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=add_item)
+    change_button = tk.Button(
+        root, text="Change", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=change_item)
+    remove_button = tk.Button(
+        root, text="Remove", width=8,
+        bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=remove_item)
+    sort_button = tk.Button(
+        root, text="Sort", width=8,
+        bg=PRIMARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=sort_items)
+    clear_button = tk.Button(
+        root, text="Clear", width=8,
+        bg=SECONDARY_COLOR, fg=BUTTON_FG_COLOR, font=BUTTON_FONT,
+        command=clear_items)
+
+    count_label = tk.Label(
+        root, text="",
+        bg=BG_COLOR, fg=TEXT_COLOR, font=FONT_STYLE)
+    message_label = tk.Label(
+        root, text="",
+        bg=BG_COLOR, fg=PRIMARY_COLOR, font=FONT_STYLE)
 
     # Run item_clicked() whenever the user selects an item in the listbox
     item_listbox.bind("<<ListboxSelect>>", item_clicked)
@@ -794,6 +839,8 @@ List Editor - Cloze Code Quiz
     .. cloze::
         :instructions: Keep the selection when typing, and run a function when an item is selected.
 
-        item_listbox = tk.Listbox(root, width=20, height=8, bg=LIST_BG_COLOR,
-                                  fg=TEXT_COLOR, font=LIST_FONT, @@exportselection=False | selectmode=False | export=None@@)
+        item_listbox = tk.Listbox(
+            root, width=20, height=8,
+            bg=LIST_BG_COLOR, fg=TEXT_COLOR, font=LIST_FONT,
+            @@exportselection=False | selectmode=False | export=None@@)
         item_listbox.@@bind | command | config@@("<<ListboxSelect>>", item_clicked)

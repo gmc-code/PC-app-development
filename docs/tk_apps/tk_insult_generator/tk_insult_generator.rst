@@ -248,6 +248,7 @@ Key syntax
 -----------------
 
 .. py:function:: random.choice(sequence)
+    :no-index:
 
     | Syntax: ``choice(OLD_INSULT1)``
     | Description: Returns one randomly chosen item from a list (or other sequence).
@@ -255,23 +256,27 @@ Key syntax
     | Example: ``choice(["red", "green", "blue"])  # could return "green"``
 
 .. py:function:: string1 + string2
+    :no-index:
 
     | Syntax: ``"Thou art a " + choice(OLD_INSULT1) + "."``
     | Description: Joins strings together (concatenation). Spaces are not added automatically, so they must be included in the strings.
     | Example: ``"Hello" + " " + "world"  # "Hello world"``
 
 .. py:function:: ( long expression )
+    :no-index:
 
     | Syntax: ``insult = ("Thou art a " + choice(OLD_INSULT1) + " " +``
     |                    ``choice(OLD_INSULT2) + " " + choice(OLD_INSULT3) + ".")``
     | Description: Code inside round brackets, square brackets or curly brackets can be split over several lines.
 
 .. py:function:: widget.grid(pady=(top, bottom))
+    :no-index:
 
     | Syntax: ``title_label.grid(row=0, column=0, columnspan=2, pady=(20, 5))``
     | Description: A tuple of two numbers sets different padding above and below the widget. ``padx=(left, right)`` works the same way.
 
 .. py:function:: root.columnconfigure(index, weight=1)
+    :no-index:
 
     | Syntax: ``root.columnconfigure(0, weight=1)``
     | Description: Lets a grid column grow to share any spare space. Columns with a ``weight`` of 0 (the default) do not grow.

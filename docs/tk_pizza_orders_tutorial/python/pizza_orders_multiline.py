@@ -8,7 +8,7 @@ prices = {
     "Veggie": {"Small": 9, "Medium": 12, "Large": 16},
     "Pepperoni": {"Small": 9, "Medium": 13, "Large": 17},
     "Hawaiian": {"Small": 10, "Medium": 14, "Large": 18},
-    "Capriciossa": {"Small": 10, "Medium": 14, "Large": 18},
+    "Capricciosa": {"Small": 10, "Medium": 14, "Large": 18},
     "Mexican": {"Small": 10, "Medium": 14, "Large": 18},
     "BBQ Chicken": {"Small": 11, "Medium": 15, "Large": 19},
     "Meat Lovers": {"Small": 11, "Medium": 15, "Large": 19}

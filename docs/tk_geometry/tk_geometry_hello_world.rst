@@ -14,6 +14,7 @@ Hello World - pack
 -------------------
 
 .. py:function:: widget.pack()
+    :no-index:
 
     | positions widgets relative to each other.
     | By default, widgets are stacked vertically from the top of the container.
@@ -84,6 +85,7 @@ Hello World - grid
 -------------------
 
 .. py:function:: widget.grid(row=row_index,column=column_index)
+    :no-index:
 
     | The `grid()` method is used to position widgets within a container using a grid-based layout.
     | Widgets are placed in rows and columns.
@@ -134,6 +136,7 @@ Hello World - place
 -------------------
 
 .. py:function:: widget.place(x=x_value, y=y_value)
+    :no-index:
 
     | The `place()` method is used to precisely position widgets within a container using the (x, y) coordinate system. Here's how it works:
     | In absolute positioning, specify the exact x and y coordinates of the widget using the `x` and `y` parameters.

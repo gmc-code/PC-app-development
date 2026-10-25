@@ -304,33 +304,39 @@ Key syntax
 -----------------
 
 .. py:function:: tk.PhotoImage(file=path)
+    :no-index:
 
     | Syntax: ``tk.PhotoImage(file=IMAGE_FOLDER / "question.png")``
     | Description: Loads a PNG or GIF image so it can be shown in a Label or Button. It must be created after ``root = tk.Tk()``.
 
 .. py:function:: widget.config(image=photo)
+    :no-index:
 
     | Syntax: ``user_image_label.config(image=get_image(user_choice, user_result))``
     | Description: Changes the image shown by a Label or Button.
 
 .. py:function:: tk.Button(..., image=photo, compound="top")
+    :no-index:
 
     | Syntax: ``tk.Button(root, text="Rock", image=icons["Rock"], compound="top", width=110)``
     | Description: Shows an image and text on a button. ``compound`` sets where the image goes compared with the text: ``"top"``, ``"bottom"``, ``"left"`` or ``"right"``.
     | Note: with an image, ``width`` and ``height`` are measured in pixels.
 
 .. py:function:: Path(__file__).parent / "folder"
+    :no-index:
 
     | Syntax: ``Path(__file__).parent / "rps_images"``
     | Description: Builds the path to a folder next to the program. ``/`` joins parts of a path.
     | Import: ``from pathlib import Path``
 
 .. py:function:: for ... in ...: for ... in ...:
+    :no-index:
 
     | Syntax: ``for choice in CHOICES:`` then, indented inside it, ``for result in RESULTS:``
     | Description: **Nested loops**. The inner loop runs completely for each pass of the outer loop, so 3 choices x 3 results = 9 passes.
 
 .. py:function:: string.lower()
+    :no-index:
 
     | Syntax: ``choice.lower()``
     | Description: Returns a copy of the string in lowercase.

@@ -126,7 +126,7 @@ Define the Conversion Function
 | ``tk.END`` or ``'end'`` can be used as the second argument to cause the deletion to go to the end of the widget.
 | The insert method of a Text widget requires the line.column as the first argument. e.g. ``1.0`` is the line.column in ``cm_text.insert(1.0, f'{cm:.2f}')``
 
- ``cm_text.insert(1.0, f'{cm:.2f}')`` uses ``:.2f`` to format the celsius float to 2 decimal places.
+| ``cm_text.insert(1.0, f'{cm:.2f}')`` uses ``:.2f`` to format the celsius float to 2 decimal places.
 | For string formatting see: `<https://www.w3schools.com/python/ref_string_format.asp>`_
 
 .. code-block:: python

@@ -20,7 +20,7 @@ Booleans
 - tk.YES=tk.TRUE=tk.ON=1
 
 -tabs
-----
+-------
 
 - tk.NUMERIC='numeric'
 
@@ -96,6 +96,7 @@ Syntax
 ---------
 
 .. py:data:: anchor=<tk.ANCHOR_CONSTANT or "anchor_string">
+    :no-index:
 
     | Controls internal alignment of text or content inside a widget.
     | Formal values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, ``tk.NE``, ``tk.NW``,
@@ -107,6 +108,7 @@ Syntax
 
 
 .. py:data:: sticky=<tk.STICKY_CONSTANT or "sticky_string">
+    :no-index:
 
     | Controls how a widget expands to fill its grid cell.
     | Formal values: ``tk.N``, ``tk.S``, ``tk.E``, ``tk.W``, ``tk.NSEW``.
@@ -117,6 +119,7 @@ Syntax
 
 
 .. py:data:: side=<tk.SIDE_CONSTANT or "side_string">
+    :no-index:
 
     | Controls which side of the parent a widget is packed against.
     | Formal values: ``tk.LEFT``, ``tk.RIGHT``, ``tk.TOP``, ``tk.BOTTOM``.
@@ -126,6 +129,7 @@ Syntax
 
 
 .. py:data:: fill=<tk.FILL_CONSTANT or "fill_string">
+    :no-index:
 
     | Controls how a widget expands when packed.
     | Formal values: ``tk.X``, ``tk.Y``, ``tk.BOTH``, ``tk.NONE``.
@@ -135,6 +139,7 @@ Syntax
 
 
 .. py:data:: relief=<tk.RELIEF_CONSTANT or "relief_string">
+    :no-index:
 
     | Controls the 3D border style of a widget.
     | Formal values: ``tk.FLAT``, ``tk.RAISED``, ``tk.SUNKEN``, ``tk.GROOVE``,
@@ -146,6 +151,7 @@ Syntax
 
 
 .. py:data:: orient=<tk.ORIENT_CONSTANT or "orient_string">
+    :no-index:
 
     | Controls orientation of directional widgets such as ``Scale`` or ``Scrollbar``.
     | Formal values: ``tk.HORIZONTAL``, ``tk.VERTICAL``.
@@ -155,6 +161,7 @@ Syntax
 
 
 .. py:data:: wrap=<tk.WRAP_CONSTANT or "wrap_string">
+    :no-index:
 
     | Controls text wrapping behavior in ``Text`` widgets.
     | Formal values: ``tk.WORD``, ``tk.CHAR``, ``tk.NONE``.
@@ -164,6 +171,7 @@ Syntax
 
 
 .. py:data:: state=<tk.STATE_CONSTANT or "state_string">
+    :no-index:
 
     | Controls widget interactivity.
     | Formal values: ``tk.NORMAL``, ``tk.DISABLED``, ``tk.ACTIVE`` (some widgets),
@@ -175,6 +183,7 @@ Syntax
 
 
 .. py:data:: index=<tk.TEXT_INDEX or "index_string">
+    :no-index:
 
     | Special text positions used when inserting or deleting text.
     | Formal values: ``tk.END``, ``tk.INSERT``.

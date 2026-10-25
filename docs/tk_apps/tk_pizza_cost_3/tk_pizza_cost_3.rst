@@ -194,52 +194,61 @@ Key syntax
 -----------------
 
 .. py:function:: enumerate(iterable, start=0)
+    :no-index:
 
     | Syntax: ``for i, pizza_name in enumerate(["Margherita", "Pepperoni", "Vegetarian"]):``
     | Description: Adds a counter to each item, so the loop gets both the position and the value.
     | Example: ``for i, name in enumerate(["a", "b"]): print(i, name)  # Outputs: 0 a, 1 b``
 
 .. py:function:: list.append(item)
+    :no-index:
 
     | Syntax: ``pizza_rows.append({"var": pizza_var, "spinbox": pizza_spinbox})``
     | Description: Adds an item to the end of a list. Here each item is a dictionary.
 
-.. py:function:: list_of_dictionaries[index][key]
+.. describe:: list_of_dictionaries[index][key]
 
     | Syntax: ``pizza_rows[0]["spinbox"]``
     | Description: Gets one dictionary from the list by its position, then one value from that dictionary by its key.
     | Example: ``pizza_rows[1]["var"].get()  # The pizza chosen in the 2nd row``
 
+
 .. py:function:: total += value
+    :no-index:
 
     | Syntax: ``total_cost += pizza_cost * num_pizzas``
     | Description: Adds ``value`` to ``total`` and stores the result back in ``total``. Used to keep a running total in a loop.
 
 .. py:function:: dictionary.get(key, default)
+    :no-index:
 
     | Syntax: ``pizza_prices.get(selected_pizza, 0)``
     | Description: Returns the value for ``key``. If the key is not in the dictionary, it returns ``default`` instead of causing a ``KeyError``.
     | Example: ``pizza_prices.get("Pepperoni", 0)  # 10.99``; ``pizza_prices.get("Hawaiian", 0)  # 0``
 
 .. py:function:: def function_name(*args)
+    :no-index:
 
     | Syntax: ``def calculate_total_cost(*args):``
     | Description: The ``*`` lets the function accept **any number** of arguments. They are collected into a tuple called ``args``.
     | Why it is needed here: the OptionMenu calls the function with **one** argument (the pizza that was chosen), but the Spinbox calls it with **no** arguments. ``*args`` lets the same function work for both. The function never uses ``args`` itself.
 
 .. py:function:: *iterable
+    :no-index:
 
     | Syntax: ``tk.OptionMenu(root, pizza_var, *pizza_prices.keys(), command=calculate_total_cost)``
     | Description: A ``*`` in front of a list or other iterable **unpacks** it, so each item is passed as a separate argument.
     | Example: ``*pizza_prices.keys()`` is the same as typing ``"Margherita", "Pepperoni", "Vegetarian", "Supreme"``.
 
 .. py:function:: tk.Spinbox(master, from_=1, to=10)
+    :no-index:
 
     | Syntax: ``tk.Spinbox(root, from_=1, to=10, width=5, command=calculate_total_cost)``
     | Description: A box holding a number, with up and down arrows to change it between ``from_`` and ``to``.
     | Note: ``from`` is a Python keyword (as in ``from tkinter import messagebox``), so Tkinter uses ``from_`` with an underscore instead.
 
 .. py:function:: widget.config(option=value)
+    :no-index:
 
     | Syntax: ``total_cost_label.config(text=f"Price: ${total_cost:.2f}")``
     | Description: Changes an option of a widget that already exists, such as its ``text`` or ``width``.
@@ -426,10 +435,10 @@ Three Pizza Cost - Multiple Choice Quiz
 
     .. multichoice::
 
-        Why does calculate_total_cost have *args in its definition?
+        Why does calculate_total_cost have *args in its definition?*
 
         [ ] To loop through the rows | Incorrect. The for loop does that.
-        [x] The OptionMenus pass one argument and the Spinboxes pass none, so the function must accept any number | Correct. *args collects however many arguments are passed.
+        [x] The OptionMenus pass one argument and the Spinboxes pass none, so the function must accept any number | Correct. *args collects however many arguments are passed.*
         [ ] To multiply the arguments together | Incorrect. The * is not multiplication here.
         [ ] To store the rows | Incorrect. pizza_rows stores the rows.
 

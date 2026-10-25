@@ -15,6 +15,7 @@ Required Syntax
 -----------------------------------
 
 .. py:class:: BooleanVar
+    :no-index:
 
     | Syntax: ``bool_var = tk.BooleanVar()``
     | Description: Creates a Tkinter variable for holding boolean data.
@@ -22,6 +23,7 @@ Required Syntax
     | Example: ``bool_var = tk.BooleanVar()``
 
 .. py:method:: get
+    :no-index:
 
     | Syntax: ``current_value = text_var.get()``
     | Description: Retrieves the current value of the `StringVar`.
@@ -29,6 +31,7 @@ Required Syntax
     | Example: ``current_value = text_var.get()``
 
 .. py:method:: set
+    :no-index:
 
     | Syntax: ``text_var.set("New Value")``
     | Description: Sets the value of the `StringVar` to the specified string.
@@ -36,6 +39,7 @@ Required Syntax
     | Example: ``text_var.set("Hello, World!")``
 
 .. py:attribute:: variable
+    :no-index:
 
     | Syntax: ``widget = tk.Checkbutton(parent, text="label", variable=variable, command=callback_function)``
     | Description: Associates a Tkinter variable with the checkbutton state.
@@ -43,6 +47,7 @@ Required Syntax
     | Example: ``toggle_checkbutton = tk.Checkbutton(root, text="Blue Label", variable=bool_var, command=toggle_label_color)``
 
 .. py:attribute:: command
+    :no-index:
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.
@@ -114,6 +119,7 @@ cget method for text
 ------------------------
 
 .. py:attribute:: text
+    :no-index:
 
     | Syntax: ``text=label.cget("text")``
     | Description: Retrieves the current text of the label widget. The `cget` method is used to get the value of the specified configuration option, in this case, the text.
@@ -179,6 +185,7 @@ Binary
 -------------
 
 .. py:function:: bin
+    :no-index:
 
     | Syntax: ``bin(x)``
     | Description: Converts an integer number to a binary string prefixed with "0b". The result is a string representing the binary value of the given integer.

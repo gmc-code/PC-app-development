@@ -28,6 +28,7 @@ Required Syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:class:: IntVar
+    :no-index:
 
     | Syntax: ``int_var = tk.IntVar()``
     | Description: Creates a Tkinter variable for holding an integer.
@@ -35,6 +36,7 @@ Required Syntax
     | Example: ``int_var = tk.IntVar()``
 
 .. py:method:: set
+    :no-index:
 
     | Syntax: ``int_var.set(new_value)``
     | Description: Sets the value of the ``IntVar`` to the specified integer.
@@ -42,6 +44,7 @@ Required Syntax
     | Example: ``int_var.set(42)``
 
 .. py:method:: get
+    :no-index:
 
     | Syntax: ``current_value = int_var.get()``
     | Description: Retrieves the current value of the ``IntVar``.
@@ -49,6 +52,7 @@ Required Syntax
     | Example: ``current_value = int_var.get()``
 
 .. py:attribute:: textvariable
+    :no-index:
 
     | Syntax: ``label_widget = tk.Label(parent, textvariable=variable)``
     | Description: Associates a Tkinter variable with the label text. If the variable is changed, the label text is updated.
@@ -56,6 +60,7 @@ Required Syntax
     | Example: ``label_widget = tk.Label(root, textvariable=int_var)``
 
 .. py:attribute:: command
+    :no-index:
 
     | Syntax: ``button_widget = tk.Button(parent, command=callback_function)``
     | Description: Specifies the function to be called when the button is clicked.
@@ -149,7 +154,7 @@ Code
 
 .. admonition:: Tasks
 
-     #. Modify the code to increment in steps of 2, using a constant.
+    #. Modify the code to increment in steps of 2, using a constant.
     #. Modify the code to increment in random steps from 1 to 10.
 
     .. dropdown::

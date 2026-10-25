@@ -21,6 +21,7 @@ After object creation
 -------------------------
 
 | After object creation, treating the option name like a dictionary index
+
 .. code-block:: python
 
     button_1["fg"] = "red"

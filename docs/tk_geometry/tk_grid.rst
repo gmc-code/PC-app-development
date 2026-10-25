@@ -1,6 +1,6 @@
-==================================
+====================================
 Python Tkinter Grid Geometry Manager
-==================================
+====================================
 
 | In Python's **Tkinter** library, the ``grid()`` geometry manager organizes widgets into a two-dimensional table of **rows** and **columns**.
 | Rather than placing widgets relative to edges or at fixed pixel coordinates, ``grid()`` aligns elements in neat rows (horizontal) and columns (vertical).

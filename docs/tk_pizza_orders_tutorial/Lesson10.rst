@@ -3,9 +3,10 @@ Extensions
 ==================================================
 
 | These are some starting suggestions for extending the pizza ordering system.
-| Careful planning for how these who fit into the system is needed as well as the creation of new code to integrate them.
+| Careful planning for how these would fit into the system is needed as well as the creation of new code to integrate them.
 
 ----
+
 Limiting Customer Name Length
 --------------------------------
 
@@ -32,9 +33,9 @@ Add descriptions
 4. **Veggie**: Mushrooms, roasted peppers, Spanish onion, olives, pineapple, garlic, oregano
 5. **BBQ Chicken**: Barbecue sauce, grilled chicken, red onions.
 6. **Meat Lovers**: Leg ham, mild salami, marinated chicken, bacon, BBQ sauce.
-7. **Capriciossa**: Leg ham, mushrooms, olives, anchovies.
+7. **Capricciosa**: Leg ham, mushrooms, olives, anchovies.
 8. **Supreme**: Leg ham, mild salami, roasted peppers, Spanish onion, olives, mushrooms.
-9.  **Mexican**: Salami, roasted peppers, Spanish onion, olives, oregano, garlic, chilli
+9. **Mexican**: Salami, roasted peppers, Spanish onion, olives, oregano, garlic, chilli
 10. **Four Cheese**: A blend of four different cheeses, often including mozzarella, cheddar, parmesan, and gorgonzola.
 
 ----
