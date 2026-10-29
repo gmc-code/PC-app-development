@@ -228,7 +228,7 @@ Extension: add a third feature
 
 **4.** In the price function, add the new price.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     extra = extra_var.get()
@@ -236,7 +236,7 @@ Extension: add a third feature
 
 **5.** In ``add_drink``, store the new choice. Show it in the Listbox line too.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     "extra": extra_var.get(),

@@ -53,7 +53,7 @@ The widget pattern
 
 | Every widget uses the same three lines:
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     topping_label = tk.Label(root)                       # 1. create
@@ -62,7 +62,7 @@ The widget pattern
 
 | A **button** has a fourth line, the **command**: the function it runs when clicked.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     add_button.config(command=add_ice_cream)             # 4. command

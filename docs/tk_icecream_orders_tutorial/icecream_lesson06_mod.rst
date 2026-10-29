@@ -16,7 +16,7 @@ How it works
 - A **label** shows the price.
 - **Binding** runs the function every time a choice changes.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     # Strawberry + Waffle cone + Sprinkles

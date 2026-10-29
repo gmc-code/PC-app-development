@@ -16,7 +16,7 @@ How it works
 - Each dictionary is added to the ``orders`` **list**.
 - A **Listbox** shows the list in the window.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     {"flavour": "Strawberry", "container": "Waffle cone", "topping": "Sprinkles", "price": 6.50}

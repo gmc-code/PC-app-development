@@ -13,7 +13,7 @@ Dictionaries and lists
 
 | A **dictionary** stores pairs: a **key** and its **value**.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     flavours = {"Vanilla": 4.00, "Strawberry": 4.50}
@@ -21,7 +21,7 @@ Dictionaries and lists
 
 | A **list** stores items in order.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     orders = []                       # an empty list
