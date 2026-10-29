@@ -21,9 +21,10 @@ How it works
 Step 1: Import messagebox
 --------------------------------
 
-| Paste this directly below ``import tkinter as tk``.
+| Replace ``# X`` with Block X.
 
 .. code-block:: python
+   :caption: Block X
 
     from tkinter import messagebox
 
@@ -32,9 +33,10 @@ Step 1: Import messagebox
 Step 2: Add the remove and clear functions
 ---------------------------------------------
 
-| Paste this under ``# 3. DEFINITIONS``, below ``add_ice_cream``.
+| Replace ``# Y`` with Block Y.
 
 .. code-block:: python
+   :caption: Block Y
 
     def remove_ice_cream():
         """Removes the ice cream that is selected in the order list."""
@@ -61,9 +63,10 @@ Step 2: Add the remove and clear functions
 Step 3: Add the buttons
 --------------------------------
 
-| Paste this below the total label code.
+| Replace ``# Z`` with Block Z.
 
 .. code-block:: python
+   :caption: Block Z
 
     # Remove selected button
     remove_button = tk.Button(root)  # 1. create

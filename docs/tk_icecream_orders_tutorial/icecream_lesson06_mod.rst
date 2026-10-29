@@ -27,9 +27,10 @@ How it works
 Step 1: Add the price functions
 --------------------------------
 
-| Paste this under ``# 3. DEFINITIONS``.
+| Replace ``# N`` with Block N.
 
 .. code-block:: python
+   :caption: Block N
 
     def get_ice_cream_price():
         """Adds up the flavour, container and topping prices for one ice cream."""
@@ -54,9 +55,10 @@ Step 1: Add the price functions
 Step 2: Add the price label
 --------------------------------
 
-| Paste this below the topping drop-down code.
+| Replace ``# O`` with Block O.
 
 .. code-block:: python
+   :caption: Block O
 
     # Price of the chosen ice cream
     price_label = tk.Label(root)  # 1. create
@@ -68,23 +70,26 @@ Step 2: Add the price label
 Step 3: Bind the choices
 --------------------------------
 
-| Add each line **straight after** the ``.set(...)`` line of its variable.
+| Each placeholder sits **straight after** the ``.set(...)`` line of its variable.
 
-| Below ``flavour_var.set("Vanilla")``:
+| Replace ``# P`` with Block P.
 
 .. code-block:: python
+   :caption: Block P
 
     flavour_var.trace_add("write", update_ice_cream_price)  # C. bind
 
-| Below ``container_var.set("Cup")``:
+| Replace ``# Q`` with Block Q.
 
 .. code-block:: python
+   :caption: Block Q
 
     container_var.trace_add("write", update_ice_cream_price)  # C. bind
 
-| Below ``topping_var.set("No topping")``:
+| Replace ``# R`` with Block R.
 
 .. code-block:: python
+   :caption: Block R
 
     topping_var.trace_add("write", update_ice_cream_price)  # C. bind
 
@@ -95,9 +100,10 @@ Step 3: Bind the choices
 Step 4: Show the price at the start
 --------------------------------------
 
-| Paste this under ``# 5. MAIN CODE``, above ``root.mainloop()``.
+| Replace ``# S`` with Block S.
 
 .. code-block:: python
+   :caption: Block S
 
     update_ice_cream_price()
 

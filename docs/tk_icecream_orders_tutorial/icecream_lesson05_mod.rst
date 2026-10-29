@@ -18,12 +18,13 @@ What is a drop-down menu?
 
 ----
 
-Step 1: Add the container drop-down
---------------------------------------
+Step 1: Add the container label and variable
+-----------------------------------------------
 
-| Paste this below the flavour radio buttons.
+| Replace ``# J`` with Block J.
 
 .. code-block:: python
+   :caption: Block J
 
     # Container (drop-down menu)
     container_label = tk.Label(root)  # 1. create
@@ -33,21 +34,22 @@ Step 1: Add the container drop-down
     container_var = tk.StringVar(root)  # A. make
     container_var.set("Cup")  # B. set
 
-    container_menu = tk.OptionMenu(root, container_var, "Cup")  # 1. create
-    container_menu.grid(row=2, column=1, padx=10, pady=5, sticky="w")  # 2. position
-    container_menu.config(width=16, font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR,
-                          activebackground=MENU_COLOUR)  # 3. configure
-
 - Make the **variable** before the menu, because the menu needs it.
 
 ----
 
-Step 2: Add the container choices
+Step 2: Add the container menu
 --------------------------------------
 
-| Paste this below the container menu.
+| Replace ``# K`` with Block K.
 
 .. code-block:: python
+   :caption: Block K
+
+    container_menu = tk.OptionMenu(root, container_var, "Cup")  # 1. create
+    container_menu.grid(row=2, column=1, padx=10, pady=5, sticky="w")  # 2. position
+    container_menu.config(width=16, font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR,
+                          activebackground=MENU_COLOUR)  # 3. configure
 
     container_choices = container_menu["menu"]
     container_choices.config(font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR)
@@ -60,12 +62,13 @@ Step 2: Add the container choices
 
 ----
 
-Step 3: Add the topping drop-down
---------------------------------------
+Step 3: Add the topping label and variable
+---------------------------------------------
 
-| Same pattern again. Paste this below the container code.
+| Same pattern again. Replace ``# L`` with Block L.
 
 .. code-block:: python
+   :caption: Block L
 
     # Topping (drop-down menu)
     topping_label = tk.Label(root)  # 1. create
@@ -74,6 +77,16 @@ Step 3: Add the topping drop-down
 
     topping_var = tk.StringVar(root)  # A. make
     topping_var.set("No topping")  # B. set
+
+----
+
+Step 4: Add the topping menu
+--------------------------------------
+
+| Replace ``# M`` with Block M.
+
+.. code-block:: python
+   :caption: Block M
 
     topping_menu = tk.OptionMenu(root, topping_var, "No topping")  # 1. create
     topping_menu.grid(row=3, column=1, padx=10, pady=5, sticky="w")  # 2. position

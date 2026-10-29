@@ -159,7 +159,7 @@ Step 4: Change the look
 Step 5: Test and check
 --------------------------------
 
-| Use the tests from :doc:`icecream_lesson08`. Then tick off each check.
+| Use the tests from :doc:`icecream_lesson08_mod`. Then tick off each check.
 
 .. list-table::
     :header-rows: 1

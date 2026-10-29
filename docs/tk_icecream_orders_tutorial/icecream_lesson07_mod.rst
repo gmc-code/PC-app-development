@@ -26,9 +26,10 @@ How it works
 Step 1: Add the order functions
 --------------------------------------
 
-| Paste this under ``# 3. DEFINITIONS``, below ``update_ice_cream_price``.
+| Replace ``# T`` with Block T.
 
 .. code-block:: python
+   :caption: Block T
 
     def show_ice_cream_orders():
         """Redraws the order list and the total so they match the orders list."""
@@ -63,9 +64,10 @@ Step 1: Add the order functions
 Step 2: Add the Add to order button
 --------------------------------------
 
-| Paste this below the price label code, above ``# --- RIGHT SIDE``.
+| Replace ``# U`` with Block U.
 
 .. code-block:: python
+   :caption: Block U
 
     # Add to order button
     add_button = tk.Button(root)  # 1. create
@@ -80,9 +82,10 @@ Step 2: Add the Add to order button
 Step 3: Add the order list and total
 --------------------------------------
 
-| Paste this below the order heading code.
+| Replace ``# V`` with Block V.
 
 .. code-block:: python
+   :caption: Block V
 
     # Order list
     order_listbox = tk.Listbox(root)  # 1. create
@@ -101,9 +104,10 @@ Step 3: Add the order list and total
 Step 4: Show the order at the start
 --------------------------------------
 
-| Paste this under ``# 5. MAIN CODE``, below ``update_ice_cream_price()``.
+| Replace ``# W`` with Block W.
 
 .. code-block:: python
+   :caption: Block W
 
     show_ice_cream_orders()
 

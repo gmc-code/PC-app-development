@@ -21,9 +21,10 @@ What is a constant?
 Step 1: Add the constants
 --------------------------------
 
-| Paste this under ``# 2. CONSTANTS``.
+| Replace ``# D`` with Block D.
 
 .. code-block:: python
+   :caption: Block D
 
     # Colours
     BG_COLOUR = "#fff4e6"        # cream background
@@ -46,9 +47,10 @@ Step 1: Add the constants
 Step 2: Colour the window
 --------------------------------
 
-| Paste this directly below ``root.geometry("940x520")``.
+| Replace ``# E`` with Block E.
 
 .. code-block:: python
+   :caption: Block E
 
     root.config(bg=BG_COLOUR)
 
@@ -59,9 +61,10 @@ Step 2: Colour the window
 Step 3: Add the title
 --------------------------------
 
-| Paste this below ``root.config(bg=BG_COLOUR)``.
+| Replace ``# F`` with Block F.
 
 .. code-block:: python
+   :caption: Block F
 
     # --- LEFT SIDE: ICE CREAM CHOICES ---
 
@@ -79,9 +82,10 @@ Step 3: Add the title
 Step 4: Add the order heading
 --------------------------------
 
-| Paste this below the title code.
+| Replace ``# G`` with Block G.
 
 .. code-block:: python
+   :caption: Block G
 
     # --- RIGHT SIDE: THE ORDER ---
 

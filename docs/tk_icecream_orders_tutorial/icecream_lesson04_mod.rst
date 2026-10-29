@@ -18,12 +18,13 @@ What are radio buttons?
 
 ----
 
-Step 1: Add the label and frame
---------------------------------------
+Step 1: Add the label, frame and variable
+--------------------------------------------
 
-| Paste this below the title code, above ``# --- RIGHT SIDE``.
+| Replace ``# H`` with Block H.
 
 .. code-block:: python
+   :caption: Block H
 
     # Flavour (radio buttons)
     flavour_label = tk.Label(root)  # 1. create
@@ -34,30 +35,21 @@ Step 1: Add the label and frame
     flavour_frame.grid(row=1, column=1, padx=10, pady=5, sticky="w")  # 2. position
     flavour_frame.config(bg=BG_COLOUR)  # 3. configure
 
-- A **Frame** is an invisible box. The radio buttons go inside it.
-
-----
-
-Step 2: Add the variable
---------------------------------------
-
-| Paste this below the frame code.
-
-.. code-block:: python
-
     flavour_var = tk.StringVar(root)  # A. make
     flavour_var.set("Vanilla")  # B. set
 
+- A **Frame** is an invisible box. The radio buttons go inside it.
 - ``set("Vanilla")`` picks Vanilla when the app starts.
 
 ----
 
-Step 3: Make the radio buttons
+Step 2: Make the radio buttons
 --------------------------------------
 
-| Paste this below the variable code.
+| Replace ``# I`` with Block I.
 
 .. code-block:: python
+   :caption: Block I
 
     for flavour in flavours.keys():
         flavour_radio = tk.Radiobutton(flavour_frame, variable=flavour_var, value=flavour)  # 1. create
@@ -71,6 +63,10 @@ Step 3: Make the radio buttons
 - The text shows the flavour and price, e.g. "Strawberry ($4.50)". ``:.2f`` means 2 decimal places.
 
 | **Run it.** Five flavour buttons appear. Only one can be picked.
+
+.. tip::
+
+    Add ``"Salted Caramel": 5.50,`` to the ``flavours`` dictionary and run it again. A new button appears.
 
 ----
 

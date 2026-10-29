@@ -72,35 +72,59 @@ The widget pattern
 Step 1: Create the window
 --------------------------------
 
-| Make a new file called ``icecream_orders.py``. Paste in this code.
+| Make a new file called ``icecream_orders.py``. Paste in **Block A**.
 
 .. code-block:: python
+   :caption: Block A
 
     import tkinter as tk
-
+    # X
 
     # 1. DATA DICTIONARIES & LISTS
-
+    # B
+    # C
 
     # 2. CONSTANTS
-
+    # D
 
     # 3. DEFINITIONS
-
+    # N
+    # T
+    # Y
 
     # 4. TKINTER WIDGETS
     # Main window
     root = tk.Tk()
     root.title("Ice Cream Shop")
     root.geometry("940x520")
+    # E
 
+    # F
+    # H
+    # P
+    # I
+    # J
+    # Q
+    # K
+    # L
+    # R
+    # M
+    # O
+    # U
+
+    # G
+    # V
+    # Z
 
     # 5. MAIN CODE
+    # S
+    # W
     root.mainloop()
 
 - ``root = tk.Tk()`` makes the window.
 - ``title`` and ``geometry`` set its name and size.
 - ``mainloop()`` keeps the window open.
+- Lines like ``# B`` are **placeholders**. In later lessons, you replace each one with the block that has the same letter.
 
 | **Run it.** An empty window called "Ice Cream Shop" appears.
 

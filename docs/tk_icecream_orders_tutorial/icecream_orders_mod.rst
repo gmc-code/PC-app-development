@@ -25,7 +25,7 @@ How each lesson works
 ----------------------
 
 #. Read the short explanation.
-#. Copy each code block **in order** and paste it where the step says.
+#. Each code block has a letter. Copy it and replace the placeholder with the same letter, e.g. ``# B``.
 #. Run the app and check it looks like the picture.
 #. Do the quiz.
 
@@ -34,12 +34,12 @@ How each lesson works
 Tutorial Outline
 ----------------------
 
-| :doc:`icecream_lesson01`
-| :doc:`icecream_lesson02`
-| :doc:`icecream_lesson03`
-| :doc:`icecream_lesson04`
-| :doc:`icecream_lesson05`
-| :doc:`icecream_lesson06`
-| :doc:`icecream_lesson07`
-| :doc:`icecream_lesson08`
-| :doc:`icecream_lesson09`
+| :doc:`icecream_lesson01_mod`
+| :doc:`icecream_lesson02_mod`
+| :doc:`icecream_lesson03_mod`
+| :doc:`icecream_lesson04_mod`
+| :doc:`icecream_lesson05_mod`
+| :doc:`icecream_lesson06_mod`
+| :doc:`icecream_lesson07_mod`
+| :doc:`icecream_lesson08_mod`
+| :doc:`icecream_lesson09_mod`

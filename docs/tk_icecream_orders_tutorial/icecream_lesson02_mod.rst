@@ -35,9 +35,10 @@ Dictionaries and lists
 Step 1: Add the dictionaries
 --------------------------------
 
-| Paste this under ``# 1. DATA DICTIONARIES & LISTS``.
+| Replace ``# B`` with Block B.
 
 .. code-block:: python
+   :caption: Block B
 
     # Ice cream flavours and the price of one scoop
     flavours = {
@@ -70,9 +71,10 @@ Step 1: Add the dictionaries
 Step 2: Add the orders list
 --------------------------------
 
-| Paste this below the dictionaries.
+| Replace ``# C`` with Block C.
 
 .. code-block:: python
+   :caption: Block C
 
     # List that stores every ice cream in the order
     orders = []
