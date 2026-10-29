@@ -108,6 +108,7 @@ Example: the topping drop-down
 | You will type it in :doc:`icecream_lesson05`. For now, just look for the pattern.
 
 .. code-block:: python
+   :class: no-copybutton
 
     # Topping (drop-down menu)
 
@@ -171,6 +172,7 @@ Example: the Add to order button
 | A button uses all four widget steps. You will type this in :doc:`icecream_lesson07`.
 
 .. code-block:: python
+   :class: no-copybutton
 
     # WIDGET: the Add to order button
     add_button = tk.Button(root)                                              # 1. create
@@ -234,8 +236,6 @@ Creating the window
 - ``root.mainloop()``: starts the app. It keeps the window open and waits for the user to click things.
 
 | Run the code. An empty window called "Ice Cream Shop" should appear.
-
-:download:`icecream_orders_01.py <python/icecream_orders_01.py>`
 
 ----
 

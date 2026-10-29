@@ -95,14 +95,13 @@ Clearing the order
 - ``orders.clear()`` removes every item from the list, leaving ``[]``.
 - ``show_ice_cream_orders()`` redraws the now empty Listbox, and the total goes back to $0.00.
 
-:download:`icecream_orders_08.py <python/icecream_orders_08.py>`
 
 ----
 
 Final testing
 --------------------------------------
 
-| Test every part of the app. Tick each test when it works.
+| Test every part of the app.
 
 .. list-table::
     :header-rows: 1

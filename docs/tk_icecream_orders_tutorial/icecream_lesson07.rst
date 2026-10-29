@@ -67,7 +67,8 @@ Storing each ice cream
 | Each ice cream has a flavour, a container, a topping and a price.
 | We store these four things together in a **dictionary**, then add that dictionary to the ``orders`` **list**.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     # One ice cream
     {"flavour": "Strawberry", "container": "Waffle cone", "topping": "Sprinkles", "price": 6.50}
@@ -150,8 +151,6 @@ Showing the order when the app starts
     show_ice_cream_orders()
 
 | Run the code. Add three different ice creams and check that each price and the total are correct.
-
-:download:`icecream_orders_07.py <python/icecream_orders_07.py>`
 
 ----
 

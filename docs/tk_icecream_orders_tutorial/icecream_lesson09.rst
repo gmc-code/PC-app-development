@@ -176,53 +176,57 @@ Adding a third feature drop-down
 
 1. **Section 1**: add a new dictionary.
 
-   .. code-block:: python
+    .. code-block::
+        :class: no-copybutton
 
-       # Extras and their extra cost
-       extras = {
-           "No extra": 0.00,
-           "Cheese foam": 1.50,
-           "Pudding": 1.20,
-           "Extra shot of tea": 0.80,
-       }
+        # Extras and their extra cost
+        extras = {
+            "No extra": 0.00,
+            "Cheese foam": 1.50,
+            "Pudding": 1.20,
+            "Extra shot of tea": 0.80,
+        }
 
 2. **Section 4**: copy a whole drop-down block and change every name. Put it in the next empty row.
 
-   .. code-block:: python
+    .. code-block::
+        :class: no-copybutton
 
-       # Extra (drop-down menu)
-       extra_label = tk.Label(root)  # 1. create
-       extra_label.grid(row=4, column=0, padx=10, pady=5, sticky="e")  # 2. position
-       extra_label.config(text="Extra:", font=LABEL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
+        # Extra (drop-down menu)
+        extra_label = tk.Label(root)  # 1. create
+        extra_label.grid(row=4, column=0, padx=10, pady=5, sticky="e")  # 2. position
+        extra_label.config(text="Extra:", font=LABEL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
 
-       extra_var = tk.StringVar(root)  # A. make
-       extra_var.set("No extra")  # B. set
-       extra_var.trace_add("write", update_drink_price)  # C. bind
+        extra_var = tk.StringVar(root)  # A. make
+        extra_var.set("No extra")  # B. set
+        extra_var.trace_add("write", update_drink_price)  # C. bind
 
-       extra_menu = tk.OptionMenu(root, extra_var, "No extra")  # 1. create
-       extra_menu.grid(row=4, column=1, padx=10, pady=5, sticky="w")  # 2. position
-       extra_menu.config(width=16, font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR,
-                         activebackground=MENU_COLOUR)  # 3. configure
+        extra_menu = tk.OptionMenu(root, extra_var, "No extra")  # 1. create
+        extra_menu.grid(row=4, column=1, padx=10, pady=5, sticky="w")  # 2. position
+        extra_menu.config(width=16, font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR,
+                            activebackground=MENU_COLOUR)  # 3. configure
 
-       extra_choices = extra_menu["menu"]
-       extra_choices.config(font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR)
-       extra_choices.delete(0)   # remove the starting choice
-       for extra in extras.keys():
-           extra_choices.add_radiobutton(label=extra, variable=extra_var, value=extra)
+        extra_choices = extra_menu["menu"]
+        extra_choices.config(font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR)
+        extra_choices.delete(0)   # remove the starting choice
+        for extra in extras.keys():
+            extra_choices.add_radiobutton(label=extra, variable=extra_var, value=extra)
 
 3. **Section 4**: move the widgets below it down one row. Add 1 to the ``row=`` of the price label, the add button, the total label and the two bottom buttons, and change the Listbox to ``rowspan=5``.
 4. **The price function**: add the new feature's price.
 
-   .. code-block:: python
+    .. code-block::
+        :class: no-copybutton
 
-       extra = extra_var.get()
-       price = drinks[drink] + sizes[size] + pearls[pearl] + extras[extra]
+        extra = extra_var.get()
+        price = drinks[drink] + sizes[size] + pearls[pearl] + extras[extra]
 
 5. **The add and show functions**: store the new choice in each item's dictionary and show it in the Listbox line.
 
-   .. code-block:: python
+    .. code-block::
+        :class: no-copybutton
 
-       "extra": extra_var.get(),
+        "extra": extra_var.get(),
 
 ----
 

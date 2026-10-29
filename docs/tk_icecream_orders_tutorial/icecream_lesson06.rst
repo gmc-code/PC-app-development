@@ -57,7 +57,8 @@ Working out the price
 
 | For example, Strawberry in a Waffle cone with Sprinkles is:
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     flavours["Strawberry"] + containers["Waffle cone"] + toppings["Sprinkles"]
     # 4.50 + 1.50 + 0.50 = 6.50
@@ -107,16 +108,7 @@ Binding the choices to the price
 
     topping_var.trace_add("write", update_ice_cream_price)  # C. bind
 
-| The flavour code should now look like this:
-
-.. code-block:: python
-
-    flavour_var = tk.StringVar(root)  # A. make
-    flavour_var.set("Vanilla")  # B. set
-    flavour_var.trace_add("write", update_ice_cream_price)  # C. bind
-
 - ``"write"`` means "when a new value is written into the variable".
-- ``update_ice_cream_price`` is written **without** brackets. We are telling Tkinter which function to run later, not running it now.
 
 ----
 
@@ -131,8 +123,6 @@ Starting with the right price
     update_ice_cream_price()
 
 | Run the code. The price should say $4.00 for a Vanilla cup with no topping, and change each time you pick something new.
-
-:download:`icecream_orders_06.py <python/icecream_orders_06.py>`
 
 ----
 

@@ -77,7 +77,8 @@ Adding the choices with a loop
 
 | This loop works just like the flavour radio buttons in :doc:`icecream_lesson04`.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     for container in containers.keys():
         container_choices.add_radiobutton(label=container, variable=container_var, value=container)
@@ -122,8 +123,6 @@ Adding the topping drop-down
 - Every name starts with ``topping_`` so it is clear which part of the app it belongs to.
 
 | Run the code. Click each drop-down menu and check that all the choices appear.
-
-:download:`icecream_orders_05.py <python/icecream_orders_05.py>`
 
 ----
 

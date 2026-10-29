@@ -37,7 +37,8 @@ What is a dictionary?
 | In Python, a dictionary is written inside curly brackets ``{ }``.
 | A colon ``:`` joins each key to its value. A comma ``,`` goes after each pair.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     flavours = {"Vanilla": 4.00, "Chocolate": 4.00, "Strawberry": 4.50}
 
@@ -87,14 +88,16 @@ Getting a price out of a dictionary
 
 | To find a value, write the dictionary name, then the key inside square brackets ``[ ]``.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     print(flavours["Strawberry"])        # prints 4.5
     print(containers["Waffle cone"])     # prints 1.5
 
 | Prices can be added together. This is how the app will work out the price of one ice cream.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     price = flavours["Strawberry"] + containers["Waffle cone"] + toppings["Sprinkles"]
     print(price)                         # prints 6.5
@@ -110,7 +113,8 @@ Looping through the keys
 | ``.keys()`` gives all the keys of a dictionary. A ``for`` loop can use each key in turn.
 | The app uses this to make one radio button for each flavour.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     for flavour in flavours.keys():
         print(flavour, flavours[flavour])
@@ -125,7 +129,8 @@ What is a list?
 | A **list** stores items in order, inside square brackets ``[ ]``.
 | Each item has a position number called an **index**. The first item is index 0.
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     scoops = ["Vanilla", "Chocolate"]
     scoops.append("Strawberry")    # adds to the end: ["Vanilla", "Chocolate", "Strawberry"]
@@ -150,22 +155,6 @@ Adding the orders list
 - ``orders = []`` makes an empty list called ``orders``.
 - **Dictionaries** are for looking things up by name: "What does Strawberry cost?"
 - **Lists** are for keeping things in order: "What has the customer ordered so far?"
-
-:download:`icecream_orders_02.py <python/icecream_orders_02.py>`
-
-----
-
-Try it
---------------------------------
-
-| Add these lines just above ``root.mainloop()``, run the program and read the output in the shell.
-| Delete them when you are finished.
-
-.. code-block:: python
-
-    print(flavours["Mint Choc Chip"])
-    print(flavours["Vanilla"] + toppings["Crushed nuts"])
-    print(len(flavours))
 
 ----
 

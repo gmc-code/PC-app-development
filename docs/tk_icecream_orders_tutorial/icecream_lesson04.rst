@@ -92,13 +92,14 @@ Why use the dictionary for the loop?
 | The radio buttons are made from the **keys of the dictionary**, not typed in one by one.
 | If you add a new flavour to ``flavours``, a new radio button appears by itself. Try it:
 
-.. code-block:: python
+.. code-block::
+   :class: no-copybutton
 
     "Salted Caramel": 5.50,
 
-| Add this line inside the ``flavours`` dictionary, run the app, and look for the new radio button.
+| If this line was added to the ``flavours`` dictionary, the app would make a new radio button for it.
 
-:download:`icecream_orders_04.py <python/icecream_orders_04.py>`
+
 
 ----
 

@@ -43,19 +43,3 @@ Tutorial Outline
 | :doc:`icecream_lesson08`
 | :doc:`icecream_lesson09`
 
-----
-
-Code files
-----------------------
-
-| Each lesson has a code file that shows what your program should look like at the end of that lesson.
-| Use them to check your work, or to catch up if you miss a lesson.
-
-- :download:`icecream_orders_01.py <python/icecream_orders_01.py>`: the window
-- :download:`icecream_orders_02.py <python/icecream_orders_02.py>`: dictionaries and the orders list
-- :download:`icecream_orders_03.py <python/icecream_orders_03.py>`: constants and titles
-- :download:`icecream_orders_04.py <python/icecream_orders_04.py>`: flavour radio buttons
-- :download:`icecream_orders_05.py <python/icecream_orders_05.py>`: container and topping drop-downs
-- :download:`icecream_orders_06.py <python/icecream_orders_06.py>`: the price
-- :download:`icecream_orders_07.py <python/icecream_orders_07.py>`: adding to the order
-- :download:`icecream_orders_08.py <python/icecream_orders_08.py>`: remove and clear (finished app)

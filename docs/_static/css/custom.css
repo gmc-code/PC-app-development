@@ -211,6 +211,10 @@ button.copybtn {
     opacity: 1;
 }
 
+.no-copybutton button.copybtn {
+    display: none;
+}
+
 /* ========================================== */
 
 /**

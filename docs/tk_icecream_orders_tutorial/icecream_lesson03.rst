@@ -114,7 +114,6 @@ Adding the order heading
 
 | Run the code. The title and the heading should appear on a cream background.
 
-:download:`icecream_orders_03.py <python/icecream_orders_03.py>`
 
 ----
 
