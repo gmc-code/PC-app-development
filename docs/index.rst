@@ -15,7 +15,7 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: tk pizza orders tutorial
+    :caption: tk icecream_orders tutorial
     :numbered:
 
 
@@ -29,7 +29,6 @@ PC-app-development
     tk_icecream_orders_tutorial/icecream_lesson07.rst
     tk_icecream_orders_tutorial/icecream_lesson08.rst
     tk_icecream_orders_tutorial/icecream_lesson09.rst
-
 
 
 
@@ -167,6 +166,23 @@ PC-app-development
     tk_widget_interactions2/entry_validation_numbers.rst
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: tk icecream_orders tutorial
+    :numbered:
+
+    tk_icecream_orders_tutorial/icecream_orders_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson01_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson02_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson03_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson04_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson05_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson06_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson07_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson08_mod.rst
+    tk_icecream_orders_tutorial/icecream_lesson09_mod.rst
+
+
 
 .. toctree::
     :maxdepth: 2
@@ -296,4 +312,5 @@ PC-app-development
     tk_widget_interactions2/tk_event_binding.rst
     tk_widget_interactions2/tk_radiobutton.rst
     tk_widget_interactions2/tk_text_usage.rst
+
 
