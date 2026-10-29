@@ -28,7 +28,8 @@ PC-app-development
     tk_icecream_orders_tutorial/icecream_lesson06.rst
     tk_icecream_orders_tutorial/icecream_lesson07.rst
     tk_icecream_orders_tutorial/icecream_lesson08.rst
-    tk_icecream_orders_tutorial/icecream_lesson09.rst
+
+    .. tk_icecream_orders_tutorial/icecream_lesson09.rst
 
 
 
@@ -180,7 +181,8 @@ PC-app-development
     tk_icecream_orders_tutorial/icecream_lesson06_mod.rst
     tk_icecream_orders_tutorial/icecream_lesson07_mod.rst
     tk_icecream_orders_tutorial/icecream_lesson08_mod.rst
-    tk_icecream_orders_tutorial/icecream_lesson09_mod.rst
+
+    .. tk_icecream_orders_tutorial/icecream_lesson09_mod.rst
 
 
 
