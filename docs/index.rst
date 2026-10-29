@@ -12,6 +12,27 @@ PC-app-development
     introduction/introduction.rst
 
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: tk pizza orders tutorial
+    :numbered:
+
+
+    tk_icecream_orders_tutorial/icecream_orders.rst
+    tk_icecream_orders_tutorial/icecream_lesson01.rst
+    tk_icecream_orders_tutorial/icecream_lesson02.rst
+    tk_icecream_orders_tutorial/icecream_lesson03.rst
+    tk_icecream_orders_tutorial/icecream_lesson04.rst
+    tk_icecream_orders_tutorial/icecream_lesson05.rst
+    tk_icecream_orders_tutorial/icecream_lesson06.rst
+    tk_icecream_orders_tutorial/icecream_lesson07.rst
+    tk_icecream_orders_tutorial/icecream_lesson08.rst
+    tk_icecream_orders_tutorial/icecream_lesson09.rst
+
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Tkinter basics
@@ -190,29 +211,13 @@ PC-app-development
     tk_pizza_orders_tutorial/Lesson10.rst
 
 
-.. toctree::
-    :maxdepth: 2
-    :caption: tk pizza orders tutorial
-    :numbered:
-    :hidden:
-
-    tk_icecream_orders_tutorial/icecream_orders.rst
-    tk_icecream_orders_tutorial/icecream_lesson01.rst
-    tk_icecream_orders_tutorial/icecream_lesson02.rst
-    tk_icecream_orders_tutorial/icecream_lesson03.rst
-    tk_icecream_orders_tutorial/icecream_lesson04.rst
-    tk_icecream_orders_tutorial/icecream_lesson05.rst
-    tk_icecream_orders_tutorial/icecream_lesson06.rst
-    tk_icecream_orders_tutorial/icecream_lesson07.rst
-    tk_icecream_orders_tutorial/icecream_lesson08.rst
-    tk_icecream_orders_tutorial/icecream_lesson09.rst
-
 
 
 .. toctree::
     :maxdepth: 2
     :caption: Anvil use
     :numbered:
+    :hidden:
 
     Anvil/anvil_introduction.rst
     Anvil/first_steps.rst
@@ -222,6 +227,7 @@ PC-app-development
     :maxdepth: 2
     :caption: Anvil apps
     :numbered:
+    :hidden:
 
     Anvil/name_and_age.rst
     Anvil/hailstone_numbers.rst
@@ -243,6 +249,7 @@ PC-app-development
     :maxdepth: 2
     :caption: Anvil_youtube
     :numbered:
+    :hidden:
 
     Anvil/feedback_form.rst
     Anvil/iphone_calculator.rst
@@ -252,6 +259,7 @@ PC-app-development
     :maxdepth: 2
     :caption: pyscript use
     :numbered:
+    :hidden:
 
     pyscript/pyscript_introduction.rst
     pyscript/browser_elements.rst
@@ -261,6 +269,7 @@ PC-app-development
     :maxdepth: 2
     :caption: pyscript apps
     :numbered:
+    :hidden:
 
     pyscript/elves.rst
     pyscript/superheroes.rst
