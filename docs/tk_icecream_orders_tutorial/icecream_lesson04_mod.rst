@@ -72,10 +72,6 @@ Step 3: Make the radio buttons
 
 | **Run it.** Five flavour buttons appear. Only one can be picked.
 
-.. tip::
-
-    Add ``"Salted Caramel": 5.50,`` to the ``flavours`` dictionary and run it again. A new button appears.
-
 ----
 
 Quiz
