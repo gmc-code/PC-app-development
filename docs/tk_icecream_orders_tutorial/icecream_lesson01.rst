@@ -107,7 +107,7 @@ Example: the topping drop-down
 | Here is the code for the **topping** drop-down from the finished app. It has three groups.
 | You will type it in :doc:`icecream_lesson05`. For now, just look for the pattern.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     # Topping (drop-down menu)
@@ -171,7 +171,7 @@ Example: the Add to order button
 
 | A button uses all four widget steps. You will type this in :doc:`icecream_lesson07`.
 
-.. code-block:: python
+.. code-block::
    :class: no-copybutton
 
     # WIDGET: the Add to order button
