@@ -146,6 +146,15 @@ Example: the topping drop-down
     * - Widget
       - 3. Configure
       - ``.config(text=..., font=..., bg=..., fg=...)`` sets the words, font and colours.
+
+
+.. list-table::
+    :header-rows: 1
+    :widths: 18 18 64
+
+    * - Group
+      - Step
+      - What it does
     * - Variable
       - 1. Make
       - ``tk.StringVar(root)`` makes a variable that holds a string.
