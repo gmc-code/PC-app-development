@@ -328,7 +328,7 @@ get and set (the variable)
 
     root.mainloop()
 
-.. image:: files/radiobutton/10_get_and_set.png
+.. image:: files/radiobutton/10_get_and_set_the_variable.png
     :align: center
 
 
