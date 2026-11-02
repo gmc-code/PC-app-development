@@ -18,7 +18,6 @@ PC-app-development
     :caption: tk icecream_orders tutorial
     :numbered:
 
-
     tk_icecream_orders_tutorial/icecream_orders.rst
     tk_icecream_orders_tutorial/icecream_lesson01.rst
     tk_icecream_orders_tutorial/icecream_lesson02.rst
@@ -44,20 +43,20 @@ PC-app-development
     :maxdepth: 2
     :caption: Ordering skills
 
-    tk_ordering_skills\ordering_skills.rst
-    tk_ordering_skills\skills01_window.rst
-    tk_ordering_skills\skills02_labels_grid.rst
-    tk_ordering_skills\skills03_constants.rst
-    tk_ordering_skills\skills04_dictionaries.rst
-    tk_ordering_skills\skills05_fstrings.rst
-    tk_ordering_skills\skills06_lists.rst
-    tk_ordering_skills\skills07_functions.rst
-    tk_ordering_skills\skills08_buttons.rst
-    tk_ordering_skills\skills09_radiobuttons.rst
-    tk_ordering_skills\skills10_optionmenu.rst
-    tk_ordering_skills\skills11_trace_add.rst
-    tk_ordering_skills\skills12_listbox.rst
-    tk_ordering_skills\skills13_project.rst
+    tk_ordering_skills/ordering_skills.rst
+    tk_ordering_skills/skills01_window.rst
+    tk_ordering_skills/skills02_labels_grid.rst
+    tk_ordering_skills/skills03_constants.rst
+    tk_ordering_skills/skills04_dictionaries.rst
+    tk_ordering_skills/skills05_fstrings.rst
+    tk_ordering_skills/skills06_lists.rst
+    tk_ordering_skills/skills07_functions.rst
+    tk_ordering_skills/skills08_buttons.rst
+    tk_ordering_skills/skills09_radiobuttons.rst
+    tk_ordering_skills/skills10_optionmenu.rst
+    tk_ordering_skills/skills11_trace_add.rst
+    tk_ordering_skills/skills12_listbox.rst
+    tk_ordering_skills/skills13_project.rst
 
 
 
