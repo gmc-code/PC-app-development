@@ -57,12 +57,12 @@ The five sections of the code
 | Good programs are set out in a clear order, so that anyone can find things quickly.
 | Every program in this tutorial uses these five sections, **in this order**:
 
-#. **Imports** go at the very top.
-#. **1. DATA DICTIONARIES & LISTS**: the dictionaries of choices and prices, and the orders list.
-#. **2. CONSTANTS**: colours and fonts.
-#. **3. DEFINITIONS**: the functions, made with ``def``.
-#. **4. TKINTER WIDGETS**: the window and every widget.
-#. **5. MAIN CODE**: the lines that start the app.
+| **Imports** go at the very top.
+| **1. DATA DICTIONARIES & LISTS**: the dictionaries of choices and prices, and the orders list.
+| **2. CONSTANTS**: colours and fonts.
+| **3. DEFINITIONS**: the functions, made with ``def``.
+| **4. TKINTER WIDGETS**: the window and every widget.
+| **5. MAIN CODE**: the lines that start the app.
 
 | Definitions must come **before** the widgets, because a button's ``command=`` needs its function to exist already.
 

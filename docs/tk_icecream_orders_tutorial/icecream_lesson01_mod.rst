@@ -37,12 +37,12 @@ The five sections
 
 | Every program in this tutorial uses these sections, **in this order**:
 
-#. **Imports**
-#. **Data**: dictionaries and lists
-#. **Constants**: colours and fonts
-#. **Definitions**: functions made with ``def``
-#. **Widgets**: the window and everything in it
-#. **Main code**: starts the app
+| **Imports**
+| **Data**: dictionaries and lists
+| **Constants**: colours and fonts
+| **Definitions**: functions made with ``def``
+| **Widgets**: the window and everything in it
+| **Main code**: starts the app
 
 | Definitions come before widgets, because buttons need their function to exist first.
 
