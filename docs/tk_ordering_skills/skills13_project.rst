@@ -274,6 +274,9 @@ The full code
     show_juice_orders()
     root.mainloop()
 
+.. image:: images/skills13_juice_bar_orders.png
+    :align: center
+
 ----
 
 Testing
@@ -380,6 +383,9 @@ Testing
                         }
                         orders.append(juice)
                         show_juice_orders()
+
+                .. image:: images/skills13_task2_answer.png
+                    :align: center
 
             .. tab-item:: Q4
 

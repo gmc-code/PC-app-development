@@ -154,6 +154,8 @@ Showing the order when the app starts
 
 .. image:: images/icecream_07.png
     :scale: 50
+
+
 ----
 
 Quiz

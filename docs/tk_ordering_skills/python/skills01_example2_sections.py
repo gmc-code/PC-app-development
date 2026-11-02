@@ -14,7 +14,7 @@ import tkinter as tk
 # Main window
 root = tk.Tk()
 root.title("Juice Bar")
-root.geometry("400x300")
+root.geometry("500x300")
 root.config(bg="lightyellow")
 
 

@@ -54,7 +54,7 @@ A size drop-down
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("450x220")
+    root.geometry("500x300")
     root.config(bg=BG_COLOUR)
 
     # Size (drop-down menu)
@@ -90,6 +90,9 @@ A size drop-down
 
     # 5. MAIN CODE
     root.mainloop()
+
+.. image:: images/skills10_example_size_dropdown.png
+    :align: center
 
 | Run it. Pick a size from the drop-down, then click **Show my choice**.
 
@@ -145,6 +148,9 @@ How it works
                         "Jumbo": 3.00,
                     }
 
+                .. image:: images/skills10_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2
 
                 .. code-block:: python
@@ -180,6 +186,9 @@ How it works
 
                     # Then change the button to row=2 and the choice label to row=3.
 
+                .. image:: images/skills10_task2_answer.png
+                    :align: center
+
             .. tab-item:: Q3
 
                 .. code-block:: python
@@ -199,6 +208,9 @@ How it works
                     extra_choices.delete(0)   # remove the starting choice
                     for extra in extras.keys():
                         extra_choices.add_radiobutton(label=extra, variable=extra_var, value=extra)
+
+                .. image:: images/skills10_task3_answer.png
+                    :align: center
 
             .. tab-item:: Q4
 

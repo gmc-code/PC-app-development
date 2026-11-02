@@ -52,7 +52,7 @@ The grid
 
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("400x300")
+    root.geometry("500x300")
     root.config(bg="lightyellow")
 
     # Title
@@ -79,6 +79,9 @@ The grid
     apple_price.config(text="$4.50", font=("Arial", 14), bg="lightyellow")  # 3. configure
 
     root.mainloop()
+
+.. image:: images/skills02_example_menu_board.png
+    :align: center
 
 ----
 
@@ -167,6 +170,9 @@ The configure options
                     mango_price.grid(row=3, column=1, padx=10, pady=5, sticky="e")  # 2. position
                     mango_price.config(text="$6.00", font=("Arial", 14), bg="lightyellow")  # 3. configure
 
+                .. image:: images/skills02_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2 and Q3
 
                 | ``sticky="e"`` on the price labels lines them up on the right.
@@ -177,7 +183,7 @@ The configure options
 
                     root = tk.Tk()
                     root.title("Taco Truck")
-                    root.geometry("400x250")
+                    root.geometry("500x300")
 
                     title_label = tk.Label(root)  # 1. create
                     title_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="w")  # 2. position
@@ -200,6 +206,9 @@ The configure options
                     fish_price.config(text="$5.50", font=("Arial", 14))  # 3. configure
 
                     root.mainloop()
+
+                .. image:: images/skills02_task2_3_answer.png
+                    :align: center
 
             .. tab-item:: Q4
 

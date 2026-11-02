@@ -71,7 +71,7 @@ Radio buttons
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("450x300")
+    root.geometry("500x300")
     root.config(bg=BG_COLOUR)
 
     # Juice (radio buttons)
@@ -107,6 +107,9 @@ Radio buttons
 
     # 5. MAIN CODE
     root.mainloop()
+
+.. image:: images/skills09_example_juice_radio.png
+    :align: center
 
 | Run it. Pick a juice, then click **Show my choice**.
 
@@ -163,11 +166,17 @@ How it works
                         "Pineapple": 5.50,
                     }
 
+                .. image:: images/skills09_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2
 
                 .. code-block:: python
 
                     juice_var.set("Mango")  # B. set
+
+                .. image:: images/skills09_task2_answer.png
+                    :align: center
 
             .. tab-item:: Q3
 
@@ -196,7 +205,7 @@ How it works
                     # 4. TKINTER WIDGETS
                     root = tk.Tk()
                     root.title("Taco Truck")
-                    root.geometry("400x250")
+                    root.geometry("500x300")
                     root.config(bg=BG_COLOUR)
 
                     taco_label = tk.Label(root)  # 1. create
@@ -229,6 +238,9 @@ How it works
 
                     # 5. MAIN CODE
                     root.mainloop()
+
+                .. image:: images/skills09_task3_answer.png
+                    :align: center
 
             .. tab-item:: Q4
 

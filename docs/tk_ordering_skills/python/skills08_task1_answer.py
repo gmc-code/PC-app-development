@@ -46,7 +46,7 @@ def add_apple():
 # Main window
 root = tk.Tk()
 root.title("Juice Bar")
-root.geometry("400x200")
+root.geometry("500x300")
 root.config(bg=BG_COLOUR)
 
 # Count of juices

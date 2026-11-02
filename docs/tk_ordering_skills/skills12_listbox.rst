@@ -143,7 +143,7 @@ A juice order list
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("620x320")
+    root.geometry("700x400")
     root.config(bg=BG_COLOUR)
 
     # --- LEFT SIDE: JUICE CHOICE ---
@@ -198,6 +198,9 @@ A juice order list
     show_juice_orders()
     root.mainloop()
 
+.. image:: images/skills12_example_order_list.png
+    :align: center
+
 | Run it. Add three juices, select one and click **Remove selected**, then click **Clear order**.
 | Click **Remove selected** with nothing selected to see the messagebox.
 
@@ -245,6 +248,9 @@ How it works
                         "Watermelon": 5.50,
                     }
 
+                .. image:: images/skills12_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2
 
                 .. code-block:: python
@@ -256,6 +262,9 @@ How it works
                         else:
                             orders.clear()
                             show_juice_orders()
+
+                .. image:: images/skills12_task2_answer.png
+                    :align: center
 
             .. tab-item:: Q3
 
@@ -276,6 +285,9 @@ How it works
                     count_label = tk.Label(root)  # 1. create
                     count_label.grid(row=3, column=1, columnspan=2, padx=10, pady=5, sticky="w")  # 2. position
                     count_label.config(text="Juices: 0", font=LABEL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
+
+                .. image:: images/skills12_task3_answer.png
+                    :align: center
 
             .. tab-item:: Q4
 

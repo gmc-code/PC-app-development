@@ -34,7 +34,7 @@ def show_size_choice():
 # Main window
 root = tk.Tk()
 root.title("Juice Bar")
-root.geometry("450x220")
+root.geometry("500x300")
 root.config(bg=BG_COLOUR)
 
 # Size (drop-down menu)

@@ -34,7 +34,7 @@ def show_juice_choice():
 # Main window
 root = tk.Tk()
 root.title("Juice Bar")
-root.geometry("450x300")
+root.geometry("500x300")
 root.config(bg=BG_COLOUR)
 
 # Juice (radio buttons)

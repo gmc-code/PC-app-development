@@ -22,7 +22,7 @@ LABEL_FONT = ("Segoe UI", 13, "normal")
 # Main window
 root = tk.Tk()
 root.title("Juice Bar")
-root.geometry("400x300")
+root.geometry("500x300")
 root.config(bg=BG_COLOUR)
 
 # Title

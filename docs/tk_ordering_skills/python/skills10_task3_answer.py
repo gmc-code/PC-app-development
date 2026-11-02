@@ -17,7 +17,7 @@ LABEL_FONT = ("Segoe UI", 13, "normal")
 # Main window
 root = tk.Tk()
 root.title("Taco Truck")
-root.geometry("400x150")
+root.geometry("500x300")
 
 extra_label = tk.Label(root)  # 1. create
 extra_label.grid(row=0, column=0, padx=10, pady=10, sticky="e")  # 2. position

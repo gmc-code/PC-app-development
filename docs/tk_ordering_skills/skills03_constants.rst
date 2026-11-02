@@ -102,7 +102,7 @@ Using constants
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("400x300")
+    root.geometry("500x300")
     root.config(bg=BG_COLOUR)
 
     # Title
@@ -118,6 +118,9 @@ Using constants
 
     # 5. MAIN CODE
     root.mainloop()
+
+.. image:: images/skills03_example_constants.png
+    :align: center
 
 - Constants have **no** quotation marks around their names when they are used: ``bg=BG_COLOUR``, not ``bg="BG_COLOUR"``.
 - The comments after each colour say what it is for, so you know which one to change.
@@ -151,6 +154,9 @@ Using constants
                     TITLE_COLOUR = "#000080"     # dark blue title
                     TEXT_COLOUR = "#2f4f2f"      # dark green text
 
+                .. image:: images/skills03_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2
 
                 .. code-block:: python
@@ -162,6 +168,9 @@ Using constants
                     fresh_label = tk.Label(root)  # 1. create
                     fresh_label.grid(row=2, column=0, padx=10, pady=5, sticky="w")  # 2. position
                     fresh_label.config(text="Fresh every day", font=SMALL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
+
+                .. image:: images/skills03_task2_answer.png
+                    :align: center
 
             .. tab-item:: Q3
 

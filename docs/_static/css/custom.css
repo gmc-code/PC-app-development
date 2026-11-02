@@ -349,3 +349,22 @@ div.highlight-default div.highlight {
 .wy-side-scroll::-webkit-scrollbar-thumb:hover {
     background: rgba(255,255,255,0.6);
 }
+
+/* ========================================== */
+/* Inline code in table cells.
+   The theme sets table cell text to line-height 1rem (16px), which is shorter
+   than an inline code box (padding + border). When a cell wraps onto a second
+   line, the code boxes overlap the boxes on the line above.
+   Give each line enough height, and give a box that splits over two lines
+   a full border on each line. */
+html.writer-html5 .rst-content table.docutils td > p,
+.rst-content table.docutils td p,
+.wy-table td p {
+    line-height: 1.35rem;
+}
+
+.rst-content table.docutils td code.literal,
+.wy-table td code.literal {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}

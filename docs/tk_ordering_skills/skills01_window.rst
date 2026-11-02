@@ -18,15 +18,18 @@ Making a window
 
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("400x300")
+    root.geometry("500x300")
     root.config(bg="lightyellow")
 
     root.mainloop()
 
+.. image:: images/skills01_example1_window.png
+    :align: center
+
 - ``import tkinter as tk`` loads the Tkinter library. We can now write ``tk`` instead of ``tkinter``.
 - ``root = tk.Tk()`` makes the main window. We call it ``root``.
 - ``root.title("Juice Bar")`` puts words in the window's title bar.
-- ``root.geometry("400x300")`` makes the window 400 pixels wide and 300 pixels tall. Use a small ``x``, with no spaces.
+- ``root.geometry("500x300")`` makes the window 500 pixels wide and 300 pixels tall. Use a small ``x``, with no spaces.
 - ``root.config(bg="lightyellow")`` colours the background. ``bg`` means **background**.
 - ``root.mainloop()`` keeps the window open and waits for the user to click things. It always goes **last**.
 
@@ -77,12 +80,15 @@ The five sections
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("400x300")
+    root.geometry("500x300")
     root.config(bg="lightyellow")
 
 
     # 5. MAIN CODE
     root.mainloop()
+
+.. image:: images/skills01_example2_sections.png
+    :align: center
 
 - Lines that start with ``#`` are **comments**. Python ignores them. They help people find their way around the code.
 - Python reads the file from the **top down**. Something must be made before it can be used.
@@ -123,6 +129,9 @@ The five sections
 
                     root.mainloop()
 
+                .. image:: images/skills01_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2
 
                 .. code-block:: python
@@ -135,6 +144,9 @@ The five sections
                     root.config(bg="lightgreen")
 
                     root.mainloop()
+
+                .. image:: images/skills01_task2_answer.png
+                    :align: center
 
             .. tab-item:: Q3
 
@@ -163,6 +175,9 @@ The five sections
                     # 5. MAIN CODE
                     root.mainloop()
 
+                .. image:: images/skills01_task3_answer.png
+                    :align: center
+
             .. tab-item:: Q4
 
                 | ``"300 x 200"`` must have no spaces: ``"300x200"``.
@@ -175,6 +190,9 @@ The five sections
                     root.title("Pet Shop")
                     root.geometry("300x200")
                     root.mainloop()
+
+                .. image:: images/skills01_task4_answer.png
+                    :align: center
 
 ----
 

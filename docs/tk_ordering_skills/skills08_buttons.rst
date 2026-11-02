@@ -72,7 +72,7 @@ A juice counter
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("400x200")
+    root.geometry("500x300")
     root.config(bg=BG_COLOUR)
 
     # Count of juices
@@ -96,6 +96,9 @@ A juice counter
     # 5. MAIN CODE
     show_juice_count()
     root.mainloop()
+
+.. image:: images/skills08_example_juice_counter.png
+    :align: center
 
 | Run it. Click **Add orange juice** a few times, then **Clear order**.
 
@@ -149,6 +152,9 @@ How it works
                     apple_button.config(text="Add apple juice", width=16, font=BUTTON_FONT, bg=ADD_COLOUR, fg=TEXT_COLOUR)  # 3. configure
                     apple_button.config(command=add_apple)  # 4. command
 
+                .. image:: images/skills08_task1_answer.png
+                    :align: center
+
             .. tab-item:: Q2
 
                 .. code-block:: python
@@ -166,6 +172,9 @@ How it works
                     last_label = tk.Label(root)  # 1. create
                     last_label.grid(row=3, column=0, columnspan=2, padx=10, pady=5, sticky="w")  # 2. position
                     last_label.config(text="Last juice: none", font=LABEL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
+
+                .. image:: images/skills08_task2_answer.png
+                    :align: center
 
             .. tab-item:: Q3
 

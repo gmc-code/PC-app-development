@@ -23,7 +23,7 @@ def show_taco_choice():
 # 4. TKINTER WIDGETS
 root = tk.Tk()
 root.title("Taco Truck")
-root.geometry("400x250")
+root.geometry("500x300")
 root.config(bg=BG_COLOUR)
 
 taco_label = tk.Label(root)  # 1. create

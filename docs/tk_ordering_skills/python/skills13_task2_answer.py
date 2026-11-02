@@ -108,7 +108,7 @@ def clear_juice_orders():
 # Main window
 root = tk.Tk()
 root.title("Juice Bar")
-root.geometry("820x420")
+root.geometry("820x500")
 root.config(bg=BG_COLOUR)
 
 # --- LEFT SIDE: JUICE CHOICES ---

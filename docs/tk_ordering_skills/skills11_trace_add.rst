@@ -98,7 +98,7 @@ A price that updates by itself
     # Main window
     root = tk.Tk()
     root.title("Juice Bar")
-    root.geometry("450x300")
+    root.geometry("500x300")
     root.config(bg=BG_COLOUR)
 
     # Juice (radio buttons)
@@ -150,6 +150,9 @@ A price that updates by itself
     # 5. MAIN CODE
     update_juice_price()
     root.mainloop()
+
+.. image:: images/skills11_example_price_updates.png
+    :align: center
 
 | Run it. Change the juice and the size. The price changes straight away.
 
@@ -245,6 +248,9 @@ How it works
                         extra_choices.add_radiobutton(label=extra, variable=extra_var, value=extra)
 
                     # Then change the price label to row=3.
+
+                .. image:: images/skills11_task1_answer.png
+                    :align: center
 
             .. tab-item:: Q2
 

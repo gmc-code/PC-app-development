@@ -2,7 +2,7 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title("Taco Truck")
-root.geometry("400x250")
+root.geometry("500x300")
 
 title_label = tk.Label(root)  # 1. create
 title_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="w")  # 2. position
