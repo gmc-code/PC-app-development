@@ -48,6 +48,9 @@ Making a group of Radiobuttons
 
 | Click each one and notice that only one can be chosen at a time.
 
+.. image:: files/radiobutton/01_making_a_group_of_radiobuttons.png
+    :align: center
+
 ----
 
 Radiobutton options
@@ -77,6 +80,10 @@ text
     no_radio.pack()
 
     root.mainloop()
+
+.. image:: files/radiobutton/02_text.png
+    :align: center
+
 
 variable and value
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -115,6 +122,10 @@ variable and value
 
 | ``tk.Radiobutton(...).pack()`` creates and places a widget in one line. Only do this when you never need to use the widget's name again.
 
+.. image:: files/radiobutton/03_variable_and_value.png
+    :align: center
+
+
 command
 ~~~~~~~~~~~~~~~~~~
 
@@ -143,6 +154,10 @@ command
 
     root.mainloop()
 
+.. image:: files/radiobutton/04_command.png
+    :align: center
+
+
 font, fg and bg
 ~~~~~~~~~~~~~~~~~~
 
@@ -166,6 +181,10 @@ font, fg and bg
 
     root.mainloop()
 
+.. image:: files/radiobutton/05_font_fg_and_bg.png
+    :align: center
+
+
 selectcolor
 ~~~~~~~~~~~~~~~~~~
 
@@ -186,6 +205,9 @@ selectcolor
     tk.Radiobutton(root, text="Cat", variable=pet, value="Cat", selectcolor="yellow").pack()
 
     root.mainloop()
+
+.. image:: files/radiobutton/06_selectcolor.png
+    :align: center
 
 indicatoron
 ~~~~~~~~~~~~~~~~~~
@@ -210,6 +232,10 @@ indicatoron
 
     root.mainloop()
 
+.. image:: files/radiobutton/07_indicatoron.png
+    :align: center
+
+
 anchor and width
 ~~~~~~~~~~~~~~~~~~
 
@@ -231,6 +257,9 @@ anchor and width
                        width=15, anchor="w").pack()
 
     root.mainloop()
+
+.. image:: files/radiobutton/08_anchor_and_width.png
+    :align: center
 
 state
 ~~~~~~~~~~~~~~~~~~
@@ -254,6 +283,10 @@ state
                    state="disabled").pack()
 
     root.mainloop()
+
+.. image:: files/radiobutton/09_state.png
+    :align: center
+
 
 ----
 
@@ -295,6 +328,10 @@ get and set (the variable)
 
     root.mainloop()
 
+.. image:: files/radiobutton/10_get_and_set.png
+    :align: center
+
+
 Checking a quiz answer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -332,6 +369,11 @@ Checking a quiz answer
 
     root.mainloop()
 
+.. image:: files/radiobutton/11_checking_a_quiz_answer.png
+    :align: center
+
+
+
 select and invoke
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -366,6 +408,10 @@ select and invoke
 
     root.mainloop()
 
+.. image:: files/radiobutton/12_select_and_invoke.png
+    :align: center
+
+
 config
 ~~~~~~~~~~~~~~~~~~
 
@@ -396,6 +442,11 @@ config
     all_radios = [a_radio, b_radio]
 
     root.mainloop()
+
+
+.. image:: files/radiobutton/13_config.png
+    :align: center
+
 
 ----
 
@@ -570,3 +621,5 @@ Quick reference
                     result_label.pack()
 
                     root.mainloop()
+
+
