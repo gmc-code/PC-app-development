@@ -182,7 +182,14 @@ PC-app-development
     tk_icecream_orders_tutorial/icecream_lesson07_mod.rst
     tk_icecream_orders_tutorial/icecream_lesson08_mod.rst
 
-    .. tk_icecream_orders_tutorial/icecream_lesson09_mod.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: tk icecream_orders tutorial 9
+    :numbered:
+    :hidden:
+
+    tk_icecream_orders_tutorial/icecream_lesson09_mod.rst
 
 
 
