@@ -99,7 +99,12 @@ Why use the dictionary for the loop?
 
 | If this line was added to the ``flavours`` dictionary, the app would make a new radio button for it.
 
+----
 
+| Run the code.
+
+.. image:: images/icecream_04.png
+    :scale: 50
 
 ----
 
