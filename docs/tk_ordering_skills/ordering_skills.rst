@@ -24,46 +24,73 @@ The skills
 
 .. list-table::
     :header-rows: 1
-    :widths: 30 40 30
+    :widths: 30 50 20
 
     * - Skill
       - Code you will use
       - Used in the ice cream tutorial
     * - :doc:`skills01_window`
-      - ``import tkinter as tk``, ``tk.Tk()``, ``title()``, ``geometry()``, ``mainloop()``
+      - | ``import tkinter as tk``
+        | ``tk.Tk()``
+        | ``title()``
+        | ``geometry()``
+        | ``mainloop()``
       - Lesson 1
     * - :doc:`skills02_labels_grid`
-      - ``tk.Label(root)``, ``grid(row=, column=, columnspan=, sticky=)``, ``config()``
+      - | ``tk.Label(root)``
+        | ``grid(row=, column=, columnspan=, sticky=)``
+        | ``config()``
       - Lessons 3 to 8
     * - :doc:`skills03_constants`
-      - ``BG_COLOUR = "#fff4e6"``, ``TITLE_FONT = ("Segoe UI", 22, "bold")``
+      - | ``BG_COLOUR = "#fff4e6"``
+        | ``TITLE_FONT = ("Segoe UI", 22, "bold")``
       - Lesson 3
     * - :doc:`skills04_dictionaries`
-      - ``{"Orange": 5.00}``, ``juices["Orange"]``, ``for juice in juices.keys():``
+      - | ``{"Orange": 5.00}``
+        | ``juices["Orange"]``
+        | ``for juice in juices.keys():``
       - Lessons 2, 4, 5 and 6
     * - :doc:`skills05_fstrings`
       - ``f"{juice} costs ${price:.2f}"``
       - Lessons 4, 6 and 7
     * - :doc:`skills06_lists`
-      - ``orders = []``, ``append()``, ``orders[0]``, ``del``, ``clear()``
+      - | ``orders = []``
+        | ``append()``
+        | ``orders[0]``
+        | ``del``
+        | ``clear()``
       - Lessons 2, 7 and 8
     * - :doc:`skills07_functions`
-      - ``def``, docstrings, ``return``
+      - | ``def``
+        | docstrings
+        | ``return``
       - Lessons 6, 7 and 8
     * - :doc:`skills08_buttons`
-      - ``tk.Button(root)``, ``config(command=add_juice)``
+      - | ``tk.Button(root)``
+        | ``config(command=add_juice)``
       - Lessons 7 and 8
     * - :doc:`skills09_radiobuttons`
-      - ``tk.StringVar(root)``, ``set()``, ``get()``, ``tk.Radiobutton``, ``tk.Frame``
+      - | ``tk.StringVar(root)``
+        | ``set()``
+        | ``get()``
+        | ``tk.Radiobutton``
+        | ``tk.Frame``
       - Lesson 4
     * - :doc:`skills10_optionmenu`
-      - ``tk.OptionMenu``, ``["menu"]``, ``delete(0)``, ``add_radiobutton()``
+      - | ``tk.OptionMenu``
+        | ``["menu"]``
+        | ``delete(0)``
+        | ``add_radiobutton()``
       - Lesson 5
     * - :doc:`skills11_trace_add`
-      - ``trace_add("write", update_price)``, ``*args``
+      - | ``trace_add("write", update_price)``
+        | ``*args``
       - Lesson 6
     * - :doc:`skills12_listbox`
-      - ``tk.Listbox``, ``insert(tk.END, ...)``, ``curselection()``, ``messagebox``
+      - | ``tk.Listbox``
+        | ``insert(tk.END, ...)``
+        | ``curselection()``
+        | ``messagebox``
       - Lessons 7 and 8
     * - :doc:`skills13_project`
       - Everything above, in one app

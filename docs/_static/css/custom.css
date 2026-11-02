@@ -368,3 +368,9 @@ html.writer-html5 .rst-content table.docutils td > p,
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
+
+/* Line blocks (| lines) in table cells: remove the big gap under the last line */
+.rst-content table.docutils td div.line-block,
+.wy-table td div.line-block {
+    margin-bottom: 0;
+}
