@@ -408,7 +408,7 @@ select and invoke
 
     root.mainloop()
 
-.. image:: files/radiobutton/121_select_and_invoke.png
+.. image:: files/radiobutton/12_select_and_invoke.png
     :align: center
 
 
