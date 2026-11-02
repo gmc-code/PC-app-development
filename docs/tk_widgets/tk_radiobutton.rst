@@ -502,6 +502,94 @@ Quick reference
 
 ----
 
+All Radiobutton options
+---------------------------
+
+| Here is every option a radiobutton can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 30 70
+
+    * - Option
+      - What it does
+    * - ``activebackground``
+      - Background colour when the mouse is over the button
+    * - ``activeforeground``
+      - Word colour when the mouse is over the button
+    * - ``anchor``
+      - Where the words sit inside the button, e.g. ``"w"`` for left
+    * - ``bg`` or ``background``
+      - Background colour
+    * - ``bitmap``
+      - Shows a small built-in picture, e.g. ``"question"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+    * - ``command``
+      - Function to run when the button is clicked
+    * - ``compound``
+      - Where the picture goes compared to the words, e.g. ``"left"``
+    * - ``cursor``
+      - Mouse pointer shape over the button, e.g. ``"hand2"``
+    * - ``disabledforeground``
+      - Word colour when the button is turned off
+    * - ``fg`` or ``foreground``
+      - Word colour
+    * - ``font``
+      - Style and size of the words
+    * - ``height``
+      - How tall the button is (in lines of text)
+    * - ``highlightbackground``
+      - Colour of the outline when the button is not selected by the keyboard
+    * - ``highlightcolor``
+      - Colour of the outline when the button is selected by the keyboard
+    * - ``highlightthickness``
+      - How thick that keyboard outline is
+    * - ``image``
+      - Shows a picture instead of (or with) the words
+    * - ``indicatoron``
+      - ``0`` hides the round button so it looks like a normal button
+    * - ``justify``
+      - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+    * - ``offrelief``
+      - Border style when not chosen (used with ``indicatoron=0``)
+    * - ``overrelief``
+      - Border style when the mouse is over the button
+    * - ``padx``
+      - Extra space on the left and right of the words
+    * - ``pady``
+      - Extra space above and below the words
+    * - ``relief``
+      - Border style, e.g. ``"raised"``, ``"sunken"``, ``"flat"``
+    * - ``selectcolor``
+      - Colour inside the round button when chosen
+    * - ``selectimage``
+      - Picture to show when the button is chosen
+    * - ``state``
+      - ``"normal"`` (can click), ``"active"`` or ``"disabled"`` (greyed out)
+    * - ``takefocus``
+      - Whether the Tab key can move to this button
+    * - ``text``
+      - Words next to the button
+    * - ``textvariable``
+      - A variable that holds the words, so they can change
+    * - ``tristateimage``
+      - Picture to show when the button is half-chosen
+    * - ``tristatevalue``
+      - The variable value that makes the button look half-chosen (default ``""``)
+    * - ``underline``
+      - Number of the letter to underline, e.g. ``0`` for the first letter
+    * - ``value``
+      - What is stored in the variable when this button is chosen
+    * - ``variable``
+      - Shared variable for the whole group
+    * - ``width``
+      - How wide the button is (in characters)
+    * - ``wraplength``
+      - Starts a new line when the words get this long (in pixels)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Transport" that is 300x200. Add a group of three radiobuttons: "Bus", "Car" and "Walk", sharing one ``StringVar``.
