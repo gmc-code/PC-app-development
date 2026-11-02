@@ -246,6 +246,9 @@ Creating the window
 
 | Run the code. An empty window called "Ice Cream Shop" should appear.
 
+.. image:: images/icecream_01.png
+    :scale: 50
+
 ----
 
 Quiz
