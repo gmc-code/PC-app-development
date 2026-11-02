@@ -124,6 +124,9 @@ Starting with the right price
 
 | Run the code. The price should say $4.00 for a Vanilla cup with no topping, and change each time you pick something new.
 
+.. image:: images/icecream_06.png
+    :scale: 50
+
 ----
 
 Quiz

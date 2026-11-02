@@ -124,6 +124,9 @@ Adding the topping drop-down
 
 | Run the code. Click each drop-down menu and check that all the choices appear.
 
+.. image:: images/icecream_05.png
+    :scale: 50
+
 ----
 
 Quiz

@@ -152,6 +152,8 @@ Showing the order when the app starts
 
 | Run the code. Add three different ice creams and check that each price and the total are correct.
 
+.. image:: images/icecream_07.png
+    :scale: 50
 ----
 
 Quiz

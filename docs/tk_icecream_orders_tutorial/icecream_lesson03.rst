@@ -114,6 +114,8 @@ Adding the order heading
 
 | Run the code. The title and the heading should appear on a cream background.
 
+.. image:: images/icecream_03.png
+    :scale: 50
 
 ----
 
