@@ -555,6 +555,144 @@ Quick reference
 
 ----
 
+All Text options
+---------------------------
+
+| Here is every option a Text can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``autoseparators``
+      - Adds undo stopping points automatically (needs ``undo=True``)
+      - ``autoseparators=True``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``blockcursor``
+      - Makes the typing cursor a block instead of a thin line
+      - ``blockcursor=True``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``endline``
+      - Last line of the text to show (advanced)
+      - ``endline=10``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``height``
+      - How tall the box is (in lines of text)
+      - ``height=10``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``inactiveselectbackground``
+      - Colour of selected text when you are using a different widget
+      - ``inactiveselectbackground="lightgrey"``
+    * - ``insertbackground``
+      - Colour of the typing cursor
+      - ``insertbackground="red"``
+    * - ``insertborderwidth``
+      - Border thickness of the typing cursor
+      - ``insertborderwidth=1``
+    * - ``insertofftime``
+      - How long the typing cursor hides when it blinks (milliseconds, ``0`` = no blink)
+      - ``insertofftime=300``
+    * - ``insertontime``
+      - How long the typing cursor shows when it blinks (milliseconds)
+      - ``insertontime=600``
+    * - ``insertunfocussed``
+      - How the cursor looks when you are using a different widget: ``"none"``, ``"hollow"`` or ``"solid"``
+      - ``insertunfocussed="hollow"``
+    * - ``insertwidth``
+      - How wide the typing cursor is (in pixels)
+      - ``insertwidth=4``
+    * - ``maxundo``
+      - Most undos allowed (``0`` = no limit)
+      - ``maxundo=20``
+    * - ``padx``
+      - Extra space inside the box, on the left and right
+      - ``padx=10``
+    * - ``pady``
+      - Extra space inside the box, at the top and bottom
+      - ``pady=10``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``selectbackground``
+      - Background colour of selected text
+      - ``selectbackground="yellow"``
+    * - ``selectborderwidth``
+      - Border thickness around selected text
+      - ``selectborderwidth=1``
+    * - ``selectforeground``
+      - Word colour of selected text
+      - ``selectforeground="black"``
+    * - ``setgrid``
+      - Makes the window resize in whole lines (advanced)
+      - ``setgrid=True``
+    * - ``spacing1``
+      - Extra space above each line (in pixels)
+      - ``spacing1=5``
+    * - ``spacing2``
+      - Extra space between lines that wrap (in pixels)
+      - ``spacing2=2``
+    * - ``spacing3``
+      - Extra space below each line (in pixels)
+      - ``spacing3=5``
+    * - ``startline``
+      - First line of the text to show (advanced)
+      - ``startline=1``
+    * - ``state``
+      - ``"normal"`` or ``"disabled"`` (cannot be changed)
+      - ``state="disabled"``
+    * - ``tabs``
+      - Where the Tab key stops are (``"2c"`` = 2 cm)
+      - ``tabs=("2c", "4c")``
+    * - ``tabstyle``
+      - How tabs line up: ``"tabular"`` or ``"wordprocessor"``
+      - ``tabstyle="wordprocessor"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``undo``
+      - ``True`` lets Ctrl+Z undo typing
+      - ``undo=True``
+    * - ``width``
+      - How wide the box is (in characters)
+      - ``width=40``
+    * - ``wrap``
+      - How long lines wrap: ``"char"``, ``"word"`` or ``"none"``
+      - ``wrap="word"``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+    * - ``yscrollcommand``
+      - Connects it to an up-and-down scrollbar
+      - ``yscrollcommand=scrollbar.set``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Diary" that is 400x300. Add a Text widget 40 characters wide and 10 lines high that wraps between words, with a light yellow background and Arial size 12.

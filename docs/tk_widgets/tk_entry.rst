@@ -590,6 +590,114 @@ Quick reference
 
 ----
 
+All Entry options
+---------------------------
+
+| Here is every option an Entry can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``disabledbackground``
+      - Background colour when it is turned off
+      - ``disabledbackground="lightgrey"``
+    * - ``disabledforeground``
+      - Word colour when it is turned off
+      - ``disabledforeground="grey"``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``insertbackground``
+      - Colour of the typing cursor
+      - ``insertbackground="red"``
+    * - ``insertborderwidth``
+      - Border thickness of the typing cursor
+      - ``insertborderwidth=1``
+    * - ``insertofftime``
+      - How long the typing cursor hides when it blinks (milliseconds, ``0`` = no blink)
+      - ``insertofftime=300``
+    * - ``insertontime``
+      - How long the typing cursor shows when it blinks (milliseconds)
+      - ``insertontime=600``
+    * - ``insertwidth``
+      - How wide the typing cursor is (in pixels)
+      - ``insertwidth=4``
+    * - ``invcmd`` or ``invalidcommand``
+      - Function to run when ``validatecommand`` says no
+      - ``invcmd=beep``
+    * - ``justify``
+      - Where the words sit in the box: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="center"``
+    * - ``readonlybackground``
+      - Background colour when ``state="readonly"``
+      - ``readonlybackground="lightyellow"``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``selectbackground``
+      - Background colour of selected text
+      - ``selectbackground="yellow"``
+    * - ``selectborderwidth``
+      - Border thickness around selected text
+      - ``selectborderwidth=1``
+    * - ``selectforeground``
+      - Word colour of selected text
+      - ``selectforeground="black"``
+    * - ``show``
+      - Shows this character instead of what is typed (good for passwords)
+      - ``show="*"``
+    * - ``state``
+      - ``"normal"``, ``"readonly"`` (can see but not type) or ``"disabled"`` (greyed out)
+      - ``state="readonly"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``textvariable``
+      - A variable that holds what is typed in the box
+      - ``textvariable=name``
+    * - ``validate``
+      - When to check what is typed: ``"none"``, ``"key"``, ``"focus"``, ``"focusin"``, ``"focusout"`` or ``"all"``
+      - ``validate="key"``
+    * - ``vcmd`` or ``validatecommand``
+      - Function that checks what is typed (returns ``True`` or ``False``)
+      - ``vcmd=(root.register(check), "%P")``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Sign in" that is 300x200. Add a label "Username:" and an Entry below it using Arial size 16, with a light blue background.

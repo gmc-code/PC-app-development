@@ -450,6 +450,111 @@ Quick reference
 
 ----
 
+All Scale options
+---------------------------
+
+| Here is every option a Scale can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Colour of the slider when the mouse is over it
+      - ``activebackground="lightblue"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bigincrement``
+      - How far the slider jumps when you press Ctrl and an arrow key
+      - ``bigincrement=10``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``command``
+      - Function to run when the slider moves (it is given the new value)
+      - ``command=update``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``digits``
+      - How many digits to show in the value
+      - ``digits=3``
+    * - ``font``
+      - Style and size of the numbers and label
+      - ``font=("Arial", 12)``
+    * - ``fg`` or ``foreground``
+      - Colour of the numbers and label
+      - ``fg="purple"``
+    * - ``from_``
+      - Lowest number. Written ``from_`` in Python
+      - ``from_=0``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``label``
+      - Words shown above the slider
+      - ``label="Volume"``
+    * - ``length``
+      - How long the slider is (in pixels)
+      - ``length=200``
+    * - ``orient``
+      - Which way it goes: ``"horizontal"`` or ``"vertical"``
+      - ``orient="horizontal"``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``repeatdelay``
+      - How long to hold the mouse in the track before the slider starts moving (milliseconds)
+      - ``repeatdelay=500``
+    * - ``repeatinterval``
+      - How often the slider moves while the mouse is held in the track (milliseconds)
+      - ``repeatinterval=100``
+    * - ``resolution``
+      - Size of each step (``0.5`` = halves)
+      - ``resolution=0.5``
+    * - ``showvalue``
+      - ``False`` hides the number above the slider
+      - ``showvalue=False``
+    * - ``sliderlength``
+      - How long the slider block is (in pixels)
+      - ``sliderlength=40``
+    * - ``sliderrelief``
+      - Border style of the slider block
+      - ``sliderrelief="flat"``
+    * - ``state``
+      - ``"normal"`` (can click), ``"active"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``tickinterval``
+      - Puts numbered marks along the slider this far apart
+      - ``tickinterval=10``
+    * - ``to``
+      - Highest number
+      - ``to=100``
+    * - ``troughcolor``
+      - Colour of the track the slider moves along
+      - ``troughcolor="lightgrey"``
+    * - ``variable``
+      - A variable that holds the slider's number
+      - ``variable=volume``
+    * - ``width``
+      - How thick the slider track is (in pixels)
+      - ``width=20``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Rating" that is 300x200. Add a horizontal scale from 1 to 10 that is 250 pixels long with the label "Rate this movie".

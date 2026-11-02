@@ -390,6 +390,75 @@ Quick reference
 
 ----
 
+All Message options
+---------------------------
+
+| Here is every option a Message can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``anchor``
+      - Where the words sit inside it (``"w"`` = left, ``"center"`` = middle)
+      - ``anchor="w"``
+    * - ``aspect``
+      - Shape of the text: width compared to height as a percentage (200 = twice as wide as tall)
+      - ``aspect=200``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``justify``
+      - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="left"``
+    * - ``padx``
+      - Extra space on the left and right of the words
+      - ``padx=10``
+    * - ``pady``
+      - Extra space above and below the words
+      - ``pady=5``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``text``
+      - Words to show (they wrap onto new lines by themselves)
+      - ``text="Welcome to the quiz"``
+    * - ``textvariable``
+      - A variable that holds the words, so they can change
+      - ``textvariable=label_words``
+    * - ``width``
+      - How wide the text is (in pixels). ``0`` uses ``aspect`` instead
+      - ``width=200``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Instructions" that is 300x200. Add a Message 250 pixels wide that explains how to play a game of your choice, in Arial size 12.

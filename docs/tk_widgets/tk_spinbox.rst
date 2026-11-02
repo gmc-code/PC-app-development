@@ -425,6 +425,153 @@ Quick reference
 
 ----
 
+All Spinbox options
+---------------------------
+
+| Here is every option a Spinbox can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Background colour of an arrow when the mouse is over it
+      - ``activebackground="lightblue"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``buttonbackground``
+      - Background colour of the up and down arrows
+      - ``buttonbackground="lightgrey"``
+    * - ``buttoncursor``
+      - Mouse pointer shape over the arrows
+      - ``buttoncursor="hand2"``
+    * - ``buttondownrelief``
+      - Border style of the down arrow
+      - ``buttondownrelief="flat"``
+    * - ``buttonuprelief``
+      - Border style of the up arrow
+      - ``buttonuprelief="flat"``
+    * - ``command``
+      - Function to run when an arrow is clicked
+      - ``command=show``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``disabledbackground``
+      - Background colour when it is turned off
+      - ``disabledbackground="lightgrey"``
+    * - ``disabledforeground``
+      - Word colour when it is turned off
+      - ``disabledforeground="grey"``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``format``
+      - How the number is shown (``"%.2f"`` = 2 decimal places)
+      - ``format="%.2f"``
+    * - ``from_``
+      - Lowest number. Written ``from_`` in Python
+      - ``from_=0``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``increment``
+      - How much the number goes up or down each click
+      - ``increment=5``
+    * - ``insertbackground``
+      - Colour of the typing cursor
+      - ``insertbackground="red"``
+    * - ``insertborderwidth``
+      - Border thickness of the typing cursor
+      - ``insertborderwidth=1``
+    * - ``insertofftime``
+      - How long the typing cursor hides when it blinks (milliseconds, ``0`` = no blink)
+      - ``insertofftime=300``
+    * - ``insertontime``
+      - How long the typing cursor shows when it blinks (milliseconds)
+      - ``insertontime=600``
+    * - ``insertwidth``
+      - How wide the typing cursor is (in pixels)
+      - ``insertwidth=4``
+    * - ``invcmd`` or ``invalidcommand``
+      - Function to run when ``validatecommand`` says no
+      - ``invcmd=beep``
+    * - ``justify``
+      - Where the words sit in the box: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="center"``
+    * - ``readonlybackground``
+      - Background colour when ``state="readonly"``
+      - ``readonlybackground="lightyellow"``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``repeatdelay``
+      - How long to hold an arrow before it keeps counting (milliseconds)
+      - ``repeatdelay=500``
+    * - ``repeatinterval``
+      - How often it counts while an arrow is held (milliseconds)
+      - ``repeatinterval=100``
+    * - ``selectbackground``
+      - Background colour of selected text
+      - ``selectbackground="yellow"``
+    * - ``selectborderwidth``
+      - Border thickness around selected text
+      - ``selectborderwidth=1``
+    * - ``selectforeground``
+      - Word colour of selected text
+      - ``selectforeground="black"``
+    * - ``state``
+      - ``"normal"``, ``"readonly"`` (can see but not type) or ``"disabled"`` (greyed out)
+      - ``state="readonly"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``textvariable``
+      - A variable that holds what is in the box
+      - ``textvariable=amount``
+    * - ``to``
+      - Highest number
+      - ``to=100``
+    * - ``validate``
+      - When to check what is typed: ``"none"``, ``"key"``, ``"focus"``, ``"focusin"``, ``"focusout"`` or ``"all"``
+      - ``validate="key"``
+    * - ``vcmd`` or ``validatecommand``
+      - Function that checks what is typed (returns ``True`` or ``False``)
+      - ``vcmd=(root.register(check), "%P")``
+    * - ``values``
+      - A list of choices to step through instead of numbers
+      - ``values=("Red", "Green", "Blue")``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``wrap``
+      - ``True`` goes back to the start after the last value
+      - ``wrap=True``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Tickets" that is 300x200. Add a spinbox from 1 to 6 with an Arial size 20 font and a width of 4.

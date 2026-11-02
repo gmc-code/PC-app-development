@@ -528,6 +528,72 @@ Quick reference
 
 ----
 
+All Menu options
+---------------------------
+
+| Here is every option a Menu can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Background colour of the item the mouse is over
+      - ``activebackground="lightblue"``
+    * - ``activeborderwidth``
+      - Border thickness of the menu item the mouse is over
+      - ``activeborderwidth=2``
+    * - ``activeforeground``
+      - Word colour of the item the mouse is over
+      - ``activeforeground="red"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``disabledforeground``
+      - Word colour of items that are turned off
+      - ``disabledforeground="grey"``
+    * - ``font``
+      - Style and size of the menu words
+      - ``font=("Arial", 12)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``postcommand``
+      - Function to run just before the menu opens
+      - ``postcommand=update_menu``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``selectcolor``
+      - Colour of the ticks and dots in check and radio items
+      - ``selectcolor="green"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``tearoff``
+      - ``0`` removes the dashed line at the top of the menu
+      - ``tearoff=0``
+    * - ``tearoffcommand``
+      - Function to run when the menu is torn off
+      - ``tearoffcommand=torn_off``
+    * - ``title``
+      - Window title when the menu is torn off
+      - ``title="Tools"``
+    * - ``type``
+      - Kind of menu: ``"normal"``, ``"menubar"`` or ``"tearoff"`` (usually set for you)
+      - ``type="normal"``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Menus" that is 300x200. Add a menu bar with a "File" menu containing one command, "Exit", that closes the window.

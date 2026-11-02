@@ -460,6 +460,137 @@ Quick reference
 
 ----
 
+All Checkbutton options
+---------------------------
+
+| Here is every option a Checkbutton can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Background colour when the mouse is over it
+      - ``activebackground="lightblue"``
+    * - ``activeforeground``
+      - Word colour when the mouse is over it
+      - ``activeforeground="red"``
+    * - ``anchor``
+      - Where the words sit inside it (``"w"`` = left, ``"center"`` = middle)
+      - ``anchor="w"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bitmap``
+      - Shows a small built-in picture
+      - ``bitmap="question"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``command``
+      - Function to run when it is ticked or unticked
+      - ``command=show``
+    * - ``compound``
+      - Where the picture goes compared to the words
+      - ``compound="left"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``disabledforeground``
+      - Word colour when it is turned off
+      - ``disabledforeground="grey"``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``height``
+      - How tall it is (in lines of text)
+      - ``height=2``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``image``
+      - Shows a picture instead of (or with) the words
+      - ``image=dog_picture``
+    * - ``indicatoron``
+      - ``0`` hides the tick box so it looks like a normal button
+      - ``indicatoron=0``
+    * - ``justify``
+      - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="left"``
+    * - ``offrelief``
+      - Border style when not chosen (used with ``indicatoron=0``)
+      - ``offrelief="flat"``
+    * - ``offvalue``
+      - What is stored in the variable when it is not ticked
+      - ``offvalue="no"``
+    * - ``onvalue``
+      - What is stored in the variable when it is ticked
+      - ``onvalue="yes"``
+    * - ``overrelief``
+      - Border style when the mouse is over it
+      - ``overrelief="raised"``
+    * - ``padx``
+      - Extra space on the left and right of the words
+      - ``padx=10``
+    * - ``pady``
+      - Extra space above and below the words
+      - ``pady=5``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``selectcolor``
+      - Colour inside the tick box
+      - ``selectcolor="yellow"``
+    * - ``selectimage``
+      - Picture to show when it is ticked
+      - ``selectimage=tick_picture``
+    * - ``state``
+      - ``"normal"`` (can click), ``"active"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``text``
+      - Words next to the tick box
+      - ``text="I agree"``
+    * - ``textvariable``
+      - A variable that holds the words, so they can change
+      - ``textvariable=label_words``
+    * - ``tristateimage``
+      - Picture to show when it is half-ticked
+      - ``tristateimage=half_picture``
+    * - ``tristatevalue``
+      - The variable value that makes it look half-ticked (default ``""``)
+      - ``tristatevalue="maybe"``
+    * - ``underline``
+      - Number of the letter to underline (``0`` = first letter)
+      - ``underline=0``
+    * - ``variable``
+      - Variable that stores ``onvalue`` or ``offvalue``
+      - ``variable=agree``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``wraplength``
+      - Starts a new line when the words get this long (in pixels)
+      - ``wraplength=100``
+
+| The picture options (``image``, ``selectimage``, ``tristateimage``) need a picture made first, e.g. ``dog_picture = tk.PhotoImage(file="dog.png")``.
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Hobbies" that is 300x200. Add three checkbuttons: "Sport", "Music" and "Art", each with its own ``IntVar``.

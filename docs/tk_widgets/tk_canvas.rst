@@ -669,6 +669,102 @@ Quick reference
 
 ----
 
+All Canvas options
+---------------------------
+
+| Here is every option a Canvas can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``closeenough``
+      - How close (in pixels) the mouse must be to count as touching a shape
+      - ``closeenough=5``
+    * - ``confine``
+      - ``True`` stops you scrolling past the ``scrollregion``
+      - ``confine=True``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``height``
+      - How tall it is (in pixels)
+      - ``height=200``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``insertbackground``
+      - Colour of the typing cursor
+      - ``insertbackground="red"``
+    * - ``insertborderwidth``
+      - Border thickness of the typing cursor
+      - ``insertborderwidth=1``
+    * - ``insertofftime``
+      - How long the typing cursor hides when it blinks (milliseconds, ``0`` = no blink)
+      - ``insertofftime=300``
+    * - ``insertontime``
+      - How long the typing cursor shows when it blinks (milliseconds)
+      - ``insertontime=600``
+    * - ``insertwidth``
+      - How wide the typing cursor is (in pixels)
+      - ``insertwidth=4``
+    * - ``offset``
+      - Lines up a pattern fill (advanced)
+      - ``offset="0,0"``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``scrollregion``
+      - The full size of the drawing area you can scroll around (left, top, right, bottom)
+      - ``scrollregion=(0, 0, 1000, 1000)``
+    * - ``selectbackground``
+      - Background colour of selected text in a text item
+      - ``selectbackground="yellow"``
+    * - ``selectborderwidth``
+      - Border thickness around selected text
+      - ``selectborderwidth=1``
+    * - ``selectforeground``
+      - Word colour of selected text
+      - ``selectforeground="black"``
+    * - ``state``
+      - ``"normal"`` or ``"disabled"`` (shapes ignore the mouse)
+      - ``state="disabled"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``width``
+      - How wide it is (in pixels)
+      - ``width=300``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+    * - ``xscrollincrement``
+      - How far one side-to-side scroll step moves (in pixels)
+      - ``xscrollincrement=10``
+    * - ``yscrollcommand``
+      - Connects it to an up-and-down scrollbar
+      - ``yscrollcommand=scrollbar.set``
+    * - ``yscrollincrement``
+      - How far one up-and-down scroll step moves (in pixels)
+      - ``yscrollincrement=10``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Drawing" with a 300x200 white canvas. Draw a red line from the top-left corner to the bottom-right corner.

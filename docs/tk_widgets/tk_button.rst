@@ -497,6 +497,119 @@ Quick reference
 
 ----
 
+All Button options
+---------------------------
+
+| Here is every option a Button can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Background colour when the mouse is over it
+      - ``activebackground="lightblue"``
+    * - ``activeforeground``
+      - Word colour when the mouse is over it
+      - ``activeforeground="red"``
+    * - ``anchor``
+      - Where the words sit inside it (``"w"`` = left, ``"center"`` = middle)
+      - ``anchor="w"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bitmap``
+      - Shows a small built-in picture
+      - ``bitmap="question"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``command``
+      - Function to run when it is clicked
+      - ``command=show``
+    * - ``compound``
+      - Where the picture goes compared to the words
+      - ``compound="left"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``default``
+      - Marks it as the default button: ``"normal"``, ``"active"`` or ``"disabled"``
+      - ``default="active"``
+    * - ``disabledforeground``
+      - Word colour when it is turned off
+      - ``disabledforeground="grey"``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``height``
+      - How tall it is (in lines of text)
+      - ``height=2``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``image``
+      - Shows a picture instead of (or with) the words
+      - ``image=dog_picture``
+    * - ``justify``
+      - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="left"``
+    * - ``overrelief``
+      - Border style when the mouse is over it
+      - ``overrelief="raised"``
+    * - ``padx``
+      - Extra space on the left and right of the words
+      - ``padx=10``
+    * - ``pady``
+      - Extra space above and below the words
+      - ``pady=5``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``repeatdelay``
+      - How long to hold the button before ``command`` starts repeating (milliseconds)
+      - ``repeatdelay=500``
+    * - ``repeatinterval``
+      - How often ``command`` repeats while the button is held (milliseconds)
+      - ``repeatinterval=100``
+    * - ``state``
+      - ``"normal"`` (can click), ``"active"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``text``
+      - Words shown on the button
+      - ``text="Click me"``
+    * - ``textvariable``
+      - A variable that holds the words, so they can change
+      - ``textvariable=label_words``
+    * - ``underline``
+      - Number of the letter to underline (``0`` = first letter)
+      - ``underline=0``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``wraplength``
+      - Starts a new line when the words get this long (in pixels)
+      - ``wraplength=100``
+
+| The picture option (``image``) needs a picture made first, e.g. ``dog_picture = tk.PhotoImage(file="dog.png")``.
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Buttons" that is 300x200. Add a button that says "Press me" in Arial size 16, with white words on a purple background, and a width of 15.

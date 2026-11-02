@@ -401,6 +401,75 @@ Quick reference
 
 ----
 
+All Scrollbar options
+---------------------------
+
+| Here is every option a Scrollbar can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Colour of the arrows and slider when the mouse is over them
+      - ``activebackground="lightblue"``
+    * - ``activerelief``
+      - Border style of the part the mouse is over
+      - ``activerelief="sunken"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``command``
+      - Connects it to the widget it scrolls
+      - ``command=listbox.yview``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``elementborderwidth``
+      - Border thickness of the arrows and slider
+      - ``elementborderwidth=2``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``jump``
+      - ``True`` waits until you let go of the slider before scrolling
+      - ``jump=True``
+    * - ``orient``
+      - Up and down (``"vertical"``) or side to side (``"horizontal"``)
+      - ``orient="horizontal"``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``repeatdelay``
+      - How long to hold an arrow before it keeps scrolling (milliseconds)
+      - ``repeatdelay=500``
+    * - ``repeatinterval``
+      - How often it scrolls while an arrow is held (milliseconds)
+      - ``repeatinterval=100``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``troughcolor``
+      - Colour of the track the slider moves along
+      - ``troughcolor="lightgrey"``
+    * - ``width``
+      - How thick the scrollbar is (in pixels)
+      - ``width=20``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Numbers" that is 300x200. Add a Listbox with the numbers 1 to 200 and a vertical scrollbar linked to it.

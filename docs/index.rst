@@ -169,7 +169,7 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: tk icecream_orders tutorial
+    :caption: tk icecream_orders AtoZ
     :numbered:
 
     tk_icecream_orders_tutorial/icecream_orders_mod.rst

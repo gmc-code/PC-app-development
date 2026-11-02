@@ -524,6 +524,96 @@ Quick reference
 
 ----
 
+All Listbox options
+---------------------------
+
+| Here is every option a Listbox can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activestyle``
+      - How the current item is marked: ``"underline"``, ``"dotbox"`` or ``"none"``
+      - ``activestyle="none"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``disabledforeground``
+      - Word colour when ``state="disabled"``
+      - ``disabledforeground="grey"``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the items
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Colour of the items
+      - ``fg="purple"``
+    * - ``height``
+      - How many items show at once
+      - ``height=5``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``justify``
+      - Lines up the items: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="center"``
+    * - ``listvariable``
+      - A variable that holds all the items in the list
+      - ``listvariable=names``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``selectbackground``
+      - Background colour of chosen items
+      - ``selectbackground="yellow"``
+    * - ``selectborderwidth``
+      - Border thickness around chosen items
+      - ``selectborderwidth=1``
+    * - ``selectforeground``
+      - Word colour of chosen items
+      - ``selectforeground="black"``
+    * - ``selectmode``
+      - How many items can be chosen: ``"browse"``, ``"single"``, ``"multiple"`` or ``"extended"``
+      - ``selectmode="multiple"``
+    * - ``setgrid``
+      - Makes the window resize in whole lines (advanced)
+      - ``setgrid=True``
+    * - ``state``
+      - ``"normal"`` or ``"disabled"`` (cannot be changed)
+      - ``state="disabled"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+    * - ``yscrollcommand``
+      - Connects it to an up-and-down scrollbar
+      - ``yscrollcommand=scrollbar.set``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Sports" that is 300x250. Add a listbox with a height of 5 and Arial size 14, containing "Cricket", "Football", "Netball", "Swimming" and "Tennis". Use a ``for`` loop.

@@ -458,6 +458,69 @@ Quick reference
 
 ----
 
+All Frame options
+---------------------------
+
+| Here is every option a Frame can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``bg`` or ``background``
+      - Background colour of the frame
+      - ``bg="lightblue"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``colormap``
+      - Which set of colours to use (advanced, rarely needed)
+      - ``colormap="new"``
+    * - ``container``
+      - Lets another program be placed inside it (advanced, rarely needed)
+      - ``container=False``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``height``
+      - How tall it is (in pixels)
+      - ``height=200``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``padx``
+      - Extra space inside it, on the left and right
+      - ``padx=10``
+    * - ``pady``
+      - Extra space inside it, at the top and bottom
+      - ``pady=10``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``visual``
+      - Colour mode for the window (advanced, rarely needed)
+      - ``visual="truecolor"``
+    * - ``width``
+      - How wide it is (in pixels)
+      - ``width=300``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Frames" that is 300x200. Add a frame with a light blue background and 20 pixels of padding inside it. Put a label "Hello" inside the frame.

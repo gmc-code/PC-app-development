@@ -402,6 +402,75 @@ Quick reference
 
 ----
 
+All PanedWindow options
+---------------------------
+
+| Here is every option a PanedWindow can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``handlepad``
+      - How far the handle is from the end of the sash (in pixels)
+      - ``handlepad=20``
+    * - ``handlesize``
+      - Size of the handle square (in pixels)
+      - ``handlesize=10``
+    * - ``height``
+      - How tall it is (in pixels)
+      - ``height=200``
+    * - ``opaqueresize``
+      - ``True`` resizes the panes while you drag. ``False`` waits until you let go
+      - ``opaqueresize=False``
+    * - ``orient``
+      - Panes side by side (``"horizontal"``) or stacked (``"vertical"``)
+      - ``orient="vertical"``
+    * - ``proxybackground``
+      - Colour of the sash outline while dragging (when ``opaqueresize=False``)
+      - ``proxybackground="grey"``
+    * - ``proxyborderwidth``
+      - Border thickness of that dragging outline
+      - ``proxyborderwidth=2``
+    * - ``proxyrelief``
+      - Border style of that dragging outline
+      - ``proxyrelief="raised"``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``sashcursor``
+      - Mouse pointer shape over the sash
+      - ``sashcursor="sb_h_double_arrow"``
+    * - ``sashpad``
+      - Space around the sash (in pixels)
+      - ``sashpad=4``
+    * - ``sashrelief``
+      - Border style of the sash (the bar you drag)
+      - ``sashrelief="raised"``
+    * - ``sashwidth``
+      - How wide the sash (the bar you drag) is, in pixels
+      - ``sashwidth=8``
+    * - ``showhandle``
+      - ``True`` shows a small square handle on the sash
+      - ``showhandle=True``
+    * - ``width``
+      - How wide it is (in pixels)
+      - ``width=300``
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Panes" that is 300x200. Add a PanedWindow that fills the window, with two labels side by side: "Left" on a yellow background and "Right" on an orange background.

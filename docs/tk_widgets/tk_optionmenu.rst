@@ -371,6 +371,114 @@ Quick reference
 
 ----
 
+All OptionMenu options
+---------------------------
+
+| Here is every option an OptionMenu can have, for reference. You will only need a few of them most of the time.
+| An OptionMenu is made with the variable and choices, so set these options afterwards with ``.config()``, e.g. ``flavour_menu.config(width=12)``.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``activebackground``
+      - Background colour when the mouse is over it
+      - ``activebackground="lightblue"``
+    * - ``activeforeground``
+      - Word colour when the mouse is over it
+      - ``activeforeground="red"``
+    * - ``anchor``
+      - Where the words sit inside it (``"w"`` = left, ``"center"`` = middle)
+      - ``anchor="w"``
+    * - ``bg`` or ``background``
+      - Background colour
+      - ``bg="lavender"``
+    * - ``bitmap``
+      - Shows a small built-in picture
+      - ``bitmap="question"``
+    * - ``bd`` or ``borderwidth``
+      - How thick the border is
+      - ``bd=3``
+    * - ``compound``
+      - Where the picture goes compared to the words
+      - ``compound="left"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``direction``
+      - Where the menu appears: ``"below"``, ``"above"``, ``"left"``, ``"right"`` or ``"flush"``
+      - ``direction="above"``
+    * - ``disabledforeground``
+      - Word colour when it is turned off
+      - ``disabledforeground="grey"``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``fg`` or ``foreground``
+      - Word colour
+      - ``fg="purple"``
+    * - ``height``
+      - How tall it is (in lines of text)
+      - ``height=2``
+    * - ``highlightbackground``
+      - Colour of the focus outline when it is not selected by the keyboard
+      - ``highlightbackground="white"``
+    * - ``highlightcolor``
+      - Colour of the focus outline when it is selected by the keyboard
+      - ``highlightcolor="blue"``
+    * - ``highlightthickness``
+      - How thick the focus outline is
+      - ``highlightthickness=2``
+    * - ``image``
+      - Shows a picture instead of (or with) the words
+      - ``image=dog_picture``
+    * - ``indicatoron``
+      - ``False`` hides the small box on the right of the button
+      - ``indicatoron=False``
+    * - ``justify``
+      - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="left"``
+    * - ``menu``
+      - The menu that drops down (made for you)
+      - ``menu=new_menu``
+    * - ``padx``
+      - Extra space on the left and right of the words
+      - ``padx=10``
+    * - ``pady``
+      - Extra space above and below the words
+      - ``pady=5``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``state``
+      - ``"normal"`` (can click), ``"active"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``text``
+      - Words on the button (usually set by the chosen item)
+      - ``text="Pick one"``
+    * - ``textvariable``
+      - The variable holding the chosen item
+      - ``textvariable=flavour``
+    * - ``underline``
+      - Number of the letter to underline (``0`` = first letter)
+      - ``underline=0``
+    * - ``width``
+      - How wide the button is (in characters)
+      - ``width=12``
+    * - ``wraplength``
+      - Starts a new line when the words get this long (in pixels)
+      - ``wraplength=100``
+
+| The picture option (``image``) needs a picture made first, e.g. ``dog_picture = tk.PhotoImage(file="dog.png")``.
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Holidays" that is 300x200. Add an OptionMenu with the choices "Beach", "Snow", "City" and "Camping". Start on "Beach".
