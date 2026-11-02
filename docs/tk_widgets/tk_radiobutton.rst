@@ -509,84 +509,124 @@ All Radiobutton options
 
 .. list-table::
     :header-rows: 1
-    :widths: 30 70
+    :widths: 25 45 30
 
     * - Option
       - What it does
+      - Example
     * - ``activebackground``
       - Background colour when the mouse is over the button
+      - ``activebackground="lightblue"``
     * - ``activeforeground``
       - Word colour when the mouse is over the button
+      - ``activeforeground="red"``
     * - ``anchor``
-      - Where the words sit inside the button, e.g. ``"w"`` for left
+      - Where the words sit inside the button (``"w"`` = left)
+      - ``anchor="w"``
     * - ``bg`` or ``background``
       - Background colour
+      - ``bg="lavender"``
     * - ``bitmap``
-      - Shows a small built-in picture, e.g. ``"question"``
+      - Shows a small built-in picture
+      - ``bitmap="question"``
     * - ``bd`` or ``borderwidth``
       - How thick the border is
+      - ``bd=3``
     * - ``command``
       - Function to run when the button is clicked
+      - ``command=show``
     * - ``compound``
-      - Where the picture goes compared to the words, e.g. ``"left"``
+      - Where the picture goes compared to the words
+      - ``compound="left"``
     * - ``cursor``
-      - Mouse pointer shape over the button, e.g. ``"hand2"``
+      - Mouse pointer shape over the button
+      - ``cursor="hand2"``
     * - ``disabledforeground``
       - Word colour when the button is turned off
+      - ``disabledforeground="grey"``
     * - ``fg`` or ``foreground``
       - Word colour
+      - ``fg="purple"``
     * - ``font``
       - Style and size of the words
+      - ``font=("Arial", 14)``
     * - ``height``
       - How tall the button is (in lines of text)
+      - ``height=2``
     * - ``highlightbackground``
       - Colour of the outline when the button is not selected by the keyboard
+      - ``highlightbackground="white"``
     * - ``highlightcolor``
       - Colour of the outline when the button is selected by the keyboard
+      - ``highlightcolor="blue"``
     * - ``highlightthickness``
       - How thick that keyboard outline is
+      - ``highlightthickness=2``
     * - ``image``
       - Shows a picture instead of (or with) the words
+      - ``image=dog_picture``
     * - ``indicatoron``
       - ``0`` hides the round button so it looks like a normal button
+      - ``indicatoron=0``
     * - ``justify``
       - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="left"``
     * - ``offrelief``
       - Border style when not chosen (used with ``indicatoron=0``)
+      - ``offrelief="flat"``
     * - ``overrelief``
       - Border style when the mouse is over the button
+      - ``overrelief="raised"``
     * - ``padx``
       - Extra space on the left and right of the words
+      - ``padx=10``
     * - ``pady``
       - Extra space above and below the words
+      - ``pady=5``
     * - ``relief``
-      - Border style, e.g. ``"raised"``, ``"sunken"``, ``"flat"``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"``
+      - ``relief="sunken"``
     * - ``selectcolor``
       - Colour inside the round button when chosen
+      - ``selectcolor="yellow"``
     * - ``selectimage``
       - Picture to show when the button is chosen
+      - ``selectimage=tick_picture``
     * - ``state``
       - ``"normal"`` (can click), ``"active"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
     * - ``takefocus``
       - Whether the Tab key can move to this button
+      - ``takefocus=0``
     * - ``text``
       - Words next to the button
+      - ``text="Year 7"``
     * - ``textvariable``
       - A variable that holds the words, so they can change
+      - ``textvariable=label_words``
     * - ``tristateimage``
       - Picture to show when the button is half-chosen
+      - ``tristateimage=half_picture``
     * - ``tristatevalue``
       - The variable value that makes the button look half-chosen (default ``""``)
+      - ``tristatevalue="maybe"``
     * - ``underline``
-      - Number of the letter to underline, e.g. ``0`` for the first letter
+      - Number of the letter to underline (``0`` = first letter)
+      - ``underline=0``
     * - ``value``
       - What is stored in the variable when this button is chosen
+      - ``value="Year 7"``
     * - ``variable``
       - Shared variable for the whole group
+      - ``variable=year``
     * - ``width``
       - How wide the button is (in characters)
+      - ``width=15``
     * - ``wraplength``
       - Starts a new line when the words get this long (in pixels)
+      - ``wraplength=100``
+
+| The picture options (``image``, ``selectimage``, ``tristateimage``) need a picture made first, e.g. ``dog_picture = tk.PhotoImage(file="dog.png")``.
 
 ----
 
