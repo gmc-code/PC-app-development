@@ -693,6 +693,241 @@ All Text options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Text widget?
+
+        [x] A box for typing or showing many lines of text | Correct. It is like a small word processor.
+        [ ] A one-line typing box | Incorrect. That is an Entry.
+        [ ] A label | Incorrect. Labels only show text.
+        [ ] A message pop-up | Incorrect. That is messagebox.
+
+    .. multichoice::
+
+        For a Text widget, what does height=10 mean?
+
+        [ ] 10 pixels | Incorrect. It counts lines.
+        [x] 10 lines tall | Correct. Text height counts lines.
+        [ ] 10 words | Incorrect. It counts lines.
+        [ ] 10 characters | Incorrect. width counts characters.
+
+    .. multichoice::
+
+        What does width=40 mean?
+
+        [x] About 40 characters wide | Correct. Text width counts characters.
+        [ ] 40 pixels | Incorrect. It counts characters.
+        [ ] 40 lines | Incorrect. height counts lines.
+        [ ] 40 words | Incorrect. It counts characters.
+
+    .. multichoice::
+
+        What does insertbackground="red" change?
+
+        [ ] The background | Incorrect. bg does that.
+        [x] The colour of the typing cursor | Correct. The insert cursor is the blinking line.
+        [ ] The selected text | Incorrect. selectbackground does that.
+        [ ] The words | Incorrect. fg does that.
+
+    .. multichoice::
+
+        What does selectbackground="yellow" change?
+
+        [ ] All the text | Incorrect. It colours selected text.
+        [x] The highlight colour of selected text | Correct. It shows when text is selected.
+        [ ] The cursor | Incorrect. insertbackground does that.
+        [ ] The border | Incorrect. Not the border.
+
+    .. multichoice::
+
+        What does wrap="word" do?
+
+        [x] Wraps long lines between whole words | Correct. Words are not split.
+        [ ] Wraps in the middle of words | Incorrect. That is "char".
+        [ ] Stops wrapping | Incorrect. That is "none".
+        [ ] Makes words bold | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does padx=10 do on a Text widget?
+
+        [ ] Moves it 10 pixels | Incorrect. pack or grid move it.
+        [x] Adds 10 pixels of space inside on the left and right | Correct. The text does not touch the edge.
+        [ ] Adds 10 lines | Incorrect. It adds space.
+        [ ] Makes it 10 wide | Incorrect. width does that.
+
+    .. multichoice::
+
+        What does state="disabled" do?
+
+        [ ] Hides it | Incorrect. It is still shown.
+        [x] Stops the user and the code from changing the text | Correct. Set it to "normal" before inserting.
+        [ ] Deletes the text | Incorrect. Nothing is deleted.
+        [ ] Makes it red | Incorrect. No colour change.
+
+    .. multichoice::
+
+        What does undo=True do?
+
+        [x] Lets Ctrl+Z undo typing | Correct. It turns on the undo feature.
+        [ ] Undoes everything at the start | Incorrect. It just allows undo.
+        [ ] Deletes the text | Incorrect. It allows undo.
+        [ ] Locks the text | Incorrect. state does that.
+
+    .. multichoice::
+
+        In text.insert("1.0", "Hello"), what does "1.0" mean?
+
+        [ ] Line 0, character 1 | Incorrect. It is line first, then character.
+        [x] Line 1, character 0, the very start | Correct. Lines start at 1 and characters at 0.
+        [ ] One point zero seconds | Incorrect. It is a position.
+        [ ] The end | Incorrect. tk.END is the end.
+
+    .. multichoice::
+
+        Which line adds text to the end?
+
+        [ ] text.add("Hi") | Incorrect. Not a method.
+        [x] text.insert(tk.END, "Hi") | Correct. insert at END adds to the end.
+        [ ] text.append("Hi") | Incorrect. Not a method.
+        [ ] text.insert("Hi") | Incorrect. insert needs a position.
+
+    .. multichoice::
+
+        Which line gets all the text?
+
+        [x] text.get("1.0", tk.END) | Correct. From the start to the end.
+        [ ] text.get() | Incorrect. get needs a start position.
+        [ ] text.get(0, tk.END) | Incorrect. Text positions use "1.0".
+        [ ] text.read() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Why does text.get("1.0", tk.END) often end with a new line?
+
+        [ ] It is a bug in your code | Incorrect. It is normal.
+        [x] The Text widget always keeps a new line at the end | Correct. Use "end-1c" to leave it off.
+        [ ] Because of wrap | Incorrect. Not related.
+        [ ] Because of font | Incorrect. Not related.
+
+    .. multichoice::
+
+        Which line deletes all the text?
+
+        [ ] text.delete(0, tk.END) | Incorrect. Text positions use "1.0".
+        [x] text.delete("1.0", tk.END) | Correct. From the start to the end.
+        [ ] text.clear() | Incorrect. Not a method.
+        [ ] text.delete() | Incorrect. It needs a start.
+
+    .. multichoice::
+
+        What does text.see(tk.END) do?
+
+        [x] Scrolls so the end of the text can be seen | Correct. Useful for logs and chats.
+        [ ] Selects all the text | Incorrect. It scrolls.
+        [ ] Reads the text | Incorrect. get reads.
+        [ ] Deletes the text | Incorrect. It scrolls.
+
+    .. multichoice::
+
+        What does tag_configure("warning", foreground="red") do?
+
+        [ ] Makes all text red | Incorrect. It sets up a tag.
+        [x] Sets up a tag called warning that makes text red | Correct. Then insert text with that tag.
+        [ ] Deletes red text | Incorrect. It sets up a style.
+        [ ] Adds the word warning | Incorrect. It sets up a tag.
+
+    .. multichoice::
+
+        How do you insert red text using the warning tag?
+
+        [ ] text.insert(tk.END, "Careful", fg="red") | Incorrect. insert does not take fg.
+        [x] text.insert(tk.END, "Careful", "warning") | Correct. The tag name goes after the text.
+        [ ] text.tag("Careful", "warning") | Incorrect. Not how tags are used.
+        [ ] text.config(tag="warning") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Two steps add a Scrollbar to a Text box. One is command=text.yview. What is the other?
+
+        [x] text.config(yscrollcommand=scrollbar.set) | Correct. The Text tells the Scrollbar where it is.
+        [ ] text.config(scrollbar=True) | Incorrect. Not an option.
+        [ ] text.pack(scrollbar) | Incorrect. Not how it works.
+        [ ] text.add(scrollbar) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which line changes the font later?
+
+        [ ] text.font = ("Arial", 14) | Incorrect. Use config.
+        [x] text.config(font=("Arial", 14)) | Correct. config changes options.
+        [ ] text.set(font=...) | Incorrect. Not a method.
+        [ ] text.insert(font=...) | Incorrect. insert adds text.
+
+    .. multichoice::
+
+        To add text to a disabled Text widget from code, what must you do first?
+
+        [x] Set state="normal", insert, then set state="disabled" again | Correct. Disabled text cannot be changed, even by code.
+        [ ] Nothing | Incorrect. Inserting into a disabled widget does nothing.
+        [ ] Delete the widget | Incorrect. Not needed.
+        [ ] Use a Label | Incorrect. Not needed.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Text box that wraps words.
+
+        notes = tk.@@Text | Entry | Label@@(root, width=40, @@height | lines | length@@=10, wrap="@@word | char | none@@")
+        notes.pack()
+
+    .. cloze::
+        :instructions: Add text at the start and the end.
+
+        notes.@@insert | add | append@@("1.0", "First line\n")
+        notes.insert(tk.@@END | LAST | STOP@@, "Last line\n")
+
+    .. cloze::
+        :instructions: Read and clear the text.
+
+        words = notes.@@get | read | text@@("1.0", tk.END)
+        notes.@@delete | clear | remove@@("@@1.0 | 0 | start@@", tk.END)
+
+    .. cloze::
+        :instructions: Make red warning text.
+
+        notes.@@tag_configure | config | tag_add@@("warning", foreground="red")
+        notes.insert(tk.END, "Careful!", "@@warning | red | tag@@")
+
+    .. cloze::
+        :instructions: Lock the text after adding to it.
+
+        notes.config(@@state | lock | mode@@="normal")
+        notes.insert(tk.END, "New message\n")
+        notes.config(state="@@disabled | locked | readonly@@")
+        notes.@@see | show | scroll@@(tk.END)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Diary" that is 400x300. Add a Text widget 40 characters wide and 10 lines high that wraps between words, with a light yellow background and Arial size 12.

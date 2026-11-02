@@ -476,6 +476,240 @@ All LabelFrame options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a LabelFrame?
+
+        [x] A frame with a border and a title | Correct. It groups widgets with a heading.
+        [ ] A label that can be clicked | Incorrect. That is a Button.
+        [ ] A box to type in | Incorrect. That is an Entry.
+        [ ] A drawing area | Incorrect. That is a Canvas.
+
+    .. multichoice::
+
+        Which option sets the title on the border?
+
+        [ ] title | Incorrect. title is for windows.
+        [x] text | Correct. text sets the LabelFrame title.
+        [ ] label | Incorrect. label is not an option here.
+        [ ] heading | Incorrect. heading is not an option.
+
+    .. multichoice::
+
+        What do font and fg change on a LabelFrame?
+
+        [ ] The widgets inside | Incorrect. Each widget has its own font.
+        [x] The title on the border | Correct. They style the title.
+        [ ] The border thickness | Incorrect. borderwidth does that.
+        [ ] The background | Incorrect. bg does that.
+
+    .. multichoice::
+
+        What does bg="lightyellow" colour?
+
+        [x] The inside of the LabelFrame | Correct. bg is its background.
+        [ ] Only the title | Incorrect. The title is styled with fg and font.
+        [ ] The whole window | Incorrect. Only the LabelFrame.
+        [ ] The buttons inside | Incorrect. Each widget has its own bg.
+
+    .. multichoice::
+
+        What do padx and pady do on a LabelFrame?
+
+        [ ] Move the title | Incorrect. labelanchor moves the title.
+        [x] Add space inside, between the border and the widgets | Correct. They pad the inside.
+        [ ] Add space outside | Incorrect. That is done in pack or grid.
+        [ ] Make the title bigger | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does labelanchor="n" do?
+
+        [ ] Puts the title on the left | Incorrect. That is "w".
+        [x] Puts the title in the middle of the top border | Correct. n is the top middle.
+        [ ] Puts the title at the bottom | Incorrect. That is "s".
+        [ ] Hides the title | Incorrect. It moves it.
+
+    .. multichoice::
+
+        Which labelanchor puts the title at the top left (the default)?
+
+        [x] "nw" | Correct. n is top and w is left.
+        [ ] "ne" | Incorrect. ne is top right.
+        [ ] "sw" | Incorrect. sw is bottom left.
+        [ ] "center" | Incorrect. center is not used for the title.
+
+    .. multichoice::
+
+        What do relief and borderwidth change?
+
+        [ ] The title colour | Incorrect. fg does that.
+        [x] The style and thickness of the border | Correct. relief is the style, borderwidth the thickness.
+        [ ] The size of the widgets inside | Incorrect. They only affect the border.
+        [ ] The window title | Incorrect. root.title does that.
+
+    .. multichoice::
+
+        Why is width or height sometimes ignored on a LabelFrame?
+
+        [ ] The values are too small | Incorrect. It is about packing.
+        [x] It shrinks to fit the widgets inside when they are packed | Correct. Packing resizes it to fit.
+        [ ] LabelFrames have no size | Incorrect. They do.
+        [ ] bg must be set first | Incorrect. bg does not affect size.
+
+    .. multichoice::
+
+        How do you put a Radiobutton inside a LabelFrame called box?
+
+        [ ] tk.Radiobutton(root, ...) | Incorrect. That puts it in the window.
+        [x] tk.Radiobutton(box, ...) | Correct. The parent comes first.
+        [ ] box.add(tk.Radiobutton()) | Incorrect. LabelFrames do not use add.
+        [ ] tk.Radiobutton(..., frame=box) | Incorrect. The parent goes first.
+
+    .. multichoice::
+
+        Why put radiobuttons in a LabelFrame?
+
+        [x] To group them under a heading like "Size" | Correct. It shows they belong together.
+        [ ] So more than one can be chosen | Incorrect. They still share a variable.
+        [ ] To make them faster | Incorrect. No change in speed.
+        [ ] Radiobuttons must be in a LabelFrame | Incorrect. They can go anywhere.
+
+    .. multichoice::
+
+        Which pack option puts two LabelFrames side by side?
+
+        [ ] fill="x" | Incorrect. fill stretches.
+        [x] side="left" | Correct. side="left" lines them up across.
+        [ ] anchor="n" | Incorrect. anchor does not line them up.
+        [ ] expand=False | Incorrect. expand is about spare space.
+
+    .. multichoice::
+
+        In a form inside a LabelFrame, which layout lines up labels and entries in rows?
+
+        [ ] pack only | Incorrect. pack puts one under another.
+        [x] grid with row and column | Correct. grid makes neat rows and columns.
+        [ ] place only | Incorrect. place uses exact positions.
+        [ ] No layout is needed | Incorrect. Widgets need a layout.
+
+    .. multichoice::
+
+        Which line changes the title later?
+
+        [ ] box.title("New") | Incorrect. title is for windows.
+        [x] box.config(text="New") | Correct. config changes the text option.
+        [ ] box.set("New") | Incorrect. LabelFrames do not have set.
+        [ ] box.text = "New" | Incorrect. Use config.
+
+    .. multichoice::
+
+        What does box.cget("text") give?
+
+        [x] The current title | Correct. cget reads an option.
+        [ ] The words in the widgets inside | Incorrect. Only the LabelFrame's own text.
+        [ ] An error | Incorrect. It is a real method.
+        [ ] The size of the frame | Incorrect. That is winfo_width.
+
+    .. multichoice::
+
+        Can a LabelFrame be clicked to run a function?
+
+        [ ] Yes, with command | Incorrect. It has no command option.
+        [x] No, it is only a container | Correct. Put a Button inside instead.
+        [ ] Only if text is set | Incorrect. Still no.
+        [ ] Only with relief="raised" | Incorrect. Still no.
+
+    .. multichoice::
+
+        What is the difference between a Frame and a LabelFrame?
+
+        [ ] A LabelFrame cannot hold widgets | Incorrect. It can.
+        [x] A LabelFrame has a border with a title | Correct. That is the main difference.
+        [ ] A Frame has a title | Incorrect. Frames have no title.
+        [ ] There is no difference | Incorrect. The title and border differ.
+
+    .. multichoice::
+
+        Which relief value gives a carved-in line border?
+
+        [ ] "flat" | Incorrect. flat shows no border style.
+        [ ] "raised" | Incorrect. raised sticks out.
+        [x] "groove" | Correct. groove looks carved in.
+        [ ] "solid" | Incorrect. solid is a plain line.
+
+    .. multichoice::
+
+        Inside one LabelFrame, which rule applies?
+
+        [x] Use only pack or only grid for its widgets | Correct. Mixing them in one container can freeze the program.
+        [ ] Use pack and grid together | Incorrect. That can freeze the program.
+        [ ] Only use place | Incorrect. pack and grid work too.
+        [ ] Do not use any layout | Incorrect. Widgets need a layout.
+
+    .. multichoice::
+
+        What does padx=10 add?
+
+        [ ] 10 more widgets | Incorrect. It adds space.
+        [ ] A border 10 pixels thick | Incorrect. borderwidth does that.
+        [x] 10 pixels of space on the left and right inside | Correct. padx pads the sides.
+        [ ] Ten characters to the title | Incorrect. It adds space.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a LabelFrame with a title.
+
+        size_box = tk.@@LabelFrame | Label | Button@@(root, @@text | title | label@@="Size", padx=10, pady=10)
+        size_box.pack(padx=10, pady=10)
+
+    .. cloze::
+        :instructions: Put radiobuttons inside the LabelFrame.
+
+        size = tk.StringVar(value="Small")
+        tk.Radiobutton(@@size_box | root | size@@, text="Small", variable=size, value="Small").pack(anchor="w")
+        tk.Radiobutton(size_box, text="Large", @@variable | value | text@@=size, value="Large").pack(anchor="@@w | left | west@@")
+
+    .. cloze::
+        :instructions: Move and style the title.
+
+        box = tk.LabelFrame(root, text="Settings", @@labelanchor | anchor | side@@="n", font=("Arial", 12, "bold"), @@fg | bg | colour@@="blue")
+        box.pack()
+
+    .. cloze::
+        :instructions: Put two LabelFrames side by side.
+
+        left_box.pack(@@side | fill | anchor@@="left", padx=10)
+        right_box.pack(side="@@left | top | across@@", padx=10)
+
+    .. cloze::
+        :instructions: Change and read the title.
+
+        box.@@config | cget | title@@(text="Options")
+        title = box.@@cget | config | get@@("text")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Profile" that is 300x200. Add a LabelFrame with the title "About you" and padding of 10. Put a label "Name:" and an Entry inside it.

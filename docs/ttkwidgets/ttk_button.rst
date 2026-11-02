@@ -479,6 +479,299 @@ Quick reference
 
 ----
 
+All Button options
+---------------------------
+
+| Here is every option a ttk Button can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``command``
+      - Function to run when it is clicked
+      - ``command=show``
+    * - ``compound``
+      - Where the picture goes compared to the words
+      - ``compound="left"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``default``
+      - Marks it as the default button: ``"normal"``, ``"active"`` or ``"disabled"``
+      - ``default="active"``
+    * - ``image``
+      - Shows a picture instead of (or with) the words
+      - ``image=dog_picture``
+    * - ``padding``
+      - Extra space inside it, around the words (one number, or left, top, right, bottom)
+      - ``padding=10``
+    * - ``state``
+      - ``"normal"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TButton"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``text``
+      - Words shown on the button
+      - ``text="Click me"``
+    * - ``textvariable``
+      - A variable that holds the words, so they can change
+      - ``textvariable=label_words``
+    * - ``underline``
+      - Number of the letter to underline (``0`` = first letter)
+      - ``underline=0``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+
+| The ``image`` option needs a picture made first, e.g. ``dog_picture = tk.PhotoImage(file="dog.png")``.
+| ttk Button has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("TButton", foreground="purple")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        How is a ttk Button made?
+
+        [x] ttk.Button(root, text="Go") | Correct. Import ttk from tkinter first.
+        [ ] tk.Button(root, style="ttk") | Incorrect. That makes a tk Button.
+        [ ] ttk.button(root, text="Go") | Incorrect. The name needs a capital B.
+        [ ] tk.ttk(root, text="Go") | Incorrect. ttk is a module, not a widget.
+
+    .. multichoice::
+
+        Which import is needed for ttk widgets?
+
+        [ ] import ttk | Incorrect. ttk is inside tkinter.
+        [x] from tkinter import ttk | Correct. ttk comes from tkinter.
+        [ ] import tkinter.ttk as tk | Incorrect. Keep tk for tkinter.
+        [ ] from ttk import Button | Incorrect. Not where it lives.
+
+    .. multichoice::
+
+        What is the main difference between ttk and tk buttons?
+
+        [x] ttk buttons match the computer's theme and are styled with ttk.Style | Correct. They look more modern.
+        [ ] ttk buttons cannot be clicked | Incorrect. They can.
+        [ ] ttk buttons have no text | Incorrect. They have text.
+        [ ] There is no difference | Incorrect. The look and styling differ.
+
+    .. multichoice::
+
+        Why does ttk.Button(root, bg="red") cause an error?
+
+        [ ] bg must be in capitals | Incorrect. ttk has no bg option at all.
+        [x] ttk widgets do not have a bg option; colours are set with a style | Correct. Use style.configure.
+        [ ] Red is not a colour | Incorrect. Red is fine.
+        [ ] Buttons cannot be red | Incorrect. They can, with a style.
+
+    .. multichoice::
+
+        What does padding=10 do?
+
+        [ ] Adds space outside the button | Incorrect. That is done in pack.
+        [x] Adds 10 pixels of space inside the button around the words | Correct. padding makes it bigger.
+        [ ] Makes 10 buttons | Incorrect. It adds space.
+        [ ] Moves the button | Incorrect. pack or grid move it.
+
+    .. multichoice::
+
+        What does width=15 mean on a ttk Button?
+
+        [x] About 15 characters wide | Correct. Text buttons count characters.
+        [ ] 15 pixels | Incorrect. It counts characters.
+        [ ] 15 lines | Incorrect. Not lines.
+        [ ] 15 buttons | Incorrect. One button.
+
+    .. multichoice::
+
+        What does compound="left" do?
+
+        [ ] Puts the button on the left | Incorrect. It places the picture.
+        [x] Shows the picture on the left of the words | Correct. compound places the image next to the text.
+        [ ] Hides the words | Incorrect. It shows both.
+        [ ] Joins two buttons | Incorrect. It places the image.
+
+    .. multichoice::
+
+        Which line greys out a ttk Button?
+
+        [ ] button.config(bg="grey") | Incorrect. ttk has no bg.
+        [x] button.state(["disabled"]) | Correct. The state method takes a list.
+        [ ] button.disable() | Incorrect. Not a method.
+        [ ] button.grey() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which line turns the button back on?
+
+        [x] button.state(["!disabled"]) | Correct. The ! means "not disabled".
+        [ ] button.state(["enabled"]) | Incorrect. Not a ttk state.
+        [ ] button.state("on") | Incorrect. Not right.
+        [ ] button.config(on=True) | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does button.instate(["disabled"]) give?
+
+        [ ] It disables the button | Incorrect. state does that.
+        [x] True if the button is disabled, otherwise False | Correct. instate checks a state.
+        [ ] The button text | Incorrect. It checks state.
+        [ ] An error | Incorrect. It is a real method.
+
+    .. multichoice::
+
+        What does cursor="hand2" do?
+
+        [x] Shows a pointing hand when the mouse is over the button | Correct. It changes the pointer.
+        [ ] Adds a picture of a hand | Incorrect. image does that.
+        [ ] Makes the button bigger | Incorrect. It changes the pointer.
+        [ ] Clicks twice | Incorrect. It changes the pointer.
+
+    .. multichoice::
+
+        What does style="Big.TButton" do?
+
+        [ ] Makes a new widget | Incorrect. It uses a style.
+        [x] Uses the style called Big.TButton for this button only | Correct. Custom styles end with the class name.
+        [ ] Changes every button | Incorrect. "TButton" would change every button.
+        [ ] Causes an error | Incorrect. It works once the style is set.
+
+    .. multichoice::
+
+        Which style name changes every ttk Button?
+
+        [x] "TButton" | Correct. TButton is the style for all buttons.
+        [ ] "Button" | Incorrect. The style name is TButton.
+        [ ] "ttk.Button" | Incorrect. Not a style name.
+        [ ] "AllButtons" | Incorrect. Not a style name.
+
+    .. multichoice::
+
+        Which line makes the style object?
+
+        [ ] style = ttk.style() | Incorrect. Style needs a capital S.
+        [x] style = ttk.Style() | Correct. Then use style.configure.
+        [ ] style = tk.Style() | Incorrect. Style is in ttk.
+        [ ] style = root.style() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What does style.configure("TButton", font=("Arial", 14)) do?
+
+        [ ] Changes one button | Incorrect. It changes every ttk Button.
+        [x] Changes the font of every ttk Button | Correct. TButton is the style for all of them.
+        [ ] Changes every widget | Incorrect. Only buttons.
+        [ ] Nothing | Incorrect. It changes the font.
+
+    .. multichoice::
+
+        What does style.map("TButton", background=[("active", "yellow")]) do?
+
+        [x] Makes buttons turn yellow when the mouse is over them | Correct. map sets colours for states.
+        [ ] Makes all buttons yellow all the time | Incorrect. Only when active.
+        [ ] Draws a map | Incorrect. It maps states to colours.
+        [ ] Deletes yellow | Incorrect. It sets a colour.
+
+    .. multichoice::
+
+        What does button.cget("text") give?
+
+        [ ] It changes the text | Incorrect. config changes it.
+        [x] The current words on the button | Correct. cget reads an option.
+        [ ] The style | Incorrect. It reads text.
+        [ ] An error | Incorrect. It is a real method.
+
+    .. multichoice::
+
+        What does button.invoke() do?
+
+        [ ] Deletes it | Incorrect. destroy does that.
+        [x] Runs the button's command, as if clicked | Correct. invoke acts like a click.
+        [ ] Disables it | Incorrect. state does that.
+        [ ] Changes its style | Incorrect. config does that.
+
+    .. multichoice::
+
+        Why is lambda used in command=lambda: add(5)?
+
+        [ ] To make it faster | Incorrect. Not about speed.
+        [x] To send a value to the function when the button is clicked | Correct. lambda waits for the click.
+        [ ] To change the style | Incorrect. Not about style.
+        [ ] It is not needed | Incorrect. Without it add(5) runs at the start.
+
+    .. multichoice::
+
+        Some themes on Windows ignore background colours on buttons. What can be used instead?
+
+        [x] style.theme_use("clam") | Correct. The clam theme allows colour changes.
+        [ ] tk.Button with ttk | Incorrect. Not the fix.
+        [ ] bg="red" | Incorrect. ttk has no bg.
+        [ ] A Label | Incorrect. A Label is not a button.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a ttk Button.
+
+        from tkinter import @@ttk | tk | Style@@
+        go_button = ttk.@@Button | button | Label@@(root, text="Go", @@command | click | run@@=go)
+        go_button.pack()
+
+    .. cloze::
+        :instructions: Give it padding and a width.
+
+        go_button = ttk.Button(root, text="Start", @@padding | padx | space@@=10, @@width | size | length@@=15)
+
+    .. cloze::
+        :instructions: Style every button.
+
+        style = ttk.@@Style | style | Theme@@()
+        style.@@configure | config | set@@("@@TButton | Button | ttkButton@@", font=("Arial", 14))
+
+    .. cloze::
+        :instructions: Make one special button.
+
+        style.configure("Big.TButton", font=("Arial", 20))
+        big_button = ttk.Button(root, text="Big", @@style | theme | font@@="Big.TButton")
+
+    .. cloze::
+        :instructions: Turn a button off and on.
+
+        go_button.@@state | config | set@@(["disabled"])
+        go_button.state(["@@!disabled | enabled | on@@"])
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "ttk Buttons" that is 300x200. Add a ttk Button "Click me" with a width of 15 and padding of 10.

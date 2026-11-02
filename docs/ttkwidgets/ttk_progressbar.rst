@@ -416,6 +416,292 @@ Quick reference
 
 ----
 
+All Progressbar options
+---------------------------
+
+| Here is every option a ttk Progressbar can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``length``
+      - How long the bar is (in pixels)
+      - ``length=200``
+    * - ``maximum``
+      - The value that means full (default ``100``)
+      - ``maximum=100``
+    * - ``mode``
+      - ``"determinate"`` (fills up to show progress) or ``"indeterminate"`` (a block bounces back and forth)
+      - ``mode="indeterminate"``
+    * - ``orient``
+      - Which way it goes: ``"horizontal"`` or ``"vertical"``
+      - ``orient="horizontal"``
+    * - ``phase``
+      - Used by some themes to animate the bar (rarely needed)
+      - ``phase=0``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TProgressbar"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``value``
+      - How full the bar is right now
+      - ``value=40``
+    * - ``variable``
+      - A variable that holds how full the bar is
+      - ``variable=progress``
+
+| ttk Progressbar has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("Horizontal.TProgressbar", background="green")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Progressbar?
+
+        [x] A bar that fills up to show how much of a job is done | Correct. Like a download bar.
+        [ ] A slider the user drags | Incorrect. That is a Scale.
+        [ ] A list of steps | Incorrect. Not a list.
+        [ ] A timer | Incorrect. It shows progress.
+
+    .. multichoice::
+
+        What does length=300 do?
+
+        [ ] Sets the maximum | Incorrect. maximum does that.
+        [x] Makes the bar 300 pixels long | Correct. length sets its size.
+        [ ] Fills it to 300 | Incorrect. value fills it.
+        [ ] Sets the speed | Incorrect. Not related.
+
+    .. multichoice::
+
+        What does maximum=100 mean?
+
+        [x] A value of 100 means the bar is full | Correct. 100 is the default.
+        [ ] The bar is 100 pixels | Incorrect. length does that.
+        [ ] It fills in 100 seconds | Incorrect. Not about time.
+        [ ] It can only be used 100 times | Incorrect. Not related.
+
+    .. multichoice::
+
+        If maximum=50 and value=25, how full is the bar?
+
+        [ ] Full | Incorrect. 25 of 50 is half.
+        [x] Half full | Correct. 25 is half of 50.
+        [ ] A quarter full | Incorrect. That would be 12.5.
+        [ ] Empty | Incorrect. 25 is more than 0.
+
+    .. multichoice::
+
+        What does orient="vertical" do?
+
+        [ ] Makes it go left to right | Incorrect. That is horizontal.
+        [x] Makes the bar stand up and fill from the bottom | Correct. vertical goes up and down.
+        [ ] Hides it | Incorrect. It sets direction.
+        [ ] Makes it bounce | Incorrect. mode does that.
+
+    .. multichoice::
+
+        What does mode="determinate" do?
+
+        [x] Fills the bar to show how much is done | Correct. Use it when you know the progress.
+        [ ] Bounces a block back and forth | Incorrect. That is indeterminate.
+        [ ] Hides the bar | Incorrect. It shows progress.
+        [ ] Stops the bar | Incorrect. stop does that.
+
+    .. multichoice::
+
+        When should mode="indeterminate" be used?
+
+        [ ] When the progress is known exactly | Incorrect. Use determinate.
+        [x] When you do not know how long the job will take | Correct. A block moves back and forth.
+        [ ] Never | Incorrect. It is useful.
+        [ ] Only when vertical | Incorrect. Any direction.
+
+    .. multichoice::
+
+        What does variable=progress do?
+
+        [ ] Sets the colour | Incorrect. A style does that.
+        [x] Links the bar to a variable, so progress.set(50) fills it | Correct. The bar follows the variable.
+        [ ] Sets the length | Incorrect. length does that.
+        [ ] Names the bar | Incorrect. It links a variable.
+
+    .. multichoice::
+
+        Which line fills the bar to 75?
+
+        [x] bar.config(value=75) | Correct. Or bar["value"] = 75.
+        [ ] bar.set(75) | Incorrect. Progressbars have no set method.
+        [ ] bar.fill(75) | Incorrect. Not a method.
+        [ ] bar.value(75) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What does bar.step(10) do?
+
+        [ ] Sets the value to 10 | Incorrect. It adds.
+        [x] Adds 10 to the value | Correct. step moves it forward.
+        [ ] Moves 10 pixels | Incorrect. It adds to the value.
+        [ ] Takes 10 away | Incorrect. It adds.
+
+    .. multichoice::
+
+        What happens when step goes past maximum?
+
+        [ ] An error happens | Incorrect. No error.
+        [x] It goes back to the start and keeps going | Correct. The value wraps round.
+        [ ] It stops at maximum | Incorrect. It wraps.
+        [ ] The bar disappears | Incorrect. It wraps.
+
+    .. multichoice::
+
+        What does bar.start() do?
+
+        [x] Makes the bar move by itself | Correct. It keeps stepping on a timer.
+        [ ] Sets the value to 0 | Incorrect. It starts moving.
+        [ ] Opens a window | Incorrect. It moves the bar.
+        [ ] Only works in determinate mode | Incorrect. It is often used with indeterminate.
+
+    .. multichoice::
+
+        What does bar.stop() do?
+
+        [ ] Deletes the bar | Incorrect. It stops moving.
+        [x] Stops the bar moving on its own | Correct. It ends start().
+        [ ] Fills the bar | Incorrect. It stops.
+        [ ] Closes the program | Incorrect. It stops the bar.
+
+    .. multichoice::
+
+        What does start(20) mean?
+
+        [ ] Start at 20 | Incorrect. It sets the timing.
+        [x] Move one step every 20 milliseconds | Correct. The number is the time between steps.
+        [ ] Move 20 steps | Incorrect. It sets the timing.
+        [ ] Start in 20 seconds | Incorrect. Milliseconds between steps.
+
+    .. multichoice::
+
+        How can root.after fill the bar a bit at a time?
+
+        [x] A function adds to value, then calls root.after(100, itself) until full | Correct. after repeats the function.
+        [ ] root.after fills it at once | Incorrect. It waits, then runs.
+        [ ] root.after stops the bar | Incorrect. It runs a function later.
+        [ ] It cannot | Incorrect. It can.
+
+    .. multichoice::
+
+        For a 10-second countdown, what should maximum be?
+
+        [ ] 100 | Incorrect. Use the number of seconds.
+        [x] 10 | Correct. One step for each second.
+        [ ] 1 | Incorrect. Too small.
+        [ ] 60 | Incorrect. That is a minute.
+
+    .. multichoice::
+
+        How do you change the bar colour?
+
+        [ ] bar.config(bg="green") | Incorrect. ttk has no bg.
+        [x] style.configure("Horizontal.TProgressbar", background="green") | Correct. The bar colour comes from the style.
+        [ ] bar.colour("green") | Incorrect. Not a method.
+        [ ] bar.config(fill="green") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which style name is used for a horizontal Progressbar?
+
+        [x] "Horizontal.TProgressbar" | Correct. The direction is part of the name.
+        [ ] "TProgressbar" | Incorrect. It needs the direction.
+        [ ] "Progress" | Incorrect. Not the name.
+        [ ] "TBar" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        How can the bar change colour as it fills?
+
+        [ ] It does it by itself | Incorrect. You must change it.
+        [x] Check the value and switch the bar to a different style | Correct. e.g. red style when low, green when high.
+        [ ] Use mode="colour" | Incorrect. Not a mode.
+        [ ] It cannot | Incorrect. It can, with styles.
+
+    .. multichoice::
+
+        Can the user drag a Progressbar?
+
+        [ ] Yes | Incorrect. It only shows progress.
+        [x] No, it only shows progress; use a Scale for dragging | Correct. The program controls it.
+        [ ] Only when vertical | Incorrect. Still no.
+        [ ] Only in indeterminate mode | Incorrect. Still no.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Progressbar.
+
+        bar = ttk.@@Progressbar | Scale | Scrollbar@@(root, @@length | width | size@@=300, @@maximum | to | max@@=100)
+        bar.pack(pady=10)
+
+    .. cloze::
+        :instructions: Fill the bar from code.
+
+        bar.config(@@value | fill | level@@=50)
+        bar.@@step | add | move@@(10)
+
+    .. cloze::
+        :instructions: Make a bouncing bar.
+
+        busy = ttk.Progressbar(root, @@mode | style | type@@="indeterminate")
+        busy.@@start | run | go@@(20)
+        busy.@@stop | end | pause@@()
+
+    .. cloze::
+        :instructions: Fill the bar with after.
+
+        def fill():
+            if bar["value"] < 100:
+                bar["value"] = bar["value"] + @@10 | 100 | 0@@
+                root.@@after | wait | sleep@@(200, fill)
+
+    .. cloze::
+        :instructions: Colour the bar green.
+
+        style = ttk.Style()
+        style.configure("@@Horizontal.TProgressbar | TProgressbar.Horizontal | Progress@@", @@background | bg | colour@@="green")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Progress" that is 300x200 with a Progressbar 250 pixels long showing 3 out of 5.

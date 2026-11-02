@@ -698,6 +698,242 @@ All Entry options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is an Entry?
+
+        [x] A box where the user can type one line | Correct. Entry is for one line of typing.
+        [ ] A box for many lines | Incorrect. The Text widget is for many lines.
+        [ ] A button | Incorrect. Buttons are clicked.
+        [ ] A picture | Incorrect. Images use Label or Canvas.
+
+    .. multichoice::
+
+        For an Entry, what does width=20 mean?
+
+        [ ] 20 pixels | Incorrect. Entry width is in characters.
+        [x] About 20 characters wide | Correct. Entry width counts characters.
+        [ ] 20 lines | Incorrect. Entry has one line.
+        [ ] 20 words | Incorrect. It counts characters.
+
+    .. multichoice::
+
+        Which option makes the typed words red?
+
+        [x] fg="red" | Correct. fg sets the word colour.
+        [ ] bg="red" | Incorrect. bg sets the box colour.
+        [ ] colour="red" | Incorrect. colour is not an option.
+        [ ] text="red" | Incorrect. Entry has no text option.
+
+    .. multichoice::
+
+        What does justify="center" do?
+
+        [ ] Makes the box bigger | Incorrect. width sets the size.
+        [ ] Centres the window | Incorrect. It only affects the Entry.
+        [x] Puts the typed words in the middle of the box | Correct. justify lines up the words.
+        [ ] Clears the box | Incorrect. delete clears the box.
+
+    .. multichoice::
+
+        What does show="\*" do?
+
+        [x] Shows a star for each letter typed, good for passwords | Correct. The real letters are still stored.
+        [ ] Shows the letters normally | Incorrect. show hides them behind stars.
+        [ ] Stops typing | Incorrect. state does that.
+        [ ] Adds a star at the end | Incorrect. Each letter shows as a star.
+
+    .. multichoice::
+
+        What does state="readonly" mean?
+
+        [ ] The box is hidden | Incorrect. It is still shown.
+        [x] The user can see the words but cannot type | Correct. readonly stops typing.
+        [ ] The words are deleted | Incorrect. It does not delete.
+        [ ] The box turns red | Incorrect. It does not change colour.
+
+    .. multichoice::
+
+        Which method reads what was typed?
+
+        [ ] entry.read() | Incorrect. This method does not exist.
+        [x] entry.get() | Correct. get gives the typed text.
+        [ ] entry.text() | Incorrect. This method does not exist.
+        [ ] entry.value | Incorrect. That is not used.
+
+    .. multichoice::
+
+        What type is the result of entry.get()?
+
+        [ ] A whole number | Incorrect. It is always text.
+        [ ] A decimal number | Incorrect. It is always text.
+        [x] A string (text) | Correct. Use int() or float() to make a number.
+        [ ] A list | Incorrect. It is one piece of text.
+
+    .. multichoice::
+
+        How do you turn the typed text into a whole number?
+
+        [ ] str(entry.get()) | Incorrect. str makes text.
+        [x] int(entry.get()) | Correct. int changes text to a whole number.
+        [ ] entry.get().number | Incorrect. That does not exist.
+        [ ] number(entry.get()) | Incorrect. number is not a Python function.
+
+    .. multichoice::
+
+        What happens if int(entry.get()) is used when "abc" was typed?
+
+        [ ] It gives 0 | Incorrect. Python cannot change abc to a number.
+        [x] A ValueError | Correct. abc is not a number.
+        [ ] It gives "abc" | Incorrect. int must give a number.
+        [ ] It ignores it | Incorrect. An error happens.
+
+    .. multichoice::
+
+        Which line clears everything in the Entry?
+
+        [x] entry.delete(0, tk.END) | Correct. Delete from the first character to the end.
+        [ ] entry.clear() | Incorrect. Entries do not have clear.
+        [ ] entry.delete() | Incorrect. delete needs a start.
+        [ ] entry.insert(0, "") | Incorrect. That adds nothing; it does not clear.
+
+    .. multichoice::
+
+        What does entry.insert(0, "Hello") do?
+
+        [ ] Deletes Hello | Incorrect. insert adds text.
+        [ ] Adds Hello at the end | Incorrect. 0 means the start.
+        [x] Puts Hello at the start of the box | Correct. 0 is the first position.
+        [ ] Replaces the window title | Incorrect. It only changes the Entry.
+
+    .. multichoice::
+
+        What does entry.focus_set() do?
+
+        [x] Puts the typing cursor in the box so the user can type straight away | Correct. focus_set selects the box.
+        [ ] Highlights the text | Incorrect. select_range does that.
+        [ ] Clears the box | Incorrect. delete clears.
+        [ ] Makes the box bigger | Incorrect. width does that.
+
+    .. multichoice::
+
+        What does entry.select_range(0, tk.END) do?
+
+        [ ] Deletes all the text | Incorrect. delete does that.
+        [x] Highlights all the text | Correct. select_range selects text.
+        [ ] Moves the box | Incorrect. pack or grid move widgets.
+        [ ] Reads the text | Incorrect. get reads text.
+
+    .. multichoice::
+
+        Which event runs a function when Enter is pressed?
+
+        [ ] "<Enter>" | Incorrect. That is the mouse moving onto a widget.
+        [ ] "<Key-Enter>" | Incorrect. This is not the event name.
+        [x] "<Return>" | Correct. Return is the Enter key.
+        [ ] "<Button-1>" | Incorrect. That is a mouse click.
+
+    .. multichoice::
+
+        A function used with bind needs:
+
+        [x] A parameter, such as event | Correct. bind sends an event to the function.
+        [ ] No parameters | Incorrect. bind always sends an event.
+        [ ] Two parameters | Incorrect. It gets one event.
+        [ ] A return value | Incorrect. It does not need to return.
+
+    .. multichoice::
+
+        What does textvariable=name do?
+
+        [ ] Sets the font | Incorrect. font sets the font.
+        [x] Links the box to a StringVar, so name.get() reads it | Correct. Changes in the box update the variable.
+        [ ] Sets the box name | Incorrect. It links a variable.
+        [ ] Hides the text | Incorrect. show hides text.
+
+    .. multichoice::
+
+        Which line makes the box pink later?
+
+        [ ] entry.bg = "pink" | Incorrect. Options are changed with config.
+        [x] entry.config(bg="pink") | Correct. config changes options.
+        [ ] entry.set(bg="pink") | Incorrect. Entries do not have set.
+        [ ] entry.pink() | Incorrect. That does not exist.
+
+    .. multichoice::
+
+        Which tk constant means "the end of the text"?
+
+        [ ] tk.LAST | Incorrect. That is not used here.
+        [ ] tk.STOP | Incorrect. That does not exist.
+        [x] tk.END | Correct. END means the end.
+        [ ] tk.FINISH | Incorrect. That does not exist.
+
+    .. multichoice::
+
+        Which widget suits typing a name?
+
+        [x] Entry | Correct. A name fits on one line.
+        [ ] Label | Incorrect. Labels cannot be typed in.
+        [ ] Scale | Incorrect. Scale is a slider.
+        [ ] Canvas | Incorrect. Canvas is for drawing.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make an Entry and read what was typed.
+
+        name_entry = tk.@@Entry | Label | Text@@(root, width=20, font=("Arial", 14))
+        name_entry.pack()
+        name = name_entry.@@get | read | text@@()
+
+    .. cloze::
+        :instructions: Make a password box.
+
+        password_entry = tk.Entry(root, @@show | hide | text@@="@@* | password | 0@@")
+        password_entry.pack()
+
+    .. cloze::
+        :instructions: Get a number from the box.
+
+        age = @@int | str | text@@(age_entry.get())
+        result_label.config(text="Next year you will be " + str(age @@+ | - | *@@ 1))
+
+    .. cloze::
+        :instructions: Clear the box and put new words in.
+
+        name_entry.@@delete | clear | remove@@(0, tk.@@END | LAST | STOP@@)
+        name_entry.@@insert | add | put@@(0, "Type here")
+
+    .. cloze::
+        :instructions: Run a function when Enter is pressed.
+
+        def submit(@@event | self | root@@):
+            print(name_entry.get())
+
+        name_entry.@@bind | command | config@@("@@<Return> | <Enter> | <Click>@@", submit)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Sign in" that is 300x200. Add a label "Username:" and an Entry below it using Arial size 16, with a light blue background.

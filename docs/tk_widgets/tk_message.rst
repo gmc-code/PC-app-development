@@ -459,6 +459,238 @@ All Message options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Message widget?
+
+        [x] A label that wraps long text onto many lines by itself | Correct. It is good for paragraphs.
+        [ ] A pop-up box | Incorrect. That is messagebox.
+        [ ] A box to type in | Incorrect. That is Entry or Text.
+        [ ] A button | Incorrect. It only shows text.
+
+    .. multichoice::
+
+        How is Message different from Label?
+
+        [ ] Message cannot show text | Incorrect. It shows text.
+        [x] Message wraps text automatically to a shape | Correct. Labels need wraplength.
+        [ ] Message can be typed in | Incorrect. It cannot.
+        [ ] There is no difference | Incorrect. Wrapping differs.
+
+    .. multichoice::
+
+        Which option sets the words?
+
+        [ ] message | Incorrect. Not an option.
+        [x] text | Correct. text sets the words.
+        [ ] words | Incorrect. Not an option.
+        [ ] value | Incorrect. Not an option.
+
+    .. multichoice::
+
+        For a Message, width=200 means:
+
+        [ ] 200 characters | Incorrect. Message width is in pixels.
+        [x] 200 pixels wide before wrapping | Correct. Message width is in pixels.
+        [ ] 200 lines | Incorrect. Not lines.
+        [ ] 200 words | Incorrect. Not words.
+
+    .. multichoice::
+
+        What does aspect=200 do?
+
+        [x] Makes the text box about twice as wide as it is tall | Correct. aspect is width compared to height as a percentage.
+        [ ] Sets the font size | Incorrect. font does that.
+        [ ] Makes it 200 pixels wide | Incorrect. width does that.
+        [ ] Shows 200 letters | Incorrect. All letters show.
+
+    .. multichoice::
+
+        If both width and aspect are given, which is used?
+
+        [ ] aspect | Incorrect. width wins when it is not 0.
+        [x] width | Correct. aspect is only used when width is 0.
+        [ ] Neither | Incorrect. One is used.
+        [ ] Both | Incorrect. Only one.
+
+    .. multichoice::
+
+        Which option sets the font?
+
+        [ ] size | Incorrect. Not an option.
+        [x] font=("Arial", 14) | Correct. font sets name and size.
+        [ ] style | Incorrect. Not an option.
+        [ ] text | Incorrect. text sets words.
+
+    .. multichoice::
+
+        What does fg="navy" do?
+
+        [ ] Colours the background | Incorrect. bg does that.
+        [x] Colours the words navy | Correct. fg is the word colour.
+        [ ] Colours the border | Incorrect. It colours the words.
+        [ ] Nothing | Incorrect. It changes word colour.
+
+    .. multichoice::
+
+        What does justify="center" do?
+
+        [x] Centres each line of the text | Correct. justify lines up the lines.
+        [ ] Centres the window | Incorrect. It only affects the text.
+        [ ] Makes the text bigger | Incorrect. font does that.
+        [ ] Removes wrapping | Incorrect. It lines up lines.
+
+    .. multichoice::
+
+        Which justify value lines up the lines on the right?
+
+        [ ] "left" | Incorrect. That is left.
+        [ ] "e" | Incorrect. justify uses words, not letters.
+        [x] "right" | Correct. right lines up on the right.
+        [ ] "end" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        What do padx and pady do?
+
+        [ ] Move the widget | Incorrect. pack or grid move it.
+        [x] Add space inside the Message around the text | Correct. They pad the inside.
+        [ ] Add more text | Incorrect. They add space.
+        [ ] Change the font | Incorrect. font does that.
+
+    .. multichoice::
+
+        Which pair adds a visible border?
+
+        [x] relief and borderwidth | Correct. relief is the style, borderwidth the thickness.
+        [ ] fg and bg | Incorrect. These are colours.
+        [ ] padx and pady | Incorrect. These add space.
+        [ ] width and aspect | Incorrect. These set shape.
+
+    .. multichoice::
+
+        What does textvariable=story do?
+
+        [ ] Sets the font | Incorrect. font does that.
+        [x] Links the text to a StringVar, so story.set() changes it | Correct. The Message updates by itself.
+        [ ] Hides the text | Incorrect. It links a variable.
+        [ ] Names the widget | Incorrect. It links a variable.
+
+    .. multichoice::
+
+        Which line changes the text later?
+
+        [ ] msg.text("Hi") | Incorrect. Not a method.
+        [x] msg.config(text="Hi") | Correct. config changes options.
+        [ ] msg.set("Hi") | Incorrect. Not for the widget.
+        [ ] msg.cget(text="Hi") | Incorrect. cget reads.
+
+    .. multichoice::
+
+        What does msg.cget("width") give?
+
+        [x] The current width of the Message | Correct. cget reads an option.
+        [ ] It changes the width | Incorrect. config does that.
+        [ ] The text | Incorrect. It reads width.
+        [ ] An error | Incorrect. cget works.
+
+    .. multichoice::
+
+        Can the user type into a Message?
+
+        [ ] Yes | Incorrect. It only shows text.
+        [x] No | Correct. Use Entry or Text for typing.
+        [ ] Only with textvariable | Incorrect. Still no.
+        [ ] Only when state="normal" | Incorrect. Still no.
+
+    .. multichoice::
+
+        Which is the best widget for a few sentences of instructions?
+
+        [x] Message | Correct. It wraps paragraphs well.
+        [ ] Entry | Incorrect. Entry is for typing.
+        [ ] Button | Incorrect. Buttons are for clicks.
+        [ ] Scale | Incorrect. Scale picks a number.
+
+    .. multichoice::
+
+        What does bg="lightyellow" change?
+
+        [ ] The words | Incorrect. fg changes words.
+        [x] The background of the Message | Correct. bg is the background.
+        [ ] The window | Incorrect. Only the Message.
+        [ ] The border | Incorrect. It changes the background.
+
+    .. multichoice::
+
+        What happens to a very long word in a narrow Message?
+
+        [ ] It is deleted | Incorrect. Text is not deleted.
+        [x] It stays on one line because Message wraps between words | Correct. Wrapping happens at spaces.
+        [ ] It turns red | Incorrect. No colour change.
+        [ ] An error happens | Incorrect. No error.
+
+    .. multichoice::
+
+        Which line makes and places a Message?
+
+        [x] tk.Message(root, text="Hello", width=200).pack() | Correct. Make it, then pack it.
+        [ ] tk.Message.pack(text="Hello") | Incorrect. Make it first.
+        [ ] root.Message(text="Hello") | Incorrect. Use tk.Message.
+        [ ] tk.Message(text="Hello").show() | Incorrect. show is not a method.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Message that wraps at 200 pixels.
+
+        info = tk.@@Message | Label | Entry@@(root, text=long_text, @@width | length | wrap@@=200)
+        info.pack()
+
+    .. cloze::
+        :instructions: Use aspect instead of width.
+
+        info = tk.Message(root, text=long_text, @@aspect | shape | ratio@@=300)
+        info.@@pack | show | place_it@@()
+
+    .. cloze::
+        :instructions: Style the Message.
+
+        info = tk.Message(root, text="Welcome", font=("Arial", @@14 | Arial | big@@), @@fg | bg | font@@="navy", bg="lightyellow")
+
+    .. cloze::
+        :instructions: Centre the lines and add space.
+
+        info = tk.Message(root, text=long_text, @@justify | anchor | side@@="center", @@padx | width | fill@@=10, pady=10)
+
+    .. cloze::
+        :instructions: Change and read the text.
+
+        story = tk.@@StringVar | IntVar | Message@@(value="Once upon a time")
+        info = tk.Message(root, @@textvariable | text | variable@@=story)
+        story.@@set | get | config@@("The end")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Instructions" that is 300x200. Add a Message 250 pixels wide that explains how to play a game of your choice, in Arial size 12.

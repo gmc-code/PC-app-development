@@ -512,6 +512,280 @@ Quick reference
 
 ----
 
+All Notebook options
+---------------------------
+
+| Here is every option a ttk Notebook can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``height``
+      - How tall the tab area is (in pixels)
+      - ``height=200``
+    * - ``padding``
+      - Extra space around the outside of the tab pages
+      - ``padding=5``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TNotebook"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``width``
+      - How wide the tab area is (in pixels)
+      - ``width=300``
+
+| ttk Notebook has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("TNotebook", background="lightblue")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Notebook?
+
+        [x] A widget with tabs, where each tab shows a different page | Correct. Like tabs in a web browser.
+        [ ] A text box for notes | Incorrect. That is a Text widget.
+        [ ] A list | Incorrect. That is a Listbox.
+        [ ] A menu bar | Incorrect. That is a Menu.
+
+    .. multichoice::
+
+        What is usually used as a tab page?
+
+        [ ] A Button | Incorrect. Pages are usually frames.
+        [x] A ttk.Frame | Correct. Each page is a frame holding widgets.
+        [ ] A Menu | Incorrect. Not a page.
+        [ ] A Label only | Incorrect. A frame holds many widgets.
+
+    .. multichoice::
+
+        Which line adds a page with the tab name "Home"?
+
+        [x] notebook.add(home_page, text="Home") | Correct. add puts a page in a new tab.
+        [ ] notebook.insert("Home") | Incorrect. add is used with a page.
+        [ ] notebook.tab("Home") | Incorrect. tab changes a tab.
+        [ ] home_page.pack(text="Home") | Incorrect. Pages are added, not packed.
+
+    .. multichoice::
+
+        What is the parent of each page frame?
+
+        [ ] root | Incorrect. The Notebook is the parent.
+        [x] The Notebook | Correct. e.g. ttk.Frame(notebook).
+        [ ] Another frame | Incorrect. Not needed.
+        [ ] Nothing | Incorrect. It needs a parent.
+
+    .. multichoice::
+
+        What do width and height set on a Notebook?
+
+        [ ] The tab size | Incorrect. They set the page area.
+        [x] The size of the page area in pixels | Correct. Pages can still grow to fit.
+        [ ] The number of tabs | Incorrect. add makes tabs.
+        [ ] The font | Incorrect. A style does that.
+
+    .. multichoice::
+
+        What does padding=5 on the Notebook do?
+
+        [x] Adds space around the outside of the pages | Correct. It pads the Notebook.
+        [ ] Adds 5 tabs | Incorrect. It adds space.
+        [ ] Moves the tabs | Incorrect. It pads.
+        [ ] Changes the tab text | Incorrect. text does that.
+
+    .. multichoice::
+
+        What does padding=10 in notebook.add(page, text="Home", padding=10) do?
+
+        [ ] Adds space around the Notebook | Incorrect. That is the Notebook's padding.
+        [x] Adds space inside that page | Correct. It pads that tab's page.
+        [ ] Makes the tab 10 wide | Incorrect. It pads the page.
+        [ ] Adds 10 pages | Incorrect. It adds space.
+
+    .. multichoice::
+
+        What do image and compound do on a tab?
+
+        [x] Show a picture on the tab, beside or above the tab text | Correct. compound places the picture.
+        [ ] Change the page background | Incorrect. A style does that.
+        [ ] Add a new tab | Incorrect. add does that.
+        [ ] Hide the tab | Incorrect. hide does that.
+
+    .. multichoice::
+
+        What does state="disabled" in notebook.add(page, text="Locked", state="disabled") do?
+
+        [ ] Hides the tab | Incorrect. It greys it out.
+        [x] Greys out the tab so it cannot be clicked | Correct. The page cannot be opened.
+        [ ] Deletes the page | Incorrect. It turns the tab off.
+        [ ] Opens the tab | Incorrect. It stops it opening.
+
+    .. multichoice::
+
+        What does notebook.select(1) do?
+
+        [x] Opens the second tab | Correct. Tabs count from 0.
+        [ ] Opens the first tab | Incorrect. That is select(0).
+        [ ] Deletes tab 1 | Incorrect. forget does that.
+        [ ] Adds a tab | Incorrect. add does that.
+
+    .. multichoice::
+
+        What does notebook.index("current") give?
+
+        [ ] The tab name | Incorrect. It gives a number.
+        [x] The number of the tab that is open | Correct. Tabs count from 0.
+        [ ] The number of tabs | Incorrect. index("end") gives that.
+        [ ] The page frame | Incorrect. It gives a number.
+
+    .. multichoice::
+
+        What does notebook.tab(0, text="Start") do?
+
+        [ ] Opens tab 0 | Incorrect. select does that.
+        [x] Changes the first tab's text to Start | Correct. tab changes a tab's options.
+        [ ] Adds a tab called Start | Incorrect. add does that.
+        [ ] Deletes tab 0 | Incorrect. forget does that.
+
+    .. multichoice::
+
+        Which event runs when the user changes tab?
+
+        [ ] "<Click>" | Incorrect. Not an event.
+        [x] "<<NotebookTabChanged>>" | Correct. It fires when a different tab is chosen.
+        [ ] "<<TabSelect>>" | Incorrect. Not the name.
+        [ ] "<Return>" | Incorrect. That is Enter.
+
+    .. multichoice::
+
+        What does notebook.hide(2) do?
+
+        [x] Hides the third tab, which can be shown again with add | Correct. The page is kept.
+        [ ] Deletes the page | Incorrect. forget removes it.
+        [ ] Opens the tab | Incorrect. select does that.
+        [ ] Greys it out | Incorrect. state does that.
+
+    .. multichoice::
+
+        What does notebook.forget(2) do?
+
+        [ ] Hides it for later | Incorrect. hide does that.
+        [x] Removes the third tab from the Notebook | Correct. It is taken out.
+        [ ] Opens the tab | Incorrect. select does that.
+        [ ] Changes its text | Incorrect. tab does that.
+
+    .. multichoice::
+
+        What does notebook.tabs() give?
+
+        [ ] The number of tabs | Incorrect. It gives a list.
+        [x] A list of the pages in the Notebook | Correct. One item for each tab.
+        [ ] The tab texts | Incorrect. It gives the pages.
+        [ ] The open tab | Incorrect. index("current") does that.
+
+    .. multichoice::
+
+        How many tabs are there after adding three pages?
+
+        [x] 3, numbered 0, 1 and 2 | Correct. Each add makes one tab.
+        [ ] 4 | Incorrect. One per page.
+        [ ] 2 | Incorrect. One per page.
+        [ ] 1 | Incorrect. One per page.
+
+    .. multichoice::
+
+        Which style name is used for the tabs?
+
+        [ ] "TNotebook" | Incorrect. That is the whole Notebook.
+        [x] "TNotebook.Tab" | Correct. The tabs have their own style part.
+        [ ] "Tab" | Incorrect. Needs the full name.
+        [ ] "TTab" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        How do you make the tab text bigger?
+
+        [x] style.configure("TNotebook.Tab", font=("Arial", 14)) | Correct. Style the tabs.
+        [ ] notebook.config(font=14) | Incorrect. Notebooks have no font option.
+        [ ] notebook.tab(font=14) | Incorrect. It needs a tab number, and fonts come from the style.
+        [ ] page.config(font=14) | Incorrect. Frames have no font.
+
+    .. multichoice::
+
+        Why use a Notebook?
+
+        [ ] To make a program faster | Incorrect. Not about speed.
+        [x] To fit many pages into one window without making it bigger | Correct. Tabs swap between pages.
+        [ ] To draw pictures | Incorrect. Canvas draws.
+        [ ] To type notes | Incorrect. Text does that.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Notebook with a page.
+
+        notebook = ttk.@@Notebook | Frame | Menu@@(root, width=400, height=300)
+        notebook.pack(fill="both", expand=True)
+        home_page = ttk.Frame(@@notebook | root | home@@, padding=10)
+        notebook.@@add | pack | insert@@(home_page, @@text | label | title@@="Home")
+
+    .. cloze::
+        :instructions: Open a tab from code.
+
+        notebook.@@select | open | show@@(1)
+        current = notebook.@@index | current | tab@@("current")
+
+    .. cloze::
+        :instructions: Change a tab's text.
+
+        notebook.@@tab | config | add@@(0, @@text | label | name@@="Start")
+
+    .. cloze::
+        :instructions: Run a function when the tab changes.
+
+        def changed(@@event | tab | self@@):
+            print(notebook.index("current"))
+
+        notebook.@@bind | config | command@@("<<NotebookTabChanged>>", changed)
+
+    .. cloze::
+        :instructions: Hide and remove tabs.
+
+        notebook.@@hide | forget | delete@@(2)
+        notebook.@@forget | hide | remove@@(1)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "My app" that is 300x200 with a Notebook that fills the window and has three tabs: "Home", "Games" and "Help". Put a label on each page.

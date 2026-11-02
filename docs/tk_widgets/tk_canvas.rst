@@ -765,6 +765,242 @@ All Canvas options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Canvas used for?
+
+        [x] Drawing lines, shapes, text and pictures | Correct. A Canvas is a drawing area.
+        [ ] Typing text | Incorrect. An Entry or Text widget is for typing.
+        [ ] Showing a list | Incorrect. A Listbox shows a list.
+        [ ] Making a menu | Incorrect. A Menu makes a menu.
+
+    .. multichoice::
+
+        On a Canvas, where is the point (0, 0)?
+
+        [ ] The centre | Incorrect. The centre depends on the size.
+        [ ] The bottom left | Incorrect. That is how maths graphs work, not a Canvas.
+        [x] The top left corner | Correct. x goes right and y goes down from the top left.
+        [ ] The bottom right | Incorrect. That is the largest x and y.
+
+    .. multichoice::
+
+        As y gets bigger on a Canvas, a point moves:
+
+        [ ] Up | Incorrect. y gets bigger going down.
+        [x] Down | Correct. y increases going down the canvas.
+        [ ] Left | Incorrect. x changes left and right.
+        [ ] Right | Incorrect. That is x getting bigger.
+
+    .. multichoice::
+
+        What does width=400, height=300 make?
+
+        [x] A canvas 400 pixels wide and 300 pixels high | Correct. Canvas size is in pixels.
+        [ ] A canvas 400 characters wide | Incorrect. Canvas size is in pixels.
+        [ ] A canvas 300 wide and 400 high | Incorrect. width comes first here.
+        [ ] A window 400 by 300 | Incorrect. It sets the canvas, not the window.
+
+    .. multichoice::
+
+        Which method draws a straight line?
+
+        [ ] create_rectangle | Incorrect. That draws a rectangle.
+        [x] create_line | Correct. create_line draws a line.
+        [ ] create_oval | Incorrect. That draws an oval or circle.
+        [ ] draw_line | Incorrect. This method does not exist.
+
+    .. multichoice::
+
+        What do the four numbers in create_rectangle(50, 50, 150, 100) mean?
+
+        [ ] x, y, width, height | Incorrect. They are two corner points.
+        [x] Top left x, top left y, bottom right x, bottom right y | Correct. They give two opposite corners.
+        [ ] Four colours | Incorrect. Colours use fill and outline.
+        [ ] The centre and the radius | Incorrect. That is not how rectangles work.
+
+    .. multichoice::
+
+        How do you draw a circle?
+
+        [ ] create_circle | Incorrect. This method does not exist.
+        [x] create_oval with a square box, like (50, 50, 150, 150) | Correct. An oval in a square box is a circle.
+        [ ] create_line with a round option | Incorrect. Lines are straight.
+        [ ] create_rectangle with round=True | Incorrect. There is no round option.
+
+    .. multichoice::
+
+        What does fill="yellow" do in create_oval?
+
+        [x] Colours the inside of the shape yellow | Correct. fill is the inside colour.
+        [ ] Colours only the outline | Incorrect. outline sets the edge colour.
+        [ ] Makes the canvas yellow | Incorrect. bg colours the canvas.
+        [ ] Makes the shape bigger | Incorrect. fill only sets colour.
+
+    .. multichoice::
+
+        Which option sets the colour of a shape's edge?
+
+        [ ] fill | Incorrect. fill is the inside colour.
+        [ ] edge | Incorrect. edge is not an option.
+        [x] outline | Correct. outline sets the edge colour.
+        [ ] border | Incorrect. border is not a shape option.
+
+    .. multichoice::
+
+        Which method draws a shape with many corners, like a triangle?
+
+        [ ] create_line | Incorrect. Lines are not filled shapes.
+        [ ] create_rectangle | Incorrect. Rectangles have four corners at right angles.
+        [x] create_polygon | Correct. A polygon joins any number of points.
+        [ ] create_triangle | Incorrect. This method does not exist.
+
+    .. multichoice::
+
+        What does create_text(200, 50, text="Hi") do?
+
+        [x] Writes Hi centred at x=200, y=50 | Correct. The point is the centre of the text.
+        [ ] Writes Hi in the top left corner | Incorrect. The text is placed at (200, 50).
+        [ ] Makes an Entry box | Incorrect. It only draws text.
+        [ ] Changes the window title | Incorrect. root.title does that.
+
+    .. multichoice::
+
+        What does create_image need?
+
+        [ ] A file name as a string | Incorrect. It needs a PhotoImage object.
+        [x] A PhotoImage, given with image= | Correct. Make tk.PhotoImage(file=...) first.
+        [ ] A colour | Incorrect. Colours are not pictures.
+        [ ] Nothing extra | Incorrect. It needs an image.
+
+    .. multichoice::
+
+        What does a create\_ method give back?
+
+        [ ] Nothing | Incorrect. It gives back an id number.
+        [ ] The canvas | Incorrect. It gives the id of the new item.
+        [x] An id number for the new item | Correct. Save it to move or change the item later.
+        [ ] The colour | Incorrect. It gives the item's id.
+
+    .. multichoice::
+
+        What does canvas.move(ball, 10, 0) do?
+
+        [x] Moves ball 10 pixels to the right | Correct. 10 is the change in x, 0 is the change in y.
+        [ ] Moves ball to the point (10, 0) | Incorrect. move adds to the position.
+        [ ] Moves ball 10 pixels down | Incorrect. That would be move(ball, 0, 10).
+        [ ] Deletes ball | Incorrect. delete removes items.
+
+    .. multichoice::
+
+        Which line changes a shape's fill colour after it is drawn?
+
+        [ ] canvas.config(ball, fill="red") | Incorrect. config changes the canvas itself.
+        [x] canvas.itemconfig(ball, fill="red") | Correct. itemconfig changes one item.
+        [ ] ball.fill = "red" | Incorrect. Items are changed through the canvas.
+        [ ] canvas.fill(ball, "red") | Incorrect. This method does not exist.
+
+    .. multichoice::
+
+        What does canvas.delete("all") do?
+
+        [ ] Deletes the canvas widget | Incorrect. The canvas stays.
+        [ ] Deletes the last item | Incorrect. "all" means every item.
+        [x] Removes every item drawn on the canvas | Correct. The canvas becomes empty.
+        [ ] Closes the window | Incorrect. destroy closes windows.
+
+    .. multichoice::
+
+        What does canvas.coords(ball) give?
+
+        [x] The current position numbers of ball | Correct. coords reads (or sets) an item's corner points.
+        [ ] The colour of ball | Incorrect. itemcget would give options.
+        [ ] The canvas size | Incorrect. winfo_width gives size.
+        [ ] The number of items | Incorrect. It gives one item's numbers.
+
+    .. multichoice::
+
+        Which event runs a function when the left mouse button is clicked on the canvas?
+
+        [ ] "<Key>" | Incorrect. That is a key press.
+        [x] "<Button-1>" | Correct. Button-1 is the left mouse button.
+        [ ] "<Click>" | Incorrect. This event name does not exist.
+        [ ] "<Left>" | Incorrect. That is the left arrow key.
+
+    .. multichoice::
+
+        In a click function, where is the mouse x position?
+
+        [ ] event.click | Incorrect. That does not exist.
+        [ ] canvas.x | Incorrect. The canvas does not store this.
+        [x] event.x | Correct. event.x and event.y give the click position.
+        [ ] mouse.x | Incorrect. There is no mouse object.
+
+    .. multichoice::
+
+        What does root.after(50, animate) do?
+
+        [x] Runs animate again after 50 milliseconds | Correct. after waits, then calls the function.
+        [ ] Runs animate 50 times at once | Incorrect. It runs once, after the wait.
+        [ ] Waits 50 seconds | Incorrect. The time is in milliseconds.
+        [ ] Stops the animation | Incorrect. after starts a new call.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a canvas and draw a line.
+
+        canvas = tk.@@Canvas | Frame | Label@@(root, width=400, @@height | length | size@@=300, bg="white")
+        canvas.pack()
+        canvas.@@create_line | create_rectangle | draw_line@@(0, 0, 400, 300, fill="black")
+
+    .. cloze::
+        :instructions: Draw a filled rectangle and a circle.
+
+        canvas.create_rectangle(50, 50, 150, 100, @@fill | colour | bg@@="blue")
+        canvas.@@create_oval | create_circle | create_polygon@@(200, 50, 300, 150, fill="red", @@outline | border | edge@@="black")
+
+    .. cloze::
+        :instructions: Write text and remember a shape's id.
+
+        canvas.@@create_text | create_label | write@@(200, 20, text="My drawing", font=("Arial", 16))
+        ball = canvas.create_oval(10, 10, 40, 40, fill="orange")
+        canvas.@@move | coords | delete@@(ball, 10, 0)
+
+    .. cloze::
+        :instructions: Change and remove items.
+
+        canvas.@@itemconfig | config | cget@@(ball, fill="green")
+        canvas.delete(@@"all" | all | "everything"@@)
+
+    .. cloze::
+        :instructions: Animate a ball moving right.
+
+        def animate():
+            canvas.move(ball, 5, @@0 | 5 | -5@@)
+            root.@@after | wait | sleep@@(50, animate)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Drawing" with a 300x200 white canvas. Draw a red line from the top-left corner to the bottom-right corner.

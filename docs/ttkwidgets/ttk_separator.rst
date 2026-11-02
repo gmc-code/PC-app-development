@@ -220,6 +220,272 @@ Quick reference
 
 ----
 
+All Separator options
+---------------------------
+
+| Here is every option a ttk Separator can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``orient``
+      - A line across (``"horizontal"``) or a line up and down (``"vertical"``)
+      - ``orient="vertical"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TSeparator"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+
+| ttk Separator has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("TSeparator", background="red")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Separator?
+
+        [x] A thin line used to split parts of a window | Correct. It helps organise the layout.
+        [ ] A button | Incorrect. It cannot be clicked.
+        [ ] A box for typing | Incorrect. That is an Entry.
+        [ ] A scrollbar | Incorrect. It does not scroll.
+
+    .. multichoice::
+
+        What does orient="horizontal" make?
+
+        [x] A line going across | Correct. horizontal goes left to right.
+        [ ] A line going up and down | Incorrect. That is vertical.
+        [ ] A box | Incorrect. It is a line.
+        [ ] Nothing | Incorrect. It makes a line.
+
+    .. multichoice::
+
+        What does orient="vertical" make?
+
+        [ ] A line going across | Incorrect. That is horizontal.
+        [x] A line going up and down | Correct. vertical goes up and down.
+        [ ] Two lines | Incorrect. One line.
+        [ ] A dotted line | Incorrect. It is a plain line.
+
+    .. multichoice::
+
+        What is the default orient?
+
+        [x] "horizontal" | Correct. A line across is the default.
+        [ ] "vertical" | Incorrect. That must be set.
+        [ ] "both" | Incorrect. Not a value.
+        [ ] "none" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        Why might a horizontal Separator not be seen with plain pack()?
+
+        [ ] It is hidden by default | Incorrect. It is shown.
+        [x] It has no length of its own, so it needs fill="x" to stretch across | Correct. Without fill it is very short.
+        [ ] It needs a colour | Incorrect. Not the reason.
+        [ ] It needs text | Incorrect. It has no text.
+
+    .. multichoice::
+
+        Which pack line shows a horizontal Separator across the window?
+
+        [ ] sep.pack() | Incorrect. It may be too short to see.
+        [x] sep.pack(fill="x", pady=10) | Correct. fill stretches it across.
+        [ ] sep.pack(fill="y") | Incorrect. That is for vertical lines.
+        [ ] sep.pack(side="left") | Incorrect. That is for vertical lines.
+
+    .. multichoice::
+
+        Which pack line suits a vertical Separator between two side-by-side parts?
+
+        [x] sep.pack(side="left", fill="y", padx=10) | Correct. It stands up between them.
+        [ ] sep.pack(fill="x") | Incorrect. That is for horizontal lines.
+        [ ] sep.pack() | Incorrect. It may be too short.
+        [ ] sep.pack(side="top") | Incorrect. That stacks it.
+
+    .. multichoice::
+
+        With grid, how does a horizontal Separator stretch across columns?
+
+        [ ] sticky="ns" | Incorrect. That is up and down.
+        [x] columnspan for the width and sticky="ew" | Correct. It covers the columns and stretches across.
+        [ ] rowspan only | Incorrect. That is for rows.
+        [ ] fill="x" | Incorrect. fill is for pack.
+
+    .. multichoice::
+
+        With grid, how does a vertical Separator stretch?
+
+        [x] rowspan for the height and sticky="ns" | Correct. It covers the rows and stretches up and down.
+        [ ] sticky="ew" | Incorrect. That is across.
+        [ ] columnspan only | Incorrect. That is for columns.
+        [ ] fill="y" | Incorrect. fill is for pack.
+
+    .. multichoice::
+
+        What does pady=10 add around a horizontal Separator?
+
+        [ ] 10 lines | Incorrect. It adds space.
+        [x] 10 pixels of space above and below it | Correct. It gives the line room.
+        [ ] Thickness | Incorrect. It adds space.
+        [ ] A colour | Incorrect. It adds space.
+
+    .. multichoice::
+
+        In a form, where is a Separator useful?
+
+        [x] Between the questions and the buttons | Correct. It splits the sections.
+        [ ] Inside an Entry | Incorrect. It cannot go inside an Entry.
+        [ ] On a Button | Incorrect. Not on a Button.
+        [ ] Inside a Menu | Incorrect. Menus use add_separator.
+
+    .. multichoice::
+
+        Which method adds a line inside a Menu instead?
+
+        [ ] ttk.Separator | Incorrect. That is for windows and frames.
+        [x] add_separator() | Correct. Menus have their own separator.
+        [ ] add_line() | Incorrect. Not a method.
+        [ ] menu.separator | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Can a Separator be clicked?
+
+        [ ] Yes | Incorrect. It only draws a line.
+        [x] No, it is only for layout | Correct. It does nothing when clicked.
+        [ ] Only when vertical | Incorrect. Still no.
+        [ ] Only with command | Incorrect. It has no command.
+
+    .. multichoice::
+
+        How do you change a Separator's colour?
+
+        [ ] sep.config(bg="red") | Incorrect. ttk has no bg.
+        [x] style.configure("TSeparator", background="red") | Correct. Use a style.
+        [ ] sep.colour("red") | Incorrect. Not a method.
+        [ ] sep.config(fill="red") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which style name is used for every Separator?
+
+        [x] "TSeparator" | Correct. T then the widget name.
+        [ ] "Separator" | Incorrect. Needs the T.
+        [ ] "TLine" | Incorrect. Not the name.
+        [ ] "Line" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        How many options does ttk.Separator have that change its look directly?
+
+        [ ] Many | Incorrect. It has very few.
+        [x] Only orient and style really | Correct. Most of its look comes from the style.
+        [ ] None at all | Incorrect. orient changes it.
+        [ ] width and height | Incorrect. It has no width option.
+
+    .. multichoice::
+
+        Which import is needed for Separator?
+
+        [x] from tkinter import ttk | Correct. Separator is a ttk widget.
+        [ ] import separator | Incorrect. Not a module.
+        [ ] from tkinter import Separator | Incorrect. It is in ttk.
+        [ ] Nothing | Incorrect. ttk must be imported.
+
+    .. multichoice::
+
+        For side-by-side sections, what does the Separator go between?
+
+        [ ] Two Labels in one row | Incorrect. It goes between sections.
+        [x] Two frames packed with side="left" | Correct. A vertical line sits between them.
+        [ ] Two windows | Incorrect. It goes inside a window.
+        [ ] Two menus | Incorrect. Menus use add_separator.
+
+    .. multichoice::
+
+        What happens if fill="y" is used on a horizontal Separator?
+
+        [x] It will not stretch across, so it may not be seen | Correct. Use fill="x" for horizontal.
+        [ ] It becomes vertical | Incorrect. orient sets that.
+        [ ] It turns red | Incorrect. No colour change.
+        [ ] An error happens | Incorrect. No error.
+
+    .. multichoice::
+
+        What is the parent of a Separator inside a frame called form?
+
+        [ ] root | Incorrect. Use the frame.
+        [x] form | Correct. e.g. ttk.Separator(form, orient="horizontal").
+        [ ] The Separator | Incorrect. It needs a parent.
+        [ ] Nothing | Incorrect. It needs a parent.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a horizontal Separator.
+
+        line = ttk.@@Separator | Scrollbar | Frame@@(root, @@orient | side | direction@@="horizontal")
+        line.pack(@@fill | side | anchor@@="x", pady=10)
+
+    .. cloze::
+        :instructions: Make a vertical Separator between two frames.
+
+        left_frame.pack(side="left")
+        divider = ttk.Separator(root, orient="@@vertical | horizontal | up@@")
+        divider.pack(side="left", fill="@@y | x | both@@", padx=10)
+        right_frame.pack(side="left")
+
+    .. cloze::
+        :instructions: Use grid for a Separator in a form.
+
+        sep = ttk.Separator(form, orient="horizontal")
+        sep.grid(row=3, column=0, @@columnspan | rowspan | span@@=2, sticky="@@ew | ns | nsew@@", pady=5)
+
+    .. cloze::
+        :instructions: Use grid for a vertical Separator.
+
+        divider.grid(row=0, column=1, @@rowspan | columnspan | span@@=4, sticky="@@ns | ew | x@@")
+
+    .. cloze::
+        :instructions: Colour every Separator.
+
+        style = ttk.@@Style | style | Theme@@()
+        style.configure("@@TSeparator | Separator | TLine@@", background="red")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Sections" that is 300x200 with a title label, a Separator across the window, and a label underneath.

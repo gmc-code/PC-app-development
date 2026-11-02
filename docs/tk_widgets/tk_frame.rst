@@ -521,6 +521,243 @@ All Frame options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Frame used for?
+
+        [x] Holding and grouping other widgets | Correct. A Frame is a container.
+        [ ] Showing text | Incorrect. A Label shows text.
+        [ ] Drawing shapes | Incorrect. A Canvas draws.
+        [ ] Making a menu | Incorrect. A Menu does that.
+
+    .. multichoice::
+
+        To put a button inside frame, what is written first?
+
+        [ ] tk.Button(root, ...) | Incorrect. root puts it in the window.
+        [x] tk.Button(frame, ...) | Correct. The first value is the parent.
+        [ ] tk.Button(..., parent=frame) | Incorrect. The parent goes first.
+        [ ] frame.Button(...) | Incorrect. Widgets are made with tk.Button.
+
+    .. multichoice::
+
+        What does bg="lightblue" do to a frame?
+
+        [x] Colours its background light blue | Correct. bg is the background colour.
+        [ ] Colours the buttons inside | Incorrect. Each widget has its own bg.
+        [ ] Colours the words | Incorrect. Frames have no words.
+        [ ] Nothing | Incorrect. Frames do have a background.
+
+    .. multichoice::
+
+        For a Frame, width=300 is measured in:
+
+        [ ] Characters | Incorrect. Frames do not hold text.
+        [x] Pixels | Correct. Frame size is in pixels.
+        [ ] Lines | Incorrect. That is for Text.
+        [ ] Centimetres | Incorrect. Not used here.
+
+    .. multichoice::
+
+        Why might a frame shrink to fit its widgets even with width set?
+
+        [ ] width does not work | Incorrect. It works until widgets are added.
+        [x] pack and grid resize the frame to fit what is inside | Correct. Use pack_propagate(False) to keep the size.
+        [ ] The frame is disabled | Incorrect. Frames are not disabled.
+        [ ] bg is missing | Incorrect. bg does not affect size.
+
+    .. multichoice::
+
+        What do padx and pady do on a Frame?
+
+        [ ] Add space outside the frame | Incorrect. That is done in pack.
+        [x] Add space inside the frame, around its widgets | Correct. They pad the inside edge.
+        [ ] Add more frames | Incorrect. They add space.
+        [ ] Change the colour | Incorrect. bg changes colour.
+
+    .. multichoice::
+
+        Which pair gives a frame a visible border?
+
+        [ ] fg and bg | Incorrect. These are colours.
+        [x] relief and borderwidth | Correct. relief sets style, borderwidth sets thickness.
+        [ ] width and height | Incorrect. These set size.
+        [ ] padx and pady | Incorrect. These add space.
+
+    .. multichoice::
+
+        What does side="left" do in frame.pack(side="left")?
+
+        [x] Puts the frame on the left, so frames line up side by side | Correct. side sets which edge it packs against.
+        [ ] Puts the words on the left | Incorrect. Frames have no words.
+        [ ] Aligns the buttons inside | Incorrect. It places the frame itself.
+        [ ] Stretches the frame | Incorrect. fill does that.
+
+    .. multichoice::
+
+        What does fill="x" do in pack?
+
+        [ ] Fills the frame with colour | Incorrect. bg sets colour.
+        [x] Stretches the widget across the full width | Correct. fill="x" stretches side to side.
+        [ ] Stretches it up and down | Incorrect. That is fill="y".
+        [ ] Adds x number of widgets | Incorrect. It stretches.
+
+    .. multichoice::
+
+        What does expand=True do in pack?
+
+        [ ] Makes the font bigger | Incorrect. It is about space.
+        [x] Lets the widget use spare space when the window grows | Correct. expand gives it extra space.
+        [ ] Opens a new window | Incorrect. It does not.
+        [ ] Adds a scrollbar | Incorrect. It does not.
+
+    .. multichoice::
+
+        Can grid be used inside a frame while the frame itself uses pack?
+
+        [x] Yes, each container can use its own layout | Correct. Inside one container, use just one of pack or grid.
+        [ ] No, never | Incorrect. Different containers can differ.
+        [ ] Only with Canvas | Incorrect. Any frame works.
+        [ ] Only if bg is set | Incorrect. bg does not matter.
+
+    .. multichoice::
+
+        What is the rule about pack and grid?
+
+        [ ] Never use both in a program | Incorrect. They can be in different containers.
+        [x] Do not mix pack and grid inside the same container | Correct. Mixing them in one container can freeze the window.
+        [ ] Always use both | Incorrect. That can freeze the program.
+        [ ] grid only works in frames | Incorrect. grid works in root too.
+
+    .. multichoice::
+
+        Which line changes a frame's colour later?
+
+        [ ] frame.bg("red") | Incorrect. bg is not a method.
+        [x] frame.config(bg="red") | Correct. config changes options.
+        [ ] frame.colour = "red" | Incorrect. Options are changed with config.
+        [ ] frame.set("red") | Incorrect. Frames do not have set.
+
+    .. multichoice::
+
+        What does frame.pack_forget() do?
+
+        [ ] Deletes the frame forever | Incorrect. destroy deletes it.
+        [x] Hides the frame, but it can be packed again | Correct. pack_forget removes it from view.
+        [ ] Packs it on the left | Incorrect. That is pack(side="left").
+        [ ] Clears its colour | Incorrect. It hides it.
+
+    .. multichoice::
+
+        What does frame.winfo_children() give?
+
+        [x] A list of the widgets inside the frame | Correct. These are its children.
+        [ ] The frame's size | Incorrect. winfo_width gives size.
+        [ ] The frame's parent | Incorrect. winfo_parent gives that.
+        [ ] The number of frames | Incorrect. It lists the widgets inside.
+
+    .. multichoice::
+
+        How do you delete every widget inside a frame?
+
+        [ ] frame.delete("all") | Incorrect. That is for Canvas.
+        [x] Loop through frame.winfo_children() and call destroy() on each | Correct. Each child is destroyed.
+        [ ] frame.clear() | Incorrect. Frames do not have clear.
+        [ ] frame.pack_forget() | Incorrect. That hides the frame itself.
+
+    .. multichoice::
+
+        What does frame.destroy() do?
+
+        [ ] Hides the frame | Incorrect. pack_forget hides.
+        [ ] Empties the frame | Incorrect. It removes the frame too.
+        [x] Removes the frame and everything inside it | Correct. destroy deletes it for good.
+        [ ] Closes the program | Incorrect. Only the frame is removed.
+
+    .. multichoice::
+
+        Why use frames in a layout?
+
+        [x] To split the window into parts, like a top bar and a side bar | Correct. Frames group related widgets.
+        [ ] To make widgets faster | Incorrect. They do not change speed.
+        [ ] To add colour to words | Incorrect. fg does that.
+        [ ] Because widgets must be in a frame | Incorrect. Widgets can go straight in root.
+
+    .. multichoice::
+
+        relief="groove" gives a border that looks:
+
+        [ ] Raised | Incorrect. That is "raised".
+        [x] Like a carved line | Correct. groove looks carved in.
+        [ ] Invisible | Incorrect. That is "flat".
+        [ ] Pushed in | Incorrect. That is "sunken".
+
+    .. multichoice::
+
+        Which pack option places a frame at the bottom?
+
+        [ ] side="down" | Incorrect. down is not a side.
+        [x] side="bottom" | Correct. bottom is a pack side.
+        [ ] anchor="bottom" | Incorrect. anchor uses compass letters.
+        [ ] fill="bottom" | Incorrect. fill uses x, y or both.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a coloured frame with a button inside.
+
+        top_frame = tk.@@Frame | Label | Canvas@@(root, bg="lightblue", @@padx | width | fill@@=10, pady=10)
+        top_frame.pack(fill="@@x | y | left@@")
+        tk.Button(@@top_frame | root | frame@@, text="Home").pack(side="left")
+
+    .. cloze::
+        :instructions: Give a frame a size and a border.
+
+        box = tk.Frame(root, width=300, @@height | length | size@@=200, @@relief | border | style@@="groove", borderwidth=3)
+        box.pack()
+
+    .. cloze::
+        :instructions: Put two frames side by side.
+
+        left_frame.pack(@@side | fill | anchor@@="left", fill="y")
+        right_frame.pack(side="left", fill="both", @@expand | stretch | grow@@=True)
+
+    .. cloze::
+        :instructions: Use grid inside a frame.
+
+        form = tk.Frame(root)
+        form.pack()
+        tk.Label(form, text="Name:").@@grid | pack | place@@(row=0, column=0)
+        tk.Entry(form).grid(row=0, @@column | col | side@@=1)
+
+    .. cloze::
+        :instructions: Hide a frame, then clear it.
+
+        side_frame.@@pack_forget | destroy | hide@@()
+        for widget in side_frame.@@winfo_children | children | widgets@@():
+            widget.@@destroy | forget | delete@@()
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Frames" that is 300x200. Add a frame with a light blue background and 20 pixels of padding inside it. Put a label "Hello" inside the frame.

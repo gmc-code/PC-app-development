@@ -500,6 +500,241 @@ All Toplevel options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Toplevel?
+
+        [x] A new window that opens on top of the main window | Correct. It is a second window.
+        [ ] A frame at the top | Incorrect. It is a whole window.
+        [ ] The main window | Incorrect. The main window is tk.Tk().
+        [ ] A menu bar | Incorrect. That is a Menu.
+
+    .. multichoice::
+
+        How many tk.Tk() windows should a program have?
+
+        [ ] One for every window | Incorrect. Use Toplevel for extra windows.
+        [x] Only one | Correct. Extra windows should be Toplevels.
+        [ ] Two | Incorrect. Only one.
+        [ ] None | Incorrect. One is needed.
+
+    .. multichoice::
+
+        Which line makes a new window?
+
+        [ ] new_window = tk.Tk() | Incorrect. That makes a second main window.
+        [x] new_window = tk.Toplevel(root) | Correct. Toplevel makes an extra window.
+        [ ] new_window = tk.Window(root) | Incorrect. Not a widget.
+        [ ] new_window = root.new() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        How do you put a Label in the new window?
+
+        [x] tk.Label(new_window, text="Hi").pack() | Correct. The new window is the parent.
+        [ ] tk.Label(root, text="Hi").pack() | Incorrect. That goes in the main window.
+        [ ] new_window.Label("Hi") | Incorrect. Use tk.Label.
+        [ ] tk.Label(text="Hi", window=new_window) | Incorrect. The parent goes first.
+
+    .. multichoice::
+
+        What does new_window.title("Settings") do?
+
+        [ ] Adds a Label | Incorrect. It sets the title bar.
+        [x] Sets the words in the window's title bar | Correct. title names the window.
+        [ ] Closes the window | Incorrect. destroy does that.
+        [ ] Makes it bigger | Incorrect. geometry does that.
+
+    .. multichoice::
+
+        What does new_window.geometry("300x200") do?
+
+        [x] Makes the window 300 wide and 200 high | Correct. geometry sets the size.
+        [ ] Moves it to 300, 200 | Incorrect. That needs +x+y.
+        [ ] Makes it 300 high | Incorrect. Width comes first.
+        [ ] Adds 300 widgets | Incorrect. It sets size.
+
+    .. multichoice::
+
+        What does geometry("300x200+100+50") do?
+
+        [ ] Makes it 100 by 50 | Incorrect. The first part is the size.
+        [x] Makes it 300 by 200 and puts it 100 across and 50 down the screen | Correct. +x+y sets the position.
+        [ ] Causes an error | Incorrect. It is allowed.
+        [ ] Makes 2 windows | Incorrect. One window.
+
+    .. multichoice::
+
+        What does new_window.destroy() do?
+
+        [ ] Closes the whole program | Incorrect. Only this window closes.
+        [x] Closes this Toplevel window | Correct. The main window stays open.
+        [ ] Hides it for later | Incorrect. withdraw hides it.
+        [ ] Empties it | Incorrect. It closes it.
+
+    .. multichoice::
+
+        What does resizable(False, False) do?
+
+        [x] Stops the user changing the window's width and height | Correct. Both directions are locked.
+        [ ] Makes it full screen | Incorrect. It locks the size.
+        [ ] Hides it | Incorrect. It locks the size.
+        [ ] Makes it bigger | Incorrect. It locks it.
+
+    .. multichoice::
+
+        What does bg="lightyellow" do on a Toplevel?
+
+        [ ] Colours the title bar | Incorrect. The title bar is set by the computer.
+        [x] Colours the window's background | Correct. bg is the background.
+        [ ] Colours the words | Incorrect. Not words.
+        [ ] Nothing | Incorrect. It colours the window.
+
+    .. multichoice::
+
+        What do padx and pady do on a Toplevel?
+
+        [ ] Move the window | Incorrect. geometry moves it.
+        [x] Add space inside the window's edges | Correct. They pad the inside.
+        [ ] Add more windows | Incorrect. They add space.
+        [ ] Change the title | Incorrect. title does that.
+
+    .. multichoice::
+
+        What does grab_set() do?
+
+        [x] Makes the user finish with this window before using the main window | Correct. It makes the window modal.
+        [ ] Closes the window | Incorrect. destroy does that.
+        [ ] Grabs the mouse forever | Incorrect. Only while the window is open.
+        [ ] Moves the window | Incorrect. geometry moves it.
+
+    .. multichoice::
+
+        What does transient(root) do?
+
+        [ ] Makes the window see-through | Incorrect. It links the windows.
+        [x] Keeps the new window on top of the main window and links them | Correct. It acts like a dialog.
+        [ ] Closes root | Incorrect. It does not close.
+        [ ] Makes it bigger | Incorrect. It links windows.
+
+    .. multichoice::
+
+        What does withdraw() do?
+
+        [x] Hides the window without closing it | Correct. Use deiconify to show it again.
+        [ ] Closes it forever | Incorrect. destroy closes.
+        [ ] Shrinks it | Incorrect. It hides it.
+        [ ] Deletes its widgets | Incorrect. It hides the window.
+
+    .. multichoice::
+
+        What does deiconify() do?
+
+        [ ] Deletes the icon | Incorrect. It shows the window.
+        [x] Shows a hidden window again | Correct. It undoes withdraw.
+        [ ] Hides the window | Incorrect. withdraw hides.
+        [ ] Minimises it | Incorrect. It shows it.
+
+    .. multichoice::
+
+        Which line changes the window's colour later?
+
+        [x] new_window.config(bg="pink") | Correct. config changes options.
+        [ ] new_window.bg("pink") | Incorrect. Not a method.
+        [ ] new_window.colour = "pink" | Incorrect. Use config.
+        [ ] new_window.title("pink") | Incorrect. title sets the title.
+
+    .. multichoice::
+
+        Which is the best way to open a new window when a button is clicked?
+
+        [ ] Make the Toplevel at the start | Incorrect. It would open straight away.
+        [x] Make the Toplevel inside the button's command function | Correct. It opens on click.
+        [ ] Use root.mainloop() again | Incorrect. Only one mainloop is needed.
+        [ ] Use tk.Tk() in the function | Incorrect. Use Toplevel.
+
+    .. multichoice::
+
+        What happens to Toplevels when the main window is closed?
+
+        [ ] They stay open | Incorrect. They close too.
+        [x] They close as well | Correct. They belong to the main window.
+        [ ] They become the main window | Incorrect. They close.
+        [ ] An error happens | Incorrect. They close.
+
+    .. multichoice::
+
+        Which button command closes only the Toplevel?
+
+        [x] command=new_window.destroy | Correct. destroy closes that window.
+        [ ] command=root.destroy | Incorrect. That closes everything.
+        [ ] command=new_window.title | Incorrect. title sets the title.
+        [ ] command=root.quit() | Incorrect. The brackets run it straight away.
+
+    .. multichoice::
+
+        How do you make a Toplevel window for settings?
+
+        [ ] settings = tk.Frame(root) | Incorrect. A Frame is not a window.
+        [x] settings = tk.Toplevel(root) | Correct. It opens a new window.
+        [ ] settings = tk.Settings() | Incorrect. Not a widget.
+        [ ] settings = tk.Tk(root) | Incorrect. Use Toplevel.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Open a new window when a button is clicked.
+
+        def open_window():
+            new_window = tk.@@Toplevel | Tk | Frame@@(root)
+            new_window.@@title | name | label@@("Settings")
+            new_window.@@geometry | size | config@@("300x200")
+
+    .. cloze::
+        :instructions: Put widgets in the new window.
+
+        tk.Label(@@new_window | root | window@@, text="Settings").pack()
+        tk.Button(new_window, text="Close", command=new_window.@@destroy | mainloop | close@@).pack()
+
+    .. cloze::
+        :instructions: Stop resizing and colour the window.
+
+        new_window.@@resizable | resize | fixed@@(False, False)
+        new_window.config(@@bg | fg | colour@@="lightyellow")
+
+    .. cloze::
+        :instructions: Make the window act like a dialog.
+
+        new_window.@@transient | grab | modal@@(root)
+        new_window.@@grab_set | focus_set | grab@@()
+
+    .. cloze::
+        :instructions: Hide and show a window.
+
+        help_window.@@withdraw | destroy | hide@@()
+        help_window.@@deiconify | show | open@@()
+
+----
+
 .. admonition:: Tasks
 
     #. Make a main window titled "Main" with a button "About". When clicked, a new window titled "About" opens, 250x100 in size, with the label "Made by" and your name.

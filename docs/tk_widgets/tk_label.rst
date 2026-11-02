@@ -529,6 +529,240 @@ All Label options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Label used for?
+
+        [x] Showing text or a picture | Correct. Labels display information.
+        [ ] Typing text | Incorrect. An Entry is for typing.
+        [ ] Running a function when clicked | Incorrect. A Button does that.
+        [ ] Choosing from a list | Incorrect. A Listbox or OptionMenu does that.
+
+    .. multichoice::
+
+        Which option sets the words on a label?
+
+        [ ] words | Incorrect. words is not an option.
+        [x] text | Correct. text sets the words.
+        [ ] label | Incorrect. label is not an option.
+        [ ] value | Incorrect. value is not a Label option.
+
+    .. multichoice::
+
+        What does font=("Arial", 20, "bold") make?
+
+        [x] Bold Arial text, size 20 | Correct. Name, size, then style.
+        [ ] Arial text in 20 colours | Incorrect. 20 is the size.
+        [ ] A label 20 characters wide | Incorrect. width sets that.
+        [ ] Italic text | Incorrect. "italic" would make it italic.
+
+    .. multichoice::
+
+        Which option changes the colour of the words?
+
+        [ ] bg | Incorrect. bg is the background.
+        [ ] colour | Incorrect. colour is not an option.
+        [x] fg | Correct. fg is the foreground (word) colour.
+        [ ] text | Incorrect. text sets the words.
+
+    .. multichoice::
+
+        What does bg="yellow" do on a label?
+
+        [ ] Makes the words yellow | Incorrect. fg makes the words yellow.
+        [x] Makes the label's background yellow | Correct. bg is the background colour.
+        [ ] Makes the window yellow | Incorrect. Only the label changes.
+        [ ] Nothing | Incorrect. Labels have a background.
+
+    .. multichoice::
+
+        For a text label, what does width=20 mean?
+
+        [ ] 20 pixels | Incorrect. With text, width is in characters.
+        [x] About 20 characters wide | Correct. Text labels count characters.
+        [ ] 20 lines | Incorrect. height counts lines.
+        [ ] 20 labels | Incorrect. It sets one label's width.
+
+    .. multichoice::
+
+        What does height=3 mean on a text label?
+
+        [x] 3 lines of text tall | Correct. height counts lines for text labels.
+        [ ] 3 pixels tall | Incorrect. It counts lines, not pixels.
+        [ ] 3 labels | Incorrect. It sets one label.
+        [ ] 3 characters | Incorrect. width counts characters.
+
+    .. multichoice::
+
+        What do padx and pady do?
+
+        [ ] Move the label | Incorrect. pack and grid place it.
+        [x] Add space inside the label around the words | Correct. They make the label bigger around its text.
+        [ ] Change the font | Incorrect. font does that.
+        [ ] Add a border | Incorrect. relief does that.
+
+    .. multichoice::
+
+        What does anchor="w" do in a wide label?
+
+        [ ] Moves the window west | Incorrect. It only affects the label.
+        [x] Puts the words on the left side of the label | Correct. w means west, the left.
+        [ ] Puts the words on the right | Incorrect. That would be "e".
+        [ ] Makes the words bold | Incorrect. font does that.
+
+    .. multichoice::
+
+        Which anchor value puts the words at the top right?
+
+        [ ] "nw" | Incorrect. nw is top left.
+        [ ] "se" | Incorrect. se is bottom right.
+        [x] "ne" | Correct. n is top and e is right.
+        [ ] "sw" | Incorrect. sw is bottom left.
+
+    .. multichoice::
+
+        What does relief="ridge" with borderwidth=3 do?
+
+        [x] Adds a raised-edge border 3 pixels thick | Correct. relief sets the style and borderwidth the thickness.
+        [ ] Makes the words 3 times bigger | Incorrect. font does that.
+        [ ] Adds 3 lines | Incorrect. It adds a border.
+        [ ] Hides the label | Incorrect. It is still shown.
+
+    .. multichoice::
+
+        What does wraplength=150 do?
+
+        [ ] Makes the label 150 characters wide | Incorrect. width does that.
+        [x] Starts a new line when the words reach 150 pixels | Correct. wraplength wraps long text.
+        [ ] Shows only 150 letters | Incorrect. All the text still shows.
+        [ ] Sets the font size | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does justify="left" do?
+
+        [ ] Moves the label to the left | Incorrect. pack or grid move it.
+        [x] Lines up several lines of words on the left | Correct. justify lines up wrapped lines.
+        [ ] Puts one word on the left | Incorrect. It lines up all the lines.
+        [ ] Changes the font | Incorrect. font does that.
+
+    .. multichoice::
+
+        What must be made before a label can show a picture?
+
+        [ ] A Canvas | Incorrect. A Canvas is not needed.
+        [x] A PhotoImage, e.g. tk.PhotoImage(file="cat.png") | Correct. Then use image=picture.
+        [ ] A Button | Incorrect. Not needed.
+        [ ] A Frame | Incorrect. Not needed.
+
+    .. multichoice::
+
+        What does textvariable=message do?
+
+        [ ] Sets the font | Incorrect. font does that.
+        [x] Links the label to a StringVar, so message.set() changes the words | Correct. The label updates by itself.
+        [ ] Names the label | Incorrect. It links a variable.
+        [ ] Hides the label | Incorrect. It does not hide it.
+
+    .. multichoice::
+
+        Which line changes a label's text after it is made?
+
+        [x] result_label.config(text="Done") | Correct. config changes options.
+        [ ] result_label.text = "Done" | Incorrect. Options are changed with config.
+        [ ] result_label.set("Done") | Incorrect. Labels do not have set.
+        [ ] result_label.cget(text="Done") | Incorrect. cget only reads.
+
+    .. multichoice::
+
+        What does result_label.cget("fg") give?
+
+        [ ] It changes fg | Incorrect. config changes it.
+        [x] The current word colour of the label | Correct. cget reads an option.
+        [ ] The label text | Incorrect. It reads fg, not text.
+        [ ] An error | Incorrect. cget works on any option.
+
+    .. multichoice::
+
+        Can the user type into a Label?
+
+        [ ] Yes | Incorrect. Labels only display.
+        [x] No, labels only show text or pictures | Correct. Use an Entry for typing.
+        [ ] Only if state="normal" | Incorrect. Labels still cannot be typed in.
+        [ ] Only with textvariable | Incorrect. textvariable does not allow typing.
+
+    .. multichoice::
+
+        Which line makes and places a label in one line?
+
+        [ ] tk.Label(root, text="Hi").show() | Incorrect. show is not a method.
+        [x] tk.Label(root, text="Hi").pack() | Correct. Make it, then pack it.
+        [ ] tk.Label.pack(root, text="Hi") | Incorrect. Make the label first.
+        [ ] root.Label(text="Hi") | Incorrect. Use tk.Label.
+
+    .. multichoice::
+
+        Why should a label used for results be given a name like result_label?
+
+        [x] So it can be changed later with config | Correct. You need its name to change it.
+        [ ] Labels must always have names | Incorrect. One-line labels work too.
+        [ ] It makes the font bigger | Incorrect. Names do not change fonts.
+        [ ] It is faster | Incorrect. Names do not change speed.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a label with big blue words.
+
+        title_label = tk.@@Label | Entry | Button@@(root, text="My App", font=("Arial", @@24 | Arial | bold@@), @@fg | bg | colour@@="blue")
+        title_label.pack()
+
+    .. cloze::
+        :instructions: Give a label a background, size and space.
+
+        info_label = tk.Label(root, text="Info", @@bg | fg | fill@@="yellow", width=20, @@height | length | lines@@=2, padx=10)
+        info_label.pack()
+
+    .. cloze::
+        :instructions: Wrap long text and line it up on the left.
+
+        long_label = tk.Label(root, text=long_text, @@wraplength | width | wrap@@=200, @@justify | anchor | side@@="left")
+        long_label.pack()
+
+    .. cloze::
+        :instructions: Show a picture in a label.
+
+        cat_picture = tk.@@PhotoImage | Picture | Image@@(file="cat.png")
+        cat_label = tk.Label(root, @@image | picture | file@@=cat_picture)
+        cat_label.pack()
+
+    .. cloze::
+        :instructions: Change and read a label.
+
+        result_label.@@config | cget | set@@(text="Well done!")
+        colour = result_label.@@cget | config | get@@("fg")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "About me" that is 400x200. Add a label that shows your name in Arial size 24, with white text on a blue background.

@@ -517,6 +517,241 @@ All Menubutton options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Menubutton?
+
+        [x] A button that opens a drop-down menu when clicked | Correct. It holds a menu.
+        [ ] A button that runs one function | Incorrect. That is a Button.
+        [ ] A menu bar | Incorrect. That is a Menu on the window.
+        [ ] A tick box | Incorrect. That is a Checkbutton.
+
+    .. multichoice::
+
+        What two things are needed to make a Menubutton work?
+
+        [ ] A Label and a Frame | Incorrect. They are not needed.
+        [x] The Menubutton and a Menu linked with menu= | Correct. The menu holds the items.
+        [ ] Two Buttons | Incorrect. Not needed.
+        [ ] An Entry and a Button | Incorrect. Not needed.
+
+    .. multichoice::
+
+        Which line links a menu to a Menubutton called food_button?
+
+        [x] food_button.config(menu=food_menu) | Correct. The menu option links them.
+        [ ] food_menu.pack(food_button) | Incorrect. Menus are not packed.
+        [ ] food_button.add(food_menu) | Incorrect. Not a method.
+        [ ] food_button.menu(food_menu) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        When making the Menu, what is its parent?
+
+        [ ] root | Incorrect. The Menubutton is the parent.
+        [x] The Menubutton | Correct. tk.Menu(food_button, tearoff=0).
+        [ ] Another Menu | Incorrect. Not here.
+        [ ] Nothing | Incorrect. It needs a parent.
+
+    .. multichoice::
+
+        Which option sets the words on the Menubutton?
+
+        [ ] label | Incorrect. label is for menu items.
+        [x] text | Correct. text sets the button words.
+        [ ] title | Incorrect. title is for windows.
+        [ ] name | Incorrect. Not used.
+
+    .. multichoice::
+
+        Why use relief="raised" on a Menubutton?
+
+        [x] So it looks like a button that can be clicked | Correct. By default it can look flat.
+        [ ] To open the menu | Incorrect. Clicking opens it.
+        [ ] To colour it | Incorrect. bg colours it.
+        [ ] To make it bigger | Incorrect. width does that.
+
+    .. multichoice::
+
+        What does direction="above" do?
+
+        [ ] Moves the button up | Incorrect. It moves the menu.
+        [x] Opens the menu above the button | Correct. direction sets where the menu appears.
+        [ ] Opens the menu below | Incorrect. That is "below", the default.
+        [ ] Hides the menu | Incorrect. It changes where it shows.
+
+    .. multichoice::
+
+        What does activebackground change on a Menubutton?
+
+        [ ] The menu items | Incorrect. The menu has its own options.
+        [x] The button colour when the mouse is over it | Correct. It is the hover colour.
+        [ ] The window | Incorrect. Only the Menubutton.
+        [ ] The word colour when disabled | Incorrect. disabledforeground does that.
+
+    .. multichoice::
+
+        What does state="disabled" do?
+
+        [x] Greys out the Menubutton so the menu will not open | Correct. It cannot be used.
+        [ ] Deletes the menu | Incorrect. It just turns it off.
+        [ ] Opens the menu | Incorrect. It stops it opening.
+        [ ] Changes the text | Incorrect. config(text=) does that.
+
+    .. multichoice::
+
+        Which line changes the Menubutton's words to show the choice?
+
+        [ ] food_button.set("Pizza") | Incorrect. Not a method.
+        [x] food_button.config(text="Pizza") | Correct. config changes text.
+        [ ] food_menu.config(text="Pizza") | Incorrect. That changes the menu, not the button.
+        [ ] food_button.text = "Pizza" | Incorrect. Use config.
+
+    .. multichoice::
+
+        What does add_checkbutton add to the menu?
+
+        [ ] A Button | Incorrect. It adds a menu item.
+        [x] An item with a tick that turns on and off | Correct. Each one has its own variable.
+        [ ] A separator | Incorrect. add_separator does that.
+        [ ] A new Menubutton | Incorrect. It adds an item.
+
+    .. multichoice::
+
+        What does add_radiobutton add?
+
+        [ ] A tick item | Incorrect. add_checkbutton does that.
+        [x] An item where only one in the group can be chosen | Correct. They share a variable.
+        [ ] A Radiobutton widget | Incorrect. It is a menu item.
+        [ ] A line | Incorrect. add_separator does that.
+
+    .. multichoice::
+
+        For add_radiobutton items, what must be the same?
+
+        [x] The variable | Correct. The shared variable groups them.
+        [ ] The value | Incorrect. Each needs a different value.
+        [ ] The label | Incorrect. Each has its own label.
+        [ ] Nothing | Incorrect. They must share a variable.
+
+    .. multichoice::
+
+        For add_radiobutton items, what must be different?
+
+        [ ] The variable | Incorrect. That must be the same.
+        [x] The value | Correct. Each item stores its own value.
+        [ ] The menu | Incorrect. They are in the same menu.
+        [ ] The parent | Incorrect. Same parent.
+
+    .. multichoice::
+
+        What do padx and pady do on a Menubutton?
+
+        [ ] Move the menu | Incorrect. direction does that.
+        [x] Add space inside the button around the words | Correct. They make it bigger.
+        [ ] Add items | Incorrect. add_command does that.
+        [ ] Change colours | Incorrect. bg and fg do that.
+
+    .. multichoice::
+
+        How can a menu item update the Menubutton text when chosen?
+
+        [x] Give it command=lambda: food_button.config(text="Pizza") | Correct. The command runs when chosen.
+        [ ] It happens by itself | Incorrect. You must change it.
+        [ ] Use text= on the menu item | Incorrect. Menu items use label.
+        [ ] Use direction= | Incorrect. direction moves the menu.
+
+    .. multichoice::
+
+        What does tearoff=0 do in tk.Menu(food_button, tearoff=0)?
+
+        [ ] Hides the Menubutton | Incorrect. It removes the dashed line.
+        [x] Removes the dashed tear-off line at the top of the menu | Correct. Cleaner menus.
+        [ ] Opens the menu | Incorrect. Clicking opens it.
+        [ ] Disables the menu | Incorrect. state does that.
+
+    .. multichoice::
+
+        Which widget is most like a Menubutton, but shows the chosen item automatically?
+
+        [ ] Label | Incorrect. Labels do not open menus.
+        [x] OptionMenu | Correct. OptionMenu is a ready-made Menubutton with choices.
+        [ ] Entry | Incorrect. Entries are for typing.
+        [ ] Canvas | Incorrect. Canvas is for drawing.
+
+    .. multichoice::
+
+        What does font=("Arial", 14) change?
+
+        [ ] The menu items | Incorrect. The menu has its own font.
+        [x] The words on the Menubutton | Correct. It styles the button text.
+        [ ] The window title | Incorrect. root.title does that.
+        [ ] Nothing | Incorrect. It changes the button font.
+
+    .. multichoice::
+
+        What does width=12 mean on a text Menubutton?
+
+        [x] About 12 characters wide | Correct. Text widgets count characters.
+        [ ] 12 pixels | Incorrect. It counts characters.
+        [ ] 12 menu items | Incorrect. It sets width.
+        [ ] 12 lines | Incorrect. height counts lines.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Menubutton and its menu.
+
+        food_button = tk.@@Menubutton | Button | Menu@@(root, text="Food", @@relief | border | style@@="raised")
+        food_menu = tk.@@Menu | Menubutton | Frame@@(food_button, tearoff=0)
+        food_button.@@config | pack | add@@(menu=food_menu)
+
+    .. cloze::
+        :instructions: Add items to the menu.
+
+        food_menu.@@add_command | add_cascade | add_item@@(label="Pizza", command=pick_pizza)
+        food_menu.add_command(@@label | text | name@@="Pasta", command=pick_pasta)
+
+    .. cloze::
+        :instructions: Add tick items.
+
+        cheese = tk.IntVar()
+        food_menu.@@add_checkbutton | add_radiobutton | add_tick@@(label="Extra cheese", @@variable | value | text@@=cheese)
+
+    .. cloze::
+        :instructions: Add choice items that share a variable.
+
+        size = tk.StringVar(value="Small")
+        size_menu.add_radiobutton(label="Small", variable=@@size | value | Small@@, value="Small")
+        size_menu.add_radiobutton(label="Large", variable=size, @@value | variable | label@@="Large")
+
+    .. cloze::
+        :instructions: Open the menu above and show the choice.
+
+        food_button.config(@@direction | side | anchor@@="above")
+        food_button.config(@@text | label | menu@@="Pizza")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Pets" that is 300x200. Add a raised Menubutton with the words "Pets ▼" whose menu has the commands "Dog", "Cat" and "Fish".

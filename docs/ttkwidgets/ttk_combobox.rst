@@ -485,6 +485,317 @@ Quick reference
 
 ----
 
+All Combobox options
+---------------------------
+
+| Here is every option a ttk Combobox can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``background``
+      - Background colour (write ``background``, not ``bg``)
+      - ``background="lavender"``
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``foreground``
+      - Word colour (write ``foreground``, not ``fg``)
+      - ``foreground="purple"``
+    * - ``height``
+      - How many choices show in the drop-down list at once
+      - ``height=5``
+    * - ``invalidcommand``
+      - Function to run when ``validatecommand`` says no
+      - ``invalidcommand=beep``
+    * - ``justify``
+      - Lines up the words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="center"``
+    * - ``postcommand``
+      - Function to run just before the list drops down
+      - ``postcommand=update_list``
+    * - ``show``
+      - Shows this character instead of what is typed (good for passwords)
+      - ``show="*"``
+    * - ``state``
+      - ``"normal"`` (can type), ``"readonly"`` (can only pick from the list) or ``"disabled"``
+      - ``state="readonly"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TCombobox"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``textvariable``
+      - A variable that holds the chosen or typed item
+      - ``textvariable=colour``
+    * - ``validate``
+      - When to check what is typed: ``"none"``, ``"key"``, ``"focus"``, ``"focusin"``, ``"focusout"`` or ``"all"``
+      - ``validate="key"``
+    * - ``validatecommand``
+      - Function that checks what is typed (returns ``True`` or ``False``)
+      - ``validatecommand=(root.register(check), "%P")``
+    * - ``values``
+      - The list of choices
+      - ``values=["Red", "Green", "Blue"]``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+
+| Many themes ignore ``background`` for the typing box. Use a style instead, e.g. ``style.configure("TCombobox", fieldbackground="lightyellow")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Combobox?
+
+        [x] A box with a drop-down list, where the user can pick or type a choice | Correct. It combines an Entry and a list.
+        [ ] A box of buttons | Incorrect. It is a drop-down.
+        [ ] A tick box | Incorrect. That is a Checkbutton.
+        [ ] A slider | Incorrect. That is a Scale.
+
+    .. multichoice::
+
+        Which option gives the list of choices?
+
+        [ ] choices | Incorrect. Not an option.
+        [x] values | Correct. values holds the choices.
+        [ ] items | Incorrect. Not an option.
+        [ ] list | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does state="readonly" do?
+
+        [x] The user can only pick from the list, not type | Correct. readonly stops typing.
+        [ ] Hides the list | Incorrect. It still drops down.
+        [ ] Turns it off | Incorrect. "disabled" turns it off.
+        [ ] Lets the user type anything | Incorrect. That is "normal".
+
+    .. multichoice::
+
+        What does state="normal" allow?
+
+        [ ] Only picking from the list | Incorrect. That is readonly.
+        [x] Picking from the list or typing a new choice | Correct. normal allows typing.
+        [ ] Nothing | Incorrect. It allows typing and picking.
+        [ ] Only typing | Incorrect. Picking works too.
+
+    .. multichoice::
+
+        What does height=5 do?
+
+        [ ] Makes the box 5 lines tall | Incorrect. It is one line.
+        [x] Shows 5 choices at once in the drop-down | Correct. More choices scroll.
+        [ ] Allows only 5 choices | Incorrect. More can be added.
+        [ ] Makes it 5 pixels | Incorrect. It counts choices.
+
+    .. multichoice::
+
+        What does width=20 mean?
+
+        [x] About 20 characters wide | Correct. It counts characters.
+        [ ] 20 pixels | Incorrect. Characters.
+        [ ] 20 choices | Incorrect. It sets width.
+        [ ] 20 lines | Incorrect. One line.
+
+    .. multichoice::
+
+        Which option makes the words red?
+
+        [ ] fg="red" | Incorrect. ttk Combobox uses foreground.
+        [x] foreground="red" | Correct. Write the full word foreground.
+        [ ] colour="red" | Incorrect. Not an option.
+        [ ] bg="red" | Incorrect. Not an option, and that is background.
+
+    .. multichoice::
+
+        What does justify="center" do?
+
+        [ ] Centres the window | Incorrect. It centres the text.
+        [x] Puts the chosen words in the middle of the box | Correct. justify lines up the text.
+        [ ] Centres the list | Incorrect. It lines up the text in the box.
+        [ ] Removes the arrow | Incorrect. The arrow stays.
+
+    .. multichoice::
+
+        Which method reads the chosen or typed item?
+
+        [x] combo.get() | Correct. get gives the text in the box.
+        [ ] combo.read() | Incorrect. Not a method.
+        [ ] combo.value | Incorrect. Not an attribute.
+        [ ] combo.choice() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which line puts "Blue" in the box from code?
+
+        [ ] combo.get("Blue") | Incorrect. get reads.
+        [x] combo.set("Blue") | Correct. set puts text in the box.
+        [ ] combo.insert("Blue") | Incorrect. insert needs a position.
+        [ ] combo.choose("Blue") | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What does combo.current(0) do?
+
+        [x] Picks the first choice in values | Correct. current chooses by index.
+        [ ] Gives the text | Incorrect. It picks a choice.
+        [ ] Deletes the first choice | Incorrect. It picks it.
+        [ ] Clears the box | Incorrect. It picks a choice.
+
+    .. multichoice::
+
+        What does combo.current() give with no number?
+
+        [ ] The text | Incorrect. It gives an index.
+        [x] The index of the chosen item, or -1 if the text is not in the list | Correct. It tells you which one was picked.
+        [ ] The number of choices | Incorrect. Use len(values).
+        [ ] An error | Incorrect. It is allowed.
+
+    .. multichoice::
+
+        Which event runs a function when a choice is picked?
+
+        [ ] "<Click>" | Incorrect. Not an event.
+        [x] "<<ComboboxSelected>>" | Correct. This event fires when a choice is picked.
+        [ ] "<Return>" | Incorrect. That is Enter.
+        [ ] "<Select>" | Incorrect. Not the right name.
+
+    .. multichoice::
+
+        A function used with bind needs:
+
+        [x] A parameter for the event | Correct. bind sends an event.
+        [ ] No parameters | Incorrect. bind sends one.
+        [ ] Two parameters | Incorrect. It gets one.
+        [ ] The Combobox as a parameter | Incorrect. It gets the event.
+
+    .. multichoice::
+
+        How can a price be found from the chosen item?
+
+        [ ] price = combo | Incorrect. combo is a widget.
+        [x] price = prices[combo.get()] | Correct. Use the choice as a dictionary key.
+        [ ] price = combo.price | Incorrect. Not an attribute.
+        [ ] price = prices(combo.get()) | Incorrect. Dictionaries use square brackets.
+
+    .. multichoice::
+
+        Which line changes the list of choices?
+
+        [ ] combo.values = ["A", "B"] | Incorrect. Use config.
+        [x] combo.config(values=["A", "B"]) | Correct. config changes values.
+        [ ] combo.set(values=["A", "B"]) | Incorrect. set puts text in the box.
+        [ ] combo.add(["A", "B"]) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        How can a typed item be added to the list?
+
+        [x] Get the list from combo["values"], add the new item and set values again | Correct. values must be set as a whole.
+        [ ] combo.append(item) | Incorrect. Not a method.
+        [ ] combo.insert(item) | Incorrect. Not for the list.
+        [ ] It cannot | Incorrect. It can.
+
+    .. multichoice::
+
+        What does textvariable=colour do?
+
+        [ ] Sets the font | Incorrect. font does that.
+        [x] Links the box to a StringVar, so colour.get() reads it | Correct. The variable updates with the box.
+        [ ] Sets the list | Incorrect. values does that.
+        [ ] Names the box | Incorrect. It links a variable.
+
+    .. multichoice::
+
+        Which style name is used for every Combobox?
+
+        [ ] "Combobox" | Incorrect. Use TCombobox.
+        [x] "TCombobox" | Correct. T then the widget name.
+        [ ] "TCombo" | Incorrect. Not the name.
+        [ ] "Drop" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        Which widget suits choosing a country from a long list in a small space?
+
+        [x] Combobox | Correct. It drops down a list.
+        [ ] Radiobuttons | Incorrect. Too many buttons.
+        [ ] Canvas | Incorrect. Not for choosing.
+        [ ] Progressbar | Incorrect. It shows progress.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Combobox with choices.
+
+        colour_box = ttk.@@Combobox | Entry | Listbox@@(root, @@values | choices | items@@=["Red", "Green", "Blue"], state="readonly")
+        colour_box.pack()
+        colour_box.@@current | set | get@@(0)
+
+    .. cloze::
+        :instructions: Read and set the choice.
+
+        colour = colour_box.@@get | read | value@@()
+        colour_box.@@set | get | insert@@("Blue")
+
+    .. cloze::
+        :instructions: Run a function when a choice is picked.
+
+        def picked(@@event | choice | self@@):
+            result_label.config(text="You chose " + colour_box.get())
+
+        colour_box.@@bind | config | command@@("@@<<ComboboxSelected>> | <Click> | <Return>@@", picked)
+
+    .. cloze::
+        :instructions: Show more choices and style the text.
+
+        size_box = ttk.Combobox(root, values=sizes, @@height | lines | rows@@=5, @@justify | anchor | side@@="center", foreground="blue")
+
+    .. cloze::
+        :instructions: Change the list of choices.
+
+        colour_box.@@config | set | add@@(@@values | items | text@@=["Pink", "Purple"])
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Holidays" that is 300x200 with a readonly Combobox of "Beach", "Snow", "City" and "Camping", starting on "Beach".

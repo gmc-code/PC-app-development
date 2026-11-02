@@ -572,6 +572,240 @@ All Spinbox options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Spinbox?
+
+        [x] A box with up and down arrows to step through numbers or choices | Correct. The user can also type.
+        [ ] A slider | Incorrect. That is a Scale.
+        [ ] A spinning picture | Incorrect. It steps through values.
+        [ ] A list that shows every item | Incorrect. That is a Listbox.
+
+    .. multichoice::
+
+        How is the lowest number written?
+
+        [ ] from=1 | Incorrect. from is a Python keyword.
+        [x] from_=1 | Correct. The underscore is needed.
+        [ ] min=1 | Incorrect. Not an option.
+        [ ] start=1 | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does increment=5 do?
+
+        [x] Each arrow click changes the number by 5 | Correct. increment is the step.
+        [ ] Starts at 5 | Incorrect. from\_ sets the start.
+        [ ] Allows 5 clicks | Incorrect. It sets the step.
+        [ ] Shows 5 numbers | Incorrect. It sets the step.
+
+    .. multichoice::
+
+        What does values=("Red", "Green", "Blue") do?
+
+        [ ] Sets the colours of the box | Incorrect. It sets the choices.
+        [x] Steps through these words instead of numbers | Correct. values replaces from\_ and to.
+        [ ] Adds three Spinboxes | Incorrect. One Spinbox.
+        [ ] Shows a list | Incorrect. It steps through them.
+
+    .. multichoice::
+
+        What does wrap=True do?
+
+        [ ] Wraps long text | Incorrect. It is about the values.
+        [x] Goes back to the start after the last value | Correct. It loops round.
+        [ ] Stops at the end | Incorrect. That is wrap=False.
+        [ ] Makes the box wider | Incorrect. width does that.
+
+    .. multichoice::
+
+        What does width=5 mean?
+
+        [x] About 5 characters wide | Correct. Spinbox width counts characters.
+        [ ] 5 pixels | Incorrect. It counts characters.
+        [ ] 5 values | Incorrect. It sets the width.
+        [ ] 5 lines | Incorrect. It has one line.
+
+    .. multichoice::
+
+        What does justify="center" do?
+
+        [ ] Centres the window | Incorrect. Only the text.
+        [x] Puts the number in the middle of the box | Correct. justify lines up the text.
+        [ ] Centres the arrows | Incorrect. It lines up the text.
+        [ ] Removes the arrows | Incorrect. Arrows still show.
+
+    .. multichoice::
+
+        What does state="readonly" do?
+
+        [ ] Hides the Spinbox | Incorrect. It is still shown.
+        [x] Stops typing, but the arrows still work | Correct. readonly blocks typing.
+        [ ] Stops the arrows | Incorrect. That is "disabled".
+        [ ] Deletes the value | Incorrect. Nothing is deleted.
+
+    .. multichoice::
+
+        What does state="disabled" do?
+
+        [x] Greys it out so neither typing nor arrows work | Correct. It is turned off.
+        [ ] Only stops typing | Incorrect. That is "readonly".
+        [ ] Hides it | Incorrect. It is still shown.
+        [ ] Resets it | Incorrect. Nothing changes.
+
+    .. multichoice::
+
+        When does command run on a Spinbox?
+
+        [ ] When the user types | Incorrect. Only the arrows run it.
+        [x] When an arrow is clicked | Correct. command runs on each arrow click.
+        [ ] When the window opens | Incorrect. Not then.
+        [ ] Never | Incorrect. It runs on arrow clicks.
+
+    .. multichoice::
+
+        What does textvariable=amount do?
+
+        [ ] Sets the font | Incorrect. font does that.
+        [x] Links the box to a variable, so amount.get() reads it | Correct. The variable updates with the box.
+        [ ] Sets the highest number | Incorrect. to does that.
+        [ ] Names the box | Incorrect. It links a variable.
+
+    .. multichoice::
+
+        What type does spinbox.get() give?
+
+        [ ] An int | Incorrect. It is always text.
+        [x] A string, so use int() for a number | Correct. Change it before doing maths.
+        [ ] A list | Incorrect. One value.
+        [ ] A float | Incorrect. It is text.
+
+    .. multichoice::
+
+        How do you set the Spinbox to 10 from code?
+
+        [x] spinbox.delete(0, tk.END) then spinbox.insert(0, 10) | Correct. Clear it, then insert the new value.
+        [ ] spinbox.set(10) | Incorrect. tk Spinbox has no set method.
+        [ ] spinbox.config(value=10) | Incorrect. Not an option.
+        [ ] spinbox.get(10) | Incorrect. get reads.
+
+    .. multichoice::
+
+        Why check typed numbers with try and except?
+
+        [ ] Arrows can type letters | Incorrect. The user can type letters.
+        [x] The user might type letters, which makes int() fail | Correct. try and except catch the ValueError.
+        [ ] Spinboxes cannot hold numbers | Incorrect. They can.
+        [ ] It makes it faster | Incorrect. Not about speed.
+
+    .. multichoice::
+
+        Which line changes the highest number later?
+
+        [ ] spinbox.to(20) | Incorrect. Not a method.
+        [x] spinbox.config(to=20) | Correct. config changes options.
+        [ ] spinbox.set(to=20) | Incorrect. Not a method.
+        [ ] spinbox.max = 20 | Incorrect. Use config.
+
+    .. multichoice::
+
+        Can the user type straight into a Spinbox with state="normal"?
+
+        [x] Yes | Correct. Normal Spinboxes allow typing.
+        [ ] No | Incorrect. Typing is allowed.
+        [ ] Only numbers | Incorrect. Any characters can be typed.
+        [ ] Only with values | Incorrect. Typing works either way.
+
+    .. multichoice::
+
+        If from_=1, to=5 and the value is 5, what does the up arrow do with wrap=False?
+
+        [ ] Goes to 1 | Incorrect. That needs wrap=True.
+        [x] Stays at 5 | Correct. Without wrap it stops at the end.
+        [ ] Goes to 6 | Incorrect. to is 5.
+        [ ] Causes an error | Incorrect. No error.
+
+    .. multichoice::
+
+        What do fg and bg change?
+
+        [ ] The arrows only | Incorrect. They change the box.
+        [x] The word colour and the box background | Correct. fg is words, bg is background.
+        [ ] The window | Incorrect. Only the Spinbox.
+        [ ] The step size | Incorrect. increment does that.
+
+    .. multichoice::
+
+        Which widget suits picking a number of tickets from 1 to 10?
+
+        [x] Spinbox | Correct. It steps through a range of numbers.
+        [ ] Text | Incorrect. Too big.
+        [ ] Canvas | Incorrect. Canvas draws.
+        [ ] Menu | Incorrect. Not ideal.
+
+    .. multichoice::
+
+        Which option would you use for a list of sizes instead of numbers?
+
+        [ ] from\_ | Incorrect. from\_ is for numbers.
+        [x] values | Correct. values gives a list of choices.
+        [ ] increment | Incorrect. That is the step.
+        [ ] wrap | Incorrect. wrap loops round.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Spinbox from 1 to 10.
+
+        tickets = tk.@@Spinbox | Scale | Entry@@(root, @@from_ | from | start@@=1, @@to | end | max@@=10, width=5)
+        tickets.pack()
+
+    .. cloze::
+        :instructions: Count in fives and loop round.
+
+        score = tk.Spinbox(root, from_=0, to=50, @@increment | step | resolution@@=5, @@wrap | loop | repeat@@=True)
+
+    .. cloze::
+        :instructions: Step through words.
+
+        size = tk.Spinbox(root, @@values | choices | items@@=("Small", "Medium", "Large"), state="@@readonly | disabled | normal@@")
+
+    .. cloze::
+        :instructions: Read the number and run a function.
+
+        def show():
+            count = @@int | str | list@@(tickets.get())
+            result_label.config(text="Cost: $" + str(count * 5))
+
+        tickets = tk.Spinbox(root, from_=1, to=10, @@command | click | run@@=show)
+
+    .. cloze::
+        :instructions: Set the value from code.
+
+        tickets.@@delete | clear | remove@@(0, tk.END)
+        tickets.@@insert | set | add@@(0, 5)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Tickets" that is 300x200. Add a spinbox from 1 to 6 with an Arial size 20 font and a width of 4.

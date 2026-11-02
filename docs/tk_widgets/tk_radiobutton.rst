@@ -630,6 +630,241 @@ All Radiobutton options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Radiobutton?
+
+        [x] A round button in a group where only one can be chosen | Correct. Choosing one un-chooses the others.
+        [ ] A tick box where many can be ticked | Incorrect. That is a Checkbutton.
+        [ ] A box for typing | Incorrect. That is an Entry.
+        [ ] A slider | Incorrect. That is a Scale.
+
+    .. multichoice::
+
+        What makes radiobuttons belong to the same group?
+
+        [ ] They have the same text | Incorrect. Text can differ.
+        [x] They share the same variable | Correct. One shared variable makes a group.
+        [ ] They are next to each other | Incorrect. Position does not group them.
+        [ ] They have the same value | Incorrect. Values must be different.
+
+    .. multichoice::
+
+        What must be different for each radiobutton in a group?
+
+        [ ] The variable | Incorrect. That must be the same.
+        [x] The value | Correct. Each stores its own value.
+        [ ] The parent | Incorrect. They can share a parent.
+        [ ] The font | Incorrect. Font does not matter.
+
+    .. multichoice::
+
+        What is stored in the variable when a radiobutton is chosen?
+
+        [x] Its value | Correct. The chosen button's value goes in the variable.
+        [ ] Its text | Incorrect. value is stored, not text.
+        [ ] 1 | Incorrect. Only if its value is 1.
+        [ ] True | Incorrect. Only if its value is True.
+
+    .. multichoice::
+
+        How do you start with no radiobutton chosen?
+
+        [ ] Do not make a variable | Incorrect. A variable is needed.
+        [x] Set the variable to a value no button has, like "none" | Correct. Then none match.
+        [ ] Set it to "" | Incorrect. An empty string can make every button look half-chosen.
+        [ ] Use state="disabled" | Incorrect. That turns them off.
+
+    .. multichoice::
+
+        Why should you not use "" to clear a group?
+
+        [ ] It causes an error | Incorrect. No error.
+        [x] It can make every button look half-chosen | Correct. Use "none" instead.
+        [ ] It deletes the buttons | Incorrect. Nothing is deleted.
+        [ ] It chooses every button | Incorrect. It looks half-chosen.
+
+    .. multichoice::
+
+        What does command do on a Radiobutton?
+
+        [ ] Chooses it | Incorrect. Clicking chooses it.
+        [x] Runs a function as soon as it is clicked | Correct. Give every button the same command.
+        [ ] Stores the value | Incorrect. variable does that.
+        [ ] Sets the text | Incorrect. text does that.
+
+    .. multichoice::
+
+        What does selectcolor="yellow" change?
+
+        [x] The colour inside the round button | Correct. selectcolor colours the circle.
+        [ ] The words | Incorrect. fg does that.
+        [ ] The window | Incorrect. Only the button.
+        [ ] The border | Incorrect. Not the border.
+
+    .. multichoice::
+
+        What does indicatoron=0 do?
+
+        [ ] Turns the button off | Incorrect. state does that.
+        [x] Hides the circle so each choice looks like a normal button | Correct. The chosen one stays pressed in.
+        [ ] Shows a tick | Incorrect. Radiobuttons do not tick.
+        [ ] Deletes the text | Incorrect. Text still shows.
+
+    .. multichoice::
+
+        Why use anchor="w" and the same width on each Radiobutton?
+
+        [x] So the round buttons line up neatly on the left | Correct. Same width and left anchor line them up.
+        [ ] To choose them all | Incorrect. Only one can be chosen.
+        [ ] To colour them | Incorrect. anchor is about position.
+        [ ] To make them bigger | Incorrect. width alone sets size.
+
+    .. multichoice::
+
+        What does state="disabled" do?
+
+        [ ] Chooses the button | Incorrect. It does not choose.
+        [x] Greys it out so it cannot be chosen | Correct. Use it for unavailable choices.
+        [ ] Deletes it | Incorrect. destroy deletes.
+        [ ] Hides the text | Incorrect. Text still shows.
+
+    .. multichoice::
+
+        How do you find which radiobutton is chosen?
+
+        [ ] radio.get() | Incorrect. Read the variable.
+        [x] drink.get(), where drink is the shared variable | Correct. The variable holds the chosen value.
+        [ ] radio.chosen | Incorrect. Not an attribute.
+        [ ] radio.cget("value") | Incorrect. That gives that button's value, chosen or not.
+
+    .. multichoice::
+
+        What does drink.set("Milk") do?
+
+        [x] Chooses the radiobutton whose value is "Milk" | Correct. set chooses from code.
+        [ ] Adds a Milk button | Incorrect. It does not make widgets.
+        [ ] Changes the text to Milk | Incorrect. It changes the variable.
+        [ ] Deletes the Milk button | Incorrect. Nothing is deleted.
+
+    .. multichoice::
+
+        What does radio.select() do?
+
+        [ ] Runs its command | Incorrect. select does not run command.
+        [x] Chooses this radiobutton without running its command | Correct. invoke would also run command.
+        [ ] Unchooses it | Incorrect. Radiobuttons cannot be unclicked this way.
+        [ ] Deletes it | Incorrect. destroy deletes.
+
+    .. multichoice::
+
+        What does radio.invoke() do?
+
+        [ ] Only chooses it | Incorrect. select only chooses.
+        [x] Chooses it and runs its command, like a click | Correct. invoke acts like a click.
+        [ ] Disables it | Incorrect. config does that.
+        [ ] Changes its colour | Incorrect. config does that.
+
+    .. multichoice::
+
+        How do you check a quiz answer stored in answer?
+
+        [x] if answer.get() == "Mars": | Correct. Compare the variable with the right answer.
+        [ ] if answer == "Mars": | Incorrect. answer is a variable object.
+        [ ] if radio.get() == "Mars": | Incorrect. Read the variable.
+        [ ] if answer.set("Mars"): | Incorrect. set changes the value.
+
+    .. multichoice::
+
+        Which variable type suits radiobuttons with whole-number values?
+
+        [ ] tk.StringVar() | Incorrect. That is for text.
+        [x] tk.IntVar() | Correct. IntVar holds whole numbers.
+        [ ] tk.BooleanVar() | Incorrect. That is for True or False.
+        [ ] A list | Incorrect. Use a tkinter variable.
+
+    .. multichoice::
+
+        Which line turns off a radiobutton later?
+
+        [x] radio.config(state="disabled") | Correct. config changes options.
+        [ ] radio.disable() | Incorrect. Not a method.
+        [ ] radio.set(state="disabled") | Incorrect. Not a method.
+        [ ] radio.state = "disabled" | Incorrect. Use config.
+
+    .. multichoice::
+
+        Which widget suits "Which year are you in?"
+
+        [ ] Checkbuttons | Incorrect. Those allow many answers.
+        [x] Radiobuttons | Correct. Only one answer is right.
+        [ ] Text | Incorrect. Typing is not needed.
+        [ ] Canvas | Incorrect. Canvas draws.
+
+    .. multichoice::
+
+        How many radiobuttons in one group can be chosen at once?
+
+        [ ] As many as you like | Incorrect. That is Checkbuttons.
+        [x] One | Correct. Choosing one un-chooses the others.
+        [ ] Two | Incorrect. Only one.
+        [ ] None | Incorrect. One can be chosen.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a group of radiobuttons.
+
+        drink = tk.@@StringVar | IntVar | Label@@(value="Water")
+        tk.@@Radiobutton | Checkbutton | Button@@(root, text="Water", variable=drink, @@value | text | onvalue@@="Water").pack()
+        tk.Radiobutton(root, text="Juice", @@variable | value | group@@=drink, value="Juice").pack()
+
+    .. cloze::
+        :instructions: Run a function when a choice is clicked.
+
+        def show():
+            result_label.config(text="You chose " + drink.@@get | set | value@@())
+
+        tk.Radiobutton(root, text="Milk", variable=drink, value="Milk", @@command | click | run@@=show).pack()
+
+    .. cloze::
+        :instructions: Make choices look like buttons.
+
+        tk.Radiobutton(root, text="Easy", variable=level, value="Easy", @@indicatoron | indicator | circle@@=0, @@selectcolor | bg | fg@@="lightgreen").pack()
+
+    .. cloze::
+        :instructions: Choose and clear from code.
+
+        drink.@@set | get | select@@("Juice")
+        drink.set("@@none | empty | 0@@")
+
+    .. cloze::
+        :instructions: Check a quiz answer.
+
+        if answer.get() @@== | = | !=@@ "Mars":
+            result_label.config(text="Correct!", fg="@@green | red | blue@@")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Transport" that is 300x200. Add a group of three radiobuttons: "Bus", "Car" and "Walk", sharing one ``StringVar``.

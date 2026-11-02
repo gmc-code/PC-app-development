@@ -370,6 +370,285 @@ Quick reference
 
 ----
 
+All Frame options
+---------------------------
+
+| Here is every option a ttk Frame can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``borderwidth``
+      - How thick the border is (write ``borderwidth``, not ``bd``)
+      - ``borderwidth=3``
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``height``
+      - How tall it is (in pixels)
+      - ``height=200``
+    * - ``padding``
+      - Extra space inside the frame, around its widgets
+      - ``padding=10``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TFrame"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``width``
+      - How wide it is (in pixels)
+      - ``width=300``
+
+| ttk Frame has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("TFrame", background="lightblue")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a ttk Frame?
+
+        [x] A container for grouping widgets that uses the ttk theme | Correct. It works like a tk Frame.
+        [ ] A picture frame | Incorrect. It is a container.
+        [ ] A window | Incorrect. Toplevel makes windows.
+        [ ] A button | Incorrect. It is a container.
+
+    .. multichoice::
+
+        Why does ttk.Frame(root, bg="blue") cause an error?
+
+        [ ] Blue is not allowed | Incorrect. ttk Frames have no bg option.
+        [x] ttk widgets do not have bg; colours come from a style | Correct. Use style.configure("TFrame", background=...).
+        [ ] Frames cannot be blue | Incorrect. They can with a style.
+        [ ] Frames need a size | Incorrect. Not the error.
+
+    .. multichoice::
+
+        What does padding=10 do?
+
+        [x] Adds 10 pixels of space inside the frame around its widgets | Correct. padding pads the inside.
+        [ ] Adds space outside | Incorrect. pack does that.
+        [ ] Makes 10 frames | Incorrect. It adds space.
+        [ ] Moves the frame | Incorrect. It adds space.
+
+    .. multichoice::
+
+        What does padding=(10, 5) mean?
+
+        [ ] 10 pixels on top, 5 on the left | Incorrect. Two numbers mean left and right, then top and bottom.
+        [x] 10 pixels left and right, 5 pixels top and bottom | Correct. The first is across, the second is up and down.
+        [ ] 10 by 5 frame | Incorrect. It is padding, not size.
+        [ ] An error | Incorrect. It is allowed.
+
+    .. multichoice::
+
+        Which pair gives a ttk Frame a border?
+
+        [ ] fg and bg | Incorrect. ttk has neither.
+        [x] relief and borderwidth | Correct. relief is the style, borderwidth the thickness.
+        [ ] width and height | Incorrect. These are sizes.
+        [ ] padding and style | Incorrect. padding adds space.
+
+    .. multichoice::
+
+        For a ttk Frame, width=300 is measured in:
+
+        [x] Pixels | Correct. Frame size is in pixels.
+        [ ] Characters | Incorrect. Frames do not hold text.
+        [ ] Lines | Incorrect. Not lines.
+        [ ] Centimetres | Incorrect. Not used.
+
+    .. multichoice::
+
+        Which line colours every ttk Frame light blue?
+
+        [ ] frame.config(bg="lightblue") | Incorrect. ttk has no bg.
+        [x] style.configure("TFrame", background="lightblue") | Correct. TFrame is the style for all frames.
+        [ ] style.configure("Frame", bg="lightblue") | Incorrect. Use TFrame and background.
+        [ ] frame.colour("lightblue") | Incorrect. Not a method.
+
+    .. multichoice::
+
+        How do you colour only one frame?
+
+        [x] Make a style like "Blue.TFrame" and use style="Blue.TFrame" | Correct. Custom styles affect only the widgets that use them.
+        [ ] Use TFrame | Incorrect. That changes every frame.
+        [ ] Use bg | Incorrect. ttk has no bg.
+        [ ] It is not possible | Incorrect. It is, with a style.
+
+    .. multichoice::
+
+        What does side="left" do in frame.pack(side="left")?
+
+        [ ] Lines up the widgets inside | Incorrect. It places the frame.
+        [x] Puts the frame against the left, so frames sit side by side | Correct. side sets where it packs.
+        [ ] Moves the words | Incorrect. Frames have no words.
+        [ ] Stretches the frame | Incorrect. fill does that.
+
+    .. multichoice::
+
+        What does fill="both" with expand=True do?
+
+        [x] Lets the frame stretch to fill spare space in both directions | Correct. It grows with the window.
+        [ ] Fills the frame with colour | Incorrect. Use a style for colour.
+        [ ] Adds both widgets | Incorrect. It is about space.
+        [ ] Hides the frame | Incorrect. It stretches it.
+
+    .. multichoice::
+
+        Why put a row of buttons in a frame?
+
+        [ ] Buttons must be in a frame | Incorrect. They can go anywhere.
+        [x] So they can be packed side by side as one group | Correct. The frame holds the row.
+        [ ] To colour the buttons | Incorrect. Not why.
+        [ ] To make them faster | Incorrect. Not why.
+
+    .. multichoice::
+
+        Can grid be used inside a frame packed into root?
+
+        [x] Yes, each container can use its own layout | Correct. Do not mix them in the same container.
+        [ ] No | Incorrect. Different containers can use different layouts.
+        [ ] Only with tk frames | Incorrect. ttk works too.
+        [ ] Only if the frame has a style | Incorrect. Not needed.
+
+    .. multichoice::
+
+        Which line changes the padding later?
+
+        [ ] frame.padding(20) | Incorrect. Not a method.
+        [x] frame.config(padding=20) | Correct. config changes options.
+        [ ] frame.set(padding=20) | Incorrect. Not a method.
+        [ ] style.padding(20) | Incorrect. Not how it works.
+
+    .. multichoice::
+
+        What does frame.pack_forget() do?
+
+        [x] Hides the frame so it can be packed again later | Correct. It is not deleted.
+        [ ] Deletes it | Incorrect. destroy deletes.
+        [ ] Clears its widgets | Incorrect. It hides the frame.
+        [ ] Moves it left | Incorrect. It hides it.
+
+    .. multichoice::
+
+        How do you remove every widget inside a frame?
+
+        [ ] frame.clear() | Incorrect. Not a method.
+        [x] Loop through frame.winfo_children() and destroy each one | Correct. Each child is removed.
+        [ ] frame.delete("all") | Incorrect. That is for Canvas.
+        [ ] frame.pack_forget() | Incorrect. That hides the frame itself.
+
+    .. multichoice::
+
+        What does winfo_children() give?
+
+        [ ] The frame size | Incorrect. It lists widgets.
+        [x] A list of the widgets inside | Correct. They are its children.
+        [ ] The parent | Incorrect. It lists children.
+        [ ] The style | Incorrect. It lists widgets.
+
+    .. multichoice::
+
+        What does relief="sunken" make the border look like?
+
+        [x] Pushed in | Correct. sunken looks pressed into the window.
+        [ ] Raised | Incorrect. That is "raised".
+        [ ] Invisible | Incorrect. That is "flat".
+        [ ] Dotted | Incorrect. Not a relief.
+
+    .. multichoice::
+
+        What must be set for relief to show on a ttk Frame?
+
+        [ ] A colour | Incorrect. Not needed.
+        [x] A borderwidth bigger than 0 | Correct. With no border, there is nothing to show.
+        [ ] padding | Incorrect. Not needed.
+        [ ] A width | Incorrect. Not needed.
+
+    .. multichoice::
+
+        Which style name is used for every ttk Frame?
+
+        [ ] "Frame" | Incorrect. Use TFrame.
+        [x] "TFrame" | Correct. T then the widget name.
+        [ ] "TBox" | Incorrect. Not the name.
+        [ ] "Container" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        Which is a good reason to use frames?
+
+        [x] To split the window into parts, like a header and a body | Correct. Frames group related widgets.
+        [ ] To make the program faster | Incorrect. Not about speed.
+        [ ] To change fonts | Incorrect. Styles do that.
+        [ ] Because pack needs them | Incorrect. pack works without frames.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a ttk Frame with padding and a border.
+
+        box = ttk.@@Frame | Label | Style@@(root, @@padding | padx | space@@=10, relief="groove", @@borderwidth | bd | border@@=2)
+        box.pack(fill="x")
+
+    .. cloze::
+        :instructions: Colour every frame.
+
+        style = ttk.@@Style | style | Theme@@()
+        style.configure("@@TFrame | Frame | ttkFrame@@", @@background | bg | colour@@="lightblue")
+
+    .. cloze::
+        :instructions: Colour only one frame.
+
+        style.configure("Blue.TFrame", background="lightblue")
+        side_bar = ttk.Frame(root, @@style | theme | colour@@="Blue.TFrame", width=150)
+
+    .. cloze::
+        :instructions: Put buttons in a row.
+
+        button_row = ttk.Frame(root)
+        button_row.pack()
+        ttk.Button(@@button_row | root | box@@, text="Back").pack(side="@@left | top | row@@")
+
+    .. cloze::
+        :instructions: Hide and clear a frame.
+
+        box.@@pack_forget | destroy | hide@@()
+        for widget in box.@@winfo_children | children | widgets@@():
+            widget.@@destroy | forget | remove@@()
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Frames" that is 300x200. Add a ttk Frame with padding of 20 and a solid border. Put a label "Hello" inside it.

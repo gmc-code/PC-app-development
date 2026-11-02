@@ -355,6 +355,278 @@ Quick reference
 
 ----
 
+All PanedWindow options
+---------------------------
+
+| Here is every option a ttk PanedWindow can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``height``
+      - How tall it is (in pixels)
+      - ``height=200``
+    * - ``orient``
+      - Panes side by side (``"horizontal"``) or stacked (``"vertical"``)
+      - ``orient="horizontal"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TPanedwindow"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``width``
+      - How wide it is (in pixels)
+      - ``width=300``
+
+| ttk PanedWindow has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("TPanedwindow", background="lightblue")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a ttk PanedWindow?
+
+        [x] A themed container split into panes that can be resized by dragging | Correct. The bar between panes is the sash.
+        [ ] A pop-up window | Incorrect. That is a Toplevel.
+        [ ] A window with tabs | Incorrect. That is a Notebook.
+        [ ] A list | Incorrect. That is a Listbox.
+
+    .. multichoice::
+
+        What does orient="horizontal" do?
+
+        [x] Puts the panes side by side | Correct. horizontal goes across.
+        [ ] Stacks the panes | Incorrect. That is "vertical".
+        [ ] Hides the sash | Incorrect. It sets direction.
+        [ ] Rotates the text | Incorrect. It sets direction.
+
+    .. multichoice::
+
+        What is the default orient for ttk.PanedWindow?
+
+        [ ] "horizontal" | Incorrect. The ttk default is vertical.
+        [x] "vertical", so panes are stacked | Correct. Set orient="horizontal" for side by side.
+        [ ] "both" | Incorrect. Not a value.
+        [ ] "none" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        For a ttk PanedWindow, width and height are measured in:
+
+        [x] Pixels | Correct. It is a container.
+        [ ] Characters | Incorrect. Not for containers.
+        [ ] Lines | Incorrect. Not lines.
+        [ ] Panes | Incorrect. Not panes.
+
+    .. multichoice::
+
+        How is a widget put into a pane?
+
+        [ ] widget.pack() | Incorrect. Panes use add.
+        [x] panes.add(widget) | Correct. add puts it in a new pane.
+        [ ] panes.insert(widget) | Incorrect. insert needs a position first.
+        [ ] widget.grid() | Incorrect. Use add.
+
+    .. multichoice::
+
+        What does weight=1 in panes.add(left, weight=1) do?
+
+        [ ] Makes the pane heavier to drag | Incorrect. It shares space.
+        [x] Lets the pane grow when the window gets bigger | Correct. Panes with weight share extra space.
+        [ ] Sets the width to 1 | Incorrect. It shares space.
+        [ ] Adds one pane | Incorrect. It sets the share.
+
+    .. multichoice::
+
+        If one pane has weight=1 and another weight=3, what happens when the window grows?
+
+        [x] The second pane gets three times as much extra space | Correct. Space is shared by weight.
+        [ ] Both get the same | Incorrect. Weights differ.
+        [ ] Only the first grows | Incorrect. Both grow.
+        [ ] Nothing grows | Incorrect. They grow.
+
+    .. multichoice::
+
+        What does panes.insert(0, widget) do?
+
+        [ ] Adds the widget at the end | Incorrect. 0 is the start.
+        [x] Puts the widget in a new first pane | Correct. insert uses a position.
+        [ ] Deletes pane 0 | Incorrect. forget does that.
+        [ ] Changes pane 0 | Incorrect. It adds a pane.
+
+    .. multichoice::
+
+        What does panes.forget(widget) do?
+
+        [x] Takes the widget out of the PanedWindow | Correct. The widget is not destroyed.
+        [ ] Deletes it forever | Incorrect. destroy does that.
+        [ ] Hides the sash | Incorrect. It removes a pane.
+        [ ] Forgets the size | Incorrect. It removes a pane.
+
+    .. multichoice::
+
+        What does panes.panes() give?
+
+        [ ] The number of panes | Incorrect. It gives a list.
+        [x] A list of the panes' widgets | Correct. One for each pane.
+        [ ] The sash positions | Incorrect. sashpos does that.
+        [ ] The window | Incorrect. It lists panes.
+
+    .. multichoice::
+
+        What does panes.sashpos(0) give?
+
+        [x] The position of the first sash in pixels | Correct. It tells you where the sash is.
+        [ ] The number of sashes | Incorrect. It gives a position.
+        [ ] The first pane | Incorrect. It gives a position.
+        [ ] An error | Incorrect. It is a real method.
+
+    .. multichoice::
+
+        What does panes.sashpos(0, 200) do?
+
+        [ ] Makes 200 sashes | Incorrect. It moves a sash.
+        [x] Moves the first sash to 200 pixels | Correct. It sets the position.
+        [ ] Makes the first pane 200 high | Incorrect. It moves the sash.
+        [ ] Deletes the sash | Incorrect. It moves it.
+
+    .. multichoice::
+
+        What should the parent of each pane's widget be?
+
+        [ ] root | Incorrect. Use the PanedWindow.
+        [x] The PanedWindow | Correct. e.g. ttk.Frame(panes).
+        [ ] Another pane | Incorrect. Not needed.
+        [ ] Nothing | Incorrect. It needs a parent.
+
+    .. multichoice::
+
+        How many widgets go in each pane?
+
+        [x] One, but it can be a Frame holding many widgets | Correct. Use frames for more.
+        [ ] As many as you like | Incorrect. One per pane.
+        [ ] Two | Incorrect. One per pane.
+        [ ] None | Incorrect. One per pane.
+
+    .. multichoice::
+
+        How do you make the PanedWindow fill the window?
+
+        [ ] panes.add(fill="both") | Incorrect. add is for panes.
+        [x] panes.pack(fill="both", expand=True) | Correct. It stretches both ways.
+        [ ] panes.config(fill="both") | Incorrect. fill is a pack option.
+        [ ] panes.grow() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which style name is used for every ttk PanedWindow?
+
+        [ ] "PanedWindow" | Incorrect. Use TPanedwindow.
+        [x] "TPanedwindow" | Correct. T then the widget name with a small w.
+        [ ] "TPane" | Incorrect. Not the name.
+        [ ] "Sash" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        Can a PanedWindow be put inside another one?
+
+        [x] Yes, to have side-by-side and stacked panes | Correct. Nest them.
+        [ ] No | Incorrect. It can.
+        [ ] Only vertical | Incorrect. Any can.
+        [ ] Only with grid | Incorrect. Use add.
+
+    .. multichoice::
+
+        Which tk PanedWindow options are missing from ttk?
+
+        [ ] orient | Incorrect. ttk has orient.
+        [x] sashwidth and showhandle | Correct. ttk sets the sash look with the theme.
+        [ ] width | Incorrect. ttk has width.
+        [ ] add | Incorrect. add is a method, not an option.
+
+    .. multichoice::
+
+        What happens when the user drags the sash?
+
+        [x] The panes on each side change size | Correct. That is the point of it.
+        [ ] The window moves | Incorrect. The panes resize.
+        [ ] A tab opens | Incorrect. That is a Notebook.
+        [ ] The panes swap | Incorrect. They resize.
+
+    .. multichoice::
+
+        Which method adds a pane at the end?
+
+        [ ] insert | Incorrect. insert needs a position.
+        [x] add | Correct. add puts it at the end.
+        [ ] append | Incorrect. Not a method.
+        [ ] pack | Incorrect. Not for panes.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a side-by-side PanedWindow.
+
+        panes = ttk.@@PanedWindow | Notebook | Frame@@(root, @@orient | side | direction@@="horizontal")
+        panes.pack(fill="both", @@expand | grow | stretch@@=True)
+
+    .. cloze::
+        :instructions: Add two panes that share space.
+
+        left = ttk.Frame(@@panes | root | left@@, width=150)
+        panes.@@add | pack | insert@@(left, @@weight | width | size@@=1)
+        panes.add(right, weight=3)
+
+    .. cloze::
+        :instructions: Put a pane at the start and remove one.
+
+        panes.@@insert | add | put@@(0, top_bar)
+        panes.@@forget | delete | remove@@(right)
+
+    .. cloze::
+        :instructions: Read and move a sash.
+
+        position = panes.@@sashpos | sash | position@@(0)
+        panes.sashpos(@@0 | 200 | first@@, 200)
+
+    .. cloze::
+        :instructions: List the panes.
+
+        all_panes = panes.@@panes | children | tabs@@()
+        print(@@len | count | size@@(all_panes))
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Panes" that is 300x200 with a ttk PanedWindow that fills the window and has two labels side by side: "Left" on yellow and "Right" on orange.

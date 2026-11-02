@@ -591,6 +591,243 @@ All Checkbutton options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Checkbutton?
+
+        [x] A tick box that can be ticked or unticked | Correct. Each Checkbutton can be on or off.
+        [ ] A round button where only one can be chosen | Incorrect. That is a Radiobutton.
+        [ ] A box for typing | Incorrect. That is an Entry.
+        [ ] A drop-down list | Incorrect. That is an OptionMenu.
+
+    .. multichoice::
+
+        Can the user tick more than one Checkbutton at the same time?
+
+        [x] Yes, each one is separate | Correct. Checkbuttons work on their own.
+        [ ] No, only one at a time | Incorrect. That is how Radiobuttons work.
+        [ ] Only two at a time | Incorrect. There is no limit.
+        [ ] Only if they share a variable | Incorrect. Each usually has its own variable.
+
+    .. multichoice::
+
+        Which option sets the words next to the tick box?
+
+        [ ] label | Incorrect. label is not an option.
+        [x] text | Correct. text sets the words.
+        [ ] words | Incorrect. words is not an option.
+        [ ] value | Incorrect. value is used by Radiobuttons.
+
+    .. multichoice::
+
+        What is variable used for?
+
+        [ ] Setting the colour | Incorrect. Colours use fg and bg.
+        [ ] Running a function | Incorrect. command runs a function.
+        [x] Storing whether the box is ticked | Correct. The variable holds onvalue or offvalue.
+        [ ] Setting the font | Incorrect. font sets the font.
+
+    .. multichoice::
+
+        With tk.IntVar(), what is stored when the box is ticked (by default)?
+
+        [ ] 0 | Incorrect. 0 means not ticked.
+        [x] 1 | Correct. By default, ticked stores 1.
+        [ ] True | Incorrect. An IntVar stores numbers.
+        [ ] "yes" | Incorrect. That needs onvalue="yes".
+
+    .. multichoice::
+
+        What does onvalue="yes" do?
+
+        [x] Stores "yes" in the variable when the box is ticked | Correct. onvalue is the ticked value.
+        [ ] Ticks the box at the start | Incorrect. Set the variable to tick it.
+        [ ] Shows yes next to the box | Incorrect. text sets the words.
+        [ ] Stores "yes" when unticked | Incorrect. That is offvalue.
+
+    .. multichoice::
+
+        Which option sets the value stored when the box is NOT ticked?
+
+        [ ] onvalue | Incorrect. That is for ticked.
+        [ ] novalue | Incorrect. This option does not exist.
+        [x] offvalue | Correct. offvalue is the unticked value.
+        [ ] untick | Incorrect. This option does not exist.
+
+    .. multichoice::
+
+        What does command do on a Checkbutton?
+
+        [ ] Ticks the box | Incorrect. Clicking ticks the box.
+        [x] Runs a function each time the box is ticked or unticked | Correct. command runs on every click.
+        [ ] Stores the value | Incorrect. variable stores the value.
+        [ ] Sets the text | Incorrect. text sets the words.
+
+    .. multichoice::
+
+        What does selectcolor="yellow" change?
+
+        [x] The colour inside the tick box | Correct. selectcolor is the box colour.
+        [ ] The words | Incorrect. fg sets the word colour.
+        [ ] The window | Incorrect. It only changes the tick box.
+        [ ] The border | Incorrect. relief and borderwidth change the border.
+
+    .. multichoice::
+
+        Why use anchor="w" and the same width on each Checkbutton?
+
+        [ ] To make them bigger | Incorrect. width alone sets size.
+        [x] So the tick boxes line up neatly on the left | Correct. Same width and left anchor line them up.
+        [ ] To tick them all | Incorrect. anchor does not tick boxes.
+        [ ] To change the colour | Incorrect. anchor is about position.
+
+    .. multichoice::
+
+        What does state="disabled" do?
+
+        [ ] Unticks the box | Incorrect. It does not change the value.
+        [ ] Deletes it | Incorrect. destroy deletes widgets.
+        [x] Greys it out so it cannot be clicked | Correct. Disabled widgets cannot be used.
+        [ ] Ticks the box | Incorrect. It only turns the box off.
+
+    .. multichoice::
+
+        How do you find out if a box is ticked?
+
+        [ ] check.get() | Incorrect. Read the variable, not the widget.
+        [x] agree.get(), where agree is its variable | Correct. The variable holds the value.
+        [ ] check.ticked | Incorrect. That does not exist.
+        [ ] check.cget("value") | Incorrect. value is not a Checkbutton option.
+
+    .. multichoice::
+
+        What does agree.set(1) do for an IntVar linked to a Checkbutton?
+
+        [x] Ticks the box | Correct. 1 is the default onvalue.
+        [ ] Unticks the box | Incorrect. 0 would untick it.
+        [ ] Deletes the box | Incorrect. set only changes the value.
+        [ ] Adds one more box | Incorrect. It does not make widgets.
+
+    .. multichoice::
+
+        What does check.select() do?
+
+        [ ] Unticks it | Incorrect. deselect() unticks it.
+        [x] Ticks it | Correct. select ticks the box.
+        [ ] Swaps it | Incorrect. toggle swaps it.
+        [ ] Runs command | Incorrect. invoke runs command.
+
+    .. multichoice::
+
+        What does check.toggle() do?
+
+        [ ] Always ticks it | Incorrect. select always ticks.
+        [ ] Always unticks it | Incorrect. deselect always unticks.
+        [x] Swaps it: ticked becomes unticked and unticked becomes ticked | Correct. toggle flips the box.
+        [ ] Deletes it | Incorrect. destroy deletes widgets.
+
+    .. multichoice::
+
+        What does check.deselect() do?
+
+        [x] Unticks the box | Correct. deselect unticks it.
+        [ ] Ticks the box | Incorrect. select ticks it.
+        [ ] Greys it out | Incorrect. state="disabled" greys it.
+        [ ] Changes its text | Incorrect. config changes text.
+
+    .. multichoice::
+
+        How can you count how many boxes are ticked (IntVars with 0 and 1)?
+
+        [ ] Count the Checkbuttons | Incorrect. That counts all boxes.
+        [x] Add up the .get() of each variable | Correct. Each ticked box adds 1.
+        [ ] Use len() on one variable | Incorrect. A variable is not a list.
+        [ ] Use check.count() | Incorrect. This method does not exist.
+
+    .. multichoice::
+
+        Which line changes a Checkbutton's text later?
+
+        [ ] check.text("New") | Incorrect. text is not a method.
+        [ ] check.set(text="New") | Incorrect. Checkbuttons do not have set.
+        [x] check.config(text="New") | Correct. config changes options.
+        [ ] check.cget(text="New") | Incorrect. cget reads options.
+
+    .. multichoice::
+
+        Which variable type stores whole numbers?
+
+        [ ] tk.StringVar() | Incorrect. StringVar stores text.
+        [x] tk.IntVar() | Correct. IntVar stores whole numbers.
+        [ ] tk.BooleanVar() | Incorrect. That stores True or False.
+        [ ] tk.DoubleVar() | Incorrect. That stores decimal numbers.
+
+    .. multichoice::
+
+        Which widget would suit "Choose all the toppings you want"?
+
+        [x] Checkbuttons | Correct. The user may want many toppings.
+        [ ] Radiobuttons | Incorrect. Radiobuttons allow only one choice.
+        [ ] A Label | Incorrect. Labels cannot be clicked.
+        [ ] A Scale | Incorrect. A Scale picks a number.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Checkbutton with its own variable.
+
+        agree = tk.@@IntVar | StringVar | Label@@()
+        agree_check = tk.@@Checkbutton | Radiobutton | Button@@(root, text="I agree", @@variable | value | text@@=agree)
+        agree_check.pack()
+
+    .. cloze::
+        :instructions: Store words instead of numbers.
+
+        choice = tk.@@StringVar | IntVar | Entry@@(value="no")
+        cheese_check = tk.Checkbutton(root, text="Cheese", variable=choice, @@onvalue | value | ticked@@="yes", offvalue="@@no | yes | off@@")
+
+    .. cloze::
+        :instructions: Run a function when the box is clicked.
+
+        def show():
+            result_label.config(text=agree.@@get | set | read@@())
+
+        tk.Checkbutton(root, text="Agree", variable=agree, @@command | click | run@@=show).pack()
+
+    .. cloze::
+        :instructions: Tick, untick and swap the box from code.
+
+        agree_check.@@select | tick | set@@()
+        agree_check.@@deselect | untick | clear@@()
+        agree_check.@@toggle | swap | flip@@()
+
+    .. cloze::
+        :instructions: Count the ticked boxes.
+
+        total = cheese.get() @@+ | - | *@@ ham.get() + tomato.get()
+        count_label.config(@@text | value | count@@="Ticked: " + str(total))
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Hobbies" that is 300x200. Add three checkbuttons: "Sport", "Music" and "Art", each with its own ``IntVar``.

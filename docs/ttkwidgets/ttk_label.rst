@@ -390,6 +390,314 @@ Quick reference
 
 ----
 
+All Label options
+---------------------------
+
+| Here is every option a ttk Label can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``anchor``
+      - Where the words sit inside it (``"w"`` = left, ``"center"`` = middle)
+      - ``anchor="w"``
+    * - ``background``
+      - Background colour (write ``background``, not ``bg``)
+      - ``background="lavender"``
+    * - ``borderwidth``
+      - How thick the border is (write ``borderwidth``, not ``bd``)
+      - ``borderwidth=3``
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``compound``
+      - Where the picture goes compared to the words
+      - ``compound="left"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``foreground``
+      - Word colour (write ``foreground``, not ``fg``)
+      - ``foreground="purple"``
+    * - ``image``
+      - Shows a picture instead of (or with) the words
+      - ``image=dog_picture``
+    * - ``justify``
+      - Lines up many lines of words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="left"``
+    * - ``padding``
+      - Extra space inside it, around the words (one number, or left, top, right, bottom)
+      - ``padding=10``
+    * - ``relief``
+      - Border style: ``"raised"``, ``"sunken"``, ``"flat"``, ``"ridge"``, ``"groove"`` or ``"solid"``
+      - ``relief="sunken"``
+    * - ``state``
+      - ``"normal"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TLabel"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``text``
+      - Words shown on the label
+      - ``text="Hello"``
+    * - ``textvariable``
+      - A variable that holds the words, so they can change
+      - ``textvariable=label_words``
+    * - ``underline``
+      - Number of the letter to underline (``0`` = first letter)
+      - ``underline=0``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``wraplength``
+      - Starts a new line when the words get this long (in pixels)
+      - ``wraplength=100``
+
+| The ``image`` option needs a picture made first, e.g. ``dog_picture = tk.PhotoImage(file="dog.png")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        How is a ttk Label made?
+
+        [x] ttk.Label(root, text="Hello") | Correct. It works like a tk Label.
+        [ ] tk.Label(root, ttk=True) | Incorrect. Not an option.
+        [ ] ttk.label(root) | Incorrect. Needs a capital L.
+        [ ] ttk.Text(root) | Incorrect. Not a ttk widget.
+
+    .. multichoice::
+
+        Which option sets the words?
+
+        [ ] label | Incorrect. Not an option.
+        [x] text | Correct. text sets the words.
+        [ ] words | Incorrect. Not an option.
+        [ ] value | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which option colours the words of a ttk Label?
+
+        [ ] fg | Incorrect. ttk uses the full word foreground.
+        [x] foreground | Correct. foreground is the word colour.
+        [ ] colour | Incorrect. Not an option.
+        [ ] textcolour | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which option colours the background of a ttk Label?
+
+        [x] background | Correct. ttk Labels have background.
+        [ ] bg | Incorrect. Use the full word.
+        [ ] fill | Incorrect. Not an option.
+        [ ] back | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does font=("Arial", 18, "bold") do?
+
+        [ ] Colours the text | Incorrect. foreground does that.
+        [x] Makes the words bold Arial, size 18 | Correct. Name, size, style.
+        [ ] Makes it 18 wide | Incorrect. width does that.
+        [ ] Makes it italic | Incorrect. "italic" would.
+
+    .. multichoice::
+
+        What does width=20 mean?
+
+        [ ] 20 pixels | Incorrect. It counts characters.
+        [x] About 20 characters wide | Correct. Text labels count characters.
+        [ ] 20 lines | Incorrect. Not lines.
+        [ ] 20 labels | Incorrect. One label.
+
+    .. multichoice::
+
+        What does padding=10 do?
+
+        [x] Adds space inside the label around the words | Correct. padding makes it bigger.
+        [ ] Moves the label | Incorrect. pack moves it.
+        [ ] Changes the font | Incorrect. font does that.
+        [ ] Adds a border | Incorrect. relief does that.
+
+    .. multichoice::
+
+        What does anchor="e" do in a wide label?
+
+        [ ] Puts the words on the left | Incorrect. That is "w".
+        [x] Puts the words on the right | Correct. e is east, the right.
+        [ ] Puts the words at the top | Incorrect. That is "n".
+        [ ] Hides the words | Incorrect. It moves them.
+
+    .. multichoice::
+
+        What does relief="solid" with borderwidth=1 do?
+
+        [x] Draws a thin plain line around the label | Correct. solid makes a simple border.
+        [ ] Makes the words solid | Incorrect. It is the border.
+        [ ] Hides the border | Incorrect. flat would.
+        [ ] Makes it 1 character wide | Incorrect. width does that.
+
+    .. multichoice::
+
+        What does wraplength=200 do?
+
+        [ ] Makes it 200 characters wide | Incorrect. width does that.
+        [x] Starts a new line when the words reach 200 pixels | Correct. It wraps long text.
+        [ ] Shows 200 letters | Incorrect. All letters show.
+        [ ] Sets the font size | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does justify="center" do?
+
+        [x] Centres each line of wrapped text | Correct. justify lines up lines.
+        [ ] Centres the label in the window | Incorrect. pack does that.
+        [ ] Wraps the text | Incorrect. wraplength does that.
+        [ ] Makes it bold | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does compound="top" do with an image?
+
+        [ ] Puts the label at the top | Incorrect. It places the picture.
+        [x] Shows the picture above the words | Correct. compound places the image.
+        [ ] Hides the words | Incorrect. Both show.
+        [ ] Hides the picture | Incorrect. Both show.
+
+    .. multichoice::
+
+        What must be made before showing a picture?
+
+        [ ] A Canvas | Incorrect. Not needed.
+        [x] A PhotoImage, e.g. tk.PhotoImage(file="cat.png") | Correct. Then use image=picture.
+        [ ] A Frame | Incorrect. Not needed.
+        [ ] A Button | Incorrect. Not needed.
+
+    .. multichoice::
+
+        What does textvariable=message do?
+
+        [x] Links the label to a StringVar, so message.set() changes the words | Correct. It updates by itself.
+        [ ] Sets the font | Incorrect. font does that.
+        [ ] Names the label | Incorrect. It links a variable.
+        [ ] Hides the label | Incorrect. It does not hide it.
+
+    .. multichoice::
+
+        Which line changes the text later?
+
+        [ ] result_label.text = "Done" | Incorrect. Use config.
+        [x] result_label.config(text="Done") | Correct. config changes options.
+        [ ] result_label.set("Done") | Incorrect. Labels have no set.
+        [ ] result_label.cget(text="Done") | Incorrect. cget reads.
+
+    .. multichoice::
+
+        What does result_label.cget("foreground") give?
+
+        [x] The current word colour | Correct. cget reads an option.
+        [ ] It changes the colour | Incorrect. config changes it.
+        [ ] The text | Incorrect. It reads foreground.
+        [ ] An error | Incorrect. It works.
+
+    .. multichoice::
+
+        Which style name changes every ttk Label?
+
+        [ ] "Label" | Incorrect. Use TLabel.
+        [x] "TLabel" | Correct. T then the widget name.
+        [ ] "TText" | Incorrect. Not the name.
+        [ ] "ttk.Label" | Incorrect. Not a style name.
+
+    .. multichoice::
+
+        How do you make every label size 14 Arial?
+
+        [x] style.configure("TLabel", font=("Arial", 14)) | Correct. TLabel changes them all.
+        [ ] root.config(font=14) | Incorrect. Not how it works.
+        [ ] label.font(14) | Incorrect. Not a method.
+        [ ] style.font("TLabel", 14) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Can the user type into a ttk Label?
+
+        [ ] Yes | Incorrect. Labels only show text.
+        [x] No | Correct. Use an Entry to type.
+        [ ] Only with textvariable | Incorrect. Still no.
+        [ ] Only with padding | Incorrect. Still no.
+
+    .. multichoice::
+
+        Which anchor value puts the words in the middle?
+
+        [ ] "middle" | Incorrect. Not a value.
+        [x] "center" | Correct. center is the middle.
+        [ ] "c" | Incorrect. Use "center".
+        [ ] "m" | Incorrect. Not a value.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a ttk Label with coloured words.
+
+        title_label = ttk.@@Label | Entry | Button@@(root, text="Quiz", font=("Arial", 24), @@foreground | fg | colour@@="blue")
+        title_label.pack()
+
+    .. cloze::
+        :instructions: Add a background, space and a border.
+
+        info = ttk.Label(root, text="Info", @@background | bg | fill@@="lightyellow", @@padding | padx | space@@=10, relief="solid", borderwidth=1)
+
+    .. cloze::
+        :instructions: Wrap long text.
+
+        long_label = ttk.Label(root, text=long_text, @@wraplength | width | wrap@@=200, justify="@@left | west | w@@")
+
+    .. cloze::
+        :instructions: Show a picture with words under it.
+
+        cat_picture = tk.@@PhotoImage | Image | Picture@@(file="cat.png")
+        cat_label = ttk.Label(root, text="Cat", image=cat_picture, @@compound | anchor | side@@="top")
+
+    .. cloze::
+        :instructions: Change and read the label.
+
+        result_label.@@config | cget | set@@(text="Correct!")
+        colour = result_label.@@cget | config | get@@("foreground")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "About me" that is 300x200. Add a ttk Label showing your name in Arial size 24 with white words on a purple background.

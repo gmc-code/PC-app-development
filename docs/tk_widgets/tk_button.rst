@@ -610,6 +610,239 @@ All Button options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What does a Button do?
+
+        [x] Runs a function when it is clicked | Correct. A button is clicked to make something happen.
+        [ ] Shows a list of choices | Incorrect. A Listbox shows a list of choices.
+        [ ] Lets the user type words | Incorrect. An Entry lets the user type.
+        [ ] Draws shapes | Incorrect. A Canvas draws shapes.
+
+    .. multichoice::
+
+        Which option sets the words on a button?
+
+        [ ] label | Incorrect. label is not a Button option.
+        [ ] words | Incorrect. words is not an option.
+        [x] text | Correct. text sets the words on the button.
+        [ ] name | Incorrect. name is not used for the words.
+
+    .. multichoice::
+
+        How should command be written to run a function called say_hello?
+
+        [ ] command=say_hello() | Incorrect. The brackets run the function straight away, before the click.
+        [x] command=say_hello | Correct. Leave the brackets off so it runs when clicked.
+        [ ] command="say_hello" | Incorrect. A string is not a function.
+        [ ] command=[say_hello] | Incorrect. A list is not a function.
+
+    .. multichoice::
+
+        What does fg="white" change?
+
+        [x] The colour of the words | Correct. fg is the foreground (word) colour.
+        [ ] The background colour | Incorrect. bg sets the background colour.
+        [ ] The border colour | Incorrect. fg does not change the border.
+        [ ] The font | Incorrect. font sets the font.
+
+    .. multichoice::
+
+        What does bg="green" change?
+
+        [ ] The word colour | Incorrect. fg sets the word colour.
+        [x] The background colour | Correct. bg is the background colour.
+        [ ] The colour when clicked | Incorrect. activebackground sets that.
+        [ ] The window colour | Incorrect. It only changes the button.
+
+    .. multichoice::
+
+        What does font=("Arial", 16) set?
+
+        [ ] Colour and size | Incorrect. Colour is set with fg.
+        [ ] Width and height | Incorrect. width and height set the size of the button.
+        [x] Font name and size | Correct. The first part is the name, the second is the size.
+        [ ] Text and colour | Incorrect. text sets the words.
+
+    .. multichoice::
+
+        What does activebackground change?
+
+        [x] The background colour while the mouse button is pressed on it | Correct. It is the colour when the button is active.
+        [ ] The background when the button is disabled | Incorrect. That is not what it does.
+        [ ] The window background | Incorrect. It only changes the button.
+        [ ] The word colour | Incorrect. activeforeground sets the word colour.
+
+    .. multichoice::
+
+        For a button with text, what does width=10 mean?
+
+        [ ] 10 pixels wide | Incorrect. With text, width is measured in characters.
+        [x] About 10 characters wide | Correct. Text buttons measure width in characters.
+        [ ] 10 centimetres wide | Incorrect. Tkinter does not use centimetres here.
+        [ ] 10 buttons in a row | Incorrect. width sets the size of one button.
+
+    .. multichoice::
+
+        What do padx and pady add?
+
+        [ ] Space outside the button | Incorrect. That is done in pack(padx=...).
+        [x] Extra space inside the button around the words | Correct. They make the button bigger around its text.
+        [ ] Extra buttons | Incorrect. They add space, not buttons.
+        [ ] A border | Incorrect. relief and borderwidth make a border.
+
+    .. multichoice::
+
+        Which relief value makes a button look pushed in?
+
+        [ ] "raised" | Incorrect. raised sticks out.
+        [ ] "flat" | Incorrect. flat has no 3D look.
+        [x] "sunken" | Correct. sunken looks pressed in.
+        [ ] "ridge" | Incorrect. ridge looks like a raised edge.
+
+    .. multichoice::
+
+        What does overrelief do?
+
+        [x] Changes the border style when the mouse is over the button | Correct. It is the relief used on hover.
+        [ ] Changes the colour on hover | Incorrect. activebackground is used for colour.
+        [ ] Hides the border | Incorrect. relief="flat" hides it.
+        [ ] Makes the button larger | Incorrect. It only changes the border style.
+
+    .. multichoice::
+
+        What does cursor="hand2" do?
+
+        [ ] Makes the button clickable twice | Incorrect. It changes the mouse pointer only.
+        [x] Shows a pointing hand when the mouse is over the button | Correct. hand2 is a pointing hand pointer.
+        [ ] Shows a hand picture on the button | Incorrect. image puts a picture on the button.
+        [ ] Changes the font | Incorrect. font changes the words.
+
+    .. multichoice::
+
+        What does state="disabled" do?
+
+        [ ] Deletes the button | Incorrect. destroy() removes a widget.
+        [ ] Hides the button | Incorrect. pack_forget() hides it.
+        [x] Greys out the button so it cannot be clicked | Correct. A disabled button does nothing when clicked.
+        [ ] Runs the command | Incorrect. invoke() runs the command.
+
+    .. multichoice::
+
+        Which line changes the text of an existing button called go_button?
+
+        [x] go_button.config(text="Stop") | Correct. config changes options after the button is made.
+        [ ] go_button.text = "Stop" | Incorrect. Options are not changed like this.
+        [ ] go_button.set("Stop") | Incorrect. Buttons do not have set.
+        [ ] go_button.cget(text="Stop") | Incorrect. cget reads an option.
+
+    .. multichoice::
+
+        What does go_button.cget("text") give?
+
+        [ ] It changes the text | Incorrect. config changes it.
+        [x] The words currently on the button | Correct. cget reads the value of an option.
+        [ ] The button's command | Incorrect. It gives the text, because "text" was asked for.
+        [ ] An error | Incorrect. cget is a real method.
+
+    .. multichoice::
+
+        What does go_button.invoke() do?
+
+        [ ] Deletes the button | Incorrect. destroy() does that.
+        [ ] Disables the button | Incorrect. config(state="disabled") does that.
+        [x] Runs the button's command, as if it was clicked | Correct. invoke acts like a click from your code.
+        [ ] Changes the button colour | Incorrect. config changes colours.
+
+    .. multichoice::
+
+        Which command makes a Quit button close the window?
+
+        [x] command=root.destroy | Correct. destroy closes the window.
+        [ ] command=root.mainloop | Incorrect. mainloop keeps the window open.
+        [ ] command=root.quit() | Incorrect. The brackets would run it straight away.
+        [ ] command=close | Incorrect. close is not defined.
+
+    .. multichoice::
+
+        Why is lambda used in command=lambda: add(5)?
+
+        [ ] To make the button faster | Incorrect. lambda does not change speed.
+        [ ] To change the button colour | Incorrect. lambda is about the function call.
+        [ ] To delete the button | Incorrect. lambda does not delete anything.
+        [x] To send a value to the function when the button is clicked | Correct. lambda waits for the click, then calls add(5).
+
+    .. multichoice::
+
+        Which method places a button in the window?
+
+        [ ] button.show() | Incorrect. Buttons do not have show.
+        [x] button.pack() | Correct. pack places the widget.
+        [ ] button.place_it() | Incorrect. This method does not exist.
+        [ ] button.add() | Incorrect. add is not used for placing.
+
+    .. multichoice::
+
+        What is wrong with tk.Button(root, text="Go", command=go())?
+
+        [ ] Nothing | Incorrect. go() runs at the start, not when clicked.
+        [ ] text must be in capitals | Incorrect. Option names are lowercase.
+        [x] go() runs straight away, not when the button is clicked | Correct. Leave the brackets off: command=go.
+        [ ] Buttons cannot have text | Incorrect. Buttons can have text.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a button that runs say_hello when clicked.
+
+        hello_button = tk.@@Button | Label | Entry@@(root, text="Hello", @@command | click | run@@=say_hello)
+        hello_button.@@pack | show | draw@@()
+
+    .. cloze::
+        :instructions: Make a red button with white words.
+
+        red_button = tk.Button(root, text="Stop", @@bg | fg | font@@="red", @@fg | bg | colour@@="white")
+        red_button.pack()
+
+    .. cloze::
+        :instructions: Make a large button with extra space inside.
+
+        big_button = tk.Button(root, text="Start", font=("Arial", @@20 | "20" | Arial@@), @@padx | width | size@@=20, pady=10)
+        big_button.pack()
+
+    .. cloze::
+        :instructions: Turn a button off, then change its words.
+
+        go_button.@@config | cget | invoke@@(state="@@disabled | off | hidden@@")
+        go_button.config(@@text | words | label@@="Finished")
+
+    .. cloze::
+        :instructions: Make a Quit button and a button that sends a value.
+
+        quit_button = tk.Button(root, text="Quit", command=root.@@destroy | mainloop | pack@@)
+        add_button = tk.Button(root, text="+5", command=@@lambda | def | return@@: add(5))
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Buttons" that is 300x200. Add a button that says "Press me" in Arial size 16, with white words on a purple background, and a width of 15.

@@ -555,6 +555,239 @@ All Scale options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Scale?
+
+        [x] A slider for picking a number | Correct. Drag it to choose a value.
+        [ ] A box for typing numbers | Incorrect. That is an Entry or Spinbox.
+        [ ] A weighing machine | Incorrect. Here it is a slider.
+        [ ] A list | Incorrect. That is a Listbox.
+
+    .. multichoice::
+
+        How is the lowest number written?
+
+        [ ] from=0 | Incorrect. from is a Python keyword.
+        [x] from_=0 | Correct. The underscore is needed.
+        [ ] start=0 | Incorrect. Not an option.
+        [ ] low=0 | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does to=100 set?
+
+        [x] The highest number | Correct. to is the top of the range.
+        [ ] The lowest number | Incorrect. from\_ does that.
+        [ ] The step size | Incorrect. resolution does that.
+        [ ] The length | Incorrect. length does that.
+
+    .. multichoice::
+
+        What is the default orient for a tk Scale?
+
+        [ ] "horizontal" | Incorrect. The default is vertical.
+        [x] "vertical" | Correct. tk Scales stand up by default.
+        [ ] "both" | Incorrect. Not a value.
+        [ ] "none" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        What does length=300 do?
+
+        [ ] Sets the highest number | Incorrect. to does that.
+        [x] Makes the slider 300 pixels long | Correct. length sets its size.
+        [ ] Sets 300 steps | Incorrect. resolution sets steps.
+        [ ] Makes it 300 thick | Incorrect. width sets thickness.
+
+    .. multichoice::
+
+        What does label="Volume" do?
+
+        [x] Shows Volume above the slider | Correct. label adds a title.
+        [ ] Sets the value | Incorrect. It adds words.
+        [ ] Makes a Label widget | Incorrect. It is part of the Scale.
+        [ ] Changes the font | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does resolution=0.5 do?
+
+        [ ] Moves in steps of 5 | Incorrect. It moves in steps of 0.5.
+        [x] Lets the slider move in steps of 0.5 | Correct. resolution is the step size.
+        [ ] Makes it half the size | Incorrect. It is the step.
+        [ ] Shows half the numbers | Incorrect. It sets the step.
+
+    .. multichoice::
+
+        What does tickinterval=10 do?
+
+        [ ] Moves 10 at a time | Incorrect. resolution does that.
+        [x] Shows numbers along the slider every 10 | Correct. Tick marks label the scale.
+        [ ] Makes it 10 long | Incorrect. length does that.
+        [ ] Sets the highest number to 10 | Incorrect. to does that.
+
+    .. multichoice::
+
+        What does the command function receive?
+
+        [x] The new value, so it needs a parameter | Correct. e.g. def update(value):
+        [ ] Nothing | Incorrect. It gets the value.
+        [ ] The Scale | Incorrect. It gets the value.
+        [ ] An event | Incorrect. It gets the value.
+
+    .. multichoice::
+
+        What type is the value sent to the command function?
+
+        [ ] Always an int | Incorrect. It arrives as text.
+        [x] A string, so use int() or float() | Correct. Change it to a number first.
+        [ ] A list | Incorrect. It is one value.
+        [ ] A Scale | Incorrect. It is the value.
+
+    .. multichoice::
+
+        What does variable=volume do?
+
+        [ ] Sets the colour | Incorrect. Not related.
+        [x] Links the slider to a variable, so volume.get() reads it | Correct. The variable updates as it moves.
+        [ ] Names the slider | Incorrect. It links a variable.
+        [ ] Sets the length | Incorrect. length does that.
+
+    .. multichoice::
+
+        What does troughcolor change?
+
+        [x] The colour of the track the slider moves along | Correct. The trough is the track.
+        [ ] The slider colour | Incorrect. bg colours the slider.
+        [ ] The numbers | Incorrect. fg colours numbers.
+        [ ] The window | Incorrect. Only the Scale.
+
+    .. multichoice::
+
+        What does showvalue=False do?
+
+        [ ] Hides the slider | Incorrect. It hides the number.
+        [x] Hides the number shown next to the slider | Correct. The slider still works.
+        [ ] Sets the value to 0 | Incorrect. It hides the number.
+        [ ] Stops it moving | Incorrect. state does that.
+
+    .. multichoice::
+
+        Which method reads where the slider is?
+
+        [ ] scale.read() | Incorrect. Not a method.
+        [x] scale.get() | Correct. get gives the value.
+        [ ] scale.value | Incorrect. Not an attribute.
+        [ ] scale.cget("value") | Incorrect. Not an option for tk Scale.
+
+    .. multichoice::
+
+        Which line moves the slider to 50 from code?
+
+        [x] scale.set(50) | Correct. set moves the slider.
+        [ ] scale.get(50) | Incorrect. get reads.
+        [ ] scale.config(value=50) | Incorrect. tk Scale has no value option.
+        [ ] scale.move(50) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which line changes the highest number later?
+
+        [ ] scale.to(20) | Incorrect. Not a method.
+        [x] scale.config(to=20) | Correct. config changes options.
+        [ ] scale.set(to=20) | Incorrect. set moves the slider.
+        [ ] scale.max = 20 | Incorrect. Use config.
+
+    .. multichoice::
+
+        In a colour mixer with three Scales, what are their from\_ and to?
+
+        [x] 0 and 255 | Correct. Each colour part goes from 0 to 255.
+        [ ] 0 and 100 | Incorrect. Colours use 0 to 255.
+        [ ] 1 and 10 | Incorrect. Too small.
+        [ ] 0 and 1000 | Incorrect. Too big.
+
+    .. multichoice::
+
+        What does sliderlength=40 do?
+
+        [ ] Makes the whole Scale 40 long | Incorrect. length does that.
+        [x] Makes the slider block 40 pixels long | Correct. It sizes the block you drag.
+        [ ] Moves it 40 | Incorrect. set moves it.
+        [ ] Shows 40 ticks | Incorrect. tickinterval does that.
+
+    .. multichoice::
+
+        Which orient makes the slider go left to right?
+
+        [ ] "vertical" | Incorrect. That goes up and down.
+        [x] "horizontal" | Correct. horizontal goes left to right.
+        [ ] "across" | Incorrect. Not a value.
+        [ ] "x" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        What does digits=3 do?
+
+        [ ] Allows 3 sliders | Incorrect. It sets how numbers show.
+        [x] Shows the value with 3 digits | Correct. It controls the number display.
+        [ ] Sets the highest number to 3 | Incorrect. to does that.
+        [ ] Moves in steps of 3 | Incorrect. resolution does that.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a horizontal slider from 0 to 100.
+
+        volume_scale = tk.@@Scale | Spinbox | Entry@@(root, @@from_ | from | start@@=0, @@to | end | max@@=100, orient="horizontal")
+        volume_scale.pack()
+
+    .. cloze::
+        :instructions: Add a title, length and number marks.
+
+        volume_scale = tk.Scale(root, from_=0, to=100, orient="horizontal", @@label | title | text@@="Volume", @@length | width | size@@=300, tickinterval=25)
+
+    .. cloze::
+        :instructions: Move in halves.
+
+        size_scale = tk.Scale(root, from_=0, to=10, @@resolution | step | increment@@=0.5)
+
+    .. cloze::
+        :instructions: Run a function as the slider moves.
+
+        def update(@@value | self | event@@):
+            result_label.config(text="Volume: " + value)
+
+        volume_scale = tk.Scale(root, from_=0, to=100, @@command | click | run@@=update)
+
+    .. cloze::
+        :instructions: Read and set the slider.
+
+        level = volume_scale.@@get | set | read@@()
+        volume_scale.@@set | get | move@@(50)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Rating" that is 300x200. Add a horizontal scale from 1 to 10 that is 250 pixels long with the label "Rate this movie".

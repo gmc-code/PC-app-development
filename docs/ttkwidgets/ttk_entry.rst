@@ -477,6 +477,309 @@ Quick reference
 
 ----
 
+All Entry options
+---------------------------
+
+| Here is every option an ttk Entry can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``background``
+      - Background colour (write ``background``, not ``bg``)
+      - ``background="lavender"``
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``foreground``
+      - Word colour (write ``foreground``, not ``fg``)
+      - ``foreground="purple"``
+    * - ``invalidcommand``
+      - Function to run when ``validatecommand`` says no
+      - ``invalidcommand=beep``
+    * - ``justify``
+      - Lines up the words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="center"``
+    * - ``show``
+      - Shows this character instead of what is typed (good for passwords)
+      - ``show="*"``
+    * - ``state``
+      - ``"normal"``, ``"readonly"`` (can see but not type) or ``"disabled"`` (greyed out)
+      - ``state="readonly"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TEntry"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``textvariable``
+      - A variable that holds what is typed in the box
+      - ``textvariable=name``
+    * - ``validate``
+      - When to check what is typed: ``"none"``, ``"key"``, ``"focus"``, ``"focusin"``, ``"focusout"`` or ``"all"``
+      - ``validate="key"``
+    * - ``validatecommand``
+      - Function that checks what is typed (returns ``True`` or ``False``)
+      - ``validatecommand=(root.register(check), "%P")``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+
+| Many themes ignore ``background`` for the typing box. Use a style instead, e.g. ``style.configure("TEntry", fieldbackground="lightyellow")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        How is a ttk Entry made?
+
+        [x] ttk.Entry(root, width=20) | Correct. It works like the tk Entry.
+        [ ] tk.Entry(root, ttk=True) | Incorrect. Not an option.
+        [ ] ttk.entry(root) | Incorrect. Needs a capital E.
+        [ ] ttk.Text(root) | Incorrect. Text is not a ttk widget.
+
+    .. multichoice::
+
+        What does width=20 mean?
+
+        [ ] 20 pixels | Incorrect. It counts characters.
+        [x] About 20 characters wide | Correct. Entry width counts characters.
+        [ ] 20 lines | Incorrect. One line.
+        [ ] 20 words | Incorrect. Characters.
+
+    .. multichoice::
+
+        Which option makes the typed words blue?
+
+        [ ] fg="blue" | Incorrect. ttk Entry uses foreground.
+        [x] foreground="blue" | Correct. Write the full word.
+        [ ] colour="blue" | Incorrect. Not an option.
+        [ ] text="blue" | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does justify="right" do?
+
+        [x] Puts the typed words on the right of the box | Correct. Good for numbers.
+        [ ] Moves the box right | Incorrect. pack moves it.
+        [ ] Makes the box wider | Incorrect. width does that.
+        [ ] Clears the box | Incorrect. delete clears.
+
+    .. multichoice::
+
+        What does show="\*" do?
+
+        [ ] Shows the words normally | Incorrect. It hides them.
+        [x] Shows a star for each letter, good for passwords | Correct. The real letters are still stored.
+        [ ] Adds a star | Incorrect. Each letter becomes a star.
+        [ ] Stops typing | Incorrect. state does that.
+
+    .. multichoice::
+
+        Which line stops the user typing but still shows the words?
+
+        [x] entry.state(["readonly"]) | Correct. readonly allows reading but not typing.
+        [ ] entry.state(["hidden"]) | Incorrect. Not a state.
+        [ ] entry.config(bg="grey") | Incorrect. ttk has no bg.
+        [ ] entry.delete(0, tk.END) | Incorrect. That clears it.
+
+    .. multichoice::
+
+        Which method reads what was typed?
+
+        [ ] entry.read() | Incorrect. Not a method.
+        [x] entry.get() | Correct. get gives the text.
+        [ ] entry.text | Incorrect. Not an attribute.
+        [ ] entry.value() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What type does entry.get() give?
+
+        [x] A string | Correct. Use int() or float() for numbers.
+        [ ] A number | Incorrect. It is text.
+        [ ] A list | Incorrect. It is one string.
+        [ ] True or False | Incorrect. It is text.
+
+    .. multichoice::
+
+        How do you get a decimal number from the box?
+
+        [ ] int(entry.get()) | Incorrect. int is for whole numbers.
+        [x] float(entry.get()) | Correct. float makes a decimal number.
+        [ ] str(entry.get()) | Incorrect. str makes text.
+        [ ] entry.get().float | Incorrect. Not an attribute.
+
+    .. multichoice::
+
+        Why use try and except when changing the text to a number?
+
+        [ ] To make it faster | Incorrect. Not about speed.
+        [x] The user might type letters, which causes a ValueError | Correct. except catches the error.
+        [ ] Entries cannot hold numbers | Incorrect. They can.
+        [ ] It is always needed for text | Incorrect. Only for numbers.
+
+    .. multichoice::
+
+        Which line clears the box?
+
+        [ ] entry.clear() | Incorrect. Not a method.
+        [x] entry.delete(0, tk.END) | Correct. From the first character to the end.
+        [ ] entry.delete() | Incorrect. It needs a start.
+        [ ] entry.set("") | Incorrect. ttk Entry has no set.
+
+    .. multichoice::
+
+        What does entry.insert(0, "Name") do?
+
+        [x] Puts Name at the start of the box | Correct. 0 is the first position.
+        [ ] Adds Name at the end | Incorrect. Use tk.END for the end.
+        [ ] Deletes Name | Incorrect. insert adds.
+        [ ] Reads Name | Incorrect. get reads.
+
+    .. multichoice::
+
+        What does entry.focus_set() do?
+
+        [ ] Highlights all text | Incorrect. select_range does that.
+        [x] Puts the typing cursor in the box | Correct. The user can type straight away.
+        [ ] Clears the box | Incorrect. delete does that.
+        [ ] Disables the box | Incorrect. state does that.
+
+    .. multichoice::
+
+        What does entry.select_range(0, tk.END) do?
+
+        [x] Highlights all the text | Correct. It selects text.
+        [ ] Deletes all the text | Incorrect. delete does that.
+        [ ] Reads the text | Incorrect. get does that.
+        [ ] Moves the cursor to the start | Incorrect. It selects text.
+
+    .. multichoice::
+
+        Which event runs a function when Enter is pressed?
+
+        [ ] "<Enter>" | Incorrect. That is the mouse entering the widget.
+        [x] "<Return>" | Correct. Return is the Enter key.
+        [ ] "<Key-Enter>" | Incorrect. Not the name.
+        [ ] "<Button-1>" | Incorrect. That is a mouse click.
+
+    .. multichoice::
+
+        What does textvariable=name do?
+
+        [ ] Sets the font | Incorrect. font does that.
+        [x] Links the box to a StringVar, so name.get() reads it | Correct. It updates as the user types.
+        [ ] Names the widget | Incorrect. It links a variable.
+        [ ] Hides the text | Incorrect. show hides text.
+
+    .. multichoice::
+
+        How can a ttk Entry turn red for a wrong answer?
+
+        [x] Use a style like "Wrong.TEntry" with a red fieldbackground and set style="Wrong.TEntry" | Correct. ttk colours come from styles.
+        [ ] entry.config(bg="red") | Incorrect. ttk has no bg.
+        [ ] entry.red() | Incorrect. Not a method.
+        [ ] entry.state(["red"]) | Incorrect. Not a state.
+
+    .. multichoice::
+
+        Which style option colours the typing area of a ttk Entry?
+
+        [ ] background | Incorrect. Many themes ignore it.
+        [x] fieldbackground | Correct. fieldbackground is the typing area colour.
+        [ ] bg | Incorrect. Not a ttk option.
+        [ ] fill | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which style name changes every ttk Entry?
+
+        [ ] "Entry" | Incorrect. Use TEntry.
+        [x] "TEntry" | Correct. T then the widget name.
+        [ ] "TBox" | Incorrect. Not the name.
+        [ ] "ttk.Entry" | Incorrect. Not a style name.
+
+    .. multichoice::
+
+        Which line puts the typing cursor in the box when the program starts?
+
+        [x] name_entry.focus_set() | Correct. focus_set puts the cursor there.
+        [ ] name_entry.cursor() | Incorrect. Not a method.
+        [ ] name_entry.start() | Incorrect. Not a method.
+        [ ] name_entry.select() | Incorrect. Not a method.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a ttk Entry and read it.
+
+        name_entry = ttk.@@Entry | Label | Combobox@@(root, width=20, @@font | size | style@@=("Arial", 14))
+        name_entry.pack()
+        name = name_entry.@@get | read | text@@()
+
+    .. cloze::
+        :instructions: Make a password box with centred text.
+
+        password_entry = ttk.Entry(root, @@show | hide | mask@@="*", @@justify | anchor | side@@="center")
+
+    .. cloze::
+        :instructions: Get a decimal number safely.
+
+        try:
+            height = @@float | int | str@@(height_entry.get())
+        @@except | else | finally@@ ValueError:
+            result_label.config(text="Please type a number")
+
+    .. cloze::
+        :instructions: Clear the box and get it ready for typing.
+
+        name_entry.@@delete | clear | remove@@(0, tk.END)
+        name_entry.@@focus_set | select_range | insert@@()
+
+    .. cloze::
+        :instructions: Turn the box red for a wrong answer.
+
+        style.configure("Wrong.TEntry", @@fieldbackground | background | bg@@="pink")
+        answer_entry.config(@@style | theme | colour@@="Wrong.TEntry")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Login" that is 300x200 with a ttk Label "Username:" and a ttk Entry using Arial size 14.

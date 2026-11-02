@@ -447,6 +447,326 @@ Quick reference
 
 ----
 
+All Spinbox options
+---------------------------
+
+| Here is every option a ttk Spinbox can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``background``
+      - Background colour (write ``background``, not ``bg``)
+      - ``background="lavender"``
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``command``
+      - Function to run when an arrow is clicked
+      - ``command=show``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``exportselection``
+      - Lets selected text be copied to other programs (``True`` or ``False``)
+      - ``exportselection=False``
+    * - ``font``
+      - Style and size of the words
+      - ``font=("Arial", 14)``
+    * - ``foreground``
+      - Word colour (write ``foreground``, not ``fg``)
+      - ``foreground="purple"``
+    * - ``format``
+      - How the number is shown (``"%.2f"`` = 2 decimal places)
+      - ``format="%.2f"``
+    * - ``from_``
+      - Lowest number. Written ``from_`` in Python
+      - ``from_=0``
+    * - ``increment``
+      - How much the number goes up or down each click
+      - ``increment=5``
+    * - ``invalidcommand``
+      - Function to run when ``validatecommand`` says no
+      - ``invalidcommand=beep``
+    * - ``justify``
+      - Lines up the words: ``"left"``, ``"center"`` or ``"right"``
+      - ``justify="center"``
+    * - ``show``
+      - Shows this character instead of what is typed (good for passwords)
+      - ``show="*"``
+    * - ``state``
+      - ``"normal"``, ``"readonly"`` (can see but not type) or ``"disabled"`` (greyed out)
+      - ``state="readonly"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TSpinbox"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``textvariable``
+      - A variable that holds what is in the box
+      - ``textvariable=amount``
+    * - ``to``
+      - Highest number
+      - ``to=100``
+    * - ``validate``
+      - When to check what is typed: ``"none"``, ``"key"``, ``"focus"``, ``"focusin"``, ``"focusout"`` or ``"all"``
+      - ``validate="key"``
+    * - ``validatecommand``
+      - Function that checks what is typed (returns ``True`` or ``False``)
+      - ``validatecommand=(root.register(check), "%P")``
+    * - ``values``
+      - A list of choices to step through instead of numbers
+      - ``values=("Red", "Green", "Blue")``
+    * - ``width``
+      - How wide it is (in characters)
+      - ``width=15``
+    * - ``wrap``
+      - ``True`` goes back to the start after the last value
+      - ``wrap=True``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+
+| Many themes ignore ``background`` for the typing box. Use a style instead, e.g. ``style.configure("TSpinbox", fieldbackground="lightyellow")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        How is a ttk Spinbox made?
+
+        [x] ttk.Spinbox(root, from_=1, to=10) | Correct. It works like the tk Spinbox.
+        [ ] tk.Spinbox(root, ttk=True) | Incorrect. Not an option.
+        [ ] ttk.spinbox(root) | Incorrect. Needs a capital S.
+        [ ] ttk.Spinner(root) | Incorrect. Not a widget.
+
+    .. multichoice::
+
+        How is the lowest number written?
+
+        [ ] from=1 | Incorrect. from is a Python keyword.
+        [x] from_=1 | Correct. The underscore is needed.
+        [ ] min=1 | Incorrect. Not an option.
+        [ ] low=1 | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does increment=2 do?
+
+        [x] Each arrow click changes the number by 2 | Correct. increment is the step.
+        [ ] Starts at 2 | Incorrect. from\_ does that.
+        [ ] Allows 2 clicks | Incorrect. It is the step.
+        [ ] Shows 2 numbers | Incorrect. It is the step.
+
+    .. multichoice::
+
+        What does values=("S", "M", "L") do?
+
+        [ ] Sets colours | Incorrect. It sets choices.
+        [x] Steps through these choices instead of numbers | Correct. values replaces from\_ and to.
+        [ ] Makes three Spinboxes | Incorrect. One Spinbox.
+        [ ] Shows a list | Incorrect. It steps through them.
+
+    .. multichoice::
+
+        What does wrap=True do?
+
+        [x] Goes back to the start after the last value | Correct. It loops round.
+        [ ] Wraps long text | Incorrect. It loops values.
+        [ ] Stops at the end | Incorrect. That is wrap=False.
+        [ ] Makes it wider | Incorrect. width does that.
+
+    .. multichoice::
+
+        Which option colours the numbers in a ttk Spinbox?
+
+        [ ] fg | Incorrect. ttk uses foreground.
+        [x] foreground | Correct. Write the full word.
+        [ ] colour | Incorrect. Not an option.
+        [ ] textcolour | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does format="%.2f" do?
+
+        [x] Shows numbers with 2 decimal places, like 2.50 | Correct. Good for money.
+        [ ] Rounds to whole numbers | Incorrect. It shows 2 decimal places.
+        [ ] Adds a dollar sign | Incorrect. Not by itself.
+        [ ] Formats the font | Incorrect. font does that.
+
+    .. multichoice::
+
+        What does state="readonly" do?
+
+        [ ] Stops the arrows | Incorrect. That is "disabled".
+        [x] Stops typing, but the arrows still work | Correct. Good for fixed choices.
+        [ ] Hides the Spinbox | Incorrect. It is shown.
+        [ ] Deletes the value | Incorrect. Nothing is deleted.
+
+    .. multichoice::
+
+        When does command run?
+
+        [ ] When the user types | Incorrect. Typing does not run command.
+        [x] When an arrow is clicked | Correct. command runs on arrow clicks.
+        [ ] When the window opens | Incorrect. Not then.
+        [ ] Never | Incorrect. It runs on arrow clicks.
+
+    .. multichoice::
+
+        What does textvariable=amount do?
+
+        [x] Links the box to a variable, so amount.get() reads it | Correct. It updates with the box.
+        [ ] Sets the font | Incorrect. font does that.
+        [ ] Sets the highest number | Incorrect. to does that.
+        [ ] Names the box | Incorrect. It links a variable.
+
+    .. multichoice::
+
+        Which method reads the value?
+
+        [ ] spinbox.read() | Incorrect. Not a method.
+        [x] spinbox.get() | Correct. get gives the text in the box.
+        [ ] spinbox.value | Incorrect. Not an attribute.
+        [ ] spinbox.number() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which line puts 5 in a ttk Spinbox?
+
+        [x] spinbox.set(5) | Correct. ttk Spinbox has a set method.
+        [ ] spinbox.get(5) | Incorrect. get reads.
+        [ ] spinbox.config(value=5) | Incorrect. Not an option.
+        [ ] spinbox.put(5) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What type does spinbox.get() give?
+
+        [ ] An int | Incorrect. It is always text.
+        [x] A string, so use int() or float() for maths | Correct. Change it before maths.
+        [ ] A list | Incorrect. One value.
+        [ ] A Spinbox | Incorrect. It is the text.
+
+    .. multichoice::
+
+        Why use try and except with the typed value?
+
+        [ ] The arrows make errors | Incorrect. Typing can.
+        [x] The user might type letters, which makes int() fail | Correct. except catches the ValueError.
+        [ ] ttk Spinboxes cannot hold numbers | Incorrect. They can.
+        [ ] It is never needed | Incorrect. It helps with typed text.
+
+    .. multichoice::
+
+        Which event runs when the up arrow is clicked?
+
+        [x] "<<Increment>>" | Correct. ttk Spinbox sends Increment and Decrement events.
+        [ ] "<Up>" | Incorrect. That is the arrow key.
+        [ ] "<<Up>>" | Incorrect. Not the name.
+        [ ] "<Click>" | Incorrect. Not an event.
+
+    .. multichoice::
+
+        Which event runs when the down arrow is clicked?
+
+        [ ] "<<Down>>" | Incorrect. Not the name.
+        [x] "<<Decrement>>" | Correct. Decrement means going down.
+        [ ] "<Down>" | Incorrect. That is the arrow key.
+        [ ] "<<Minus>>" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        Which line changes the highest number later?
+
+        [ ] spinbox.to(20) | Incorrect. Not a method.
+        [x] spinbox.config(to=20) | Correct. config changes options.
+        [ ] spinbox.set(to=20) | Incorrect. set puts a value in the box.
+        [ ] spinbox.max = 20 | Incorrect. Use config.
+
+    .. multichoice::
+
+        Which style name is used for every ttk Spinbox?
+
+        [x] "TSpinbox" | Correct. T then the widget name.
+        [ ] "Spinbox" | Incorrect. Needs the T.
+        [ ] "TSpin" | Incorrect. Not the name.
+        [ ] "TEntry" | Incorrect. That is for Entries.
+
+    .. multichoice::
+
+        If from_=0, to=10, increment=5 and wrap=False, what comes after 10 when up is clicked?
+
+        [ ] 0 | Incorrect. That needs wrap=True.
+        [x] It stays at 10 | Correct. Without wrap it stops at the top.
+        [ ] 15 | Incorrect. to is 10.
+        [ ] An error | Incorrect. No error.
+
+    .. multichoice::
+
+        What does justify="center" do?
+
+        [ ] Centres the window | Incorrect. It centres the text.
+        [x] Puts the value in the middle of the box | Correct. justify lines up the text.
+        [ ] Centres the arrows | Incorrect. It lines up the text.
+        [ ] Hides the arrows | Incorrect. Arrows stay.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a ttk Spinbox.
+
+        tickets = ttk.@@Spinbox | Scale | Entry@@(root, @@from_ | from | start@@=1, to=10, @@increment | step | resolution@@=1, width=5)
+        tickets.pack()
+
+    .. cloze::
+        :instructions: Show money with two decimal places.
+
+        price = ttk.Spinbox(root, from_=0, to=20, increment=0.5, @@format | style | show@@="%.2f", @@wrap | loop | repeat@@=True)
+
+    .. cloze::
+        :instructions: Read and set the value.
+
+        count = @@int | str | list@@(tickets.get())
+        tickets.@@set | insert | get@@(5)
+
+    .. cloze::
+        :instructions: Step through choices.
+
+        size = ttk.Spinbox(root, @@values | choices | items@@=("Small", "Medium", "Large"), state="@@readonly | disabled | locked@@")
+
+    .. cloze::
+        :instructions: Run functions for each arrow.
+
+        tickets.@@bind | config | command@@("@@<<Increment>> | <Up> | <<Up>>@@", went_up)
+        tickets.bind("<<Decrement>>", went_down)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Tickets" that is 300x200 with a ttk Spinbox from 1 to 6 that starts on 2.

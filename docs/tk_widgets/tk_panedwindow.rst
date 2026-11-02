@@ -471,6 +471,240 @@ All PanedWindow options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a PanedWindow?
+
+        [x] A container split into panes that the user can resize by dragging | Correct. The bar between panes is the sash.
+        [ ] A window with glass | Incorrect. It is a container.
+        [ ] A pop-up window | Incorrect. That is a Toplevel.
+        [ ] A list | Incorrect. That is a Listbox.
+
+    .. multichoice::
+
+        What is the sash?
+
+        [ ] The title bar | Incorrect. The sash is between panes.
+        [x] The bar between panes that is dragged to resize them | Correct. Drag it to change the pane sizes.
+        [ ] A scrollbar | Incorrect. It is not a scrollbar.
+        [ ] A button | Incorrect. It is a bar.
+
+    .. multichoice::
+
+        What does orient="vertical" do?
+
+        [x] Stacks the panes one above the other | Correct. vertical goes up and down.
+        [ ] Puts the panes side by side | Incorrect. That is "horizontal".
+        [ ] Hides the panes | Incorrect. It sets the direction.
+        [ ] Rotates the text | Incorrect. It sets the direction.
+
+    .. multichoice::
+
+        What is the default orient?
+
+        [ ] "vertical" | Incorrect. The default is horizontal.
+        [x] "horizontal", so panes are side by side | Correct. Side by side is the default.
+        [ ] "both" | Incorrect. Not a value.
+        [ ] "none" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        What does sashwidth=10 do?
+
+        [ ] Makes the panes 10 wide | Incorrect. It sets the sash.
+        [x] Makes the sash 10 pixels wide, so it is easier to grab | Correct. A wider sash is easier to drag.
+        [ ] Adds 10 panes | Incorrect. It sets the sash width.
+        [ ] Moves the sash | Incorrect. Dragging moves it.
+
+    .. multichoice::
+
+        What does sashrelief="raised" do?
+
+        [ ] Raises the window | Incorrect. It styles the sash.
+        [x] Makes the sash look raised, so it is easy to see | Correct. It sets the border style.
+        [ ] Hides the sash | Incorrect. It shows it.
+        [ ] Adds a handle | Incorrect. showhandle does that.
+
+    .. multichoice::
+
+        What does showhandle=True do?
+
+        [x] Shows a small square handle on the sash | Correct. It helps users see what to drag.
+        [ ] Shows the window title | Incorrect. Not related.
+        [ ] Adds a new pane | Incorrect. add does that.
+        [ ] Locks the sash | Incorrect. It shows a handle.
+
+    .. multichoice::
+
+        What does bg change on a PanedWindow?
+
+        [ ] The panes' widgets | Incorrect. They have their own colours.
+        [x] The background, which shows in the sash and gaps | Correct. bg is its background.
+        [ ] The window title | Incorrect. Not related.
+        [ ] Nothing | Incorrect. It changes the background.
+
+    .. multichoice::
+
+        How is a widget put into a pane?
+
+        [ ] widget.pack() | Incorrect. Panes use add, not pack.
+        [x] panes.add(widget) | Correct. add puts the widget in a new pane.
+        [ ] panes.insert(widget) | Incorrect. Use add.
+        [ ] widget.grid() | Incorrect. Use add.
+
+    .. multichoice::
+
+        What should a widget's parent be when it goes in a pane?
+
+        [x] The PanedWindow | Correct. e.g. tk.Label(panes, ...).
+        [ ] root | Incorrect. Use the PanedWindow.
+        [ ] Another widget | Incorrect. The PanedWindow is the parent.
+        [ ] Nothing | Incorrect. It needs a parent.
+
+    .. multichoice::
+
+        What does minsize=100 do in panes.add(left, minsize=100)?
+
+        [ ] Sets the font | Incorrect. Not related.
+        [x] Stops the pane being dragged smaller than 100 pixels | Correct. It sets the smallest size.
+        [ ] Makes the pane 100 wide at the start | Incorrect. width does that.
+        [ ] Adds 100 panes | Incorrect. It sets the minimum.
+
+    .. multichoice::
+
+        What does width=200 do in panes.add(left, width=200)?
+
+        [x] Starts the pane 200 pixels wide | Correct. It sets the starting size.
+        [ ] Stops it going below 200 | Incorrect. minsize does that.
+        [ ] Makes the window 200 wide | Incorrect. It sets the pane.
+        [ ] Nothing | Incorrect. It sets the pane width.
+
+    .. multichoice::
+
+        What does panes.forget(left) do?
+
+        [ ] Deletes the widget forever | Incorrect. It removes it from the PanedWindow.
+        [x] Takes the widget out of the PanedWindow | Correct. The widget still exists.
+        [ ] Hides the sash | Incorrect. It removes a pane.
+        [ ] Forgets the size | Incorrect. It removes the pane.
+
+    .. multichoice::
+
+        What does panes.panes() give?
+
+        [ ] The number of sashes | Incorrect. It gives the panes.
+        [x] A list of the widgets in the panes | Correct. Each pane holds a widget.
+        [ ] The pane sizes | Incorrect. It lists the widgets.
+        [ ] The window | Incorrect. It lists panes.
+
+    .. multichoice::
+
+        Which line changes the sash width later?
+
+        [ ] panes.sashwidth = 10 | Incorrect. Use config.
+        [x] panes.config(sashwidth=10) | Correct. config changes options.
+        [ ] panes.set(sashwidth=10) | Incorrect. Not a method.
+        [ ] panes.add(sashwidth=10) | Incorrect. add adds panes.
+
+    .. multichoice::
+
+        How do you make a PanedWindow fill the whole window?
+
+        [x] panes.pack(fill="both", expand=True) | Correct. It stretches both ways.
+        [ ] panes.pack() | Incorrect. It only takes the space it needs.
+        [ ] panes.add(fill="both") | Incorrect. add is for panes.
+        [ ] panes.config(fill="both") | Incorrect. fill is a pack option.
+
+    .. multichoice::
+
+        Can a PanedWindow go inside another PanedWindow?
+
+        [ ] No | Incorrect. It can.
+        [x] Yes, to make both side-by-side and stacked panes | Correct. Nest them for complex layouts.
+        [ ] Only vertical ones | Incorrect. Any can.
+        [ ] Only with grid | Incorrect. Use add.
+
+    .. multichoice::
+
+        How many widgets go in each pane?
+
+        [ ] As many as you like with pack | Incorrect. Each pane holds one widget.
+        [x] One, but it can be a Frame holding many widgets | Correct. Put a Frame in to hold more.
+        [ ] Two | Incorrect. One per pane.
+        [ ] None | Incorrect. Each holds one.
+
+    .. multichoice::
+
+        Which relief value hides the sash border style?
+
+        [ ] "raised" | Incorrect. raised shows it.
+        [ ] "sunken" | Incorrect. sunken shows it.
+        [x] "flat" | Correct. flat has no 3D look.
+        [ ] "ridge" | Incorrect. ridge shows it.
+
+    .. multichoice::
+
+        What happens when the user drags the sash?
+
+        [x] The panes on each side change size | Correct. That is the point of a PanedWindow.
+        [ ] The window moves | Incorrect. The sash resizes panes.
+        [ ] A function always runs | Incorrect. Nothing runs by default.
+        [ ] The panes swap | Incorrect. They resize.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a PanedWindow with two panes.
+
+        panes = tk.@@PanedWindow | Frame | Canvas@@(root, @@orient | side | direction@@="horizontal")
+        panes.pack(fill="both", expand=True)
+        left = tk.Label(@@panes | root | left@@, text="Left", bg="lightblue")
+        panes.@@add | pack | insert@@(left)
+
+    .. cloze::
+        :instructions: Make the sash easy to see and grab.
+
+        panes = tk.PanedWindow(root, @@sashwidth | sashsize | width@@=10, @@sashrelief | relief | border@@="raised", showhandle=True)
+
+    .. cloze::
+        :instructions: Stack panes on top of each other.
+
+        panes = tk.PanedWindow(root, orient="@@vertical | horizontal | stacked@@")
+        panes.add(top, @@minsize | width | size@@=100)
+
+    .. cloze::
+        :instructions: Set a starting width and remove a pane.
+
+        panes.add(left, @@width | minsize | length@@=200)
+        panes.@@forget | delete | remove@@(left)
+
+    .. cloze::
+        :instructions: List the panes and change an option.
+
+        widgets = panes.@@panes | children | list@@()
+        panes.@@config | set | add@@(bg="grey")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Panes" that is 300x200. Add a PanedWindow that fills the window, with two labels side by side: "Left" on a yellow background and "Right" on an orange background.

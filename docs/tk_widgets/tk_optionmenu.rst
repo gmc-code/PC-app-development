@@ -479,6 +479,243 @@ All OptionMenu options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is an OptionMenu?
+
+        [x] A button that drops down a list where one choice is picked | Correct. The chosen item shows on the button.
+        [ ] A box to type in | Incorrect. That is an Entry.
+        [ ] A list that shows all items at once | Incorrect. That is a Listbox.
+        [ ] A tick box | Incorrect. That is a Checkbutton.
+
+    .. multichoice::
+
+        What must be made before an OptionMenu?
+
+        [ ] A Frame | Incorrect. Not needed.
+        [x] A variable, such as tk.StringVar() | Correct. It remembers the chosen item.
+        [ ] A Menu | Incorrect. The OptionMenu makes its own menu.
+        [ ] A Button | Incorrect. Not needed.
+
+    .. multichoice::
+
+        In tk.OptionMenu(root, flavour, "Vanilla", "Chocolate"), what is flavour?
+
+        [x] The variable that holds the chosen item | Correct. It comes straight after root.
+        [ ] The first choice | Incorrect. The choices come after the variable.
+        [ ] The menu title | Incorrect. There is no title.
+        [ ] A function | Incorrect. It is a variable.
+
+    .. multichoice::
+
+        How are the choices given to an OptionMenu?
+
+        [ ] choices=["A", "B"] | Incorrect. Not an option.
+        [x] Written after the variable, separated by commas | Correct. tk.OptionMenu(root, var, "A", "B").
+        [ ] values=("A", "B") | Incorrect. That is for Spinbox and Combobox.
+        [ ] With add_command | Incorrect. That is for Menus.
+
+    .. multichoice::
+
+        How do you use a Python list called days as the choices?
+
+        [ ] tk.OptionMenu(root, day, days) | Incorrect. That makes one choice that is the whole list.
+        [x] tk.OptionMenu(root, day, \*days) | Correct. The star unpacks the list into separate choices.
+        [ ] tk.OptionMenu(root, day, list=days) | Incorrect. Not an option.
+        [ ] tk.OptionMenu(root, days) | Incorrect. The variable is missing.
+
+    .. multichoice::
+
+        What does tk.StringVar(value="Small") do here?
+
+        [ ] Makes Small the only choice | Incorrect. It sets the starting choice.
+        [x] Makes Small the choice shown at the start | Correct. value sets the first choice.
+        [ ] Hides Small | Incorrect. It shows it.
+        [ ] Adds Small to the end | Incorrect. It sets the start value.
+
+    .. multichoice::
+
+        Where does command go for an OptionMenu?
+
+        [x] At the end, after the choices | Correct. e.g. tk.OptionMenu(root, var, "A", "B", command=picked).
+        [ ] Before the variable | Incorrect. The variable comes first.
+        [ ] In config(command=) | Incorrect. OptionMenu takes command when it is made.
+        [ ] It cannot have a command | Incorrect. It can.
+
+    .. multichoice::
+
+        What does the command function receive?
+
+        [ ] Nothing | Incorrect. It gets the chosen item.
+        [x] The chosen item, so it needs a parameter | Correct. e.g. def picked(choice):
+        [ ] The OptionMenu | Incorrect. It gets the choice.
+        [ ] The event | Incorrect. It gets the choice text.
+
+    .. multichoice::
+
+        How do you change the OptionMenu's look, such as width?
+
+        [ ] Add width= when making it | Incorrect. OptionMenu does not take options that way.
+        [x] flavour_menu.config(width=12) | Correct. Use config after making it.
+        [ ] flavour.config(width=12) | Incorrect. flavour is the variable.
+        [ ] width cannot be changed | Incorrect. It can, with config.
+
+    .. multichoice::
+
+        How do you change the colours of the drop-down list itself?
+
+        [x] flavour_menu["menu"].config(bg="lightyellow") | Correct. The menu inside is reached with ["menu"].
+        [ ] flavour_menu.config(bg="lightyellow") | Incorrect. That colours the button.
+        [ ] flavour.config(bg="lightyellow") | Incorrect. flavour is a variable.
+        [ ] It cannot be changed | Incorrect. It can.
+
+    .. multichoice::
+
+        What does flavour_menu.config(state="disabled") do?
+
+        [ ] Deletes the choices | Incorrect. It turns it off.
+        [x] Greys out the OptionMenu so it cannot be opened | Correct. It cannot be used.
+        [ ] Picks the first choice | Incorrect. It does not change the value.
+        [ ] Hides the button | Incorrect. It is still shown.
+
+    .. multichoice::
+
+        How do you read the chosen item?
+
+        [ ] flavour_menu.get() | Incorrect. Read the variable.
+        [x] flavour.get() | Correct. The variable holds the choice.
+        [ ] flavour_menu.choice | Incorrect. Not an attribute.
+        [ ] flavour_menu.cget("value") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        How do you choose "Chocolate" from your code?
+
+        [x] flavour.set("Chocolate") | Correct. set changes the chosen item.
+        [ ] flavour_menu.set("Chocolate") | Incorrect. Use the variable.
+        [ ] flavour_menu.select("Chocolate") | Incorrect. Not a method.
+        [ ] flavour.get("Chocolate") | Incorrect. get reads.
+
+    .. multichoice::
+
+        What happens if you set the variable to text that is not a choice?
+
+        [ ] An error happens | Incorrect. No error.
+        [x] The button shows that text, even though it is not in the list | Correct. Be careful to set real choices.
+        [ ] The OptionMenu closes | Incorrect. Nothing closes.
+        [ ] It picks the first choice | Incorrect. It shows the new text.
+
+    .. multichoice::
+
+        How can a price be looked up from the chosen item?
+
+        [ ] price = flavour | Incorrect. flavour is a variable, not a number.
+        [x] price = prices[flavour.get()] | Correct. Use the choice as a dictionary key.
+        [ ] price = prices(flavour) | Incorrect. Dictionaries use square brackets.
+        [ ] price = flavour.price | Incorrect. Not an attribute.
+
+    .. multichoice::
+
+        Which line deletes every choice in the drop-down list?
+
+        [ ] flavour_menu.delete("all") | Incorrect. That is for Canvas.
+        [x] flavour_menu["menu"].delete(0, "end") | Correct. Delete from the menu inside.
+        [ ] flavour.set("") | Incorrect. That only clears the choice shown.
+        [ ] flavour_menu.clear() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        How do you add a new choice while the program runs?
+
+        [x] flavour_menu["menu"].add_command(label="Mango", command=lambda: flavour.set("Mango")) | Correct. Add it to the menu inside.
+        [ ] flavour_menu.insert("Mango") | Incorrect. Not a method.
+        [ ] flavour.append("Mango") | Incorrect. Variables are not lists.
+        [ ] flavour_menu.config(values="Mango") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which widget suits choosing one size from Small, Medium and Large in a small space?
+
+        [ ] Canvas | Incorrect. Canvas draws.
+        [x] OptionMenu | Correct. It shows one choice and saves space.
+        [ ] Entry | Incorrect. Typing is not needed.
+        [ ] Message | Incorrect. Message only shows text.
+
+    .. multichoice::
+
+        What type of variable is usually used with an OptionMenu of words?
+
+        [ ] tk.IntVar() | Incorrect. That is for whole numbers.
+        [x] tk.StringVar() | Correct. Choices are usually text.
+        [ ] tk.DoubleVar() | Incorrect. That is for decimals.
+        [ ] A Python list | Incorrect. Use a tkinter variable.
+
+    .. multichoice::
+
+        Why does the star go in \*days?
+
+        [ ] It multiplies the list | Incorrect. Here it unpacks.
+        [x] It unpacks the list so each item becomes a separate choice | Correct. Without it there is one big choice.
+        [ ] It sorts the list | Incorrect. It does not sort.
+        [ ] It is a typo | Incorrect. It is needed.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make an OptionMenu with three choices.
+
+        flavour = tk.@@StringVar | IntVar | Entry@@(value="Vanilla")
+        flavour_menu = tk.@@OptionMenu | Listbox | Menu@@(root, @@flavour | value | Vanilla@@, "Vanilla", "Chocolate", "Strawberry")
+        flavour_menu.pack()
+
+    .. cloze::
+        :instructions: Use a list of choices.
+
+        days = ["Monday", "Tuesday", "Wednesday"]
+        day = tk.StringVar(value=days[@@0 | 1 | first@@])
+        day_menu = tk.OptionMenu(root, day, @@*days | days | list@@)
+
+    .. cloze::
+        :instructions: Run a function when a choice is picked.
+
+        def picked(@@choice | self | root@@):
+            result_label.config(text="You chose " + choice)
+
+        size_menu = tk.OptionMenu(root, size, "Small", "Large", @@command | click | run@@=picked)
+
+    .. cloze::
+        :instructions: Change the look and turn it off.
+
+        flavour_menu.@@config | set | get@@(width=12, bg="lightblue")
+        flavour_menu.config(@@state | mode | status@@="disabled")
+
+    .. cloze::
+        :instructions: Read and set the choice.
+
+        choice = flavour.@@get | set | read@@()
+        flavour.@@set | get | pick@@("Chocolate")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Holidays" that is 300x200. Add an OptionMenu with the choices "Beach", "Snow", "City" and "Camping". Start on "Beach".

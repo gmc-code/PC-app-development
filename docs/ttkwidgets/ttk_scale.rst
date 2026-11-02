@@ -388,6 +388,293 @@ Quick reference
 
 ----
 
+All Scale options
+---------------------------
+
+| Here is every option a ttk Scale can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``command``
+      - Function to run when the slider moves (it is given the new value)
+      - ``command=update``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``from_``
+      - Lowest number. Written ``from_`` in Python
+      - ``from_=0``
+    * - ``length``
+      - How long the slider is (in pixels)
+      - ``length=200``
+    * - ``orient``
+      - Which way it goes: ``"horizontal"`` or ``"vertical"``
+      - ``orient="horizontal"``
+    * - ``state``
+      - ``"normal"`` or ``"disabled"`` (greyed out)
+      - ``state="disabled"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TScale"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``to``
+      - Highest number
+      - ``to=100``
+    * - ``value``
+      - Where the slider is right now
+      - ``value=50``
+    * - ``variable``
+      - A variable that holds the slider's number
+      - ``variable=volume``
+
+| ttk Scale has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("Horizontal.TScale", background="lightblue")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a ttk Scale?
+
+        [x] A themed slider for picking a number | Correct. Drag it to choose a value.
+        [ ] A box for typing numbers | Incorrect. That is an Entry or Spinbox.
+        [ ] A progress bar | Incorrect. That shows progress.
+        [ ] A list | Incorrect. That is a Listbox.
+
+    .. multichoice::
+
+        How is the lowest number written?
+
+        [ ] from=0 | Incorrect. from is a Python keyword.
+        [x] from_=0 | Correct. The underscore is needed.
+        [ ] min=0 | Incorrect. Not an option.
+        [ ] start=0 | Incorrect. Not an option.
+
+    .. multichoice::
+
+        What does to=100 set?
+
+        [x] The highest number | Correct. to is the top of the range.
+        [ ] The lowest number | Incorrect. from\_ does that.
+        [ ] The length | Incorrect. length does that.
+        [ ] The step | Incorrect. ttk Scale has no step option.
+
+    .. multichoice::
+
+        What is the default orient for ttk.Scale?
+
+        [ ] "vertical" | Incorrect. ttk Scales are horizontal by default.
+        [x] "horizontal" | Correct. They go left to right.
+        [ ] "both" | Incorrect. Not a value.
+        [ ] "none" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        What does length=300 do?
+
+        [x] Makes the slider 300 pixels long | Correct. length sets its size.
+        [ ] Sets the highest number | Incorrect. to does that.
+        [ ] Sets 300 steps | Incorrect. Not steps.
+        [ ] Makes it 300 thick | Incorrect. Not thickness.
+
+    .. multichoice::
+
+        What does value=50 do?
+
+        [ ] Sets the highest number to 50 | Incorrect. to does that.
+        [x] Starts the slider at 50 | Correct. value is where the slider is.
+        [ ] Moves it by 50 | Incorrect. It sets the position.
+        [ ] Shows 50 ticks | Incorrect. ttk Scale has no ticks.
+
+    .. multichoice::
+
+        What does the command function receive?
+
+        [x] The new value as a string, so it needs a parameter | Correct. Use float() to make it a number.
+        [ ] Nothing | Incorrect. It gets the value.
+        [ ] The Scale | Incorrect. It gets the value.
+        [ ] An event | Incorrect. It gets the value.
+
+    .. multichoice::
+
+        Why does a ttk Scale often give values like 42.3786?
+
+        [ ] It is broken | Incorrect. It is normal.
+        [x] It moves smoothly with decimals, so round() or int() is often used | Correct. ttk Scale has no resolution option.
+        [ ] Because of length | Incorrect. Not related.
+        [ ] Because of the style | Incorrect. Not related.
+
+    .. multichoice::
+
+        What does variable=volume do?
+
+        [ ] Sets the colour | Incorrect. A style does that.
+        [x] Links the slider to a variable, so volume.get() reads it | Correct. The variable updates as it moves.
+        [ ] Names the slider | Incorrect. It links a variable.
+        [ ] Sets the length | Incorrect. length does that.
+
+    .. multichoice::
+
+        Which line greys out a ttk Scale?
+
+        [x] scale.state(["disabled"]) | Correct. ttk uses the state method.
+        [ ] scale.config(bg="grey") | Incorrect. ttk has no bg.
+        [ ] scale.disable() | Incorrect. Not a method.
+        [ ] scale.stop() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which method reads the slider's value?
+
+        [ ] scale.read() | Incorrect. Not a method.
+        [x] scale.get() | Correct. get gives the value.
+        [ ] scale.value | Incorrect. Not an attribute.
+        [ ] scale.number() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which line moves the slider to 25?
+
+        [ ] scale.get(25) | Incorrect. get reads.
+        [x] scale.set(25) | Correct. set moves the slider.
+        [ ] scale.move(25) | Incorrect. Not a method.
+        [ ] scale.to(25) | Incorrect. to is an option.
+
+    .. multichoice::
+
+        Which line changes the highest number later?
+
+        [x] scale.config(to=20) | Correct. config changes options.
+        [ ] scale.to(20) | Incorrect. Not a method.
+        [ ] scale.set(to=20) | Incorrect. set moves the slider.
+        [ ] scale.max = 20 | Incorrect. Use config.
+
+    .. multichoice::
+
+        Which tk Scale options are missing from ttk.Scale?
+
+        [ ] from\_ and to | Incorrect. ttk has these.
+        [x] label, tickinterval and resolution | Correct. Use a Label to show the value.
+        [ ] length | Incorrect. ttk has length.
+        [ ] orient | Incorrect. ttk has orient.
+
+    .. multichoice::
+
+        How can the number be shown next to a ttk Scale?
+
+        [ ] showvalue=True | Incorrect. ttk Scale has no showvalue.
+        [x] Use a Label and update it in the command function | Correct. The Label shows the number.
+        [ ] label="Value" | Incorrect. ttk Scale has no label option.
+        [ ] It shows by itself | Incorrect. It does not.
+
+    .. multichoice::
+
+        In a colour mixer, what range does each colour Scale use?
+
+        [x] 0 to 255 | Correct. Each part of a colour goes from 0 to 255.
+        [ ] 0 to 100 | Incorrect. Colours use 0 to 255.
+        [ ] 1 to 10 | Incorrect. Too small.
+        [ ] 0 to 1000 | Incorrect. Too big.
+
+    .. multichoice::
+
+        Which style name is used for a horizontal ttk Scale?
+
+        [ ] "TScale" | Incorrect. It needs the direction.
+        [x] "Horizontal.TScale" | Correct. The direction is part of the name.
+        [ ] "Slider" | Incorrect. Not the name.
+        [ ] "Scale" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        How can a decimal like 42.7 be made a whole number?
+
+        [ ] str(42.7) | Incorrect. That makes text.
+        [x] int(42.7) or round(42.7) | Correct. int cuts to 42, round gives 43.
+        [ ] float(42.7) | Incorrect. It is already a float.
+        [ ] 42.7.whole | Incorrect. Not valid.
+
+    .. multichoice::
+
+        Which orient makes the slider go up and down?
+
+        [x] "vertical" | Correct. vertical goes up and down.
+        [ ] "horizontal" | Incorrect. That goes across.
+        [ ] "up" | Incorrect. Not a value.
+        [ ] "y" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        Can the user type a number into a ttk Scale?
+
+        [ ] Yes | Incorrect. It is dragged, not typed.
+        [x] No, use a Spinbox or Entry for typing | Correct. Scales are dragged.
+        [ ] Only with a style | Incorrect. Still no.
+        [ ] Only when vertical | Incorrect. Still no.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a ttk Scale from 0 to 100.
+
+        volume = ttk.@@Scale | Progressbar | Spinbox@@(root, @@from_ | from | start@@=0, @@to | end | max@@=100, length=300)
+        volume.pack()
+
+    .. cloze::
+        :instructions: Start the slider in the middle.
+
+        volume = ttk.Scale(root, from_=0, to=100, @@value | start | level@@=50, orient="@@horizontal | across | x@@")
+
+    .. cloze::
+        :instructions: Show the value in a label.
+
+        def update(@@value | self | event@@):
+            value_label.config(text=str(@@round | float | str@@(float(value))))
+
+        volume = ttk.Scale(root, from_=0, to=100, @@command | click | run@@=update)
+
+    .. cloze::
+        :instructions: Read, set and turn off the slider.
+
+        level = volume.@@get | read | value@@()
+        volume.@@set | get | move@@(25)
+        volume.@@state | config | set@@(["disabled"])
+
+    .. cloze::
+        :instructions: Change the range later.
+
+        volume.@@config | set | range@@(@@to | max | end@@=20)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Rating" that is 300x200 with a ttk Scale from 1 to 10 that is 250 pixels long, starting on 5.

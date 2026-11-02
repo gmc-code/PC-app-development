@@ -359,6 +359,275 @@ Quick reference
 
 ----
 
+All Scrollbar options
+---------------------------
+
+| Here is every option a ttk Scrollbar can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``command``
+      - Connects it to the widget it scrolls
+      - ``command=tree.yview``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``orient``
+      - Up and down (``"vertical"``) or side to side (``"horizontal"``)
+      - ``orient="vertical"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.TScrollbar"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+
+| ttk Scrollbar has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("Vertical.TScrollbar", background="lightblue")``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a ttk Scrollbar for?
+
+        [x] Scrolling a widget whose content does not fit, like Text or Treeview | Correct. It is the themed version.
+        [ ] Picking a number | Incorrect. That is a Scale.
+        [ ] Showing progress | Incorrect. That is a Progressbar.
+        [ ] Drawing | Incorrect. That is a Canvas.
+
+    .. multichoice::
+
+        What is the default orient?
+
+        [x] "vertical" | Correct. Up and down is the default.
+        [ ] "horizontal" | Incorrect. That must be set.
+        [ ] "both" | Incorrect. Not a value.
+        [ ] "none" | Incorrect. Not a value.
+
+    .. multichoice::
+
+        What does command=text.yview do?
+
+        [ ] Deletes the text | Incorrect. It scrolls it.
+        [x] Makes moving the Scrollbar scroll the Text up and down | Correct. yview moves the view.
+        [ ] Adds text | Incorrect. It scrolls.
+        [ ] Changes the colour | Incorrect. It scrolls.
+
+    .. multichoice::
+
+        Two steps connect a Scrollbar. One is command=tree.yview. What is the other?
+
+        [x] tree.config(yscrollcommand=scrollbar.set) | Correct. The widget tells the Scrollbar where it is.
+        [ ] tree.config(scroll=True) | Incorrect. Not an option.
+        [ ] scrollbar.pack(tree) | Incorrect. Not how it connects.
+        [ ] tree.add(scrollbar) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        For a horizontal Scrollbar, which pair is used?
+
+        [ ] yview and yscrollcommand | Incorrect. Those are vertical.
+        [x] xview and xscrollcommand | Correct. x is side to side.
+        [ ] view and command | Incorrect. Not the names.
+        [ ] left and right | Incorrect. Not the names.
+
+    .. multichoice::
+
+        Where is a vertical Scrollbar usually packed?
+
+        [x] side="right", fill="y" | Correct. It stretches up and down on the right.
+        [ ] side="top" | Incorrect. It goes beside the widget.
+        [ ] side="bottom", fill="x" | Incorrect. That is horizontal.
+        [ ] side="left", fill="x" | Incorrect. fill="x" is wrong here.
+
+    .. multichoice::
+
+        With grid, how is a vertical Scrollbar stretched to full height?
+
+        [ ] sticky="ew" | Incorrect. That is side to side.
+        [x] sticky="ns" | Correct. North and south.
+        [ ] fill="y" | Incorrect. fill is for pack.
+        [ ] expand=True | Incorrect. That is for pack.
+
+    .. multichoice::
+
+        With grid, how is a horizontal Scrollbar stretched?
+
+        [x] sticky="ew" | Correct. East and west stretches it across.
+        [ ] sticky="ns" | Incorrect. That is up and down.
+        [ ] fill="x" | Incorrect. fill is for pack.
+        [ ] side="bottom" | Incorrect. side is for pack.
+
+    .. multichoice::
+
+        What must a Canvas have before it can be scrolled?
+
+        [ ] A Text widget | Incorrect. Not needed.
+        [x] A scrollregion giving the full size of the drawing | Correct. e.g. scrollregion=(0, 0, 1000, 1000).
+        [ ] A Listbox | Incorrect. Not needed.
+        [ ] A style | Incorrect. Not needed.
+
+    .. multichoice::
+
+        What does scrollbar.get() give?
+
+        [x] Two numbers from 0 to 1 showing which part is visible | Correct. e.g. (0.0, 0.5) is the top half.
+        [ ] The text | Incorrect. It gives positions.
+        [ ] The widget | Incorrect. It gives positions.
+        [ ] The style | Incorrect. It gives positions.
+
+    .. multichoice::
+
+        What does text.yview_moveto(1) do?
+
+        [ ] Scrolls to the top | Incorrect. 0 is the top.
+        [x] Scrolls to the bottom | Correct. 1 is the end.
+        [ ] Moves one line | Incorrect. It moves to the end.
+        [ ] Deletes the text | Incorrect. It scrolls.
+
+    .. multichoice::
+
+        What does text.yview_scroll(1, "units") do?
+
+        [x] Scrolls down by one line | Correct. units are small steps.
+        [ ] Scrolls to the end | Incorrect. yview_moveto(1) does that.
+        [ ] Scrolls up | Incorrect. 1 is down; -1 is up.
+        [ ] Deletes a line | Incorrect. It scrolls.
+
+    .. multichoice::
+
+        What does text.yview_scroll(-1, "pages") do?
+
+        [ ] Scrolls down one page | Incorrect. -1 goes up.
+        [x] Scrolls up one page | Correct. pages are big steps.
+        [ ] Deletes a page | Incorrect. It scrolls.
+        [ ] Goes to the top | Incorrect. It moves one page.
+
+    .. multichoice::
+
+        Why does a Text widget need wrap="none" for sideways scrolling?
+
+        [x] So long lines stay on one line and can be scrolled across | Correct. Wrapped lines never need it.
+        [ ] So it is faster | Incorrect. Not about speed.
+        [ ] So the colour shows | Incorrect. Not related.
+        [ ] It is not needed | Incorrect. It is needed.
+
+    .. multichoice::
+
+        If the Scrollbar slider does not move when the text is scrolled, what is missing?
+
+        [ ] command | Incorrect. That handles the other direction.
+        [x] yscrollcommand=scrollbar.set on the widget | Correct. The widget must tell the Scrollbar.
+        [ ] A style | Incorrect. Not needed.
+        [ ] A Frame | Incorrect. Not needed.
+
+    .. multichoice::
+
+        Which widgets can use a vertical ttk Scrollbar?
+
+        [x] Text, Listbox, Canvas and Treeview | Correct. They all have yview.
+        [ ] Label and Button | Incorrect. They do not scroll.
+        [ ] Progressbar | Incorrect. It does not scroll.
+        [ ] Separator | Incorrect. It does not scroll.
+
+    .. multichoice::
+
+        Which line makes a horizontal Scrollbar?
+
+        [ ] ttk.Scrollbar(root, side="x") | Incorrect. Not an option.
+        [x] ttk.Scrollbar(root, orient="horizontal") | Correct. orient sets direction.
+        [ ] ttk.Scrollbar(root, across=True) | Incorrect. Not an option.
+        [ ] ttk.Scrollbar(root, width="horizontal") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        Which style name is used for a vertical ttk Scrollbar?
+
+        [ ] "TScrollbar" | Incorrect. It needs the direction.
+        [x] "Vertical.TScrollbar" | Correct. The direction is part of the name.
+        [ ] "Scroll" | Incorrect. Not the name.
+        [ ] "TScroll" | Incorrect. Not the name.
+
+    .. multichoice::
+
+        Can a Scrollbar work without being connected to a widget?
+
+        [ ] Yes | Incorrect. It needs a widget.
+        [x] No, it must be connected both ways to a widget | Correct. Use command and the widget's scroll command.
+        [ ] Only horizontal ones | Incorrect. Both need a widget.
+        [ ] Only with a style | Incorrect. It needs a widget.
+
+    .. multichoice::
+
+        Why use two scrollbars on one Text widget?
+
+        [x] To scroll both up and down and side to side | Correct. One vertical, one horizontal.
+        [ ] To scroll faster | Incorrect. Not why.
+        [ ] To colour it | Incorrect. Not why.
+        [ ] It is not possible | Incorrect. It is.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Connect a ttk Scrollbar to a Text box.
+
+        scrollbar = ttk.@@Scrollbar | Scale | Progressbar@@(root, @@command | scroll | link@@=text.yview)
+        text.config(@@yscrollcommand | xscrollcommand | command@@=scrollbar.set)
+        scrollbar.pack(side="right", fill="@@y | x | both@@")
+
+    .. cloze::
+        :instructions: Use grid with a Treeview.
+
+        tree.grid(row=0, column=0)
+        scrollbar.grid(row=0, column=1, @@sticky | fill | side@@="@@ns | ew | nsew@@")
+
+    .. cloze::
+        :instructions: Make a horizontal Scrollbar.
+
+        x_scroll = ttk.Scrollbar(root, @@orient | side | direction@@="horizontal", command=text.@@xview | yview | view@@)
+        text.config(xscrollcommand=x_scroll.set)
+
+    .. cloze::
+        :instructions: Scroll a Canvas.
+
+        canvas.config(@@scrollregion | region | size@@=(0, 0, 1000, 1000))
+        canvas.config(yscrollcommand=scrollbar.set)
+
+    .. cloze::
+        :instructions: Scroll from code.
+
+        text.@@yview_moveto | yview_scroll | see@@(1)
+        text.yview_scroll(1, "@@units | lines | steps@@")
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Numbers" that is 300x200 with a Listbox of the numbers 1 to 200 and a ttk Scrollbar linked to it.

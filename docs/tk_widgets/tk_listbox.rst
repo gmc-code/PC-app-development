@@ -614,6 +614,242 @@ All Listbox options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Listbox?
+
+        [x] A box that shows a list of items the user can click | Correct. Users choose from the list.
+        [ ] A box to type in | Incorrect. That is an Entry.
+        [ ] A drop-down menu | Incorrect. That is an OptionMenu.
+        [ ] A tick box | Incorrect. That is a Checkbutton.
+
+    .. multichoice::
+
+        What does height=5 mean on a Listbox?
+
+        [ ] 5 pixels tall | Incorrect. It counts items.
+        [x] 5 items show at once | Correct. height is the number of lines shown.
+        [ ] Only 5 items can be added | Incorrect. More can be added and scrolled.
+        [ ] 5 characters wide | Incorrect. width does that.
+
+    .. multichoice::
+
+        What does width=20 mean on a Listbox?
+
+        [ ] 20 items | Incorrect. height is about items.
+        [x] About 20 characters wide | Correct. Listbox width counts characters.
+        [ ] 20 pixels | Incorrect. It counts characters.
+        [ ] 20 columns | Incorrect. A Listbox has one column.
+
+    .. multichoice::
+
+        What do selectbackground and selectforeground change?
+
+        [x] The colours of the chosen item | Correct. They style the highlighted line.
+        [ ] The colours of every item | Incorrect. fg and bg do that.
+        [ ] The window colours | Incorrect. Only the Listbox.
+        [ ] The scrollbar colours | Incorrect. They are Listbox options.
+
+    .. multichoice::
+
+        Which selectmode lets the user choose many items by clicking each one?
+
+        [ ] "single" | Incorrect. single allows one item.
+        [ ] "browse" | Incorrect. browse allows one item.
+        [x] "multiple" | Correct. multiple lets each click add or remove an item.
+        [ ] "one" | Incorrect. one is not a mode.
+
+    .. multichoice::
+
+        Which line adds "Apple" to the end of the list?
+
+        [ ] listbox.add("Apple") | Incorrect. Listboxes do not have add.
+        [x] listbox.insert(tk.END, "Apple") | Correct. insert at END adds to the end.
+        [ ] listbox.append("Apple") | Incorrect. append is for Python lists.
+        [ ] listbox.insert("Apple") | Incorrect. insert needs a position first.
+
+    .. multichoice::
+
+        What does listbox.insert(0, "Pear") do?
+
+        [ ] Puts Pear at the end | Incorrect. 0 is the start.
+        [x] Puts Pear at the top of the list | Correct. Index 0 is the first line.
+        [ ] Deletes Pear | Incorrect. insert adds.
+        [ ] Replaces every item | Incorrect. It adds one item.
+
+    .. multichoice::
+
+        What does listbox.curselection() give?
+
+        [ ] The text of the chosen item | Incorrect. It gives index numbers.
+        [x] A tuple of the index numbers of the chosen items | Correct. Use get with an index to read the text.
+        [ ] The number of items | Incorrect. size() gives that.
+        [ ] The colour of the item | Incorrect. It gives positions.
+
+    .. multichoice::
+
+        How do you get the text of the first chosen item?
+
+        [x] listbox.get(listbox.curselection()[0]) | Correct. Get the index, then get the text.
+        [ ] listbox.curselection().text | Incorrect. Tuples have no text.
+        [ ] listbox.text() | Incorrect. This method does not exist.
+        [ ] listbox.get() | Incorrect. get needs an index.
+
+    .. multichoice::
+
+        What happens if listbox.curselection()[0] is used when nothing is chosen?
+
+        [ ] It gives 0 | Incorrect. The tuple is empty.
+        [x] An IndexError, because the tuple is empty | Correct. Check that something is chosen first.
+        [ ] It picks the first item | Incorrect. Nothing is picked.
+        [ ] It deletes the list | Incorrect. Nothing is deleted.
+
+    .. multichoice::
+
+        How can you get the text of every chosen item?
+
+        [ ] listbox.get("all") | Incorrect. "all" is not used here.
+        [x] Loop through curselection() and use listbox.get(i) for each | Correct. Each index gives one item.
+        [ ] listbox.chosen() | Incorrect. This method does not exist.
+        [ ] listbox.size() | Incorrect. size counts items.
+
+    .. multichoice::
+
+        Which line removes every item?
+
+        [ ] listbox.clear() | Incorrect. Listboxes do not have clear.
+        [ ] listbox.delete() | Incorrect. delete needs a start.
+        [x] listbox.delete(0, tk.END) | Correct. From the first to the last item.
+        [ ] listbox.remove("all") | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What does listbox.delete(2) remove?
+
+        [x] The third item | Correct. Index 2 is the third, because counting starts at 0.
+        [ ] The second item | Incorrect. That is index 1.
+        [ ] Two items | Incorrect. It removes one item.
+        [ ] Every item | Incorrect. It removes one.
+
+    .. multichoice::
+
+        What does listbox.size() give?
+
+        [ ] The width | Incorrect. width is an option.
+        [x] How many items are in the list | Correct. size counts items.
+        [ ] The font size | Incorrect. It counts items.
+        [ ] The height | Incorrect. height is an option.
+
+    .. multichoice::
+
+        What does listbox.selection_set(0) do?
+
+        [ ] Deletes item 0 | Incorrect. delete does that.
+        [x] Chooses (highlights) the first item from code | Correct. selection_set selects it.
+        [ ] Adds an item at 0 | Incorrect. insert adds.
+        [ ] Reads item 0 | Incorrect. get reads.
+
+    .. multichoice::
+
+        What does listbox.selection_clear(0, tk.END) do?
+
+        [x] Unchooses every item | Correct. It clears the highlight.
+        [ ] Deletes every item | Incorrect. delete does that.
+        [ ] Chooses every item | Incorrect. selection_set does that.
+        [ ] Changes the colour | Incorrect. itemconfig does that.
+
+    .. multichoice::
+
+        Which event runs a function when the user picks an item?
+
+        [ ] "<Click>" | Incorrect. Not an event name.
+        [x] "<<ListboxSelect>>" | Correct. This event fires when the choice changes.
+        [ ] "<Return>" | Incorrect. That is the Enter key.
+        [ ] "<Select>" | Incorrect. Not the right name.
+
+    .. multichoice::
+
+        What does listbox.itemconfig(2, fg="red") do?
+
+        [ ] Makes every item red | Incorrect. It changes one item.
+        [x] Makes the third item's words red | Correct. itemconfig changes one item.
+        [ ] Deletes the item | Incorrect. It changes its colour.
+        [ ] Makes the Listbox red | Incorrect. config would do that.
+
+    .. multichoice::
+
+        What is the index of the first item in a Listbox?
+
+        [x] 0 | Correct. Counting starts at 0.
+        [ ] 1 | Incorrect. The first item is 0.
+        [ ] -1 | Incorrect. -1 is not used for the first item.
+        [ ] "first" | Incorrect. Use 0.
+
+    .. multichoice::
+
+        Which selectmode lets only one item be chosen?
+
+        [ ] "multiple" | Incorrect. That allows many.
+        [ ] "extended" | Incorrect. That allows many.
+        [x] "single" | Correct. single allows one item.
+        [ ] "many" | Incorrect. Not a mode.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Listbox and add items.
+
+        fruit_list = tk.@@Listbox | Entry | Label@@(root, height=5, width=20)
+        fruit_list.pack()
+        fruit_list.@@insert | add | append@@(tk.@@END | LAST | STOP@@, "Apple")
+
+    .. cloze::
+        :instructions: Read the chosen item.
+
+        index = fruit_list.@@curselection | get | size@@()[0]
+        fruit = fruit_list.@@get | read | text@@(index)
+
+    .. cloze::
+        :instructions: Let the user choose many items.
+
+        pizza_list = tk.Listbox(root, @@selectmode | mode | choose@@="@@multiple | single | browse@@")
+        pizza_list.pack()
+
+    .. cloze::
+        :instructions: Remove items and count them.
+
+        fruit_list.@@delete | remove | clear@@(0, tk.END)
+        count = fruit_list.@@size | len | count@@()
+
+    .. cloze::
+        :instructions: Run a function when an item is clicked.
+
+        def picked(@@event | self | item@@):
+            print(fruit_list.get(fruit_list.curselection()[0]))
+
+        fruit_list.@@bind | command | config@@("<<ListboxSelect>>", picked)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Sports" that is 300x250. Add a listbox with a height of 5 and Arial size 14, containing "Cricket", "Football", "Netball", "Swimming" and "Tennis". Use a ``for`` loop.

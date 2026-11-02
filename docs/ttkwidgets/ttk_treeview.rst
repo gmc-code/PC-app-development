@@ -656,6 +656,294 @@ Quick reference
 
 ----
 
+All Treeview options
+---------------------------
+
+| Here is every option a ttk Treeview can have, for reference. You will only need a few of them most of the time.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 25 45 30
+
+    * - Option
+      - What it does
+      - Example
+    * - ``class_``
+      - A group name used to style many widgets at once (advanced). Written ``class_`` in Python
+      - ``class_="Sidebar"``
+    * - ``columns``
+      - Names of the extra columns
+      - ``columns=("name", "age")``
+    * - ``cursor``
+      - Mouse pointer shape over it
+      - ``cursor="hand2"``
+    * - ``displaycolumns``
+      - Which columns to show, and in what order (``"#all"`` = all of them)
+      - ``displaycolumns=("age", "name")``
+    * - ``height``
+      - How many rows show at once
+      - ``height=8``
+    * - ``padding``
+      - Extra space inside it, around the rows
+      - ``padding=5``
+    * - ``selectmode``
+      - How many rows can be chosen: ``"extended"`` (many), ``"browse"`` (one) or ``"none"``
+      - ``selectmode="browse"``
+    * - ``show``
+      - What to show: ``"tree"`` (the first column), ``"headings"`` (column titles) or both
+      - ``show="headings"``
+    * - ``style``
+      - Name of the style that sets its look
+      - ``style="Big.Treeview"``
+    * - ``takefocus``
+      - Whether the Tab key can move to it
+      - ``takefocus=0``
+    * - ``xscrollcommand``
+      - Connects it to a side-to-side scrollbar
+      - ``xscrollcommand=x_scrollbar.set``
+    * - ``yscrollcommand``
+      - Connects it to an up-and-down scrollbar
+      - ``yscrollcommand=scrollbar.set``
+
+| ttk Treeview has no ``bg``, ``fg`` or ``font`` options. Change its colours and fonts with a style, e.g. ``style.configure("Treeview", font=("Arial", 12))``.
+
+----
+
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Treeview?
+
+        [x] A widget that shows rows and columns like a table, or items in a tree | Correct. Good for lists of records.
+        [ ] A drawing of a tree | Incorrect. It shows data.
+        [ ] A menu | Incorrect. It shows rows.
+        [ ] A text box | Incorrect. It shows rows and columns.
+
+    .. multichoice::
+
+        What does columns=("name", "age") do?
+
+        [ ] Adds two rows | Incorrect. It sets columns.
+        [x] Names two data columns | Correct. These names are used with heading and column.
+        [ ] Sets the column titles | Incorrect. heading does that.
+        [ ] Sets the width | Incorrect. column does that.
+
+    .. multichoice::
+
+        What does show="headings" do?
+
+        [x] Shows only the data columns and their titles, hiding the first tree column | Correct. Good for tables.
+        [ ] Shows only the tree | Incorrect. That is "tree".
+        [ ] Hides the titles | Incorrect. It shows them.
+        [ ] Shows nothing | Incorrect. It shows the table.
+
+    .. multichoice::
+
+        What does height=8 mean?
+
+        [ ] 8 pixels | Incorrect. It counts rows.
+        [x] 8 rows show at once | Correct. More rows scroll.
+        [ ] Only 8 rows can be added | Incorrect. More can be added.
+        [ ] 8 columns | Incorrect. It counts rows.
+
+    .. multichoice::
+
+        What does selectmode="browse" do?
+
+        [x] Lets only one row be chosen at a time | Correct. browse allows one.
+        [ ] Lets many rows be chosen | Incorrect. That is "extended".
+        [ ] Stops choosing | Incorrect. That is "none".
+        [ ] Opens a web browser | Incorrect. Not related.
+
+    .. multichoice::
+
+        Which line sets a column's title?
+
+        [ ] tree.column("name", text="Name") | Incorrect. column sets width.
+        [x] tree.heading("name", text="Name") | Correct. heading sets the title.
+        [ ] tree.title("name", "Name") | Incorrect. Not a method.
+        [ ] tree.insert("name", "Name") | Incorrect. insert adds rows.
+
+    .. multichoice::
+
+        What does tree.column("age", width=60) do?
+
+        [x] Makes the age column 60 pixels wide | Correct. column sets width and alignment.
+        [ ] Sets the title | Incorrect. heading does that.
+        [ ] Adds 60 rows | Incorrect. It sets width.
+        [ ] Deletes the column | Incorrect. It sets width.
+
+    .. multichoice::
+
+        What does anchor="center" do in tree.column("age", anchor="center")?
+
+        [ ] Centres the window | Incorrect. It centres the values.
+        [x] Centres the values in that column | Correct. anchor lines up the cells.
+        [ ] Centres the title only | Incorrect. heading has its own anchor.
+        [ ] Hides the column | Incorrect. It lines up values.
+
+    .. multichoice::
+
+        Which line adds a row?
+
+        [x] tree.insert("", tk.END, values=("Ana", 12)) | Correct. "" means no parent, tk.END adds to the end.
+        [ ] tree.add(("Ana", 12)) | Incorrect. Not a method.
+        [ ] tree.insert(values=("Ana", 12)) | Incorrect. It needs a parent and position.
+        [ ] tree.append("Ana", 12) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        In tree.insert("", tk.END, values=...), what does "" mean?
+
+        [ ] The row is empty | Incorrect. It means the top level.
+        [x] The row has no parent, so it is at the top level | Correct. Use an item id to put rows under it.
+        [ ] Delete the row | Incorrect. It sets the parent.
+        [ ] Add a heading | Incorrect. It sets the parent.
+
+    .. multichoice::
+
+        What does tree.selection() give?
+
+        [ ] The text of the chosen row | Incorrect. It gives ids.
+        [x] The ids of the chosen rows | Correct. Use tree.item(id) to read them.
+        [ ] The number of rows | Incorrect. Use get_children.
+        [ ] The columns | Incorrect. It gives chosen rows.
+
+    .. multichoice::
+
+        How do you read the values of a chosen row?
+
+        [x] tree.item(row_id)["values"] | Correct. item gives the row's details.
+        [ ] tree.get(row_id) | Incorrect. Not how Treeview works.
+        [ ] row_id.values | Incorrect. ids are strings.
+        [ ] tree.values() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which event runs when the user chooses a row?
+
+        [ ] "<Click>" | Incorrect. Not an event.
+        [x] "<<TreeviewSelect>>" | Correct. It fires when the choice changes.
+        [ ] "<<RowSelect>>" | Incorrect. Not the name.
+        [ ] "<Return>" | Incorrect. That is Enter.
+
+    .. multichoice::
+
+        How do you change a row's values?
+
+        [ ] tree.set(row_id, ("Ben", 13)) | Incorrect. set changes one cell.
+        [x] tree.item(row_id, values=("Ben", 13)) | Correct. item can change the values.
+        [ ] tree.insert(row_id, ...) | Incorrect. insert adds.
+        [ ] tree.change(row_id) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What does tree.get_children() give?
+
+        [x] The ids of all the top-level rows | Correct. Loop through them to work with every row.
+        [ ] The columns | Incorrect. It gives rows.
+        [ ] The chosen rows | Incorrect. selection does that.
+        [ ] The headings | Incorrect. It gives rows.
+
+    .. multichoice::
+
+        Which line deletes every row?
+
+        [ ] tree.delete("all") | Incorrect. "all" is for Canvas.
+        [x] tree.delete(\*tree.get_children()) | Correct. Delete every row id.
+        [ ] tree.clear() | Incorrect. Not a method.
+        [ ] tree.delete() | Incorrect. It needs ids.
+
+    .. multichoice::
+
+        How can a column of numbers be added up?
+
+        [ ] tree.sum("age") | Incorrect. Not a method.
+        [x] Loop through get_children() and add each row's value | Correct. Use tree.item(row)["values"].
+        [ ] len(tree) | Incorrect. Not a total.
+        [ ] tree.column("age", total=True) | Incorrect. Not an option.
+
+    .. multichoice::
+
+        How are striped rows made?
+
+        [x] Give every second row a tag and use tree.tag_configure(tag, background=...) | Correct. Tags colour rows.
+        [ ] tree.config(stripes=True) | Incorrect. Not an option.
+        [ ] Use a Separator | Incorrect. Not for rows.
+        [ ] They are always striped | Incorrect. You must add tags.
+
+    .. multichoice::
+
+        How is a row put under another row in a tree?
+
+        [ ] tree.insert(tk.END, ...) | Incorrect. The parent comes first.
+        [x] tree.insert(parent_id, tk.END, text="Child") | Correct. Use the parent's id.
+        [ ] tree.child(parent_id) | Incorrect. Not a method.
+        [ ] tree.add(parent_id) | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which style name changes the headings?
+
+        [ ] "Treeview" | Incorrect. That is the rows.
+        [x] "Treeview.Heading" | Correct. Headings have their own style part.
+        [ ] "THeading" | Incorrect. Not the name.
+        [ ] "Heading" | Incorrect. Needs the full name.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a Treeview with two columns.
+
+        tree = ttk.@@Treeview | Notebook | Listbox@@(root, @@columns | rows | values@@=("name", "age"), show="@@headings | tree | table@@", height=8)
+        tree.pack()
+
+    .. cloze::
+        :instructions: Set the column titles and widths.
+
+        tree.@@heading | column | title@@("name", text="Name")
+        tree.@@column | heading | width@@("age", width=60, @@anchor | justify | side@@="center")
+
+    .. cloze::
+        :instructions: Add rows.
+
+        tree.@@insert | add | append@@("", tk.END, @@values | text | columns@@=("Ana", 12))
+
+    .. cloze::
+        :instructions: Read the chosen row.
+
+        def picked(event):
+            row_id = tree.@@selection | get_children | focus_get@@()[0]
+            name = tree.@@item | get | row@@(row_id)["values"][0]
+
+        tree.bind("@@<<TreeviewSelect>> | <Click> | <<Select>>@@", picked)
+
+    .. cloze::
+        :instructions: Colour every second row.
+
+        tree.@@tag_configure | config | tag_add@@("grey", background="lightgrey")
+        tree.insert("", tk.END, values=("Ben", 13), @@tags | tag | style@@=("grey",))
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Class list" that is 350x250 with a Treeview table with the columns "Name" and "Year". Add four students.

@@ -594,6 +594,241 @@ All Menu options
 
 ----
 
+Quiz
+--------------------------------
+
+.. mcqgroup::
+    :nav_position: both
+    :show-instant-feedback:
+    :enable-instant-feedback:
+    :shuffle_questions:
+    :num_questions: 20
+
+    .. multichoice::
+
+        What is a Menu used for?
+
+        [x] Making a menu bar with options like File and Help | Correct. Menus hold commands.
+        [ ] Typing text | Incorrect. An Entry is for typing.
+        [ ] Drawing | Incorrect. A Canvas is for drawing.
+        [ ] Showing one label | Incorrect. A Label does that.
+
+    .. multichoice::
+
+        Which line puts a menu bar on the window?
+
+        [ ] menu_bar.pack() | Incorrect. Menu bars are not packed.
+        [x] root.config(menu=menu_bar) | Correct. The window's menu option shows it.
+        [ ] root.menu(menu_bar) | Incorrect. Not a method.
+        [ ] menu_bar.show() | Incorrect. Not a method.
+
+    .. multichoice::
+
+        What does tearoff=0 do?
+
+        [x] Removes the dashed line at the top of the menu | Correct. Without it, the menu can be torn off.
+        [ ] Deletes the menu | Incorrect. It removes the dashed line.
+        [ ] Hides the menu bar | Incorrect. It only changes the drop-down.
+        [ ] Disables the menu | Incorrect. state does that.
+
+    .. multichoice::
+
+        Which method adds a clickable item like "Save"?
+
+        [ ] add_cascade | Incorrect. That adds a drop-down menu.
+        [x] add_command | Correct. add_command adds an item that runs a function.
+        [ ] add_separator | Incorrect. That adds a line.
+        [ ] add_item | Incorrect. Not a method.
+
+    .. multichoice::
+
+        Which method adds "File" to the menu bar with its own drop-down?
+
+        [ ] add_command | Incorrect. That adds one item.
+        [x] add_cascade | Correct. add_cascade links a drop-down menu.
+        [ ] add_separator | Incorrect. That adds a line.
+        [ ] add_menu | Incorrect. Not a method.
+
+    .. multichoice::
+
+        In add_cascade(label="File", menu=file_menu), what is file_menu?
+
+        [ ] A function | Incorrect. It is another Menu.
+        [x] The drop-down Menu that opens under File | Correct. Make it with tk.Menu(menu_bar).
+        [ ] A string | Incorrect. It is a Menu widget.
+        [ ] A button | Incorrect. It is a Menu.
+
+    .. multichoice::
+
+        What does add_separator() do?
+
+        [x] Adds a line between menu items | Correct. It groups items.
+        [ ] Adds a new menu | Incorrect. add_cascade does that.
+        [ ] Closes the menu | Incorrect. It adds a line.
+        [ ] Adds a gap in the menu bar | Incorrect. It is used inside drop-downs.
+
+    .. multichoice::
+
+        Which option sets the words of a menu item?
+
+        [ ] text | Incorrect. Menus use label.
+        [x] label | Correct. label sets the item's words.
+        [ ] name | Incorrect. Not used.
+        [ ] title | Incorrect. Not used.
+
+    .. multichoice::
+
+        What does command=root.destroy do on an "Exit" item?
+
+        [ ] Opens a new window | Incorrect. It closes the window.
+        [x] Closes the window when Exit is clicked | Correct. destroy closes it.
+        [ ] Hides the menu | Incorrect. It closes everything.
+        [ ] Nothing | Incorrect. It closes the window.
+
+    .. multichoice::
+
+        What does add_checkbutton add?
+
+        [x] A menu item with a tick that turns on and off | Correct. It works like a Checkbutton.
+        [ ] A real Checkbutton widget | Incorrect. It is a menu item.
+        [ ] A separator | Incorrect. add_separator does that.
+        [ ] A new menu | Incorrect. add_cascade does that.
+
+    .. multichoice::
+
+        How are add_radiobutton items grouped so only one can be chosen?
+
+        [ ] They are all in the same menu | Incorrect. They also need the same variable.
+        [x] They share the same variable, each with a different value | Correct. Like Radiobuttons.
+        [ ] They use command | Incorrect. command runs a function.
+        [ ] They cannot be grouped | Incorrect. They can.
+
+    .. multichoice::
+
+        What does activebackground change on a menu?
+
+        [ ] The whole menu colour | Incorrect. bg does that.
+        [x] The background of the item under the mouse | Correct. It is the hover colour.
+        [ ] The menu bar title | Incorrect. It changes items.
+        [ ] The window | Incorrect. Only the menu.
+
+    .. multichoice::
+
+        What does entryconfig(0, state="disabled") do?
+
+        [ ] Deletes item 0 | Incorrect. delete does that.
+        [x] Greys out the first item so it cannot be clicked | Correct. entryconfig changes one item.
+        [ ] Disables the whole program | Incorrect. Only one item.
+        [ ] Hides the menu | Incorrect. It greys one item.
+
+    .. multichoice::
+
+        What does accelerator="Ctrl+S" do on a menu item?
+
+        [x] Shows the shortcut text next to the item | Correct. It does not make the shortcut work by itself.
+        [ ] Makes Ctrl+S work | Incorrect. bind is needed too.
+        [ ] Saves the file | Incorrect. Your function saves.
+        [ ] Renames the item | Incorrect. label does that.
+
+    .. multichoice::
+
+        Which line makes Ctrl+S run save?
+
+        [ ] root.bind("Ctrl+S", save) | Incorrect. The event name is wrong.
+        [x] root.bind("<Control-s>", save) | Correct. Control-s is the event.
+        [ ] menu.bind(save) | Incorrect. Needs an event name.
+        [ ] root.config(save="Ctrl+S") | Incorrect. Not an option.
+
+    .. multichoice::
+
+        A function used with root.bind needs:
+
+        [x] A parameter for the event, such as event=None | Correct. bind sends an event.
+        [ ] No parameters | Incorrect. bind sends one.
+        [ ] Three parameters | Incorrect. It gets one event.
+        [ ] A return value | Incorrect. Not needed.
+
+    .. multichoice::
+
+        What does tk_popup do?
+
+        [ ] Opens a new window | Incorrect. It shows a menu.
+        [x] Shows a menu where the mouse is, for a right-click menu | Correct. It pops the menu up.
+        [ ] Closes the menu | Incorrect. It opens it.
+        [ ] Adds an item | Incorrect. It shows the menu.
+
+    .. multichoice::
+
+        Which event is usually used for a right-click on Windows?
+
+        [ ] "<Button-1>" | Incorrect. That is the left button.
+        [x] "<Button-3>" | Correct. Button-3 is the right button.
+        [ ] "<Right>" | Incorrect. That is the right arrow key.
+        [ ] "<Menu>" | Incorrect. Not the click event.
+
+    .. multichoice::
+
+        How do you make a drop-down menu for the menu bar?
+
+        [x] file_menu = tk.Menu(menu_bar, tearoff=0) | Correct. The menu bar is its parent.
+        [ ] file_menu = tk.Menu() | Incorrect. It needs a parent.
+        [ ] file_menu = menu_bar.add() | Incorrect. Make a Menu first.
+        [ ] file_menu = tk.Button(menu_bar) | Incorrect. Use tk.Menu.
+
+    .. multichoice::
+
+        Which order is correct?
+
+        [ ] add_cascade, then make the drop-down | Incorrect. The drop-down must exist first.
+        [x] Make the drop-down, add its items, then add_cascade it to the menu bar | Correct. It must exist before linking.
+        [ ] root.config first, then make menu_bar | Incorrect. menu_bar must exist first.
+        [ ] Order does not matter | Incorrect. Python runs in order.
+
+----
+
+Fill in the gaps
+--------------------------------
+
+.. clozegroup::
+    :nav-position: both
+    :num-questions: 5
+    :show-instant-feedback:
+
+
+    .. cloze::
+        :instructions: Make a menu bar and show it.
+
+        menu_bar = tk.@@Menu | Frame | Label@@(root)
+        root.@@config | pack | show@@(@@menu | bar | top@@=menu_bar)
+
+    .. cloze::
+        :instructions: Make a File menu.
+
+        file_menu = tk.Menu(menu_bar, @@tearoff | tear | dash@@=0)
+        file_menu.@@add_command | add_cascade | add_label@@(label="Save", command=save)
+        menu_bar.@@add_cascade | add_command | add_menu@@(label="File", menu=file_menu)
+
+    .. cloze::
+        :instructions: Add a line and an Exit item.
+
+        file_menu.@@add_separator | add_line | separator@@()
+        file_menu.add_command(@@label | text | name@@="Exit", command=root.@@destroy | mainloop | pack@@)
+
+    .. cloze::
+        :instructions: Add a tick item and choice items.
+
+        dark = tk.IntVar()
+        view_menu.@@add_checkbutton | add_radiobutton | add_command@@(label="Dark mode", variable=dark)
+        view_menu.@@add_radiobutton | add_checkbutton | add_choice@@(label="Small", variable=size, value="Small")
+
+    .. cloze::
+        :instructions: Make a keyboard shortcut.
+
+        file_menu.add_command(label="Save", command=save, @@accelerator | shortcut | key@@="Ctrl+S")
+        root.@@bind | config | command@@("<Control-s>", save)
+
+----
+
 .. admonition:: Tasks
 
     #. Make a window titled "Menus" that is 300x200. Add a menu bar with a "File" menu containing one command, "Exit", that closes the window.
