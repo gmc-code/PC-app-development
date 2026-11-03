@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Make a window and set out a program in five sections, in the right order.
-- **Skills for the ice cream app**: ``import tkinter as tk``, ``tk.Tk()``, ``title()``, ``geometry()``, ``config(bg=...)``, ``mainloop()``.
+- **Skills for the orders app**: ``import tkinter as tk``, ``tk.Tk()``, ``title()``, ``geometry()``, ``config(bg=...)``, ``mainloop()``.
 
 ----
 

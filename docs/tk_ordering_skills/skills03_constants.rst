@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Store colours and fonts as constants, so the look of the whole app can be changed in one place.
-- **Skills for the ice cream app**: ``BG_COLOUR = "#fff4e6"``, ``TITLE_FONT = ("Segoe UI", 22, "bold")``, using constants in ``config()``.
+- **Skills for the orders app**: ``BG_COLOUR = "#fff4e6"``, ``TITLE_FONT = ("Segoe UI", 22, "bold")``, using constants in ``config()``.
 
 ----
 

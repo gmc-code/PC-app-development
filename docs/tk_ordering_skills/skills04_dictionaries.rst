@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Store choices and their prices in a dictionary, look up a price, add prices together and loop through the keys.
-- **Skills for the ice cream app**: ``{"Vanilla": 4.00}``, ``flavours["Vanilla"]``, adding prices, ``for flavour in flavours.keys():``.
+- **Skills for the orders app**: ``{"Vanilla": 4.00}``, ``flavours["Vanilla"]``, adding prices, ``for flavour in flavours.keys():``.
 
 | This lesson has no window. The code uses ``print()``, so the answers appear in the Python shell.
 

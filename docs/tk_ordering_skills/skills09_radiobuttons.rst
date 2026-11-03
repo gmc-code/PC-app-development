@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Use a ``StringVar`` to remember the user's choice, and make one radio button for each key in a dictionary.
-- **Skills for the ice cream app**: ``tk.StringVar(root)``, ``set()``, ``get()``, ``tk.Frame``, ``tk.Radiobutton(frame, variable=, value=)``, a loop over ``.keys()``.
+- **Skills for the orders app**: ``tk.StringVar(root)``, ``set()``, ``get()``, ``tk.Frame``, ``tk.Radiobutton(frame, variable=, value=)``, a loop over ``.keys()``.
 
 ----
 

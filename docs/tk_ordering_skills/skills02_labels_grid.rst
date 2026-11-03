@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Make labels with the **create, position, configure** pattern and place them with ``grid()``.
-- **Skills for the ice cream app**: ``tk.Label(root)``, ``grid(row=, column=, columnspan=, padx=, pady=, sticky=)``, ``config(text=, bg=, fg=, font=)``.
+- **Skills for the orders app**: ``tk.Label(root)``, ``grid(row=, column=, columnspan=, padx=, pady=, sticky=)``, ``config(text=, bg=, fg=, font=)``.
 
 ----
 

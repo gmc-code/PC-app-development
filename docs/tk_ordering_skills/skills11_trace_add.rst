@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Make the price change by itself whenever the user picks a different juice or size.
-- **Skills for the ice cream app**: ``trace_add("write", update_ice_cream_price)``, ``def update_ice_cream_price(*args):``, calling the update function once at the start.
+- **Skills for the orders app**: ``trace_add("write", update_ice_cream_price)``, ``def update_ice_cream_price(*args):``, calling the update function once at the start.
 
 ----
 

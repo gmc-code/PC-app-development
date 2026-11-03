@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Make a drop-down menu whose choices come from a dictionary.
-- **Skills for the ice cream app**: ``tk.OptionMenu(root, size_var, "Small")``, ``size_menu["menu"]``, ``delete(0)``, ``add_radiobutton(label=, variable=, value=)``.
+- **Skills for the orders app**: ``tk.OptionMenu(root, size_var, "Small")``, ``size_menu["menu"]``, ``delete(0)``, ``add_radiobutton(label=, variable=, value=)``.
 
 ----
 

@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Store items in a list, add and remove items, loop through a list and add up a total. Store a dictionary for each item.
-- **Skills for the ice cream app**: ``orders = []``, ``append()``, ``orders[0]``, ``len()``, ``del orders[1]``, ``clear()``, a list of dictionaries.
+- **Skills for the orders app**: ``orders = []``, ``append()``, ``orders[0]``, ``len()``, ``del orders[1]``, ``clear()``, a list of dictionaries.
 
 | This lesson has no window. The answers appear in the Python shell.
 

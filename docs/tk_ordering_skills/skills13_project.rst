@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Put every skill together to build a small ordering app, then test it and add to it.
-- **Skills for the ice cream app**: all of them. The ice cream app has the same parts, plus one more drop-down.
+- **Skills for the orders app**: all of them. The ice cream app has the same parts, plus one more drop-down.
 
 ----
 

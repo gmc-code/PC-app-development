@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Show the ``orders`` list in a Listbox with a total, remove the selected line, and show a pop-up message.
-- **Skills for the ice cream app**: ``tk.Listbox``, ``insert(tk.END, ...)``, ``delete(0, tk.END)``, ``curselection()``, ``if not selection:``, ``del orders[line_number]``, ``messagebox.showinfo()``.
+- **Skills for the orders app**: ``tk.Listbox``, ``insert(tk.END, ...)``, ``delete(0, tk.END)``, ``curselection()``, ``if not selection:``, ``del orders[line_number]``, ``messagebox.showinfo()``.
 
 ----
 
