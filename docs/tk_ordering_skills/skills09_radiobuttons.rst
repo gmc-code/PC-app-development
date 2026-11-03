@@ -119,6 +119,7 @@ How it works
 --------------------------------
 
 .. code-block::
+    :class: no-copybutton
 
     # Juice (radio buttons)
     juice_label = tk.Label(root)  # 1. create

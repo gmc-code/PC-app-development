@@ -102,6 +102,7 @@ How it works
 --------------------------------
 
 .. code-block::
+    :class: no-copybutton
 
     # Size (drop-down menu)
     size_label = tk.Label(root)  # 1. create
