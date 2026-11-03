@@ -3,7 +3,11 @@
 ================================================
 
 - **Objective**: Join words and numbers with an f-string, and show money with 2 decimal places.
-- **Skills for the orders app**: ``f"Price: ${price:.2f}"``, ``f"{flavour} (${flavours[flavour]:.2f})"``.
+- **Skills for the orders app**:
+
+  | ``f"Price: ${price:.2f}"``,
+  | ``f"{flavour} (${flavours[flavour]:.2f})"``.
+
 
 | This lesson has no window. The answers appear in the Python shell.
 

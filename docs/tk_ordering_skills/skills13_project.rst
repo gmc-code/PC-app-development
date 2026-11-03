@@ -416,7 +416,7 @@ Next steps
 --------------------------------
 
 | You now have every skill needed for the :doc:`../tk_icecream_orders_tutorial/icecream_orders` tutorial.
-| The orders Shop works the same way as the Juice Bar, with flavours instead of juices and **two** drop-downs: containers and toppings.
+| The Ice cream Shop works the same way as the Juice Bar, with flavours instead of juices and **two** drop-downs: containers and toppings.
 
 ----
 

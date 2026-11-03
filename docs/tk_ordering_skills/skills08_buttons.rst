@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Make buttons that run a function when they are clicked, and change a label from inside a function.
-- **Skills for the orders app**: ``tk.Button(root)``, the 4th step ``config(command=add_ice_cream)``, ``label.config(text=...)`` inside a function.
+- **Skills for the orders app**: ``tk.Button(root)``, the 4th step ``config(command=add_orange)``, ``label.config(text=...)`` inside a function.
 
 ----
 

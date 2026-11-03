@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Write functions with ``def``, describe them with a docstring, call them, and send back an answer with ``return``.
-- **Skills for the orders app**: ``def get_ice_cream_price():``, docstrings, ``return price``, one function calling another.
+- **Skills for the orders app**: ``def get_juice_price():``, docstrings, ``return price``, one function calling another.
 
 | This lesson has no window. The answers appear in the Python shell.
 
