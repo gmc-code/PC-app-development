@@ -273,16 +273,19 @@ How it works
 
 ----
 
-..admonition:: Example
+.. tip::
 
     | The code below shows how to bind two variables to the same function.
-    | The function checks which variable changed, and shows a message about it. It also adds up the prices of both variables and shows the total.
+    | The function checks which variable changed, and shows a message about it.
+    | It also adds up the prices of both variables and shows the total.
 
     .. code-block:: python
 
         import tkinter as tk
 
         root = tk.Tk()
+        root.title("update_order args")
+        root.geometry("500x300")
 
         sizes = {"Small": 4.00, "Medium": 5.50, "Large": 7.00}
         juices = {"Orange": 0.00, "Mango": 0.50, "Berry": 1.00}
@@ -294,10 +297,11 @@ How it works
 
         message_label = tk.Label(root, text="")
         message_label.pack(padx=10, pady=10)
+        message_label.config(text="Pick a size and a juice")
 
         price_label = tk.Label(root, text="")
         price_label.pack(padx=10, pady=10)
-
+        price_label.config(text=f"Price: ${0:.2f}")
 
         def update_order(*args):
             changed = args[0]    # the name of the variable that changed
