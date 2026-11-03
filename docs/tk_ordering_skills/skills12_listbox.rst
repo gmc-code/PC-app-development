@@ -300,7 +300,7 @@ Quiz
 --------------------------------
 
 .. mcqgroup::
-    :nav_position: both
+    :nav_position: top
     :show-instant-feedback:
     :enable-instant-feedback:
     :shuffle_questions:
@@ -366,7 +366,7 @@ Fill in the gaps
 --------------------------------
 
 .. clozegroup::
-    :nav-position: both
+    :nav-position: top
     :num-questions: 2
     :show-instant-feedback:
 
