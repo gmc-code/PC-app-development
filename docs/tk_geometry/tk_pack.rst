@@ -109,7 +109,7 @@ Multiple Choice Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. mcqgroup::
-    :nav_position: both
+    :nav_position: top
     :show-instant-feedback:
     :enable-instant-feedback:
     :shuffle_questions:
@@ -297,7 +297,7 @@ Multiple Choice Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. mcqgroup::
-    :nav_position: both
+    :nav_position: top
     :show-instant-feedback:
     :enable-instant-feedback:
     :shuffle_questions:

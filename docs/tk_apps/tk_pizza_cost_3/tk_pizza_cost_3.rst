@@ -355,7 +355,7 @@ Three Pizza Cost - Multiple Choice Quiz
 ---------------------------------------------
 
 .. mcqgroup::
-    :nav_position: both
+    :nav_position: top
     :show-instant-feedback:
     :enable-instant-feedback:
     :shuffle_questions:
@@ -458,7 +458,7 @@ Three Pizza Cost - Cloze Code Quiz
 
 
 .. clozegroup::
-    :nav-position: both
+    :nav-position: top
     :num-questions: 3
     :show-instant-feedback:
 
