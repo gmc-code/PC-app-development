@@ -111,11 +111,11 @@ class ClozeDirective(SphinxDirective):
 
         def replace_gap(match):
             self.env.cloze_gap_counter += 1
-            raw_content = match.group(1).strip()
-            final_correct = raw_content
+            # The line was already html-escaped; unescape so we escape exactly once
+            final_correct = html.unescape(match.group(1).strip())
             return (
                 f'<span class="cloze-wrapper">'
-                f'<span class="cloze-dropzone" data-gap-id="{self.env.cloze_gap_counter}" data-correct="{html.escape(final_correct)}">Drop here</span>'
+                f'<span class="cloze-dropzone" data-gap-id="{self.env.cloze_gap_counter}" data-correct="{html.escape(final_correct, quote=True)}">Drop here</span>'
                 f'<span class="cloze-inline-feedback"></span>'
                 f'</span>'
             )
@@ -215,7 +215,7 @@ def setup(app):
     app.add_css_file("cloze.css")
 
     return {
-        "version": "4.3",
+        "version": "4.4",
         "parallel_read_safe": True,
         "parallel_write_safe": True
     }

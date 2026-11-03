@@ -46,8 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Return any item currently occupying this slot
       returnTokenToBank(zone)
 
-      // Place new token
-      zone.innerHTML = `<span class="cloze-dropped-token" data-word="${item.dataset.word}">${item.textContent}</span>`
+      // Place new token (built via DOM so quotes/&/< in answers are safe)
+      const token = document.createElement("span")
+      token.className = "cloze-dropped-token"
+      token.dataset.word = item.dataset.word
+      token.textContent = item.textContent
+      zone.replaceChildren(token)
+
       zone.classList.add("occupied")
       zone.classList.remove("hovered", "correct", "incorrect")
       item.style.display = "none"

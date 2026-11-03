@@ -266,7 +266,7 @@ Fill in the gaps
         :instructions: Make colour and font constants.
 
         @@BG_COLOUR | bg_colour | "BG_COLOUR"@@ = "#fff8dc"
-        TITLE_FONT = @@("Segoe UI" | ["Segoe UI" | {"Segoe UI"@@, 20, "@@bold | big | thick@@")
+        TITLE_FONT = (@@"Segoe UI" | Segoe UI@@, 20, "@@bold | big | thick@@")
 
     .. cloze::
         :instructions: Use the constants on a label.
