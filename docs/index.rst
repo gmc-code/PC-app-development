@@ -41,7 +41,7 @@ PC-app-development
 
 .. toctree::
     :maxdepth: 2
-    :caption: Ordering skills
+    :caption: Orders skills
 
     tk_ordering_skills/ordering_skills.rst
     tk_ordering_skills/skills01_window.rst

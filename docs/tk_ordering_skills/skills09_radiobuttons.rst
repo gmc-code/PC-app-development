@@ -118,6 +118,28 @@ Radio buttons
 How it works
 --------------------------------
 
+.. code-block::
+
+    # Juice (radio buttons)
+    juice_label = tk.Label(root)  # 1. create
+    juice_label.grid(row=0, column=0, padx=10, pady=10, sticky="ne")  # 2. position
+    juice_label.config(text="Juice:", font=LABEL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
+
+    juice_frame = tk.Frame(root)  # 1. create
+    juice_frame.grid(row=0, column=1, padx=10, pady=10, sticky="w")  # 2. position
+    juice_frame.config(bg=BG_COLOUR)  # 3. configure
+
+    juice_var = tk.StringVar(root)  # A. make
+    juice_var.set("Orange")  # B. set
+
+    for juice in juices.keys():
+        juice_radio = tk.Radiobutton(juice_frame, variable=juice_var, value=juice)  # 1. create
+        juice_radio.pack(anchor="w")  # 2. position
+        juice_radio.config(text=f"{juice} (${juices[juice]:.2f})", font=RADIO_FONT,
+                           bg=BG_COLOUR, fg=TEXT_COLOUR, activebackground=BG_COLOUR,
+                           highlightthickness=0)  # 3. configure
+
+
 #. **The frame**: ``juice_frame`` is an invisible box that holds the radio buttons. The frame goes in row 0, column 1 of the grid.
 #. **The variable**: ``juice_var.set("Orange")`` picks Orange when the app starts. It must be spelt exactly like a key in ``juices``.
 #. **The loop**: ``for juice in juices.keys():`` makes one radio button for each juice.

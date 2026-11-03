@@ -101,6 +101,28 @@ A size drop-down
 How it works
 --------------------------------
 
+.. code-block::
+
+    # Size (drop-down menu)
+    size_label = tk.Label(root)  # 1. create
+    size_label.grid(row=0, column=0, padx=10, pady=10, sticky="e")  # 2. position
+    size_label.config(text="Size:", font=LABEL_FONT, bg=BG_COLOUR, fg=TEXT_COLOUR)  # 3. configure
+
+    size_var = tk.StringVar(root)  # A. make
+    size_var.set("Small")  # B. set
+
+    size_menu = tk.OptionMenu(root, size_var, "Small")  # 1. create
+    size_menu.grid(row=0, column=1, padx=10, pady=10, sticky="w")  # 2. position
+    size_menu.config(width=12, font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR,
+                     activebackground=MENU_COLOUR)  # 3. configure
+
+    size_choices = size_menu["menu"]
+    size_choices.config(font=LABEL_FONT, bg=MENU_COLOUR, fg=TEXT_COLOUR)
+    size_choices.delete(0)   # remove the starting choice
+    for size in sizes.keys():
+        size_choices.add_radiobutton(label=size, variable=size_var, value=size)
+
+
 #. **The variable** is made and set **before** the drop-down, because the drop-down needs it.
 #. **The drop-down**:
 
@@ -110,9 +132,14 @@ How it works
 
 #. **The list of choices** that drops down:
 
-   - ``size_choices = size_menu["menu"]`` gets the list, and gives it a short name.
-   - ``size_choices.config(...)`` colours the list.
-   - ``size_choices.delete(0)`` removes the starting choice (line 0). The loop adds it back with the others.
+   - ``size_choices = size_menu["menu"]`` gets the list that is hidden inside
+     the drop-down button, and gives it a short name.
+   - ``size_choices.config(...)`` colours the list. (``size_menu.config(...)``
+     only colours the button.)
+   - ``size_choices.delete(0)`` removes the starting choice at position 0
+     (the first item). The loop adds it back with the others.
+   - ``size_choices.add_radiobutton(...)`` adds one size to the list each time
+     the loop runs. Picking it puts that size into ``size_var``.
 
 #. **The loop**: ``for size in sizes.keys():`` adds one choice for each key.
 
@@ -120,6 +147,19 @@ How it works
    - ``variable=size_var, value=size`` puts this size into ``size_var`` when it is picked.
 
 | This is the same idea as the radio buttons in :doc:`skills09_radiobuttons`: the choices come from the **dictionary**, so adding a size to ``sizes`` adds it to the menu as well.
+
+
+.. admonition:: Tip
+
+    | What size_menu["menu"] does?
+    | Square brackets on a widget read one of its settings.
+    | size_menu["font"] gives back the font, and size_menu["width"] gives back the width.
+    | Asking for "menu" is special: it gives back the drop-down Menu widget itself.
+
+    | An OptionMenu is really two widgets joined together:
+    | The button you see on the window (a Menubutton). This is what size_menu is.
+    | The drop-down list that pops up when you click it (a Menu). THis is what size_choices is.
+
 
 ----
 
