@@ -64,7 +64,7 @@ What is an f-string?
 f-strings with dictionaries
 --------------------------------
 
-| The ice cream app puts a dictionary look-up inside the curly brackets.
+| The orders app puts a dictionary look-up inside the curly brackets.
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ f-strings with dictionaries
 Building a line of an order
 --------------------------------
 
-| An f-string can fill in many values in one line. The ice cream app makes each line of the order like this.
+| An f-string can fill in many values in one line. The orders app makes each line of the order like this.
 
 .. code-block:: python
 

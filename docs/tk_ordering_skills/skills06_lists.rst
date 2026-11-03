@@ -81,7 +81,7 @@ A list of dictionaries
 --------------------------------
 
 | One juice has a name, a size and a price. A **dictionary** keeps them together.
-| The **list** keeps every juice in the order. This is how the ice cream app stores its order.
+| The **list** keeps every juice in the order. This is how the orders app stores its order.
 
 .. code-block:: python
 

@@ -12,7 +12,7 @@ Tkinter variables
 
 | A normal Python variable cannot tell a widget when it changes. A **Tkinter variable** can.
 | ``tk.StringVar`` holds a string, such as the name of the juice the user picked.
-| The ice cream app sets up each Tkinter variable in a group of lines: **make**, **set**, then (in :doc:`skills11_trace_add`) **bind**.
+| The orders app sets up each Tkinter variable in a group of lines: **make**, **set**, then (in :doc:`skills11_trace_add`) **bind**.
 
 .. code-block::
    :class: no-copybutton

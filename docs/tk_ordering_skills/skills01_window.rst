@@ -39,7 +39,7 @@ The five sections
 --------------------------------
 
 | Bigger programs are easier to read when every part has its own place.
-| The ice cream app uses these sections, **in this order**:
+| The orders app uses these sections, **in this order**:
 
 .. list-table::
     :header-rows: 1
@@ -237,7 +237,7 @@ Quiz
 
         Which order of sections is correct?
 
-        [x] Imports, data, constants, definitions, widgets, main code | Correct. This is the order used in the ice cream app.
+        [x] Imports, data, constants, definitions, widgets, main code | Correct. This is the order used in the orders app.
         [ ] Imports, widgets, constants, data, definitions, main code | Incorrect. Widgets come after definitions.
         [ ] Data, imports, constants, definitions, widgets, main code | Incorrect. Imports always come first.
         [ ] Imports, data, definitions, constants, main code, widgets | Incorrect. Constants come before definitions, and the main code is last.

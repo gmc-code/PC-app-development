@@ -290,7 +290,7 @@ Quiz
 
     .. multichoice::
 
-        What is the order of lines for a Tkinter variable in the ice cream app?
+        What is the order of lines for a Tkinter variable in the orders app?
 
         [ ] Bind, make, set | Incorrect. The variable must be made first.
         [ ] Make, bind, set | Incorrect. Set comes before bind.

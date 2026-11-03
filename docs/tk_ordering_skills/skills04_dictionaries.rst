@@ -59,7 +59,7 @@ Looking up a price
 Adding prices together
 --------------------------------
 
-| The ice cream app uses one dictionary for each kind of choice, then adds the prices.
+| The orders app uses one dictionary for each kind of choice, then adds the prices.
 
 .. code-block:: python
 
@@ -107,7 +107,7 @@ Looping through the keys
 
 - ``juice`` holds a different key each time round the loop.
 - ``juices[juice]`` looks up the price of that key.
-- The ice cream app uses a loop like this to make **one radio button for each flavour**. Add a flavour to the dictionary and a new radio button appears.
+- The orders app uses a loop like this to make **one radio button for each flavour**. Add a flavour to the dictionary and a new radio button appears.
 
 ----
 

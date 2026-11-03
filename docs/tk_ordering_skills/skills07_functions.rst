@@ -64,7 +64,7 @@ Sending back an answer with return
 One function calling another
 --------------------------------------
 
-| The ice cream app has one function that **works out** the price and another that **shows** it.
+| The orders app has one function that **works out** the price and another that **shows** it.
 
 .. code-block:: python
 
@@ -231,7 +231,7 @@ Quiz
 
     .. multichoice::
 
-        Why do definitions come before the widgets in the ice cream app?
+        Why do definitions come before the widgets in the orders app?
 
         [x] A function must be defined before it is used | Correct. Buttons need their function to exist.
         [ ] Python reads from the bottom up | Incorrect. It reads from the top down.

@@ -3,7 +3,7 @@
 ================================================
 
 - **Objective**: Put every skill together to build a small ordering app, then test it and add to it.
-- **Skills for the orders app**: all of them. The ice cream app has the same parts, plus one more drop-down.
+- **Skills for the orders app**: all of them. The orders app has the same parts, plus one more drop-down.
 
 ----
 
@@ -416,7 +416,7 @@ Next steps
 --------------------------------
 
 | You now have every skill needed for the :doc:`../tk_icecream_orders_tutorial/icecream_orders` tutorial.
-| The Ice Cream Shop works the same way as the Juice Bar, with flavours instead of juices and **two** drop-downs: containers and toppings.
+| The orders Shop works the same way as the Juice Bar, with flavours instead of juices and **two** drop-downs: containers and toppings.
 
 ----
 

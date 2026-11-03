@@ -10,7 +10,7 @@
 Create, position, configure
 --------------------------------
 
-| A **label** shows words in the window. The ice cream app makes every widget with the same three lines:
+| A **label** shows words in the window. The orders app makes every widget with the same three lines:
 
 .. code-block::
    :class: no-copybutton
